@@ -114,20 +114,20 @@ tags: [AUTOSAR, CanNm, 调用逻辑, 代码实现]
 
 ### 2.3 标志/计数类
 
-| 变量 | 类型 | 作用 |
-|---|---|---|
-| `CanNm_NetworkRestartFlag[2]` | `uint8[2]` | 网络重启请求：`CANNM_NO_RESTART` / `CANNM_PASSIVE_RESTART` / `CANNM_ACTIVE_RESTART`；主函数据此 `StateTransition(REPEAT_MESSAGE)` |
-| `CanNm_MsgConfirmationFlag[2]` | `boolean[2]` | 立即确认模式下由 `TriggerTransmission` 置 TRUE，`MainRxTxConfHandling` 消费 |
-| `CanNm_MsgIndicationFlag[2]` | `boolean[2]` | 收到 NM 帧的指示标志，`CanNm_RxIndication` 置位、主函数消费 |
-| `CanNm_RepeatMsgBitIndFlag[2]` | `boolean[2]` | 收到 RMR 位标志 |
-| `CanNm_RepeatMsgReqFlag[2]` | `boolean[2]` | 主动请求 Repeat Message 标志 |
-| `CanNm_ImmediateNmMsgCount[2]` | `uint8[2]` | 立即发送剩余帧数；发送成功后递减，为 0 后回到 `MsgCycleTime` |
-| `CanNm_ImmediateRestartFailed[2]` | `boolean[2]` | 立即重启首帧失败标志（重试时用 `MsgCycleOffset` 重装） |
-| `CanNm_BusLoadReductionActive[2]` | `boolean[2]` | 运行时降载是否激活（由配置 `BusLoadReductionActive` 与状态切换决定） |
-| `CanNm_RemoteSleepState[2]` | `boolean[2]` | 远程睡眠状态（功能关闭） |
-| `CanNm_PnMessageFilterEnabled[2]` | `boolean[2]` | PN 过滤使能（PN 关闭） |
-| `CanNm_PnMessageFilterDeactived[2]` | `boolean[2]` | PN 过滤停用（PN 关闭） |
-| `CanNm_RetryFirstMessageRequestFlag[2]` | `boolean[2]` | 首帧重试标志（`CANNM_RETRY_FIRST_MESSAGE_REQUEST` 开启） |
+| 变量                                      | 类型           | 作用                                                                                                                   |
+| --------------------------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------- |
+| `CanNm_NetworkRestartFlag[2]`           | `uint8[2]`   | 网络重启请求：`CANNM_NO_RESTART` / `CANNM_PASSIVE_RESTART` / `CANNM_ACTIVE_RESTART`；主函数据此 `StateTransition(REPEAT_MESSAGE)` |
+| `CanNm_MsgConfirmationFlag[2]`          | `boolean[2]` | 立即确认模式下由 `TriggerTransmission` 置 TRUE，`MainRxTxConfHandling` 消费                                                      |
+| `CanNm_MsgIndicationFlag[2]`            | `boolean[2]` | 收到 NM 帧的指示标志，`CanNm_RxIndication` 置位、主函数消费                                                                           |
+| `CanNm_RepeatMsgBitIndFlag[2]`          | `boolean[2]` | 收到 RMR 位标志                                                                                                           |
+| `CanNm_RepeatMsgReqFlag[2]`             | `boolean[2]` | 主动请求 Repeat Message 标志                                                                                               |
+| `CanNm_ImmediateNmMsgCount[2]`          | `uint8[2]`   | 立即发送剩余帧数；发送成功后递减，为 0 后回到 `MsgCycleTime`                                                                              |
+| `CanNm_ImmediateRestartFailed[2]`       | `boolean[2]` | 立即重启首帧失败标志（重试时用 `MsgCycleOffset` 重装）                                                                                 |
+| `CanNm_BusLoadReductionActive[2]`       | `boolean[2]` | 运行时降载是否激活（由配置 `BusLoadReductionActive` 与状态切换决定）                                                                      |
+| `CanNm_RemoteSleepState[2]`             | `boolean[2]` | 远程睡眠状态（功能关闭）                                                                                                         |
+| `CanNm_PnMessageFilterEnabled[2]`       | `boolean[2]` | PN 过滤使能（PN 关闭）                                                                                                       |
+| `CanNm_PnMessageFilterDeactived[2]`     | `boolean[2]` | PN 过滤停用（PN 关闭）                                                                                                       |
+| `CanNm_RetryFirstMessageRequestFlag[2]` | `boolean[2]` | 首帧重试标志（`CANNM_RETRY_FIRST_MESSAGE_REQUEST` 开启）                                                                       |
 
 ### 2.4 数据缓冲
 

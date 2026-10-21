@@ -30,12 +30,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "模块/CanNm/03_调用逻辑/CanNm_全局变量说明.md",
+                "file": "模块/CanNm/03_调用逻辑/CanNm_D2_被动唤醒调用逻辑.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CanNm_全局变量说明"
+              "title": "CanNm_D2_被动唤醒调用逻辑"
             }
           }
         ],
@@ -205,10 +205,13 @@
   },
   "active": "f092ac227c81b233",
   "lastOpenFiles": [
-    "模块/CanNm/03_调用逻辑/CanNm_函数调用层级.md",
-    "模块/CanNm/03_调用逻辑/CanNm_调用逻辑总览.md",
-    "模块/CanNm/03_调用逻辑/CanNm_全局变量说明.md",
     "模块/CanNm/03_调用逻辑/CanNm_D1_主动唤醒调用逻辑.md",
+    "模块/CanNm/03_调用逻辑/CanNm_函数调用层级.md",
+    "模块/CanNm/03_调用逻辑/CanNm_全局变量说明.md",
+    "模块/CanNm/03_调用逻辑/CanNm_D3_主状态转移逻辑.md",
+    "模块/CanNm/03_调用逻辑/CanNm_D4_状态转换表.md",
+    "模块/CanNm/03_调用逻辑/CanNm_D2_被动唤醒调用逻辑.md",
+    "模块/CanNm/03_调用逻辑/CanNm_调用逻辑总览.md",
     "模块/CanNm/02_学习总结/CanNm_模块作用与架构定位.md",
     "_技能/autosar-module-workflow/SKILL.md",
     "_技能/autosar-module-workflow/references/workbook-schema.md",
@@ -243,9 +246,6 @@
     "模块/CanNm/02_学习总结/CanNm_一页纸复盘.md",
     "模块/BswM/04_MainFunction流程/BswM_MainFunction调用逻辑.md",
     "模块/BswM/03_调用逻辑/BswM_全局变量说明.md",
-    "模块/BswM/03_调用逻辑/BswM_函数调用层级.md",
-    "模块/BswM/03_调用逻辑/BswM_D7_输出动作与BSW交互.md",
-    "模块/BswM/03_调用逻辑/BswM_D6_定时器与延迟动作调用逻辑.md",
-    "模块/BswM/03_调用逻辑/BswM_D5_状态转换表.md"
+    "模块/BswM/03_调用逻辑/BswM_函数调用层级.md"
   ]
 }
