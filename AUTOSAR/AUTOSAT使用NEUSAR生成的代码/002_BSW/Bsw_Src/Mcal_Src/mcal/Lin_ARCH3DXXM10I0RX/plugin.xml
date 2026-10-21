@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+  <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="Lin_ModuleId"
+             name="Lin Module">
+
+    <module id="Lin_CCFC3007PT"
+            label="Lin"
+            mandatory="false"
+            allowMultiple="false"
+            description="Lin BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Lin"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3007PT"/>
+    </module>
+    <module id="Lin_CCFC3008PT"
+            label="Lin"
+            mandatory="false"
+            allowMultiple="false"
+            description="Lin BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Lin"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PT"/>
+    </module>
+    <module id="Lin_CCFC3007BC"
+            label="Lin"
+            mandatory="false"
+            allowMultiple="false"
+            description="Lin BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Lin"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3007BC"/>
+    </module>
+    <module id="Lin_CCFC3008PC"
+            label="Lin"
+            mandatory="false"
+            allowMultiple="false"
+            description="Lin BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Lin"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PC"/>
+    </module>
+    <module id="Lin_CCFC3012PT"
+            label="Lin"
+            mandatory="false"
+            allowMultiple="false"
+            description="Lin BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Lin"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3012PT"/>
+    </module>
+    <module id="Lin_CCFC3008PCSN"
+            label="Lin"
+            mandatory="false"
+            allowMultiple="false"
+            description="Lin BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Lin"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PCSN"/>
+    </module>
+    <module id="Lin_CCFC3010PT"
+            label="Lin"
+            mandatory="false"
+            allowMultiple="false"
+            description="Lin BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Lin"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3010PT"/>
+    </module>
+    <module id="Lin_CCFC3011PT"
+            label="Lin"
+            mandatory="false"
+            allowMultiple="false"
+            description="Lin BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Lin"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3011PT"/>
+    </module>
+    <module id="Lin_CCFC3008PCSA"
+            label="Lin"
+            mandatory="false"
+            allowMultiple="false"
+            description="Lin BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Lin"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PCSA"/>
+    </module>
+
+    <module id="Lin_CCFC3010PTD"
+            label="Lin"
+            mandatory="false"
+            allowMultiple="false"
+            description="Lin BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Lin"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3010PTD"/>
+    </module>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="Lin_ConfigId"
+             name="Lin Configuration">
+
+    <configuration moduleId="Lin_CCFC3007PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Lin -->
+          <resource value="config/Lin.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/LinConfig/Lin"/>
+      </data>
+      <editor id="Lin_Editor_01"
+              label="Default"
+              tooltip="Lin BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/LinConfig/Lin"/>
+          <parameter name="title" value="Lin"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Lin_CCFC3008PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Lin -->
+          <resource value="config/Lin.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/LinConfig/Lin"/>
+      </data>
+      <editor id="Lin_Editor_02"
+              label="Default"
+              tooltip="Lin BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/LinConfig/Lin"/>
+          <parameter name="title" value="Lin"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Lin_CCFC3007BC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Lin -->
+          <resource value="config/Lin.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/LinConfig/Lin"/>
+      </data>
+      <editor id="Lin_Editor_03"
+              label="Default"
+              tooltip="Lin BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/LinConfig/Lin"/>
+          <parameter name="title" value="Lin"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Lin_CCFC3012PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Lin -->
+          <resource value="config/Lin.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/LinConfig/Lin"/>
+      </data>
+      <editor id="Lin_Editor_04"
+              label="Default"
+              tooltip="Lin BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/LinConfig/Lin"/>
+          <parameter name="title" value="Lin"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Lin_CCFC3008PC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Lin -->
+          <resource value="config/Lin.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/LinConfig/Lin"/>
+      </data>
+      <editor id="Lin_Editor_05"
+              label="Default"
+              tooltip="Lin BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/LinConfig/Lin"/>
+          <parameter name="title" value="Lin"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Lin_CCFC3008PCSN">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Lin -->
+          <resource value="config/Lin.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/LinConfig/Lin"/>
+      </data>
+      <editor id="Lin_Editor_06"
+              label="Default"
+              tooltip="Lin BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/LinConfig/Lin"/>
+          <parameter name="title" value="Lin"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Lin_CCFC3010PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <resource value="config/Lin.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/LinConfig/Lin"/>
+      </data>
+      <editor id="Lin_Editor_07"
+              label="Default"
+              tooltip="Lin BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/LinConfig/Lin"/>
+          <parameter name="title" value="Lin"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Lin_CCFC3011PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <resource value="config/Lin.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/LinConfig/Lin"/>
+      </data>
+      <editor id="Lin_Editor_08"
+              label="Default"
+              tooltip="Lin BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/LinConfig/Lin"/>
+          <parameter name="title" value="Lin"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Lin_CCFC3008PCSA">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <resource value="config/Lin.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/LinConfig/Lin"/>
+      </data>
+      <editor id="Lin_Editor_09"
+              label="Default"
+              tooltip="Lin BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/LinConfig/Lin"/>
+          <parameter name="title" value="Lin"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Lin_CCFC3010PTD">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Lin -->
+          <resource value="config/Lin.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/LinConfig/Lin"/>
+      </data>
+      <editor id="Lin_Editor_10"
+              label="Default"
+              tooltip="Lin BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/LinConfig/Lin"/>
+          <parameter name="title" value="Lin"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+             id="EPCGenerator"
+             name="EPC Generator">
+
+    <generator moduleId="Lin_CCFC3007PT"
+                 id="Lin_Generator_01"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Lin_CCFC3008PT"
+                 id="Lin_Generator_02"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Lin_CCFC3007BC"
+                 id="Lin_Generator_03"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Lin_CCFC3012PT"
+                 id="Lin_Generator_04"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Lin_CCFC3008PC"
+                 id="Lin_Generator_05"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Lin_CCFC3008PCSN"
+                 id="Lin_Generator_06"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+    <generator moduleId="Lin_CCFC3010PT"
+                 id="Lin_Generator_07"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+    <generator moduleId="Lin_CCFC3011PT"
+                 id="Lin_Generator_08"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+    <generator moduleId="Lin_CCFC3008PCSA"
+                 id="Lin_Generator_09"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Lin_CCFC3010PTD"
+                 id="Lin_Generator_10"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="Lin_GeneratorId"
+              name="Lin Generator">
+
+    <generator moduleId="Lin_CCFC3007PT"
+               id="Lin_Templates_01"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Lin_CCFC3008PT"
+               id="Lin_Templates_02"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Lin_CCFC3007BC"
+               id="Lin_Templates_03"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Lin_CCFC3012PT"
+               id="Lin_Templates_04"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Lin_CCFC3008PC"
+               id="Lin_Templates_05"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Lin_CCFC3008PCSN"
+               id="Lin_Templates_06"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Lin_CCFC3010PT"
+               id="Lin_Templates_07"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+    <generator moduleId="Lin_CCFC3011PT"
+               id="Lin_Templates_08"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+    <generator moduleId="Lin_CCFC3008PCSA"
+               id="Lin_Templates_09"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Lin_CCFC3010PTD"
+               id="Lin_Templates_10"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+  </extension>
+
+  <extension point="org.eclipse.help.toc">
+    <toc file="anchors.xml" primary="true"/>
+    <toc file="$nl$/Lin/toc.xml" primary="false"/>
+    <!-- toc file="$nl$/ReleaseNotes/toc.xml" primary="false"/ !-->
+  </extension>
+</plugin>

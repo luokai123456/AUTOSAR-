@@ -1,0 +1,22 @@
+
+Name: config/Can.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426031043762450936463035091266516851753169349644863
+ 8977749683917741722320461848639347335302321142022157
+
+Name: generate/include/Can_Cfg.h
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426423473451281805779895924150712447555094864679636
+ 3166671999367185834338060815361210205709827415405303
+
+Name: generate/source/Can_Cfg.c
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425129648086280730882206580268616258686360506544372
+ 2245692746566824401792764420015029720616244533689677
+

@@ -1,0 +1,22 @@
+
+Name: generate/source/Can_176_CanFD_Cfg.c
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422380168835678830831553864550232473555762922859800
+ 7037115877167847314968700257126264206303672888335219
+
+Name: generate/include/Can_176_CanFD_Cfg.h
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594746968096697412908311939938406676365119473232108739
+ 214126409499757518868442460234756105292404464818620492
+
+Name: config/Can_176_CanFD.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773973246335757795269566404050895036141504660827023
+ 449036183217637163444306292399622287216267242715259597
+

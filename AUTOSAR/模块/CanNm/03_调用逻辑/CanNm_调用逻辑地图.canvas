@@ -1,0 +1,28 @@
+{
+	"nodes":[
+		{"id":"n_hub","type":"file","file":"模块/CanNm/03_调用逻辑/CanNm_调用逻辑总览.md","x":0,"y":0,"width":420,"height":150,"color":"4"},
+		{"id":"n_d1","type":"file","file":"模块/CanNm/03_调用逻辑/CanNm_D1_主动唤醒调用逻辑.md","x":-620,"y":260,"width":360,"height":130},
+		{"id":"n_d2","type":"file","file":"模块/CanNm/03_调用逻辑/CanNm_D2_被动唤醒调用逻辑.md","x":-220,"y":260,"width":360,"height":130},
+		{"id":"n_d3","type":"file","file":"模块/CanNm/03_调用逻辑/CanNm_D3_主状态转移逻辑.md","x":200,"y":500,"width":360,"height":130,"color":"6"},
+		{"id":"n_d4","type":"file","file":"模块/CanNm/03_调用逻辑/CanNm_D4_状态转换表.md","x":640,"y":500,"width":360,"height":130,"color":"6"},
+		{"id":"n_d5","type":"file","file":"模块/CanNm/03_调用逻辑/CanNm_D5_周期发送与降载调用逻辑.md","x":-620,"y":780,"width":380,"height":130},
+		{"id":"n_d6","type":"file","file":"模块/CanNm/03_调用逻辑/CanNm_D6_通信控制调用逻辑.md","x":-180,"y":780,"width":360,"height":130},
+		{"id":"n_d7","type":"file","file":"模块/CanNm/03_调用逻辑/CanNm_D7_扩展特性调用逻辑.md","x":240,"y":780,"width":360,"height":130},
+		{"id":"n_lv","type":"file","file":"模块/CanNm/03_调用逻辑/CanNm_函数调用层级.md","x":-620,"y":1020,"width":360,"height":120},
+		{"id":"n_gv","type":"file","file":"模块/CanNm/03_调用逻辑/CanNm_全局变量说明.md","x":-180,"y":1020,"width":360,"height":120},
+		{"id":"n_mf","type":"file","file":"模块/CanNm/04_MainFunction流程/CanNm_MainFunction调用逻辑.md","x":240,"y":1020,"width":400,"height":130}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"n_d1","fromSide":"bottom","toNode":"n_d3","toSide":"top"},
+		{"id":"e2","fromNode":"n_d2","fromSide":"bottom","toNode":"n_d3","toSide":"top"},
+		{"id":"e3","fromNode":"n_d3","fromSide":"right","toNode":"n_d4","toSide":"left"},
+		{"id":"e4","fromNode":"n_d3","fromSide":"bottom","toNode":"n_d5","toSide":"top"},
+		{"id":"e5","fromNode":"n_d3","fromSide":"bottom","toNode":"n_d6","toSide":"top"},
+		{"id":"e6","fromNode":"n_d3","fromSide":"bottom","toNode":"n_d7","toSide":"top"},
+		{"id":"e7","fromNode":"n_hub","fromSide":"bottom","toNode":"n_d1","toSide":"top"},
+		{"id":"e8","fromNode":"n_hub","fromSide":"bottom","toNode":"n_d2","toSide":"top"},
+		{"id":"e9","fromNode":"n_lv","fromSide":"top","toNode":"n_hub","toSide":"bottom"},
+		{"id":"e10","fromNode":"n_gv","fromSide":"top","toNode":"n_hub","toSide":"bottom"},
+		{"id":"e11","fromNode":"n_mf","fromSide":"left","toNode":"n_d7","toSide":"bottom"}
+	]
+}

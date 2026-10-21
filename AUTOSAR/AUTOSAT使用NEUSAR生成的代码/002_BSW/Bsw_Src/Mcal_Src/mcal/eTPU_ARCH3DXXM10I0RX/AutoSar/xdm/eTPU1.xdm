@@ -1,0 +1,1548 @@
+<?xml version='1.0'?>
+<datamodel version="7.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:ce="http://www.tresos.de/_projects/DataModel2/18/childenable.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="eTPUConfig" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="eTPU" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.4.0</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC" 
+                   value="EN: This container holds the configuration of a single ETPU Driver."/>
+              <a:a name="LOWER-MULTIPLICITY" value="1"/>
+              <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+              <a:a name="RELEASE" value="asc:4.4.0"/>
+              <a:a name="UPPER-MULTIPLICITY" value="*"/>
+              <a:a name="UUID" value="3db3850a-dd22-4180-a582-ab48f9cd3f0c"/>
+              <v:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN">
+                <a:a name="DESC" 
+                     value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Post Build Variant Used"/>
+                <a:a name="ORIGIN" value="EB"/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="UUID" value="d542189e-cd06-474d-891d-c1e7987132a0"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="false"/>
+                <a:da name="READONLY" value="FALSE"/>
+                <a:da name="TOOLTIP" 
+                      value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+              </v:var>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:a name="UUID" value="cc2ff55c-7bd3-44b3-9425-c344af4abdf6"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="VariantPostBuild"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuild</a:v>
+                  <a:v>VariantPreCompile</a:v>
+                </a:da>
+              </v:var>
+
+
+        <v:ctr name="ModuleList" type="IDENTIFIABLE">
+              <a:a name="UUID" value="ECUC:c7525242-deac-4777-bef8-4c2672af394f"/>
+
+            <v:var name="EbppaModuleEnable" type="BOOLEAN">
+              <a:a name="DESC" 
+                   value="EN: Enable or disable Ebppa Module."/>
+              <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                   type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+              </a:a>
+              <a:a name="ORIGIN" value="CCFC"/>
+              <a:a name="SCOPE" value="LOCAL"/>
+              <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+              <a:a name="UUID" value="6cf86670-45f1-4cfe-916a-a351ft93d024"/>
+              <a:a name="__ORIGIN" value="Elektrobit"/>
+              <a:da name="DEFAULT" value="true"/>
+            </v:var>
+
+
+            <v:var name="QomModuleEnable" type="BOOLEAN">
+              <a:a name="DESC" 
+                   value="EN: Enable or disable Qom Module."/>
+              <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                   type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+              </a:a>
+              <a:a name="ORIGIN" value="CCFC"/>
+              <a:a name="SCOPE" value="LOCAL"/>
+              <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+              <a:a name="UUID" value="6cf86670-45f1-4cfe-916a-a351to91d004"/>
+              <a:a name="__ORIGIN" value="Elektrobit"/>
+              <a:da name="DEFAULT" value="true"/>
+            </v:var>
+
+
+            <v:var name="SpwmModuleEnable" type="BOOLEAN">
+              <a:a name="DESC" 
+                   value="EN: Enable or disable Spwm Module."/>
+              <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                   type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+              </a:a>
+              <a:a name="ORIGIN" value="CCFC"/>
+              <a:a name="SCOPE" value="LOCAL"/>
+              <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+              <a:a name="UUID" value="6cf86670-45f1-4cfe-916a-a471fv43d004"/>
+              <a:a name="__ORIGIN" value="Elektrobit"/>
+              <a:da name="DEFAULT" value="true"/>
+            </v:var>
+        </v:ctr>
+
+              <!-- @implements eTPU_ConfigList --> 
+              <v:ctr name="eTPU_ConfigList" type="IDENTIFIABLE">
+                <a:a name="LABEL" value="eTPU ConfigList"/>
+                <a:a name="DESC">
+                    <a:v>
+                        <![CDATA[EN:<html><p>
+                            List of eTPU. 
+                        </p></html>]]>
+                    </a:v>
+                </a:a>
+                <a:a name="UUID" value="ECUC:c7525242-deac-4777-bef8-4c2672af382e"/>
+                <!-- @implements eTPU_Config -->
+                <v:lst name="eTPU_Config" type="MAP">
+                    <a:da name="MIN" value="1"/>
+                    <a:da name="MAX" value="2"/>
+                    <v:ctr name="eTPU_Config" type="IDENTIFIABLE">
+                        <a:a name="LABEL" value="eTPU Config"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>
+                                    Configuration description of eTPU  
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="UUID" value="ECUC:456d6d1f-3e59-4e2c-8c84-03f647a5db62"/>
+                  
+                    <v:var name="etpuInstanceId" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: Code RAM MISC Enable." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_CONFIG_INSTANCE_A_B" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_CONFIG_INSTANCE_A_B</a:v>
+                      <a:v>ETPU_CONFIG_INSTANCE_C</a:v>
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="ETPU_MCR_register" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: Code RAM MISC Enable." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_MISC_ENABLE" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_MISC_ENABLE</a:v>
+                      <a:v>ETPU_MISC_DISABLE</a:v>
+                    </a:da>
+                  </v:var>
+                  
+              <v:ctr name="engine_A" type="IDENTIFIABLE">
+                  <a:a name="DESC" value="EN: Configure eTPU engine A." />
+                  <a:a name="UUID" value="e4a13be6-e686-4996-838a-251635c72817" />
+
+                  <v:var name="ETPU_FILTER_CLOCK_A" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: Filter Prescaler Clock." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_FILTER_CLOCK_DIV8" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_FILTER_CLOCK_DIV2</a:v>
+                      <a:v>ETPU_FILTER_CLOCK_DIV4</a:v>
+                      <a:v>ETPU_FILTER_CLOCK_DIV8</a:v>
+                      <a:v>ETPU_FILTER_CLOCK_DIV16</a:v>
+                      <a:v>ETPU_FILTER_CLOCK_DIV32</a:v>
+                      <a:v>ETPU_FILTER_CLOCK_DIV64</a:v>
+                      <a:v>ETPU_FILTER_CLOCK_DIV128</a:v>
+                      <a:v>ETPU_FILTER_CLOCK_DIV256</a:v>
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="ETPU_CHAN_FILTER_A" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: Channel filter mode." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_CHAN_FILTER_3SAMPLE" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_CHAN_FILTER_2SAMPLE</a:v>
+                      <a:v>ETPU_CHAN_FILTER_3SAMPLE</a:v>
+                    </a:da>
+                  </v:var>
+                </v:ctr>
+                
+                <v:ctr name="engine_A_timebases" type="IDENTIFIABLE">
+                  <a:a name="DESC" value="EN: Configure eTPU engine A timebases." />
+                  <a:a name="UUID" value="e4a13be6-e686-4996-838a-251635c72817" />
+
+                  <v:var name="TCR2_Clock_A" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: TCR2 Clock/Gate Control." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_TCR2CTL_DIV8" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_TCR2CTL_GATEDDIV8</a:v>
+                      <a:v>ETPU_TCR2CTL_RISE</a:v>
+                      <a:v>ETPU_TCR2CTL_FALL</a:v>
+                      <a:v>ETPU_TCR2CTL_RISEFALL</a:v>
+                      <a:v>ETPU_TCR2CTL_DIV8</a:v>
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="TCR2_Prescaler_A" type="INTEGER">
+                    <a:a name="DESC" value="EN: ." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="19" />
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </v:var>
+
+                  <v:var name="TCR1_Clock_A" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: TCR1 Clock/Gate Control." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_TCR1CTL_DIV2" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_TCR1CTL_TCRCLK</a:v>
+                      <a:v>ETPU_TCR1CTL_DIV2</a:v>
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="TCR1_Prescaler_A" type="INTEGER">
+                    <a:a name="DESC" value="EN: ." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="31" />
+                    <a:tst expr="&lt;=63"/>
+                    <a:tst expr="&gt;=0"/>
+                  </v:var>
+
+                  <v:var name="stacr_A" type="INTEGER">
+                    <a:a name="DESC" value="EN: TCR1 Clock/Gate Control." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="0" />
+                  </v:var>
+                </v:ctr>
+
+                <v:ctr name="engine_B" type="IDENTIFIABLE">
+                  <a:a name="DESC" value="EN: Configure eTPU engine B." />
+                  <a:a name="UUID" value="e4a13be6-e686-4996-838a-251635c72817" />
+                  
+                  <v:var name="ETPU_FILTER_CLOCK_B" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: Filter Prescaler Clock." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_TCR2CTL_DIV8" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_TCR2CTL_DIV8</a:v>
+                      <a:v>ETPU_FILTER_CLOCK_DIV2</a:v>
+                      <a:v>ETPU_FILTER_CLOCK_DIV4</a:v>
+                      <a:v>ETPU_FILTER_CLOCK_DIV8</a:v>
+                      <a:v>ETPU_FILTER_CLOCK_DIV16</a:v>
+                      <a:v>ETPU_FILTER_CLOCK_DIV32</a:v>
+                      <a:v>ETPU_FILTER_CLOCK_DIV64</a:v>
+                      <a:v>ETPU_FILTER_CLOCK_DIV128</a:v>
+                      <a:v>ETPU_FILTER_CLOCK_DIV256</a:v>
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="ETPU_CHAN_FILTER_B" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: Channel filter mode." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_CHAN_FILTER_3SAMPLE" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_CHAN_FILTER_2SAMPLE</a:v>
+                      <a:v>ETPU_CHAN_FILTER_3SAMPLE</a:v>
+                    </a:da>
+                  </v:var>
+
+                </v:ctr>
+
+                <v:ctr name="engine_B_timebases" type="IDENTIFIABLE">
+                  <a:a name="DESC" value="EN: Configure eTPU engine B timebases." />
+                  <a:a name="UUID" value="e4a13be6-e686-4996-838a-251635c72817" />
+
+                  <v:var name="TCR2_Clock_B" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: TCR2 Clock/Gate Control." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_TCR2CTL_DIV8" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_TCR2CTL_GATEDDIV8</a:v>
+                      <a:v>ETPU_TCR2CTL_RISE</a:v>
+                      <a:v>ETPU_TCR2CTL_FALL</a:v>
+                      <a:v>ETPU_TCR2CTL_RISEFALL</a:v>
+                      <a:v>ETPU_TCR2CTL_DIV8</a:v>
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="TCR2_Prescaler_B" type="INTEGER">
+                    <a:a name="DESC" value="EN: ." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="19" />
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </v:var>
+
+                  <v:var name="TCR1_Clock_B" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: TCR1 Clock/Gate Control." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_TCR1CTL_DIV2" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_TCR1CTL_TCRCLK</a:v>
+                      <a:v>ETPU_TCR1CTL_DIV2</a:v>
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="TCR1_Prescaler_B" type="INTEGER">
+                    <a:a name="DESC" value="EN: ." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="3" />
+                    <a:tst expr="&lt;=63"/>
+                    <a:tst expr="&gt;=0"/>
+                  </v:var>
+
+                  <v:var name="stacr_B" type="INTEGER">
+                    <a:a name="DESC" value="EN: TCR1 Clock/Gate Control." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="0" />
+                  </v:var>
+                </v:ctr>
+
+                  <v:ref name="EtpuClockref" type="REFERENCE">
+                  <a:a name="DESC" 
+                        value="EN: Reference to the System Clock Divider of the mcu module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                        value="f39c116f-78e4-4c92-8782-6dd6a6116e11"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="REF" 
+                    value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint"/>
+                </v:ref>
+
+              </v:ctr>
+            </v:lst>
+            </v:ctr>
+
+            <!-- @implements QOM_Config --> 
+            <v:ctr name="QOM_Config" type="IDENTIFIABLE">
+              <a:a name="LABEL" value="QOM Config"/>
+              <a:a name="DESC">
+                  <a:v>
+                      <![CDATA[EN:<html><p>
+                          List of QOM. 
+                      </p></html>]]>
+                  </a:v>
+              </a:a>
+              <a:a name="UUID" value="ECUC:c7525242-deac-4777-bef8-4c2672af382f"/>
+              <v:lst name="eTPU_QOM_Config" type="MAP">
+                      <a:da name="MAX" value="96"/>
+                      <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../../ModuleList/QomModuleEnable='true')"/>
+                        </a:da>
+                      <v:ctr name="eTPU_QOM_Config" type="IDENTIFIABLE">
+                          <a:a name="LABEL" value="eTPU Qom Config"/>
+                          <a:a name="DESC">
+                              <a:v>
+                                  <![CDATA[EN:<html><p>
+                                      Configuration description of eTPU QOM
+                                  </p></html>]]>
+                              </a:v>
+                          </a:a>
+                          <a:a name="UUID" value="ECUC:456d6d1f-3e59-4e2c-8c84-03f647a5db62"/>
+               <a:da name="INVALID" type="XPath">
+                  <a:tst expr="(../../../Ebppa_Config/*/@name = @name) and (../../../ModuleList/EbppaModuleEnable = 'true') and (../../../ModuleList/QomModuleEnable = 'true')" true="QOM: QOM channel name must be unique from EBPPA channel name."/>
+                  <a:tst expr="(../../../sPwm_master/*/@name = @name) and (../../../ModuleList/SpwmModuleEnable = 'true') and (../../../ModuleList/QomModuleEnable = 'true')" true="QOM: QOM channel name must be unique from SPWM_master channel name."/>
+                  <a:tst expr="(../../../sPwm_master/*/sPwm_Config/*/@name = @name) and (../../../ModuleList/SpwmModuleEnable = 'true') and (../../../ModuleList/QomModuleEnable = 'true')" true="QOM: QOM channel name must be unique from SPWM_Config channel name."/>
+                </a:da> 
+                          <v:var name="etpuGroup" type="ENUMERATION">
+                            <a:a name="DESC" value="EN: Code RAM MISC Enable." />
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC" />
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                            <a:a name="SCOPE" value="LOCAL" />
+                            <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                            <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="DEFAULT" value="ETPU_INSTANCE_A_B" />
+                            <a:da name="RANGE">
+                              <a:v>ETPU_INSTANCE_A_B</a:v>
+                              <a:v>ETPU_INSTANCE_C</a:v>
+                            </a:da>
+                          </v:var>
+
+                        <v:var name="channel" type="INTEGER">
+                          <a:a name="DESC" value="EN: Code RAM MISC Enable." />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" />
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                          <a:a name="SCOPE" value="LOCAL" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                          <a:a name="__ORIGIN" value="Elektrobit" />
+                          <a:da name="DEFAULT" value="2" />
+                          <a:da name="INVALID" type="XPath">
+                                <a:tst expr="(../../../../Ebppa_Config/*[etpuGroup = node:current()/../etpuGroup and channel = node:current()]) and (../../../../ModuleList/EbppaModuleEnable = 'true') and (../../../../ModuleList/QomModuleEnable = 'true')" true="QOM: The channel configuration of QOM and EBPPA is the same"/>
+                                <a:tst expr="(../../../../sPwm_master/*[etpuInstanceId = node:current()/../etpuGroup and channel = node:current()]) and (../../../../ModuleList/SpwmModuleEnable = 'true') and (../../../../ModuleList/QomModuleEnable = 'true')" true="QOM: The channel configuration of QOM and SPWM_master is the same"/>
+                                <a:tst expr="(../../../../sPwm_master/*/sPwm_Config/*[etpuInstanceId = node:current()/../etpuGroup and channel = node:current()]) and (../../../../ModuleList/SpwmModuleEnable = 'true') and (../../../../ModuleList/QomModuleEnable = 'true')" true="QOM: The channel configuration of QOM and SPWM_Config is the same"/>
+                                <a:tst expr="( (num:i(.)  > num:i(31) ) and (num:i(64) > num:i(.)) )" true="qom channel id must be 0-31 for ETPU_A and 64-95 for ETPU_B"/> 
+                                <a:tst expr="(node:current()/../../*[etpuGroup = node:current()/../etpuGroup and channel = node:current() and @index != node:current()/../@index]) and (../../../../ModuleList/QomModuleEnable = 'true') " true="QOM: Channel id is duplicated in this configuration"/>
+                          </a:da>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=95"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="priority" type="ENUMERATION">
+                            <a:a name="DESC" value="EN: Filter Prescaler Clock." />
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC" />
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                            <a:a name="SCOPE" value="LOCAL" />
+                            <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                            <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="DEFAULT" value="ETPU_PRIORITY_MIDDLE" />
+                            <a:da name="RANGE">
+                              <a:v>ETPU_PRIORITY_MIDDLE</a:v>
+                              <a:v>ETPU_PRIORITY_HIGH</a:v>
+                              <a:v>ETPU_PRIORITY_LOW</a:v>
+                              <a:v>ETPU_PRIORITY_DISABLE</a:v>
+                              </a:da>
+                          </v:var>
+
+                          <v:var name="mode" type="ENUMERATION">
+                            <a:a name="DESC" value="EN: Filter Prescaler Clock." />
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC" />
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                            <a:a name="SCOPE" value="LOCAL" />
+                            <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                            <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="DEFAULT" value="FS_ETPU_QOM_SINGLE_SHOT" />
+                            <a:da name="RANGE">
+                              <a:v>FS_ETPU_QOM_SINGLE_SHOT</a:v>
+                              <a:v>FS_ETPU_QOM_LOOP</a:v>
+                              <a:v>FS_ETPU_QOM_CONTINUOUS</a:v>
+                              <a:v>FS_ETPU_QOM_CONTINUOUS_A</a:v>
+                              </a:da>
+                          </v:var>
+
+                          <v:var name="timebase" type="ENUMERATION">
+                            <a:a name="DESC" value="EN: Filter Prescaler Clock." />
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC" />
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                            <a:a name="SCOPE" value="LOCAL" />
+                            <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                            <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="DEFAULT" value="ETPU_TCR1" />
+                            <a:da name="RANGE">
+                              <a:v>ETPU_TCR1</a:v>
+                              <a:v>ETPU_TCR2</a:v>
+                            </a:da>
+                          </v:var>
+
+                          <v:var name="init_pin" type="ENUMERATION">
+                            <a:a name="DESC" value="EN: Filter Prescaler Clock." />
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC" />
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                            <a:a name="SCOPE" value="LOCAL" />
+                            <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                            <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="DEFAULT" value="FS_ETPU_QOM_INIT_PIN_LOW" />
+                            <a:da name="RANGE">
+                              <a:v>FS_ETPU_QOM_INIT_PIN_LOW</a:v>
+                              <a:v>FS_ETPU_QOM_INIT_PIN_HIGH</a:v>
+                              <a:v>FS_ETPU_QOM_INIT_PIN_NO_CHANGE</a:v>
+                              <a:v>FS_ETPU_QOM_INIT_PIN_LOW_LINK</a:v>
+                              <a:v>FS_ETPU_QOM_INIT_PIN_HIGH_LINK</a:v>
+                              <a:v>FS_ETPU_QOM_INIT_PIN_NO_CHANGE_LINK</a:v>
+                            </a:da>
+                          </v:var>
+
+                          <v:var name="first_match_mode" type="ENUMERATION">
+                            <a:a name="DESC" value="EN: Filter Prescaler Clock." />
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC" />
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                            <a:a name="SCOPE" value="LOCAL" />
+                            <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                            <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="DEFAULT" value="FS_ETPU_QOM_USE_REF_ADDRESS" />
+                            <a:da name="RANGE">
+                              <a:v>FS_ETPU_QOM_IMMEDIATE</a:v>
+                              <a:v>FS_ETPU_QOM_USE_LAST_EVENT</a:v>
+                              <a:v>FS_ETPU_QOM_USE_REF_ADDRESS</a:v>
+                            </a:da>
+                          </v:var>
+
+                          <v:var name="ref" type="INTEGER">
+                          <a:a name="DESC" value="EN: spwm timebase_freq" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" />
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                          <a:a name="SCOPE" value="LOCAL" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                          <a:a name="__ORIGIN" value="Elektrobit" />
+                          <a:da name="DEFAULT" value="0" />
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=4294967295" />
+                            <a:tst expr="&gt;=0" />
+                          </a:da>
+                          </v:var>
+
+                          <v:var name="loop" type="INTEGER">
+                          <a:a name="DESC" value="EN: spwm timebase_freq" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" />
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                          <a:a name="SCOPE" value="LOCAL" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                          <a:a name="__ORIGIN" value="Elektrobit" />
+                          <a:da name="DEFAULT" value="1" />
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=255" />
+                            <a:tst expr="&gt;=0" />
+                          </a:da>
+                          </v:var>
+                          <v:var name="QomCallBack" type="FUNCTION-NAME">
+                            <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                              <a:v><![CDATA[EN:
+                                <html>
+User callback function
+NOTE: please use NULL or NULL_PTR w/o any quotes. If the used string is different from NULL
+or NULL_PTR it will be used as the configured function name.
+                                </html> ]]></a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                              <icc:v class="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                            <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                            <a:a name="UUID" value="ECUC:ed814485-e40a-47fc-a1b3-c575a0511e42" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                            <a:da name="DEFAULT" value="NULL_PTR" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                            <a:da name="INVALID" type="XPath">
+                              <a:tst expr="(
+                                              (normalize-space(node:fallback(., '')) = 'NULL') or
+                                              (normalize-space(node:fallback(., '')) = 'Null') or
+                                              (normalize-space(node:fallback(., '')) = 'false') or
+                                              (normalize-space(node:fallback(., '')) = 'FALSE') or
+                                              (normalize-space(node:fallback(., '')) = 'null') or
+                                              (normalize-space(node:fallback(., '')) = 'null_ptr') or
+                                              (normalize-space(node:fallback(., '')) = 'Null_Ptr')
+                                              )"
+                                  true="Invalid name of the, it must be a valid C function name."/>
+                              <a:tst expr="(normalize-space(node:fallback(., '')) = '&quot;NULL_PTR&quot;') or
+                                              (normalize-space(node:fallback(., '')) = '&quot;NULL&quot;') or
+                                              (normalize-space(node:fallback(., '')) = 'NULL') or
+                                              (text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$'))"
+                                  false="Invalid name, it must be a valid C function name"/>
+                            </a:da>
+                          </v:var>
+                          <v:lst name="Event_Array" type="MAP">
+                            <a:da name="MIN" value="1"/>
+                            <v:ctr name="Event_Array" type="IDENTIFIABLE">
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                                <icc:v mclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                                <icc:v mclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                              </a:a>
+                              <a:a name="UUID" value="ECUC:72b13796-cc7f-418c-83d0-dfa2e3cd48d6" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />                    
+                              <v:lst name="Event_Table" type="MAP">
+                                  <a:da name="MIN" value="1"/>
+                                  <a:da name="MAX" value="96" />
+                                  <v:ctr name="Event_Table" type="IDENTIFIABLE">
+                                    <a:a name="DESC" value="EN: Configure eTPU engine B timebases." />
+                                    <a:a name="UUID" value="e4a13be6-e686-4996-838a-251635c72817" />
+                                      <v:var name="offset" type="INTEGER">
+                                        <a:a name="DESC" value="EN: Code RAM MISC Enable." />
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                        </a:a>
+                                        <a:a name="ORIGIN" value="CCFC" />
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                                        <a:a name="SCOPE" value="LOCAL" />
+                                        <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                                        <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                                        <a:a name="__ORIGIN" value="Elektrobit" />
+                                        <a:da name="DEFAULT" value="500" />
+                                        <a:da name="INVALID" type="Range">
+                                          <a:tst expr="&lt;=65535" />
+                                          <a:tst expr="&gt;=0" />
+                                        </a:da>
+                                      </v:var>
+
+                                              <v:var name="pin" type="INTEGER">
+                                                <a:a name="DESC" value="EN: Code RAM MISC Enable." />
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                  <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                                </a:a>
+                                                <a:a name="ORIGIN" value="CCFC" />
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                                                <a:a name="SCOPE" value="LOCAL" />
+                                                <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                                                <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                                                <a:a name="__ORIGIN" value="Elektrobit" />
+                                                <a:da name="DEFAULT" value="0" />
+                                                <a:da name="INVALID" type="Range">
+                                                  <a:tst expr="&lt;=1" />
+                                                  <a:tst expr="&gt;=0" />
+                                                </a:da>
+                                              </v:var>
+                                          </v:ctr>
+                                      </v:lst> 
+                </v:ctr>
+              </v:lst>
+                </v:ctr>
+              </v:lst>
+            </v:ctr>
+
+            <v:lst name="Ebppa_Config" type="MAP">
+              <a:da name="MAX" value="96" />
+                                     <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../ModuleList/EbppaModuleEnable='true')"/>
+                        </a:da>
+              <v:ctr name="Ebppa_Config" type="IDENTIFIABLE">
+                <a:a name="DESC" value="EN: Configure eTPU engine B timebases." />
+                <a:a name="UUID" value="e4a13be6-e686-4996-838a-251635c72817" />
+               <a:da name="INVALID" type="XPath">
+                  <a:tst expr="(../../QOM_Config/eTPU_QOM_Config/*/@name = @name) and (../../ModuleList/QomModuleEnable = 'true') and (../../ModuleList/EbppaModuleEnable = 'true')" true="EBPPA: Ebppa channel name must be unique from QOM channel name."/>
+                  <a:tst expr="(../../sPwm_master/*/@name = @name) and (../../ModuleList/SpwmModuleEnable = 'true') and (../../ModuleList/EbppaModuleEnable = 'true')" true="EBPPA: Ebppa channel name must be unique from SPWM_master channel name."/>
+                  <a:tst expr="(../../sPwm_master/*/sPwm_Config/*/@name = @name) and (../../ModuleList/SpwmModuleEnable = 'true') and (../../ModuleList/EbppaModuleEnable = 'true')" true="EBPPA: Ebppa channel name must be unique from SPWM_Config channel name."/>
+                </a:da> 
+                <v:var name="EbppaChannelId" type="INTEGER">
+                      <a:a name="DESC" 
+                           value="EN: Channel Id of the Ebppa channel. This value will be assigned to the symbolic name derived of the EbppaChannel container short name."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="ECU"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                      <a:a name="UUID" 
+                           value="52d1bb5b-60bf-47f2-80b0-56d0427bc0a2"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index, '0')"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=63"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="RANGE" type="XPath">
+                        <a:tst expr="text:uniq(node:fallback(../../*/EbppaChannelId, text:split('1 2 3')), node:fallback(., 0))" false="Channel id is duplicated in this configuration"/>
+                            <a:tst expr="node:fallback(., 0) &lt; count(node:fallback(../../*, text:split('1 2 3')))" false="It can't be assigned an id higher than the number of defined channels"/>
+                    </a:da>
+                    </v:var>
+  
+                <v:var name="etpuGroup" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: Code RAM MISC Enable." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_INSTANCE_A_B" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_INSTANCE_A_B</a:v>
+                      <a:v>ETPU_INSTANCE_C</a:v>
+                    </a:da>
+                  </v:var>
+                
+                <v:var name="channel" type="INTEGER">
+                  <a:a name="DESC" value="EN: Code RAM MISC Enable." />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="2" />
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=95"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+
+                <v:var name="priority" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: Filter Prescaler Clock." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_PRIORITY_MIDDLE" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_PRIORITY_MIDDLE</a:v>
+                      <a:v>ETPU_PRIORITY_HIGH</a:v>
+                      <a:v>ETPU_PRIORITY_LOW</a:v>
+                      <a:v>ETPU_PRIORITY_DISABLE</a:v>
+                      </a:da>
+                  </v:var>
+
+                  <v:var name="timebase" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: Filter Prescaler Clock." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_EBPPA_INIT_TCR1" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_EBPPA_INIT_TCR1</a:v>
+                      <a:v>ETPU_EBPPA_INIT_TCR2</a:v>
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="mode" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: Filter Prescaler Clock." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_EBPPA_HIGH_PULSE" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_EBPPA_LOW_PULSE</a:v>
+                      <a:v>ETPU_EBPPA_HIGH_PULSE</a:v>
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="max_count" type="INTEGER">
+                    <a:a name="DESC" value="EN: Filter Prescaler Clock." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="1" />
+                    <a:tst expr="&lt;=63"/>
+                    <a:tst expr="&gt;=0"/>
+                  </v:var>
+
+                  <v:var name="sample_time" type="INTEGER">
+                    <a:a name="DESC" value="EN: Filter Prescaler Clock." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="65535" />
+                  </v:var>
+                  <v:lst name="EbppaChannelEcucPartitionRef">
+                      <v:ref name="EbppaChannelEcucPartitionRef" type="REFERENCE">
+                        <a:a name="DESC">
+                          <a:v>EN: Maps an Ebppa channel to zero or multiple ECUC partitions to limit the access to this channel. The ECUC partitions referenced are a subset of the ECUC partitions where the ICU driver is mapped to.</a:v>
+                          <a:v>EN: Tags: atp.Status=draft</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                          <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                          <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="SCOPE" value="ECU"/>
+                        <a:a name="UUID" 
+                             value="a235f850-b525-4634-b557-d2ca3c98271a"/>
+                        <a:a name="__ORIGIN" value="Elektrobit"/>
+                        <a:da name="REF" 
+                              value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition"/>
+                        <a:da name="INVALID" type="XPath">
+                        <a:tst expr="node:containsValue(../../EbppaChannelEcucPartitionRef/*, node:value(.))"
+                                    false="The ECUC partition referenced by EbppaChannelEcucPartitionRef shall be a subset of the ECUC partitions referenced by EbppaChannelEcucPartitionRef."/>
+                        </a:da>
+                      </v:ref>
+                    </v:lst>
+              </v:ctr>
+            </v:lst>
+
+        <!-- @implements sPwm_Config -->
+            <v:lst name="sPwm_master" type="MAP">
+                                  <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../ModuleList/SpwmModuleEnable='true')"/>
+                        </a:da>
+              <v:ctr name="sPwm_master" type="IDENTIFIABLE">
+                <a:a name="DESC" value="EN: Configure SPWM master." />
+                <a:a name="UUID" value="e4a13be6-e686-4996-838a-251635c72817" />
+                <a:da name="INVALID" type="XPath">
+                  <a:tst expr="(../../QOM_Config/eTPU_QOM_Config/*/@name = @name) and (../../ModuleList/QomModuleEnable = 'true') and (../../ModuleList/SpwmModuleEnable = 'true')" true="SPWM_master:SPWM_master channel name must be unique from QOM channel name."/>
+                  <a:tst expr="(../../Ebppa_Config/*/@name = @name) and (../../ModuleList/SpwmModuleEnable = 'true') and (../../ModuleList/EbppaModuleEnable = 'true')" true="SPWM_master: SPWM_master channel name must be unique from EBPPA channel name."/>
+                  <a:tst expr="(../../sPwm_master/*/sPwm_Config/*/@name = @name) and (../../ModuleList/SpwmModuleEnable = 'true')" true="SPWM_master: SPWM_master channel name must be unique from SPWM_Config channel name."/>
+                </a:da> 
+
+                <v:var name="etpuInstanceId" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: Configure SPWM instanceid." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_INSTANCE_A_B" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_INSTANCE_A_B</a:v>
+                      <a:v>ETPU_INSTANCE_C</a:v>
+                    </a:da>
+                  </v:var>
+                
+                <v:var name="channel" type="INTEGER">
+                  <a:a name="DESC" value="EN: spwm channel." />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="0" />
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=95"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="INVALID" type="XPath">                  
+                                <a:tst expr="(node:current()/../../*[etpuInstanceId = node:current()/../etpuInstanceId and channel = node:current() and @index != node:current()/../@index]) and (../../../ModuleList/SpwmModuleEnable = 'true') " true="SPWM_master: Channel id is duplicated in this configuration"/>
+                        
+                                <a:tst expr="(../../../QOM_Config/eTPU_QOM_Config/*[etpuGroup = node:current()/../etpuInstanceId and channel = node:current()]) and (../../../ModuleList/QomModuleEnable = 'true') and (../../../ModuleList/SpwmModuleEnable = 'true')" true="SPWM_master:The channel configuration of SPWM_master and QOM is the same"/>
+                                <a:tst expr="(../../../Ebppa_Config/*[etpuGroup = node:current()/../etpuInstanceId and channel = node:current()]) and (../../../ModuleList/EbppaModuleEnable = 'true') and (../../../ModuleList/SpwmModuleEnable = 'true')" true="SPWM_master:The channel configuration of SPWM_master and EBPPA is the same"/>
+                                <a:tst expr="(../../../sPwm_master/*/sPwm_Config/*[etpuInstanceId = node:current()/../etpuInstanceId and channel = node:current()]) and (../../../ModuleList/SpwmModuleEnable = 'true') " true="SPWM_master:The channel configuration of SPWM_master and SPWM_Config is the same"/>
+                                </a:da>
+                </v:var>
+                <v:var name="freq" type="INTEGER">
+                    <a:a name="DESC" value="EN: spwm The cycle range is 1Hz-100kHz, and filling in the numerical 
+                    value corresponds to the corresponding cycle, without the need for conversion" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="1000" />
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=100000" />
+                      <a:tst expr="&gt;=1" />
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="duty" type="INTEGER">
+                    <a:a name="DESC" value="EN: SPWM Duty cycle 0-10000 represents 0% -100%" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="5000" />
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=4294967295" />
+                      <a:tst expr="&gt;=0" />
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="timebase" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: spwm timebase" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_TCR1" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_TCR1</a:v>
+                      <a:v>ETPU_TCR2</a:v>
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="timebase_freq" type="INTEGER">
+                    <a:a name="DESC" value="EN: spwm timebase_freq" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="10000000" />
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=4294967295" />
+                      <a:tst expr="&gt;=0" />
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="reference_mode" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: spwm reference_mode" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_SPWM_IMMEDIATE" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_SPWM_IMMEDIATE</a:v>
+                      <a:v>ETPU_SPWM_REF_IN_PRAM</a:v>
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="reference_ptr" type="FUNCTION-NAME">
+                    <a:a name="DESC" value="EN:spwm reference_ptr" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="NULL_PTR" />
+                  </v:var>
+
+                  <v:var name="DMA_on_falling_edge" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: spwm DMA_on_falling_edge" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_SPWM_NO_FALL_EDGE_INT_DMA" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_SPWM_NO_FALL_EDGE_INT_DMA</a:v>
+                      <a:v>ETPU_SPWM_FALLING_EDGE_INT_DMA</a:v>
+                    </a:da>
+                  </v:var>
+                <v:lst name="sPwmMasterChannelEcucPartitionRef">
+                  <v:ref name="sPwmMasterChannelEcucPartitionRef" type="REFERENCE">
+                    <a:a name="DESC">
+                      <a:v>EN: Maps a sPWM channel to zero or multiple ECUC partitions to limit the access to this channe. The ECUC partitions referenced are a subset of the ECUC partitions where the sPWM driver is mapped to.</a:v>
+                      <a:v>EN: Tags: atp.Status=draft</a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="ECU" />
+                    <a:a name="UUID" value="8c7afa1d-6af4-4b7f-a893-02f222d7b51f" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition" />
+                  </v:ref>
+                </v:lst>
+        
+                <v:lst name="sPwm_Config" type="MAP">
+                    <a:da name="MIN" value="1"/>
+                    <a:da name="MAX" value="8"/>
+                    <v:ctr name="sPwm_Config" type="IDENTIFIABLE">
+                      <a:a name="DESC" value="EN: Configure SPWM master." />
+                      <a:a name="UUID" value="e4a13be6-e686-4996-838a-251635c72817" />
+                  <a:da name="INVALID" type="XPath">
+                  <a:tst expr="(../../../../QOM_Config/eTPU_QOM_Config/*/@name = @name) and (../../../../ModuleList/QomModuleEnable = 'true') and (../../../../ModuleList/SpwmModuleEnable = 'true')" true="SPWM_Config: SPWM_Config channel name must be unique from QOM channel name."/>
+                  <a:tst expr="(../../../../Ebppa_Config/*/@name = @name) and (../../../../ModuleList/EbppaModuleEnable = 'true') and (../../../../ModuleList/SpwmModuleEnable = 'true')" true="SPWM_Config: SPWM_Config channel name must be unique from EBPPA channel name."/>
+                  <a:tst expr="(../../../../sPwm_master/*/@name = @name) and (../../../../ModuleList/SpwmModuleEnable = 'true')" true="SPWM_Config: SPWM_Config channel name must be unique from sPwm_master channel name."/>
+                </a:da>      
+
+                    <v:var name="etpuInstanceId" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: spwm channel etpuInstanceId" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_INSTANCE_A_B" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_INSTANCE_A_B</a:v>
+                      <a:v>ETPU_INSTANCE_C</a:v>
+                    </a:da>
+                    <a:da name="INVALID" type="XPath">
+                    <a:tst expr="(node:current() != node:current()/../../../etpuInstanceId)" true="SPWM_Config: The etpuInstanceId of sPwm_Config is inconsistent with the etpuInstanceId of sPwm_master." />
+                    </a:da>
+                </v:var>
+
+                  <v:var name="channel" type="INTEGER">
+                    <a:a name="DESC" value="EN:spwm channel" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="1" />
+                    <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=95"/>
+                    <a:tst expr="&gt;=0"/>
+                    </a:da>
+                    <a:da name="INVALID" type="XPath">
+                                <a:tst expr="(../../../../../QOM_Config/eTPU_QOM_Config/*[etpuGroup = node:current()/../etpuInstanceId and channel = node:current()]) and (../../../../../ModuleList/QomModuleEnable = 'true') and (../../../../../ModuleList/SpwmModuleEnable = 'true')" true="SPWM_Config: The channel configuration of SPWM_Config and QOM is the same"/>
+                                <a:tst expr="(../../../../../Ebppa_Config/*[etpuGroup = node:current()/../etpuInstanceId and channel = node:current()]) and (../../../../../ModuleList/EbppaModuleEnable = 'true') and (../../../../../ModuleList/SpwmModuleEnable = 'true')" true="SPWM_Config: The channel configuration of SPWM_Config and EBPPA is the same"/>
+                                <a:tst expr="(../../../../../sPwm_master/*[etpuInstanceId = node:current()/../etpuInstanceId and channel = node:current()]) and (../../../../../ModuleList/SpwmModuleEnable = 'true') " true="SPWM_Config: The channel configuration of SPWM_Config and sPwm_master is the same"/>
+                                <a:tst expr="(node:current() &lt;= node:current()/../../../channel) and (../../../../../ModuleList/SpwmModuleEnable = 'true')" true="SPWM_Config: The channel number of sPwm_Config must be greater than sPwm_master's channel number." />
+                                <a:tst expr="(../../../../../sPwm_master/*[etpuInstanceId = node:current()/../../../etpuInstanceId and sPwm_Config/*/channel = node:current() and channel != node:current()/../../../channel]) and (../../../../../ModuleList/SpwmModuleEnable = 'true') " true="SPWM_Config: The channel number in SPWM_Config is duplicated with another SPWM_Config under a different sPwm_master."/>
+                                <a:tst expr="(node:current()/../../*[etpuInstanceId = node:current()/../etpuInstanceId and channel = node:current() and @index != node:current()/../@index]) and (../../../../../ModuleList/SpwmModuleEnable = 'true') " true="SPWM_Config: Channel id is duplicated in this configuration"/>
+                    </a:da>
+                  </v:var>
+                  <v:var name="priority" type="ENUMERATION">
+                    <a:a name="DESC" value="EN:spwm channel priority" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_PRIORITY_MIDDLE" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_PRIORITY_DISABLE</a:v>
+                      <a:v>ETPU_PRIORITY_LOW</a:v>
+                      <a:v>ETPU_PRIORITY_MIDDLE</a:v>
+                      <a:v>ETPU_PRIORITY_HIGH</a:v>
+                    </a:da>
+                  </v:var>
+                  <v:var name="freq" type="INTEGER">
+                    <a:a name="DESC" value="EN: spwm The cycle range is 1Hz-100kHz, and filling in the numerical 
+                    value corresponds to the corresponding cycle, without the need for conversion" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="1000" />
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;100000"/>
+                      <a:tst expr="&gt;1"/>
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="duty" type="INTEGER">
+                    <a:a name="DESC" value="EN:SPWM Duty cycle 0-10000 represents 0% -100%" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="2000" />
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=4294967295" />
+                      <a:tst expr="&gt;=0" />
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="delay" type="INTEGER">
+                    <a:a name="DESC" value="EN: spwm channel delay" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="100" />
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=4294967295" />
+                      <a:tst expr="&gt;=0" />
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="timebase" type="ENUMERATION">
+                    <a:a name="DESC" value="EN: spwm channel timebase" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="ETPU_TCR1" />
+                    <a:da name="RANGE">
+                      <a:v>ETPU_TCR1</a:v>
+                      <a:v>ETPU_TCR2</a:v>
+                    </a:da>
+                  </v:var>
+
+                  <v:var name="timebase_freq" type="INTEGER">
+                    <a:a name="DESC" value="EN: spwm channel timebase_freq" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="10000000" />
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=4294967295" />
+                      <a:tst expr="&gt;=0" />
+                    </a:da>
+                  </v:var>
+
+                  <v:lst name="sPwmSlaveChannelEcucPartitionRef">
+                    <v:ref name="sPwmSlaveChannelEcucPartitionRef" type="REFERENCE">
+                      <a:a name="DESC">
+                        <a:v>EN: Maps a sPWM channel to zero or multiple ECUC partitions to limit the access to this channe. The ECUC partitions referenced are a subset of the ECUC partitions where the sPWM driver is mapped to.</a:v>
+                        <a:v>EN: Tags: atp.Status=draft</a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC" />
+                      <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true" />
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                      <a:a name="SCOPE" value="ECU" />
+                      <a:a name="UUID" value="8c7afa1d-6af4-4b7f-a893-02f222d7b51f" />
+                      <a:a name="__ORIGIN" value="Elektrobit" />
+                      <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition" />
+                    </v:ref>
+                  </v:lst>
+                  </v:ctr>
+                </v:lst>
+              </v:ctr>
+            </v:lst>
+
+            <v:ctr name="eTPUGeneral" type="IDENTIFIABLE">
+              <a:a name="DESC" 
+                  value="EN: This container contains the parameters related each sPwm Driver Unit."/>
+              <a:a name="UUID" value="f72b1d09-01fa-4c63-9e70-e9908d6b7cf0"/>
+
+              <v:var name="eTpuDevErrorDetect" type="BOOLEAN">
+                <a:a name="DESC" 
+                    value="EN: Switches the development error detection and notification on or off."/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                    type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="CCFC"/>
+                <a:a name="SCOPE" value="LOCAL"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="07d5850d-23ed-42c3760f-5310b8f0816e"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="true"/>
+              </v:var>
+
+              <v:var name="sPwmDevErrorDetect" type="BOOLEAN">
+                <a:a name="DESC" 
+                    value="EN: Switches the development error detection and notification on or off."/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                    type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="CCFC"/>
+                <a:a name="SCOPE" value="LOCAL"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="07d5850d-23ed-42c3-880f-5321b8f9916e"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="false"/>
+              </v:var>
+
+            <v:var name="EBPPADevErrorDetect" type="BOOLEAN">
+              <a:a name="DESC" 
+                   value="EN: Switches the development error detection and notification on or off."/>
+              <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                   type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+              </a:a>
+              <a:a name="ORIGIN" value="CCFC"/>
+              <a:a name="SCOPE" value="LOCAL"/>
+              <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+              <a:a name="UUID" value="6cf86670-38f1-4cfe-986a-a351fc59d004"/>
+              <a:a name="__ORIGIN" value="Elektrobit"/>
+              <a:da name="DEFAULT" value="false"/>
+            </v:var>
+            <v:var name="QomDevErrorDetect" type="BOOLEAN">
+              <a:a name="DESC" 
+                   value="EN: Switches the development error detection and notification on or off."/>
+              <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                   type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+              </a:a>
+              <a:a name="ORIGIN" value="CCFC"/>
+              <a:a name="SCOPE" value="LOCAL"/>
+              <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+              <a:a name="UUID" value="6cf86670-38f1-4cfe-986a-a351fc59d384"/>
+              <a:a name="__ORIGIN" value="Elektrobit"/>
+              <a:da name="DEFAULT" value="false"/>
+            </v:var>
+            
+            <v:var name="EbppaMulticoreSupport" type="BOOLEAN">
+                <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                    <html>
+                        Enables/Disables Multicore Support.
+                    </html>
+                    ]]></a:v>
+                </a:a>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="CCFC"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="ECUC:dde63254-fdc0-4af6-a0ae-3963c88e9c98"/>
+                <a:da name="DEFAULT" value="false"/>
+                <a:da name="INVALID" type="XPath">
+                    <a:tst expr="(num:i(count(EbppaEcucPartitionRef/*)) &gt;0) and
+                                 node:current()='false' "
+                           true="EbppaMulticoreSupport should be enabled." />
+                </a:da>
+            </v:var>
+              <v:var name="ETPUInlineSupport" type="BOOLEAN">
+              <a:a name="DESC" 
+                   value="EN: Enable or disable inline functions."/>
+              <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                   type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+              </a:a>
+              <a:a name="ORIGIN" value="CCFC"/>
+              <a:a name="SCOPE" value="LOCAL"/>
+              <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+              <a:a name="UUID" value="6cf86670-45f1-4cfe-916a-a351fc93d004"/>
+              <a:a name="__ORIGIN" value="Elektrobit"/>
+              <a:da name="DEFAULT" value="true"/>
+            </v:var>
+
+          </v:ctr>
+
+          
+            </v:ctr>
+          </d:chc>
+          <d:chc name="myEcuParameterDefinition" type="AR-ELEMENT" 
+                 value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="DEF" 
+                   value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+              <d:lst name="MODULE_REF">
+                <d:ref type="MODULE_REF" value="ASPath:/eTPUConfig/ETPU"/>
+              </d:lst>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

@@ -1,0 +1,72 @@
+ECUC_CanNm_00087 |  |  | Configuration Parameters for the Can Nm module. Post-Build Variant Support true Supported Config Variants VARI
+ECUC_CanNm_00001 |  | CanNm | This container contains the global configuration parameter of the CanNm. The parameters and the parameters of 
+ECUC_CanNm_00040 | CanNmBusLoadReductionEnabled | CanNmGlobalConfig | Pre-processor switch for enabling busload reduction support.
+ECUC_CanNm_00006 | CanNmBusSynchronizationEnabled | CanNmGlobalConfig | Pre-processor switch for enabling bus synchronization support. This feature is required for gateway nodes only
+ECUC_CanNm_00013 | CanNmComControlEnabled | CanNmGlobalConfig | Pre-processor switch for enabling the Communication Control support.
+ECUC_CanNm_00044 | CanNmComUserDataSupport | CanNmGlobalConfig | Preprocessor switch for enabling the Tx path of Com User Data. Use case: Setting of NMUserData via SWC.
+ECUC_CanNm_00080 | CanNmCoordinatorSyncSupport | CanNmGlobalConfig | Enables/disables the coordinator synchronization support.
+ECUC_CanNm_00002 | CanNmDevErrorDetect | CanNmGlobalConfig | Switches the development error detection and notification on or off.  true: detection and notification is ena
+ECUC_CanNm_00094 | CanNmDynamicPncToChannelMappingSupport | CanNmGlobalConfig | Precompile time switch to enable the dynamic PNC-to-channel-mapping handling. False: Dynamic PNC-to-channel-ma
+ECUC_CanNm_00086 | CanNmGlobalPnSupport | CanNmGlobalConfig | Pre-processor switch for enabling partial networking support globally.
+ECUC_CanNm_00009 | CanNmImmediateRestartEnabled | CanNmGlobalConfig | Pre-processor switch for enabling the immediate transmission of a NM PDU upon bus-communication request in Pre
+ECUC_CanNm_00041 | CanNmImmediateTxconfEnabled | CanNmGlobalConfig | Enable/disable the immediate tx confirmation.
+ECUC_CanNm_00032 | CanNmMainFunctionPeriod | CanNmGlobalConfig | Call cycle in seconds of CanNm_MainFunction.
+ECUC_CanNm_00010 | CanNmPassiveModeEnabled | CanNmGlobalConfig | Pre-processor switch for enabling support of the Passive Mode.
+ECUC_CanNm_00011 | CanNmPduRxIndicationEnabled | CanNmGlobalConfig | Pre-processor switch for enabling the PDU Rx Indication.
+ECUC_CanNm_00070 | CanNmPnEiraCalcEnabled | CanNmGlobalConfig | Specifies if CanNm calculates the PN request information for internal an external requests. (EIRA) true: PN re
+ECUC_CanNm_00059 | CanNmPnResetTime | CanNmGlobalConfig | Specifies the runtime of the reset timer in seconds. This reset time is valid for the reset of PN requests in 
+ECUC_CanNm_00098 | CanNmPnShutdownMessageRetransmissionDuration | CanNmGlobalConfig | 
+ECUC_CanNm_00096 | CanNmPnSyncShutdownErrorReactionEnabled | CanNmGlobalConfig | Pre-processor switch for enabling reaction, if a top-level PNC coordinator received a PN shutdown message on a
+ECUC_CanNm_00055 | CanNmRemoteSleepIndEnabled | CanNmGlobalConfig | Pre-processor switch for enabling remote sleep indication support. This feature is required for gateway nodes 
+ECUC_CanNm_00012 | CanNmStateChangeIndEnabled | CanNmGlobalConfig | Pre-processor switch for enabling the CAN NM state change notification.
+ECUC_CanNm_00004 | CanNmUserDataEnabled | CanNmGlobalConfig | Pre-processor switch for enabling user data support.
+ECUC_CanNm_00003 | CanNmVersionInfoApi | CanNmGlobalConfig | Pre-processor switch for enabling version info API support.
+ECUC_CanNm_00072 | CanNmPnEiraRxNSduRef | CanNmGlobalConfig | Reference to a Pdu in the COM-Stack. Only one SduRef is required for CanNm because the EIRA is the aggregation
+ECUC_CanNm_00017 |  | CanNmGlobalConfig | This container contains the channel specific configuration parameter of the CanNm. Post-Build Variant
+ECUC_CanNm_00084 | CanNmActiveWakeupBitEnabled | CanNmChannelConfig | Enables/Disables the handling of the Active Wakeup Bit in the CanNm module.
+ECUC_CanNm_00068 | CanNmAllNmMessagesKeepAwake | CanNmChannelConfig | Specifies if CanNm drops irrelevant NM PDUs. false: Only NM PDUs with a PNI bit = true and containing a PN req
+ECUC_CanNm_00042 | CanNmBusLoadReductionActive | CanNmChannelConfig | This parameter defines if bus load reduction for the respective NM channel is active or not.
+ECUC_CanNm_00075 | CanNmCarWakeUpBitPosition | CanNmChannelConfig | Specifies the Bit position of the CWU within the NM PDU.
+ECUC_CanNm_00076 | CanNmCarWakeUpBytePosition | CanNmChannelConfig | Specifies the Byte position of the CWU within the NM PDU.
+ECUC_CanNm_00077 | CanNmCarWakeUpFilterEnabled | CanNmChannelConfig | If CWU filtering is supported, only the CWU bit within the NM PDU with source node identifier CanNmCarWakeUpFi
+ECUC_CanNm_00078 | CanNmCarWakeUpFilterNodeId | CanNmChannelConfig | Source node identifier for CWU filtering. If CWU filtering is supported, only the CWU bit within the NM PDU wi
+ECUC_CanNm_00074 | CanNmCarWakeUpRxEnabled | CanNmChannelConfig | Enables or disables support of CarWakeUp bit evaluation in received NM PDUs. FALSE - CarWakeUp not supported T
+ECUC_CanNm_00093 | CanNmDynamicPncToChannelMappingEnabled | CanNmChannelConfig | Channel-specific parameter to enable the dynamic PNC-to-channel- mapping feature. False: Dynamic PNC-to-channe
+ECUC_CanNm_00057 | CanNmImmediateNmCycleTime | CanNmChannelConfig | Defines the immediate NM PDU cycle time in seconds which is used for CanNmImmediateNmTransmissions NM PDU tran
+ECUC_CanNm_00056 | CanNmImmediateNmTransmissions | CanNmChannelConfig | Defines the number of immediate NM PDUs which shall be transmitted. If the value is zero no immediate NM PDUs 
+ECUC_CanNm_00029 | CanNmMsgCycleOffset | CanNmChannelConfig | Time offset in the periodic transmission node. It determines the start delay of the transmission. Specified in
+ECUC_CanNm_00028 | CanNmMsgCycleTime | CanNmChannelConfig | Period of a NM PDU in seconds. It determines the periodic rate in the "periodic transmission mode with bus loa
+ECUC_CanNm_00043 | CanNmMsgReducedTime | CanNmChannelConfig | Node specific bus cycle time in the periodic transmission mode with bus load reduction. Specified in seconds.
+ECUC_CanNm_00030 | CanNmMsgTimeoutTime | CanNmChannelConfig | When using Partial Network and this timeout is defined then CanNm monitors that a NM-PDU is transmitted succes
+ECUC_CanNm_00088 | CanNmNodeDetectionEnabled | CanNmChannelConfig | Precompile time switch to enable the node detection feature.
+ECUC_CanNm_00031 | CanNmNodeId | CanNmChannelConfig | Node identifier of local node.
+ECUC_CanNm_00090 | CanNmNodeIdEnabled | CanNmChannelConfig | Pre-processor switch for enabling the source node identifier.
+ECUC_CanNm_00026 | CanNmPduCbvPosition | CanNmChannelConfig | Defines the position of the control bit vector within the NM PDU. The value of the parameter represents the lo
+ECUC_CanNm_00025 | CanNmPduNidPosition | CanNmChannelConfig | 
+ECUC_CanNm_00066 | CanNmPnEnabled | CanNmChannelConfig | Enables or disables support of partial networking. false: Partial networking Range not supported true: Partial
+ECUC_CanNm_00067 | CanNmPnEraCalcEnabled | CanNmChannelConfig | Specifies if CanNm calculates the PN request information for external requests. (ERA) false: PN request are no
+ECUC_CanNm_00073 | CanNmPnHandleMultipleNetworkRequests | CanNmChannelConfig | Specifies if CanNm performs an additional transition from Network Mode to Repeat Message State (true) or not (
+ECUC_CanNm_00023 | CanNmRemoteSleepIndTime | CanNmChannelConfig | Timeout for Remote Sleep Indication. It defines the time in seconds how long it shall take to recognize that a
+ECUC_CanNm_00022 | CanNmRepeatMessageTime | CanNmChannelConfig | Timeout for Repeat Message State. It defines the time in seconds how long the NM shall stay in the Repeat Mess
+ECUC_CanNm_00089 | CanNmRepeatMsgIndEnabled | CanNmChannelConfig | Enable/disable the notification that a RepeatMessageRequest bit has been received.
+ECUC_CanNm_00092 | CanNmStayInPbsEnabled | CanNmChannelConfig | If this parameter is disabled Prepare Bus-Sleep Mode is left after CanNmWaitBusSleepTime. If this parameter is
+ECUC_CanNm_00097 | CanNmSynchronizedPncShutdownEnabled | CanNmChannelConfig | Specifies if CanNm handle PN shutdown messages to support a synchronized PNC shutdown across a PN topology. Th
+ECUC_CanNm_00020 | CanNmTimeoutTime | CanNmChannelConfig | Network Timeout for NM PDUs. It denotes the time in seconds how long the NM shall stay in the Ready Sleep Stat
+ECUC_CanNm_00021 | CanNmWaitBusSleepTime | CanNmChannelConfig | Timeout for bus calm down phase. It denotes the time in seconds how long the NM shall stay in the Prepare Bus-
+ECUC_CanNm_00018 | CanNmComMNetworkHandleRef | CanNmChannelConfig | This reference points to the unique channel defined by the ComMChannel and provides access to the unique chann
+ECUC_CanNm_00079 | CanNmPnEraRxNSduRef | CanNmChannelConfig | Reference to a Pdu in the COM-Stack. The SduRef is required for every CanNm Channel, because ERA is reported p
+ECUC_CanNm_00038 |  | CanNmChannelConfig | This container is used to configure the Rx PDU properties that are used for the CanNm Channel. Configuration P
+ECUC_CanNm_00054 | CanNmRxPduId | CanNmRxPdu | This parameter defines the Rx PDU ID of the CanIf L-PDU range that is associated with this CanNm channel.
+ECUC_CanNm_00039 | CanNmRxPduRef | CanNmRxPdu | Reference to the global PDU that is used by this CanNm channel.
+ECUC_CanNm_00036 |  | CanNmChannelConfig | This container contains the CanNmTxConfirmationPduId and the CanNmTxPduRef. Configuration Parameters
+ECUC_CanNm_00048 | CanNmTxConfirmationPduId | CanNmTxPdu | Handle Id to be used by the Lower Layer to confirm the transmission of the CanNmTxPdu to the LowerLayer.
+ECUC_CanNm_00037 | CanNmTxPduRef | CanNmTxPdu | The reference to the common PDU structure.
+ECUC_CanNm_00045 |  | CanNmChannelConfig | This optional container is used to configure the UserNm PDU. This container is only available if CanNmComUserD
+ECUC_CanNm_00047 | CanNmTxUserDataPduId | CanNmUserDataTxPdu | This parameter defines the Handle ID of the NM User Data I-PDU.
+ECUC_CanNm_00046 | CanNmTxUserDataPduRef | CanNmUserDataTxPdu | Reference to the NM User Data I-PDU in the global PDU collection.
+ECUC_CanNm_00071 |  | CanNmGlobalConfig | PN information configuration Tags: atp.Status=obsolete Configuration Parameters
+ECUC_CanNm_00061 | CanNmPnInfoLength | CanNmPnInfo | Specifies the length of the PN request information in the NM PDU. Tags: atp.Status=obsolete
+ECUC_CanNm_00060 | CanNmPnInfoOffset | CanNmPnInfo | Specifies the offset of the PN request information in the NM PDU. Tags: atp.Status=obsolete
+ECUC_CanNm_00069 |  | CanNmPnInfo | PN information configuration Tags: atp.Status=obsolete Configuration Parameters
+ECUC_CanNm_00063 | CanNmPnFilterMaskByteIndex | CanNmPnFilterMaskByte | Index of the filter mask byte. Specifies the position within the filter mask byte array. Tags: atp.Status=obso
+ECUC_CanNm_00064 | CanNmPnFilterMaskByteValue | CanNmPnFilterMaskByte | Parameter to configure the filter mask byte. Tags: atp.Status=obsolete

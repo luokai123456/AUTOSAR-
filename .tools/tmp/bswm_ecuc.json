@@ -1,0 +1,548 @@
+[
+ {
+  "id": "ECUC_BswM_01063",
+  "name": "",
+  "container": "",
+  "desc": ""
+ },
+ {
+  "id": "ECUC_BswM_00895",
+  "name": "BswMPartitionRef",
+  "container": "BswM",
+  "desc": "This container contains the configuration parameters and sub containers of the AUTOSAR BswM module. This container exists once per partition. Configuration Parameters Name BswMPartitionRef [ECUC_BswM_00984] Parent Container BswMConfig Description This references the partition the BswM shall run inside."
+ },
+ {
+  "id": "ECUC_BswM_00801",
+  "name": "",
+  "container": "BswMConfig",
+  "desc": ""
+ },
+ {
+  "id": "ECUC_BswM_00808",
+  "name": "BswMLogicalOperator",
+  "container": "BswMArbitration",
+  "desc": "This parameter specifies the logical operator to be used in the logical expression. If the logical operator is set to something other than BSWM_NOT , and the expression only consists of a single condition, then this parameter will have no effect."
+ },
+ {
+  "id": "ECUC_BswM_00807",
+  "name": "BswMConditionMode",
+  "container": "BswMArbitration",
+  "desc": "This container describes the BswM mode conditions that can be used either by itself to form a rule or as a part of a logical expression. Post-Build Variant"
+ },
+ {
+  "id": "ECUC_BswM_00816",
+  "name": "",
+  "container": "BswMModeCondition",
+  "desc": ""
+ },
+ {
+  "id": "ECUC_BswM_00869",
+  "name": "BswMBswRequestedMode",
+  "container": "BswMConditionValue",
+  "desc": "This container defines the value of a mode in the BSW. Configuration Parameters Name BswMBswRequestedMode [ECUC_BswM_00866] Parent Container BswMBswMode Description This parameter contains the symbolic name (as a string) of a certain mode/state that can be requested/indicated by the BSW modules."
+ },
+ {
+  "id": "ECUC_BswM_00868",
+  "name": "BswMModeValueRef",
+  "container": "BswMConditionValue",
+  "desc": "This is a foreign reference to the Mode Declaration used for the mode requests corresponding to this condition."
+ },
+ {
+  "id": "ECUC_BswM_01052",
+  "name": "BswMEventRequestProcessing",
+  "container": "BswMArbitration",
+  "desc": "Each instance of this container defines an event which can be sent to the BswM. Basic Software Modules may send these events to the BswM by calling the corresponding BswM C-API (for example: BswM_ComM_InitiateReset()). Post-Build Variant"
+ },
+ {
+  "id": "ECUC_BswM_00805",
+  "name": "BswMRequestProcessing",
+  "container": "BswMArbitration",
+  "desc": "This parameter defines if the processing of the mode arbitration shall be done immediately when a mode request is received or if it shall be deferred to the processing of the main function of BswM."
+ },
+ {
+  "id": "ECUC_BswM_00928",
+  "name": "BswMBswModeInitValue",
+  "container": "BswMModeRequestPort",
+  "desc": "This parameter defines the initial mode value that is used by BswM for the corresponding mode request after initialization."
+ },
+ {
+  "id": "ECUC_BswM_01039",
+  "name": "BswMCompuMethodRef",
+  "container": "BswMCompuScaleModeValue",
+  "desc": "This container contains parameters used to define a mode value. Configuration Parameters 81 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_01053",
+  "name": "",
+  "container": "BswMEventRequestPort",
+  "desc": "This choice container specifies the source of the event request. The sender of the event can be another BSW Module, such as ComM. Configuration Parameters 82 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_00856",
+  "name": "",
+  "container": "BswMModeRequestPort",
+  "desc": ""
+ },
+ {
+  "id": "ECUC_BswM_00926",
+  "name": "BswMBswModeDeclarationGroupPrototypeRef",
+  "container": "BswMModeRequestSource",
+  "desc": "This is a mode request source emanating from another BSW Module. Configuration Parameters Name BswMBswModeDeclarationGroupPrototypeRef [ECUC_BswM_00927] Parent Container BswMBswModeNotification Description This is a foreign reference to the Mode Declaration Group Prototype."
+ },
+ {
+  "id": "ECUC_BswM_00857",
+  "name": "BswMCanSMChannelRef",
+  "container": "BswMModeRequestSource",
+  "desc": "This is an indication of the current state of the CAN State Manager. Configuration Parameters Name BswMCanSMChannelRef [ECUC_BswM_00870] Parent Container BswMCanSMIndication Description This is a reference to the CAN channel handle that the mode request corresponds to."
+ },
+ {
+  "id": "ECUC_BswM_00880",
+  "name": "BswMComMChannelRef",
+  "container": "BswMModeRequestSource",
+  "desc": "This is an indication of the current communication mode of a channel in the Communication Manager. Configuration Parameters Name BswMComMChannelRef [ECUC_BswM_00883] Parent Container BswMComMIndication Description This is a reference to the Communication Manager channel handle that the indication corresponds to."
+ },
+ {
+  "id": "ECUC_BswM_01014",
+  "name": "",
+  "container": "BswMEventRequestSource",
+  "desc": ""
+ },
+ {
+  "id": "ECUC_BswM_00922",
+  "name": "BswMComMPncRef",
+  "container": "BswMModeRequestSource",
+  "desc": "This is a request of the current communication mode of a Partial Network Cluster in the Communication Manager. Configuration Parameters Name BswMComMPncRef [ECUC_BswM_00924] Parent Container BswMComMPncRequest Description This is a reference to the Communication Manager PNC handle of the Partial Network Cluster that the request corresponds to."
+ },
+ {
+  "id": "ECUC_BswM_00925",
+  "name": "",
+  "container": "BswMEventRequestSource",
+  "desc": ""
+ },
+ {
+  "id": "ECUC_BswM_00863",
+  "name": "BswMDcmComMChannelRef",
+  "container": "BswMModeRequestSource",
+  "desc": "The source of the mode request is the Diagnostic Communication Manager. Configuration Parameters Name BswMDcmComMChannelRef [ECUC_BswM_00969] Parent Container BswMDcmComModeRequest Description This is a reference from DcmModeRequest to the ComM channel that the indication corresponds to."
+ },
+ {
+  "id": "ECUC_BswM_01085",
+  "name": "",
+  "container": "BswMModeRequestSource",
+  "desc": "This is a notification of the current operation mode of the ECU State Manager. This container does not contain any parameters since there are no further configuration needed for this type of request. Configuration Parameters 88 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_01086",
+  "name": "BswMEcuMRUNRequestProtocolPort",
+  "container": "BswMModeRequestSource",
+  "desc": "This is an indication of the current State of the RUN Request Protocol. Configuration Parameters Name BswMEcuMRUNRequestProtocolPort [ECUC_BswM_01087] Parent Container BswMEcuMRUNRequestIndication Description Identifies the EcuM State which is related to the mode request."
+ },
+ {
+  "id": "ECUC_BswM_00904",
+  "name": "BswMEcuMWakeupSrcRef",
+  "container": "BswMModeRequestSource",
+  "desc": "This is a notification of the current state of an ECU State Manager wakeup source. Configuration Parameters 89 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_01066",
+  "name": "BswMEthIfSwitchPortGroupRef",
+  "container": "BswMModeRequestSource",
+  "desc": "This is an indication from the EthIf if the link state of a Ethernet interface switch port group has changed. Configuration Parameters Name BswMEthIfSwitchPortGroupRef [ECUC_BswM_01067] Parent Container BswMEthIfPortGroupLinkStateChg Description This is a reference to the Ethernet Interface Switch Port Group that the indication corresponds to."
+ },
+ {
+  "id": "ECUC_BswM_00860",
+  "name": "BswMEthSMChannelRef",
+  "container": "BswMModeRequestSource",
+  "desc": "This is an indication of the current state of the Ethernet State Manager. Configuration Parameters Name BswMEthSMChannelRef [ECUC_BswM_00873] Parent Container BswMEthSMIndication Description This is a reference to the Ethernet channel handle that the mode request corresponds to."
+ },
+ {
+  "id": "ECUC_BswM_00858",
+  "name": "BswMFrSMChannelRef",
+  "container": "BswMModeRequestSource",
+  "desc": "This is an indication of the current state of the FlexRay State Manager. Configuration Parameters Name BswMFrSMChannelRef [ECUC_BswM_00872] Parent Container BswMFrSMIndication Description This is a reference to the FlexRay Cluster handle that the mode request corresponds to."
+ },
+ {
+  "id": "ECUC_BswM_00861",
+  "name": "BswMModeRequesterId",
+  "container": "BswMModeRequestSource",
+  "desc": "This mode request originates from a requester that is not among the list of standardized mode requesters (i.e. the different resource managers). Configuration Parameters Name BswMModeRequesterId [ECUC_BswM_00874] Parent Container BswMGenericRequest Description This parameters identifies the different users of the generic mode request interface."
+ },
+ {
+  "id": "ECUC_BswM_00985",
+  "name": "BswMJ1939DcmChannelRef",
+  "container": "BswMModeRequestSource",
+  "desc": "This is a notification of the desired broadcast status per network, triggered via DM13. Configuration Parameters 92 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_00966",
+  "name": "BswMJ1939NmChannelRef",
+  "container": "BswMModeRequestSource",
+  "desc": "This is an indication of the current state of the J1939 network management module. Configuration Parameters Name BswMJ1939NmChannelRef [ECUC_BswM_00967] Parent Container BswMJ1939NmIndication Description This is a reference to the J1939Nm channel handle that the mode request corresponds to."
+ },
+ {
+  "id": "ECUC_BswM_00859",
+  "name": "BswMLinSMChannelRef",
+  "container": "BswMModeRequestSource",
+  "desc": "This is an indication of the current state of the LIN State Manager. Configuration Parameters Name BswMLinSMChannelRef [ECUC_BswM_00871] Parent Container BswMLinSMIndication Description This is a reference to the LIN channel handle that the mode request corresponds to."
+ },
+ {
+  "id": "ECUC_BswM_00885",
+  "name": "BswMLinScheduleRef",
+  "container": "BswMModeRequestSource",
+  "desc": "This is an indication of the currently active LIN Schedule T able for a specific LIN Interface. Configuration Parameters Name BswMLinScheduleRef [ECUC_BswM_00886] Parent Container BswMLinScheduleIndication Description This is a reference to the LIN Schedule T able handle that the mode request corresponds to."
+ },
+ {
+  "id": "ECUC_BswM_00914",
+  "name": "BswMLinTpChannelRef",
+  "container": "BswMModeRequestSource",
+  "desc": "This is a LinTp mode request from the LinIf. This port corresponds to a call of the BswM_LinTp_RequestMode API. Configuration Parameters 95 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_00990",
+  "name": "BswMRteSwitchPortRef",
+  "container": "BswMEventRequestSource",
+  "desc": "This is a reference to the BswMSwitchPort."
+ },
+ {
+  "id": "ECUC_BswM_01075",
+  "name": "BswMNmChannelRef",
+  "container": "BswMEventRequestSource",
+  "desc": "This is an indication of a CarWakeup from the Nm. Configuration Parameters Name BswMNmChannelRef [ECUC_BswM_01049] Parent Container BswMNmCarWakeUpIndication Description This is a reference to the channel handle that the indication corresponds to."
+ },
+ {
+  "id": "ECUC_BswM_01081",
+  "name": "BswMNmChannelRef",
+  "container": "BswMModeRequestSource",
+  "desc": "This is a notification from the Nm module that its state has changed. Configuration Parameters 97 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_00956",
+  "name": "BswMNvmService",
+  "container": "BswMModeRequestSource",
+  "desc": "Indicates the current status of the multiblock job. The job is identified via BswMNvmService. Possible values for this indication are the possible values of NvM_RequestResultT ype. Configuration Parameters Name BswMNvmService [ECUC_BswM_00957] Parent Container BswMNvMJobModeIndication Description Identifies the Nvm job which is related to the mode request."
+ },
+ {
+  "id": "ECUC_BswM_00890",
+  "name": "BswMNvMBlockRef",
+  "container": "BswMModeRequestSource",
+  "desc": "This is a reference to the NvM Block Descriptor that the request corresponds to."
+ },
+ {
+  "id": "ECUC_BswM_00989",
+  "name": "",
+  "container": "BswMEventRequestSource",
+  "desc": ""
+ },
+ {
+  "id": "ECUC_BswM_01011",
+  "name": "BswMSdClientMethodsRef",
+  "container": "BswMModeRequestSource",
+  "desc": "Used by Service Discovery module to indicate current state of the Client Service (available/down). Configuration Parameters Name BswMSdClientMethodsRef [ECUC_BswM_01009] Parent Container BswMSdClientServiceCurrentState Description This is a reference to a client service in the Sd module."
+ },
+ {
+  "id": "ECUC_BswM_01012",
+  "name": "BswMSdConsumedEventGroupRef",
+  "container": "BswMModeRequestSource",
+  "desc": "Used by Service Discovery to indicate current status of the EventHandler (requested/released). Configuration Parameters 100 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_01013",
+  "name": "BswMSdEventHandlerRef",
+  "container": "BswMModeRequestSource",
+  "desc": "Used by Service Discovery to indicate current status of the EventHandler (requested/released). Configuration Parameters Name BswMSdEventHandlerRef [ECUC_BswM_01008] Parent Container BswMSdEventHandlerCurrentState Description This is a reference to an event handler that is defined within a server service in the Sd module."
+ },
+ {
+  "id": "ECUC_BswM_01091",
+  "name": "BswMSoAdSocketIdRef",
+  "container": "BswMModeRequestSource",
+  "desc": "This is an indication of the current state of the SoAd. Post-Build Variant"
+ },
+ {
+  "id": "ECUC_BswM_00892",
+  "name": "BswMSwcModeNotificationModeDeclarationGroupPrototypeRef",
+  "container": "BswMModeRequestSource",
+  "desc": "This is a mode switch notification associated with a RTE switch interface. Configuration Parameters Name BswMSwcModeNotificationModeDeclarationGroupPrototypeRef [ECUC_BswM_00893] Parent Container BswMSwcModeNotification Description This is a foreign reference to the ModeDeclarationGroupPrototype."
+ },
+ {
+  "id": "ECUC_BswM_00862",
+  "name": "BswMSwcModeRequestVariableDataPrototypeRef",
+  "container": "BswMModeRequestSource",
+  "desc": "The source of the mode request is a SW Component. Configuration Parameters Name BswMSwcModeRequestVariableDataPrototypeRef [ECUC_BswM_01046] Parent Container BswMSwcModeRequest Description This is a reference to the VariableDataPrototype."
+ },
+ {
+  "id": "ECUC_BswM_01083",
+  "name": "BswMSwitchPortRef",
+  "container": "BswMEventRequestSource",
+  "desc": "This is a notification that a mode transition has been completed. Configuration Parameters 103 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_01058",
+  "name": "",
+  "container": "BswMModeRequestSource",
+  "desc": ""
+ },
+ {
+  "id": "ECUC_BswM_00916",
+  "name": "BswMWdgMRequestPartitionResetRef",
+  "container": "BswMEventRequestSource",
+  "desc": "This is a Partition Reset request from from the WdgM. This port corresponds to a call of the BswM_WdgM_RequestPartitionReset API. Tags: atp.Status=obsolete Configuration Parameters Name BswMWdgMRequestPartitionResetRef [ECUC_BswM_00917] (Obsolete) Parent Container BswMWdgMRequestPartitionReset Description This is a reference to the partition that shall be reset. Tags: atp.Status=obsolete"
+ },
+ {
+  "id": "ECUC_BswM_00806",
+  "name": "BswMNestedExecutionOnly",
+  "container": "BswMArbitration",
+  "desc": "Each instance of this container describes a BswM arbitration rule. The rule either consists of a simple mode condition or a more complex logical expression. This container also references the action lists that shall be invoked when the rule is evaluated to T rue or False. Post-Build Variant"
+ },
+ {
+  "id": "ECUC_BswM_00936",
+  "name": "",
+  "container": "BswMConfig",
+  "desc": "Collection of references to DataT ypeMappingSet. Configuration Parameters Name BswMDataT ypeMappingSetRef [ECUC_BswM_00937] Parent Container BswMDataT ypeMappingSets Description Reference to DataT ypeMappingSet."
+ },
+ {
+  "id": "ECUC_BswM_00802",
+  "name": "",
+  "container": "BswMConfig",
+  "desc": ""
+ },
+ {
+  "id": "ECUC_BswM_00810",
+  "name": "",
+  "container": "BswMModeControl",
+  "desc": "Each container of this type defines an action. These actions can be part of one or several action lists. Post-Build Variant"
+ },
+ {
+  "id": "ECUC_BswM_00826",
+  "name": "",
+  "container": "BswMAction",
+  "desc": ""
+ },
+ {
+  "id": "ECUC_BswM_01054",
+  "name": "BswMClearEventRequestPortRef",
+  "container": "BswMAvailableActions",
+  "desc": "This container contains a reference to a BswMEventRequestPort which will be cleared (i.e. set to CLEAR state) when this action is executed. Configuration Parameters 112 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_00909",
+  "name": "BswMComAllowed",
+  "container": "BswMAvailableActions",
+  "desc": "The parameter BswMComMAllowChannelRef refers to a channel which will allow or block communication using the function ComM_CommunicationAllowed(). This parameter corresponds to the parameter \"Allowed\" of the function ComM_CommunicationAllowed()."
+ },
+ {
+  "id": "ECUC_BswM_00908",
+  "name": "BswMComMLimitMode",
+  "container": "BswMAvailableActions",
+  "desc": "The function ComM_LimitChannelT oNoComMode() takes in this boolean parameter to limit the channel’s com mode to no-com mode. This parameter corresponds to the parameter \"Status\" of the function ComM_LimitChannelT oNoComMode."
+ },
+ {
+  "id": "ECUC_BswM_00831",
+  "name": "BswMComMRequestedMode",
+  "container": "BswMAvailableActions",
+  "desc": "This parameter specifies if the requested communication mode. This parameter corresponds to the parameter \"ComMode\" of the function ComM_RequestComMode."
+ },
+ {
+  "id": "ECUC_BswM_00970",
+  "name": "BswMCoreHaltActivationState",
+  "container": "BswMAvailableActions",
+  "desc": "Different possibilities are offered depending on the OS implementation and the CPU HW. The HAL T modes addressed by this parameter are defined as names (strings) in the OS implementation. Different implementation may implement different HAL T modes and subsequently different names."
+ },
+ {
+  "id": "ECUC_BswM_00830",
+  "name": "BswMDisabledDMPduGroupRef",
+  "container": "BswMAvailableActions",
+  "desc": "This is a reference to a PDU Group for which the Deadline Monitoring should be disabled. This reference corresponds to the parameter \"IpduGroupId\" of the function Com_DisableReceptionDM."
+ },
+ {
+  "id": "ECUC_BswM_01064",
+  "name": "BswMEcuMDriverInitListBswMRef",
+  "container": "BswMAvailableActions",
+  "desc": "This container defines the action to trigger an EcuM driver initialization list. Configuration Parameters Name BswMEcuMDriverInitListBswMRef [ECUC_BswM_01065] Parent Container BswMEcuMDriverInitListBswM Description This is a reference to the EcuM EcuMDriverInitListBswM container which represents the driver init list to be triggered."
+ },
+ {
+  "id": "ECUC_BswM_00963",
+  "name": "BswMEcuMUserIdRef",
+  "container": "BswMAvailableActions",
+  "desc": "This container defines the action to trigger the EcuM_GoDownHaltPoll from BswM. Configuration Parameters 119 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_00961",
+  "name": "BswMEcuMResetModeRef",
+  "container": "BswMAvailableActions",
+  "desc": "This container defines the shutdown target. Configuration Parameters Name BswMEcuMShutdownT arget [ECUC_BswM_00993] Parent Container BswMEcuMSelectShutdownT arget Description This parameter contains the shutdown target that the BswM selects at the EcuM."
+ },
+ {
+  "id": "ECUC_BswM_01045",
+  "name": "BswMEcuMState",
+  "container": "BswMAvailableActions",
+  "desc": "This container defines the action to switch a State of the ECU State Manager. Configuration Parameters Name BswMEcuMState [ECUC_BswM_01044] Parent Container BswMEcuMStateSwitch Description This parameter corresponds to the parameter \"State\" of the function EcuM_ SetState ()."
+ },
+ {
+  "id": "ECUC_BswM_01088",
+  "name": "",
+  "container": "BswMAvailableActions",
+  "desc": "This container defines the action to call EthIf_StartAllPorts from BswM and thus to start all affected EthSwtPorts. Configuration Parameters 122 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_01068",
+  "name": "BswMEthIfSwitchPortGroupRef",
+  "container": "BswMAvailableActions",
+  "desc": "This container includes all parameters related to requesting a mode for the EthIfSwtPortGroup. The EthIf_SwitchPortGroupRequestMode API is called when this action is executed. Configuration Parameters Name BswMEthT rcvMode [ECUC_BswM_01070] Parent Container BswMEthIfSwitchPortGroupRequestMode Description This parameter contains the mode which will be requested."
+ },
+ {
+  "id": "ECUC_BswM_01037",
+  "name": "BswMFrSMAllSlotsNetworkHandleRef",
+  "container": "BswMAvailableActions",
+  "desc": "This references the FlexRay cluster. The reference corresponds to the parameter \"NetworkHandle\" of the function FrSM_AllSlots."
+ },
+ {
+  "id": "ECUC_BswM_01032",
+  "name": "BswMJ1939DcmRequestedState",
+  "container": "BswMAvailableActions",
+  "desc": "This container includes all parameters related to a switch of the J1939 Diagnostic Communication Managers network state for a J1939 node. J1939Dcm_SetState is called when this action is configured. Configuration Parameters 124 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_00998",
+  "name": "BswMJ1939RmRequestedState",
+  "container": "BswMAvailableActions",
+  "desc": "This parameter describes the communication state of the J1939 Request Manager and corresponds to the parameter \"new state\" of the function J1939Rm_SetState."
+ },
+ {
+  "id": "ECUC_BswM_00827",
+  "name": "BswMLinScheduleRef",
+  "container": "BswMAvailableActions",
+  "desc": "This is a reference to the LIN schedule table that the LIN SM shall change to. This reference corresponds to the parameter \"schedule\" of the function LinSM_ScheduleRequest."
+ },
+ {
+  "id": "ECUC_BswM_00837",
+  "name": "BswMNMAction",
+  "container": "BswMAvailableActions",
+  "desc": "This parameter specifies if the communication of the corresponding NM channel should be enabled or disabled."
+ },
+ {
+  "id": "ECUC_BswM_00828",
+  "name": "BswMPduGroupSwitchReinit",
+  "container": "BswMAvailableActions",
+  "desc": "This container includes references to the PDU groups that shall be enabled and disabled. Configuration Parameters 129 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_00853",
+  "name": "BswMPduRouterAction",
+  "container": "BswMAvailableActions",
+  "desc": "This container includes all parameters related to enabling and disabling of routing of Routing Path Groups in the PDU Router. PduR_EnableRouting or PduR_DisableRouting is called when this action is configured. Configuration Parameters 131 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_01021",
+  "name": "BswMRequestedModeRef",
+  "container": "BswMAvailableActions",
+  "desc": "This container defines a mode request that the BswM may send to a SW-C which is acting as a mode-manager. RTE_Write is called when this action is configured. Configuration Parameters Name BswMRequestedModeRef [ECUC_BswM_01024] Parent Container BswMRteModeRequest Description This is a foreign reference to the Mode Declaration used for the mode request"
+ },
+ {
+  "id": "ECUC_BswM_01073",
+  "name": "",
+  "container": "BswMAvailableActions",
+  "desc": ""
+ },
+ {
+  "id": "ECUC_BswM_01074",
+  "name": "",
+  "container": "BswMAvailableActions",
+  "desc": "This container defines the action to stop the Rte from BswM Configuration Parameters No Included Containers [SWS_BswM_00272]⌈If the action BswMRteStop is configured, the function Rte_- Stop(void) shall be called by the BswM when the action is executed. ⌋(SRS_- ModeMgm_09178) 134 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_00803",
+  "name": "BswMRteSwitchPortRef",
+  "container": "BswMAvailableActions",
+  "desc": "This container defines a mode switch indication that the BswM provides to the SW-C that need to be notified about the mode switch. RTE_Switch is called when this action is configured. Configuration Parameters Name BswMRteSwitchPortRef [ECUC_BswM_00952] Parent Container BswMRteSwitch Description This is a reference to the BswMSwitchPort."
+ },
+ {
+  "id": "ECUC_BswM_00899",
+  "name": "BswMSchMSwitchedMode",
+  "container": "BswMAvailableActions",
+  "desc": "This parameter contains the integer value that corresponds to a certain mode in a Mode Declaration Group."
+ },
+ {
+  "id": "ECUC_BswM_00974",
+  "name": "BswMSdClientServiceState",
+  "container": "BswMAvailableActions",
+  "desc": "This container includes all parameters related to the selection of an client service of Sd. Sd_ClientServiceSetState is called when this action is configured. Configuration Parameters 136 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_01004",
+  "name": "BswMSdConsumedEventGroupState",
+  "container": "BswMAvailableActions",
+  "desc": "This container includes all parameters related to the selection of a consumed EventGroup of Sd. Sd_ConsumedEventGroupSetState is called when this action is configured. Configuration Parameters 137 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_01005",
+  "name": "BswMSdServerServiceState",
+  "container": "BswMAvailableActions",
+  "desc": "This container includes all parameters related to the selection of a server service of Sd. Sd_ServerServiceSetState is called when this action is configured. Configuration Parameters 138 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_01077",
+  "name": "BswMDisabledSdServiceGroupRef",
+  "container": "BswMAvailableActions",
+  "desc": "This container includes references to the SdServiceGroups that shall be enabled and disabled. Configuration Parameters 139 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_00958",
+  "name": "BswMSwitchIPduModeValue",
+  "container": "BswMAvailableActions",
+  "desc": "This parameter defines which transmission mode shall be selected during this call. This parameter corresponds to the parameter \"Mode\" of the function Com_SwitchIpduTxMode."
+ },
+ {
+  "id": "ECUC_BswM_01059",
+  "name": "BswMTimerAction",
+  "container": "BswMAvailableActions",
+  "desc": "This container includes all parameters for the action to start or to stop a timer. Configuration Parameters Name BswMTimerAction [ECUC_BswM_01060] Parent Container BswMTimerControl Description Specify the action for the timer. The timer can be started or stopped."
+ },
+ {
+  "id": "ECUC_BswM_00906",
+  "name": "",
+  "container": "BswMAvailableActions",
+  "desc": "This container includes all parameters related to the triggering of an I-PDU to be sent by COM. Com_T riggerIPDUSend is called when this action is configured. Configuration Parameters 143 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_00834",
+  "name": "BswMUserCalloutFunction",
+  "container": "BswMAvailableActions",
+  "desc": "This parameter specifies the complete function call including all parameters. The parameters are specified during configuration time, and cannot be changed during run time. Any return values passed by the callout will be ignored. Example usage can be: Actions to initialize other BSW modules Action to call NvM_ReadAll() Action to call NvM_WriteAll()"
+ },
+ {
+  "id": "ECUC_BswM_00809",
+  "name": "BswMActionListExecution",
+  "container": "BswMModeControl",
+  "desc": "Each instance of this container defines an action list that is invoked based on the BswM Rules. An action list contains a list of numbered action items to be processed. An action list can also include other action lists. Post-Build Variant"
+ },
+ {
+  "id": "ECUC_BswM_00823",
+  "name": "BswMAbortOnFail",
+  "container": "BswMActionList",
+  "desc": "This container defines an item in an action list. Post-Build Variant"
+ },
+ {
+  "id": "ECUC_BswM_01022",
+  "name": "BswMRteModeRequestPortInterfaceRef",
+  "container": "BswMModeControl",
+  "desc": "This container defines a mode request port which the BswM may utilize to send a mode request to a SW-C which is acting as a mode-manager. If this container is referenced by a BswMRteModeRequest, the BswM shall create a corresponding PPort in its service description. Post-Build Variant"
+ },
+ {
+  "id": "ECUC_BswM_00950",
+  "name": "BswMModeSwitchInterfaceRef",
+  "container": "BswMModeControl",
+  "desc": "T emplate SWS and EXP ModemanagementGuide).. Post-Build Variant"
+ },
+ {
+  "id": "ECUC_BswM_00800",
+  "name": "BswMCanSMEnabled",
+  "container": "BswM",
+  "desc": "General configuration parameters of the Basic SW Mode Manager. Configuration Parameters 150 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager"
+ },
+ {
+  "id": "ECUC_BswM_00954",
+  "name": "BswMUserIncludeFile",
+  "container": "BswMGeneral",
+  "desc": "Collection of header file names which shall be included by the BswM. Configuration Parameters Name BswMUserIncludeFile [ECUC_BswM_00955] Parent Container BswMUserIncludeFiles Description Header file name which shall be included by the BswM. The value of this parameter shall be used as h-char-sequence or q-char-sequence according to ISO C99. The parameter value shall not represent a path."
+ }
+]

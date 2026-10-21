@@ -1,0 +1,2223 @@
+﻿/******************************************************************************
+ *
+ *  ASAP2 file:     SigResolverAngleDecoder.a2l
+ *
+ * 
+ *
+ * Code generation for model "SigResolverAngleDecoder".
+ *
+ * Model version              : 1.118
+ * Simulink Coder version : 10.6 R2022b
+ * C source code generated on : Wed Sep 02 15:32:53 2026
+ *
+ * Target selection: ert.tlc
+ * Embedded hardware selection: Infineon->TriCore
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+ASAP2_VERSION  1 71     /* Version 1.71 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+
+  /begin HEADER "Header Comments go here"
+  /end HEADER
+
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+    /end MOD_PAR
+
+    /begin MOD_COMMON  "Mod Common Comment Here"
+      BYTE_ORDER     MSB_LAST
+
+      ALIGNMENT_BYTE 1
+      ALIGNMENT_WORD 2
+      ALIGNMENT_LONG 4
+      ALIGNMENT_FLOAT32_IEEE 4
+      ALIGNMENT_FLOAT64_IEEE 8
+      ALIGNMENT_INT64 8
+    /end MOD_COMMON
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_AmpDosFaultThr_C
+    /* Long Identifier        */      "Dos fault threshold for amplitude detection"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_AmpDosFaultThr_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_single
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      100000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_AmpLoFaultThr_C
+    /* Long Identifier        */      "Lower threshold for amplitude fault detection"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_AmpLoFaultThr_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_single
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      100000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_AngleCompEna_C
+    /* Long Identifier        */      "Enable flag for angle compensation"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_AngleCompEna_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_uint8
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_CosAmp_C
+    /* Long Identifier        */      "Amplitude calibration for cosine channel"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_CosAmp_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_CosOffset_C
+    /* Long Identifier        */      "Offset calibration for cosine channel"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_CosOffset_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_single
+    /* Lower Limit            */      -65535.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_DebounceDecr_C
+    /* Long Identifier        */      "Decrement step for fault debounce counter"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_DebounceDecr_C@ */
+    /* Record Layout          */      Record_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_uint16
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_DebounceIncr_C
+    /* Long Identifier        */      "Increment step for fault debounce counter"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_DebounceIncr_C@ */
+    /* Record Layout          */      Record_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_uint16
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_DebounceMaxHi_C
+    /* Long Identifier        */      "Maximum counter for high amplitude fault debounce"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_DebounceMaxHi_C@ */
+    /* Record Layout          */      Record_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_uint16
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_DebounceMaxLo_C
+    /* Long Identifier        */      "Maximum counter for low amplitude fault debounce"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_DebounceMaxLo_C@ */
+    /* Record Layout          */      Record_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_uint16
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_DebounceMaxLoss_C
+    /* Long Identifier        */      "Maximum counter for signal loss fault debounce"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_DebounceMaxLoss_C@ */
+    /* Record Layout          */      Record_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_uint16
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_FaultResetEna_C
+    /* Long Identifier        */      "Enable automatic fault reset for resolver diagnostics"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_FaultResetEna_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_uint8
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_GrpDlyResolverADC_C
+    /* Long Identifier        */      "Group delay compensation for resolver ADC"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_GrpDlyResolverADC_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_single_s
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_InitTimeCount_C
+    /* Long Identifier        */      "Time counter for resolver ADC initialization (500ms)"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_InitTimeCount_C@ */
+    /* Record Layout          */      Record_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_uint16
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_MaxAccelLmt_C
+    /* Long Identifier        */      "Maximum allowable angular acceleration"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_MaxAccelLmt_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_single_rad_per_s_2
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_MaxJerkLmt_C
+    /* Long Identifier        */      "Maximum allowable angular jerk"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_MaxJerkLmt_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_single_rad_per_s_3
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_MaxSpdLmt_C
+    /* Long Identifier        */      "Maximum allowable angular velocity"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_MaxSpdLmt_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_single_rad_per_s
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_ObsrKi_C
+    /* Long Identifier        */      "Integral gain for 3rd-order angle observer"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_ObsrKi_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_ObsrKii_C
+    /* Long Identifier        */      "Double integral gain for 3rd-order angle observer"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_ObsrKii_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_ObsrKp_C
+    /* Long Identifier        */      "Proportional gain for 3rd-order angle observer"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_ObsrKp_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_ResolverDirection
+    /* Long Identifier        */      "Configuration for resolver rotation direction"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_ResolverDirection@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_uint8
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_SignalLotThr_C
+    /* Long Identifier        */      "Lot fault threshold for signal loss detection"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_SignalLotThr_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_single
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      100000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_SineAmp_C
+    /* Long Identifier        */      "Amplitude calibration for sine channel"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_SineAmp_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_SineOffset_C
+    /* Long Identifier        */      "Offset calibration for sine channel"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_SineOffset_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_single
+    /* Lower Limit            */      -65535.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_SpdFilterBw_C
+    /* Long Identifier        */      "Cutoff frequency for speed low-pass filter"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_SpdFilterBw_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_single_rad_per_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      100000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_SpdThrLoFaultDiagLo_C
+    /* Long Identifier        */      "Lower speed threshold for low amplitude fault diagnosis"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_SpdThrLoFaultDiagLo_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_single_rad_per_s
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGRD_SpdThrLoFaultDiag_C
+    /* Long Identifier        */      "Speed threshold for low amplitude fault diagnosis"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGRD_SpdThrLoFaultDiag_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigResolverAngleDecoder_CM_single_rad_per_s
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_ClrResolverFault
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_ClrResolverFault@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_AngleTS
+    /* Long identifier        */      "Timestamp for angle measurement sampling"
+    /* Data type              */      ULONG
+    /* Conversion method      */      SigResolverAngleDecoder_CM_uint32
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4294967295
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_AngleTS@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_CompAngle
+    /* Long identifier        */      "Delta Times"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_CompAngle@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_CosEnvelope
+    /* Long identifier        */      "Raw sine signal from resolver"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_CosEnvelope@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_CosNorm
+    /* Long identifier        */      "Normalized cosine signal after amplitude correction"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_CosNorm@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_CosRaw
+    /* Long identifier        */      "Raw cosine signal from resolver"
+    /* Data type              */      SWORD
+    /* Conversion method      */      SigResolverAngleDecoder_CM_int16
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -32768.000000
+    /* Upper limit            */      32767.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_CosRaw@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_CosRaw3Dly_IRV
+    /* Long identifier        */      "Raw cosine signal with 3-sample delay"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_CosRaw3Dly_IRV@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_CosRaw6Dly_IRV
+    /* Long identifier        */      "Raw cosine signal with 6-sample delay"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_CosRaw6Dly_IRV@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_CosRaw_IRV
+    /* Long identifier        */      "Raw cosine signal for internal processing"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_CosRaw_IRV@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_CurrentTS
+    /* Long identifier        */      "Timestamp for current measurement sampling"
+    /* Data type              */      ULONG
+    /* Conversion method      */      SigResolverAngleDecoder_CM_uint32
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4294967295
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_CurrentTS@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_DeltaTimes
+    /* Long identifier        */      "Delta Times"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_DeltaTimes@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_ElecAngle
+    /* Long identifier        */      "Electrical angle from observer with compensation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_ElecAngle@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_EstAngle
+    /* Long identifier        */      "Delta Times"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_EstAngle@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_EstOmega
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_EstOmega@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_EstTheta
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single_radian
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_EstTheta@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_NewEstOmega
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_NewEstOmega@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_NewEstTheta
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_NewEstTheta@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_ObsrAngleDelta
+    /* Long identifier        */      "Angle delta from observer calculation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_ObsrAngleDelta@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_ObsrAngleDelta_IRV
+    /* Long identifier        */      "Observer angle delta for internal calculation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_ObsrAngleDelta_IRV@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_ObsrSpd
+    /* Long identifier        */      "Filtered angular frequency from observer"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_ObsrSpd@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_ObsrSpdRaw
+    /* Long identifier        */      "Raw angular frequency from observer"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_ObsrSpdRaw@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_ObsrSpeed_IRV
+    /* Long identifier        */      "Observer angular speed for internal calculation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_ObsrSpeed_IRV@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_PwmFreq
+    /* Long identifier        */      "Control system switching Frequency"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_PwmFreq@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_PwmTs
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_PwmTs@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_ResolverErr
+    /* Long identifier        */      "Resolver fault detection signal"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_ResolverErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_ResolverErrLatched
+    /* Long identifier        */      "Latched fault flag from resolver diagnostics"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_ResolverErrLatched@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_ResolverErr_IRV
+    /* Long identifier        */      "Resolver error signal for internal use"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_ResolverErr_IRV@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_SinEnvelope
+    /* Long identifier        */      "Raw sine signal from resolver"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_SinEnvelope@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_SineNorm
+    /* Long identifier        */      "Normalized sine signal after amplitude correction"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_SineNorm@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_SineRaw
+    /* Long identifier        */      "Raw sine signal from resolver"
+    /* Data type              */      SWORD
+    /* Conversion method      */      SigResolverAngleDecoder_CM_int16
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -32768.000000
+    /* Upper limit            */      32767.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_SineRaw@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_SineRaw3Dly_IRV
+    /* Long identifier        */      "Raw sine signal with 3-sample delay"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_SineRaw3Dly_IRV@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_SineRaw6Dly_IRV
+    /* Long identifier        */      "Raw sine signal with 6-sample delay"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_SineRaw6Dly_IRV@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_SineRaw_IRV
+    /* Long identifier        */      "Raw sine signal for internal processing"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_SineRaw_IRV@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_SwitchFreq
+    /* Long identifier        */      "Control system switching Frequency"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_SwitchFreq@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_SwitchPeriod
+    /* Long identifier        */      "Control system switching period"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_SwitchPeriod@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.BareUnitDelay_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      SigResolverAngleDecoder_CM_uint16
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.BareUnitDelay_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.BareUnitDelay_DSTATE_a
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      SigResolverAngleDecoder_CM_uint16
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.BareUnitDelay_DSTATE_a@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.BareUnitDelay_DSTATE_c
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      SigResolverAngleDecoder_CM_uint16
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.BareUnitDelay_DSTATE_c@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.BareUnitDelay_DSTATE_f
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      SigResolverAngleDecoder_CM_uint16
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.BareUnitDelay_DSTATE_f@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Delay1_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Delay1_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Delay1_DSTATE_h
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Delay1_DSTATE_h@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Delay1_DSTATE_j
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    LAYOUT                            COLUMN_DIR
+    MATRIX_DIM                        6 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Delay1_DSTATE_j@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Delay1_DSTATE_o
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Delay1_DSTATE_o@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Delay2_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    LAYOUT                            COLUMN_DIR
+    MATRIX_DIM                        3 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Delay2_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Delay3_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    LAYOUT                            COLUMN_DIR
+    MATRIX_DIM                        6 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Delay3_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Delay_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Delay_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Delay_DSTATE_c
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    LAYOUT                            COLUMN_DIR
+    MATRIX_DIM                        3 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Delay_DSTATE_c@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Delay_DSTATE_g
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Delay_DSTATE_g@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Delay_DSTATE_i
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Delay_DSTATE_i@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Delay_DSTATE_m
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Delay_DSTATE_m@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Delay_DSTATE_o
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Delay_DSTATE_o@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Delay_DSTATE_p
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Delay_DSTATE_p@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Delay_DSTATE_pn
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Delay_DSTATE_pn@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Memory_PreviousInput
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Memory_PreviousInput@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Memory_PreviousInput_a
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Memory_PreviousInput_a@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Memory_PreviousInput_d
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Memory_PreviousInput_d@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.Memory_PreviousInput_j
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.Memory_PreviousInput_j@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.UnitDelay_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      SigResolverAngleDecoder_CM_uint16
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.UnitDelay_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.UnitDelay_DSTATE_o
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    LAYOUT                            COLUMN_DIR
+    MATRIX_DIM                        4 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.UnitDelay_DSTATE_o@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.icLoad
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.icLoad@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.icLoad_e
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.icLoad_e@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.icLoad_ee
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.icLoad_ee@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.icLoad_f
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.icLoad_f@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.icLoad_h
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.icLoad_h@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.icLoad_j
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.icLoad_j@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.icLoad_o
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.icLoad_o@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigResolverAngleDecoder_DW.icLoad_p
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigResolverAngleDecoder_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigResolverAngleDecoder_DW.icLoad_p@ */
+  /end MEASUREMENT 
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigResolverAngleDecoder_CM_int16
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%5.0"
+    /* Units                  */      ""
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigResolverAngleDecoder_CM_logical
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%1.0"
+    /* Units                  */      ""
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigResolverAngleDecoder_CM_single
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      ""
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigResolverAngleDecoder_CM_single_rad_per_s
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rad/s"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigResolverAngleDecoder_CM_single_rad_per_s_2
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rad/s^2"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigResolverAngleDecoder_CM_single_rad_per_s_3
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rad/s^3"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigResolverAngleDecoder_CM_single_radian
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "radian"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigResolverAngleDecoder_CM_single_s
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "s"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigResolverAngleDecoder_CM_uint16
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%5.0"
+    /* Units                  */      ""
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigResolverAngleDecoder_CM_uint32
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%10.0"
+    /* Units                  */      ""
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigResolverAngleDecoder_CM_uint8
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%3.0"
+    /* Units                  */      ""
+  /end COMPU_METHOD
+
+  /begin  RECORD_LAYOUT Record_BOOLEAN
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_FLOAT32_IEEE
+    FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_SWORD
+    FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_UBYTE
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_ULONG
+    FNC_VALUES 1 ULONG COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_UWORD
+    FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder
+    /* Long identifier        */      "SigResolverAngleDecoder"
+    /* Root                   */      ROOT
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys
+      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_ClrResolverFault
+      SGRD_NewEstOmega
+      SGRD_NewEstTheta
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Function_Caller_Interface
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Function_Caller_Interface
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Function Caller Interface"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Function_Caller_Interface_Local_Variable_Storage
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Function_Caller_Interface_Local_Variable_Storage1
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Function_Caller_Interface_Local_Variable_Storage6
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Function_Caller_Interface_Local_Variable_Storage
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Function Caller Interface/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      SGRD_SineRaw
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Function_Caller_Interface_Local_Variable_Storage1
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Function Caller Interface/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      SGRD_SwitchFreq
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Function_Caller_Interface_Local_Variable_Storage6
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Function Caller Interface/Local Variable Storage6"
+    /begin REF_MEASUREMENT
+      SGRD_CosRaw
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_Normalization
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_ResetIprtCheck
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_Local_Variable_Storage
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_Local_Variable_Storage1
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_Parameter
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_Parameter1
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_Parameter2
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/AngleObserver3Order"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_AgDeltaCalc
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_EnaAntiWindup
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_Integrator
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_IntegratorWithAntiSaturation
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_Saturation
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGRD_ObsrAngleDelta_IRV
+      SigResolverAngleDecoder_DW.Delay1_DSTATE
+      SigResolverAngleDecoder_DW.Delay_DSTATE_p
+      SigResolverAngleDecoder_DW.icLoad
+      SigResolverAngleDecoder_DW.icLoad_h
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_AgDeltaCalc
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/AngleObserver3Order/AgDeltaCalc"
+    /begin REF_MEASUREMENT
+      SGRD_ObsrAngleDelta_IRV
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_EnaAntiWindup
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/AngleObserver3Order/EnaAntiWindup"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_EnaAntiWindup_EnaAntiWindup
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_EnaAntiWindup_Saturation
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_EnaAntiWindup_EnaAntiWindup
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/AngleObserver3Order/EnaAntiWindup/EnaAntiWindup"
+    /begin REF_MEASUREMENT
+      SigResolverAngleDecoder_DW.Delay_DSTATE_g
+      SigResolverAngleDecoder_DW.icLoad_o
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_EnaAntiWindup_Saturation
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/AngleObserver3Order/EnaAntiWindup/Saturation"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_EnaAntiWindup_Saturation_Parameter
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_EnaAntiWindup_Saturation_Parameter
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/AngleObserver3Order/EnaAntiWindup/Saturation/Parameter"
+    /begin REF_CHARACTERISTIC
+      SGRD_MaxSpdLmt_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_Integrator
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/AngleObserver3Order/Integrator"
+    /begin REF_MEASUREMENT
+      SigResolverAngleDecoder_DW.Delay1_DSTATE_h
+      SigResolverAngleDecoder_DW.Delay_DSTATE_m
+      SigResolverAngleDecoder_DW.icLoad_ee
+      SigResolverAngleDecoder_DW.icLoad_f
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_IntegratorWithAntiSaturation
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/AngleObserver3Order/IntegratorWithAntiSaturation"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_IntegratorWithAntiSaturation_Integrator
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_IntegratorWithAntiSaturation_Saturation
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_IntegratorWithAntiSaturation_Integrator
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/AngleObserver3Order/IntegratorWithAntiSaturation/Integrator"
+    /begin REF_MEASUREMENT
+      SigResolverAngleDecoder_DW.Delay1_DSTATE_o
+      SigResolverAngleDecoder_DW.Delay_DSTATE_i
+      SigResolverAngleDecoder_DW.icLoad_e
+      SigResolverAngleDecoder_DW.icLoad_p
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_IntegratorWithAntiSaturation_Saturation
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/AngleObserver3Order/IntegratorWithAntiSaturation/Saturation"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_IntegratorWithAntiSaturation_Saturation_EnaAntiWindup
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_IntegratorWithAntiSaturation_Saturation_Saturation
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_IntegratorWithAntiSaturation_Saturation_EnaAntiWindup
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/AngleObserver3Order/IntegratorWithAntiSaturation/Saturation/EnaAntiWindup"
+    /begin REF_MEASUREMENT
+      SigResolverAngleDecoder_DW.Delay_DSTATE_pn
+      SigResolverAngleDecoder_DW.icLoad_j
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_IntegratorWithAntiSaturation_Saturation_Saturation
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/AngleObserver3Order/IntegratorWithAntiSaturation/Saturation/Saturation"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_IntegratorWithAntiSaturation_Saturation_Saturation_Parameter
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_IntegratorWithAntiSaturation_Saturation_Saturation_Parameter
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/AngleObserver3Order/IntegratorWithAntiSaturation/Saturation/Saturation/Parameter"
+    /begin REF_CHARACTERISTIC
+      SGRD_MaxAccelLmt_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_Saturation
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/AngleObserver3Order/Saturation"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_Saturation_Parameter
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_AngleObserver3Order_Saturation_Parameter
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/AngleObserver3Order/Saturation/Parameter"
+    /begin REF_CHARACTERISTIC
+      SGRD_MaxJerkLmt_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_Local_Variable_Storage
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      SGRD_ObsrSpdRaw
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_Local_Variable_Storage1
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      SGRD_ObsrAngleDelta
+      SGRD_ObsrAngleDelta_IRV
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_Parameter
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/Parameter"
+    /begin REF_CHARACTERISTIC
+      SGRD_ObsrKp_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_Parameter1
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/Parameter1"
+    /begin REF_CHARACTERISTIC
+      SGRD_ObsrKi_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_AngleObserver_Parameter2
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/AngleObserver/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGRD_ObsrKii_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_Normalization
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/Normalization"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_Normalization_Local_Variable_Storage
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_Normalization_Local_Variable_Storage1
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_Normalization_Parameter
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_Normalization_Parameter1
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_Normalization_Parameter2
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_Normalization_Parameter3
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGRD_CosRaw3Dly_IRV
+      SGRD_CosRaw6Dly_IRV
+      SGRD_CosRaw_IRV
+      SGRD_SineRaw3Dly_IRV
+      SGRD_SineRaw6Dly_IRV
+      SGRD_SineRaw_IRV
+      SigResolverAngleDecoder_DW.Delay1_DSTATE_j
+      SigResolverAngleDecoder_DW.Delay2_DSTATE
+      SigResolverAngleDecoder_DW.Delay3_DSTATE
+      SigResolverAngleDecoder_DW.Delay_DSTATE_c
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_Normalization_Local_Variable_Storage
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/Normalization/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      SGRD_SineNorm
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_Normalization_Local_Variable_Storage1
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/Normalization/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      SGRD_CosNorm
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_Normalization_Parameter
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/Normalization/Parameter"
+    /begin REF_CHARACTERISTIC
+      SGRD_SineOffset_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_Normalization_Parameter1
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/Normalization/Parameter1"
+    /begin REF_CHARACTERISTIC
+      SGRD_SineAmp_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_Normalization_Parameter2
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/Normalization/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGRD_CosOffset_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_Normalization_Parameter3
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/Normalization/Parameter3"
+    /begin REF_CHARACTERISTIC
+      SGRD_CosAmp_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_ResetIprtCheck
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/ResetIprtCheck"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_ResetIprtCheck_Compare_To_Zero
+      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_ResetIprtCheck_Parameter
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_ResetIprtCheck_Compare_To_Zero
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/ResetIprtCheck/Compare
+To Zero"
+    /begin REF_MEASUREMENT
+      SGRD_ResolverErr_IRV
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_AngleObserver_96us_sys_Subsystem_ResetIprtCheck_Parameter
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_AngleObserver_96us_sys/Subsystem/ResetIprtCheck/Parameter"
+    /begin REF_CHARACTERISTIC
+      SGRD_FaultResetEna_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_CalcElecAngle_100us_sys"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_DeltaTimeCalc
+      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Function_Caller_Interface
+      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Local_Variable_Storage
+      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Local_Variable_Storage1
+      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Local_Variable_Storage2
+      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Local_Variable_Storage3
+      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_LowPassFilter
+      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Parameter
+      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Parameter1
+      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Parameter2
+      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Parameter3
+      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Parameter4
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGRD_NewEstOmega
+      SGRD_NewEstTheta
+      SGRD_ObsrSpeed_IRV
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_DeltaTimeCalc
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_CalcElecAngle_100us_sys/DeltaTimeCalc"
+    /begin REF_MEASUREMENT
+      SigResolverAngleDecoder_ConstB.UnaryMinus
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Function_Caller_Interface
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_CalcElecAngle_100us_sys/Function Caller Interface"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Function_Caller_Interface_Local_Variable_Storage7
+      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Function_Caller_Interface_Local_Variable_Storage8
+      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Function_Caller_Interface_Local_Variable_Storage9
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Function_Caller_Interface_Local_Variable_Storage7
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_CalcElecAngle_100us_sys/Function Caller Interface/Local Variable Storage7"
+    /begin REF_MEASUREMENT
+      SGRD_SwitchPeriod
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Function_Caller_Interface_Local_Variable_Storage8
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_CalcElecAngle_100us_sys/Function Caller Interface/Local Variable Storage8"
+    /begin REF_MEASUREMENT
+      SGRD_CurrentTS
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Function_Caller_Interface_Local_Variable_Storage9
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_CalcElecAngle_100us_sys/Function Caller Interface/Local Variable Storage9"
+    /begin REF_MEASUREMENT
+      SGRD_AngleTS
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Local_Variable_Storage
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_CalcElecAngle_100us_sys/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      SGRD_ObsrSpd
+      SGRD_ObsrSpeed_IRV
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Local_Variable_Storage1
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_CalcElecAngle_100us_sys/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      SGRD_DeltaTimes
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Local_Variable_Storage2
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_CalcElecAngle_100us_sys/Local Variable Storage2"
+    /begin REF_MEASUREMENT
+      SGRD_CompAngle
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Local_Variable_Storage3
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_CalcElecAngle_100us_sys/Local Variable Storage3"
+    /begin REF_MEASUREMENT
+      SGRD_EstAngle
+      SGRD_NewEstTheta
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_LowPassFilter
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_CalcElecAngle_100us_sys/LowPassFilter"
+    /begin REF_MEASUREMENT
+      SGRD_NewEstOmega
+      SigResolverAngleDecoder_DW.Delay_DSTATE
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Parameter
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_CalcElecAngle_100us_sys/Parameter"
+    /begin REF_CHARACTERISTIC
+      SGRD_GrpDlyResolverADC_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Parameter1
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_CalcElecAngle_100us_sys/Parameter1"
+    /begin REF_CHARACTERISTIC
+      SGRD_AngleCompEna_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Parameter2
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_CalcElecAngle_100us_sys/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGRD_ResolverDirection
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Parameter3
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_CalcElecAngle_100us_sys/Parameter3"
+    /begin REF_CHARACTERISTIC
+      SGRD_ResolverDirection
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_CalcElecAngle_100us_sys_Parameter4
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_CalcElecAngle_100us_sys/Parameter4"
+    /begin REF_CHARACTERISTIC
+      SGRD_SpdFilterBw_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_EnDiag
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_CosLosDiag
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_DosDiag
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_ErrCodeCalc
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LosDiagEnCheck
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LotDiag
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_RawAmpCalc
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_SineLosDiag
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_CosLosDiag
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/CosLosDiag"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_CosLosDiag_FaultDebounce
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_CosLosDiag_Parameter
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_CosLosDiag_Parameter2
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_CosLosDiag_Parameter3
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_CosLosDiag_Parameter4
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_ClrResolverFault
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_CosLosDiag_FaultDebounce
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/CosLosDiag/FaultDebounce"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_CosLosDiag_FaultDebounce_Subsystem
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_CosLosDiag_FaultDebounce_UnitDelay
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_CosLosDiag_FaultDebounce_Subsystem
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/CosLosDiag/FaultDebounce/Subsystem"
+    /begin REF_MEASUREMENT
+      SigResolverAngleDecoder_DW.Memory_PreviousInput_j
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_CosLosDiag_FaultDebounce_UnitDelay
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/CosLosDiag/FaultDebounce/UnitDelay"
+    /begin REF_MEASUREMENT
+      SigResolverAngleDecoder_DW.BareUnitDelay_DSTATE_a
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_CosLosDiag_Parameter
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/CosLosDiag/Parameter"
+    /begin REF_CHARACTERISTIC
+      SGRD_AmpLoFaultThr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_CosLosDiag_Parameter2
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/CosLosDiag/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGRD_DebounceMaxLo_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_CosLosDiag_Parameter3
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/CosLosDiag/Parameter3"
+    /begin REF_CHARACTERISTIC
+      SGRD_DebounceIncr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_CosLosDiag_Parameter4
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/CosLosDiag/Parameter4"
+    /begin REF_CHARACTERISTIC
+      SGRD_DebounceDecr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_DosDiag
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/DosDiag"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_DosDiag_FaultDebounce
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_DosDiag_Parameter
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_DosDiag_Parameter2
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_DosDiag_Parameter3
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_DosDiag_Parameter4
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_ClrResolverFault
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_DosDiag_FaultDebounce
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/DosDiag/FaultDebounce"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_DosDiag_FaultDebounce_Subsystem
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_DosDiag_FaultDebounce_UnitDelay
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_DosDiag_FaultDebounce_Subsystem
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/DosDiag/FaultDebounce/Subsystem"
+    /begin REF_MEASUREMENT
+      SigResolverAngleDecoder_DW.Memory_PreviousInput
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_DosDiag_FaultDebounce_UnitDelay
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/DosDiag/FaultDebounce/UnitDelay"
+    /begin REF_MEASUREMENT
+      SigResolverAngleDecoder_DW.BareUnitDelay_DSTATE
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_DosDiag_Parameter
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/DosDiag/Parameter"
+    /begin REF_CHARACTERISTIC
+      SGRD_AmpDosFaultThr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_DosDiag_Parameter2
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/DosDiag/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGRD_DebounceMaxHi_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_DosDiag_Parameter3
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/DosDiag/Parameter3"
+    /begin REF_CHARACTERISTIC
+      SGRD_DebounceIncr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_DosDiag_Parameter4
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/DosDiag/Parameter4"
+    /begin REF_CHARACTERISTIC
+      SGRD_DebounceDecr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_ErrCodeCalc
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/ErrCodeCalc"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_ErrCodeCalc_Local_Variable_Storage
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SigResolverAngleDecoder_DW.UnitDelay_DSTATE_o
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_ErrCodeCalc_Local_Variable_Storage
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/ErrCodeCalc/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      SGRD_ResolverErrLatched
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LosDiagEnCheck
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/LosDiagEnCheck"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LosDiagEnCheck_HysteresisCtrl
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LosDiagEnCheck_Parameter
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LosDiagEnCheck_Parameter1
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGRD_ObsrSpeed_IRV
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LosDiagEnCheck_HysteresisCtrl
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/LosDiagEnCheck/HysteresisCtrl"
+    /begin REF_MEASUREMENT
+      SigResolverAngleDecoder_DW.Delay_DSTATE_o
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LosDiagEnCheck_Parameter
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/LosDiagEnCheck/Parameter"
+    /begin REF_CHARACTERISTIC
+      SGRD_SpdThrLoFaultDiag_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LosDiagEnCheck_Parameter1
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/LosDiagEnCheck/Parameter1"
+    /begin REF_CHARACTERISTIC
+      SGRD_SpdThrLoFaultDiagLo_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LotDiag
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/LotDiag"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LotDiag_FaultDebounce
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LotDiag_Parameter2
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LotDiag_Parameter3
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LotDiag_Parameter4
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LotDiag_Parameter5
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_ClrResolverFault
+      SGRD_ObsrAngleDelta_IRV
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LotDiag_FaultDebounce
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/LotDiag/FaultDebounce"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LotDiag_FaultDebounce_Subsystem
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LotDiag_FaultDebounce_UnitDelay
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LotDiag_FaultDebounce_Subsystem
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/LotDiag/FaultDebounce/Subsystem"
+    /begin REF_MEASUREMENT
+      SigResolverAngleDecoder_DW.Memory_PreviousInput_a
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LotDiag_FaultDebounce_UnitDelay
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/LotDiag/FaultDebounce/UnitDelay"
+    /begin REF_MEASUREMENT
+      SigResolverAngleDecoder_DW.BareUnitDelay_DSTATE_c
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LotDiag_Parameter2
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/LotDiag/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGRD_DebounceMaxLoss_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LotDiag_Parameter3
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/LotDiag/Parameter3"
+    /begin REF_CHARACTERISTIC
+      SGRD_DebounceIncr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LotDiag_Parameter4
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/LotDiag/Parameter4"
+    /begin REF_CHARACTERISTIC
+      SGRD_DebounceDecr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_LotDiag_Parameter5
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/LotDiag/Parameter5"
+    /begin REF_CHARACTERISTIC
+      SGRD_SignalLotThr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_RawAmpCalc
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/RawAmpCalc"
+    /begin REF_MEASUREMENT
+      SGRD_CosRaw_IRV
+      SGRD_SineRaw_IRV
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_SineLosDiag
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/SineLosDiag"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_SineLosDiag_FaultDebounce
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_SineLosDiag_Parameter
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_SineLosDiag_Parameter2
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_SineLosDiag_Parameter3
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_SineLosDiag_Parameter4
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_ClrResolverFault
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_SineLosDiag_FaultDebounce
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/SineLosDiag/FaultDebounce"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_SineLosDiag_FaultDebounce_Subsystem
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_SineLosDiag_FaultDebounce_UnitDelay
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_SineLosDiag_FaultDebounce_Subsystem
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/SineLosDiag/FaultDebounce/Subsystem"
+    /begin REF_MEASUREMENT
+      SigResolverAngleDecoder_DW.Memory_PreviousInput_d
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_SineLosDiag_FaultDebounce_UnitDelay
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/SineLosDiag/FaultDebounce/UnitDelay"
+    /begin REF_MEASUREMENT
+      SigResolverAngleDecoder_DW.BareUnitDelay_DSTATE_f
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_SineLosDiag_Parameter
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/SineLosDiag/Parameter"
+    /begin REF_CHARACTERISTIC
+      SGRD_AmpLoFaultThr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_SineLosDiag_Parameter2
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/SineLosDiag/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGRD_DebounceMaxLo_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_SineLosDiag_Parameter3
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/SineLosDiag/Parameter3"
+    /begin REF_CHARACTERISTIC
+      SGRD_DebounceIncr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_Diag_SineLosDiag_Parameter4
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/Diag/SineLosDiag/Parameter4"
+    /begin REF_CHARACTERISTIC
+      SGRD_DebounceDecr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_EnDiag
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/EnDiag"
+    /begin SUB_GROUP
+      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_EnDiag_Parameter
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SigResolverAngleDecoder_DW.UnitDelay_DSTATE
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigResolverAngleDecoder_SGRD_DiagResolverFault_1ms_sys_Subsystem_EnDiag_Parameter
+    /* Long identifier        */      "SigResolverAngleDecoder/SGRD_DiagResolverFault_1ms_sys/Subsystem/EnDiag/Parameter"
+    /begin REF_CHARACTERISTIC
+      SGRD_InitTimeCount_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /end MODULE
+
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF SigResolverAngleDecoder.a2l*/

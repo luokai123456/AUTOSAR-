@@ -1,0 +1,36 @@
+
+Name: generate/include/eMIOS_Cfg.h
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425571778470522144583376023079230864320782067803525
+ 6398490253462512407046338546462266015544863716165536
+
+Name: generate/source/eMIOS_Cfg.c
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424189898851163302634045848980329834535394689370937
+ 7918079838760572536645971582209703681891550436239271
+
+Name: config/eMIOS2.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594749304473907872865157266371016270051190556420943600
+ 298264218108979837278571207921521273386695718825740261
+
+Name: config/eMIOS1.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424847487998827212217097851634234543756680125926434
+ 9530666463750407839474193057366708187631381496007534
+
+Name: config/eMIOS3.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773971990555637976373172100915618623088371920218798
+ 955634743459310325608744877569354125865179931327912582
+

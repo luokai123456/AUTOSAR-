@@ -1,0 +1,2816 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     FltFaultDiagnoser.a2l
+ *
+ * 
+ *
+ * Code generation for model "FltFaultDiagnoser".
+ *
+ * Model version              : 1.23
+ * Simulink Coder version : 10.6 R2022b
+ * C source code generated on : Thu May 28 16:38:46 2026
+ *
+ * Target selection: ert.tlc
+ * Embedded hardware selection: Infineon->TriCore
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+ASAP2_VERSION  1 31     /* Version 1.31 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+
+  /begin HEADER "Header Comments go here"
+  /end HEADER
+
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+    /end MOD_PAR
+
+    /begin MOD_COMMON  "Mod Common Comment Here"
+      BYTE_ORDER     MSB_LAST
+
+      ALIGNMENT_BYTE 1
+      ALIGNMENT_WORD 2
+      ALIGNMENT_LONG 4
+      ALIGNMENT_FLOAT32_IEEE 4
+      ALIGNMENT_FLOAT64_IEEE 4
+    /end MOD_COMMON
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceDecrDcVoltHi_C
+    /* Long Identifier        */      "Debounce decrement value for diagnostic of DC overvoltage"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceDecrDcVoltHi_C@ */
+    /* Record Layout          */      Record_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint16_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceDecrInvTMonitor_C
+    /* Long Identifier        */      "Debounce decrement value for diagnostic of IGBT overtemperature"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceDecrInvTMonitor_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceDecrPhaCur_C
+    /* Long Identifier        */      "Debounce decrement value for diagnostic of phase overcurrent"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceDecrPhaCur_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceDecrResolverSpdMonitor_C
+    /* Long Identifier        */      "Debounce decrement value for diagnostic of overspeed from position sensor"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceDecrResolverSpdMonitor_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceDecrWindingTMonitor_C
+    /* Long Identifier        */      "Debounce decrement value for winding temperatue monitoring"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceDecrWindingTMonitor_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceIncrDcVoltHi_C
+    /* Long Identifier        */      "Debounce increment value for diagnostic of DC overvoltage"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceIncrDcVoltHi_C@ */
+    /* Record Layout          */      Record_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint16_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceIncrInvTMonitor_C
+    /* Long Identifier        */      "Debounce increment value for diagnostic of IGBT overtemperature"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceIncrInvTMonitor_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceIncrPhaCur_C
+    /* Long Identifier        */      "Debounce increment value for diagnostic of phase overcurrent"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceIncrPhaCur_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceIncrResolverSpdMonitor_C
+    /* Long Identifier        */      "Debounce increment value for diagnostic of overspeed from position sensor"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceIncrResolverSpdMonitor_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceIncrWindingTMonitor_C
+    /* Long Identifier        */      "Debounce increment value for winding temperature monitoring"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceIncrWindingTMonitor_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceMaxDcVoltHi_C
+    /* Long Identifier        */      "Debounce maximum value for diagnostic of DC overvoltage"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceMaxDcVoltHi_C@ */
+    /* Record Layout          */      Record_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint16_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceMaxInvTMonitor_C
+    /* Long Identifier        */      "Debounce maximum value for diagnostic of IGBT overtemperature"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceMaxInvTMonitor_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceMaxPhaCur_C
+    /* Long Identifier        */      "Debounce maximum value for diagnostic of phase overcurrent"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceMaxPhaCur_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceMaxResolverSpdMonitor_C
+    /* Long Identifier        */      "Debounce maximum value for diagnostic of overspeed from position sensor"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceMaxResolverSpdMonitor_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceMaxWindingTMonitor_C
+    /* Long Identifier        */      "Debounce maximum value for winding temperature monitoring"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceMaxWindingTMonitor_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceMinDcVoltHi_C
+    /* Long Identifier        */      "Debounce minimum value for diagnostic of DC overvoltage"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceMinDcVoltHi_C@ */
+    /* Record Layout          */      Record_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint16_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceMinInvTMonitor_C
+    /* Long Identifier        */      "Debounce minimum value for diagnostic of IGBT overtemperature"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceMinInvTMonitor_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceMinPhaCur_C
+    /* Long Identifier        */      "Debounce minimum value for diagnostic of phase overcurrent"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceMinPhaCur_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceMinResolverSpdMonitor_C
+    /* Long Identifier        */      "Debounce minimum value for diagnostic of overspeed from position sensor"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceMinResolverSpdMonitor_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_DebounceMinWindingTMonitor_C
+    /* Long Identifier        */      "Debounce minimum value for winding temperature monitoring"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_DebounceMinWindingTMonitor_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_EnableDiagHwDcLinkVoltDiag_C
+    /* Long Identifier        */      "Enable flag for hardware monitor DC link voltage diagnostic"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_EnableDiagHwDcLinkVoltDiag_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_EnableDiagHwErrPhaCurDiag_C
+    /* Long Identifier        */      "Enable flag for hardware monitor phase current diagnostic"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_EnableDiagHwErrPhaCurDiag_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_EnableDiagHwFltHiSideB_C
+    /* Long Identifier        */      "Enable flag for hardware monitor DC fault B HS diagnostic"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_EnableDiagHwFltHiSideB_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_EnableDiagHwFltLoSideB_C
+    /* Long Identifier        */      "Enable flag for hardware monitor DC fault B LS diagnostic"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_EnableDiagHwFltLoSideB_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_EnableDiagResolverCosLosDiag_C
+    /* Long Identifier        */      "Enable flag for Resolver diagnostic of tracking"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_EnableDiagResolverCosLosDiag_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_EnableDiagResolverDiagDos_C
+    /* Long Identifier        */      "Enable flag for Resolver diagnostic of phase lock range error"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_EnableDiagResolverDiagDos_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_EnableDiagResolverDiagSigLot_C
+    /* Long Identifier        */      "Enable flag for Resolver diagnostic of LOS (loss of signal)  threshold"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_EnableDiagResolverDiagSigLot_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_EnableDiagResolverSineLosDiag_C
+    /* Long Identifier        */      "Enable flag for Resolver diagnostic of velocity tracking rate"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_EnableDiagResolverSineLosDiag_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_EnableShutdownReq_C
+    /* Long Identifier        */      "Enable flag for shutdown request function"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_EnableShutdownReq_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_IHiThr_C
+    /* Long Identifier        */      "Max permissible current"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_IHiThr_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_single_A
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      2000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_ResetDcDiagUHi_C
+    /* Long Identifier        */      "Reset for diagnostic of DC Link overvoltage"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_ResetDcDiagUHi_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_ResetDiagPhaCur_C
+    /* Long Identifier        */      "Reset for diagnostic of phase current"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_ResetDiagPhaCur_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_ResetInvTMonitor_C
+    /* Long Identifier        */      "Rst for Temperature monitoring of Inverter"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_ResetInvTMonitor_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_ResetLatchDcVoltHi_C
+    /* Long Identifier        */      "Fault detection flag"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_ResetLatchDcVoltHi_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_ResetLatchHwDcLinkVolt_C
+    /* Long Identifier        */      "clear to enable latching."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_ResetLatchHwDcLinkVolt_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_ResetLatchHwFltLoSideB_C
+    /* Long Identifier        */      "clear to enable latching."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_ResetLatchHwFltLoSideB_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_ResetLatchHwPhaCur_C
+    /* Long Identifier        */      "clear to enable latching."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_ResetLatchHwPhaCur_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_ResetLatchResolverCosLos_C
+    /* Long Identifier        */      "clear to enable latching."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_ResetLatchResolverCosLos_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_ResetLatchResolverDos_C
+    /* Long Identifier        */      "clear to enable latching."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_ResetLatchResolverDos_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_ResetLatchResolverSigLot_C
+    /* Long Identifier        */      "clear to enable latching."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_ResetLatchResolverSigLot_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_ResetLatchResolverSineLos_C
+    /* Long Identifier        */      "clear to enable latching."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_ResetLatchResolverSineLos_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_ResetLatchShutdownReq_C
+    /* Long Identifier        */      "Reset control for shutdown request latched error functionality"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_ResetLatchShutdownReq_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_ResetResolverNMonitor_C
+    /* Long Identifier        */      "Reset for speed monitoring from position sensor"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_ResetResolverNMonitor_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_ResetWindingTMonitor_C
+    /* Long Identifier        */      "Reset for Temperature monitoring of Winding"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_ResetWindingTMonitor_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_SpdResolverThrFaiRcvrr_C
+    /* Long Identifier        */      "over speed recovery Threshold"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_SpdResolverThrFaiRcvrr_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_single_rpm
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      500000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_SpdResolverThrFai_C
+    /* Long Identifier        */      "Threshold speed from position sensor above which the machine should be shut down"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_SpdResolverThrFai_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_single_rpm
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      500000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_TIgbtPha1Thr_C
+    /* Long Identifier        */      "Threshold value for power switch temperature at phase A"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_TIgbtPha1Thr_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_single_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_TWindingThr_C
+    /* Long Identifier        */      "Winding temp above which error is set to 1"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_TWindingThr_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_single_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_UBattVoltThrHiRcvrr_C
+    /* Long Identifier        */      "OVER voltage RECOVERY threshold of battery voltage"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_UBattVoltThrHiRcvrr_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_single_V
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_UBattVoltThrHi_C
+    /* Long Identifier        */      "OVER voltage threshold of battery voltage"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_UBattVoltThrHi_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_single_V
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_UBattVoltThrLoRcvrr_C
+    /* Long Identifier        */      "UNDER voltage recovery threshold of battery voltage"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_UBattVoltThrLoRcvrr_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_single_V
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_UBattVoltThrLo_C
+    /* Long Identifier        */      "Voltage at battery voltage below which a DEM error entry is set"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_UBattVoltThrLo_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_single_V
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      FLDG_UDcThrHi_C
+    /* Long Identifier        */      "DC voltage above which error is set to 1"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@FLDG_UDcThrHi_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      FltFaultDiagnoser_CM_single_V
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      65535.000000
+  /end CHARACTERISTIC 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_DischargeFaultFlag
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_DischargeFaultFlag@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_ActiveShortHsReq
+    /* Long identifier        */      "Active short circuit request for high-side switches"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_ActiveShortHsReq@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_BattVoltHiErr
+    /* Long identifier        */      "Fault detection active when the voltage at battery voltage is above a threshold value"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_BattVoltHiErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_BattVoltLoErr
+    /* Long identifier        */      "Fault detection active when the voltage at battery voltage is below a threshold value"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_BattVoltLoErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_DcVoltHiWarn
+    /* Long identifier        */      "Warning flag is set when DC bus voltage is above the critical value"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_DcVoltHiWarn@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_DischargeErr
+    /* Long identifier        */      "Discharge Error"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_DischargeErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_HwDcLinkVoltErr
+    /* Long identifier        */      "Scanned errors of hardware monitor Bit 9: DC link overvoltage"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_HwDcLinkVoltErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_HwHsShortErr
+    /* Long identifier        */      "Scanned errors of hardware monitor Bit 11: Fault B HS"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_HwHsShortErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_HwLsShortErr
+    /* Long identifier        */      "Scanned errors of hardware monitor Bit 14: Fault B LS"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_HwLsShortErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_HwPhaCurErr
+    /* Long identifier        */      "hardware monitor Phase Current Error"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_HwPhaCurErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_IgbtTemp1Err
+    /* Long identifier        */      "Fault detection active when power switch at phase A temperature above threshold value"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_IgbtTemp1Err@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_IgbtTemp2Err
+    /* Long identifier        */      "Fault detection active when power switch at phase B temperature above threshold value"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_IgbtTemp2Err@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_IgbtTemp3Err
+    /* Long identifier        */      "Fault detection active when power switch at phase C temperature above threshold value"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_IgbtTemp3Err@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_PhaCur1Err
+    /* Long identifier        */      "Fault indicator active when maximum allowable current at phase A is  exceeds limit"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_PhaCur1Err@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_PhaCur1Err_IRV
+    /* Long identifier        */      "Fault indicator active when maximum allowable current at phase A is  exceeds limit"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_PhaCur1Err_IRV@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_PhaCur2Err
+    /* Long identifier        */      "Fault indicator active when maximum allowable current exceeds limit at phase B"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_PhaCur2Err@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_PhaCur2Err_IRV
+    /* Long identifier        */      "Fault indicator active when maximum allowable current exceeds limit at phase B"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_PhaCur2Err_IRV@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_PhaCur3Err
+    /* Long identifier        */      "Fault indicator active when maximum allowable current exceeds limit at phase C"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_PhaCur3Err@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_PhaCur3Err_IRV
+    /* Long identifier        */      "Fault indicator active when maximum allowable current exceeds limit at phase C"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_PhaCur3Err_IRV@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_PowerSwitchOffReq
+    /* Long identifier        */      "Error reaction request for power switches off (freewheeling mode)"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_PowerSwitchOffReq@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_ResolverCosLosErr
+    /* Long identifier        */      "Scanned errors of Resolver Bit 3: tracking error exceeds LOT (Loss of tracking) threshold"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_ResolverCosLosErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_ResolverDosErr
+    /* Long identifier        */      "Scanned errors of Resolver Bit 1: phase error exceeds phase lock range"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_ResolverDosErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_ResolverError
+    /* Long identifier        */      "Resolver Error"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_ResolverError@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_ResolverSigLotErr
+    /* Long identifier        */      "Scanned errors of Resolver Bit 6: sin/cos below LOS (loss of signa)l threshold"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_ResolverSigLotErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_ResolverSineLosErr
+    /* Long identifier        */      "Scanned errors of Resolver Bit 2: velocity exceeds maximum tracking rate"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_ResolverSineLosErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_ResolverSpdErr
+    /* Long identifier        */      "When the absolut value of measured rotor speed exceeds the maximum threshold value, this flag is set to one"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_ResolverSpdErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_ShutdownReq
+    /* Long identifier        */      "System shutdown request flag indicator"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_ShutdownReq@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_WindingTempErr
+    /* Long identifier        */      "Fault detection active when motor winding temperature above threshold value"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_WindingTempErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_WindingTempErr_IRV
+    /* Long identifier        */      "Fault detection active when motor winding temperature above threshold value"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_WindingTempErr_IRV@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.BareUnitDelay_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      UWORD
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint16
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      65535
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.BareUnitDelay_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_d
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_d@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_e
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        3
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_e@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_e2
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_e2@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_k
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_k@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_o
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_o@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_p
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        3
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_p@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.Delay_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.Delay_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.Delay_DSTATE_b
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.Delay_DSTATE_b@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.Delay_DSTATE_i
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.Delay_DSTATE_i@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.Memory_PreviousInput
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.Memory_PreviousInput@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.Memory_PreviousInput_i
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    /* Array Size             */      
+    ARRAY_SIZE                        3
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.Memory_PreviousInput_i@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.Memory_PreviousInput_k
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.Memory_PreviousInput_k@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.Memory_PreviousInput_l
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.Memory_PreviousInput_l@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.Memory_PreviousInput_m
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.Memory_PreviousInput_m@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.Memory_PreviousInput_n
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.Memory_PreviousInput_n@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.Memory_PreviousInput_nc
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    /* Array Size             */      
+    ARRAY_SIZE                        3
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.Memory_PreviousInput_nc@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.UnitDelay_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.UnitDelay_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.UnitDelay_DSTATE_a
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.UnitDelay_DSTATE_a@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.UnitDelay_DSTATE_ax
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.UnitDelay_DSTATE_ax@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.UnitDelay_DSTATE_d
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.UnitDelay_DSTATE_d@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.UnitDelay_DSTATE_f
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.UnitDelay_DSTATE_f@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.UnitDelay_DSTATE_h
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.UnitDelay_DSTATE_h@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.UnitDelay_DSTATE_i
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.UnitDelay_DSTATE_i@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.UnitDelay_DSTATE_k
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.UnitDelay_DSTATE_k@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.UnitDelay_DSTATE_kt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.UnitDelay_DSTATE_kt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.UnitDelay_DSTATE_l
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.UnitDelay_DSTATE_l@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.UnitDelay_DSTATE_m
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.UnitDelay_DSTATE_m@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FltFaultDiagnoser_DW.UnitDelay_DSTATE_o
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FltFaultDiagnoser_DW.UnitDelay_DSTATE_o@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_DcLinkVoltMeas
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      FltFaultDiagnoser_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_DcLinkVoltMeas@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_MechSpeedAbsolute
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      FltFaultDiagnoser_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_MechSpeedAbsolute@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_MotorTemp1
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      FltFaultDiagnoser_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_MotorTemp1@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseACurrent
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      FltFaultDiagnoser_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseACurrent@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseBCurrent
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      FltFaultDiagnoser_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseBCurrent@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseCCurrent
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      FltFaultDiagnoser_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseCCurrent@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_BatteryVolt
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      FltFaultDiagnoser_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_BatteryVolt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_HwHsIntBSt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_HwHsIntBSt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_HwLsIntBSt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_HwLsIntBSt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_HwOvercurSt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_HwOvercurSt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_HwOvervoltSt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_HwOvervoltSt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseASwitchTemp
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      FltFaultDiagnoser_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseASwitchTemp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseBSwitchTemp
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      FltFaultDiagnoser_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseBSwitchTemp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseCSwitchTemp
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      FltFaultDiagnoser_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseCSwitchTemp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_ResolverError
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      FltFaultDiagnoser_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_ResolverError@ */
+  /end MEASUREMENT 
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      FltFaultDiagnoser_CM_logical
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%1.0"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      FltFaultDiagnoser_CM_single
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      FltFaultDiagnoser_CM_single_A
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "A"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      FltFaultDiagnoser_CM_single_V
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      FltFaultDiagnoser_CM_single_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      FltFaultDiagnoser_CM_single_rpm
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rpm"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      FltFaultDiagnoser_CM_uint16
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%5.0"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      FltFaultDiagnoser_CM_uint16_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%5.0"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      FltFaultDiagnoser_CM_uint8
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%3.0"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      FltFaultDiagnoser_CM_uint8_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%3.0"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin  RECORD_LAYOUT Record_BOOLEAN
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_FLOAT32_IEEE
+    FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_UBYTE
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_UWORD
+    FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser
+    /* Long identifier        */      "FltFaultDiagnoser"
+    /* Root                   */      ROOT
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys
+      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTSO_DischargeFaultFlag
+      SGPP_DcLinkVoltMeas
+      SGPP_MechSpeedAbsolute
+      SGPP_MotorTemp1
+      SGPP_PhaseACurrent
+      SGPP_PhaseBCurrent
+      SGPP_PhaseCCurrent
+      SGSA_BatteryVolt
+      SGSA_HwHsIntBSt
+      SGSA_HwLsIntBSt
+      SGSA_HwOvercurSt
+      SGSA_HwOvervoltSt
+      SGSA_PhaseASwitchTemp
+      SGSA_PhaseBSwitchTemp
+      SGSA_PhaseCSwitchTemp
+      SGSA_ResolverError
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagCurrentFast_100us_sys"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagCurrentFast_100us_sys/OverCurrentDiag"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_FaultDebounce
+      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_Parameter1
+      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_Parameter2
+      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_Parameter3
+      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_Parameter4
+      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_Parameter5
+      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_Parameter6
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_FaultDebounce
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagCurrentFast_100us_sys/OverCurrentDiag/FaultDebounce"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_FaultDebounce_Subsystem
+      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_FaultDebounce_UnitDelay
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_FaultDebounce_Subsystem
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagCurrentFast_100us_sys/OverCurrentDiag/FaultDebounce/Subsystem"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.Memory_PreviousInput_nc
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_FaultDebounce_UnitDelay
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagCurrentFast_100us_sys/OverCurrentDiag/FaultDebounce/UnitDelay"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_p
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_Parameter1
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagCurrentFast_100us_sys/OverCurrentDiag/Parameter1"
+    /begin REF_CHARACTERISTIC
+      FLDG_IHiThr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_Parameter2
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagCurrentFast_100us_sys/OverCurrentDiag/Parameter2"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetDiagPhaCur_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_Parameter3
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagCurrentFast_100us_sys/OverCurrentDiag/Parameter3"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceMaxPhaCur_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_Parameter4
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagCurrentFast_100us_sys/OverCurrentDiag/Parameter4"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceMinPhaCur_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_Parameter5
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagCurrentFast_100us_sys/OverCurrentDiag/Parameter5"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceIncrPhaCur_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagCurrentFast_100us_sys_OverCurrentDiag_Parameter6
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagCurrentFast_100us_sys/OverCurrentDiag/Parameter6"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceDecrPhaCur_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ErrorReaction"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_HoldLatch
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_HoldLatch1
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_HoldLatch2
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_Parameter1
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_Parameter2
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_Parameter3
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_Parameter4
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_Parameter5
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_Parameter6
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      FLDG_PhaCur1Err_IRV
+      FLDG_PhaCur2Err_IRV
+      FLDG_PhaCur3Err_IRV
+      FLDG_WindingTempErr_IRV
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_HoldLatch
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ErrorReaction/HoldLatch"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.UnitDelay_DSTATE_i
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_HoldLatch1
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ErrorReaction/HoldLatch1"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.UnitDelay_DSTATE_k
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_HoldLatch2
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ErrorReaction/HoldLatch2"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.UnitDelay_DSTATE_d
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_Parameter1
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ErrorReaction/Parameter1"
+    /begin REF_CHARACTERISTIC
+      FLDG_EnableShutdownReq_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_Parameter2
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ErrorReaction/Parameter2"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetLatchShutdownReq_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_Parameter3
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ErrorReaction/Parameter3"
+    /begin REF_CHARACTERISTIC
+      FLDG_EnableShutdownReq_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_Parameter4
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ErrorReaction/Parameter4"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetLatchShutdownReq_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_Parameter5
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ErrorReaction/Parameter5"
+    /begin REF_CHARACTERISTIC
+      FLDG_EnableShutdownReq_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ErrorReaction_Parameter6
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ErrorReaction/Parameter6"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetLatchShutdownReq_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/HwFaultLatch"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_HoldLatch
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_HoldLatch1
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_HoldLatch2
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_HoldLatch3
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_Parameter1
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_Parameter2
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_Parameter3
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_Parameter4
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_Parameter5
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_Parameter6
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_Parameter7
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_Parameter8
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGSA_HwHsIntBSt
+      SGSA_HwLsIntBSt
+      SGSA_HwOvercurSt
+      SGSA_HwOvervoltSt
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_HoldLatch
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/HwFaultLatch/HoldLatch"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.UnitDelay_DSTATE_kt
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_HoldLatch1
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/HwFaultLatch/HoldLatch1"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.UnitDelay_DSTATE
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_HoldLatch2
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/HwFaultLatch/HoldLatch2"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.UnitDelay_DSTATE_o
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_HoldLatch3
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/HwFaultLatch/HoldLatch3"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.UnitDelay_DSTATE_a
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_Parameter1
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/HwFaultLatch/Parameter1"
+    /begin REF_CHARACTERISTIC
+      FLDG_EnableDiagHwDcLinkVoltDiag_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_Parameter2
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/HwFaultLatch/Parameter2"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetLatchHwDcLinkVolt_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_Parameter3
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/HwFaultLatch/Parameter3"
+    /begin REF_CHARACTERISTIC
+      FLDG_EnableDiagHwErrPhaCurDiag_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_Parameter4
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/HwFaultLatch/Parameter4"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetLatchHwPhaCur_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_Parameter5
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/HwFaultLatch/Parameter5"
+    /begin REF_CHARACTERISTIC
+      FLDG_EnableDiagHwFltHiSideB_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_Parameter6
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/HwFaultLatch/Parameter6"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetLatchHwFltLoSideB_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_Parameter7
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/HwFaultLatch/Parameter7"
+    /begin REF_CHARACTERISTIC
+      FLDG_EnableDiagHwFltLoSideB_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_HwFaultLatch_Parameter8
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/HwFaultLatch/Parameter8"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetLatchHwFltLoSideB_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_FaultDebounce
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_FaultDebounce1
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_HysteresisCtrl
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_HysteresisCtrl1
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter1
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter10
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter11
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter12
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter13
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter14
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter2
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter3
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter4
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter5
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter6
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter7
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter8
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter9
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_FaultDebounce
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/FaultDebounce"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_FaultDebounce_Subsystem
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_FaultDebounce_UnitDelay
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_FaultDebounce1
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/FaultDebounce1"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_FaultDebounce1_Subsystem
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_FaultDebounce1_UnitDelay
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_FaultDebounce1_Subsystem
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/FaultDebounce1/Subsystem"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.Memory_PreviousInput_k
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_FaultDebounce1_UnitDelay
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/FaultDebounce1/UnitDelay"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_o
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_FaultDebounce_Subsystem
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/FaultDebounce/Subsystem"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.Memory_PreviousInput_n
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_FaultDebounce_UnitDelay
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/FaultDebounce/UnitDelay"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_d
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_HysteresisCtrl
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/HysteresisCtrl"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.Delay_DSTATE
+      SGSA_BatteryVolt
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_HysteresisCtrl1
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/HysteresisCtrl1"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.Delay_DSTATE_b
+      SGSA_BatteryVolt
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter1
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/Parameter1"
+    /begin REF_CHARACTERISTIC
+      FLDG_UBattVoltThrLoRcvrr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter10
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/Parameter10"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceMinResolverSpdMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter11
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/Parameter11"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceIncrResolverSpdMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter12
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/Parameter12"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceDecrResolverSpdMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter13
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/Parameter13"
+    /begin REF_CHARACTERISTIC
+      FLDG_UBattVoltThrHi_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter14
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/Parameter14"
+    /begin REF_CHARACTERISTIC
+      FLDG_UBattVoltThrHiRcvrr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter2
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/Parameter2"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetResolverNMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter3
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/Parameter3"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceMaxResolverSpdMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter4
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/Parameter4"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceMinResolverSpdMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter5
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/Parameter5"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceIncrResolverSpdMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter6
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/Parameter6"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceDecrResolverSpdMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter7
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/Parameter7"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetResolverNMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter8
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/Parameter8"
+    /begin REF_CHARACTERISTIC
+      FLDG_UBattVoltThrLo_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_KL30VoltageDiag_Parameter9
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/KL30VoltageDiag/Parameter9"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceMaxResolverSpdMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/PowerModuleTemperatureDiag"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_FaultDebounce
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_Parameter1
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_Parameter2
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_Parameter3
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_Parameter4
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_Parameter5
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_Parameter6
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_FaultDebounce
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/PowerModuleTemperatureDiag/FaultDebounce"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_FaultDebounce_Subsystem
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_FaultDebounce_UnitDelay
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_FaultDebounce_Subsystem
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/PowerModuleTemperatureDiag/FaultDebounce/Subsystem"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.Memory_PreviousInput_i
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_FaultDebounce_UnitDelay
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/PowerModuleTemperatureDiag/FaultDebounce/UnitDelay"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_e
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_Parameter1
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/PowerModuleTemperatureDiag/Parameter1"
+    /begin REF_CHARACTERISTIC
+      FLDG_TIgbtPha1Thr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_Parameter2
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/PowerModuleTemperatureDiag/Parameter2"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetInvTMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_Parameter3
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/PowerModuleTemperatureDiag/Parameter3"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceMaxInvTMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_Parameter4
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/PowerModuleTemperatureDiag/Parameter4"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceMinInvTMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_Parameter5
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/PowerModuleTemperatureDiag/Parameter5"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceIncrInvTMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_PowerModuleTemperatureDiag_Parameter6
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/PowerModuleTemperatureDiag/Parameter6"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceDecrInvTMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ResolverFaultDecode"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_HoldLatch
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_HoldLatch1
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_HoldLatch2
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_HoldLatch3
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_Parameter1
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_Parameter2
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_Parameter3
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_Parameter4
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_Parameter5
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_Parameter6
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_Parameter7
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_Parameter8
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGSA_ResolverError
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_HoldLatch
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ResolverFaultDecode/HoldLatch"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.UnitDelay_DSTATE_ax
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_HoldLatch1
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ResolverFaultDecode/HoldLatch1"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.UnitDelay_DSTATE_f
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_HoldLatch2
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ResolverFaultDecode/HoldLatch2"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.UnitDelay_DSTATE_l
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_HoldLatch3
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ResolverFaultDecode/HoldLatch3"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.UnitDelay_DSTATE_m
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_Parameter1
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ResolverFaultDecode/Parameter1"
+    /begin REF_CHARACTERISTIC
+      FLDG_EnableDiagResolverDiagDos_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_Parameter2
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ResolverFaultDecode/Parameter2"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetLatchResolverDos_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_Parameter3
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ResolverFaultDecode/Parameter3"
+    /begin REF_CHARACTERISTIC
+      FLDG_EnableDiagResolverSineLosDiag_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_Parameter4
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ResolverFaultDecode/Parameter4"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetLatchResolverSineLos_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_Parameter5
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ResolverFaultDecode/Parameter5"
+    /begin REF_CHARACTERISTIC
+      FLDG_EnableDiagResolverCosLosDiag_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_Parameter6
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ResolverFaultDecode/Parameter6"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetLatchResolverCosLos_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_Parameter7
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ResolverFaultDecode/Parameter7"
+    /begin REF_CHARACTERISTIC
+      FLDG_EnableDiagResolverDiagSigLot_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_ResolverFaultDecode_Parameter8
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/ResolverFaultDecode/Parameter8"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetLatchResolverSigLot_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/SpeedDiag"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_FaultDebounce
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_HysteresisCtrl
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_Parameter1
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_Parameter2
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_Parameter3
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_Parameter4
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_Parameter5
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_Parameter6
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_Parameter8
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_FaultDebounce
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/SpeedDiag/FaultDebounce"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_FaultDebounce_Subsystem
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_FaultDebounce_UnitDelay
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_FaultDebounce_Subsystem
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/SpeedDiag/FaultDebounce/Subsystem"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.Memory_PreviousInput_l
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_FaultDebounce_UnitDelay
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/SpeedDiag/FaultDebounce/UnitDelay"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_e2
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_HysteresisCtrl
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/SpeedDiag/HysteresisCtrl"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.Delay_DSTATE_i
+      SGPP_MechSpeedAbsolute
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_Parameter1
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/SpeedDiag/Parameter1"
+    /begin REF_CHARACTERISTIC
+      FLDG_SpdResolverThrFai_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_Parameter2
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/SpeedDiag/Parameter2"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetResolverNMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_Parameter3
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/SpeedDiag/Parameter3"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceMaxResolverSpdMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_Parameter4
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/SpeedDiag/Parameter4"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceMinResolverSpdMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_Parameter5
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/SpeedDiag/Parameter5"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceIncrResolverSpdMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_Parameter6
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/SpeedDiag/Parameter6"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceDecrResolverSpdMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_SpeedDiag_Parameter8
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/SpeedDiag/Parameter8"
+    /begin REF_CHARACTERISTIC
+      FLDG_SpdResolverThrFaiRcvrr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/UdcVoltageDiag"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_FaultDebounce
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_HoldLatch
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_Parameter1
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_Parameter2
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_Parameter3
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_Parameter4
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_Parameter5
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_Parameter6
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_Parameter7
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_DcLinkVoltMeas
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_FaultDebounce
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/UdcVoltageDiag/FaultDebounce"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_FaultDebounce_Subsystem
+      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_FaultDebounce_UnitDelay
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_FaultDebounce_Subsystem
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/UdcVoltageDiag/FaultDebounce/Subsystem"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.Memory_PreviousInput_m
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_FaultDebounce_UnitDelay
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/UdcVoltageDiag/FaultDebounce/UnitDelay"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.BareUnitDelay_DSTATE
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_HoldLatch
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/UdcVoltageDiag/HoldLatch"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.UnitDelay_DSTATE_h
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_Parameter1
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/UdcVoltageDiag/Parameter1"
+    /begin REF_CHARACTERISTIC
+      FLDG_UDcThrHi_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_Parameter2
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/UdcVoltageDiag/Parameter2"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetDcDiagUHi_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_Parameter3
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/UdcVoltageDiag/Parameter3"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceMaxDcVoltHi_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_Parameter4
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/UdcVoltageDiag/Parameter4"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceMinDcVoltHi_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_Parameter5
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/UdcVoltageDiag/Parameter5"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceIncrDcVoltHi_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_Parameter6
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/UdcVoltageDiag/Parameter6"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceDecrDcVoltHi_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagFaultResponse_1ms_sys_UdcVoltageDiag_Parameter7
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagFaultResponse_1ms_sys/UdcVoltageDiag/Parameter7"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetLatchDcVoltHi_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagTempSlow_10ms_sys"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagTempSlow_10ms_sys/MotorTemperatureDiag"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_FaultDebounce
+      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_Parameter1
+      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_Parameter2
+      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_Parameter3
+      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_Parameter4
+      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_Parameter5
+      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_Parameter6
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_MotorTemp1
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_FaultDebounce
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagTempSlow_10ms_sys/MotorTemperatureDiag/FaultDebounce"
+    /begin SUB_GROUP
+      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_FaultDebounce_Subsystem
+      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_FaultDebounce_UnitDelay
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_FaultDebounce_Subsystem
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagTempSlow_10ms_sys/MotorTemperatureDiag/FaultDebounce/Subsystem"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.Memory_PreviousInput
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_FaultDebounce_UnitDelay
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagTempSlow_10ms_sys/MotorTemperatureDiag/FaultDebounce/UnitDelay"
+    /begin REF_MEASUREMENT
+      FltFaultDiagnoser_DW.BareUnitDelay_DSTATE_k
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_Parameter1
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagTempSlow_10ms_sys/MotorTemperatureDiag/Parameter1"
+    /begin REF_CHARACTERISTIC
+      FLDG_TWindingThr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_Parameter2
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagTempSlow_10ms_sys/MotorTemperatureDiag/Parameter2"
+    /begin REF_CHARACTERISTIC
+      FLDG_ResetWindingTMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_Parameter3
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagTempSlow_10ms_sys/MotorTemperatureDiag/Parameter3"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceMaxWindingTMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_Parameter4
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagTempSlow_10ms_sys/MotorTemperatureDiag/Parameter4"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceMinWindingTMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_Parameter5
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagTempSlow_10ms_sys/MotorTemperatureDiag/Parameter5"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceIncrWindingTMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      FltFaultDiagnoser_FLDG_DiagTempSlow_10ms_sys_MotorTemperatureDiag_Parameter6
+    /* Long identifier        */      "FltFaultDiagnoser/FLDG_DiagTempSlow_10ms_sys/MotorTemperatureDiag/Parameter6"
+    /begin REF_CHARACTERISTIC
+      FLDG_DebounceDecrWindingTMonitor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /end MODULE
+
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF FltFaultDiagnoser.a2l*/

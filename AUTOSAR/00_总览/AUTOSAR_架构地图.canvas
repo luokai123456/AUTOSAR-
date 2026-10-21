@@ -1,0 +1,31 @@
+{
+	"nodes":[
+		{"id":"n_autosar","type":"file","file":"00_总览/AUTOSAR.md","x":0,"y":0,"width":460,"height":180,"color":"1"},
+		{"id":"t_platform","type":"text","text":"Classic Platform R21-11\n（学习基准）","x":520,"y":-40,"width":260,"height":90},
+		{"id":"n_readme","type":"file","file":"README.md","x":-560,"y":260,"width":380,"height":120},
+		{"id":"n_route","type":"file","file":"00_学习路线/AUTOSAR_Classic_模块学习路线.md","x":-560,"y":420,"width":380,"height":120},
+		{"id":"n_cannm","type":"file","file":"模块/CanNm/CanNm.md","x":60,"y":300,"width":440,"height":170,"color":"4"},
+		{"id":"t_label_sum","type":"text","text":"学习总结","x":-520,"y":780,"width":260,"height":70},
+		{"id":"t_label_logic","type":"text","text":"调用逻辑","x":-180,"y":780,"width":260,"height":70},
+		{"id":"t_label_mf","type":"text","text":"主函数","x":160,"y":780,"width":240,"height":70},
+		{"id":"t_label_std","type":"text","text":"标准表格","x":470,"y":780,"width":260,"height":70},
+		{"id":"t_label_issue","type":"text","text":"问题排查","x":800,"y":780,"width":260,"height":70},
+		{"id":"n_sum","type":"file","file":"模块/CanNm/02_学习总结/CanNm_模块作用与架构定位.md","x":-600,"y":900,"width":400,"height":150},
+		{"id":"n_logic","type":"file","file":"模块/CanNm/03_调用逻辑/CanNm_调用逻辑总览.md","x":-180,"y":900,"width":400,"height":150},
+		{"id":"n_mf","type":"file","file":"模块/CanNm/04_MainFunction流程/CanNm_MainFunction调用逻辑.md","x":240,"y":900,"width":400,"height":150},
+		{"id":"n_std","type":"file","file":"模块/CanNm/05_标准表格/CanNm_AUTOSAR标准需求表_R21-11.md","x":660,"y":900,"width":440,"height":150},
+		{"id":"n_issue","type":"file","file":"模块/CanNm/CanNm_问题排查记录.md","x":1120,"y":900,"width":400,"height":150},
+		{"id":"n_bswm","type":"file","file":"模块/BswM/BswM.md","x":620,"y":320,"width":440,"height":140}
+	],
+	"edges":[
+		{"id":"e1","fromNode":"n_autosar","fromSide":"left","toNode":"n_readme","toSide":"top"},
+		{"id":"e2","fromNode":"n_autosar","fromSide":"left","toNode":"n_route","toSide":"top"},
+		{"id":"e3","fromNode":"n_autosar","fromSide":"bottom","toNode":"n_cannm","toSide":"top"},
+		{"id":"e4","fromNode":"n_autosar","fromSide":"bottom","toNode":"n_bswm","toSide":"top"},
+		{"id":"e5","fromNode":"n_cannm","fromSide":"bottom","toNode":"n_sum","toSide":"top"},
+		{"id":"e6","fromNode":"n_cannm","fromSide":"bottom","toNode":"n_logic","toSide":"top"},
+		{"id":"e7","fromNode":"n_cannm","fromSide":"bottom","toNode":"n_mf","toSide":"top"},
+		{"id":"e8","fromNode":"n_cannm","fromSide":"bottom","toNode":"n_std","toSide":"top"},
+		{"id":"e9","fromNode":"n_cannm","fromSide":"bottom","toNode":"n_issue","toSide":"top"}
+	]
+}

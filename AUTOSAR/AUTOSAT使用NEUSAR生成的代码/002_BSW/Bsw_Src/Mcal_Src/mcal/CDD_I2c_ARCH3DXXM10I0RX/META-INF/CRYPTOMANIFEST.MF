@@ -1,0 +1,22 @@
+
+Name: config/CDD_I2c.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420903727000614177839037879213973133948225870579640
+ 4642688184853362139911993528101138849543592151085728
+
+Name: generate/include/CDD_I2c_Cfg.h
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422736560175960195220973571792347895750841631424027
+ 7881683370609317373092597179413708068583939998462601
+
+Name: generate/source/CDD_I2c_Cfg.c
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773967516829374925440076484972242448054897958453717
+ 727297180237957859563995860576639495781987552982898332
+

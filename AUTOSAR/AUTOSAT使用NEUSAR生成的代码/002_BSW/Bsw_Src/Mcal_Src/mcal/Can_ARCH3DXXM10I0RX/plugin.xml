@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+  <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="Can_Module"
+             name="Can_Module">
+
+    <module id="Can_CCFC3007PT"
+            label="Can"
+            mandatory="false"
+            allowMultiple="false"
+            description="Can BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="Can"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3007PT"/>
+    </module>
+
+    <module id="Can_CCFC3007BC"
+            label="Can"
+            mandatory="false"
+            allowMultiple="false"
+            description="Can BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="Can"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3007BC"/>
+    </module>
+
+    <module id="Can_CCFC3008PT"
+            label="Can"
+            mandatory="false"
+            allowMultiple="false"
+            description="Can BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="Can"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3008PT"/>
+    </module>
+
+    <module id="Can_CCFC3008PC"
+            label="Can"
+            mandatory="false"
+            allowMultiple="false"
+            description="Can BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="Can"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3008PC"/>
+    </module>
+
+    <module id="Can_CCFC3012PT"
+            label="Can"
+            mandatory="false"
+            allowMultiple="false"
+            description="Can BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="Can"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3012PT"/>
+    </module>
+
+    <module id="Can_CCFC3008PCSN"
+            label="Can"
+            mandatory="false"
+            allowMultiple="false"
+            description="Can BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="Can"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3008PCSN"/>
+    </module>
+
+    <module id="Can_CCFC3010PT"
+            label="Can"
+            mandatory="false"
+            allowMultiple="false"
+            description="Can BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="Can"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3010PT"/>
+    </module>
+
+    <module id="Can_CCFC3011PT"
+            label="Can"
+            mandatory="false"
+            allowMultiple="false"
+            description="Can BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="Can"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3011PT"/>
+    </module>
+
+    <module id="Can_CCFC3008PCSA"
+            label="Can"
+            mandatory="false"
+            allowMultiple="false"
+            description="Can BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="Can"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3008PCSA"/>
+    </module>
+    
+    <module id="Can_CCFC3010PTD"
+            label="Can"
+            mandatory="false"
+            allowMultiple="false"
+            description="Can BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="Can"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3010PTD"/>
+    </module>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="Can_Configuration"
+             name="Can_Configuration">
+
+    <configuration moduleId="Can_CCFC3007PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Can.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CanConfig/Can"/>
+      </data>
+
+      <editor id="Can_Editor_01"
+              label="Default"
+              tooltip="Can BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/CanConfig/Can"/>
+          <parameter name="title" value="Can"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Can_CCFC3007BC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Can.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CanConfig/Can"/>
+      </data>
+
+      <editor id="Can_Editor_02"
+              label="Default"
+              tooltip="Can BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/CanConfig/Can"/>
+          <parameter name="title" value="Can"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Can_CCFC3008PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Can.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CanConfig/Can"/>
+      </data>
+
+      <editor id="Can_Editor_03"
+              label="Default"
+              tooltip="Can BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/CanConfig/Can"/>
+          <parameter name="title" value="Can"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Can_CCFC3008PC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Can.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CanConfig/Can"/>
+      </data>
+
+      <editor id="Can_Editor_04"
+              label="Default"
+              tooltip="Can BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/CanConfig/Can"/>
+          <parameter name="title" value="Can"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Can_CCFC3012PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Can.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CanConfig/Can"/>
+      </data>
+
+      <editor id="Can_Editor_05"
+              label="Default"
+              tooltip="Can BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/CanConfig/Can"/>
+          <parameter name="title" value="Can"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Can_CCFC3008PCSN">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Can.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CanConfig/Can"/>
+      </data>
+
+      <editor id="Can_Editor_06"
+              label="Default"
+              tooltip="Can BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/CanConfig/Can"/>
+          <parameter name="title" value="Can"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Can_CCFC3010PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Can.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CanConfig/Can"/>
+      </data>
+
+      <editor id="Can_Editor_07"
+              label="Default"
+              tooltip="Can BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/CanConfig/Can"/>
+          <parameter name="title" value="Can"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Can_CCFC3011PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Can.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CanConfig/Can"/>
+      </data>
+
+      <editor id="Can_Editor_08"
+              label="Default"
+              tooltip="Can BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/CanConfig/Can"/>
+          <parameter name="title" value="Can"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Can_CCFC3008PCSA">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Can.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CanConfig/Can"/>
+      </data>
+
+      <editor id="Can_Editor_09"
+              label="Default"
+              tooltip="Can BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/CanConfig/Can"/>
+          <parameter name="title" value="Can"/>
+        </class>
+      </editor>
+    </configuration>
+    
+    <configuration moduleId="Can_CCFC3010PTD">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Can.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CanConfig/Can"/>
+      </data>
+
+      <editor id="Can_Editor_10"
+              label="Default"
+              tooltip="Can BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/CanConfig/Can"/>
+          <parameter name="title" value="Can"/>
+        </class>
+      </editor>
+    </configuration>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="EPCGenerator"
+              name="EPC Generator">
+
+      <generator id="Can_EPC_Generate_01"
+                  moduleId="Can_CCFC3007PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="Can_EPC_Generate_02"
+                  moduleId="Can_CCFC3007BC"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="Can_EPC_Generate_03"
+                  moduleId="Can_CCFC3008PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="Can_EPC_Generate_04"
+                  moduleId="Can_CCFC3008PC"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="Can_EPC_Generate_05"
+                  moduleId="Can_CCFC3012PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="Can_EPC_Generate_06"
+                  moduleId="Can_CCFC3008PCSN"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="Can_EPC_Generate_07"
+                  moduleId="Can_CCFC3010PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="Can_EPC_Generate_08"
+                  moduleId="Can_CCFC3011PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="Can_EPC_Generate_09"
+                  moduleId="Can_CCFC3008PCSA"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      
+      <generator id="Can_EPC_Generate_10"
+                  moduleId="Can_CCFC3010PTD"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+             id="Can_Generator"
+             name="Can_Generator">
+
+    <generator moduleId="Can_CCFC3007PT"
+               id="Can_Generate_01"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Can_CCFC3007BC"
+               id="Can_Generate_02"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Can_CCFC3008PT"
+               id="Can_Generate_03"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Can_CCFC3008PC"
+               id="Can_Generate_04"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Can_CCFC3012PT"
+               id="Can_Generate_05"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Can_CCFC3008PCSN"
+               id="Can_Generate_06"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Can_CCFC3010PT"
+               id="Can_Generate_07"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Can_CCFC3011PT"
+               id="Can_Generate_08"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Can_CCFC3008PCSA"
+               id="Can_Generate_09"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+
+    <generator moduleId="Can_CCFC3010PTD"
+               id="Can_Generate_10"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+  </extension>
+</plugin>

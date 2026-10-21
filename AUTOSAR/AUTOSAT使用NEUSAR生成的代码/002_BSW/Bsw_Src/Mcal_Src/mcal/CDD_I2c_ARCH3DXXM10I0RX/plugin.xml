@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+  <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="CDD_I2c_Module"
+             name="CDD_I2c_Module">
+
+    <module id="CDD_I2c_CCFC3007PT"
+            label="CDD_I2c"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_I2c BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="CDD_I2c"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3007PT"/>
+    </module>
+
+    <module id="CDD_I2c_CCFC3007BC"
+            label="CDD_I2c"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_I2c BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="CDD_I2c"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3007BC"/>
+    </module>
+
+    <module id="CDD_I2c_CCFC3008PT"
+            label="CDD_I2c"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_I2c BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="CDD_I2c"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3008PT"/>
+    </module>
+
+    <module id="CDD_I2c_CCFC3008PC"
+            label="CDD_I2c"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_I2c BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="CDD_I2c"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3008PC"/>
+    </module>
+
+    <module id="CDD_I2c_CCFC3012PT"
+            label="CDD_I2c"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_I2c BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="CDD_I2c"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3012PT"/>
+    </module>
+
+    <module id="CDD_I2c_CCFC3008PCSN"
+            label="CDD_I2c"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_I2c BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="CDD_I2c"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3008PCSN"/>
+    </module>
+
+    <module id="CDD_I2c_CCFC3010PT"
+            label="CDD_I2c"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_I2c BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="CDD_I2c"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3010PT"/>
+    </module>
+
+    <module id="CDD_I2c_CCFC3011PT"
+            label="CDD_I2c"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_I2c BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="CDD_I2c"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3011PT"/>
+    </module>
+
+    <module id="CDD_I2c_CCFC3008PCSA"
+            label="CDD_I2c"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_I2c BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="CDD_I2c"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3008PCSA"/>
+    </module>
+
+    <module id="CDD_I2c_CCFC3010PTD"
+            label="CDD_I2c"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_I2c BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="CDD_I2c"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3010PTD"/>
+    </module>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="CDD_I2c_Configuration"
+             name="CDD_I2c_Configuration">
+
+    <configuration moduleId="CDD_I2c_CCFC3007PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/CDD_I2c.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/I2cConfig/CDD_I2c"/>
+      </data>
+
+      <editor id="CDD_I2c_Editor_01"
+              label="Default"
+              tooltip="CDD_I2c BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/I2cConfig/CDD_I2c"/>
+          <parameter name="title" value="CDD_I2c"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="CDD_I2c_CCFC3007BC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/CDD_I2c.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/I2cConfig/CDD_I2c"/>
+      </data>
+
+      <editor id="CDD_I2c_Editor_02"
+              label="Default"
+              tooltip="CDD_I2c BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/I2cConfig/CDD_I2c"/>
+          <parameter name="title" value="CDD_I2c"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="CDD_I2c_CCFC3008PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/CDD_I2c.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/I2cConfig/CDD_I2c"/>
+      </data>
+
+      <editor id="CDD_I2c_Editor_03"
+              label="Default"
+              tooltip="CDD_I2c BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/I2cConfig/CDD_I2c"/>
+          <parameter name="title" value="CDD_I2c"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="CDD_I2c_CCFC3008PC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/CDD_I2c.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/I2cConfig/CDD_I2c"/>
+      </data>
+
+      <editor id="CDD_I2c_Editor_04"
+              label="Default"
+              tooltip="CDD_I2c BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/I2cConfig/CDD_I2c"/>
+          <parameter name="title" value="CDD_I2c"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="CDD_I2c_CCFC3012PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/CDD_I2c.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/I2cConfig/CDD_I2c"/>
+      </data>
+
+      <editor id="CDD_I2c_Editor_05"
+              label="Default"
+              tooltip="CDD_I2c BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/I2cConfig/CDD_I2c"/>
+          <parameter name="title" value="CDD_I2c"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="CDD_I2c_CCFC3010PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/CDD_I2c.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/I2cConfig/CDD_I2c"/>
+      </data>
+
+      <editor id="CDD_I2c_Editor_06"
+              label="Default"
+              tooltip="CDD_I2c BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/I2cConfig/CDD_I2c"/>
+          <parameter name="title" value="CDD_I2c"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="CDD_I2c_CCFC3011PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/CDD_I2c.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/I2cConfig/CDD_I2c"/>
+      </data>
+
+      <editor id="CDD_I2c_Editor_07"
+              label="Default"
+              tooltip="CDD_I2c BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/I2cConfig/CDD_I2c"/>
+          <parameter name="title" value="CDD_I2c"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="CDD_I2c_CCFC3008PCSN">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/CDD_I2c.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/I2cConfig/CDD_I2c"/>
+      </data>
+
+      <editor id="CDD_I2c_Editor_08"
+              label="Default"
+              tooltip="CDD_I2c BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/I2cConfig/CDD_I2c"/>
+          <parameter name="title" value="CDD_I2c"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="CDD_I2c_CCFC3008PCSA">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/CDD_I2c.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/I2cConfig/CDD_I2c"/>
+      </data>
+
+      <editor id="CDD_I2c_Editor_10"
+              label="Default"
+              tooltip="CDD_I2c BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/I2cConfig/CDD_I2c"/>
+          <parameter name="title" value="CDD_I2c"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="CDD_I2c_CCFC3010PTD">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/CDD_I2c.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/I2cConfig/CDD_I2c"/>
+      </data>
+
+      <editor id="CDD_I2c_Editor_11"
+              label="Default"
+              tooltip="CDD_I2c BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/I2cConfig/CDD_I2c"/>
+          <parameter name="title" value="CDD_I2c"/>
+        </class>
+      </editor>
+    </configuration>
+
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="EPCGenerator"
+              name="EPC Generator">
+
+      <generator id="CDD_I2c_EPC_Generate_01"
+                  moduleId="CDD_I2c_CCFC3007PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="CDD_I2c_EPC_Generate_02"
+                  moduleId="CDD_I2c_CCFC3007BC"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="CDD_I2c_EPC_Generate_03"
+                  moduleId="CDD_I2c_CCFC3008PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="CDD_I2c_EPC_Generate_04"
+                  moduleId="CDD_I2c_CCFC3008PC"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="CDD_I2c_EPC_Generate_05"
+                  moduleId="CDD_I2c_CCFC3012PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="CDD_I2c_EPC_Generate_06"
+                  moduleId="CDD_I2c_CCFC3008PCSN"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="CDD_I2c_EPC_Generate_07"
+                  moduleId="CDD_I2c_CCFC3010PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="CDD_I2c_EPC_Generate_08"
+                  moduleId="CDD_I2c_CCFC3011PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="CDD_I2c_EPC_Generate_10"
+                  moduleId="CDD_I2c_CCFC3008PCSA"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="CDD_I2c_EPC_Generate_11"
+                  moduleId="CDD_I2c_CCFC3010PTD"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+             id="CDD_I2c_Generator"
+             name="CDD_I2c_Generator">
+
+    <generator moduleId="CDD_I2c_CCFC3007PT"
+               id="CDD_I2c_Generate_01"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_I2c_CCFC3007BC"
+               id="CDD_I2c_Generate_02"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_I2c_CCFC3008PT"
+               id="CDD_I2c_Generate_03"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_I2c_CCFC3008PC"
+               id="CDD_I2c_Generate_04"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_I2c_CCFC3012PT"
+               id="CDD_I2c_Generate_05"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_I2c_CCFC3008PCSN"
+               id="CDD_I2c_Generate_06"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_I2c_CCFC3010PT"
+               id="CDD_I2c_Generate_07"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_I2c_CCFC3011PT"
+               id="CDD_I2c_Generate_08"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_I2c_CCFC3008PCSA"
+               id="CDD_I2c_Generate_10"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_I2c_CCFC3010PTD"
+               id="CDD_I2c_Generate_11"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+  </extension>
+</plugin>

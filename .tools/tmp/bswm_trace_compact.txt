@@ -1,0 +1,25 @@
+SRS_BSW_00003 | All software modules shall provide version and identification information | SWS_BswM_00003
+SRS_BSW_00101 | The Basic Software Module shall be able to initialize variables and hardware in a separate initialization function | SWS_BswM_00002,SWS_BswM_00043,SWS_BswM_00044,SWS_BswM_00261
+SRS_BSW_00167 | All AUTOSAR Basic Software Modules shall provide configuration rules and constraints to enable plausibility checks | SWS_BswM_00240,SWS_BswM_00242,SWS_BswM_00243,SWS_BswM_00256,SWS_BswM_CONSTR_00001,SWS_BswM_CONSTR_00002
+SRS_BSW_00170 | The AUTOSAR SW Components shall provide information about their dependency from faults, signal qualities, driver demands | SWS_BswM_09999
+SRS_BSW_00301 | All AUTOSAR Basic Software Modules shall only import the necessary information | SWS_BswM_00001,SWS_BswM_00237,SWS_BswM_00279
+SRS_BSW_00305 | Data types naming convention [SWS_BswM_00041] | 
+SRS_BSW_00323 | All AUTOSAR Basic Software Modules shall check passed API parameters for validity | SWS_BswM_00045,SWS_BswM_00089,SWS_BswM_00090,SWS_BswM_00091,SWS_BswM_00093,SWS_BswM_00095,SWS_BswM_00097,SWS_BswM_00099,
+SRS_BSW_00336 | Basic SW module shall be able to shutdown | SWS_BswM_00119,SWS_BswM_00120,SWS_BswM_09999
+SRS_BSW_00339 | Reporting of production relevant error status | SWS_BswM_09999
+SRS_BSW_00344 | BSW Modules shall support link-time configuration | SWS_BswM_00002
+SRS_BSW_00358 | The return type of init() functions implemented by AUTOSAR Basic Software Modules shall be void | SWS_BswM_00002
+SRS_BSW_00384 | The Basic Software Module specifications shall specify at least in the description which other modules they require | SWS_BswM_00007,SWS_BswM_00008
+SRS_BSW_00385 | List possible error notifications [SWS_BswM_00230] | 
+SRS_BSW_00399 | Parameter-sets shall be located in a separate segment and shall be loaded after the code | SWS_BswM_09999
+SRS_BSW_00400 | Parameter shall be selected from multiple sets of parameters after code has been loaded and started ▽ 16 of 159 Document | SWS_BswM_09999
+SRS_BSW_00404 | BSW Modules shall support post-build configuration | SWS_BswM_00002,SWS_BswM_00042,SWS_BswM_00213
+SRS_BSW_00405 | BSW Modules shall support multiple configuration sets | SWS_BswM_00002,SWS_BswM_09999
+SRS_BSW_00406 | A static status variable denoting if a BSW module is initialized shall be initialized with value 0 before any APIs of th | SWS_BswM_00077,SWS_BswM_00078,SWS_BswM_00079,SWS_BswM_00080,SWS_BswM_00081,SWS_BswM_00082,SWS_BswM_00083,SWS_BswM_00084,
+SRS_BSW_00407 | Each BSW module shall provide a function to read out the version information of a dedicated module implementation | SWS_BswM_00003
+SRS_BSW_00409 | All production code error ID symbols are defined by the Dem module and shall be retrieved by the other BSW modules from  | SWS_BswM_09999
+SRS_BSW_00414 | Init functions shall have a pointer to a configuration structure as single parameter | SWS_BswM_00002
+SRS_BSW_00425 | The BSW module description template shall provide means to model the defined trigger conditions of schedulable objects | SWS_BswM_00053
+SRS_BSW_00441 | Naming convention for type, macro and function | SWS_BswM_00213,SWS_BswM_00214,SWS_BswM_00216
+SRS_BSW_00452 | Classification of runtime errors [SWS_BswM_00238] [SWS_BswM_00239] | 
+SRS_BSW_00467 | The init / deinit services shall only be called by BswM or EcuM [SRS_ModeMgm_- 09116] Requesting and releasing the RUN s | SWS_BswM_00118,SWS_BswM_91004,SWS_BswM_00038,SWS_BswM_00038,SWS_BswM_00010,SWS_BswM_00012,SWS_BswM_00015,SWS_BswM_00016,

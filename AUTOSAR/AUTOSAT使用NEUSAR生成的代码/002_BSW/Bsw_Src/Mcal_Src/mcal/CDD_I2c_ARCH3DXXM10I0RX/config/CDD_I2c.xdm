@@ -1,0 +1,863 @@
+<?xml version='1.0'?>
+<datamodel version="7.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:ce="http://www.tresos.de/_projects/DataModel2/18/childenable.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="I2cConfig" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="CDD_I2c" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.4.0</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC" 
+                   value="EN: This container holds the configuration of a single CDD I2C Driver."/>
+              <a:a name="LOWER-MULTIPLICITY" value="1"/>
+              <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+              <a:a name="RELEASE" value="asc:4.4.0"/>
+              <a:a name="UPPER-MULTIPLICITY" value="*"/>
+              <a:a name="UUID" value="ECUC:5feec965-9afd-c000-1c21-e85146fc0016"/>
+              <v:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN">
+                <a:a name="DESC" 
+                     value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Post Build Variant Used"/>
+                <a:a name="ORIGIN" value="EB"/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="UUID" value="ECUC:e476264a-8582-d2f2-1594-2f34344e96d5"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="false"/>
+                <a:da name="READONLY" value="FALSE"/>
+                <a:da name="TOOLTIP"
+                      value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+              </v:var>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:a name="UUID" value="ECUC:3ee1b7b5-f47a-e224-0ff2-73ae57849c7e"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="VariantPostBuild"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuild</a:v>
+                  <a:v>VariantPreCompile</a:v>
+                </a:da>
+              </v:var>
+
+              <!-- @implements GeneralConfiguration_Object -->
+              <v:ctr name="GeneralConfiguration" type="IDENTIFIABLE">
+                <a:a name="DESC"
+                     value="EN: This container contains the configuration parameters and sub containers of the Non-Autosar I2c driver."/>
+                <a:a name="UUID" value="ECUC:735f4f07-0a8e-1de4-c096-5b5183a8ef04"/>
+
+                <v:var name="I2cDmaUsed" type="BOOLEAN" >
+                  <a:a name="LABEL" value="I2c DMA Used"/>
+                  <a:a name="DESC">
+                    <a:v>
+                      <![CDATA[EN:
+                        <html>
+                          <p>I2cDmaUsed</p>
+                          <p>Check this in order to be able to use DMA in the I2c driver.</p>
+                          Note: Implementation Specific Parameter. <p/>
+                        </html>
+                      ]]>
+                    </a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="UUID" value="ECUC:028f1991-f598-ed8c-f82b-e36c29b96b6d"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="READONLY" value="false"/>
+                </v:var>
+
+                <v:var name="I2cInlineSupport" type="BOOLEAN">
+                  <a:a name="LABEL" value="I2c Inline Support"/>
+                  <a:a name="DESC"
+                       value="EN: Whether on or off INLINE can be configured."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="UUID" value="ECUC:3dc49a9b-76e7-917b-6928-f74e2e2f094f"/>
+                  <a:da name="DEFAULT" value="true"/>
+                  <a:da name="READONLY" value="false"/>
+                </v:var>
+
+              </v:ctr>
+
+              <!-- @implements I2CGlobalConfig_Object -->
+              <v:ctr name="I2cGlobalConfig" type="IDENTIFIABLE">
+                <a:a name="DESC"
+                     value="EN: This container contains the global configuration parameter of the I2c driver. This container is a MultipleConfigurationContainer, i.e. this container and its sub-containers exit once per configuration set."/>
+                <a:a name="UUID" value="ECUC:74312f8c-2723-79bc-7d03-5df3009e6e2b"/>
+
+                <!-- @implements I2cChannel_Object -->
+                <v:lst name="I2cChannel" type="MAP">
+                  <a:da name="MIN" value="1"/>
+                  <a:da name="MAX" type="XPath" expr="ecu:get('I2c.I2cGlobalConfig.I2cChannel')"/>
+
+                  <v:ctr name="I2cChannel" type="IDENTIFIABLE">
+                    <a:a name="DESC">
+                      <a:v>
+                        <![CDATA[EN:
+                          <html>
+                            This container contains the configuration (parameters) of the I2c Controller(s).
+                            <h1>Note:</h1>"User should use unique names for naming the I2c channels across different I2cGlobalConfig Sets."
+                          </html>
+                        ]]>
+                      </a:v>
+                    </a:a>
+                    <a:a name="UUID" value="ECUC:0923735c-e36a-5d1d-6174-167706c985f6"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                          <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                    </a:a>
+
+                    <!-- @implements I2cChannelId_Object -->
+                    <v:var name="I2cChannelId" type="INTEGER">
+                      <a:a name="DESC">
+                        <a:v>
+                          <![CDATA[EN:
+                            <html>
+                              Identifies the I2c channel. <p/>
+                              Note: Implementation Specific Parameter. <p/>
+                            </html>
+                          ]]>
+                        </a:v>
+                      </a:a>
+                      <a:a name="LABEL" value="I2c Channel ID" />
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="ECU"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                      <a:a name="UUID" value="ECUC:c08217c8-3b66-afba-8469-99c2cad7e249"/>
+                      <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index,'0')"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=1"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="RANGE" type="XPath">
+                        <a:tst expr="num:i(node:fallback(.,0)) = num:i(../@index)"
+                               false="Invalid value: The ID should correspond to the position of the element within the configuration list. Use the 'Calculate Value' button to calculate correct default value."/>
+                        <a:tst expr="(. &gt;= 0) and (.&lt; num:i(count(node:current()/../../*)))"
+                               false="Value out of range: must be in range 0 to N-1 (N is number of configured channels). Use the 'Calculate Value' button to calculate correct default value."/>
+                        <a:tst expr="text:uniq(../../*/I2cChannelId, .)"
+                               false="Duplicated value: I2cChannelId must be unique across all I2c channels. Use the 'Calculate Value' button to calculate correct default value."/>
+                      </a:da>
+                    </v:var>
+
+                    <v:var name="I2cHwChannel" type="ENUMERATION">
+                      <a:a name="DESC">
+                        <a:v>
+                          <![CDATA[EN:
+                            <html>
+                              Selects the physical I2c Channel. <p/>
+                              Note: Implementation Specific Parameter. <p/>
+                            </html>
+                          ]]>
+                        </a:v>
+                      </a:a>
+                      <a:a name="LABEL" value="I2c hardware channel" />
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID"
+                           value="ECUC:cc338849-23d3-50b5-58d8-14090eb1031e"/>
+                      <a:da name="DEFAULT" type="XPath" expr="(ecu:list('I2c.I2cGlobalConfig.I2cChannel.I2cHwChannel'))[position()-1=node:fallback(node:current()/../@index, '0')]">
+                      </a:da>
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="text:uniq(node:fallback(../../*/I2cHwChannel, 0 ), node:fallback( ., 1 ))"
+                               false="Duplicate physical I2c channel: I2cHwChannel must be unique across all I2c channels. Use the 'Calculate Value' button to calculate correct default value."/>
+                      </a:da>
+                      <a:da name="RANGE" type="XPath"
+                            expr="ecu:list('I2c.I2cGlobalConfig.I2cChannel.I2cHwChannel')"/>
+                    </v:var>
+
+                    <v:var name="I2cMasterSlaveConfiguration" type="ENUMERATION">
+                      <a:a name="DESC">
+                        <a:v>
+                          <![CDATA[EN:
+                            <html>
+                              Selects the master slave configuration. <p/>
+                              Select wether the selected channel will be used as Master or Slave. <p/>
+                              Note: Implementation Specific Parameter. <p/>
+                            </html>
+                          ]]>
+                        </a:v>
+                      </a:a>
+                      <a:a name="LABEL" value="I2c master/slave configuration" />
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="UUID" value="ECUC:c5752e05-0de6-9ff5-0420-9d9d79c5067e"/>
+                      <a:da name="DEFAULT" value="MASTER_MODE"/>
+                      <a:da name="INVALID" type="XPath"/>
+                      <a:da name="RANGE">
+                        <a:v>MASTER_MODE</a:v>
+                        <a:v>SLAVE_MODE</a:v>
+                      </a:da>
+                    </v:var>
+
+                  <v:ref name="PortTriggerCounterRef" type="CHOICE-REFERENCE">
+                    <a:a name="DESC">
+                      <a:v>
+                          <![CDATA[EN:
+                          <html>
+                          Vendor specific:
+                          <h1>Crc External Trigger Counter</h1><p>
+                          Reference to the pin configuration .
+                          </p></html>
+                          ]]>
+                      </a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="UUID" value="ECUC:9a8cd5a4-e355-d6fa-53fe-19af47067c63" />
+                    <a:da name="INVALID" type="XPath">
+                      <a:tst expr="node:refvalid(.)" false="Invalid or empty reference." />
+                      </a:da>
+                    <a:da name="REF" 
+                            value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Port/PortConfigSet/PortContainer/PortPin"/>
+                  </v:ref>
+
+                    <!-- @implements I2cMasterClockRef_Object -->
+                    <v:ref name="I2cClockRef" type="REFERENCE">
+                      <a:a name="DESC" value="EN: Reference to the CPU clock configuration, which is set in the MCU driver configuration"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="LABEL" value="I2c Clock Ref" />
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="UUID" value="ECUC:0fc7050e-d6a1-0239-fa1f-9911c4de00f2"/>
+                      <a:a name="INVALID" type="XPath">
+                        <a:tst expr="(node:empty(.))"
+                                true="Field is empty (Suggestion: select an McuClockReferencePoint reference)."/>
+                        <a:tst expr="(not(node:refvalid(.)))"
+                                true="Invalid McuClockReferencePoint reference (Suggestion: select an McuClockReferencePoint reference)."/>
+                      </a:a>
+                      <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint"/>
+                    </v:ref>
+
+                    <!-- @implements I2cMasterBaudRate_Object -->
+                    <v:var name="I2cBaudRate" type="INTEGER">
+                      <a:a name="DESC" value="EN: The baud rate needs to be handwritten."/>
+                      <a:a name="LABEL" value="I2c Baud Rate" />
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="UUID" value="ECUC:38805379-48a5-3d93-a81d-68a5ea74c1d7"/>
+                      <a:da name="DEFAULT" value="400000"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&gt;=1"/>
+                      </a:da>
+                    </v:var>
+
+                    <v:ctr name="I2cMasterConfiguration" type="IDENTIFIABLE">
+                      <a:a name="DESC">
+                        <a:v>
+                          <![CDATA[EN:
+                            <html>
+                              This container contains the configuration (parameters) of the Master Configuration.
+                            </html>
+                          ]]>
+                        </a:v>
+                      </a:a>
+                      <a:a name="UUID" value="ECUC:15583250-5cfd-c273-4e95-85b2f4a3f52c"/>
+                      <a:a name="LABEL" value="I2C Master configuration"/>
+
+                      <v:var name="I2cSlaveAddress" type="INTEGER">
+                        <a:a name="DESC">
+                          <a:v>
+                            <![CDATA[EN:
+                                  <html>
+                                  <p>The address of the slave: Configures I2C_IBAD[ADR]</p>
+                                  <p>Configures the I2c slave address. </p>
+                                  Note: Implementation Specific Parameter. <p/>
+                                  </html>
+                            ]]>
+                          </a:v>
+                        </a:a>
+                        <a:a name="LABEL" value="I2c Slave Address" />
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID"
+                              value="ECUC:03833b65-d9d9-24c6-d63d-769a05c4af30"/>
+                        <a:a name="EDITABLE" type="XPath">
+                          <a:tst expr="(node:fallback(../../I2cMasterSlaveConfiguration, 0) = 'MASTER_MODE')"/>
+                        </a:a>
+                        <a:da name="DEFAULT" value="48"/>
+                        <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=127"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                      </v:var>
+
+                      <!-- @implements I2cAsyncMethod_Object -->
+                      <v:var name="I2cAsyncMethod" type="ENUMERATION">
+                        <a:a name="DESC">
+                        <a:v>
+                             <![CDATA[EN:
+                                  <html>
+                                  <p>Configures the asynchronous mechanism used by the 'AsyncTransmit' function (interrupts or DMA).</p>
+                                  Note: Implementation Specific Parameter. <p/>
+                                  </html>
+                             ]]>
+                        </a:v>
+                        </a:a>
+                        <a:a name="LABEL" value="I2c Asynchronous Method" />
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="UUID" value="ECUC:55bcced9-bfdb-33cd-f3bb-7d67ffa64017"/>
+                        <a:da name="DEFAULT" value="I2C_USING_INTERRUPTS"/>
+                        <a:da name="READONLY" value="false"/>
+                        <a:a name="EDITABLE" type="XPath">
+                          <a:tst expr="(node:fallback(../../I2cMasterSlaveConfiguration, 0) = 'MASTER_MODE')"/>
+                        </a:a>
+                        <a:da name="RANGE">
+                          <a:v>I2C_USING_INTERRUPTS</a:v>
+                          <a:v>I2C_USING_DMA</a:v>
+                        </a:da>
+                        <a:da name="INVALID" type="XPath">
+                          <a:tst expr="(
+                                            (node:fallback(../../I2cMasterSlaveConfiguration, '0') = 'MASTER_MODE') and
+                                            (node:fallback(.,'I2C_USING_INTERRUPTS') = 'I2C_USING_DMA') and
+                                            (node:fallback(../../../../../GeneralConfiguration/I2cDmaUsed,'false') = 'false')
+                                       )"
+                                 true="The I2cDmaUsed checkbox in GeneralConfiguration must be checked in order to use DMA as an asynchronous method."/>
+                          <a:tst expr="(
+                                            (node:fallback(../../I2cMasterSlaveConfiguration, '0') = 'MASTER_MODE') and
+                                            (node:fallback(.,'I2C_USING_INTERRUPTS') = 'I2C_USING_DMA') and
+                                            (not(node:exists(../I2cDmaChannelRef)))
+                                       )"
+                                 true="A DMA transmission channel reference must be configured. Refer to I2cMasterConfiguration/I2cDmaChannelRef."/>
+                        </a:da>
+                      </v:var>
+
+                      <v:ref name="I2cDmaChannelRef" type="REFERENCE">
+                          <a:a name="DESC" value="EN: Reference to the dma channel of the edma module."/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="LABEL" value="I2c DMA Channel"/>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="UUID" value="ECUC:6ff14518-8c5f-d41e-d793-88f90bd9d363"/>
+                        <a:a name="EDITABLE" type="XPath">
+                          <a:tst expr="(node:fallback(../../I2cMasterSlaveConfiguration, 0) = 'MASTER_MODE')"/>
+                          <a:tst expr="(node:fallback(../I2cAsyncMethod, 0) = 'I2C_USING_DMA')"/>
+                        </a:a>
+                        <a:da name="INVALID" type="XPath">
+                          <a:tst expr="((node:fallback(../../I2cMasterSlaveConfiguration, 'MASTER_MODE') = 'MASTER_MODE') and
+                                        ((node:fallback(../I2cAsyncMethod,'I2C_USING_INTERRUPTS') = 'I2C_USING_DMA') and node:empty(.)))"
+                                 true="Field is empty (Suggestion: select a DMAChannel reference)."/>
+                          <a:tst expr="((node:fallback(../../I2cMasterSlaveConfiguration, 'MASTER_MODE') = 'MASTER_MODE') and
+                                        (node:fallback(../I2cAsyncMethod,'I2C_USING_INTERRUPTS') = 'I2C_USING_DMA') and not(node:refvalid(.)))"
+                                 true="Invalid DMAChannel reference (Suggestion: select a DMAChannel reference)."/>
+                        </a:da>
+                        <a:da name="REF" value="ASPathDataOfSchema:/eDmaConfig/eDma/eDmaConfigSet/eDmaChannelConfig"/>
+                      </v:ref>
+
+                      <v:var name="I2cMasterCallback" type="FUNCTION-NAME">
+                        <a:a name="DESC">
+                          <a:v>
+                            <![CDATA[EN:<html>
+                              <p>I2c master callback. This function will be called for master i2c events.</p>
+                              Note: Implementation Specific Parameter.
+                            </html>]]>
+                          </a:v>
+                        </a:a>
+                        <a:a name="LABEL" value="I2c Master Callback" />
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="UUID" value="ECUC:d9c99739-587b-5f5b-45f5-2efdc64758fe"/>
+                        <a:a name="EDITABLE" type="XPath">
+                          <a:tst expr="(node:fallback(../../I2cMasterSlaveConfiguration, 0) = 'MASTER_MODE')"/>
+                        </a:a>
+                        <a:da name="DEFAULT" value="NULL_PTR"/>
+                      </v:var>
+
+                      <v:var name="I2cMasterCallbackParam" type="FUNCTION-NAME">
+                        <a:a name="DESC">
+                          <a:v>
+                            <![CDATA[EN:<html>
+                              <p>I2c master callback Param. This function will be called for master i2c events.</p>
+                              Note: Implementation Specific Parameter.
+                            </html>]]>
+                          </a:v>
+                        </a:a>
+                        <a:a name="LABEL" value="I2c Master Callback Param" />
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="UUID" value="ECUC:9230ea3d-ac53-2cd4-c329-b36f8eab1a36"/>
+                        <a:a name="EDITABLE" type="XPath">
+                          <a:tst expr="(node:fallback(../../I2cMasterSlaveConfiguration, 0) = 'MASTER_MODE')"/>
+                        </a:a>
+                        <a:da name="DEFAULT" value="NULL_PTR"/>
+                      </v:var>
+
+                    </v:ctr>
+
+                    <v:ctr name="I2cSlaveConfiguration" type="IDENTIFIABLE">
+                      <a:a name="DESC">
+                        <a:v>
+                          <![CDATA[EN:
+                            <html>
+                              This container contains the configuration (parameters) of the Slave Channel.
+                            </html>
+                          ]]>
+                        </a:v>
+                      </a:a  >
+                      <a:a name="UUID" value="ECUC:1d86b139-8e68-164c-4fc0-094794b60520"/>
+                      <a:a name="LABEL" value="I2C Slave configuration"/>
+
+                      <v:var name="I2cSlaveAddress" type="INTEGER">
+                        <a:a name="DESC">
+                          <a:v>
+                            <![CDATA[EN:
+                                  <html>
+                                  <p>The address of the slave: Configures I2C_IBAD[ADR]</p>
+                                  <p>Configures the I2c slave address. </p>
+                                  Note: Implementation Specific Parameter. <p/>
+                                  </html>
+                            ]]>
+                          </a:v>
+                        </a:a>
+                        <a:a name="LABEL" value="I2c Slave Address" />
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID"
+                              value="ECUC:e63d9cc5-3583-dba0-ae33-53dd2e3dc786"/>
+                        <a:a name="EDITABLE" type="XPath">
+                          <a:tst expr="(node:fallback(../../I2cMasterSlaveConfiguration, 0) = 'SLAVE_MODE')"/>
+                        </a:a>
+                        <a:da name="DEFAULT" value="48"/>
+                        <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=127"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                      </v:var>
+
+                      <v:var name="I2CSlaveListening" type="BOOLEAN">
+                        <a:a name="LABEL" value="I2c Slave Listening"/>
+                        <a:a name="DESC">
+                          <a:v>
+                            <![CDATA[EN:
+                              <html>
+                                <p>I2cSlaveListening</p>
+                                <p>Check this in order to chose slave mode (always listening or on demand only).</p>
+                                Note: Implementation Specific Parameter. <p/>
+                              </html>
+                            ]]>
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="UUID" value="ECUC:dc85c8d8-e12a-dd5f-b0a6-ac512bb4f72e"/>
+                        <a:da name="DEFAULT" value="false"/>
+                        <a:a name="EDITABLE" type="XPath">
+                          <a:tst expr="(node:fallback(../../I2cMasterSlaveConfiguration, 0) = 'SLAVE_MODE')"/>
+                        </a:a>
+                      </v:var>
+
+                      <v:var name="I2cSlaveCallback" type="FUNCTION-NAME">
+                        <a:a name="DESC">
+                          <a:v>
+                            <![CDATA[EN:<html>
+                              <p>I2c slave callback. This function will be called for slave i2c events.</p>
+                              Note: Implementation Specific Parameter.
+                            </html>]]>
+                          </a:v>
+                        </a:a>
+                        <a:a name="LABEL" value="I2c Slave Callback" />
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="UUID" value="ECUC:4724c342-f8ad-2503-17a8-36ba463b9c0b"/>
+                        <a:a name="EDITABLE" type="XPath">
+                          <a:tst expr="(node:fallback(../../I2cMasterSlaveConfiguration, 0) = 'SLAVE_MODE')"/>
+                        </a:a>
+                        <a:da name="DEFAULT" value="NULL_PTR"/>
+                      </v:var>
+
+                      <v:var name="I2cSlaveCallbackParam" type="FUNCTION-NAME">
+                        <a:a name="DESC">
+                          <a:v>
+                            <![CDATA[EN:<html>
+                              <p>I2c slave callback Param. This function will be called for slave i2c events.</p>
+                              Note: Implementation Specific Parameter.
+                            </html>]]>
+                          </a:v>
+                        </a:a>
+                        <a:a name="LABEL" value="I2c Slave Callback Param" />
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="UUID" value="ECUC:91157b04-2a1d-97f2-d1ef-9ad447143090"/>
+                        <a:a name="EDITABLE" type="XPath">
+                          <a:tst expr="(node:fallback(../../I2cMasterSlaveConfiguration, 0) = 'SLAVE_MODE')"/>
+                        </a:a>
+                        <a:da name="DEFAULT" value="NULL_PTR"/>
+                      </v:var>
+                    </v:ctr>
+
+                  </v:ctr>
+
+                </v:lst>
+
+              </v:ctr>
+
+              <!-- /** @implements CommonPublishedInformation_Object */ -->
+              <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <a:a name="DESC">
+                  <a:v>
+                        <![CDATA[EN:<html>
+                            Common container, aggregated by all modules.
+                            It contains published information about vendor and versions.
+                        </html>]]>
+                  </a:v>
+                </a:a>
+                <a:a name="UUID" value="ECUC:5b271f4f-cbaa-f3e8-e05f-e5d6362321d2"/>
+
+                <v:var name="ArReleaseMajorVersion" type="INTEGER_LABEL">
+                  <a:a name="LABEL" value="Ar Release Major Version" />
+                  <a:a name="DESC">
+                    <a:v>
+                      <![CDATA[EN:<html>
+                        Major version number of AUTOSAR specification on which the appropriate implementation is based on. <p/>
+                      </html>]]>
+                    </a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="UUID" value="ECUC:0500b073-b7f1-37bf-5b1a-d629b126aa01"/>
+                  <a:da name="DEFAULT" value="4"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&gt;=4"/>
+                    <a:tst expr="&lt;=4"/>
+                  </a:da>
+                </v:var>
+
+                <v:var name="ArReleaseMinorVersion" type="INTEGER_LABEL">
+                  <a:a name="LABEL" value="Ar Release Minor Version" />
+                  <a:a name="DESC">
+                    <a:v>
+                      <![CDATA[EN:<html>
+                        Minor version number of AUTOSAR specification on which the appropriate implementation is based on. <p/>
+                      </html>]]>
+                    </a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="UUID" value="ECUC:20f5130a-d2ad-a0de-9c88-70a2a41175fd"/>
+                  <a:da name="DEFAULT" value="4"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&gt;=4"/>
+                    <a:tst expr="&lt;=4"/>
+                  </a:da>
+                </v:var>
+
+                <v:var name="ArReleaseRevisionVersion" type="INTEGER_LABEL">
+                  <a:a name="LABEL" value="Ar Release Revision Version" />
+                  <a:a name="DESC">
+                    <a:v>
+                      <![CDATA[EN:<html>
+                        Revision version number of AUTOSAR specification on which the appropriate implementation is based on. <p/>
+                      </html>]]>
+                    </a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="UUID" value="ECUC:e10d1c65-5dc4-f922-e14b-d4544da88e06"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&gt;=0"/>
+                    <a:tst expr="&lt;=0"/>
+                  </a:da>
+                </v:var>
+
+                <v:var name="ModuleId" type="INTEGER_LABEL">
+                  <a:a name="DESC">
+                    <a:v>
+                      <![CDATA[EN:<html>
+                        Module ID of this module from Module List.
+                        Note: Implementation Specific Parameter
+                      </html>]]>
+                    </a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="UUID" value="ECUC:1e0285ab-acb4-9e31-ccef-8bf6131b88ba"/>
+                  <a:da name="DEFAULT" value="255"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&gt;=255"/>
+                    <a:tst expr="&lt;=255"/>
+                  </a:da>
+                </v:var>
+
+                <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC">
+                    <a:v>
+                      <![CDATA[EN:<html>
+                        Major version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                        Note: Implementation Specific Parameter
+                      </html>]]>
+                    </a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="UUID" value="ECUC:dc0d56ca-068c-3dfd-4862-082b335e3686"/>
+                  <a:da name="DEFAULT" value="3"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&gt;=3"/>
+                    <a:tst expr="&lt;=3"/>
+                  </a:da>
+                </v:var>
+
+                <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC">
+                    <a:v>
+                      <![CDATA[EN:<html>
+                        Minor version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                        Note: Implementation Specific Parameter
+                      </html>]]>
+                    </a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="UUID" value="ECUC:5d092b57-61d9-9ee1-44aa-33bc4304a291"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&gt;=0"/>
+                    <a:tst expr="&lt;=0"/>
+                  </a:da>
+                </v:var>
+
+                <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC">
+                    <a:v>
+                      <![CDATA[EN:<html>
+                        Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                        Note: Implementation Specific Parameter
+                      </html>]]>
+                    </a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="UUID" value="ECUC:e39d9d5b-831f-3fde-87c6-b3fc50476518"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&gt;=0"/>
+                    <a:tst expr="&lt;=0"/>
+                  </a:da>
+                </v:var>
+
+                <v:var name="VendorApiInfix" type="STRING_LABEL">
+                  <a:a name="DESC">
+                    <a:v>
+                      <![CDATA[EN:<html>
+                        In driver modules which can be instantiated several times on a single ECU, BSW00347 requires that the name of APIs is extended by the VendorId and a vendor specific name.
+                        This parameter is used to specify the vendor specific name. In total, the Implementation specific name is generated as follows:
+                        &lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;&lt;Api name from SWS&gt;.
+                        E.g. assuming that the VendorId of the implementor is 123 and the implementer chose a VendorApiInfix of "v11r456" a api name
+                        Can_Write defined in the SWS will translate to Can_123_v11r456Write.
+                        This parameter is mandatory for all modules with upper multiplicity &gt;
+                        1. It shall not be used for modules with upper multiplicity =1.
+                        Note: Implementation Specific Parameter
+                      </html>]]>
+                    </a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="UUID" value="ECUC:b52e5666-75bc-8867-c1b1-7ff4685578e7"/>
+                  <a:da name="DEFAULT" value=""/>
+                </v:var>
+
+                <v:var name="VendorId" type="INTEGER_LABEL">
+                  <a:a name="DESC">
+                    <a:v>
+                      <![CDATA[EN:<html>
+                        Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list.
+                        Note: Implementation Specific Parameter
+                      </html>]]>
+                    </a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="UUID" value="ECUC:4fea5787-d523-e863-1647-5653a55471be"/>
+                  <a:da name="DEFAULT" value="176"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&gt;=176"/>
+                    <a:tst expr="&lt;=176"/>
+                  </a:da>
+                </v:var>
+
+              </v:ctr>
+
+            </v:ctr>
+          </d:chc>
+          <d:chc name="myEcuParameterDefinition" type="AR-ELEMENT" 
+                 value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="DEF" 
+                   value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+              <d:lst name="MODULE_REF">
+                <d:ref type="MODULE_REF" value="ASPath:/I2cConfig/CDD_I2c"/>
+              </d:lst>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

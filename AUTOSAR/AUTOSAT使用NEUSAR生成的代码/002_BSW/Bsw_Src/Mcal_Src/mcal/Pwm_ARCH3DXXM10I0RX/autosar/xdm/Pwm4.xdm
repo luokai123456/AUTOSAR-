@@ -1,0 +1,1352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<datamodel version="7.0" xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+  <d:ctr type="AUTOSAR" factory="autosar" xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" xmlns:ce="http://www.tresos.de/_projects/DataModel2/18/childenable.xsd" xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="PwmConfig" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="Pwm" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.4.0</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC" value="EN: Configuration of Pwm (Pulse Width Modulation) module." />
+              <a:a name="LOWER-MULTIPLICITY" value="1" />
+              <a:a name="POSTBUILDVARIANTSUPPORT" value="true" />
+              <a:a name="RELEASE" value="asc:4.4.0" />
+              <a:a name="UPPER-MULTIPLICITY" value="*" />
+              <a:a name="UUID" value="d2f23be4-f634-4a36-96b3-06da23bcc557" />
+              <v:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN">
+                <a:a name="DESC" value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points." />
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Post Build Variant Used" />
+                <a:a name="ORIGIN" value="EB" />
+                <a:a name="POSTBUILDVARIANTVALUE" value="false" />
+                <a:a name="UUID" value="7d8c5555-7fa9-48f3-8832-1c54b16c8344" />
+                <a:a name="__ORIGIN" value="Elektrobit" />
+                <a:da name="DEFAULT" value="false" />
+                <a:da name="READONLY" value="false" />
+                <a:da name="TOOLTIP" value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points." />
+              </v:var>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Config Variant" />
+                <a:a name="UUID" value="31e10270-cee0-4269-8e9d-500802f52062" />
+                <a:a name="__ORIGIN" value="Elektrobit" />
+                <a:da name="DEFAULT" value="VariantPostBuild" />
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuild</a:v>
+                  <a:v>VariantPreCompile</a:v>
+                </a:da>
+              </v:var>
+              <v:ctr name="PwmChannelConfigSet" type="IDENTIFIABLE">
+                <a:a name="DESC" value="EN: This container contains the configuration parameters and sub containers of the AUTOSAR Pwm module." />
+                <a:a name="UUID" value="ec59646c-a0d0-4c79-8237-8ea7f761d833" />
+                <v:lst name="PwmChannel" type="MAP">
+                  <a:da name="MIN" value="1" />
+                  <v:ctr name="PwmChannel" type="IDENTIFIABLE">
+                    <a:a name="DESC" value="EN: Configuration of an individual PWM channel." />
+                    <a:a name="UUID" value="f4972652-51b2-4372-ba32-ef68c78ddc22" />
+                    <v:var name="PwmChannelClass" type="ENUMERATION">
+                      <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                        <a:v>EN:Class of PWM Channel. ImplementationType: Pwm_ChannelClassType
+                            </a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                        <icc:v class="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                        <icc:v class="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="UUID" value="ECUC:5af87200-08da-41b9-bd95-4a654f9bbfae" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:da name="DEFAULT" value="PWM_VARIABLE_PERIOD" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:da name="RANGE" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                        <a:v>PWM_FIXED_PERIOD</a:v>
+                        <a:v>PWM_VARIABLE_PERIOD</a:v>
+                        <a:v>PWM_FIXED_PERIOD_SHIFTED</a:v>
+                        <a:v>PWM_FIXED_PERIOD_CENTER_ALIGNED</a:v>
+                      </a:da>
+                    </v:var>
+                    <v:var name="PwmChannelId" type="INTEGER">
+                      <a:a name="DESC" value="EN: Channel Id of the PWM channel. This value will be assigned to the symbolic name derived of the PwmChannel container short name." xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd">
+                        <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                      <a:a name="SCOPE" value="LOCAL" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                      <a:a name="SYMBOLICNAMEVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                      <a:a name="UUID" value="ddb4d970-a1da-43d0-971a-3a5785ad3c36" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                      <a:a name="__ORIGIN" value="Elektrobit" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                      <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index,'0')" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                      <a:a name="INVALID" type="Multi" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd">
+                        <mt:range xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd">
+                          <mt:tst expr="&lt;=4294967295" />
+                          <mt:tst expr="&gt;=0" />
+                        </mt:range>
+                        <mt:xpath xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd">
+                          <mt:tst expr="text:uniq(../../*/PwmChannelId, .)" false="Duplicate id of PWM Channel; each PWM Channels must have an unique Id value" />
+                          <mt:tst expr="node:fallback(., 0) &lt; count(node:fallback(../../*, text:split('1 2 3')))" false="Cannot assign an ID number higher than the number of defined channels" />
+                        </mt:xpath>
+                      </a:a>
+                    </v:var>
+                    <v:var name="PwmHwIP" type="ENUMERATION">
+                      <a:a name="LABEL" value="PwmHwIP" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                        <a:v><![CDATA[EN:
+                          <html>
+Hardware IP to be used for current PWM channel
+                          </html> ]]></a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                        <icc:v class="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                        <icc:v class="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="UUID" value="ECUC:26cc571f-8c0c-444e-9e26-3e4cbd788cbc" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:da name="DEFAULT" value="GTM_ATOM" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:da name="RANGE" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                        <a:v>GTM_ATOM</a:v>
+                        <a:v>GTM_TOM</a:v>
+                        <a:v>EMIOS</a:v>
+                        <a:v>CCU7</a:v>
+                      </a:da>
+                    </v:var>
+                    <v:lst name="AtomChannelRef">
+                      <a:da name="MAX" value="1"/>
+                      <v:ref name="AtomChannelRef" type="REFERENCE">
+                        <a:a name="DESC" 
+                             value="EN: This parameter contains reference to the AtomRef"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="UUID" 
+                             value="12208dc6-0656-4862-8b55-bb749f535465"/>
+                        <a:a name="__ORIGIN" value="Elektrobit"/>
+                        <a:da name="REF" 
+                              value="ASPathDataOfSchema:/PwmConfig/Pwm/PwmChannelConfigSet/PwmAtom/PwmAtomChannels"/>
+                      </v:ref>
+                    </v:lst>
+                    <v:lst name="TomChannelRef">
+                      <a:da name="MAX" value="1"/>
+                      <v:ref name="TomChannelRef" type="REFERENCE">
+                        <a:a name="DESC" 
+                             value="EN: This parameter contains reference to the TomRef"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="UUID" 
+                             value="12208dc6-0656-4862-8b55-ba741f535465"/>
+                        <a:a name="__ORIGIN" value="Elektrobit"/>
+                        <a:da name="REF" 
+                              value="ASPathDataOfSchema:/PwmConfig/Pwm/PwmChannelConfigSet/PwmTom/PwmTomChannels"/>
+                      </v:ref>
+                    </v:lst>
+                    <v:lst name="EmiosChannelRef">
+                      <a:da name="MAX" value="1"/>
+                      <v:ref name="EmiosChannelRef" type="REFERENCE">
+                        <a:a name="DESC" 
+                             value="EN: This parameter contains reference to the eMiosRef"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="UUID" 
+                             value="12208dc6-0656-4862-8b55-bb749f555455"/>
+                        <a:a name="__ORIGIN" value="Elektrobit"/>
+                        <a:da name="REF" 
+                              value="ASPathDataOfSchema:/PwmConfig/Pwm/PwmChannelConfigSet/PwmEmios/PwmEmiosChannels"/>
+                      </v:ref>
+                    </v:lst>
+                    <v:lst name="Ccu7ChannelRef">
+                      <a:da name="MAX" value="1"/>
+                      <v:ref name="Ccu7ChannelRef" type="REFERENCE">
+                        <a:a name="DESC" 
+                             value="EN: This parameter contains reference to the Ccu7Ref"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="UUID" 
+                             value="12208dc6-0656-4862-8b55-b1769f535455"/>
+                        <a:a name="__ORIGIN" value="Elektrobit"/>
+                        <a:da name="REF" 
+                              value="ASPathDataOfSchema:/PwmConfig/Pwm/PwmChannelConfigSet/PwmCcu7/PwmCcu7Channels"/>
+                      </v:ref>
+                    </v:lst>
+                    <v:var name="PwmPeriodDefault" type="INTEGER">
+                      <a:a name="DESC" value="EN: Value of period used for Initialization.(in seconds)." />
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                      <a:a name="SCOPE" value="LOCAL" />
+                      <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                      <a:a name="UUID" value="5d719887-0db3-4d67-bfad-21aff3d0a92d" />
+                      <a:a name="__ORIGIN" value="Elektrobit" />
+                      <a:da name="EDITABLE" type="XPath" expr="text:match(node:value(../PwmHwIP),'GTM') or
+                                                              text:match(node:value(../PwmHwIP),'CCU7') or
+                                                              (text:match(node:value(node:ref(../EmiosChannelRef)/PwmModeSelect),'EMIOS_UC_MODE_PWM_OPWFMB') and
+                                                              text:match(node:value(../PwmHwIP),'EMIOS'))"
+                                                              xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:da name="DEFAULT" value="1" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                    </v:var>
+                    <v:var name="PwmDutycycleDefault" type="INTEGER">
+                      <a:a name="DESC" value="EN: Value of duty cycle used for Initialization" />
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                      <a:a name="SCOPE" value="LOCAL" />
+                      <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                      <a:a name="UUID" value="df511736-420f-44fa-a048-e39296e4c10a" />
+                      <a:a name="__ORIGIN" value="Elektrobit" />
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=32768" />
+                        <a:tst expr="&gt;=0" />
+                      </a:da>
+                      <a:da name="DEFAULT" value="16384" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:da name="EDITABLE" type="XPath" expr="not(text:match(../PwmHwIP,'EMIOS') and text:match(node:value(node:ref(../EmiosChannelRef)/PwmModeSelect),'EMIOS_UC_MODE_PWM_SAOC'))" />
+                    </v:var>
+                    <v:var name="PwmIdleState" type="ENUMERATION">
+                      <a:a name="DESC" value="EN: The parameter PWM_IDLE_STATE represents the output state of the PWM after the signal is stopped (e.g. call of Pwm_SetOutputToIdle)." />
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                      <a:a name="SCOPE" value="LOCAL" />
+                      <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                      <a:a name="UUID" value="11ac46b4-1465-4e46-affd-9042af19f36b" />
+                      <a:a name="__ORIGIN" value="Elektrobit" />
+                      <a:da name="RANGE">
+                        <a:v>PWM_HIGH</a:v>
+                        <a:v>PWM_LOW</a:v>
+                      </a:da>
+                      <a:da name="DEFAULT" value="PWM_LOW" />
+                    </v:var>
+                    <v:var name="PwmNotification" type="FUNCTION-NAME">
+                      <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                        <a:v><![CDATA[EN:
+                          <html>
+User callback function
+NOTE: please use NULL or NULL_PTR w/o any quotes. If the used string is different from NULL
+or NULL_PTR it will be used as the configured function name.
+                          </html> ]]></a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                        <icc:v class="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                        <icc:v class="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:da name="EDITABLE" type="XPath" expr="node:value(../../../../PwmGeneral/PwmNotificationSupported) = 'true' and node:value(../PwmHwIP) != 'EMIOS' or node:value(../../../../PwmGeneral/PwmNotificationSupported) = 'true' and node:value(../PwmHwIP) = 'EMIOS' and node:value(node:ref(../EmiosChannelRef)/EmiosDmaSwitch) = 'false'" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="UUID" value="ECUC:ed814485-e40a-47fc-a1b3-c575a0511e42" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:da name="DEFAULT" value="NULL" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:da name="INVALID" type="XPath" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                        <a:tst expr="normalize-space(.) = '&quot;NULL_PTR&quot;' or normalize-space(.) = 'NULL_PTR' or normalize-space(.) = '&quot;NULL&quot;' or normalize-space(.) = 'NULL' or text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$')" false="Invalid name of the Pwmnotification. Must be valid C function name, NULL_PTR, &quot;NULL_PTR&quot;, NULL, or &quot;NULL&quot;." />
+                      </a:da>
+                    </v:var>
+                    <v:var name="PwmPolarity" type="ENUMERATION">
+                      <a:a name="DESC" value="EN: Defines the starting polarity of each PWM channel." />
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                      <a:a name="SCOPE" value="LOCAL" />
+                      <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                      <a:a name="UUID" value="d13ba5de-5359-4e3b-bb06-402662db6806" />
+                      <a:a name="__ORIGIN" value="Elektrobit" />
+                      <a:da name="RANGE">
+                        <a:v>PWM_HIGH</a:v>
+                        <a:v>PWM_LOW</a:v>
+                      </a:da>
+                      <a:da name="DEFAULT" value="PWM_HIGH" />
+                    </v:var>
+                    <v:lst name="PwmChannelEcucPartitionRef">
+                      <v:ref name="PwmChannelEcucPartitionRef" type="REFERENCE">
+                        <a:a name="DESC">
+                          <a:v>EN: Maps a PWM channel to zero or multiple ECUC partitions to limit the access to this channe. The ECUC partitions referenced are a subset of the ECUC partitions where the PWM driver is mapped to.</a:v>
+                          <a:v>EN: Tags: atp.Status=draft</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                          <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                          <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                        <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true" />
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                        <a:a name="SCOPE" value="ECU" />
+                        <a:a name="UUID" value="8c7afa1d-6af4-4b7f-a893-02f222d7b51f" />
+                        <a:da name="READONLY" value="true"/>
+                        <a:a name="__ORIGIN" value="Elektrobit" />
+                        <a:da name="INVALID" type="XPath">
+                          <a:tst expr="node:containsValue(../../../../../PwmGeneral/PwmEcucPartitionRef/*, node:value(.))"
+                                 false="The ECUC partition referenced by PwmChannelEcucPartitionRef shall be a subset of the ECUC partitions referenced by PwmChannelEcucPartitionRef."/>
+                          <a:tst expr="num:i(count(../../PwmChannelEcucPartitionRef/*)) &gt;1 and
+                                       text:match(node:value(../../PwmHwIP),'EMIOS') and
+                                       text:match(node:value(node:ref(../../EmiosChannelRef)/PwmModeSelect),'EMIOS_UC_MODE_PWM_DAOC')"
+                                 true="Each channel should be allocated to only one partition."/>
+                        </a:da>
+                        <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition" />
+                      </v:ref>
+                    </v:lst>
+                    <v:ref name="PwmMcuClockReferencePoint" type="REFERENCE">
+                      <a:a name="DESC" value="EN: This parameter contains reference to the McuClockReferencePoint" />
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                      <a:a name="SCOPE" value="ECU" />
+                      <a:a name="UUID" value="12208dc6-0656-4862-8b55-bb749f555455" />
+                      <a:a name="__ORIGIN" value="Elektrobit" />
+                      <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint" />
+                      <a:a name="READONLY" value="true" />
+                    </v:ref>
+                  </v:ctr>
+                </v:lst>
+                <v:lst name="PwmEmios" type="MAP">
+                  <a:da name="MIN" value="0" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                  <a:da name="MAX" value="2" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                  <v:ctr name="PwmEmios" type="IDENTIFIABLE">
+                    <a:a name="LABEL" value="eMIOS Modules" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                    <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                      <a:v><![CDATA[EN:<html>
+                                        Configuration of a eMIOS module available on the platform.
+                                    </html>]]></a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                      <icc:v mclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                      <icc:v mclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="UUID" value="ECUC:72b13796-cc7f-418c-83d0-dfa2e3cd48d6" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                    <v:var name="PwmEmiosModule" type="ENUMERATION">
+                      <a:a name="LABEL" value="eMIOS hardware module" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                        <a:v><![CDATA[EN:<html>
+                                            Select the hardware eMIOS module.
+                                        </html> ]]></a:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                        <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                        <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="UUID" value="ECUC:dd286e45-87d3-4c9d-b607-f532d59fea6b" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:da name="DEFAULT" value="eMios_0" />
+                      <a:da name="RANGE">
+                        <a:v>eMios_0</a:v>
+                        <a:v>eMios_1</a:v>
+                      </a:da>
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="text:uniq(../../*/PwmEmiosModule, .)" false="The PwmEmiosModule should be unique, please change it!"/>
+                      </a:da>
+                    </v:var>
+                    <v:lst name="PwmEmiosChannels" type="MAP">
+                      <v:ctr name="PwmEmiosChannels" type="IDENTIFIABLE">
+                        <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                          <a:v><![CDATA[EN:<html>
+                                                List of eMIOS channels available on the platform.
+                                            </html> ]]></a:v>
+                        </a:a>
+                        <a:a name="UUID" value="ECUC:dc52cbeb-9159-4843-ac71-418f2b8d09d4" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                          <icc:v mclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                          <icc:v mclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                        </a:a>
+                        <v:var name="PwmEmiosChannel" type="ENUMERATION">
+                          <a:a name="LABEL" value="Channel number" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v><![CDATA[EN:<html>
+                                                    Select one of the eMIOS channels available on the platform.
+                                                </html>]]></a:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="UUID" value="ECUC:ee29e77b-48b0-46da-8a61-07260085aa49" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="DEFAULT" value="Channel_0" />
+                          <a:da name="RANGE">
+                            <a:v>Channel_0</a:v>
+                            <a:v>Channel_1</a:v>
+                            <a:v>Channel_2</a:v>
+                            <a:v>Channel_3</a:v>
+                            <a:v>Channel_4</a:v>
+                            <a:v>Channel_5</a:v>
+                            <a:v>Channel_6</a:v>
+                            <a:v>Channel_7</a:v>
+                            <a:v>Channel_8</a:v>
+                            <a:v>Channel_9</a:v>
+                            <a:v>Channel_10</a:v>
+                            <a:v>Channel_11</a:v>
+                            <a:v>Channel_12</a:v>
+                            <a:v>Channel_13</a:v>
+                            <a:v>Channel_14</a:v>
+                            <a:v>Channel_15</a:v>
+                            <a:v>Channel_16</a:v>
+                            <a:v>Channel_17</a:v>
+                            <a:v>Channel_18</a:v>
+                            <a:v>Channel_19</a:v>
+                            <a:v>Channel_20</a:v>
+                            <a:v>Channel_21</a:v>
+                            <a:v>Channel_22</a:v>
+                            <a:v>Channel_23</a:v>
+                            <a:v>Channel_24</a:v>
+                            <a:v>Channel_25</a:v>
+                            <a:v>Channel_26</a:v>
+                            <a:v>Channel_27</a:v>
+                            <a:v>Channel_28</a:v>
+                            <a:v>Channel_29</a:v>
+                            <a:v>Channel_30</a:v>
+                            <a:v>Channel_31</a:v>
+                          </a:da>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="text:uniq(../../*/PwmEmiosChannel, .)" false="The PwmEmiosChannel should be unique, please change it!"/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="PwmPrescaler" type="ENUMERATION">
+                          <a:a name="LABEL" value="Clock prescaler" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v><![CDATA[EN:<html>
+                                                    Select clock prescaler used for this eMIOS channel. The internal counter must be selected for this setting to take any effect.
+                                                </html> ]]></a:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="UUID" value="ECUC:cdd8fbd9-4174-5d40-9a80-a081cfddc77c" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="RANGE" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v>DIV_1</a:v>
+                            <a:v>DIV_2</a:v>
+                            <a:v>DIV_3</a:v>
+                            <a:v>DIV_4</a:v>
+                          </a:da>
+                          <a:da name="DEFAULT" value="DIV_1" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                        </v:var>
+                        <v:var name="PwmModeSelect" type="ENUMERATION">
+                          <a:a name="LABEL" value="Mode select" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v><![CDATA[EN:<html><p>Sub-mode selected</p></html>]]></a:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="UUID" value="ECUC:6226aa92-94c3-4aab-b471-d82d04f0694c" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="RANGE" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v>EMIOS_UC_MODE_PWM_GPIO</a:v>
+                            <a:v>EMIOS_UC_MODE_PWM_SAOC</a:v>
+                            <a:v>EMIOS_UC_MODE_PWM_DAOC</a:v>
+                            <a:v>EMIOS_UC_MODE_PWM_OPWFMB</a:v>
+                            <a:v>EMIOS_UC_MODE_PWM_OPWMCB_TRAIL</a:v>
+                            <a:v>EMIOS_UC_MODE_PWM_OPWMCB_LEAD</a:v>
+                            <a:v>EMIOS_UC_MODE_PWM_OPWMB</a:v>
+                            <a:v>EMIOS_UC_MODE_PWM_OPWMT</a:v>
+                          </a:da>
+                          <a:da name="DEFAULT" value="EMIOS_UC_MODE_PWM_OPWFMB" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                        </v:var>
+                        <v:var name="EmiosUnifiedChannelBusSelect" type="ENUMERATION">
+                          <a:a name="LABEL" value="Bus select" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v><![CDATA[EN:<html>Counter bus selected</html>]]></a:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="UUID" value="ECUC:9c1734c7-67de-4a08-92d8-e732b6b6c0ad" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="DEFAULT" value="EMIOS_COUNTER_BUS_A" />
+                          <a:da name="RANGE">
+                            <a:v>EMIOS_COUNTER_BUS_A</a:v>
+                            <a:v>EMIOS_COUNTER_BUS_BCDE</a:v>
+                            <a:v>EMIOS_COUNTER_BUS_INTERNAL</a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="IdealDutyCycle" type="INTEGER">
+                          <a:a name="LABEL" value="IdealDutyCycle (tick)" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v><![CDATA[EN:<html><p>Ideal duty cycle of the PWM signal using to compare with the selected time base, for OPWMCB only.</p></html> ]]></a:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="UUID" value="ECUC:8bd84d8d-f01b-4df1-a19f-808ede6dfc64" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="INVALID" type="Range" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:tst expr="&lt;=16777215" />
+                            <a:tst expr="&gt;=0" />
+                          </a:da>
+                          <a:da name="DEFAULT" value="0" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="EDITABLE" type="XPath" expr="text:match(node:value(../PwmModeSelect),'OPWMCB')" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                        </v:var>
+                        <v:var name="PwmDeadtime" type="INTEGER">
+                          <a:a name="LABEL" value="Deadtime (tick)" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v><![CDATA[EN:<html>
+                                                    <p>Deadtime parameter controls the deadtime during transitions of the PWM output.</p>
+                                                    <p><b>NOTE:</b> This parameter is used only for OPWMCB mode.</p>
+                                                </html>]]></a:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="UUID" value="ECUC:51e6da2d-58d8-411e-b7b1-dcdab00dad85" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="DEFAULT" value="0" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="INVALID" type="Range" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:tst expr="&lt;=16777215" />
+                            <a:tst expr="&gt;=0" />
+                          </a:da>
+                          <a:da name="EDITABLE" type="XPath" expr="text:match(node:value(../PwmModeSelect),'OPWMCB')" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                        </v:var>
+                        <v:var name="PwmOffset" type="INTEGER">
+                          <a:a name="LABEL" value="Offset (tick)" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v><![CDATA[EN:<html>
+                                                    <p>Offset parameter controls the Offset during transitions of the PWM output.</p>
+                                                    <p><b>NOTE:</b> This parameter is used only for OPWMB mode.</p>
+                                                </html>]]></a:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="UUID" value="ECUC:51e6da2d-58d8-411e-b7b1-dcdab00dad85" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="DEFAULT" value="0" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="INVALID" type="Range" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:tst expr="&lt;=16777215" />
+                            <a:tst expr="&gt;=0" />
+                          </a:da>
+                          <a:da name="EDITABLE" type="XPath" expr="text:match(node:value(../PwmModeSelect),'OPWMB')" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                        </v:var>
+                        <v:var name="PwmtrigTime" type="INTEGER">
+                          <a:a name="LABEL" value="trigTime (tick)" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v><![CDATA[EN:<html>
+                                                    <p>trigTime parameter controls the trigTime during transitions of the PWM output.</p>
+                                                    <p><b>NOTE:</b> This parameter is used only for OPWMT mode.</p>
+                                                </html>]]></a:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="UUID" value="ECUC:51e6da2d-58d8-411e-b7b1-dcdab00dad85" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="DEFAULT" value="0" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="INVALID" type="Range" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:tst expr="&lt;=16777215" />
+                            <a:tst expr="&gt;=0" />
+                          </a:da>
+                          <a:da name="EDITABLE" type="XPath" expr="text:match(node:value(../PwmModeSelect),'OPWMT')" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                        </v:var>
+                        <v:ref name="EMIOS0BUSRef" type="REFERENCE">
+                          <a:a name="DESC" value="EN: This parameter contains reference to the EMIOS0 BUS" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd">
+                            <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:a name="SCOPE" value="ECU" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:a name="UUID" value="12208dc6-0656-4862-8b55-bb749f555455" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:a name="__ORIGIN" value="Elektrobit" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:da name="REF" value="ASPathDataOfSchema:/eMIOSConfig/eMIOS/eMIOSInstance0Config/eMIOSChannel"/>
+                          <a:da name="EDITABLE" type="XPath" expr="text:match(node:value(../../../PwmEmiosModule),'eMios_0') and node:value(../EmiosUnifiedChannelBusSelect)!='EMIOS_COUNTER_BUS_INTERNAL'" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="not(node:refexists(.)) and text:match(node:value(../../../PwmEmiosModule),'eMios_0') and node:value(../EmiosUnifiedChannelBusSelect)!='EMIOS_COUNTER_BUS_INTERNAL'" true="The EMIOS0BUSRef must be selected"> </a:tst>
+                          </a:da>
+                        </v:ref>
+                        <v:ref name="EMIOS1BUSRef" type="REFERENCE">
+                          <a:a name="DESC" value="EN: This parameter contains reference to the EMIOS1 BUS" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd">
+                            <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:a name="SCOPE" value="ECU" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:a name="UUID" value="12208dc6-0656-4862-8b55-bb749f555455" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:a name="__ORIGIN" value="Elektrobit" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:da name="REF" value="ASPathDataOfSchema:/eMIOSConfig/eMIOS/eMIOSInstance1Config/eMIOSChannel"/>
+                          <a:da name="EDITABLE" type="XPath" expr="text:match(node:value(../../../PwmEmiosModule),'eMios_1') and node:value(../EmiosUnifiedChannelBusSelect)!='EMIOS_COUNTER_BUS_INTERNAL'" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="not(node:refexists(.)) and text:match(node:value(../../../PwmEmiosModule),'eMios_1') and node:value(../EmiosUnifiedChannelBusSelect)!='EMIOS_COUNTER_BUS_INTERNAL'" true="The EMIOS1BUSRef must be selected"> </a:tst>
+                          </a:da>
+                        </v:ref>
+                        <v:var name="EmiosDmaSwitch" type="BOOLEAN">
+                          <a:a name="DESC" value="EN: Switches the development pwm emios dma on or off." />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" />
+                          <a:a name="SCOPE" value="LOCAL" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID" value="6a70ea9a-d17c-4dac-9610-ed624d329568" />
+                          <a:a name="__ORIGIN" value="Elektrobit" />
+                          <a:da name="DEFAULT" value="false" />
+                          <a:da name="EDITABLE" type="XPath" expr="node:value(../PwmModeSelect) != 'EMIOS_UC_MODE_PWM_DAOC'" />
+                        </v:var>
+                      </v:ctr>
+                    </v:lst>
+                  </v:ctr>
+                </v:lst>
+                <v:lst name="PwmCcu7" type="MAP">
+                  <a:da name="MIN" value="0" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                  <a:da name="MAX" value="2" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                  <v:ctr name="PwmCcu7" type="IDENTIFIABLE">
+                    <a:a name="LABEL" value="Ccu7 Modules" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                    <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                      <a:v><![CDATA[EN:<html>
+                                        Configuration of a Pwm Ccu7 module available on the platform.
+                                    </html>]]></a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                      <icc:v mclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                      <icc:v mclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="UUID" value="ECUC:72b13796-cc7f-418c-83d0-dfa2e3cd48d6" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                    <v:var name="PwmCcu7Module" type="ENUMERATION">
+                      <a:a name="LABEL" value="Ccu7 hardware module" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                        <a:v><![CDATA[EN:<html>
+                                            Select the hardware Ccu7 module.
+                                        </html> ]]></a:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                        <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                        <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="UUID" value="ECUC:dd286e45-87d3-4c9d-b607-f532d59fea6b" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:da name="RANGE">
+                        <a:v>Ccu7_0</a:v>
+                        <a:v>Ccu7_1</a:v>
+                      </a:da>
+                      <a:da name="DEFAULT" value="Ccu7_0" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="text:uniq(../../*/PwmCcu7Module, .)" false="The PwmCcu7Module should be unique, please change it!"/>
+                      </a:da>
+                    </v:var>
+                    <v:lst name="PwmCcu7Channels" type="MAP">
+                      <v:ctr name="PwmCcu7Channels" type="IDENTIFIABLE">
+                        <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                          <a:v><![CDATA[EN:<html>
+                                                List of Ccu7 channels available on the platform.
+                                            </html> ]]></a:v>
+                        </a:a>
+                        <a:a name="UUID" value="ECUC:dc52cbeb-9159-4843-ac71-418f2b8d09d4" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                          <icc:v mclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                          <icc:v mclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                        </a:a>
+                        <v:var name="PwmCcu7Channel" type="ENUMERATION">
+                          <a:a name="LABEL" value="Channel number" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v><![CDATA[EN:<html>
+                                                    Select one of the Ccu7 channels available on the platform.
+                                                </html>]]></a:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="UUID" value="ECUC:ee29e77b-48b0-46da-8a61-07260085aa49" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="RANGE">
+                            <a:v>COUT70</a:v>
+                            <a:v>COUT71</a:v>
+                            <a:v>COUT72</a:v>
+                            <a:v>COUT73</a:v>
+                          </a:da>
+                          <a:da name="DEFAULT" value="COUT70" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="text:uniq(../../*/PwmCcu7Channel, .)" false="The PwmCcu7Channel should be unique, please change it!"/>
+                          </a:da>
+                        </v:var>
+                        <v:lst name="PwmCcu7TimerPtr" type="MAP">
+                          <v:ctr name="PwmCcu7TimerPtr" type="IDENTIFIABLE">
+                            <a:a name="LABEL" value="PwmCcu7TimerPtr" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                            <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                              <a:v><![CDATA[EN:<html>
+                                                Configuration of a Pwm Ccu7 Timer Pointer.
+                                            </html>]]></a:v>
+                            </a:a>
+                            <a:a name="UUID" value="ECUC:ee29e77b-48b0-46da-8a61-07260085aa49" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                            <a:da name="INVALID" type="XPath">
+                              <a:tst expr="text:uniq(../../*/PwmCcu7TimerPtr, .)" false="The PwmCcu7TimerPtr should be unique, please change it!"/>
+                            </a:da>
+                            <v:var name="Ccu7T12Prescaler" type="ENUMERATION">
+                              <a:a name="DESC" value="Selects Timer T12 Prescaler Bit." />
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              </a:a>
+                              <a:a name="ORIGIN" value="CCFC" />
+                              <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                              <a:a name="UUID" value="453e06e9-9d4e-4352-ba11-c0fd3c34517c" />
+                              <a:a name="__ORIGIN" value="Elektrobit" />
+                              <a:da name="RANGE">
+                                <a:v>PWM_PreDisable</a:v>
+                                <a:v>PWM_PreEnable</a:v>
+                              </a:da>
+                              <a:da name="DEFAULT" value="PWM_PreDisable" />
+                            </v:var>
+                            <v:var name="Ccu7OperationMode" type="ENUMERATION">
+                              <a:a name="DESC" value="Selects T12 Operating Mode." />
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              </a:a>
+                              <a:a name="ORIGIN" value="CCFC" />
+                              <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                              <a:a name="UUID" value="453e06e9-9d4e-4352-ba11-c0fd3c34517c" />
+                              <a:a name="__ORIGIN" value="Elektrobit" />
+                              <a:da name="DEFAULT" value="PWM_EdgealignedMode" />
+                              <a:da name="RANGE">
+                                <a:v>PWM_EdgealignedMode</a:v>
+                                <a:v>PWM_CenteralignedMode</a:v>
+                              </a:da>
+                            </v:var>
+                             <v:var name="Ccu7ComplementaryPSLx" type="ENUMERATION">
+                              <a:a name="DESC" value="Selects T12 Operating Mode." />
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              </a:a>
+                              <a:a name="ORIGIN" value="CCFC" />
+                              <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                              <a:a name="UUID" value="453e06e9-9d4e-4352-ba11-c0fd3c34517c" />
+                              <a:a name="__ORIGIN" value="Elektrobit" />
+                              <a:da name="DEFAULT" value="PWM_Level0" />
+                              <a:da name="RANGE">
+                                <a:v>PWM_Level0</a:v>
+                                <a:v>PWM_Level1</a:v>
+                              </a:da>
+                            </v:var>
+                             <v:var name="Ccu7ModEn" type="ENUMERATION">
+                              <a:a name="DESC" value="Selects T12 Operating Mode." />
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              </a:a>
+                              <a:a name="ORIGIN" value="CCFC" />
+                              <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                              <a:a name="UUID" value="453e06e9-9d4e-4352-ba11-c0fd3c34517c" />
+                              <a:a name="__ORIGIN" value="Elektrobit" />
+                              <a:da name="DEFAULT" value="PWM_Level0" />
+                              <a:da name="RANGE">
+                                <a:v>PWM_Level0</a:v>
+                                <a:v>PWM_Level1</a:v>
+                                <a:v>PWM_Level2</a:v>
+                                <a:v>PWM_Level3</a:v>
+                              </a:da>
+                            </v:var>
+                            <v:var name="Ccu7ModeSel" type="ENUMERATION">
+                              <a:a name="DESC" value="Selects Capture/Compare Mode Selection MSEL7x." />
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              </a:a>
+                              <a:a name="ORIGIN" value="CCFC" />
+                              <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                              <a:a name="UUID" value="453e06e9-9d4e-4352-ba11-c0fd3c34517c" />
+                              <a:a name="__ORIGIN" value="Elektrobit" />
+                              <a:da name="DEFAULT" value="PWM_COMPARE_MODE3" />
+                              <a:da name="RANGE">
+                                <a:v>PWM_COMPARE_MODE1</a:v>
+                                <a:v>PWM_COMPARE_MODE2</a:v>
+                                <a:v>PWM_COMPARE_MODE3</a:v>
+                              </a:da>
+                            </v:var>
+                          </v:ctr>
+                        </v:lst>
+                      </v:ctr>
+                    </v:lst>
+                  </v:ctr>
+                </v:lst>
+                <v:lst name="PwmAtom" type="MAP">
+                  <a:da name="MIN" value="0" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                  <a:da name="MAX" value="9" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                  <v:ctr name="PwmAtom" type="IDENTIFIABLE">
+                    <a:a name="LABEL" value="Atom Modules" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                    <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                      <a:v><![CDATA[EN:<html>
+                                        Configuration of a PwmAtom module available on the platform.
+                                    </html>]]></a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                      <icc:v mclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                      <icc:v mclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="UUID" value="ECUC:72b13796-cc7f-418c-83d0-dfa2e3cd48d6" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                    <v:var name="PwmAtomModule" type="ENUMERATION">
+                      <a:a name="LABEL" value="Atom hardware module" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                        <a:v><![CDATA[EN:<html>
+                                            Select the hardware Atom module.
+                                        </html> ]]></a:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                        <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                        <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="UUID" value="ECUC:dd286e45-87d3-4c9d-b607-f532d59fea6b" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:da name="RANGE">
+                        <a:v>ATOM0</a:v>
+                        <a:v>ATOM1</a:v>
+                        <a:v>ATOM2</a:v>
+                        <a:v>ATOM3</a:v>
+                        <a:v>ATOM4</a:v>
+                        <a:v>ATOM5</a:v>
+                        <a:v>ATOM6</a:v>
+                        <a:v>ATOM7</a:v>
+                        <a:v>ATOM8</a:v>
+                      </a:da>
+                      <a:da name="DEFAULT" value="ATOM0" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="text:uniq(../../*/PwmAtomModule, .)" false="The PwmAtomModule should be unique, please change it!"/>
+                      </a:da>
+                    </v:var>
+                    <v:lst name="PwmAtomChannels" type="MAP">
+                      <v:ctr name="PwmAtomChannels" type="IDENTIFIABLE">
+                        <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                          <a:v><![CDATA[EN:<html>
+                                                List of ATOM channels available on the platform.
+                                            </html> ]]></a:v>
+                        </a:a>
+                        <a:a name="UUID" value="ECUC:dc52cbeb-9159-4843-ac71-418f2b8d09d4" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                          <icc:v mclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                          <icc:v mclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                        </a:a>
+                        <v:var name="PwmAtomChannel" type="ENUMERATION">
+                          <a:a name="LABEL" value="Channel number" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v><![CDATA[EN:<html>
+                                                    Select one of the Atom channels available on the platform.
+                                                </html>]]></a:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="UUID" value="ECUC:ee29e77b-48b0-46da-8a61-07260085aa49" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="DEFAULT" value="Channel_0" />
+                          <a:da name="RANGE">
+                            <a:v>Channel_0</a:v>
+                            <a:v>Channel_1</a:v>
+                            <a:v>Channel_2</a:v>
+                            <a:v>Channel_3</a:v>
+                            <a:v>Channel_4</a:v>
+                            <a:v>Channel_5</a:v>
+                            <a:v>Channel_6</a:v>
+                            <a:v>Channel_7</a:v>
+                          </a:da>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="text:uniq(../../*/PwmAtomChannel, .)" false="The PwmAtomChannel should be unique, please change it!"/>
+                          </a:da>
+                        </v:var>
+                        <v:ref name="CmuClckRef" type="REFERENCE">
+                          <a:a name="DESC" value="EN: This parameter contains reference to the CmuClckRef" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd">
+                            <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:a name="SCOPE" value="ECU" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:a name="UUID" value="12208dc6-0656-4862-8b55-bb749f555455" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:a name="__ORIGIN" value="Elektrobit" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                          <a:da name="REF" value="ASPathDataOfSchema:/GptConfig/Gpt/GtmCmuConfigSet/CMUClockControl" />
+                        </v:ref>
+                      </v:ctr>
+                    </v:lst>
+                  </v:ctr>
+                </v:lst>
+                <v:lst name="PwmTom" type="MAP">
+                  <a:da name="MIN" value="0" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                  <a:da name="MAX" value="9" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                  <v:ctr name="PwmTom" type="IDENTIFIABLE">
+                    <a:a name="LABEL" value="Tom Modules" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                    <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                      <a:v><![CDATA[EN:<html>
+                                        Configuration of a PwmTom module available on the platform.
+                                    </html>]]></a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                      <icc:v mclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                      <icc:v mclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="UUID" value="ECUC:72b13796-cc7f-418c-83d0-dfa2e3cd48d6" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                    <v:var name="PwmTomModule" type="ENUMERATION">
+                      <a:a name="LABEL" value="Tom hardware module" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                        <a:v><![CDATA[EN:<html>
+                                            Select the hardware Tom module.
+                                        </html> ]]></a:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                        <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                        <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:a name="UUID" value="ECUC:dd286e45-87d3-4c9d-b607-f532d59fea6b" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:da name="RANGE">
+                        <a:v>TOM0</a:v>
+                        <a:v>TOM1</a:v>
+                        <a:v>TOM2</a:v>
+                        <a:v>TOM3</a:v>
+                        <a:v>TOM4</a:v>
+                      </a:da>
+                      <a:da name="DEFAULT" value="TOM0" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="text:uniq(../../*/PwmTomModule, .)" false="The PwmTomModule should be unique, please change it!"/>
+                      </a:da>
+                    </v:var>
+                    <v:lst name="PwmTomChannels" type="MAP">
+                      <v:ctr name="PwmTomChannels" type="IDENTIFIABLE">
+                        <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                          <a:v><![CDATA[EN:<html>
+                                                List of TOM channels available on the platform.
+                                            </html> ]]></a:v>
+                        </a:a>
+                        <a:a name="UUID" value="ECUC:dc52cbeb-9159-4843-ac71-418f2b8d09d4" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                          <icc:v mclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                          <icc:v mclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                        </a:a>
+                        <v:var name="PwmTomChannel" type="ENUMERATION">
+                          <a:a name="LABEL" value="Channel number" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v><![CDATA[EN:<html>
+                                                    Select one of the Tom channels available on the platform.
+                                                </html>]]></a:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="UUID" value="ECUC:ee29e77b-48b0-46da-8a61-07260085aa49" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="DEFAULT" value="Channel_0" />
+                          <a:da name="RANGE">
+                            <a:v>Channel_0</a:v>
+                            <a:v>Channel_1</a:v>
+                            <a:v>Channel_2</a:v>
+                            <a:v>Channel_3</a:v>
+                            <a:v>Channel_4</a:v>
+                            <a:v>Channel_5</a:v>
+                            <a:v>Channel_6</a:v>
+                            <a:v>Channel_7</a:v>
+                            <a:v>Channel_8</a:v>
+                            <a:v>Channel_9</a:v>
+                            <a:v>Channel_10</a:v>
+                            <a:v>Channel_11</a:v>
+                            <a:v>Channel_12</a:v>
+                            <a:v>Channel_13</a:v>
+                            <a:v>Channel_14</a:v>
+                            <a:v>Channel_15</a:v>
+                          </a:da>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="text:uniq(../../*/PwmTomChannel, .)" false="The PwmTomChannel should be unique, please change it!"/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="CmuFXClk" type="ENUMERATION">
+                          <a:a name="LABEL" value="CmuFXClk" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="DESC" value="CmuFXClk config."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <icc:v class="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                            <icc:v class="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="UUID" value="ECUC:26cc571f-8c0c-444e-9e26-3e4cbd788cbc" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="DEFAULT" value="FXClk0" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="RANGE" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v>FXClk0</a:v>
+                            <a:v>FXClk1</a:v>
+                            <a:v>FXClk2</a:v>
+                            <a:v>FXClk3</a:v>
+                            <a:v>FXClk4</a:v>
+                          </a:da>
+                        </v:var>
+                      </v:ctr>
+                    </v:lst>
+                  </v:ctr>
+                </v:lst>
+              </v:ctr>
+              <v:ctr name="PwmConfigurationOfOptApiServices" type="IDENTIFIABLE">
+                <a:a name="UUID" value="7c1751ed-4148-4c25-a176-a7a825574b3d" />
+                <v:var name="PwmDeInitApi" type="BOOLEAN">
+                  <a:a name="DESC" value="EN: Adds / removes the service Pwm_DeInit() from the code." />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="66f671be-5519-49b9-bbc5-df18520d98cc" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="true" />
+                </v:var>
+                <v:var name="PwmGetOutputState" type="BOOLEAN">
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="9c8449ee-64fa-44fc-a45c-3644807d26c7" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="true" />
+                </v:var>
+                <v:var name="PwmSetDutyCycle" type="BOOLEAN">
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="7da0a528-eaa4-4aa3-9023-42132e6509d2" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="true" />
+                </v:var>
+                <v:var name="PwmSetOutputToIdle" type="BOOLEAN">
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="626fc90f-4997-4a3d-aa4d-ef93af1ef557" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="true" />
+                </v:var>
+                <v:var name="PwmSetPeriodAndDuty" type="BOOLEAN">
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="11c0e05c-63b4-4c0e-ab69-f5e3741c1822" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="true" />
+                </v:var>
+                <v:var name="PwmVersionInfoApi" type="BOOLEAN">
+                  <a:a name="DESC" value="EN: Switch to indicate that the Pwm_ GetVersionInfo is supported" />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="4cf071d7-02b7-4aca-b95d-d99f48f8b691" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="true" />
+                </v:var>
+              </v:ctr>
+              <v:ctr name="PwmGeneral" type="IDENTIFIABLE">
+                <a:a name="UUID" value="03c9628f-4582-41c0-bb01-29ebb8228e9f" />
+                <v:var name="PwmDevErrorDetect" type="BOOLEAN">
+                  <a:a name="DESC" value="EN: Switches the development error detection and notification on or off." />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="6a74ea7a-d07c-4dac-9600-ed624d727848" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="true" />
+                </v:var>
+                <v:var name="PwmDutycycleUpdatedEndperiod" type="BOOLEAN">
+                  <a:a name="DESC" value="EN: Switch for enabling the update of the duty cycle parameter at the end of the current period." />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="39ac83db-40b2-4bef-83f0-f3ad76f05d99" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="true" />
+                </v:var>
+                <v:var name="PwmIndex" type="INTEGER">
+                  <a:a name="DESC" value="EN: Specifies the InstanceId of this module instance. If only one instance is present it shall have the Id 0." />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="547664f6-71ce-4fce-824c-ed1b0fca2bf9" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295" />
+                    <a:tst expr="&gt;=0" />
+                  </a:da>
+                  <a:da name="DEFAULT" value="0" />
+                  <a:a name="READONLY" value="true" />
+                </v:var>
+                <v:var name="PwmNotificationSupported" type="BOOLEAN">
+                  <a:a name="DESC" value="EN: Switch to indicate that the notifications are supported" />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="true" />
+                  <a:a name="UUID" value="56698126-37e6-486a-8526-70eb9fe05fde" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="true" />
+                </v:var>
+                <v:var name="PwmPeriodUpdatedEndperiod" type="BOOLEAN">
+                  <a:a name="DESC" value="EN: Switch for enabling the update of the period parameter at the end of the current period." />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="576a2f31-678b-4830-a49d-ec103a0645f3" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="true" />
+                </v:var>
+                <v:lst name="PwmEcucPartitionRef">
+                  <v:ref name="PwmEcucPartitionRef" type="REFERENCE">
+                    <a:a name="DESC">
+                      <a:v>EN: Maps the PWM driver to zero or multiple ECUC partitions to make the driver API available in the according partition.</a:v>
+                      <a:v>EN: Tags: atp.Status=draft</a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="ECU" />
+                    <a:a name="UUID" value="2e36caa7-ccb7-4249-97a9-0f26bb92329d" />
+                    <a:da name="READONLY" value="true"/>
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition" />
+                  </v:ref>
+                </v:lst>
+                <v:lst name="PwmKernelEcucPartitionRef">
+                  <a:da name="MAX" value="1" />
+                  <v:ref name="PwmKernelEcucPartitionRef" type="REFERENCE">
+                    <a:a name="DESC">
+                      <a:v>EN: Maps the PWM kernel to zero or one ECUC partitions to assign the driver kernel to a certain core. The ECUC partition referenced is a subset of the ECUC partitions where the PWM driver is mapped to.</a:v>
+                      <a:v>EN: Tags: atp.Status=draft</a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="ECU" />
+                    <a:a name="UUID" value="8ca965a4-c54a-476f-bae7-aad92201bda2" />
+                    <a:da name="READONLY" value="true"/>
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition" />
+                  </v:ref>
+                </v:lst>
+                <v:lst name="PwmPowerStateConfig" type="MAP">
+                  <v:ctr name="PwmPowerStateConfig" type="IDENTIFIABLE">
+                    <a:a name="DESC" value="EN: Each instance of this parameter defines a power state and the callback to be called when this power state is reached." />
+                    <a:a name="UUID" value="00c07416-5811-4565-8ffd-c28588d30e27" />
+                    <v:var name="PwmPowerState" type="INTEGER">
+                      <a:a name="DESC" value="EN: Each instance of this parameter describes a different power state supported by the PWM HW. It should be defined by the HW supplier and used by the PWMDriver to reference specific HW configurations which set the PWM HW module in the referenced power state." />
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                      <a:a name="SCOPE" value="LOCAL" />
+                      <a:a name="SYMBOLICNAMEVALUE" value="true" />
+                      <a:a name="UUID" value="a189e84c-0de4-46d3-9896-e31c890d3886" />
+                      <a:a name="__ORIGIN" value="Elektrobit" />
+                      <a:da name="DEFAULT" value="0" />
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=18446744073709551615" />
+                        <a:tst expr="&gt;=0" />
+                      </a:da>
+                    </v:var>
+                    <v:var name="PwmPowerStateReadyCbkRef" type="FUNCTION-NAME">
+                      <a:a name="DESC" value="EN: Each instance of this parameter contains a reference to a power mode callback defined in a CDD or IoHwAbs component." />
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                      <a:a name="SCOPE" value="LOCAL" />
+                      <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                      <a:a name="UUID" value="ba90581a-1c5b-4e9f-bad6-e53afeb8c455" />
+                      <a:a name="__ORIGIN" value="Elektrobit" />
+                    </v:var>
+                  </v:ctr>
+                </v:lst>
+                <v:var name="PwmLowPowerStatesSupport" type="BOOLEAN">
+                  <a:a name="DESC" value="EN: Adds / removes all power state management related APIs (PWM_SetPowerState, PWM_GetCurrentPowerState, PWM_GetTargetPowerState, PWM_PreparePowerState, PWM_Main_PowerTransitionManager), indicating if the HW offers low power state management." xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                  <a:a name="SCOPE" value="LOCAL" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                  <a:a name="UUID" value="4f11f54a-15fc-4051-a8c2-dc15d57667f9" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                  <a:a name="__ORIGIN" value="Elektrobit" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                  <a:da name="DEFAULT" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                </v:var>
+                <v:var name="PwmPowerStateAsynchTransitionMode" type="BOOLEAN">
+                  <a:a name="DESC" value="EN: Enables / disables support of the PWM Driver to the asynchronous power state transition." xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                  <a:a name="SCOPE" value="LOCAL" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                  <a:a name="UUID" value="e2c985c2-46d5-434e-8dd9-2671c1e46467" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                  <a:a name="__ORIGIN" value="Elektrobit" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                  <a:da name="DEFAULT" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                  <a:da name="EDITABLE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                </v:var>
+                <v:var name="PwmInlineSupport" type="BOOLEAN">
+                  <a:a name="LABEL" value="PwmInlineSupport"/>
+                  <a:a name="DESC"
+                        value="EN: Whether on or off INLINE Pwm be configured."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:94cb0b73-61e0-a5ec-c12b-1e14bf1d4c83"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+              </v:ctr>
+              <d:ref type="REFINED_MODULE_DEF" value="ASPath:/AUTOSAR/EcucDefs/Pwm" />
+            </v:ctr>
+          </d:chc>
+          <d:chc name="myEcuParameterDefinition" type="AR-ELEMENT" value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="DEF" value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION" />
+              <d:lst name="MODULE_REF">
+                <d:ref type="MODULE_REF" value="ASPath:/PwmConfig/Pwm" />
+              </d:lst>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>

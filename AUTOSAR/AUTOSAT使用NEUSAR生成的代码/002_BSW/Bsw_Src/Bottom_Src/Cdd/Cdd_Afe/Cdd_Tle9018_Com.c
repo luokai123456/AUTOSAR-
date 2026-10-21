@@ -1,0 +1,178 @@
+/**
+ * @file    Cdd_Tle9018_Com.c
+ * @brief   实现与Tle9018的通信接口
+ *
+ * @author  [dwyane tade]
+ * @version 1.0.0
+ * @date    2026-04-30
+ *
+ * @copyright Copyright (c) [2026] [天津易鼎丰]
+ */
+
+#include "IoHwAbs_UART.h"
+#include "Cdd_Tle9018_Com.h"
+
+static uint8 Tle9018_valTxBuf_Mp[TLE9018_UART_TX_BUF_NUM] = {0x1e, 0x00, 0x00, 0x00, 0x00, 0x00};
+static uint8 Tle9018_valRxBuf_Mp[2][TLE9018_UART_RX_BUF_NUM];
+
+uint8* Tle9018_GetSpiRxData(uint8 index)
+{
+    return &Tle9018_valRxBuf_Mp[index][6];
+}
+
+static const uint8 Tle9018_valCrc8Table_Mp[TLE9018_UART_CRC_TABLE_ARRAY_SIZE] =
+{
+    0,0x1d,0x3a,0x27,0x74,0x69,0x4e,0x53,0xe8,0xf5,0xd2,0xcf,0x9c,0x81,0xa6,0xbb,
+    0xcd,0xd0,0xf7,0xea,0xb9,0xa4,0x83,0x9e,0x25,0x38,0x1f,0x2,0x51,0x4c,0x6b,0x76,
+    0x87,0x9a,0xbd,0xa0,0xf3,0xee,0xc9,0xd4,0x6f,0x72,0x55,0x48,0x1b,0x6,0x21,0x3c,
+    0x4a,0x57,0x70,0x6d,0x3e,0x23,0x4,0x19,0xa2,0xbf,0x98,0x85,0xd6,0xcb,0xec,0xf1,
+    0x13,0xe,0x29,0x34,0x67,0x7a,0x5d,0x40,0xfb,0xe6,0xc1,0xdc,0x8f,0x92,0xb5,0xa8,
+    0xde,0xc3,0xe4,0xf9,0xaa,0xb7,0x90,0x8d,0x36,0x2b,0xc,0x11,0x42,0x5f,0x78,0x65,
+    0x94,0x89,0xae,0xb3,0xe0,0xfd,0xda,0xc7,0x7c,0x61,0x46,0x5b,0x8,0x15,0x32,0x2f,
+    0x59,0x44,0x63,0x7e,0x2d,0x30,0x17,0xa,0xb1,0xac,0x8b,0x96,0xc5,0xd8,0xff,0xe2,
+    0x26,0x3b,0x1c,0x1,0x52,0x4f,0x68,0x75,0xce,0xd3,0xf4,0xe9,0xba,0xa7,0x80,0x9d,
+    0xeb,0xf6,0xd1,0xcc,0x9f,0x82,0xa5,0xb8,0x3,0x1e,0x39,0x24,0x77,0x6a,0x4d,0x50,
+    0xa1,0xbc,0x9b,0x86,0xd5,0xc8,0xef,0xf2,0x49,0x54,0x73,0x6e,0x3d,0x20,0x7,0x1a,
+    0x6c,0x71,0x56,0x4b,0x18,0x5,0x22,0x3f,0x84,0x99,0xbe,0xa3,0xf0,0xed,0xca,0xd7,
+    0x35,0x28,0xf,0x12,0x41,0x5c,0x7b,0x66,0xdd,0xc0,0xe7,0xfa,0xa9,0xb4,0x93,0x8e,
+    0xf8,0xe5,0xc2,0xdf,0x8c,0x91,0xb6,0xab,0x10,0xd,0x2a,0x37,0x64,0x79,0x5e,0x43,
+    0xb2,0xaf,0x88,0x95,0xc6,0xdb,0xfc,0xe1,0x5a,0x47,0x60,0x7d,0x2e,0x33,0x14,0x9,
+    0x7f,0x62,0x45,0x58,0xb,0x16,0x31,0x2c,0x97,0x8a,0xad,0xb0,0xe3,0xfe,0xd9,0xc4
+};
+
+/**
+ * @brief 校验计算函数
+ * @param data: 数据
+ * @param len: 长度
+ * @return crc8校验值
+ */
+static uint8 Tle9018_Crc8Calcu(uint8* data, uint8 len)
+{
+    uint8 Tle9018_valCrcRes_Lo = 0xff;
+
+    while(len--) {
+        Tle9018_valCrcRes_Lo = Tle9018_valCrc8Table_Mp[Tle9018_valCrcRes_Lo ^ *data++];
+    }
+
+    return Tle9018_valCrcRes_Lo ^ 0xff;
+}
+
+/**
+ * @brief 写TLE9018寄存器
+ * @param instance: 使用的串口索引
+ * @param dev_id: 设备ID
+ * @param reg_addr: 起始寄存器地址
+ * @param data: 要写入的数据缓冲区
+ * @return 0:成功，非0:失败（根据UART返回值）
+ */
+uint8 Tle9018_WriteRegister(uint32 instance, uint8 dev_id, uint8 reg_addr, uint16 data)
+{
+    uint8 retry = 0;
+    uint8 com_ok = 0;
+    uint8 ret;
+    uint8 Tle9018_valCrcRes_Lo = 0;
+
+    Tle9018_valTxBuf_Mp[1] = TLE9018_WRITE_CMD_MASK | (dev_id & TLE9018_REG_ADDR_MASK);
+    Tle9018_valTxBuf_Mp[2] = reg_addr;
+    Tle9018_valTxBuf_Mp[3] = (data >> 8) & 0xFF;
+    Tle9018_valTxBuf_Mp[4] = data;
+    Tle9018_valCrcRes_Lo = Tle9018_Crc8Calcu(Tle9018_valTxBuf_Mp, 5);
+    Tle9018_valTxBuf_Mp[5] = Tle9018_valCrcRes_Lo;
+
+    do {
+        ret = TLE9018_UART_TransmitReceive(instance, Tle9018_valTxBuf_Mp, 6, Tle9018_valRxBuf_Mp, 7);
+    
+        if(0 == ret) {
+            com_ok = 1;
+            break;
+        }
+
+        retry++;
+    }while((4 == ret) && (retry < 3));
+
+    if(0 == com_ok)
+        return 1;
+
+    return 0;
+}
+
+/**
+ * @brief 读TLE9018寄存器
+ * @param instance: 使用的串口索引
+ * @param dev_id: 设备ID
+ * @param reg_addr: 起始寄存器地址
+ * @param res_len: 要读取的数据长度
+ */
+uint8 Tle9018_ReadRegister(uint32 instance, uint8 dev_id, uint8 reg_addr, uint8 res_len)
+{
+    uint8 buf_sel = 0;
+    uint8 retry = 0;
+    uint8 com_ok = 0;
+    uint8 ret;
+    uint8 Tle9018_valCrcRes_Lo = 0;
+
+    Tle9018_valTxBuf_Mp[1] = TLE9018_READ_CMD_MASK | (dev_id & TLE9018_REG_ADDR_MASK);
+    Tle9018_valTxBuf_Mp[2] = reg_addr;
+    Tle9018_valCrcRes_Lo = Tle9018_Crc8Calcu(Tle9018_valTxBuf_Mp, 3);
+    Tle9018_valTxBuf_Mp[3] = Tle9018_valCrcRes_Lo;
+
+    if(instance)
+        buf_sel = 1;
+
+    do {
+        ret = TLE9018_UART_TransmitReceive(instance, Tle9018_valTxBuf_Mp, 4, Tle9018_valRxBuf_Mp[buf_sel], res_len);
+        if(0 == ret) {
+            com_ok = 1;
+            break;
+        }
+
+        retry++;
+    }while((4 == ret) && (retry < 3));
+
+    if(0 == com_ok)
+        return 1;
+
+    return 0;
+}
+
+/**
+ * @brief 读TLE9018寄存器
+ * @param instance: 使用的串口索引
+ * @param dev_id: 设备ID
+ * @param reg_addr: 起始寄存器地址
+ * @param res_len: 要读取的数据长度
+ */
+uint8 Tle9018_ReadRegister_Dual(uint32 instance, uint8 dev_id, uint8 reg_addr, uint8 res_len)
+{
+    uint8 retry = 0;
+    uint8 com_ok = 0;
+    uint8 ret;
+    uint8 Tle9018_valCrcRes_Lo = 0;
+
+    Tle9018_valTxBuf_Mp[1] = TLE9018_READ_CMD_MASK | (dev_id & TLE9018_REG_ADDR_MASK);
+    Tle9018_valTxBuf_Mp[2] = reg_addr;
+    Tle9018_valCrcRes_Lo = Tle9018_Crc8Calcu(Tle9018_valTxBuf_Mp, 3);
+    Tle9018_valTxBuf_Mp[3] = Tle9018_valCrcRes_Lo;
+
+    do {
+        ret = TLE9018_UART_TransmitAndDualReceive(instance,
+            Tle9018_valTxBuf_Mp,
+            4,
+            &Tle9018_valRxBuf_Mp[0][0],
+            &Tle9018_valRxBuf_Mp[1][0],
+            res_len
+        );
+        
+        if(0 == ret) {
+            com_ok = 1;
+            break;
+        }
+
+        retry++;
+    }while((4 == ret) && (retry < 3));
+
+    if(0 == com_ok)
+        return 1;
+
+    return 0;
+}

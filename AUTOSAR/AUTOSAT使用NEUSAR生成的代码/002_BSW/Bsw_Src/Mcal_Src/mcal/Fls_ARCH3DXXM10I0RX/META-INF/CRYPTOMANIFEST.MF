@@ -1,0 +1,22 @@
+
+Name: config/Fls.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422897139085407874469468684437231860649521679847860
+ 5626952307573820042628329786047184083398755034914445
+
+Name: generate/source/Fls_Cfg.c
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421148880642204596481000599372951303659105887482718
+ 8090715324401128921545422118583796110205063099229028
+
+Name: generate/include/Fls_Cfg.h
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420601983177572405830552306570189301976199569209553
+ 2698415834066315540094006133681800750164261244411525
+

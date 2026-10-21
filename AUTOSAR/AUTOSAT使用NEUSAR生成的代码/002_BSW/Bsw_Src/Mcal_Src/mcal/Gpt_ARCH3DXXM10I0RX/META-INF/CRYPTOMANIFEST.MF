@@ -1,0 +1,71 @@
+
+Name: config/Gpt3.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425530734413239031152068411260752842102220861334285
+ 0676274615929368885403682984567793657493408106596446
+
+Name: generate/source/Gpt_cfg.c
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426593141906905253568099233549491545995279997887356
+ 0379927911535248486028539629232958383464372513130550
+
+Name: config/Gpt6.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423899575247385947757913088930678808074160916809275
+ 9922766027131639633288129156858542254176110259631746
+
+Name: config/Gpt1.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594752631895690208628109255385490276561541249072666763
+ 429964828531076808381114199695754997072626922754861189
+
+Name: generate/include/Gpt_Cfg.h
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421275065345805143110399606964777083220043741675716
+ 2493051672590605534527712618266397575219998194384475
+
+Name: config/Gpt.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420663474541034996891259075390003944365454000874326
+ 6391078603131749299425192530563813392931329202749837
+
+Name: config/Gpt7.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421040916736196543845012750902345309580580336110460
+ 5927963882163043673159994808313091167519333340671201
+
+Name: config/Gpt2.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773963422953647554346826940904922720578396172623420
+ 769127590630590728899742193901220253347879582952409965
+
+Name: config/Gpt5.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377427090890179638925761560957642594271995695540790892
+ 6267796812888075479536329761257193790682372769808689
+
+Name: config/Gpt4.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594743719523552969841434138305000229683818828446181116
+ 346659122495105253209712252271399918302823517738466295
+

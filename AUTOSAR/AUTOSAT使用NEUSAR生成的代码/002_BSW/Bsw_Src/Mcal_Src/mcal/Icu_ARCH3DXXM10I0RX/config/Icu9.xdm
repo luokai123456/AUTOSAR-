@@ -1,0 +1,1539 @@
+<?xml version='1.0'?>
+<datamodel version="7.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="IcuConfig" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="Icu" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.4.0</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC" 
+                   value="EN: Configuration of the Icu (Input Capture Unit) module."/>
+              <a:a name="LOWER-MULTIPLICITY" value="1"/>
+              <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+              <a:a name="RELEASE" value="asc:4.4.0"/>
+              <a:a name="UPPER-MULTIPLICITY" value="1"/>
+              <a:a name="UUID" value="673986e0-8829-416b-81ab-c7bc3e8756cc"/>
+              <v:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN">
+                <a:a name="DESC" 
+                     value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Post Build Variant Used"/>
+                <a:a name="ORIGIN" value="EB"/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="UUID" value="2a3f2403-d8a6-44c6-83ca-e4f43a31bddd"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="false"/>
+                <a:da name="READONLY" value="FALSE"/>
+                <a:da name="TOOLTIP" 
+                      value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+              </v:var>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:a name="UUID" value="ea011652-4bac-4b7e-ab5c-a5ff7ea79221"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="VariantPostBuild"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuild</a:v>
+                  <a:v>VariantPreCompile</a:v>
+                </a:da>
+              </v:var>
+              <v:ctr name="IcuConfigSet" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: This container contains the configuration parameters and sub containers of the AUTOSAR Icu module."/>
+                <a:a name="UUID" value="00eb987b-226a-4f6e-9081-d09fd7db7304"/>
+                <v:var name="IcuMaxChannel" type="INTEGER">
+                  <a:a name="CALCULATION-FORMULA" value="number of configured icu channels"/>
+                  <a:a name="CALCULATION-LANGUAGE" value="INFORMAL"/>
+                  <a:a name="DERIVED" value="TRUE"/>
+                  <a:a name="DESC" 
+                       value="EN: This parameter contains the number of Channels configured. It will be gathered by tools during the configuration stage."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6c934a26-0341-4f24-8439-9b55bf3def88"/>
+                  <a:da name="DEFAULT" type="XPath">
+                    <a:tst expr="num:i(num:i(count(node:fallback(../IcuChannel/*,text:split('1 2 3')))))"/>
+                  </a:da>
+                  <a:da name="INVALID" type="XPath">
+                    <a:tst expr="node:fallback(.,1) =num:i(num:i(count(node:fallback(../IcuChannel/*,text:split('1 2 3')))))" false="The value for the IcuMaxChannel must match with the number of IcuChannel configured. For calculating the correct value use the CALC button"/>
+                  </a:da>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:lst name="IcuChannel" type="MAP">
+                  <a:da name="MIN" value="1"/>
+                  <a:da name="MAX" value="65535" />
+                  <v:ctr name="IcuChannel" type="IDENTIFIABLE">
+                    <a:a name="DESC" 
+                         value="EN: Configuration of an individual ICU channel."/>
+                    <a:a name="UUID" 
+                         value="42309a6f-608c-4375-afe9-b7374c52ad87"/>
+                <v:var name="IcuChannelId" type="INTEGER">
+                      <a:a name="DESC" 
+                           value="EN: Channel Id of the ICU channel. This value will be assigned to the symbolic name derived of the IcuChannel container short name."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="ECU"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                      <a:a name="UUID" 
+                           value="52d1bb5b-60bf-47f2-80b0-56d0427bc0a2"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index, '0')"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=65535"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="RANGE" type="XPath">
+                        <a:tst expr="text:uniq(node:fallback(../../*/IcuChannelId, text:split('1 2 3')), node:fallback(., 0))" false="Channel id is duplicated in this configuration"/>
+                        <a:tst expr="node:fallback(., 0) &lt; count(node:fallback(../../*, text:split('1 2 3')))" false="It can't be assigned an id higher than the number of defined channels"/>
+                    </a:da>
+                    </v:var>
+                    <v:var name="IcuHwIP" type="ENUMERATION">
+                      <a:a name="DESC"
+                           value="EN: Selects the physical HwChannelId Channel."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC" />
+                      <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="UUID" value="e0268799-0f51-40ca-b75b-275faaa11af4" />
+                      <a:a name="__ORIGIN" value="Elektrobit" />
+                      <a:da name="DEFAULT" value="EMIOS" />
+                      <a:da name="RANGE">
+                        <a:v>GTM</a:v>
+                        <a:v>EMIOS</a:v>
+                        <a:v>WKPU</a:v>
+                      </a:da>
+                      
+                        <a:tst expr="((node:value(.) = 'GTM') and not(node:exists(../../IcuGtm)))" true="please enable IcuGtm"/>
+                        <a:tst expr="((node:value(.) = 'EMIOS') and not(node:exists(../../IcueMios)))" true="please enable IcueMios"/>
+                        <a:tst expr="((node:value(.) = 'WKPU') and not(node:exists(../../IcuWkpu)))" true="please enable IcuWkpu"/>
+                    </v:var>
+                    <v:var name="IcuDefaultStartEdge" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN: Configures the default-activation-edge which shall be used for this channel if there was no activation-edge configured by the call of service Icu_SetActivationCondition()."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="cf5a7c43-625c-447f-8d56-7e3f2e94b570"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="ICU_FALLING_EDGE" />
+                      <a:da name="RANGE">
+                        <a:v>ICU_BOTH_EDGES</a:v>
+                        <a:v>ICU_FALLING_EDGE</a:v>
+                        <a:v>ICU_RISING_EDGE</a:v>
+                      </a:da>
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="(num:i(count(../IcuSignalMeasurement/*)) >0 ) and text:match(node:value(../IcuSignalMeasurement/*[1]/IcuSignalMeasurementProperty),'ICU_LOW_TIME') and text:match(node:value(../IcuDefaultStartEdge),'ICU_RISING_EDGE')" true="IcuSignalMeasurementProperty cannot set to ICU_LOW_TIME"> </a:tst>
+                        <a:tst expr="(num:i(count(../IcuSignalMeasurement/*)) >0 ) and text:match(node:value(../IcuSignalMeasurement/*[1]/IcuSignalMeasurementProperty),'ICU_HIGH_TIME') and text:match(node:value(../IcuDefaultStartEdge),'ICU_FALLING_EDGE')" true="IcuSignalMeasurementProperty cannot set to ICU_HIGH_TIME"> </a:tst>
+                      </a:da>
+                    </v:var>
+                    <v:var name="IcuMeasurementMode" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN: Configures the measurement mode of this channel."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="68c93e09-2ebd-47ab-94c9-7ae77c83f632"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="ICU_MODE_EDGE_COUNTER" />
+                      <a:da name="RANGE">
+                        <a:v>ICU_MODE_EDGE_COUNTER</a:v>
+                        <a:v>ICU_MODE_SIGNAL_EDGE_DETECT</a:v>
+                        <a:v>ICU_MODE_SIGNAL_MEASUREMENT</a:v>
+                        <a:v>ICU_MODE_TIMESTAMP</a:v>
+                      </a:da>
+                      <a:da name="INVALID" type="XPath">
+                          <a:tst expr="../IcuHwIP = 'WKPU' and
+                                      (
+                                        (. = 'ICU_MODE_EDGE_COUNTER' ) or
+                                        (. = 'ICU_MODE_SIGNAL_MEASUREMENT' ) or
+                                        (. = 'ICU_MODE_TIMESTAMP' )
+                                      )"
+                          true="WKPU must configure MeasurementMode as ICU_MODE_SIGNAL_EDGE_DETECT."/>
+                      </a:da>
+                    </v:var>
+                    <v:var name="IcuWakeupCapability" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN: Information about the wakeup-capability of this channel."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="a737db10-7774-4989-a676-37a0637268cb"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="false" />
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="(../IcuMeasurementMode = 'ICU_MODE_EDGE_COUNTER' or
+                                     ../IcuMeasurementMode = 'ICU_MODE_SIGNAL_MEASUREMENT' or
+                                     ../IcuMeasurementMode = 'ICU_MODE_TIMESTAMP') and
+                                     node:value(.) = 'true'"
+                        true="Can't be configured except for edge detect."/>
+                    </a:da>
+                    </v:var>
+                    <v:var name="IcuDMAChannelEnable" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN: Information about the if DMA is enable."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="a737db10-7774-4989-a676-37a0637268cb"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="false" />
+                    </v:var>
+                    <v:ref name="IcueDmaChannel" type="REFERENCE">
+                          <a:a name="DESC" 
+                               value="EN: Reference to the Result dma channel of the edma module."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="f33c956f-78e4-4c92-8952-6da6a6336e42"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="REF" 
+                            value="ASPathDataOfSchema:/eDmaConfig/eDma/eDmaConfigSet/eDmaChannelConfig"/>
+                          <a:a name="EDITABLE" type="XPath">
+                              <a:tst expr="../IcuDMAChannelEnable = 'true'"/>
+                          </a:a>
+                    </v:ref>               
+                    <v:lst name="IcuChannelEcucPartitionRef">
+                      <v:ref name="IcuChannelEcucPartitionRef" type="REFERENCE">
+                        <a:a name="DESC">
+                          <a:v>EN: Maps an ICU channel to zero or multiple ECUC partitions to limit the access to this channel. The ECUC partitions referenced are a subset of the ECUC partitions where the ICU driver is mapped to.</a:v>
+                          <a:v>EN: Tags: atp.Status=draft</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                          <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                          <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="SCOPE" value="ECU"/>
+                        <a:a name="UUID" 
+                             value="a235f850-b525-4634-b557-d2ca3c98271a"/>
+                        <a:a name="__ORIGIN" value="Elektrobit"/>
+                        <a:da name="REF" 
+                              value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition"/>
+                        <a:da name="INVALID" type="XPath">
+                          <a:tst expr="node:containsValue(../../../../../IcuGeneral/IcuEcucPartitionRef/*, node:value(.))"
+                                  false="The ECUC partition referenced by IcuChannelEcucPartitionRef shall be a subset of the ECUC partitions referenced by IcuChannelEcucPartitionRef."/> 
+                        </a:da>
+                      </v:ref>
+                    </v:lst>
+                      <!-- @implements IcuGtmChannels_Object -->
+                      <v:lst name="IcuGtm" type="MAP">
+                        <a:a name="EDITABLE" type="XPath">
+                          <a:tst expr="../IcuHwIP = 'GTM'"/>
+                        </a:a>
+                        <a:da name="MIN" value="0" />
+                        <a:da name="MAX" value="1"/>
+                        <!-- @implements IcuGtmChannels_Object -->
+                        <v:ctr name="IcuGtm" type="IDENTIFIABLE">
+                          <a:a name="DESC" value="EN: List of Gtm channels available on the platform." />
+                          <a:a name="UUID" value="92e88fa0-7847-44f7-9c72-b5a7fe62f713" />
+                          <a:da name="EDITABLE" type="XPath" expr="node:exists(../IcuHwIP = 'EMIOS')"/>
+                          <v:var name="IcuGtmModule" type="ENUMERATION">
+                            <a:a name="DESC" value="EN: Select the physical Gtm Module." />
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC" />
+                            <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                            <a:a name="UUID" value="27cc9390-5469-45bb-885f-0a0befb4dea4" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="DEFAULT" value="GTM_TIM0" />
+                            <a:da name="RANGE">
+                              <a:v>GTM_TIM0</a:v>
+                              <a:v>GTM_TIM1</a:v>
+                              <a:v>GTM_TIM2</a:v>
+                            </a:da>
+                          </v:var>
+                          <!-- @implements IcuGtmChannels_Object -->
+                          <v:var name="IcuGtmChannel" type="ENUMERATION">
+                            <a:a name="DESC" value="EN: Selects one of the Gtm channels available on the platform." />
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC" />
+                            <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                            <a:a name="UUID" value="453e06e9-9d4e-4352-ba11-c0fd3c34517c" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="DEFAULT" value="GTM_TIM_CH0" />
+                            <a:da name="RANGE">
+                              <a:v>GTM_TIM_CH0</a:v>
+                              <a:v>GTM_TIM_CH1</a:v>
+                              <a:v>GTM_TIM_CH2</a:v>
+                              <a:v>GTM_TIM_CH3</a:v>
+                              <a:v>GTM_TIM_CH4</a:v>
+                              <a:v>GTM_TIM_CH5</a:v>
+                              <a:v>GTM_TIM_CH6</a:v>
+                              <a:v>GTM_TIM_CH7</a:v>
+                            </a:da>
+                          </v:var>
+                          
+                          <v:var name="TIM_Channel_x_Input_Selection" type="ENUMERATION">
+                            <a:a name="DESC" value="EN: This bit defines which input is connected for TIMn channel x of the GTM. The input is either derived from a port pad or from an on-chip module." />
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC" />
+                            <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                            <a:a name="UUID" value="453e06e9-9d4e-4352-ba11-c0fd3c86577c" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="DEFAULT" value="Ch_0_H" />
+                            <a:da name="RANGE">
+                              <a:v>Ch_0_H</a:v>
+                              <a:v>Ch_1_H</a:v>
+                              <a:v>Ch_2_H</a:v>
+                              <a:v>Ch_3_H</a:v>
+                              <a:v>Ch_4_H</a:v>
+                              <a:v>Ch_5_H</a:v>
+                              <a:v>Ch_6_H</a:v>
+                              <a:v>Ch_7_H</a:v>
+                              <a:v>Ch_8_H</a:v>
+                              <a:v>Ch_9_H</a:v>
+                              <a:v>Ch_A_H</a:v>
+                              <a:v>Ch_B_H</a:v>
+                              <a:v>Ch_C_H</a:v>
+                              <a:v>Ch_D_H</a:v>
+                              <a:v>Ch_E_H</a:v>
+                              <a:v>Ch_F_H</a:v>
+                            </a:da>
+                          </v:var>
+
+                          <v:var name="TBUChannelUsedForICUTIMESTAMP" type="ENUMERATION">
+                            <a:a name="DESC" value="EN: Selects one of the Gtm TBU channels available on the platform." />
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC" />
+                            <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                            <a:a name="UUID" value="453e06e9-9d4e-4352-ba11-c0fd3c34517c" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="DEFAULT" value="TBU_TS0" />
+                            <a:da name="RANGE">
+                              <a:v>TBU_TS0</a:v>
+                            </a:da>
+                          </v:var>
+                          <v:var name="TBUChannel0BitsUsedForICUTIMESTAMP" type="ENUMERATION">
+                            <a:a name="DESC" value="EN: Selects one of the Gtm TBU channel0 bits available on the platform." />
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC" />
+                            <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                            <a:a name="UUID" value="453e06e9-9d4e-4352-ba11-c0fd3c34517c" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="DEFAULT" value="TBU_TS0_23_0" />
+                            <a:da name="RANGE">
+                              <a:v>TBU_TS0_23_0</a:v>
+                            </a:da>
+                          </v:var>                                                    
+                        </v:ctr>
+                      </v:lst>
+                      
+                      <v:lst name="IcueMios" type="MAP">
+                        <a:a name="EDITABLE" type="XPath">
+                          <a:tst expr="../IcuHwIP = 'EMIOS'"/>
+                        </a:a>
+                        <a:da name="MIN" value="0" />
+                        <a:da name="MAX" value="1"/>
+                        <!-- @implements IcueMiosChannels_Object -->
+                        <v:ctr name="IcueMios" type="IDENTIFIABLE">
+                          <a:a name="DESC" value="EN: List of eMios channels available on the platform." />
+                          <a:a name="UUID" value="92e88fa0-7847-44f7-9c72-b5a7fe62f713" />
+                          <a:da name="EDITABLE" type="XPath" expr="node:exists(../IcuHwIP = 'GTM')"/>
+                        <!-- @implements IcueMiosModule_Object -->
+                        <v:var name="IcueMiosModule" type="ENUMERATION">
+                        <a:a name="DESC" value="EN: Select the physical eMios Module." />
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                        <a:a name="UUID" value="27cc9390-5469-45bb-885f-0a0befb4dea4" />
+                        <a:a name="__ORIGIN" value="Elektrobit" />
+                        <a:da name="DEFAULT" type="XPath" expr="ecu:get('Icu.Emios_Hw_Modules_default')"/>
+                        <a:da name="RANGE" type="XPath" expr="ecu:list('Icu.Emios_Hw_Modules')"/>
+                        </v:var>
+                          <!-- @implements IcueMiosChannels_Object -->
+                          <v:var name="IcueMiosChannel" type="ENUMERATION">
+                            <a:a name="DESC" value="EN: Selects one of the eMios channels available on the platform." />
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC" />
+                            <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                            <a:a name="UUID" value="453e06e9-9d4e-4352-ba11-c0fd3c34517c" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="DEFAULT" type="XPath" expr="ecu:get('Icu.IcuConfigSet.IcuChannel.IcuHwChannel.IcuEmiosHw_default')"/>
+                            <a:da name="RANGE"   type="XPath" expr="ecu:list(concat('Icu.',string(node:fallback(../IcueMiosModule,'')),'.list'))"/>
+                          </v:var>
+                          <v:var name="SignalMeasureWithoutInterrupt" type="BOOLEAN">
+                            <a:a name="DESC" 
+                                 value="EN: Adds / removes the service SignalMeasureWithoutInterrupt from the code."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" value="9ca48bed-e824-4529-9d00-98aac6025e91"/>
+                            <a:a name="__ORIGIN" value="Elektrobit"/>
+                            <a:da name="DEFAULT" value="false"/>
+                         </v:var>
+                          <v:var name="IcueMiosBusSelect" type="ENUMERATION">
+                            <a:a name="DESC" value="EN: Selects one of the eMios Bus available on the platform." />
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC" />
+                            <a:a name="SYMBOLICNAMEVALUE" value="true" />
+                            <a:a name="UUID" value="453e06e9-9d4e-4352-ba11-c0fd3c34517c" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="DEFAULT" value="EMIOS_COUNTER_BUS_INTERNAL" />
+                            <a:da name="RANGE">
+                              <a:v>EMIOS_COUNTER_BUS_A</a:v>
+                              <a:v>EMIOS_COUNTER_BUS_BCDE</a:v>
+                              <a:v>EMIOS_COUNTER_BUS_INTERNAL</a:v>
+                            </a:da>
+                          </v:var>
+                          <v:var name="eMIOS_IC_ModeType" type="ENUMERATION">
+                            <a:a name="DESC" value="EN: Selects one of the eMios Mode available on the platform." />
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC" />
+                            <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                            <a:a name="UUID" value="453e06e9-9d4e-4352-ba11-c0fd3c34517c" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="DEFAULT" value="EMIOS_UC_MODE_SAIC_TRIGGER_EDGE_FALLING" />
+                            <a:da name="RANGE">
+                              <a:v>EMIOS_UC_MODE_SAIC_TRIGGER_EDGE_FALLING</a:v>
+                              <a:v>EMIOS_UC_MODE_SAIC_EDGE_RISING_TRIGGER</a:v>
+                              <a:v>EMIOS_UC_MODE_SAIC_EDGE_ANY_TRIGGER</a:v>
+                              <a:v>EMIOS_UC_MODE_IPM_EDGE_RISING</a:v>
+                              <a:v>EMIOS_UC_MODE_IPM_EDGE_FALLING</a:v>
+                              <a:v>EMIOS_UC_MODE_IPWM_PERIOD_ON</a:v>
+                              <a:v>EMIOS_UC_MODE_IPWM_PERIOD_OFF</a:v>
+                              <a:v>EMIOS_UC_MODE_PEA_CONTIN_EDGE_RISING</a:v>
+                              <a:v>EMIOS_UC_MODE_PEA_CONTIN_EDGE_FALLING</a:v>   
+                              <a:v>EMIOS_UC_MODE_PEA_CONTIN_EDGE_ANY</a:v>
+                              <a:v>EMIOS_UC_MODE_PEA_SINGLE_EDGE_RISING</a:v>
+                              <a:v>EMIOS_UC_MODE_PEA_SINGLE_EDGE_FALLING</a:v>
+                              <a:v>EMIOS_UC_MODE_PEA_SINGLE_EDGE_ANY</a:v>
+                              <a:v>EMIOS_UC_MODE_PEC_CONTIN_EDGE_RISING</a:v>
+                              <a:v>EMIOS_UC_MODE_PEC_CONTIN_EDGE_FALLING</a:v>
+                              <a:v>EMIOS_UC_MODE_PEC_CONTIN_EDGE_ANY</a:v>
+                              <a:v>EMIOS_UC_MODE_PEC_SINGLE_EDGE_RISING</a:v>   
+                              <a:v>EMIOS_UC_MODE_PEC_SINGLE_EDGE_FALLING</a:v>
+                              <a:v>EMIOS_UC_MODE_PEC_SINGLE_EDGE_ANY</a:v>
+                              <a:v>EMIOS_UC_MODE_QDEC_FOR_COUNT_DIRECT_EDGE_RISING</a:v>
+                              <a:v>EMIOS_UC_MODE_QDEC_EDGE_FALLING_FOR_COUNT_DIRECT</a:v>
+                              <a:v>EMIOS_UC_MODE_QDEC_FOR_PHASE_A_B_DIRECT_POSITIVE</a:v>
+                              <a:v>EMIOS_UC_MODE_QDEC_NEGATIVE_FOR_PHASE_A_B_DIRECT</a:v>
+                              <a:v>EMIOS_UC_MODE_WPTA_PERIOD_ON</a:v>
+                              <a:v>EMIOS_UC_MODE_WPTA_PERIOD_OFF</a:v>
+                            </a:da>
+                          </v:var>
+                          <v:var name="eMIOS_UC_InputFilterType" type="ENUMERATION">
+                            <a:a name="DESC" value="EN: Selects one of the eMios InputFilter available on the platform." />
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC" />
+                            <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                            <a:a name="UUID" value="453e06e9-9d4e-4352-ba11-c0fd3c34517c" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="DEFAULT" value="EMIOS_INPUT_FILTER_BYPASS" />
+                            <a:da name="RANGE">
+                              <a:v>EMIOS_INPUT_FILTER_BYPASS</a:v>
+                              <a:v>EMIOS_INPUT_FILTER_02</a:v>
+                              <a:v>EMIOS_INPUT_FILTER_04</a:v>
+                              <a:v>EMIOS_INPUT_FILTER_08</a:v>
+                              <a:v>EMIOS_INPUT_FILTER_16</a:v>
+                            </a:da>
+                          </v:var>
+                          <v:var name="desirednum" type="INTEGER">
+                            <a:a name="DESC" 
+                                 value="EN: This parameter contains the number of Channels configured. It will be gathered by tools during the configuration stage."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" value="6c934a26-0341-4f24-8439-9b55bf3def88"/>
+                            <a:a name="__ORIGIN" value="Elektrobit"/>
+                            <a:da name="DEFAULT" value="0"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=16777215"/>
+                              <a:tst expr="&gt;=0"/>
+                            </a:da>
+                          </v:var>
+                          <v:var name="startime" type="INTEGER">
+                            <a:a name="DESC" 
+                                 value="EN: This parameter contains the number of Channels configured. It will be gathered by tools during the configuration stage."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" value="6c934a26-0341-4f24-8439-9b55bf3def88"/>
+                            <a:a name="__ORIGIN" value="Elektrobit"/>
+                            <a:da name="DEFAULT" value="0"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=16777215"/>
+                              <a:tst expr="&gt;=0"/>
+                            </a:da>
+                          </v:var>
+                          <v:var name="endime" type="INTEGER">
+                            <a:a name="DESC" 
+                                 value="EN: This parameter contains the number of Channels configured. It will be gathered by tools during the configuration stage."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" value="6c934a26-0341-4f24-8439-9b55bf3def88"/>
+                            <a:a name="__ORIGIN" value="Elektrobit"/>
+                            <a:da name="DEFAULT" value="0"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=16777215"/>
+                              <a:tst expr="&gt;=0"/>
+                            </a:da>
+                          </v:var>
+                          <v:var name="masterPrescaler" type="INTEGER">
+                            <a:a name="DESC" 
+                                 value="EN: This parameter contains the number of Channels configured. It will be gathered by tools during the configuration stage."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" value="6c934a26-0341-4f24-8439-9b55bf3def88"/>
+                            <a:a name="__ORIGIN" value="Elektrobit"/>
+                            <a:da name="DEFAULT" value="8"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=256"/>
+                              <a:tst expr="&gt;=1"/>
+                            </a:da>
+                          </v:var>
+                          <v:var name="channelPrescaler" type="INTEGER">
+                            <a:a name="DESC" 
+                                 value="EN: This parameter contains the number of Channels configured. It will be gathered by tools during the configuration stage."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" value="6c934a26-0341-4f24-8439-9b55bf3def88"/>
+                            <a:a name="__ORIGIN" value="Elektrobit"/>
+                            <a:da name="DEFAULT" value="0"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=3"/>
+                              <a:tst expr="&gt;=0"/>
+                            </a:da>
+                          </v:var>
+                        </v:ctr>
+                    </v:lst>
+                    <v:lst name="IcuWkpu" type="MAP">
+                      <a:a name="EDITABLE" type="XPath">
+                        <a:tst expr="../IcuHwIP = 'WKPU'"/>
+                      </a:a>
+                      <a:da name="MIN" value="0" />
+                      <a:da name="MAX" value="1" />
+                      <!-- @implements IcuWAKEUPModules_Object -->
+                      <v:ctr name="IcuWkpu" type="IDENTIFIABLE">
+                        <a:a name="DESC" value="EN: List of Wkpu channels available on the platform." />
+                        <a:a name="UUID" value="92e88fa0-7847-44f7-9c72-b5a7fe62f713" />
+                        <a:da name="EDITABLE" type="XPath" expr="node:exists(../IcuHwIP = 'EMIOS')"/>
+                        <a:da name="EDITABLE" type="XPath" expr="node:exists(../IcuHwIP = 'GTM')"/>
+                        <a:a name="LABEL" value="WKPU_Modules"/>
+                          <a:a name="DESC"
+                                value="Configuration of a Wkpu module available on the platfom."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="REQUIRES-INDEX" value="true"/>
+                          <a:a name="UUID"
+                                value="ECUC:9bf91885-5858-4435-8293-22b6ea522228"/>
+                          <v:var name="IcuWkpuChannel" type="INTEGER">
+                                <a:a name="DESC" 
+                                      value="EN: Channel Id of the IcuWkpuChannel. This value will be assigned to the symbolic name derived of the IcuChannel container short name."/>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                      type="IMPLEMENTATIONCONFIGCLASS">
+                                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="CCFC"/>
+                                <a:a name="SCOPE" value="ECU"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                                <a:a name="UUID" 
+                                      value="52d1bb5b-60bf-47f2-80b0-56d0427bc0a2"/>
+                                <a:a name="__ORIGIN" value="Elektrobit"/>
+                                <!-- <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index, '0')"/> -->
+                                <a:da name="INVALID" type="Range">
+                                  <a:tst expr="&lt;=63"/>
+                                  <a:tst expr="&gt;=0"/>
+                                </a:da>
+                                <!-- <a:da name="RANGE" type="XPath">
+                                  <a:tst expr="text:uniq(node:fallback(../../*/IcuWkpuChannel, text:split('1 2 3')), node:fallback(., 0))" false="Channel id is duplicated in this configuration"/>
+                                  <a:tst expr="node:fallback(., 0) &lt; count(node:fallback(../../*, text:split('1 2 3')))" false="It can't be assigned an id higher than the number of defined channels"/>
+                              </a:da> -->
+                          </v:var>
+                          <v:var name="Icu_EXT_ISR_WIFERDigitalFilter"
+                                  type="BOOLEAN">
+                              <a:a name="LABEL"
+                                    value="ICU Wakeup Filter Enable"/>
+                              <a:a name="DESC">
+                                  <a:v>
+                                      <![CDATA[ <html>
+                                      <p>Enable external digital filter counter on the interrupt pads to filter out glitches on the inputs</p>
+                                      <b>Note:</b> This is an Implementation Specific Parameter.
+                                      </html>]]>
+                                  </a:v>
+                              </a:a>
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                  <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              </a:a>
+                              <a:a name="POSTBUILDVARIANTVALUE"
+                                    value="true"/>
+                              <a:a name="ORIGIN"
+                                    value="CCFC"/>
+                              <a:a name="SYMBOLICNAMEVALUE"
+                                    value="false"/>
+                              <a:a name="UUID"
+                                    value="ECUC:ed688319-a560-4de9-84a9-6c8a90aaf535"/>
+                              <a:da name="DEFAULT"
+                                    value="false"/>
+                          </v:var>
+                      </v:ctr>
+                    </v:lst>
+                    <v:ctr name="IcuSignalEdgeDetection" type="IDENTIFIABLE">
+                      <v:var name="IcuSignalNotification" 
+                              type="FUNCTION-NAME">
+                        <a:a name="DESC" 
+                              value="EN: Notification function for signal notification."/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="POSTBUILDVARIANTMULTIPLICITY" 
+                              value="true"/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                              value="021a5cb8-8796-49bc-b6b8-371f00b3b49d"/>
+                        <a:a name="__ORIGIN" value="Elektrobit"/>
+                        <a:da name="DEFAULT" value="NULL_PTR"/>
+                        <a:da name="INVALID" type="XPath">
+                            <a:tst expr="(
+                                            (normalize-space(node:fallback(., '')) = 'NULL') or
+                                            (normalize-space(node:fallback(., '')) = 'Null') or
+                                            (normalize-space(node:fallback(., '')) = 'false') or
+                                            (normalize-space(node:fallback(., '')) = 'FALSE') or
+                                            (normalize-space(node:fallback(., '')) = 'null') or
+                                            (normalize-space(node:fallback(., '')) = 'null_ptr') or
+                                            (normalize-space(node:fallback(., '')) = 'Null_Ptr')
+                                          )"
+                                true="Invalid name of the, it must be a valid C function name."/>
+                            <a:tst expr="(normalize-space(node:fallback(., '')) = '&quot;NULL_PTR&quot;') or
+                                          (normalize-space(node:fallback(., '')) = '&quot;NULL&quot;') or
+                                          (normalize-space(node:fallback(., '')) = 'NULL') or
+                                          (text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$'))"
+                                false="Invalid name, it must be a valid C function name"/>
+                        </a:da>
+                      </v:var>
+                    </v:ctr>
+                    <v:lst name="IcuSignalMeasurement" type="MAP">
+                      <a:da name="MAX" value="1"/>
+                      <v:ctr name="IcuSignalMeasurement" type="IDENTIFIABLE">
+                        <a:a name="DESC" 
+                             value="EN: This container contains the configuration (parameters) in case the measurement mode is &quot;IcuSignalMeasurement&quot;"/>
+                        <a:a name="UUID" 
+                             value="39792f2b-8b92-4ef3-a62d-9b13be58c30f"/>
+                        <v:var name="IcuSignalMeasurementProperty" 
+                               type="ENUMERATION">
+                          <a:a name="DESC" 
+                               value="EN: Configures the property that could be measured in case the mode is &quot;IcuSignalMeasurement&quot;."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="6653acf7-7044-4b68-883b-2ffed57c7845"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="RANGE">
+                            <a:v>ICU_DUTY_CYCLE</a:v>
+                            <a:v>ICU_HIGH_TIME</a:v>
+                            <a:v>ICU_LOW_TIME</a:v>
+                            <a:v>ICU_PERIOD_TIME</a:v>
+                          </a:da>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="text:match(node:value(../IcuSignalMeasurementProperty),'ICU_LOW_TIME') and text:match(node:value(../../../IcuDefaultStartEdge),'ICU_RISING_EDGE')" true="IcuDefaultStartEdge cannot be set to ICU_RISING_EDGE"> </a:tst>
+                            <a:tst expr="text:match(node:value(../IcuSignalMeasurementProperty),'ICU_HIGH_TIME') and text:match(node:value(../../../IcuDefaultStartEdge),'ICU_FALLING_EDGE')" true="IcuDefaultStartEdge cannot be set to ICU_FALLING_EDGE"> </a:tst>
+                          </a:da>
+                        </v:var>
+                      </v:ctr>
+                    </v:lst>
+                    <v:lst name="IcuTimestampMeasurement" type="MAP">
+                      <a:da name="MAX" value="1"/>
+                      <v:ctr name="IcuTimestampMeasurement" type="IDENTIFIABLE">
+                        <a:a name="DESC" 
+                             value="EN: This container contains the configuration (parameters) in case the measurement mode is &quot;IcuTimestamp&quot;"/>
+                        <a:a name="UUID" 
+                             value="fb048eaa-3da2-4757-a0f6-65732d454fb5"/>
+                        <v:var name="IcuTimestampMeasurementProperty" 
+                               type="ENUMERATION">
+                          <a:a name="DESC" 
+                               value="EN: Configures the handling of the buffer in case the mode is &quot;Timestamp&quot;"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="4a914e27-53a2-451e-9d9c-020c0f6d2111"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="RANGE">
+                            <a:v>ICU_CIRCULAR_BUFFER</a:v>
+                            <a:v>ICU_LINEAR_BUFFER</a:v>
+                          </a:da>
+                        </v:var>
+                      </v:ctr>
+                    </v:lst>
+                        <v:ctr name="IcuTimestampNotification" type="IDENTIFIABLE">
+                          <v:var name="IcuTimestampNotification" 
+                                  type="FUNCTION-NAME">
+                            <a:a name="DESC" 
+                                  value="EN: Notification function for timestamp notification."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                  type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC"/>
+                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" 
+                                  value="true"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" 
+                                  value="021a5cb8-8796-49bc-b6b8-371f00b3b49d"/>
+                            <a:a name="__ORIGIN" value="Elektrobit"/>
+                            <a:da name="DEFAULT" value="NULL_PTR"/>
+                            <a:da name="INVALID" type="XPath">
+                                <a:tst expr="(
+                                                (normalize-space(node:fallback(., '')) = 'NULL') or
+                                                (normalize-space(node:fallback(., '')) = 'Null') or
+                                                (normalize-space(node:fallback(., '')) = 'false') or
+                                                (normalize-space(node:fallback(., '')) = 'FALSE') or
+                                                (normalize-space(node:fallback(., '')) = 'null') or
+                                                (normalize-space(node:fallback(., '')) = 'null_ptr') or
+                                                (normalize-space(node:fallback(., '')) = 'Null_Ptr')
+                                              )"
+                                    true="Invalid name of the, it must be a valid C function name."/>
+                                <a:tst expr="(normalize-space(node:fallback(., '')) = '&quot;NULL_PTR&quot;') or
+                                              (normalize-space(node:fallback(., '')) = '&quot;NULL&quot;') or
+                                              (normalize-space(node:fallback(., '')) = 'NULL') or
+                                              (text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$'))"
+                                    false="Invalid name, it must be a valid C function name"/>
+                            </a:da>
+                          </v:var>
+                        </v:ctr>
+
+<v:ctr name="IcuOverFlowNotification" type="IDENTIFIABLE">
+                          <v:var name="IcuOverFlowNotification" 
+                                  type="FUNCTION-NAME">
+                            <a:a name="DESC" 
+                                  value="EN: Notification function for OverFlow notification."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                  type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC"/>
+                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" 
+                                  value="true"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" 
+                                  value="021a5cb8-8796-49bc-b6b8-371f00b3b49d"/>
+                            <a:a name="__ORIGIN" value="Elektrobit"/>
+                            <a:da name="DEFAULT" value="NULL_PTR"/>
+                            <a:da name="INVALID" type="XPath">
+                                <a:tst expr="(
+                                                (normalize-space(node:fallback(., '')) = 'NULL') or
+                                                (normalize-space(node:fallback(., '')) = 'Null') or
+                                                (normalize-space(node:fallback(., '')) = 'false') or
+                                                (normalize-space(node:fallback(., '')) = 'FALSE') or
+                                                (normalize-space(node:fallback(., '')) = 'null') or
+                                                (normalize-space(node:fallback(., '')) = 'null_ptr') or
+                                                (normalize-space(node:fallback(., '')) = 'Null_Ptr')
+                                              )"
+                                    true="Invalid name of the, it must be a valid C function name."/>
+                                <a:tst expr="(normalize-space(node:fallback(., '')) = '&quot;NULL_PTR&quot;') or
+                                              (normalize-space(node:fallback(., '')) = '&quot;NULL&quot;') or
+                                              (normalize-space(node:fallback(., '')) = 'NULL') or
+                                              (text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$'))"
+                                    false="Invalid name, it must be a valid C function name"/>
+                            </a:da>
+                          </v:var>
+                        </v:ctr>
+                    <v:lst name="IcuWakeup" type="MAP">
+                      <a:da name="MAX" value="1"/>
+                      <v:ctr name="IcuWakeup" type="IDENTIFIABLE">
+                        <a:a name="DESC" 
+                             value="EN: This container contains the configuration (parameters) needed to configure a wakeup capable channel"/>
+                        <a:a name="UUID" 
+                             value="9a766064-4947-412b-8fb0-9a7e39394689"/>
+                        <v:lst name="IcuChannelWakeupInfo">
+                          <a:da name="MAX" value="1"/>
+                          <v:ref name="IcuChannelWakeupInfo" type="REFERENCE">
+                            <a:a name="DESC" 
+                                 value="EN: If the wakeup-capability is true the wakeup source referenced  is transmitted to the ECU State Manager (EcuM) ."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" 
+                                 value="true"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="REQUIRES-SYMBOLIC-NAME-VALUE" 
+                                 value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" 
+                                 value="99c01a0b-9b1e-4f1d-89c7-3fcc5f5cca43"/>
+                            <a:a name="__ORIGIN" value="Elektrobit"/>
+                            <a:da name="REF" 
+                                  value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource"/>
+                          </v:ref>
+                        </v:lst>
+                  </v:ctr>
+                </v:lst>
+            </v:ctr>
+    </v:lst>        
+                <v:var name="IcuWakeUpPinSelection" type="ENUMERATION">
+                  <a:a name="DESC">
+                  <a:v>EN: **** TBD ****</a:v>
+                  </a:a>
+                  <a:a name="OPTIONAL" value="true"/>
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="80bf768f-66d4-47d9-bec7-bbb806aae922" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="PS0" />
+                  <a:da name="RANGE">
+                    <a:v>PA4</a:v>
+                    <a:v>PS0</a:v>
+                  </a:da>
+                </v:var>           
+                <v:lst name="IcuWkpuNMIConfiguration"
+                              type="MAP">
+                    <a:da name="MIN"
+                            value="0"/>
+                    <a:da name="MAX" value="6"/>
+                    <v:ctr name="IcuWkpuNMIConfiguration"
+                              type="IDENTIFIABLE">
+                        <a:a name="LABEL"
+                                value="NMI configuration"/>
+                        <a:a name="DESC">
+                            <a:v>
+                                The WKPU NMI configuration for each core.
+                            </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="UUID"
+                                value="ECUC:dd181221-5408-4827-8e5d-3ff3f34fce75"/>
+                        <v:var name="NMICoreSource" type="ENUMERATION">
+                          <a:a name="LABEL" value="WKPU NMI core source"/>
+                          <a:a name="DESC" 
+                                value="EN: Channel Id of the IcuWkpuChannel. This value will be assigned to the symbolic name derived of the IcuChannel container short name."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SCOPE" value="ECU"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                          <a:a name="UUID" 
+                                value="52d1bb5b-60bf-47f2-80b0-56d0427bc0a2"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="WKPU_CORE0" />
+                          <a:da name="RANGE">
+                            <a:v>WKPU_CORE0</a:v>
+                            <a:v>WKPU_CORE1</a:v>
+                            <a:v>WKPU_CORE2</a:v>
+                            <a:v>WKPU_CORE3</a:v>
+                            <a:v>WKPU_CORE4</a:v>
+                            <a:v>WKPU_CORE5</a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="DestinationSourceSelect" type="ENUMERATION">
+                            <a:a name="DESC">
+                                <a:v>
+                                    <![CDATA[ <html>
+                                    <p>NMI Destination Source Select</p>
+                                    <p>As wakeup does not support another interrupt than NMI, the destination source select signal bits are reserved and always retain their reset value. This means no other request other than NMI can be generated.</p>
+                                    <p>NMI_NON_MASK_INT: Non-maskable interrupt</p>
+                                    </html>]]>
+                                </a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                  type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE"
+                                  value="true"/>
+                            <a:a name="ORIGIN"
+                                  value="CCFC"/>
+                            <a:a name="SCOPE"
+                                  value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE"
+                                  value="false"/>
+                            <a:a name="UUID"
+                                  value="ECUC:325f3038-ee09-404d-9241-04a5ff9191bf"/>
+                            <a:da name="DEFAULT"
+                                  value="WKPU_NMI_NONE"/>
+                            <a:da name="RANGE">
+                                <a:v>WKPU_NMI_NONE</a:v>
+                                <a:v>WKPU_NMI_MACHINE_CHK_REQ</a:v>
+                                <a:v>WKPU_NMI_CRITICAL_INT</a:v>
+                                <a:v>WKPU_NMI_NON_MASK_INT</a:v>
+                            </a:da>
+                        </v:var>
+                        <v:var name="WakeupRequestEnable"
+                                  type="BOOLEAN">
+                            <a:a name="LABEL"
+                                    value="NMI Wakeup Request Enable"/>
+                            <a:a name="DESC">
+                                <a:v>
+                                    <![CDATA[ <html>
+                                    <p>System wakeup requests from the corresponding NIF0 field</p>
+                                    </html>]]>
+                                </a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE"
+                                    value="true"/>
+                            <a:a name="ORIGIN"
+                                    value="CCFC"/>
+                            <a:a name="SYMBOLICNAMEVALUE"
+                                    value="false"/>
+                            <a:a name="UUID"
+                                    value="ECUC:5833b3b3-ac95-447a-b763-423e68210e5a"/>
+                            <a:da name="DEFAULT"
+                                    value="false"/>
+                        </v:var>
+                        <v:var name="FilterEnable"
+                                  type="BOOLEAN">
+                            <a:a name="LABEL"
+                                    value="NMI Filter Enable"/>
+                            <a:a name="DESC">
+                                <a:v>
+                                    <![CDATA[ <html>
+                                Enable analog glitch filter on the NMI pad input..<br><br><br><h1>
+                                Note</h1>This is an Implementation Specific Parameter.<br></html>]]>
+                                </a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE"
+                                    value="true"/>
+                            <a:a name="ORIGIN"
+                                    value="CCFC"/>
+                            <a:a name="SYMBOLICNAMEVALUE"
+                                    value="false"/>
+                            <a:a name="UUID"
+                                    value="ECUC:6a10644f-9208-4a70-b8ba-a1482f4e1f50"/>
+                            <a:da name="DEFAULT"
+                                    value="false"/>
+                        </v:var>
+                        <v:var name="NMIEdgeEvents" type="ENUMERATION">
+                            <a:a name="DESC">
+                                <a:v>
+                                    <![CDATA[ <html>
+                                    <p>Configures the NMI Edge Events which shall be used for this NMI</p>
+                                    </html>]]>
+                                </a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                  type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE"
+                                  value="true"/>
+                            <a:a name="ORIGIN"
+                                  value="CCFC"/>
+                            <a:a name="SCOPE"
+                                  value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE"
+                                  value="false"/>
+                            <a:a name="UUID"
+                                  value="ECUC:08e8c1b5-38fc-41ec-bd49-3719499372ec"/>
+                            <a:da name="DEFAULT"
+                                  value="WKPU_RISING_EDGE"/>
+                            <a:da name="RANGE">
+                                <a:v>WKPU_NONE_EDGE</a:v>
+                                <a:v>WKPU_RISING_EDGE</a:v>
+                                <a:v>WKPU_FALLING_EDGE</a:v>
+                                <a:v>WKPU_BOTH_EDGES</a:v>
+                            </a:da>
+                        </v:var>
+                        <v:var name="LockRegister"
+                                  type="BOOLEAN">
+                            <a:a name="LABEL"
+                                    value="Configuration Lock Register"/>
+                            <a:a name="DESC">
+                                <a:v>
+                                    <![CDATA[ <html>
+                                Locks the configuration for the NMI until it is unlocked by a system reset or STANDBY0 mode exit. <br><br><br><h1>
+                                Note</h1>This is an Implementation Specific Parameter.<br></html>]]>
+                                </a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE"
+                                    value="true"/>
+                            <a:a name="ORIGIN"
+                                    value="CCFC"/>
+                            <a:a name="SYMBOLICNAMEVALUE"
+                                    value="false"/>
+                            <a:a name="UUID"
+                                    value="ECUC:a4a5126b-16c5-4581-bcb3-8c9d04fe5796"/>
+                            <a:da name="DEFAULT"
+                                    value="false"/>
+                        </v:var>
+                    </v:ctr>
+                </v:lst>
+              </v:ctr>
+              <v:ctr name="IcuGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: Configuration of general ICU parameters."/>
+                <a:a name="UUID" value="d627218c-4e13-4ee6-9074-69a7e3a4ec21"/>
+                <v:var name="IcuDevErrorDetect" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Switches the development error detection and notification on or off."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6cf86670-38f1-4cfe-986a-a351fc59d004"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                                <v:var name="IcuMulticoreSupport" type="BOOLEAN">
+                    <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                        <html>
+                            Enables/Disables Multicore Support.
+                        </html>
+                        ]]></a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:dde63254-fdc0-4af6-a0ae-3963c88e9c98"/>
+                    <a:da name="DEFAULT" value="false"/>
+                    <a:da name="INVALID" type="XPath">
+                        <a:tst expr="(num:i(count(../IcuEcucPartitionRef/*)) &gt;0) and
+                                     node:current()='false' "
+                               true="IcuMulticoreSupport should be enabled." />
+                    </a:da>
+                </v:var>
+                <v:var name="IcuReportWakeupSource" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Switch for enabling Wakeup source reporting."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="63610ebb-6f91-4b09-981a-91c45136d693"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="IcuGetCaptureRegisterValueApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Switch for enabling Get Capture Register Value Api."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="63610ebb-6f91-4b09-981a-91c45136d693"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                  <v:var name="IcuInlineSupport" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Enable or disable inline functions."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6cf86670-30f1-4cfe-981a-a351fc78d804"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:lst name="IcuEcucPartitionRef">
+                  <v:ref name="IcuEcucPartitionRef" type="REFERENCE">
+                    <a:a name="DESC">
+                      <a:v>EN: Maps the ICU driver to zero or multiple ECUC partitions to make the driver API available in the according partition.</a:v>
+                      <a:v>EN: Tags: atp.Status=draft</a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                    <a:a name="SCOPE" value="ECU"/>
+                    <a:a name="UUID" 
+                         value="829ba85e-e5fe-4f8d-a022-46c187df42d2"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="REF" 
+                          value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition"/>
+                  </v:ref>
+                </v:lst>
+                <v:lst name="IcuKernelEcucPartitionRef">
+                  <a:da name="MAX" value="1"/>
+                  <v:ref name="IcuKernelEcucPartitionRef" type="REFERENCE">
+                    <a:a name="DESC">
+                      <a:v>EN: Maps the ICU kernel to zero or one ECUC partitions to assign the driver kernel to a certain core. The ECUC partition referenced is a subset of the ECUC partitions where the ICU driver is mapped to.</a:v>
+                      <a:v>EN: Tags: atp.Status=draft</a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                    <a:a name="SCOPE" value="ECU"/>
+                    <a:a name="UUID" 
+                         value="b9191493-7aa0-4027-aaef-ffc6a0f26bb1"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="REF" 
+                          value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition"/>
+                  </v:ref>
+                </v:lst>
+              </v:ctr>
+              <v:ctr name="IcuOptionalApis" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: This container contains all configuration switches for configuring optional API services of the ICU driver."/>
+                <a:a name="UUID" value="9b74ef62-7000-44f3-a2c3-347e15ba7f93"/>
+                <v:var name="IcuDeInitApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes the service Icu_DeInit() from the code."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="21045d73-2cc7-48ee-ba25-6985a24f2448"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="IcuDisableWakeupApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes the service Icu_DisableWakeup() from the code."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="9ca48bed-e824-4529-9d00-98aac6025e91"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="IcuEdgeCountApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes all services related to the edge counting functionality as listed below, from the code: Icu_ResetEdgeCount(), Icu_EnableEdgeCount(), Icu_DisableEdgeCount(), Icu_GetEdgeNumbers()."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="484748c2-edcf-4c76-804d-fb00c1f33ad9"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="IcuEdgeDetectApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes the services related to the edge detection functionality, from the code:"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="e040fe90-f338-45f0-b8fe-5bd5c982829e"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="IcuEnableWakeupApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes the service Icu_EnableWakeup() from the code."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="921da896-bd34-45a9-b9d5-e795a5c30b79"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="IcuGetDutyCycleValuesApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes the service Icu_GetDutyCycleValues() from the code."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="a5e86a5b-f99d-426c-a7d5-10d5fd2ebb33"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="IcuGetInputStateApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes the service Icu_GetInputState() from the code."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="e75b88d9-35bb-41b2-84dd-93af98a4e274"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="IcuGetTimeElapsedApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes the service Icu_GetTimeElapsed() from the code."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="adea7f12-a837-4820-972f-7e38d4a8b2bd"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="IcuGetVersionInfoApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes the service Icu_GetVersionInfo() from the code."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="489b5951-8195-4a27-bdee-9615839de82b"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="IcuSetModeApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes the service Icu_SetMode() from the code."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="1d24ed5e-3bbc-4d85-836c-333c37f3a63c"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="IcuSignalMeasurementApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes the services Icu_StartSignalMeasurement() and Icu_StopSignalMeasurement() from the code."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="5c552348-cd59-4b97-9c2b-572b531c656d"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="IcuTimestampApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes all services related to the timestamping functionality as listed below from the code: Icu_StartTimestamp(), Icu_StopTimestamp(), Icu_GetTimestampIndex()."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="c347895b-afd9-441f-bf98-5fd15a22e26b"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="IcuWakeupFunctionalityApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes the service Icu_CheckWakeup() from the code."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="e3793c79-4c3b-4ce8-bdde-c8e96a1d967f"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="IcuOverflowNotificationApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Add/remove interrupt notification service from code."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="e3936c79-4c3b-4ce8-bdde-c8e96a1d967f"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+              </v:ctr>
+              <d:ref type="REFINED_MODULE_DEF" 
+                     value="ASPath:/AUTOSAR/EcucDefs/Icu"/>
+            </v:ctr>
+          </d:chc>
+          <d:chc name="myEcuParameterDefinition" type="AR-ELEMENT" 
+                 value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="DEF" 
+                   value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+              <d:lst name="MODULE_REF">
+                <d:ref type="MODULE_REF" value="ASPath:/IcuConfig/Icu"/>
+              </d:lst>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

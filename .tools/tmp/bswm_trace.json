@@ -1,0 +1,344 @@
+[
+ {
+  "srs": "SRS_BSW_00003",
+  "desc": "All software modules shall provide version and identification information",
+  "sws": [
+   "SWS_BswM_00003"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00101",
+  "desc": "The Basic Software Module shall be able to initialize variables and hardware in a separate initialization function",
+  "sws": [
+   "SWS_BswM_00002",
+   "SWS_BswM_00043",
+   "SWS_BswM_00044",
+   "SWS_BswM_00261"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00167",
+  "desc": "All AUTOSAR Basic Software Modules shall provide configuration rules and constraints to enable plausibility checks",
+  "sws": [
+   "SWS_BswM_00240",
+   "SWS_BswM_00242",
+   "SWS_BswM_00243",
+   "SWS_BswM_00256",
+   "SWS_BswM_CONSTR_00001",
+   "SWS_BswM_CONSTR_00002"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00170",
+  "desc": "The AUTOSAR SW Components shall provide information about their dependency from faults, signal qualities, driver demands",
+  "sws": [
+   "SWS_BswM_09999"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00301",
+  "desc": "All AUTOSAR Basic Software Modules shall only import the necessary information",
+  "sws": [
+   "SWS_BswM_00001",
+   "SWS_BswM_00237",
+   "SWS_BswM_00279"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00305",
+  "desc": "Data types naming convention [SWS_BswM_00041]",
+  "sws": []
+ },
+ {
+  "srs": "SRS_BSW_00323",
+  "desc": "All AUTOSAR Basic Software Modules shall check passed API parameters for validity",
+  "sws": [
+   "SWS_BswM_00045",
+   "SWS_BswM_00089",
+   "SWS_BswM_00090",
+   "SWS_BswM_00091",
+   "SWS_BswM_00093",
+   "SWS_BswM_00095",
+   "SWS_BswM_00097",
+   "SWS_BswM_00099",
+   "SWS_BswM_00101",
+   "SWS_BswM_00103",
+   "SWS_BswM_00110",
+   "SWS_BswM_00113",
+   "SWS_BswM_00133",
+   "SWS_BswM_00150",
+   "SWS_BswM_00154",
+   "SWS_BswM_00206",
+   "SWS_BswM_00209",
+   "SWS_BswM_00212",
+   "SWS_BswM_00228",
+   "SWS_BswM_00229",
+   "SWS_BswM_00268"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00336",
+  "desc": "Basic SW module shall be able to shutdown",
+  "sws": [
+   "SWS_BswM_00119",
+   "SWS_BswM_00120",
+   "SWS_BswM_09999"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00339",
+  "desc": "Reporting of production relevant error status",
+  "sws": [
+   "SWS_BswM_09999"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00344",
+  "desc": "BSW Modules shall support link-time configuration",
+  "sws": [
+   "SWS_BswM_00002"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00358",
+  "desc": "The return type of init() functions implemented by AUTOSAR Basic Software Modules shall be void",
+  "sws": [
+   "SWS_BswM_00002"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00384",
+  "desc": "The Basic Software Module specifications shall specify at least in the description which other modules they require",
+  "sws": [
+   "SWS_BswM_00007",
+   "SWS_BswM_00008"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00385",
+  "desc": "List possible error notifications [SWS_BswM_00230]",
+  "sws": []
+ },
+ {
+  "srs": "SRS_BSW_00399",
+  "desc": "Parameter-sets shall be located in a separate segment and shall be loaded after the code",
+  "sws": [
+   "SWS_BswM_09999"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00400",
+  "desc": "Parameter shall be selected from multiple sets of parameters after code has been loaded and started ▽ 16 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager ∆",
+  "sws": [
+   "SWS_BswM_09999"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00404",
+  "desc": "BSW Modules shall support post-build configuration",
+  "sws": [
+   "SWS_BswM_00002",
+   "SWS_BswM_00042",
+   "SWS_BswM_00213"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00405",
+  "desc": "BSW Modules shall support multiple configuration sets",
+  "sws": [
+   "SWS_BswM_00002",
+   "SWS_BswM_09999"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00406",
+  "desc": "A static status variable denoting if a BSW module is initialized shall be initialized with value 0 before any APIs of the BSW module is called",
+  "sws": [
+   "SWS_BswM_00077",
+   "SWS_BswM_00078",
+   "SWS_BswM_00079",
+   "SWS_BswM_00080",
+   "SWS_BswM_00081",
+   "SWS_BswM_00082",
+   "SWS_BswM_00083",
+   "SWS_BswM_00084",
+   "SWS_BswM_00086",
+   "SWS_BswM_00109",
+   "SWS_BswM_00112",
+   "SWS_BswM_00132",
+   "SWS_BswM_00134",
+   "SWS_BswM_00149",
+   "SWS_BswM_00153",
+   "SWS_BswM_00159",
+   "SWS_BswM_00205",
+   "SWS_BswM_00208",
+   "SWS_BswM_00211",
+   "SWS_BswM_00227",
+   "SWS_BswM_00266",
+   "SWS_BswM_00267"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00407",
+  "desc": "Each BSW module shall provide a function to read out the version information of a dedicated module implementation",
+  "sws": [
+   "SWS_BswM_00003"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00409",
+  "desc": "All production code error ID symbols are defined by the Dem module and shall be retrieved by the other BSW modules from Dem configuration",
+  "sws": [
+   "SWS_BswM_09999"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00414",
+  "desc": "Init functions shall have a pointer to a configuration structure as single parameter",
+  "sws": [
+   "SWS_BswM_00002"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00425",
+  "desc": "The BSW module description template shall provide means to model the defined trigger conditions of schedulable objects",
+  "sws": [
+   "SWS_BswM_00053"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00441",
+  "desc": "Naming convention for type, macro and function",
+  "sws": [
+   "SWS_BswM_00213",
+   "SWS_BswM_00214",
+   "SWS_BswM_00216"
+  ]
+ },
+ {
+  "srs": "SRS_BSW_00452",
+  "desc": "Classification of runtime errors [SWS_BswM_00238] [SWS_BswM_00239]",
+  "sws": []
+ },
+ {
+  "srs": "SRS_BSW_00467",
+  "desc": "The init / deinit services shall only be called by BswM or EcuM [SRS_ModeMgm_- 09116] Requesting and releasing the RUN state shall be provided [SRS_ModeMgm_- 09174] The BSW Mode Manager [5] shall support the ’disable normal Communication’ [SRS_ModeMgm_- 09175] A configurable Set of Mode dependent enabled and concomitant disabled IPDU groups shall be supported [SRS_ModeMgm_- 09177] The rules of the mode arbitration shall be pre-compile and post-build configurable [SRS_ModeMgm_- 09178] The lists of mode transition specific actions shall be pre-compile and post-build configurable ▽ 17 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager ∆ [SRS_ModeMgm_- 09179] The BSW Mode Manager [5] shall provide an Interface to allow Mode Requests of SW-C’s [SRS_ModeMgm_- 09180] The BSW Mode Manager [5] shall evaluate the current mode requests [SRS_ModeMgm_- 09182] The BSW Mode Manager [5] shall propagate a performed mode change to all local SW-Cs [SRS_ModeMgm_- 09183] Configurable Mode Activation initiated Reset of Signals to Initial Values shall be supported [SRS_ModeMgm_- 09184] The mode manager shall be able to use a COM interface to activate, respectively deactivate, I-PDU groups [SRS_ModeMgm_- 09228] The BSW Mode Manager [5] shall provide an Interface to allow Mode Requests of BSW Modules [SRS_ModeMgm_- 09229] The mode manager shall be able to make generic, configured callouts of void functions to other BSW modules [SRS_ModeMgm_- 09230] All actions shall only be performed on mode change [SRS_ModeMgm_- 09240] ComM shall notify BswM of any PNC communication state change Table 6.1: RequirementsTracing 18 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager",
+  "sws": [
+   "SWS_BswM_00118",
+   "SWS_BswM_91004",
+   "SWS_BswM_00038",
+   "SWS_BswM_00038",
+   "SWS_BswM_00010",
+   "SWS_BswM_00012",
+   "SWS_BswM_00015",
+   "SWS_BswM_00016",
+   "SWS_BswM_00062",
+   "SWS_BswM_00067",
+   "SWS_BswM_00223",
+   "SWS_BswM_00252",
+   "SWS_BswM_00253",
+   "SWS_BswM_00256",
+   "SWS_BswM_00017",
+   "SWS_BswM_00018",
+   "SWS_BswM_00019",
+   "SWS_BswM_00037",
+   "SWS_BswM_00054",
+   "SWS_BswM_00055",
+   "SWS_BswM_00062",
+   "SWS_BswM_00067",
+   "SWS_BswM_00147",
+   "SWS_BswM_00223",
+   "SWS_BswM_00271",
+   "SWS_BswM_00272",
+   "SWS_BswM_CONSTR_00001",
+   "SWS_BswM_00046",
+   "SWS_BswM_00064",
+   "SWS_BswM_00201",
+   "SWS_BswM_00203",
+   "SWS_BswM_00236",
+   "SWS_BswM_00009",
+   "SWS_BswM_00011",
+   "SWS_BswM_00013",
+   "SWS_BswM_00014",
+   "SWS_BswM_00023",
+   "SWS_BswM_00035",
+   "SWS_BswM_00059",
+   "SWS_BswM_00060",
+   "SWS_BswM_00061",
+   "SWS_BswM_00064",
+   "SWS_BswM_00066",
+   "SWS_BswM_00068",
+   "SWS_BswM_00069",
+   "SWS_BswM_00075",
+   "SWS_BswM_00115",
+   "SWS_BswM_00116",
+   "SWS_BswM_00117",
+   "SWS_BswM_00189",
+   "SWS_BswM_00200",
+   "SWS_BswM_00203",
+   "SWS_BswM_00220",
+   "SWS_BswM_00241",
+   "SWS_BswM_00244",
+   "SWS_BswM_00245",
+   "SWS_BswM_00246",
+   "SWS_BswM_00247",
+   "SWS_BswM_00248",
+   "SWS_BswM_00252",
+   "SWS_BswM_00253",
+   "SWS_BswM_00254",
+   "SWS_BswM_00255",
+   "SWS_BswM_00257",
+   "SWS_BswM_00258",
+   "SWS_BswM_00262",
+   "SWS_BswM_00263",
+   "SWS_BswM_00264",
+   "SWS_BswM_00265",
+   "SWS_BswM_00269",
+   "SWS_BswM_00038",
+   "SWS_BswM_00202",
+   "SWS_BswM_00259",
+   "SWS_BswM_00251",
+   "SWS_BswM_00038",
+   "SWS_BswM_00046",
+   "SWS_BswM_00047",
+   "SWS_BswM_00048",
+   "SWS_BswM_00049",
+   "SWS_BswM_00050",
+   "SWS_BswM_00051",
+   "SWS_BswM_00052",
+   "SWS_BswM_00058",
+   "SWS_BswM_00064",
+   "SWS_BswM_00104",
+   "SWS_BswM_00131",
+   "SWS_BswM_00148",
+   "SWS_BswM_00152",
+   "SWS_BswM_00156",
+   "SWS_BswM_00157",
+   "SWS_BswM_00158",
+   "SWS_BswM_00165",
+   "SWS_BswM_00193",
+   "SWS_BswM_00194",
+   "SWS_BswM_00203",
+   "SWS_BswM_00204",
+   "SWS_BswM_00207",
+   "SWS_BswM_00210",
+   "SWS_BswM_00214",
+   "SWS_BswM_00216",
+   "SWS_BswM_00217",
+   "SWS_BswM_00235",
+   "SWS_BswM_00249",
+   "SWS_BswM_00250",
+   "SWS_BswM_00283",
+   "SWS_BswM_91001",
+   "SWS_BswM_91003",
+   "SWS_BswM_91004",
+   "SWS_BswM_00039",
+   "SWS_BswM_00040",
+   "SWS_BswM_00011",
+   "SWS_BswM_00023",
+   "SWS_BswM_00066",
+   "SWS_BswM_00260",
+   "SWS_BswM_00148"
+  ]
+ }
+]

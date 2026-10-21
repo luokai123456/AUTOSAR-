@@ -1,0 +1,1531 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     CtlDeratingManager.a2l
+ *
+ * 
+ *
+ * Code generation for model "CtlDeratingManager".
+ *
+ * Model version              : 1.8
+ * Simulink Coder version : 10.6 R2022b
+ * C source code generated on : Thu May 28 16:44:18 2026
+ *
+ * Target selection: ert.tlc
+ * Embedded hardware selection: Infineon->TriCore
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+ASAP2_VERSION  1 31     /* Version 1.31 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+
+  /begin HEADER "Header Comments go here"
+  /end HEADER
+
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+    /end MOD_PAR
+
+    /begin MOD_COMMON  "Mod Common Comment Here"
+      BYTE_ORDER     MSB_LAST
+
+      ALIGNMENT_BYTE 1
+      ALIGNMENT_WORD 2
+      ALIGNMENT_LONG 4
+      ALIGNMENT_FLOAT32_IEEE 4
+      ALIGNMENT_FLOAT64_IEEE 4
+    /end MOD_COMMON
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_EnJunctionTempDerate_C
+    /* Long Identifier        */      "Enable junction temperature derate: 0=disabled, 1=enabled"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_EnJunctionTempDerate_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_EnMotorTempDerate_C
+    /* Long Identifier        */      "Enable motor temperature derate: 0=disabled, 1=enabled"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_EnMotorTempDerate_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_EnSpeedOverDerate_C
+    /* Long Identifier        */      "Enable speed overspeed derate: 0=disabled, 1=enabled"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_EnSpeedOverDerate_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      2.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_EnVoltDCOverDerate_C
+    /* Long Identifier        */      "Enable DC voltage overvoltage derate: 0=disabled, 1=enabled"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_EnVoltDCOverDerate_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_EnVoltDCUnderDerate_C
+    /* Long Identifier        */      "Enable DC voltage undervoltage derate: 0=disabled, 1=enabled"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_EnVoltDCUnderDerate_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_ScaleJunctionTempDerate_C
+    /* Long Identifier        */      "Junction temperature derate scale map (1.0=no derate, 0.0=full derate)"
+    /* Characteristic Type    */      CURVE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_ScaleJunctionTempDerate_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      SGPP_SwitchTempMax
+      /* Conversion Method    */      CtlDeratingManager_CM_single_degC
+      /* Number of Axis Pts   */      10
+      /* Lower Limit          */      -3.4E+38
+      /* Upper Limit          */      3.4E+38
+      AXIS_PTS_REF                    CTDM_AxisJunctionTempDerate_C
+    /end AXIS_DESCR
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_ScaleMotorTempDerate_C
+    /* Long Identifier        */      "Motor temperature derate scale map (1.0=no derate, 0.0=full derate)"
+    /* Characteristic Type    */      CURVE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_ScaleMotorTempDerate_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      SGPP_MotorTemp1
+      /* Conversion Method    */      CtlDeratingManager_CM_single_degC
+      /* Number of Axis Pts   */      10
+      /* Lower Limit          */      -3.4E+38
+      /* Upper Limit          */      3.4E+38
+      AXIS_PTS_REF                    CTDM_AxisMotorTempDerate_C
+    /end AXIS_DESCR
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_ScaleRateDown_C
+    /* Long Identifier        */      "Derate scale decreasing rate limit (scale/s). Limit when derating becomes stronger"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_ScaleRateDown_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single_1_per_s
+    /* Lower Limit            */      -100.000000
+    /* Upper Limit            */      100.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_ScaleRateUp_C
+    /* Long Identifier        */      "Derate scale increasing rate limit (scale/s). Limit for recovery towards 1"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_ScaleRateUp_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single_1_per_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_ScaleSpeedOverDerate_C
+    /* Long Identifier        */      "Speed overspeed derate scale map (1.0=no derate, 0.0=full derate)"
+    /* Characteristic Type    */      CURVE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_ScaleSpeedOverDerate_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      SGPP_MechSpeed
+      /* Conversion Method    */      CtlDeratingManager_CM_single_rpm
+      /* Number of Axis Pts   */      10
+      /* Lower Limit          */      -3.4E+38
+      /* Upper Limit          */      3.4E+38
+      AXIS_PTS_REF                    CTDM_SpeedOverDerate_C
+    /end AXIS_DESCR
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_ScaleVoltDCOverDerate_C
+    /* Long Identifier        */      "DC bus overvoltage derate scale map (1.0=no derate, 0.0=full derate)"
+    /* Characteristic Type    */      CURVE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_ScaleVoltDCOverDerate_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      SGPP_DcLinkVoltMeas
+      /* Conversion Method    */      CtlDeratingManager_CM_single_V
+      /* Number of Axis Pts   */      5
+      /* Lower Limit          */      -3.4E+38
+      /* Upper Limit          */      3.4E+38
+      AXIS_PTS_REF                    CTDM_VoltDCOverDerate_C
+    /end AXIS_DESCR
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_ScaleVoltDCUnderDerate_C
+    /* Long Identifier        */      "DC bus undervoltage derate scale map (1.0=no derate, 0.0=full derate)"
+    /* Characteristic Type    */      CURVE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_ScaleVoltDCUnderDerate_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      SGPP_DcLinkVoltMeas
+      /* Conversion Method    */      CtlDeratingManager_CM_single_V
+      /* Number of Axis Pts   */      5
+      /* Lower Limit          */      -3.4E+38
+      /* Upper Limit          */      3.4E+38
+      AXIS_PTS_REF                    CTDM_VoltDCUnderDerate_C
+    /end AXIS_DESCR
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_StallConfirmTime_C
+    /* Long Identifier        */      "Debounce time to confirm stall condition entry"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_StallConfirmTime_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_StallCurrentThreshold_C
+    /* Long Identifier        */      "Stator current amplitude threshold for stall condition detection"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_StallCurrentThreshold_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single_Arms
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      500.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_StallDerateFactor_C
+    /* Long Identifier        */      "Torque capability reduction factor when stall derate is active"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_StallDerateFactor_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_StallExitTime_C
+    /* Long Identifier        */      "Debounce time to exit stall condition"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_StallExitTime_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      100000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_StallSpeedThreshold_C
+    /* Long Identifier        */      "Speed threshold for stall condition detection"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_StallSpeedThreshold_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single_rpm
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_TorqueSpRateLimit_C
+    /* Long Identifier        */      "Rate limit for torque setpoint after derating (Nm/s)"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_TorqueSpRateLimit_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single_Nm_per_s
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_TqCapabilityMaxLimit_C
+    /* Long Identifier        */      "Upper clipping limit for maximum torque capability"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_TqCapabilityMaxLimit_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single_Nm
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      500.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_TqCapabilityMinLimit_C
+    /* Long Identifier        */      "Lower clipping limit for minimum torque capability"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_TqCapabilityMinLimit_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single_Nm
+    /* Lower Limit            */      -500.000000
+    /* Upper Limit            */      0.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTDM_TqVoltDerateMotoring_C
+    /* Long Identifier        */      "Maximum torque capability map for voltage derate in motoring operation"
+    /* Characteristic Type    */      MAP
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_TqVoltDerateMotoring_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single_Nm
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      SGPP_DcLinkVoltMeas
+      /* Conversion Method    */      CtlDeratingManager_CM_single_V
+      /* Number of Axis Pts   */      5
+      /* Lower Limit          */      -3.4E+38
+      /* Upper Limit          */      3.4E+38
+      AXIS_PTS_REF                    CTDM_TqVoltDerateVolt_C
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      SGPP_MechSpeedAbsolute
+      /* Conversion Method    */      CtlDeratingManager_CM_single_rpm
+      /* Number of Axis Pts   */      10
+      /* Lower Limit          */      -3.4E+38
+      /* Upper Limit          */      3.4E+38
+      AXIS_PTS_REF                    CTDM_TqVoltDerateSpeed_C
+    /end AXIS_DESCR
+  /end CHARACTERISTIC 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTDM_DerateReason
+    /* Long identifier        */      "Derate reason bitfield summary. See bit mapping in variable definition file"
+    /* Data type              */      UWORD
+    /* Conversion method      */      CtlDeratingManager_CM_uint16_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      65535.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTDM_DerateReason@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTDM_ScaleDerateArb
+    /* Long identifier        */      "Arbitrated derate scale before rate limiter (0..1)"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTDM_ScaleDerateArb@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTDM_ScaleDerateFinal
+    /* Long identifier        */      "Final derate scale after rate limiter (0..1)"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTDM_ScaleDerateFinal@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTDM_StallConditionActive
+    /* Long identifier        */      "Active stall condition flag"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlDeratingManager_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTDM_StallConditionActive@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTDM_StatorCurrentAmp
+    /* Long identifier        */      "Stator current amplitude calculated from d-q axis currents (Is = sqrt(Id^2 + Iq^2))"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single_Arms
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTDM_StatorCurrentAmp@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTDM_TorqueLimitNeg
+    /* Long identifier        */      "Final negative torque capability limit after all derates (regen min)"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single_Nm
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTDM_TorqueLimitNeg@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTDM_TorqueLimitPos
+    /* Long identifier        */      "Final positive torque capability limit after all derates (motoring max)"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single_Nm
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTDM_TorqueLimitPos@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTDM_TorqueSpLimited
+    /* Long identifier        */      "Torque setpoint after derating, saturation, and rate limiter"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single_Nm
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTDM_TorqueSpLimited@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTDM_TqVoltDerateMax
+    /* Long identifier        */      "Maximum allowed torque based on voltage derate calculation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single_Nm
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -500.000000
+    /* Upper limit            */      500.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTDM_TqVoltDerateMax@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTDM_TqVoltDerateMin
+    /* Long identifier        */      "Minimum torque based on voltage derate calculation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single_Nm
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -500.000000
+    /* Upper limit            */      500.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTDM_TqVoltDerateMin@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTDM_TqVoltDerateMotorRaw
+    /* Long identifier        */      "Raw output torque from voltage derate maps for motoring operation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single_Nm
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      500.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTDM_TqVoltDerateMotorRaw@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTLC_IdSpLimited
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTLC_IdSpLimited@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTLC_IqSpLimited
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTLC_IqSpLimited@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_OperationMode
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlDeratingManager_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_OperationMode@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlDeratingManager_DW.BareUnitDelay_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlDeratingManager_DW.BareUnitDelay_DSTATE@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlDeratingManager_DW.Memory_PreviousInput
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlDeratingManager_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlDeratingManager_DW.Memory_PreviousInput@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlDeratingManager_DW.UnitDelay_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlDeratingManager_DW.UnitDelay_DSTATE@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlDeratingManager_DW.UnitDelay_DSTATE_p
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlDeratingManager_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlDeratingManager_DW.UnitDelay_DSTATE_p@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_DcLinkVoltMeas
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_DcLinkVoltMeas@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_MechSpeed
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_MechSpeed@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_MechSpeedAbsolute
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_MechSpeedAbsolute@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_MotorTemp1
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_MotorTemp1@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SampleTime2
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SampleTime2@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SwitchTempMax
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SwitchTempMax@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_TorqueCommand
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlDeratingManager_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_TorqueCommand@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin AXIS_PTS 
+    /* Name                   */      CTDM_AxisJunctionTempDerate_C
+    /* Long Identifier        */      "Junction temperature axis breakpoints for torque derate (switch module temperature)"
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_AxisJunctionTempDerate_C@ */
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      Axis_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single_degC
+    /* Number of Axis Pts     */      10
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end AXIS_PTS 
+
+  /begin AXIS_PTS 
+    /* Name                   */      CTDM_AxisMotorTempDerate_C
+    /* Long Identifier        */      "Motor winding temperature axis breakpoints for torque derate"
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_AxisMotorTempDerate_C@ */
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      Axis_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single_degC
+    /* Number of Axis Pts     */      10
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end AXIS_PTS 
+
+  /begin AXIS_PTS 
+    /* Name                   */      CTDM_SpeedOverDerate_C
+    /* Long Identifier        */      "Mechanical speed axis breakpoints for overspeed torque derate"
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_SpeedOverDerate_C@ */
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      Axis_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single_rpm
+    /* Number of Axis Pts     */      10
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end AXIS_PTS 
+
+  /begin AXIS_PTS 
+    /* Name                   */      CTDM_TqVoltDerateSpeed_C
+    /* Long Identifier        */      "Speed axis breakpoints for voltage derate torque capability lookup table"
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_TqVoltDerateSpeed_C@ */
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      Axis_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single_rpm
+    /* Number of Axis Pts     */      10
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end AXIS_PTS 
+
+  /begin AXIS_PTS 
+    /* Name                   */      CTDM_TqVoltDerateVolt_C
+    /* Long Identifier        */      "Voltage axis breakpoints for voltage derate torque capability lookup table"
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_TqVoltDerateVolt_C@ */
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      Axis_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single_V
+    /* Number of Axis Pts     */      5
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end AXIS_PTS 
+
+  /begin AXIS_PTS 
+    /* Name                   */      CTDM_VoltDCOverDerate_C
+    /* Long Identifier        */      "DC bus overvoltage axis breakpoints for derate scale"
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_VoltDCOverDerate_C@ */
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      Axis_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single_V
+    /* Number of Axis Pts     */      5
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end AXIS_PTS 
+
+  /begin AXIS_PTS 
+    /* Name                   */      CTDM_VoltDCUnderDerate_C
+    /* Long Identifier        */      "DC bus undervoltage axis breakpoints for derate scale (ascending storage)"
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTDM_VoltDCUnderDerate_C@ */
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      Axis_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlDeratingManager_CM_single_V
+    /* Number of Axis Pts     */      5
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end AXIS_PTS 
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlDeratingManager_CM_logical
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%1.0"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlDeratingManager_CM_single
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlDeratingManager_CM_single_1_per_s
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "1/s"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlDeratingManager_CM_single_Arms
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "Arms"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlDeratingManager_CM_single_Nm
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "Nm"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlDeratingManager_CM_single_Nm_per_s
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "Nm/s"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlDeratingManager_CM_single_V
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlDeratingManager_CM_single_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlDeratingManager_CM_single_degC
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "degC"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlDeratingManager_CM_single_rpm
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rpm"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlDeratingManager_CM_uint16_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%5.0"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlDeratingManager_CM_uint8
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%3.0"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlDeratingManager_CM_uint8_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%3.0"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin  RECORD_LAYOUT Record_BOOLEAN
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_FLOAT32_IEEE
+    FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_UBYTE
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_UWORD
+    FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /* Record Layouts for Lookup Tables in Standard Axis format */
+
+  /begin RECORD_LAYOUT Axis_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end RECORD_LAYOUT 
+
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager
+    /* Long identifier        */      "CtlDeratingManager"
+    /* Root                   */      ROOT
+    /begin SUB_GROUP
+      CtlDeratingManager_CTDM_Derating_1ms_sys
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTLC_IdSpLimited
+      CTLC_IqSpLimited
+      CTSO_OperationMode
+      SGPP_DcLinkVoltMeas
+      SGPP_MechSpeed
+      SGPP_MechSpeedAbsolute
+      SGPP_MotorTemp1
+      SGPP_SampleTime2
+      SGPP_SwitchTempMax
+      SGSA_TorqueCommand
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys"
+    /begin SUB_GROUP
+      CtlDeratingManager_CTDM_Derating_1ms_sys_DeratingArbitration
+      CtlDeratingManager_CTDM_Derating_1ms_sys_SpeedDerating
+      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating
+      CtlDeratingManager_CTDM_Derating_1ms_sys_ThermalDerating
+      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCapabilityMap
+      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCommandLimiter
+      CtlDeratingManager_CTDM_Derating_1ms_sys_UdcDerating
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_DeratingArbitration
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/DeratingArbitration"
+    /begin SUB_GROUP
+      CtlDeratingManager_CTDM_Derating_1ms_sys_DeratingArbitration_Local_Variable_Storage1
+      CtlDeratingManager_CTDM_Derating_1ms_sys_DeratingArbitration_Local_Variable_Storage3
+      CtlDeratingManager_CTDM_Derating_1ms_sys_DeratingArbitration_Subsystem
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_DeratingArbitration_Local_Variable_Storage1
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/DeratingArbitration/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      CTDM_ScaleDerateArb
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_DeratingArbitration_Local_Variable_Storage3
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/DeratingArbitration/Local Variable Storage3"
+    /begin REF_MEASUREMENT
+      CTDM_ScaleDerateFinal
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_DeratingArbitration_Subsystem
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/DeratingArbitration/Subsystem"
+    /begin SUB_GROUP
+      CtlDeratingManager_CTDM_Derating_1ms_sys_DeratingArbitration_Subsystem_Parameter1
+      CtlDeratingManager_CTDM_Derating_1ms_sys_DeratingArbitration_Subsystem_Parameter2
+      CtlDeratingManager_CTDM_Derating_1ms_sys_DeratingArbitration_Subsystem_RateLimiter
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_DeratingArbitration_Subsystem_Parameter1
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/DeratingArbitration/Subsystem/Parameter1"
+    /begin REF_CHARACTERISTIC
+      CTDM_ScaleRateUp_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_DeratingArbitration_Subsystem_Parameter2
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/DeratingArbitration/Subsystem/Parameter2"
+    /begin REF_CHARACTERISTIC
+      CTDM_ScaleRateDown_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_DeratingArbitration_Subsystem_RateLimiter
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/DeratingArbitration/Subsystem/RateLimiter"
+    /begin REF_MEASUREMENT
+      CtlDeratingManager_DW.UnitDelay_DSTATE
+      SGPP_SampleTime2
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_SpeedDerating
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/SpeedDerating"
+    /begin SUB_GROUP
+      CtlDeratingManager_CTDM_Derating_1ms_sys_SpeedDerating_Parameter3
+      CtlDeratingManager_CTDM_Derating_1ms_sys_SpeedDerating_SpeedOVDeratLUT
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_SpeedDerating_Parameter3
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/SpeedDerating/Parameter3"
+    /begin REF_CHARACTERISTIC
+      CTDM_EnSpeedOverDerate_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_SpeedDerating_SpeedOVDeratLUT
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/SpeedDerating/SpeedOVDeratLUT"
+    /begin REF_CHARACTERISTIC
+      CTDM_ScaleSpeedOverDerate_C
+      CTDM_SpeedOverDerate_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      SGPP_MechSpeed
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/StallDerating"
+    /begin SUB_GROUP
+      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_Debounce
+      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_IAmpCal
+      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_Local_Variable_Storage3
+      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_Parameter1
+      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_Parameter2
+      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_Parameter3
+      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_Parameter4
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CtlDeratingManager_DW.UnitDelay_DSTATE_p
+      SGPP_MechSpeedAbsolute
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_Debounce
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/StallDerating/Debounce"
+    /begin SUB_GROUP
+      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_Debounce_Subsystem
+      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_Debounce_UnitDelay
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_Debounce_Subsystem
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/StallDerating/Debounce/Subsystem"
+    /begin REF_MEASUREMENT
+      CtlDeratingManager_DW.Memory_PreviousInput
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_Debounce_UnitDelay
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/StallDerating/Debounce/UnitDelay"
+    /begin REF_MEASUREMENT
+      CtlDeratingManager_DW.BareUnitDelay_DSTATE
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_IAmpCal
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/StallDerating/IAmpCal"
+    /begin SUB_GROUP
+      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_IAmpCal_Local_Variable_Storage3
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTLC_IdSpLimited
+      CTLC_IqSpLimited
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_IAmpCal_Local_Variable_Storage3
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/StallDerating/IAmpCal/Local Variable Storage3"
+    /begin REF_MEASUREMENT
+      CTDM_StatorCurrentAmp
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_Local_Variable_Storage3
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/StallDerating/Local Variable Storage3"
+    /begin REF_MEASUREMENT
+      CTDM_StallConditionActive
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_Parameter1
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/StallDerating/Parameter1"
+    /begin REF_CHARACTERISTIC
+      CTDM_StallSpeedThreshold_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_Parameter2
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/StallDerating/Parameter2"
+    /begin REF_CHARACTERISTIC
+      CTDM_StallCurrentThreshold_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_Parameter3
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/StallDerating/Parameter3"
+    /begin REF_CHARACTERISTIC
+      CTDM_StallConfirmTime_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_StallDerating_Parameter4
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/StallDerating/Parameter4"
+    /begin REF_CHARACTERISTIC
+      CTDM_StallExitTime_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_ThermalDerating
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/ThermalDerating"
+    /begin SUB_GROUP
+      CtlDeratingManager_CTDM_Derating_1ms_sys_ThermalDerating_MotorTempDeratLUT
+      CtlDeratingManager_CTDM_Derating_1ms_sys_ThermalDerating_Parameter1
+      CtlDeratingManager_CTDM_Derating_1ms_sys_ThermalDerating_Parameter3
+      CtlDeratingManager_CTDM_Derating_1ms_sys_ThermalDerating_SwitchTempDeratLUT
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_ThermalDerating_MotorTempDeratLUT
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/ThermalDerating/MotorTempDeratLUT"
+    /begin REF_CHARACTERISTIC
+      CTDM_AxisMotorTempDerate_C
+      CTDM_ScaleMotorTempDerate_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      SGPP_MotorTemp1
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_ThermalDerating_Parameter1
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/ThermalDerating/Parameter1"
+    /begin REF_CHARACTERISTIC
+      CTDM_EnMotorTempDerate_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_ThermalDerating_Parameter3
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/ThermalDerating/Parameter3"
+    /begin REF_CHARACTERISTIC
+      CTDM_EnJunctionTempDerate_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_ThermalDerating_SwitchTempDeratLUT
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/ThermalDerating/SwitchTempDeratLUT"
+    /begin REF_CHARACTERISTIC
+      CTDM_AxisJunctionTempDerate_C
+      CTDM_ScaleJunctionTempDerate_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      SGPP_SwitchTempMax
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCapabilityMap
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/TorqueCapabilityMap"
+    /begin SUB_GROUP
+      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCapabilityMap_Local_Variable_Storage1
+      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCapabilityMap_Local_Variable_Storage3
+      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCapabilityMap_Parameter1
+      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCapabilityMap_Parameter10
+      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCapabilityMap_Parameter2
+      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCapabilityMap_TorqueCapLUT
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCapabilityMap_Local_Variable_Storage1
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/TorqueCapabilityMap/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      CTDM_TqVoltDerateMin
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCapabilityMap_Local_Variable_Storage3
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/TorqueCapabilityMap/Local Variable Storage3"
+    /begin REF_MEASUREMENT
+      CTDM_TqVoltDerateMax
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCapabilityMap_Parameter1
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/TorqueCapabilityMap/Parameter1"
+    /begin REF_CHARACTERISTIC
+      CTDM_StallDerateFactor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCapabilityMap_Parameter10
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/TorqueCapabilityMap/Parameter10"
+    /begin REF_CHARACTERISTIC
+      CTDM_TqCapabilityMinLimit_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCapabilityMap_Parameter2
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/TorqueCapabilityMap/Parameter2"
+    /begin REF_CHARACTERISTIC
+      CTDM_TqCapabilityMaxLimit_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCapabilityMap_TorqueCapLUT
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/TorqueCapabilityMap/TorqueCapLUT"
+    /begin SUB_GROUP
+      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCapabilityMap_TorqueCapLUT_Local_Variable_Storage3
+    /end SUB_GROUP
+    /begin REF_CHARACTERISTIC
+      CTDM_TqVoltDerateMotoring_C
+      CTDM_TqVoltDerateSpeed_C
+      CTDM_TqVoltDerateVolt_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      SGPP_DcLinkVoltMeas
+      SGPP_MechSpeedAbsolute
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCapabilityMap_TorqueCapLUT_Local_Variable_Storage3
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/TorqueCapabilityMap/TorqueCapLUT/Local Variable Storage3"
+    /begin REF_MEASUREMENT
+      CTDM_TqVoltDerateMotorRaw
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCommandLimiter
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/TorqueCommandLimiter"
+    /begin SUB_GROUP
+      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCommandLimiter_Parameter1
+      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCommandLimiter_RateLimiter
+      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCommandLimiter_Saturation_Dynamic
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCommandLimiter_Parameter1
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/TorqueCommandLimiter/Parameter1"
+    /begin REF_CHARACTERISTIC
+      CTDM_TorqueSpRateLimit_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCommandLimiter_RateLimiter
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/TorqueCommandLimiter/RateLimiter"
+    /begin REF_MEASUREMENT
+      SGPP_SampleTime2
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_TorqueCommandLimiter_Saturation_Dynamic
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/TorqueCommandLimiter/Saturation
+Dynamic"
+    /begin REF_MEASUREMENT
+      SGSA_TorqueCommand
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_UdcDerating
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/UdcDerating"
+    /begin SUB_GROUP
+      CtlDeratingManager_CTDM_Derating_1ms_sys_UdcDerating_Parameter1
+      CtlDeratingManager_CTDM_Derating_1ms_sys_UdcDerating_Parameter3
+      CtlDeratingManager_CTDM_Derating_1ms_sys_UdcDerating_UdcOVDeratLUT
+      CtlDeratingManager_CTDM_Derating_1ms_sys_UdcDerating_UdcUVDeratLUT
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTSO_OperationMode
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_UdcDerating_Parameter1
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/UdcDerating/Parameter1"
+    /begin REF_CHARACTERISTIC
+      CTDM_EnVoltDCUnderDerate_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_UdcDerating_Parameter3
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/UdcDerating/Parameter3"
+    /begin REF_CHARACTERISTIC
+      CTDM_EnVoltDCOverDerate_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_UdcDerating_UdcOVDeratLUT
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/UdcDerating/UdcOVDeratLUT"
+    /begin REF_CHARACTERISTIC
+      CTDM_ScaleVoltDCOverDerate_C
+      CTDM_VoltDCOverDerate_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      SGPP_DcLinkVoltMeas
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlDeratingManager_CTDM_Derating_1ms_sys_UdcDerating_UdcUVDeratLUT
+    /* Long identifier        */      "CtlDeratingManager/CTDM_Derating_1ms_sys/UdcDerating/UdcUVDeratLUT"
+    /begin REF_CHARACTERISTIC
+      CTDM_ScaleVoltDCUnderDerate_C
+      CTDM_VoltDCUnderDerate_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      SGPP_DcLinkVoltMeas
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /end MODULE
+
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF CtlDeratingManager.a2l*/

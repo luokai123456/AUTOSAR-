@@ -1,0 +1,36 @@
+
+Name: config/eTPU1.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420849103781450743351886017596094702391455704226792
+ 6698049791595870390329964928871960139606803933167202
+
+Name: config/eTPU2.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424717671543234688445086323470355600906229274524896
+ 8851020412253450348846574760856200606646830495180635
+
+Name: generate/include/eTPU_Cfg.h
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594755476136305175607716040779011180770723227572510675
+ 225941692657194258057452962380364744091183823982992282
+
+Name: config/eTPU3.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421187707179465164907060820102037629825879660035236
+ 5455042955003599206468134395289548939586098539274169
+
+Name: generate/source/eTPU_Cfg.c
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423968333148224449745400890569404783770020928192743
+ 7962950308670909138520024285027560620306187973698636
+

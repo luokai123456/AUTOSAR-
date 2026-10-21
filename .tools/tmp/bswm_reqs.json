@@ -1,0 +1,1088 @@
+[
+ {
+  "id": "SWS_BswM_CONSTR_00001",
+  "text": "The BswM shall reject configurations where a BswMActionList contains BswMActionListItems with same-valued BswMAc- tionListItemIndexes.",
+  "section": "7.2.2",
+  "page": 29
+ },
+ {
+  "id": "SWS_BswM_CONSTR_00002",
+  "text": "The value of CompuMethod.category referenced by the foreign reference of BswMCompuMethodRef shall be TEXTT ABLE.",
+  "section": "10.2.12",
+  "page": 82
+ },
+ {
+  "id": "SWS_BswM_CONSTR_00003",
+  "text": "The BswM shall reject configurations where a BswMDeadlineMonitoringControl container has a BswMDisabledDMP- duGroupRef and a BswMEnabledDMPduGroupRef which reference the same PDU Group.",
+  "section": "10.2.59",
+  "page": 118
+ },
+ {
+  "id": "SWS_BswM_CONSTR_00004",
+  "text": "The BswM shall reject configurations where a BswMPduGroupSwitch container has a BswMDisabledPduGroupRef and a BswMEnabledPduGroupRef which reference the same PDU Group.",
+  "section": "10.2.71",
+  "page": 131
+ },
+ {
+  "id": "SWS_BswM_CONSTR_00005",
+  "text": "The BswM shall reject configurations where a BswMSdServiceGroupSwitch container has a BswMDisabledSdService- GroupRef and a BswMEnabledSdServiceGroupRef which reference the same Sd- ServiceGroup.",
+  "section": "10.2.81",
+  "page": 140
+ },
+ {
+  "id": "SWS_BswM_CONSTR_00006",
+  "text": "If the BswMSwitchPort is referred by any BswM- RteSwitch actions or BswMModeSwitchErrorEvents then BswMModeSwitchIn- terfaceRef shall be configured. If the BswMSwitchPort is referred by any BswM- SchMSwitch actions then BswMSchMModeDeclarationGroupRef shall be config- ured. At least one of the contained references shall be configured.",
+  "section": "10.2.89",
+  "page": 150
+ },
+ {
+  "id": "SWS_BswM_00001",
+  "text": "Module Header File Imported Type CanSM CanSM.h CanSM_BswMCurrentStateT ype Com Com.h Com_IpduGroupIdT ype ComM.h ComM_InitStatusT ype ComM.h ComM_PncModeT ype Rte_ComM_T ype.h ComM_InhibitionStatusT ype Rte_ComM_T ype.h ComM_ModeT ype ComM Rte_ComM_T ype.h ComM_UserHandleT ype ComStack_T ypes.h NetworkHandleT ype ComStack_T ypes.h PNCHandleT ype ComStack_T ypes ComStack_T ypes.h PduIdT ype Dcm Dcm.h Dcm_CommunicationModeT ype EcuM.h EcuM_RunStatusT ype EcuM.h EcuM_StateT ype EcuM.h EcuM_WakeupSourceT ype EcuM.h EcuM_WakeupStatusT ype EcuM Rte_EcuM_T ype.h EcuM_UserT ype ▽ 39 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 ∆ Module Header File Imported Type Eth Eth_GeneralT ypes.h Eth_ModeT ype (draft) EthIf EthIf.h EthIf_SwitchPortGroupIdxT ype EthSM EthSM.h EthSM_NetworkModeStateT ype EthT rcv Eth_GeneralT ypes.h EthT rcv_LinkStateT ype FrSm FrSm.h FrSM_BswM_StateT ype IdsM IdsM_Filters_T ypes.h IdsM_Filters_BlockStateT ype J1939Dcm J1939Dcm.h J1939Dcm_StateT ype J1939Rm J1939Rm.h J1939Rm_StateT ype LinIf.h LinIf_SchHandleT ypeLinIf LinIf.h LinTp_Mode LinSM LinSM.h LinSM_ModeT ype McOs Os.h CoreIdT ype Nm NmStack_types.h Nm_StateT ype NvM.h NvM_MultiBlockRequestT ype Rte_NvM_T ype.h NvM_BlockIdT ype NvM Rte_NvM_T ype.h NvM_RequestResultT ype Os.h ApplicationT ype Os.h IdleModeT ype Os Os.h StatusT ype Sd.h Sd_ClientServiceCurrentStateT ype Sd.h Sd_ConsumedEventGroupCurrentStateT ype Sd.h Sd_EventHandlerCurrentStateT ype Sd Sd.h Sd_ServiceGroupIdT ype SoAd.h SoAd_SoConIdT ypeSoAd SoAd.h SoAd_SoConModeT ype Std_T ypes.h Std_ReturnT ypeStd Std_T ypes.h Std_VersionInfoT ype",
+  "section": "8.1",
+  "page": 40
+ },
+ {
+  "id": "SWS_BswM_00002",
+  "text": "51 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 Service Name BswM_Init Syntax void BswM_Init ( const BswM_ConfigType * ConfigPtr ) Service ID [hex] 0x00 Sync/Async Synchronous Reentrancy Conditionally Reentrant Parameters (in) ConfigPtr Pointer to post-build configuration data Parameters (inout) None Parameters (out) None Return value None Description Initializes the BSW Mode Manager. Available via BswM.h",
+  "section": "8.3.16",
+  "page": 52
+ },
+ {
+  "id": "SWS_BswM_00003",
+  "text": "Service Name BswM_GetVersionInfo Syntax void BswM_GetVersionInfo ( Std_VersionInfoType* VersionInfo ) Service ID [hex] 0x01 Sync/Async Synchronous Reentrancy Reentrant Parameters (in) None Parameters (inout) None Parameters (out) VersionInfo Pointer to where to store the version information of the module. Return value None Description Returns the version information of this module. Available via BswM.h",
+  "section": "8.3.15",
+  "page": 51
+ },
+ {
+  "id": "SWS_BswM_00007",
+  "text": "API Function Header File Description There are no mandatory interfaces.",
+  "section": "8.6.1",
+  "page": 63
+ },
+ {
+  "id": "SWS_BswM_00008",
+  "text": "API Function Header File Description Com_DisableReceptionDM Com.h Disables the reception deadline monitoring for the I-PDUs within the given I-PDU group. ▽ 63 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 ∆ API Function Header File Description Com_EnableReceptionDM Com.h Enables the reception deadline monitoring for the I-PDUs within the given I-PDU group. Com_IpduGroupStart Com.h Starts a preconfigured I-PDU group. For example, cyclic I-PDUs will be sent out cyclically after the call of Com_IpduGroupStart(). If Initialize is true all I-PDUs of the I-PDU group shall be (re-)initialized before the I-PDU group is started. That is they shall behave like after a start-up of COM, for example the old_value of the filter objects and shadow buffers of signal groups have to be (re-)initialized. Com_IpduGroupStop Com.h Stops a preconfigured I-PDU group. For example, cyclic I-PDUs will be stopped after the call of Com_ IpduGroupStop(). Com_SwitchIpduTxMode Com.h The service Com_SwitchIpduTxMode sets the transmission mode of the I-PDU referenced by Pdu Id to Mode. In case the transmission mode changes, the new mode shall immediately be effective (see SWS_Com_00239). In case the requested transmission mode was already active for this I-PDU, the call will have no effect. ComM_GetCurrentComMode ComM.h Function to query the current Communication Mode. ComM shall use the corresponding interfaces of the Bus State Managers to get the current Communication Mode of the network. (Call to Bus State Manager API: XXXSM _GetCurrentCom Mode(...)) ComM_GetInhibitionStatus ComM.h Returns the inhibition status of a ComM channel. ComM_GetMaxComMode ComM.h Function to query the maximum allowed Communication Mode of the corresponding user. ComM_GetRequestedComMode ComM.h Function to query the currently requested Communication Mode of the corresponding user. ComM_GetStatus ComM.h Returns the initialization status of the AUTOSAR Communication Manager. After a call to ComM_De Init() ComM should have status COMM_UNINIT , and a new call to ComM_Init needed to make sure Com M restart internal state machines to defailt values. ComM_GetVersionInfo ComM.h This function returns the version information of this module ComM_LimitChannelT oNoComMode ComM.h Changes the inhibition status for the channel for changing from COMM_NO_COMMUNICA TION to a higher Communication Mode. (See also ComM_ LimitECUT oNoComMode, same functionality but for all channels) ComM_LimitECUT oNoComMode ComM.h Changes the inhibition status for the ECU (=all channels) for changing from COMM_NO_ COMMUNICA TION to a higher Communication Mode. (See also ComM_LimitChannelT oNoCom Mode, same functionality but for a specific channels) ComM_PreventWakeUp ComM.h Changes the inhibition status COMM_NO_WAKEUP for the corresponding channel. ComM_ReadInhibitCounter ComM.h This function returns the amount of rejected COMM_FULL_COMMUNICA TION user requests. ComM_RequestComMode ComM.h Requesting of a Communication Mode by a user. Note: The following modes are no vaild user requests, since they are used as internal modes: ▽ ▽ 64 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 ∆ API Function Header File Description ∆ - COMM_SILENT_COMMUNICA TION (this mode is used for synchronization at shutdown) - COMM_FULL_COMMUNICA TION_WITH_ WAKEUP_REQUEST (this mode is used internally within the ComM channel statemachine to trigger the lower layers to request a wakeup on the network if the used hardware support such a feature. (e.g. Ethernet hardware which is compatible with OA TC10). The following modes are valid user requests: - COMM_NO_COMMUNICA TION - COMM_FULL_COMMUNICA TION. The communication request could also be released due to a ComM communication inhibition ComM_ResetInhibitCounter ComM.h This function resets the Inhibited COMM_FULL_ COMMUNICA TION request Counter. ComM_SetECUGroupClassification ComM.h Changes the ECU Group Classification status (see chapter 10.2.2) ControlIdle Os.h This API allows the caller to select the idle mode action which is performed during idle time of the OS (e.g. if no T ask/ISR is active). It can be used to implement energy savings. The real idle modes are hardware dependent and not standardized. The default idle mode on each core is IDLE_NO_HAL T . Det_ReportError Det.h Service to report development errors. EcuM_AL_DriverInitBswM_<x> EcuM.h This callback shall provide BSW module initializations to be called by the BSW Mode Manager. EcuM_GoDownHaltPoll EcuM.h Instructs the ECU State Manager module to go into a sleep mode, Reset or OFF depending on the previously selected shutdown target. EcuM_SetState EcuM.h Function called by BswM to notify about State Switch. EthIf_StartAllPorts EthIf.h Request to set all configured and affected EthSwt Ports to ETH_MODE_ACTIVE EthIf_SwitchPortGroupRequestMode EthIf.h Request a mode for the EthIfSwtPortGroup. The call shall be forwarded to EthSwt by calling EthSwt_Set SwitchPortMode for all EthSwtPorts referenced by the port group. FrSm_AllSlots FrSm.h This API function can be used to leave the KeySlot OnlyMode. FrSm_SetEcuPassive FrSm.h This API function can be used to set all FlexRay clusters of the ECU to a receive only mode. IdsM_BswM_StateChanged IdsM_Cbk.h This callback function is invoked by the BswM to indicate ECU state changes. J1939Dcm_SetState J1939Dcm.h Changes the communication state of J1939Dcm to offline or online. J1939Rm_SetState J1939Rm.h Changes the communication state of J1939Rm to offline (only Request for AC supported) or online. LinSM_ScheduleRequest LinSM.h The upper layer requests a schedule table to be changed on one LIN network. ▽ 65 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 ∆ API Function Header File Description Nm_DisableCommunication Nm.h Disables the NM PDU transmission ability . For that purpose <BusNm>_DisableCommunication shall be called in case NmBusT ype is not set to NM_ BUSNM_LOCALNM (e.g. CanNm_Disable Communication function is called if channel is configured as CAN). Nm_EnableCommunication Nm.h Enables the NM PDU transmission ability . For that purpose <BusNm>_EnableCommunication shall be called in case NmBusT ype is not set to NM_ BUSNM_LOCALNM. (e.g. CanNm_Enable Communication function is called if channel is configured as CAN). Sd_ServiceGroupStart Sd.h Starts a preconfigured SdServiceGroup. For example, OfferService entries will be sent out after the call of Sd_ServiceGroupStart() for all Server Servives of a SdServiceGroup, which are not requested yet. Sd_ServiceGroupStop Sd.h Stops a preconfigured SdServiceGroup. For example, StopOfferService entries will be sent out after the call of Sd_ServiceGroupStop() for all ServerServices of a SdServiceGroup, which are not requested by another SdServiceGroup.",
+  "section": "8.6.2",
+  "page": 66
+ },
+ {
+  "id": "SWS_BswM_00009",
+  "text": "The BswM shall perform mode arbitration based on incoming mode requests.",
+  "section": "7.1.3",
+  "page": 21
+ },
+ {
+  "id": "SWS_BswM_00010",
+  "text": "The BswM shall perform mode arbitration using configured rules.",
+  "section": "7.1.3",
+  "page": 22
+ },
+ {
+  "id": "SWS_BswM_00011",
+  "text": "If a T rue action list is configured for triggered execution, the BswM shall only execute it when the evaluation of the corresponding rule changes from False to T rue.",
+  "section": "7.2.3",
+  "page": 29
+ },
+ {
+  "id": "SWS_BswM_00012",
+  "text": "The mode arbitration rules shall be configurable using the mod- ule configuration parameters.",
+  "section": "7.1.3",
+  "page": 22
+ },
+ {
+  "id": "SWS_BswM_00013",
+  "text": "It shall be possible to configure the BswM to execute the mode arbitration immediately upon a mode arbitration request. This is configured by set- ting the BswMRequestProcessing configuration parameter (within the BswMMod- eRequestPort container) to BSWM_IMMEDIA TE.",
+  "section": "7.1.3.1",
+  "page": 22
+ },
+ {
+  "id": "SWS_BswM_00014",
+  "text": "It shall (also) be possible to defer the mode arbitration until the execution of the main function of the BswM. This is configured by setting the BswM- RequestProcessing configuration parameter (within the BswMModeRequestPort container) to BSWM_DEFERRED.",
+  "section": "7.1.3.1",
+  "page": 23
+ },
+ {
+  "id": "SWS_BswM_00015",
+  "text": "For each rule of the mode arbitration, BswM shall be able to execute different action lists based on if the rule evaluates to T rue or False.",
+  "section": "7.2.2",
+  "page": 27
+ },
+ {
+  "id": "SWS_BswM_00016",
+  "text": "The BswM shall perform mode control by means of action lists that are executed as a result of rule evaluation in the mode arbitration.",
+  "section": "7.2.2",
+  "page": 27
+ },
+ {
+  "id": "SWS_BswM_00017",
+  "text": "An action list comprises a set of actions that BswM shall exe- cute in an ordered manner.",
+  "section": "7.2.2",
+  "page": 28
+ },
+ {
+  "id": "SWS_BswM_00018",
+  "text": "An action list may contain links to other action lists that BswM shall include in the execution.",
+  "section": "7.2.2",
+  "page": 28
+ },
+ {
+  "id": "SWS_BswM_00019",
+  "text": "An action list may also include links to mode arbitration rules that BswM shall evaluate within the scope of the execution of the current action list.",
+  "section": "7.2.2",
+  "page": 28
+ },
+ {
+  "id": "SWS_BswM_00023",
+  "text": "If a False action list is configured for triggered execution the BswM shall only execute it when the evaluation of the corresponding rule changes from T rue to False.",
+  "section": "7.2.3",
+  "page": 29
+ },
+ {
+  "id": "SWS_BswM_00035",
+  "text": "The BswM shall perform mode arbitration based on incoming mode indications.",
+  "section": "7.1.3",
+  "page": 21
+ },
+ {
+  "id": "SWS_BswM_00037",
+  "text": "If cascaded action lists are used (i.e. using references to other rules or action lists) the action list structure may contain up to seven (7) hierarchic levels. Note: The purpose of this limit is to make testing of BswM implementations and genera- tor tools possible. The limit must be checked by the generator tool.",
+  "section": "7.2.2",
+  "page": 28
+ },
+ {
+  "id": "SWS_BswM_00038",
+  "text": "BswM shall be able to execute the predefined actions de- fined by configuration container BswMAvailableActions.",
+  "section": "7.2.4",
+  "page": 30
+ },
+ {
+  "id": "SWS_BswM_00039",
+  "text": "The BswM shall be able to call any function in the AUTOSAR BSW even though it is not among the standardized actions defined in BswMAvail- ableActions.",
+  "section": "7.2.4",
+  "page": 30
+ },
+ {
+  "id": "SWS_BswM_00040",
+  "text": "The BswM shall be able to call user defined functions.",
+  "section": "7.2.4",
+  "page": 30
+ },
+ {
+  "id": "SWS_BswM_00041",
+  "text": "The following Data T ypes shall be used for the functions de- fined in this specification.",
+  "section": "8.2",
+  "page": 40
+ },
+ {
+  "id": "SWS_BswM_00042",
+  "text": "The structure BswM_ConfigType shall contain all post-build configurable parameters of the BSW Mode Manager. The exact content of this struc- ture depends on the selected configuration variant",
+  "section": "8.2.1",
+  "page": 41
+ },
+ {
+  "id": "SWS_BswM_00043",
+  "text": "This routine initializes the BSW Mode Manager. After execution of this routine the BSW Mode Manager is ready to arbitrate incoming mode requests.",
+  "section": "8.3.16",
+  "page": 52
+ },
+ {
+  "id": "SWS_BswM_00044",
+  "text": "This routine shall initialize all module global variables of the BSW Mode Manager.",
+  "section": "8.3.16",
+  "page": 52
+ },
+ {
+  "id": "SWS_BswM_00045",
+  "text": "If the BswMDevErrorDetect switch is enabled, the contents of the given configuration set shall be checked for being within the allowed bound- aries. If an error is detected the initialization of the BSW Mode Manager shall not be executed and the error shall be reported to the Default Error T racer with the value BSWM_E_P ARAM_CONFIG.",
+  "section": "8.3.16",
+  "page": 52
+ },
+ {
+  "id": "SWS_BswM_00046",
+  "text": "Service Name BswM_RequestMode Syntax void BswM_RequestMode ( BswM_UserType requesting_user, BswM_ModeType requested_mode ) Service ID [hex] 0x02 Sync/Async Synchronous Reentrancy Reentrant requesting_user The user that requests the modeParameters (in) requested_mode The requested mode. Parameters (inout) None Parameters (out) None Return value None Description Generic function call to request modes. This function shall only be used by other BSW modules that does not have a specific mode request interface. Available via BswM.h",
+  "section": "8.3.26",
+  "page": 58
+ },
+ {
+  "id": "SWS_BswM_00047",
+  "text": "Service Name BswM_ComM_CurrentMode Syntax void BswM_ComM_CurrentMode ( NetworkHandleType Network, ComM_ModeType RequestedMode ) Service ID [hex] 0x0e Sync/Async Synchronous Reentrancy Reentrant Network The ComM communication channel that the indicated state corresponds to. Parameters (in) RequestedMode The current state of the ComM communication channel Parameters (inout) None Parameters (out) None Return value None Description Function called by ComM to indicate the current communication mode of a ComM channel. Available via BswM_ComM.h",
+  "section": "8.3.3",
+  "page": 43
+ },
+ {
+  "id": "SWS_BswM_00048",
+  "text": "Service Name BswM_Dcm_CommunicationMode_CurrentState Syntax void BswM_Dcm_CommunicationMode_CurrentState ( NetworkHandleType Network, Dcm_CommunicationModeType RequestedMode ) Service ID [hex] 0x06 Sync/Async Synchronous Reentrancy Reentrant Network The communication channel that the diagnostic mode corresponds to. Parameters (in) RequestedMode The requested diagnostic communication mode. Parameters (inout) None Parameters (out) None ▽ 45 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 ∆ Return value None Description Function called by DCM to inform the BswM about the current state of the communication mode. Available via BswM_Dcm.h",
+  "section": "8.3.7",
+  "page": 46
+ },
+ {
+  "id": "SWS_BswM_00049",
+  "text": "Service Name BswM_CanSM_CurrentState Syntax void BswM_CanSM_CurrentState ( NetworkHandleType Network, CanSM_BswMCurrentStateType CurrentState ) Service ID [hex] 0x05 Sync/Async Synchronous Reentrancy Reentrant Network The CAN channel that the indicated state corresponds to.Parameters (in) CurrentState The current state of the CAN channel. Parameters (inout) None Parameters (out) None Return value None Description Function called by CanSM to indicate its current state. Available via BswM_CanSM.h",
+  "section": "8.3.2",
+  "page": 42
+ },
+ {
+  "id": "SWS_BswM_00050",
+  "text": "Service Name BswM_EthSM_CurrentState Syntax void BswM_EthSM_CurrentState ( NetworkHandleType Network, EthSM_NetworkModeStateType CurrentState ) Service ID [hex] 0x0d Sync/Async Synchronous Reentrancy Reentrant Network The Ethernet channel that the indicated state corresponds to.Parameters (in) CurrentState The current state of the Ethernet channel. Parameters (inout) None Parameters (out) None Return value None Description Function called by EthSM to indicate its current state. Available via BswM_EthSM.h",
+  "section": "8.3.13",
+  "page": 50
+ },
+ {
+  "id": "SWS_BswM_00051",
+  "text": "Service Name BswM_FrSM_CurrentState Syntax void BswM_FrSM_CurrentState ( NetworkHandleType Network, FrSM_BswM_StateType CurrentState ) Service ID [hex] 0x0c Sync/Async Synchronous Reentrancy Reentrant Network The FlexRay cluster that the indicated state corresponds to.Parameters (in) CurrentState The corrent state of the FlexRay cluster. ▽ 50 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 ∆ Parameters (inout) None Parameters (out) None Return value None Description Function called by FrSM to indicate its current state. Available via BswM_FrSM.h",
+  "section": "8.3.14",
+  "page": 51
+ },
+ {
+  "id": "SWS_BswM_00052",
+  "text": "Service Name BswM_LinSM_CurrentState Syntax void BswM_LinSM_CurrentState ( NetworkHandleType Network, LinSM_ModeType CurrentState ) Service ID [hex] 0x09 Sync/Async Synchronous Reentrancy Reentrant Network The LIN channel that the indicated state corresponds to.Parameters (in) CurrentState The current state of the LIN channel. Parameters (inout) None Parameters (out) None Return value None Description Function called by LinSM to indicate its current state. ▽ 54 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 ∆ Available via BswM_LinSM.h",
+  "section": "8.3.20",
+  "page": 55
+ },
+ {
+  "id": "SWS_BswM_00053",
+  "text": "Service Name BswM_MainFunction ▽ 62 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 ∆ Syntax void BswM_MainFunction ( void ) Service ID [hex] 0x03 Description Main function of the BswM Available via SchM_BswM.h",
+  "section": "8.5.1",
+  "page": 63
+ },
+ {
+  "id": "SWS_BswM_00054",
+  "text": "The parameters of the user defined functions, and their values, shall be defined at ECU configuration time using the BswMUserCallout configuration container.",
+  "section": "7.2.4",
+  "page": 30
+ },
+ {
+  "id": "SWS_BswM_00055",
+  "text": "The BswM shall abort the execution of an action list if an action returns E_NOT_OK and the corresponding BswMAbortOnFail configuration param- eter is set to \"true\".",
+  "section": "7.2.3",
+  "page": 30
+ },
+ {
+  "id": "SWS_BswM_00058",
+  "text": "Service Name BswM_LinSM_CurrentSchedule Syntax void BswM_LinSM_CurrentSchedule ( NetworkHandleType Network, LinIf_SchHandleType CurrentSchedule ) Service ID [hex] 0x0a Sync/Async Synchronous Reentrancy Reentrant Network The LIN channel that the schedule table switch have occurred on.Parameters (in) CurrentSchedule The currently active schedule table of the LIN channel. Parameters (inout) None Parameters (out) None Return value None Description Function called by LinSM to indicate the currently active schedule table for a specific LIN channel. Available via BswM_LinSM.h",
+  "section": "8.3.19",
+  "page": 54
+ },
+ {
+  "id": "SWS_BswM_00059",
+  "text": "Only the mode arbitration rules that use a specific immediate mode condition shall be evaluated by the BswM within the context of that specific mode request/indication.",
+  "section": "7.1.3.1",
+  "page": 22
+ },
+ {
+  "id": "SWS_BswM_00060",
+  "text": "All rules that use at least one deferred mode condition shall be evaluated during every execution of the main function of BswM.",
+  "section": "7.1.3.1",
+  "page": 23
+ },
+ {
+  "id": "SWS_BswM_00061",
+  "text": "A mode arbitration rule may contain any combination of imme- diate and deferred mode arbitration requests.",
+  "section": "7.1.3.1",
+  "page": 22
+ },
+ {
+  "id": "SWS_BswM_00062",
+  "text": "Action lists associated with rules evaluated in the context of the mode arbitration request shall be executed by BswM immediately when triggered by the mode arbitration, and not be deferred to the main function execution. Rationale: This allows very short latencies on mode requests when necessary .",
+  "section": "7.2.2",
+  "page": 28
+ },
+ {
+  "id": "SWS_BswM_00064",
+  "text": "If the container BswMModeInitValue does not exist or the ModeRequest does not already have an initial value, the BswM shall treat the corre- sponding mode condition as undefined and not use it for mode arbitration until the corresponding mode arbitration request has been updated for the first time.",
+  "section": "7.1.4",
+  "page": 24
+ },
+ {
+  "id": "SWS_BswM_00066",
+  "text": "The BswM shall act according to what is stated in T able 7.1 when a rule is evaluated for the first time after initialization. BswMRuleInitState BswMActionListExecution Rule evaluated to true Rule evaluated to false BSWM_UNDEFINED BSWM_TRIGGER Execute \"true\" action list Execute \"false\" action list BSWM_TRUE BSWM_TRIGGER Do nothing Execute \"false\" action list BSWM_FALSE BSWM_TRIGGER Execute \"true\" action list Do nothing BSWM_UNDEFINED BSWM_CONDITION Execute \"true\" action list Execute \"false\" action list BSWM_TRUE BSWM_CONDITION Execute \"true\" action list Execute \"false\" action list BSWM_FALSE BSWM_CONDITION Execute \"true\" action list Execute \"false\" action list Table 7.1: Usage of the BswMRuleInitState configuration parameter Note: The \"true\" and \"false\" action lists are optional for each rule.",
+  "section": "7.2.5",
+  "page": 30
+ },
+ {
+  "id": "SWS_BswM_00067",
+  "text": "If a rule is included in an action list as specified in [SWS_BswM_00019], any action list execution resulting from that evaluation shall be executed by BswM before it continues to execute the original action list.",
+  "section": "7.2.2",
+  "page": 28
+ },
+ {
+  "id": "SWS_BswM_00068",
+  "text": "BswM shall postpone mode arbitration requests received dur- ing the processing of its main function until it is finished. Any such postponed IM- MEDIA TE requests shall be processed directly before the BswM main function exits. Any such postponed DEFERRED requests shall be processed in the next subsequent BswM main function.",
+  "section": "7.1.3.1",
+  "page": 23
+ },
+ {
+  "id": "SWS_BswM_00069",
+  "text": "BswM shall postpone mode arbitration requests received dur- ing the processing of an IMMEDIA TE request until it is finished. Any such postponed IMMEDIA TE requests shall be processed directly after the processing of the original IMMEDIA TE request. Any such postponed DEFERRED requests shall be processed in the next subsequent BswM main function.",
+  "section": "7.1.3.1",
+  "page": 23
+ },
+ {
+  "id": "SWS_BswM_00075",
+  "text": "The BswM_MainFunction shall perform evaluation of all rules that uses at least one mode request with configuration parameter BswMRequestPro- cessing set to BSWM_DEFERRED as input.",
+  "section": "8.5.1",
+  "page": 63
+ },
+ {
+  "id": "SWS_BswM_00077",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall 58 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 ignore the mode request and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.26",
+  "page": 59
+ },
+ {
+  "id": "SWS_BswM_00078",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.3",
+  "page": 43
+ },
+ {
+  "id": "SWS_BswM_00079",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.7",
+  "page": 46
+ },
+ {
+  "id": "SWS_BswM_00080",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall 42 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 ignore the state indication and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.2",
+  "page": 43
+ },
+ {
+  "id": "SWS_BswM_00081",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall ignore the state indication and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.13",
+  "page": 50
+ },
+ {
+  "id": "SWS_BswM_00082",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall ignore the state indication and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.14",
+  "page": 51
+ },
+ {
+  "id": "SWS_BswM_00083",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall ignore the state indication and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.20",
+  "page": 55
+ },
+ {
+  "id": "SWS_BswM_00084",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.9",
+  "page": 47
+ },
+ {
+  "id": "SWS_BswM_00086",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error the BswM shall ignore the schedule indication and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.19",
+  "page": 54
+ },
+ {
+  "id": "SWS_BswM_00089",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter requested_mode shall be checked for being in the allowed range. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.26",
+  "page": 59
+ },
+ {
+  "id": "SWS_BswM_00090",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter requesting_user shall be checked for being in the allowed range. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the value BSWM_E_REQ_USER_OUT_OF_RANGE.",
+  "section": "8.3.26",
+  "page": 59
+ },
+ {
+  "id": "SWS_BswM_00091",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter RequestedMode shall be checked for being in the allowed range. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.3",
+  "page": 43
+ },
+ {
+  "id": "SWS_BswM_00093",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter RequestedMode shall be checked for being in the allowed range. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.7",
+  "page": 46
+ },
+ {
+  "id": "SWS_BswM_00095",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter CurrentState shall be checked for being in the allowed range. In case of an error, the BswM shall ignore the state indication and report the error to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.2",
+  "page": 43
+ },
+ {
+  "id": "SWS_BswM_00097",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter CurrentState shall be checked for being in the allowed range. In case of an error, the BswM shall ignore the state indication and report the error to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.13",
+  "page": 50
+ },
+ {
+  "id": "SWS_BswM_00099",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter CurrentState shall be checked for being in the allowed range. In case of an error, the BswM shall ignore the state indication and report the error to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.14",
+  "page": 51
+ },
+ {
+  "id": "SWS_BswM_00101",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter CurrentState shall be checked for being in the allowed range. In case of an error, the BswM shall ignore the state indication and report the error to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.20",
+  "page": 55
+ },
+ {
+  "id": "SWS_BswM_00103",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter CurrentState shall be checked for being in the allowed range. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.9",
+  "page": 47
+ },
+ {
+  "id": "SWS_BswM_00104",
+  "text": "Service Name BswM_NvM_CurrentBlockMode Syntax void BswM_NvM_CurrentBlockMode ( NvM_BlockIdType Block, NvM_RequestResultType CurrentBlockMode ) Service ID [hex] 0x16 Sync/Async Synchronous Reentrancy Reentrant Block The Block that the new NvM Mode corresponds to.Parameters (in) CurrentBlockMode The current block mode of the NvM block. Parameters (inout) None Parameters (out) None Return value None Description Function called by NvM to indicate the current block mode of an NvM block. Available via BswM_NvM.h",
+  "section": "8.3.24",
+  "page": 57
+ },
+ {
+  "id": "SWS_BswM_00109",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall ignore the block mode indication and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.24",
+  "page": 57
+ },
+ {
+  "id": "SWS_BswM_00110",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter CurrentBlockMode shall be checked for being in the allowed range. In case of an error, the BswM shall ignore the block mode indication and report the error to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.24",
+  "page": 57
+ },
+ {
+  "id": "SWS_BswM_00112",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.21",
+  "page": 55
+ },
+ {
+  "id": "SWS_BswM_00113",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter LinTpRequestedMode shall be checked for being in the allowed range. In case of an error the BswM shall ignore the mode request and report the error, to the Default 55 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.21",
+  "page": 56
+ },
+ {
+  "id": "SWS_BswM_00115",
+  "text": "If a T rue action list is configured for conditional execution, the BswM shall execute it every time the corresponding rule is evaluated to T rue.",
+  "section": "7.2.3",
+  "page": 29
+ },
+ {
+  "id": "SWS_BswM_00116",
+  "text": "If a False action list is configured for conditional execution, the BswM shall execute it every time the corresponding rule is evaluated to False.",
+  "section": "7.2.3",
+  "page": 29
+ },
+ {
+  "id": "SWS_BswM_00117",
+  "text": "BswM is not allowed to use results of previous arbitration rule evaluations as input for the logical expressions.",
+  "section": "7.1.3",
+  "page": 22
+ },
+ {
+  "id": "SWS_BswM_00118",
+  "text": "BswM_Init shall only require the OS and the SchM to be initial- ized before it can be called.",
+  "section": "8.3.16",
+  "page": 52
+ },
+ {
+  "id": "SWS_BswM_00119",
+  "text": "Service Name BswM_Deinit Syntax void BswM_Deinit ( void ) Service ID [hex] 0x04 Sync/Async Synchronous Reentrancy Non Reentrant Parameters (in) None Parameters (inout) None Parameters (out) None Return value None Description Deinitializes the BSW Mode Manager. Available via BswM.h",
+  "section": "8.3.8",
+  "page": 46
+ },
+ {
+  "id": "SWS_BswM_00120",
+  "text": "After a call of BswM_Deinit no mode processing shall be per- formed by BswM even if any mode requests are made or the BswM main function is called.",
+  "section": "8.3.8",
+  "page": 47
+ },
+ {
+  "id": "SWS_BswM_00131",
+  "text": "Service Name BswM_EcuM_CurrentWakeup Syntax void BswM_EcuM_CurrentWakeup ( EcuM_WakeupSourceType source, EcuM_WakeupStatusType state ) Service ID [hex] 0x10 ▽ 47 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 ∆ Sync/Async Synchronous Reentrancy Reentrant source Wakeup source(s) that changed state.Parameters (in) state The new state of the wakeup source(s) Parameters (inout) None Parameters (out) None Return value None Description Function called by EcuM to indicate the current state of a wakeup source. Available via BswM_EcuM.h",
+  "section": "8.3.10",
+  "page": 48
+ },
+ {
+  "id": "SWS_BswM_00132",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.10",
+  "page": 48
+ },
+ {
+  "id": "SWS_BswM_00133",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter state shall be checked for being in the allowed range. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.10",
+  "page": 48
+ },
+ {
+  "id": "SWS_BswM_00134",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.31",
+  "page": 62
+ },
+ {
+  "id": "SWS_BswM_00147",
+  "text": "The action(s) invoked as a result of evaluating a BswM arbitra- tion rule may be called only in the context of an action list.",
+  "section": "7.1.3",
+  "page": 22
+ },
+ {
+  "id": "SWS_BswM_00148",
+  "text": "43 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 Service Name BswM_ComM_CurrentPNCMode Syntax void BswM_ComM_CurrentPNCMode ( PNCHandleType PNC, ComM_PncModeType CurrentPncMode ) Service ID [hex] 0x15 Sync/Async Synchronous Reentrancy Reentrant PNC The handle of the PNC for which the current state is reported.Parameters (in) CurrentPncMode The current mode of the PNC. Parameters (inout) None Parameters (out) None Return value None Description Function is called by ComM to indicate the current mode of the PNC. Available via BswM_ComM.h",
+  "section": "8.3.4",
+  "page": 44
+ },
+ {
+  "id": "SWS_BswM_00149",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.4",
+  "page": 44
+ },
+ {
+  "id": "SWS_BswM_00150",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter CurrentPncMode shall be checked for being in the allowed range. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.4",
+  "page": 44
+ },
+ {
+  "id": "SWS_BswM_00152",
+  "text": "Service Name BswM_NvM_CurrentJobMode Syntax void BswM_NvM_CurrentJobMode ( NvM_MultiBlockRequestType MultiBlockRequest, NvM_RequestResultType CurrentJobMode ) Service ID [hex] 0x17 Sync/Async Synchronous Reentrancy Reentrant Parameters (in) MultiBlockRequest Indicates which multi block service this callback refers to. ▽ 57 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 ∆ CurrentJobMode Current state of the multi block job indicated by parameter Multi BlockRequest Parameters (inout) None Parameters (out) None Return value None Description Function called by NvM to inform the BswM about the current state of a multi block job. Available via BswM_NvM.h",
+  "section": "8.3.25",
+  "page": 58
+ },
+ {
+  "id": "SWS_BswM_00153",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall ignore the job mode indication and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.25",
+  "page": 58
+ },
+ {
+  "id": "SWS_BswM_00154",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter MultiBlockRequest shall be checked for being in the allowed range. In case of an error, the BswM shall ignore the job mode indication and report the error to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.25",
+  "page": 58
+ },
+ {
+  "id": "SWS_BswM_00156",
+  "text": "Service Name BswM_LinTp_RequestMode Syntax void BswM_LinTp_RequestMode ( NetworkHandleType Network, LinTp_Mode LinTpRequestedMode ) Service ID [hex] 0x0b Sync/Async Synchronous Reentrancy Reentrant Network The LIN channel that the LinTp mode request relates to.Parameters (in) LinTpRequestedMode The requested LIN TP mode. Parameters (inout) None Parameters (out) None Return value None Description Function called by LinTP to request a mode for the corresponding LIN channel. The LinTp_ Mode correlates to the LIN schedule table that should be used. Available via BswM_LinTp.h",
+  "section": "8.3.21",
+  "page": 55
+ },
+ {
+  "id": "SWS_BswM_00157",
+  "text": "Service Name BswM_WdgM_RequestPartitionReset (obsolete) Syntax void BswM_WdgM_RequestPartitionReset ( ApplicationType Application ) Service ID [hex] 0x11 Sync/Async Synchronous Reentrancy Reentrant Parameters (in) Application The identifier of an OS-Application Parameters (inout) None Parameters (out) None Return value None Description Function called by WdgM to request a partition reset. Tags: atp.Status=obsolete Available via BswM_WdgM.h",
+  "section": "8.3.31",
+  "page": 62
+ },
+ {
+  "id": "SWS_BswM_00158",
+  "text": "Service Name BswM_Dcm_ApplicationUpdated Syntax void BswM_Dcm_ApplicationUpdated ( void ) Service ID [hex] 0x14 Sync/Async Synchronous Reentrancy Reentrant Parameters (in) None Parameters (inout) None Parameters (out) None Return value None Description This function is called by the DCM in order to report an updated application. Available via BswM_Dcm.h",
+  "section": "8.3.6",
+  "page": 45
+ },
+ {
+  "id": "SWS_BswM_00159",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.6",
+  "page": 45
+ },
+ {
+  "id": "SWS_BswM_00165",
+  "text": "Service Name BswM_J1939DcmBroadcastStatus Syntax void BswM_J1939DcmBroadcastStatus ( uint16 NetworkMask ) ▽ 52 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 ∆ Service ID [hex] 0x1b Sync/Async Synchronous Reentrancy Reentrant Parameters (in) NetworkMask Mask containing one bit for each available network. The bit position within this mask corresponds to the ComMChannel.Com MChannelId for the communication channel (so ComMChannelID 0 is represented by bit 0). The meaning for each bit is: 1: Network enabled, 0: Network disabled. Note: only the first 16 communication channel IDs can be supported by this API. Parameters (inout) None Parameters (out) None Return value None Description This API tells the BswM the desired communication status of the available networks. The status will typically be activated via COM I-PDU group switches. Available via BswM_J1939Dcm.h",
+  "section": "8.3.17",
+  "page": 53
+ },
+ {
+  "id": "SWS_BswM_00189",
+  "text": "The BswM shall perform mode arbitration based on incoming mode switch notifications.",
+  "section": "7.1.3",
+  "page": 22
+ },
+ {
+  "id": "SWS_BswM_00193",
+  "text": "Service Name BswM_BswMPartitionRestarted Syntax void BswM_BswMPartitionRestarted ( void ) Service ID [hex] 0x1e Sync/Async Synchronous Reentrancy Reentrant Parameters (in) None Parameters (inout) None Parameters (out) None Return value None Description Function called by Restart T ask if the partition containing the BswM has been restarted. Available via BswM.h",
+  "section": "8.3.1",
+  "page": 42
+ },
+ {
+  "id": "SWS_BswM_00194",
+  "text": "Service Name BswM_J1939Nm_StateChangeNotification Syntax void BswM_J1939Nm_StateChangeNotification ( NetworkHandleType Network, uint8 Node, Nm_StateType NmState ) Service ID [hex] 0x18 Sync/Async Synchronous Reentrancy Reentrant Network Identification of the J1939 channel Node Identification of the J1939 node Parameters (in) NmState Current (new) state of the J1939 node Parameters (inout) None Parameters (out) None Return value None Description Notification of current J1939Nm state after state changes. Available via BswM_J1939Nm.h",
+  "section": "8.3.18",
+  "page": 53
+ },
+ {
+  "id": "SWS_BswM_00200",
+  "text": "Name modeNotificationPort_{ArbName}_{ModeName} Kind RequiredPort Interface-Ref {ecuc(BswM/BswMConfig/BswMArbitration/BswMModeRequestPort/BswMModeRequestSource/ BswMSwcModeNotification.BswMSwcModeNotificationModeDeclarationGroupPrototype Ref)}.parent Description – ▽ 66 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 ∆ Variation ArbName = {ecuc(BswM/BswMConfig/BswMArbitration.SHORT -NAME)} ModeName = {ecuc(BswM/BswMConfig/BswMArbitration/BswMModeRequestPort/BswMMode RequestSource/BswMSwcModeNotification.SHORT -NAME)}",
+  "section": "8.7.2.1",
+  "page": 67
+ },
+ {
+  "id": "SWS_BswM_00201",
+  "text": "Name modeRequestPort_{ArbName}_{ReqName} Kind RequiredPort Interface-Ref {ecuc(BswM/BswMConfig/BswMArbitration/BswMModeRequestPort.BswMModeRequest Source.BswMSwcModeRequest.BswMSwcModeRequestVariableDataPrototypeRef)}.parent Description – Variation ArbName = {ecuc(BswM/BswMConfig/BswMArbitration.SHORT -NAME)} ReqName = {ecuc(BswM/BswMConfig/BswMArbitration/BswMModeRequestPort.SHORT -NAME)}",
+  "section": "8.7.2.2",
+  "page": 67
+ },
+ {
+  "id": "SWS_BswM_00202",
+  "text": "Name modeSwitchPort_{ModConName}_{SwitchName} Kind ProvidedPort Interface-Ref {ecuc(BswM/BswMConfig/BswMModeControl/BswMSwitchPort.BswMModeSwitchInterfaceRef)} Description – Variation {ecuc(BswM/BswMConfig/BswMModeControl/BswMSwitchPort.BswMModeSwitchInterfaceRef} != NULL ModConName = {ecuc(BswM/BswMConfig/BswMModeControl.SHORT -NAME)} SwitchName = {ecuc(BswM/BswMConfig/BswMModeControl/BswMSwitchPort.SHORT -NAME)}",
+  "section": "8.7.2.3",
+  "page": 67
+ },
+ {
+  "id": "SWS_BswM_00203",
+  "text": "In case BswMModeInitValue is defined the BswM shall ini- tialize the corresponding BswMModeRequestSource with either the BswMBswMod- eInitValue or the BswMCompuScaleModeValue while the BswM is initialized. The BswM shall reject configurations which contain both a BswMBswModeInitValue and a BswMCompuScaleModeValue for a single BswMModeInitValue. This initializa- tion value shall be used for the arbitration rule until the corresponding mode arbitra- tion request has been updated e.g. each call of BswM_RequestMode shall update the GenericRequest mode.",
+  "section": "7.1.4",
+  "page": 24
+ },
+ {
+  "id": "SWS_BswM_00204",
+  "text": "Service Name BswM_Sd_ClientServiceCurrentState Syntax void BswM_Sd_ClientServiceCurrentState ( uint16 SdClientServiceHandleId, Sd_ClientServiceCurrentStateType CurrentClientState ) Service ID [hex] 0x1f Sync/Async Synchronous Reentrancy Reentrant SdClientServiceHandleId HandleId to identify the ClientServiceParameters (in) CurrentClientState Current state of the ClientService Parameters (inout) None Parameters (out) None Return value None Description Function called by Service Discovery to indicate current state of the Client Service (available/ down). Available via BswM_Sd.h",
+  "section": "8.3.27",
+  "page": 59
+ },
+ {
+  "id": "SWS_BswM_00205",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.27",
+  "page": 59
+ },
+ {
+  "id": "SWS_BswM_00206",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter CurrentClientState shall be checked for being in the allowed range. In case of an error the BswM shall ignore the mode request and report the error, to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.27",
+  "page": 59
+ },
+ {
+  "id": "SWS_BswM_00207",
+  "text": "Service Name BswM_Sd_ConsumedEventGroupCurrentState Syntax void BswM_Sd_ConsumedEventGroupCurrentState ( uint16 SdConsumedEventGroupHandleId, Sd_ConsumedEventGroupCurrentStateType ConsumedEventGroupState ) Service ID [hex] 0x21 Sync/Async Synchronous Reentrancy Reentrant SdConsumedEventGroup HandleId HandleId to identify the Consumed EventgroupParameters (in) ConsumedEventGroup State Status of the Consumed Eventgroup Parameters (inout) None Parameters (out) None Return value None Description Function called by Service Discovery to indicate current status of the Consumed Eventgroup (available/down). Available via BswM_Sd.h",
+  "section": "8.3.28",
+  "page": 60
+ },
+ {
+  "id": "SWS_BswM_00208",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.28",
+  "page": 60
+ },
+ {
+  "id": "SWS_BswM_00209",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter ConsumedEventGroupState shall be checked for being in the allowed range. In case of an error the BswM shall ignore the mode request and report the error, to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.28",
+  "page": 60
+ },
+ {
+  "id": "SWS_BswM_00210",
+  "text": "Service Name BswM_Sd_EventHandlerCurrentState Syntax void BswM_Sd_EventHandlerCurrentState ( uint16 SdEventHandlerHandleId, Sd_EventHandlerCurrentStateType EventHandlerStatus ) Service ID [hex] 0x20 Sync/Async Synchronous ▽ 60 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 ∆ Reentrancy Reentrant SdEventHandlerHandleId HandleId to identify the EventHandlerParameters (in) EventHandlerStatus Status of the EventHandler Parameters (inout) None Parameters (out) None Return value None Description Function called by Service Discovery to indicate current status of the EventHandler (requested/ released). Available via BswM_Sd.h",
+  "section": "8.3.29",
+  "page": 61
+ },
+ {
+  "id": "SWS_BswM_00211",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.29",
+  "page": 61
+ },
+ {
+  "id": "SWS_BswM_00212",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter EventHandlerStatus shall be checked for being in the allowed range. In case of an error the BswM shall ignore the mode request and report the error, to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.29",
+  "page": 61
+ },
+ {
+  "id": "SWS_BswM_00213",
+  "text": "40 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 Name BswM_ConfigT ype Kind Structure - Type – Elements Comment The contents of this structure depends on the configuration variant. Description This structure contains all post-build configurable parameters of the BSW Mode Manager. A pointer to this structure is passed to the BSW Mode Manager initialization function for configuration. Available via BswM.h",
+  "section": "8.2.1",
+  "page": 41
+ },
+ {
+  "id": "SWS_BswM_00214",
+  "text": "Name BswM_ModeT ype Kind T ype Derived from uint16 Range 0-65535 – – Description This type identifies the modes that can be requested by BswM Users. Available via BswM.h",
+  "section": "8.2.2",
+  "page": 41
+ },
+ {
+  "id": "SWS_BswM_00216",
+  "text": "Name BswM_UserT ype Kind T ype Derived from uint16 Range 0-65535 – – Description This type identifies a BswM User that makes mode requests to the BswM. Available via BswM.h",
+  "section": "8.2.3",
+  "page": 41
+ },
+ {
+  "id": "SWS_BswM_00217",
+  "text": "Service Name BswM_ComM_InitiateReset Syntax void BswM_ComM_InitiateReset ( void ) Service ID [hex] 0x22 Sync/Async Synchronous Reentrancy Non Reentrant Parameters (in) None Parameters (inout) None Parameters (out) None Return value None Description Function is called by ComM to signal a shutdown. Available via BswM_ComM.h 44 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11",
+  "section": "8.3.5",
+  "page": 45
+ },
+ {
+  "id": "SWS_BswM_00220",
+  "text": "The BswMRequestProcessing (e.g. IMMEDIA TE, DE- FERRED) configuration associated with a BswMTimer shall be ignored by the BswM. The BswM shall treat the processing of a BswMTimer always as DEFERRED; the BswMTimer is arbitrated during the BswM main function.",
+  "section": "7.3",
+  "page": 31
+ },
+ {
+  "id": "SWS_BswM_00223",
+  "text": "If a top-level action list is triggered by multiple rules during mode arbitration, this shall result in a single trigger to execute the action list during mode control.",
+  "section": "7.2.2",
+  "page": 28
+ },
+ {
+  "id": "SWS_BswM_00227",
+  "text": "If the BswMDevErrorDetect switch is enabled, the routine shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall 48 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 ignore the mode request and report the error to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.11",
+  "page": 49
+ },
+ {
+  "id": "SWS_BswM_00228",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter State shall be checked for being in the allowed range. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.11",
+  "page": 49
+ },
+ {
+  "id": "SWS_BswM_00229",
+  "text": "If the BswMDevErrorDetect switch is enabled, the parameter CurrentStatus shall be checked for being in the allowed range. In case of an error, the BswM shall ignore the mode request and report the error to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.11",
+  "page": 49
+ },
+ {
+  "id": "SWS_BswM_00230",
+  "text": "Type of error Related error code Error value A service was called prior to initialization BSWM_E_UNINIT 0x01 A null pointer was passed as an argument BSWM_E_NULL_POINTER 0x02 A parameter was invalid (unspecific) BSWM_E_P ARAM_INVALID 0x03 A requesting user was out of range BSWM_E_REQ_USER_OUT_OF_RANGE 0x04 A requested mode was out of range BSWM_E_REQ_MODE_OUT_OF_RANGE 0x05 The provided configuration is inconsistent BSWM_E_P ARAM_CONFIG 0x06 A parameter pointer was invalid BSWM_E_P ARAM_POINTER 0x07 Invalid configuration set selection BSWM_E_INIT_FAILED 0x08",
+  "section": "7.5.1",
+  "page": 32
+ },
+ {
+  "id": "SWS_BswM_00235",
+  "text": "Service Name BswM_Nm_CarWakeUpIndication Syntax void BswM_Nm_CarWakeUpIndication ( NetworkHandleType Network ) Service ID [hex] 0x24 Sync/Async Synchronous Reentrancy Reentrant Parameters (in) Network Identification of the Nm-Channel Parameters (inout) None Parameters (out) None Return value None Description Function called by Nm to indicate a CarWakeup. Available via BswM_Nm.h",
+  "section": "8.3.22",
+  "page": 56
+ },
+ {
+  "id": "SWS_BswM_00236",
+  "text": "The BswM shall only accept configurations where the Vari- ableDataPrototype, which is referenced by a BswMSwcModeRequest, belongs to a SenderReceiverInterface.",
+  "section": "10.2.45",
+  "page": 103
+ },
+ {
+  "id": "SWS_BswM_00237",
+  "text": "The BSW Mode Manager shall use only the imported types which are listed in SWS_BswM_00001.",
+  "section": "8.1",
+  "page": 39
+ },
+ {
+  "id": "SWS_BswM_00238",
+  "text": "32 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 Type of error Related error code Error value An action returned E_NOT_OK BSWM_E_ACTION_FAILED 0x80..0xFF (as configured in BswMReportFail RuntimeErrorId)",
+  "section": "7.5.2",
+  "page": 33
+ },
+ {
+  "id": "SWS_BswM_00239",
+  "text": "If BswMReportFailRuntimeErrorId is configured for a BswMActionListItem, then the BswM shall report a BSWM_E_ACTION_FAILED Runtime Error to Det if the action returns E_NOT_OK. The ErrorId reported in the BSWM_E_ACTION_FAILED Runtime Error is given by the value configured in BswM- ReportFailRuntimeErrorId.",
+  "section": "7.5.2",
+  "page": 33
+ },
+ {
+  "id": "SWS_BswM_00240",
+  "text": "The BswM shall reject configurations where a BswMRe- portFailRuntimeErrorId does not lie within the range of values given for BSWM_E_ACTION_FAILED in the Runtime Error T ypes table.",
+  "section": "7.5.2",
+  "page": 33
+ },
+ {
+  "id": "SWS_BswM_00241",
+  "text": "BswM shall only arbitrate rules that do not contain any unde- fined mode conditions within its logical expressions.",
+  "section": "7.1.4",
+  "page": 24
+ },
+ {
+  "id": "SWS_BswM_00242",
+  "text": "The BswM shall reject configurations where a BswMLogical- Expression has a BswMLogicalOperator equal to BSWM_NAND and its number of BswMArgumentRefs is not two.",
+  "section": "10.2.4",
+  "page": 74
+ },
+ {
+  "id": "SWS_BswM_00243",
+  "text": "The BswM shall reject configurations where a BswMLogical- Expression has a BswMLogicalOperator equal to BSWM_NOT and its number of BswMArgumentRefs is not one.",
+  "section": "10.2.4",
+  "page": 75
+ },
+ {
+  "id": "SWS_BswM_00244",
+  "text": "The BswM shall implement BSWM_XOR to evaluate to TRUE if an odd number of its arguments is TRUE, and evaluate to FALSE if an even number of its arguments is TRUE.",
+  "section": "10.2.4",
+  "page": 75
+ },
+ {
+  "id": "SWS_BswM_00245",
+  "text": "The BswM shall implement BSWM_AND to evaluate to TRUE if all of its arguments are TRUE, and evaluate to FALSE if at least one of its arguments is FALSE.",
+  "section": "10.2.4",
+  "page": 75
+ },
+ {
+  "id": "SWS_BswM_00246",
+  "text": "The BswM shall implement BSWM_NAND to evaluate to FALSE if all of its arguments are TRUE, and evaluate to TRUE if at least one of its arguments is FALSE.",
+  "section": "10.2.4",
+  "page": 75
+ },
+ {
+  "id": "SWS_BswM_00247",
+  "text": "The BswM shall implement BSWM_OR to evaluate to FALSE if all of its arguments are FALSE, and evaluate to TRUE if at least one of its arguments is TRUE.",
+  "section": "10.2.4",
+  "page": 75
+ },
+ {
+  "id": "SWS_BswM_00248",
+  "text": "The BswM shall implement BSWM_NOT to evaluate to FALSE if its argument is TRUE, and evaluate to TRUE if its argument is FALSE.",
+  "section": "10.2.4",
+  "page": 75
+ },
+ {
+  "id": "SWS_BswM_00249",
+  "text": "The BswM_J1939DcmBroadcastStatus parameter Net- workMask is a bitmask where the bit position corresponds to the ComMChannel. ComMChannelId which is referenced by the BswMJ1939DcmBroadcastStatus. BswMJ1939DcmChannelRef parameter. For rule processing, the BswM shall use the value in NetworkMask of the bit (0 or 1) which lies in the position configured by the referenced ComMChannel.ComMChannelId.",
+  "section": "8.3.17",
+  "page": 53
+ },
+ {
+  "id": "SWS_BswM_00250",
+  "text": "Since NetworkMask (in the BswM_- J1939DcmBroadcastStatus API) is 16 bits wide, the BswM shall reject configurations where the ComMChannel.ComMChannelId referenced by a BswMJ1939DcmBroadcastStatus.BswMJ1939DcmChannelRef parameter is greater than 15.",
+  "section": "10.2.29",
+  "page": 93
+ },
+ {
+  "id": "SWS_BswM_00251",
+  "text": "Upon initialization of the BswM, all BswMEventRequestPorts shall be initialized to a CLEAR state.",
+  "section": "7.1.4",
+  "page": 24
+ },
+ {
+  "id": "SWS_BswM_00252",
+  "text": "When a BswMModeCondition has BswMConditionType = BSWM_EVENT_IS_SET and references a BswMEventRequestPort: • if the BswMEventRequestPort is in a SET state, then the BswMModeCondi- tion shall evaluate to TRUE • if the BswMEventRequestPort is in a CLEAR state, then the BswMModeCon- dition shall evaluate to FALSE",
+  "section": "7.1.2",
+  "page": 21
+ },
+ {
+  "id": "SWS_BswM_00253",
+  "text": "When a BswMModeCondition has BswMConditionType = BSWM_EVENT_IS_CLEARED and references a BswMEventRequestPort: • if the BswMEventRequestPort is in a SET state, then the BswMModeCondi- tion shall evaluate to FALSE • if the BswMEventRequestPort is in a CLEAR state, then the BswMModeCon- dition shall evaluate to TRUE",
+  "section": "7.1.2",
+  "page": 21
+ },
+ {
+  "id": "SWS_BswM_00254",
+  "text": "When the BswM receives an event on a configured BswMEven- tRequestPort (e.g. BswM_ComM_InitiateReset is called by the ComM), the BswMEventRequestPort shall be placed in a SET state.",
+  "section": "7.1.2",
+  "page": 21
+ },
+ {
+  "id": "SWS_BswM_00255",
+  "text": "When a BswMClearEventRequest action is executed on a BswMEventRequestPort, the BswMEventRequestPort shall be placed in a CLEAR state.",
+  "section": "7.1.2",
+  "page": 21
+ },
+ {
+  "id": "SWS_BswM_00257",
+  "text": "It shall be possible to configure the BswM to execute the mode arbitration immediately when an event is set. This is configured by setting the BswMEventRequestProcessing configuration parameter (within the BswMEven- tRequestPort container) to BSWM_IMMEDIA TE.",
+  "section": "7.1.3.1",
+  "page": 23
+ },
+ {
+  "id": "SWS_BswM_00258",
+  "text": "It shall (also) be possible to defer the mode arbitration until the execution of the main function of the BswM. This is configured by setting the BswMEventRequestProcessing configuration parameter (within the BswMEven- tRequestPort container) to BSWM_DEFERRED.",
+  "section": "7.1.3.1",
+  "page": 23
+ },
+ {
+  "id": "SWS_BswM_00259",
+  "text": "BswMModeSwitchErrorEvent specifies a SwcMode- ManagerErrorEvent, which the BswM shall create in its SWCD. The Mod- eDeclarationGroupPrototype which is referenced by the SwcModeManager- ErrorEvent.modeGroup shall correspond to the one used by the ModeSwitchIn- terface which is referenced by the BswMSwitchPort that is configured by the BswMRteSwitchPortRef in BswMModeSwitchErrorEvent. The BswM shall create an associated runnable which will arbitrate the SwcModeManagerErrorEvent.",
+  "section": "10.2.34",
+  "page": 97
+ },
+ {
+  "id": "SWS_BswM_00260",
+  "text": "When executing a BswMActionList: the BswM shall start with the BswMActionListItem that has the lowest-valued BswMActionListIte- mIndex. Subsequent BswMActionListItems shall be executed in increasing order of their BswMActionListItemIndex.",
+  "section": "7.2.2",
+  "page": 29
+ },
+ {
+  "id": "SWS_BswM_00261",
+  "text": "Each BswMTimer shall be stopped (BSWM_TIMER_ STOPPED) during initialization.",
+  "section": "7.3",
+  "page": 31
+ },
+ {
+  "id": "SWS_BswM_00262",
+  "text": "The action BswMTimerAction BSWM_TIMER_ST ART shall reload the referenced BswMTimer (via BswMTimerRef) with the corresponding timer value (refer BswMTimerValue) and change the mode of the timer to BSWM_TIMER_ ST ARTED.",
+  "section": "7.3",
+  "page": 31
+ },
+ {
+  "id": "SWS_BswM_00263",
+  "text": "Each BswMTimer in mode BSWM_TIMER_ST ARTED shall decrement the timer during the BswM_MainFunction (by the cycle time of the BswM_MainFunction).",
+  "section": "7.3",
+  "page": 31
+ },
+ {
+  "id": "SWS_BswM_00264",
+  "text": "In case a BswMTimer which is in mode BSWM_TIMER_ ST ARTED expires, its mode shall be changed to BSWM_TIMER_EXPIRED, and then the BswMTimer mode shall be arbitrated in the same BswM_MainFunction cycle.",
+  "section": "7.3",
+  "page": 31
+ },
+ {
+  "id": "SWS_BswM_00265",
+  "text": "The action BswMTimerAction BSWM_TIMER_STOP shall stop the referenced BswMTimer (via BswMTimerRef) immediately and change its’ mode to BSWM_TIMER_STOPPED.",
+  "section": "7.3",
+  "page": 31
+ },
+ {
+  "id": "SWS_BswM_00266",
+  "text": "If the BswMDevErrorDetect switch is enabled, BswM_modeNotificationPort shall check if the BSW Mode Manager is initialized. In case of an error, the BswM shall ignore the notification and report the error to the Default Error T racer with the error code BSWM_E_UNINIT",
+  "section": "8.7.2.1",
+  "page": 67
+ },
+ {
+  "id": "SWS_BswM_00267",
+  "text": "If the BswMDevErrorDetect switch is enabled, the BswM_- EthIf_PortGroupLinkStateChg routine shall check if the BSW Mode Manager is initialized. In case the BswM is not initialized, the BswM shall ignore the mode request and report to the Default Error T racer with the error code BSWM_E_UNINIT .",
+  "section": "8.3.12",
+  "page": 49
+ },
+ {
+  "id": "SWS_BswM_00268",
+  "text": "If the BswMDevErrorDetect switch is enabled, the BswM_- EthIf_PortGroupLinkStateChg parameters shall be checked for being in the al- lowed range. In case of an error, the BswM shall ignore the mode request and report to the Default Error T racer with the value BSWM_E_REQ_MODE_OUT_OF_RANGE.",
+  "section": "8.3.12",
+  "page": 49
+ },
+ {
+  "id": "SWS_BswM_00269",
+  "text": "When a BswMEcuMDriverInitListBswM action is executed, the BswM shall call the EcuM_AL_DriverInitBswM_<EcuMDriverInitListB- swM.shortName>(void) function which is provided by the EcuM.",
+  "section": "10.2.60",
+  "page": 119
+ },
+ {
+  "id": "SWS_BswM_00271",
+  "text": "If the action BswMRteStart is configured, the function Rte_- Start(void) shall be called by the BswM when the action is executed.",
+  "section": "10.2.74",
+  "page": 134
+ },
+ {
+  "id": "SWS_BswM_00272",
+  "text": "If the action BswMRteStop is configured, the function Rte_- Stop(void) shall be called by the BswM when the action is executed.",
+  "section": "10.2.75",
+  "page": 134
+ },
+ {
+  "id": "SWS_BswM_00273",
+  "text": "When a BswMPduGroupSwitch action is executed, the BswM shall call Com_IpduGroupStart for each BswMEnabledPduGroupRef, and call Com_IpduGroupStop for each BswMDisabledPduGroupRef. The ordering of these calls to Com is undefined.",
+  "section": "10.2.71",
+  "page": 131
+ },
+ {
+  "id": "SWS_BswM_00274",
+  "text": "When a BswMDeadlineMonitoringControl action is exe- cuted, the BswM shall call Com_EnableReceptionDM for each BswMEnabledDMP- duGroupRef, and call Com_DisableReceptionDM for each BswMDisabledDMP- duGroupRef. The ordering of these calls to Com is undefined.",
+  "section": "10.2.59",
+  "page": 118
+ },
+ {
+  "id": "SWS_BswM_00275",
+  "text": "If more than one top-level Action List is to be executed during Mode Control, the order of execution shall start with the highest BswMActionListPrior- ity and continue to the lowest. In cases where BswMActionListPriority are the same, the order of execution is arbitrary .",
+  "section": "7.2.2",
+  "page": 28
+ },
+ {
+  "id": "SWS_BswM_00276",
+  "text": "The BswMActionListPriority shall be ignored for action lists which are not top-level action lists.",
+  "section": "7.2.2",
+  "page": 28
+ },
+ {
+  "id": "SWS_BswM_00277",
+  "text": "An Action List with no BswMActionListPriority shall be interpreted as having a BswMActionListPriority equal to 0.",
+  "section": "7.2.2",
+  "page": 28
+ },
+ {
+  "id": "SWS_BswM_00278",
+  "text": "The BswM shall perform mode arbitration based on event re- quests as well as the clearing of event requests.",
+  "section": "7.1.3",
+  "page": 21
+ },
+ {
+  "id": "SWS_BswM_00279",
+  "text": "The availability of private header files (e.g. BswM_ComM.h) between the BswM and other basic software modules depend on the configuration parameters (BswM<BSWModule>Enabled). If the configuration parameter is set to 157 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 false, then no private header shall be provided by BswM for that BSWModule.",
+  "section": "10.2.90",
+  "page": 158
+ },
+ {
+  "id": "SWS_BswM_00280",
+  "text": "When a BswMSdServiceGroupSwitch action is executed, the BswM shall call Sd_ServiceGroupStart for each BswMEnabledSdService- GroupRef, and call Sd_ServiceGroupStop for each BswMDisabledSdService- GroupRef. The ordering of these calls to Sd is undefined. Note: If a strict ordering of the calls to Sd_ServiceGroupStart or Sd_Service- GroupStop is required, then this can be achieved by configuring individual actions (BswMSdServiceGroupSwitch, each with just a single BswM*ServiceGroupRef) within an ordered action list.",
+  "section": "10.2.81",
+  "page": 141
+ },
+ {
+  "id": "SWS_BswM_00281",
+  "text": "BswM shall update the value of an IMMEDIA TE mode request port directly before the arbitration actually takes place and not when the mode request port is triggered.",
+  "section": "7.1.3.1",
+  "page": 23
+ },
+ {
+  "id": "SWS_BswM_00282",
+  "text": "BswM shall update the value of a DEFERRED mode request port when the mode request port is triggered.",
+  "section": "7.1.3.1",
+  "page": 23
+ },
+ {
+  "id": "SWS_BswM_00283",
+  "text": "The following table describes which request port shall be trig- gered when an API is called. In addition, it describes which configuration parameter(s) correspond to which API parameter(s) API Request Port API / Config-parameter pairs BswM_BswMPartitionRestarted BswMPartitionRestarted - BswM_CanSM_CurrentState BswMCanSMIndication Network / BswMCanSMChan-nelRef BswM_ComM_CurrentMode BswMComMIndication Network / BswMComMChannel-Ref BswM_ComM_CurrentPNCMode BswMComMPncRequest PNC / BswMComMPncRef BswM_ComM_InitiateReset BswMComMInitiateReset - BswM_Dcm_ApplicationUpdated BswMDcmApplicationUpdatedIndication - BswM_Dcm_Communication- Mode_CurrentState BswMDcmComModeRequest Network / BswMDcmComMChannelRef BswM_EcuM_CurrentState BswMEcuMIndication - BswM_EcuM_CurrentWakeup BswMEcuMWakeupSource source / BswMEcuMWakeupSr-cRef BswM_EcuM_RequestedState BswMEcuMRUNRequestIndica-tion State / BswMEcuMRUNRequestProtocolPort BswM_EthIf_PortGroupLink StateChg BswMEthIfPortGroupLinkState- Chg PortGroupIdx / BswMEthIf SwitchPortGroupRef BswM_EthSM_CurrentState BswMEthSMIndication Network / BswMEthSMChannel-Ref BswM_FrSM_CurrentState BswMFrSMIndication Network / BswMFrSMChannel-Ref BswM_J1939DcmBroadcast Status BswMJ1939DcmBroadcast Status NetworkMask / BswMJ1939 DcmChannelRef BswM_J1939Nm_StateChange Notification BswMJ1939NmIndication Network / BswMJ1939NmChan- nelRef, Node / BswMJ1939Nm NodeRef BswM_LinSM_CurrentSchedule BswMLinScheduleIndication Network / BswMLinSMChannelRef BswM_LinSM_CurrentState BswMLinSMIndication Network / BswMLinSMChannelRef BswM_LinTp_RequestMode BswMLinTpModeRequest Network / BswMLinTpChannelRef BswM_Nm_CarWakeUpIndica- tion BswMNmCarWakeUpIndication - BswM_Nm_StateChangeNotifi- cation BswMNmStateChangeNotifica- tion Network / BswMNmChannelRef BswM_NvM_CurrentBlockMode BswMNvMRequest Block / BswMNvMBlockRef BswM_NvM_CurrentJobMode BswMNvMJobModeIndication MultiBlockRequest / BswMNvmService BswM_RequestMode BswMGenericRequest requesting_user / BswMModeRequesterId BswM_Sd_ClientServiceCur- rentState BswMSdClientServiceCurrent State SdClientServiceHandleId / BswMSdClientMethodsRef BswM_Sd_ConsumedEvent GroupCurrentState BswMSdConsumedEventGroup CurrentState SdConsumedEventGroupHan- dleId / BswMSdConsumedEvent GroupRef 68 of 159 Document ID 313: AUTOSAR_SWS_BSWModeManager Specification of Basic Software Mode Manager AUTOSAR CP R21-11 API Request Port API / Config-parameter pairs BswM_Sd_EventHandlerCur- rentState BswMSdEventHandlerCurrent State SdEventHandlerHandleId / BswMSdEventHandlerRef BswM_WdgM_RequestPartition Reset BswMWdgMRequestPartition Reset - Table 8.1: API to Request Port Mappings",
+  "section": "8.8",
+  "page": 69
+ },
+ {
+  "id": "SWS_BswM_00284",
+  "text": "For BswMSwitchAckNotification, if the referenced BswM- SwitchPort is configured with BswMModeSwitchInterfaceRef without a BswM- SchMModeDeclarationGroupRef: This specifies a ModeSwitchedAckEvent, which the BswM shall create in its SWCD. The BswM shall create an associated runnable; the C definition of this runnable/schedulable entity shall arbitrate the ModeSwitchedAck- Event.",
+  "section": "10.2.46",
+  "page": 104
+ },
+ {
+  "id": "SWS_BswM_00285",
+  "text": "For BswMSwitchAckNotification, if the referenced BswM- SwitchPort is configured with BswMSchMModeDeclarationGroupRef: This spec- ifies a BswModeSwitchedAckEvent, which the BswM shall create in its BSWMD. The BswM shall create an associated runnable; the C definition of this runnable/schedula- ble entity shall arbitrate the BswModeSwitchedAckEvent.",
+  "section": "10.2.46",
+  "page": 104
+ },
+ {
+  "id": "SWS_BswM_00286",
+  "text": "If the action BswMEthIfStartAllPorts is configured, the function EthIf_StartAllPorts(void) shall be called by the BswM when the ac- tion is executed.",
+  "section": "10.2.64",
+  "page": 123
+ },
+ {
+  "id": "SWS_BswM_09999",
+  "text": "These requirements are not applicable to this specifica- tion.",
+  "section": "10.3",
+  "page": 159
+ },
+ {
+  "id": "SWS_BswM_91001",
+  "text": "Service Name BswM_EthIf_PortGroupLinkStateChg Syntax void BswM_EthIf_PortGroupLinkStateChg ( EthIf_SwitchPortGroupIdxType PortGroupIdx, EthTrcv_LinkStateType PortGroupState ) Service ID [hex] 0x26 Sync/Async Synchronous Reentrancy Reentrant PortGroupIdx The port group index in the context of the Ethernet InterfaceParameters (in) PortGroupState The state of the port group. State is derived from the physical link of the Ethernet T ransceiver: ETHTRCV_LINK_ST A TE_DOWN == Port group has link down. ETHTRCV_LINK_ST A TE_ACTIVE == Port group has link up. Parameters (inout) None Parameters (out) None Return value None Description Function called by EthIf to indicate the link state change of a certain Ethernet switch port group. Available via BswM_EthIf.h",
+  "section": "8.3.12",
+  "page": 49
+ },
+ {
+  "id": "SWS_BswM_91002",
+  "text": "Service Name BswM_Nm_StateChangeNotification Syntax void BswM_Nm_StateChangeNotification ( NetworkHandleType Network, Nm_StateType currentState ) Service ID [hex] 0x27 Sync/Async Synchronous Reentrancy Reentrant Network Identification of the Nm-channelParameters (in) currentState Current (new) state of the Nm-channel Parameters (inout) None Parameters (out) None Return value None Description Notification of current Nm state after state changes. Available via BswM_Nm.h",
+  "section": "8.3.23",
+  "page": 56
+ },
+ {
+  "id": "SWS_BswM_91003",
+  "text": "Service Name BswM_EcuM_CurrentState Syntax void BswM_EcuM_CurrentState ( EcuM_StateType CurrentState ) Service ID [hex] 0x28 Sync/Async Synchronous Reentrancy Reentrant Parameters (in) CurrentState The requested ECU Operation Mode Parameters (inout) None Parameters (out) None Return value None Description Function called EcuM to indicate the current ECU Operation Mode. Available via BswM_EcuM.h",
+  "section": "8.3.9",
+  "page": 47
+ },
+ {
+  "id": "SWS_BswM_91004",
+  "text": "Service Name BswM_EcuM_RequestedState Syntax void BswM_EcuM_RequestedState ( EcuM_StateType State, EcuM_RunStatusType CurrentState ) Service ID [hex] 0x29 Sync/Async Synchronous Reentrancy Reentrant State The requested state by EcuMParameters (in) CurrentState Result of the Run Request Protocol Parameters (inout) None Parameters (out) None Return value None Description Function called by EcuM notify about current Status of the Run Request Protocol. Available via BswM_EcuM.h",
+  "section": "8.3.11",
+  "page": 48
+ },
+ {
+  "id": "SWS_BswM_91005",
+  "text": "Service Name BswM_SoAd_SoConModeChg Syntax void BswM_SoAd_SoConModeChg ( SoAd_SoConIdType SoConId, SoAd_SoConModeType State ) Service ID [hex] 0x2a Sync/Async Synchronous Reentrancy Reentrant for different SoConIds. Non reentrant for the same SoConId. SoConId The socket connection index.Parameters (in) State The state of the SoAd socket connection. Parameters (inout) None Parameters (out) None Return value None Description Function called by SoAd to notify state changes of a socket connection. Available via BswM_SoAd.h",
+  "section": "8.3.30",
+  "page": 61
+ }
+]

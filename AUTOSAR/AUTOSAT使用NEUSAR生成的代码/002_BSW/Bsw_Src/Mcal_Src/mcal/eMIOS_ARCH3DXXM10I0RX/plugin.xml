@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+  <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="eMIOS_ModuleId"
+             name="eMIOS Module">
+
+    <module id="eMIOS_CCFC3007PT"
+            label="eMIOS"
+            mandatory="false"
+            allowMultiple="false"
+            description="eMIOS BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="eMIOS"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3007PT"/>
+    </module>
+
+    <module id="eMIOS_CCFC3007BC"
+            label="eMIOS"
+            mandatory="false"
+            allowMultiple="false"
+            description="eMIOS BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="eMIOS"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3007BC"/>
+    </module>
+
+    <module id="eMIOS_CCFC3008PT"
+            label="eMIOS"
+            mandatory="false"
+            allowMultiple="false"
+            description="eMIOS BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="eMIOS"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PT"/>
+    </module>
+
+    <module id="eMIOS_CCFC3008PC"
+            label="eMIOS"
+            mandatory="false"
+            allowMultiple="false"
+            description="eMIOS BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="eMIOS"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PC"/>
+    </module>
+
+    <module id="eMIOS_CCFC3012PT"
+            label="eMIOS"
+            mandatory="false"
+            allowMultiple="false"
+            description="eMIOS BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="eMIOS"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3012PT"/>
+    </module>
+
+    <module id="eMIOS_CCFC3008PCSN"
+            label="eMIOS"
+            mandatory="false"
+            allowMultiple="false"
+            description="eMIOS BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="eMIOS"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PCSN"/>
+    </module>
+    <module id="eMIOS_CCFC3010PT"
+            label="eMIOS"
+            mandatory="false"
+            allowMultiple="false"
+            description="eMIOS BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="eMIOS"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3010PT"/>
+    </module>
+    <module id="eMIOS_CCFC3011PT"
+            label="eMIOS"
+            mandatory="false"
+            allowMultiple="false"
+            description="eMIOS BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="eMIOS"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3011PT"/>
+    </module>
+    <module id="eMIOS_CCFC3008PCSA"
+            label="eMIOS"
+            mandatory="false"
+            allowMultiple="false"
+            description="eMIOS BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="eMIOS"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PCSA"/>
+    </module>
+    <module id="eMIOS_CCFC3010PTD"
+            label="eMIOS"
+            mandatory="false"
+            allowMultiple="false"
+            description="eMIOS BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="eMIOS"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3010PTD"/>
+    </module>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="eMIOS_Configuration"
+             name="eMIOS_Configuration">
+    <configuration moduleId="eMIOS_CCFC3007PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for eMIOS -->
+          <resource value="config/eMIOS1.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/eMIOSConfig/eMIOS"/>
+      </data>
+
+      <editor id="eMIOS_Editor_01"
+              label="Default"
+              tooltip="eMIOS BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/eMIOSConfig/eMIOS"/>
+          <parameter name="title" value="eMIOS"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="eMIOS_CCFC3007BC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for eMIOS -->
+          <resource value="config/eMIOS2.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/eMIOSConfig/eMIOS"/>
+      </data>
+
+      <editor id="eMIOS_Editor_02"
+              label="Default"
+              tooltip="eMIOS BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/eMIOSConfig/eMIOS"/>
+          <parameter name="title" value="eMIOS"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="eMIOS_CCFC3008PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for eMIOS -->
+          <resource value="config/eMIOS1.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/eMIOSConfig/eMIOS"/>
+      </data>
+
+      <editor id="eMIOS_Editor_03"
+              label="Default"
+              tooltip="eMIOS BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/eMIOSConfig/eMIOS"/>
+          <parameter name="title" value="eMIOS"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="eMIOS_CCFC3008PC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for eMIOS -->
+          <resource value="config/eMIOS1.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/eMIOSConfig/eMIOS"/>
+      </data>
+
+      <editor id="eMIOS_Editor_04"
+              label="Default"
+              tooltip="eMIOS BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/eMIOSConfig/eMIOS"/>
+          <parameter name="title" value="eMIOS"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="eMIOS_CCFC3012PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for eMIOS -->
+          <resource value="config/eMIOS3.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/eMIOSConfig/eMIOS"/>
+      </data>
+
+      <editor id="eMIOS_Editor_05"
+              label="Default"
+              tooltip="eMIOS BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/eMIOSConfig/eMIOS"/>
+          <parameter name="title" value="eMIOS"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+     <configuration moduleId="eMIOS_CCFC3008PCSN">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for eMIOS -->
+          <resource value="config/eMIOS1.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/eMIOSConfig/eMIOS"/>
+      </data>
+
+      <editor id="eMIOS_Editor_06"
+              label="Default"
+              tooltip="eMIOS BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/eMIOSConfig/eMIOS"/>
+          <parameter name="title" value="eMIOS"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="eMIOS_CCFC3010PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for eMIOS -->
+          <resource value="config/eMIOS3.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/eMIOSConfig/eMIOS"/>
+      </data>
+
+      <editor id="eMIOS_Editor_07"
+              label="Default"
+              tooltip="eMIOS BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/eMIOSConfig/eMIOS"/>
+          <parameter name="title" value="eMIOS"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="eMIOS_CCFC3011PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for eMIOS -->
+          <resource value="config/eMIOS3.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/eMIOSConfig/eMIOS"/>
+      </data>
+
+      <editor id="eMIOS_Editor_08"
+              label="Default"
+              tooltip="eMIOS BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/eMIOSConfig/eMIOS"/>
+          <parameter name="title" value="eMIOS"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="eMIOS_CCFC3008PCSA">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for eMIOS -->
+          <resource value="config/eMIOS3.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/eMIOSConfig/eMIOS"/>
+      </data>
+
+      <editor id="eMIOS_Editor_10"
+              label="Default"
+              tooltip="eMIOS BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/eMIOSConfig/eMIOS"/>
+          <parameter name="title" value="eMIOS"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="eMIOS_CCFC3010PTD">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for eMIOS -->
+          <resource value="config/eMIOS3.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/eMIOSConfig/eMIOS"/>
+      </data>
+
+      <editor id="eMIOS_Editor_11"
+              label="Default"
+              tooltip="eMIOS BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/eMIOSConfig/eMIOS"/>
+          <parameter name="title" value="eMIOS"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+  </extension>
+
+ <extension point="dreisoft.tresos.launcher2.plugin.generator"
+             id="EPCGenerator"
+             name="EPC Generator">
+  <generator moduleId="eMIOS_CCFC3007PT"
+               id="eMIOS_Generator_01"
+               class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+        <parameter name="cfgFilePath" value="output"/>
+        <parameter name="generateAllModules" value="false"/>
+        <parameter name="generateIntoOneFile" value="false"/>
+        <parameter name="contentType" value="asc:4.4.0"/>
+  </generator>
+
+  <generator moduleId="eMIOS_CCFC3007BC"
+               id="eMIOS_Generator_02"
+               class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+        <parameter name="cfgFilePath" value="output"/>
+        <parameter name="generateAllModules" value="false"/>
+        <parameter name="generateIntoOneFile" value="false"/>
+        <parameter name="contentType" value="asc:4.4.0"/>
+  </generator>
+
+  <generator moduleId="eMIOS_CCFC3008PT"
+               id="eMIOS_Generator_03"
+               class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+        <parameter name="cfgFilePath" value="output"/>
+        <parameter name="generateAllModules" value="false"/>
+        <parameter name="generateIntoOneFile" value="false"/>
+        <parameter name="contentType" value="asc:4.4.0"/>
+  </generator>
+
+  <generator moduleId="eMIOS_CCFC3008PC"
+               id="eMIOS_Generator_04"
+               class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+        <parameter name="cfgFilePath" value="output"/>
+        <parameter name="generateAllModules" value="false"/>
+        <parameter name="generateIntoOneFile" value="false"/>
+        <parameter name="contentType" value="asc:4.4.0"/>
+  </generator>
+
+  <generator moduleId="eMIOS_CCFC3012PT"
+               id="eMIOS_Generator_05"
+               class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+        <parameter name="cfgFilePath" value="output"/>
+        <parameter name="generateAllModules" value="false"/>
+        <parameter name="generateIntoOneFile" value="false"/>
+        <parameter name="contentType" value="asc:4.4.0"/>
+  </generator>
+
+  <generator moduleId="eMIOS_CCFC3008PCSN"
+               id="eMIOS_Generator_06"
+               class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+        <parameter name="cfgFilePath" value="output"/>
+        <parameter name="generateAllModules" value="false"/>
+        <parameter name="generateIntoOneFile" value="false"/>
+        <parameter name="contentType" value="asc:4.4.0"/>
+  </generator>
+
+
+  <generator moduleId="eMIOS_CCFC3010PT"
+               id="eMIOS_Generator_07"
+               class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+        <parameter name="cfgFilePath" value="output"/>
+        <parameter name="generateAllModules" value="false"/>
+        <parameter name="generateIntoOneFile" value="false"/>
+        <parameter name="contentType" value="asc:4.4.0"/>
+  </generator>
+
+  <generator moduleId="eMIOS_CCFC3011PT"
+               id="eMIOS_Generator_08"
+               class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+        <parameter name="cfgFilePath" value="output"/>
+        <parameter name="generateAllModules" value="false"/>
+        <parameter name="generateIntoOneFile" value="false"/>
+        <parameter name="contentType" value="asc:4.4.0"/>
+  </generator>
+
+  <generator moduleId="eMIOS_CCFC3008PCSA"
+               id="eMIOS_Generator_10"
+               class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+        <parameter name="cfgFilePath" value="output"/>
+        <parameter name="generateAllModules" value="false"/>
+        <parameter name="generateIntoOneFile" value="false"/>
+        <parameter name="contentType" value="asc:4.4.0"/>
+  </generator>
+  <generator moduleId="eMIOS_CCFC3010PTD"
+               id="eMIOS_Generator_11"
+               class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+        <parameter name="cfgFilePath" value="output"/>
+        <parameter name="generateAllModules" value="false"/>
+        <parameter name="generateIntoOneFile" value="false"/>
+        <parameter name="contentType" value="asc:4.4.0"/>
+  </generator>
+ </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="eMIOS_Generator"
+              name="eMIOS_Generator">
+
+    <generator moduleId="eMIOS_CCFC3007PT"
+               id="eMIOS_Generate_01"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="eMIOS_CCFC3007BC"
+               id="eMIOS_Generate_02"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="eMIOS_CCFC3008PT"
+               id="eMIOS_Generate_03"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="eMIOS_CCFC3008PC"
+               id="eMIOS_Generate_04"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="eMIOS_CCFC3012PT"
+               id="eMIOS_Generate_05"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+     <generator moduleId="eMIOS_CCFC3008PCSN"
+               id="eMIOS_Generate_06"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="eMIOS_CCFC3010PT"
+               id="eMIOS_Generate_07"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="eMIOS_CCFC3011PT"
+               id="eMIOS_Generate_08"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="eMIOS_CCFC3008PCSA"
+               id="eMIOS_Generate_10"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+    <generator moduleId="eMIOS_CCFC3010PTD"
+               id="eMIOS_Generate_11"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+  </extension>
+
+  <extension point="org.eclipse.help.toc">
+    <toc file="anchors.xml" primary="true"/>
+    <toc file="$nl$/eMIOS/toc.xml" primary="false"/>
+    <!-- toc file="$nl$/ReleaseNotes/toc.xml" primary="false"/ !-->
+  </extension>
+</plugin>

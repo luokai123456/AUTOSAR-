@@ -1,0 +1,379 @@
+<?xml version='1.0'?>
+<datamodel version="7.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="eMIOSConfig" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="eMIOS" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.4.0</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC" 
+                   value="EN: Configuration of the eMIOS module."/>
+              <a:a name="LOWER-MULTIPLICITY" value="1"/>
+              <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+              <a:a name="RELEASE" value="asc:4.4.0"/>
+              <a:a name="UPPER-MULTIPLICITY" value="1"/>
+              <a:a name="UUID" value="ecmc3f2a-0i23-41os-82db-bf121119c7aa"/>
+              <v:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN">
+                <a:a name="DESC" 
+                     value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Post Build Variant Used"/>
+                <a:a name="ORIGIN" value="EB"/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="UUID" value="ecmc3f2a-0i23-41os-82db-bf121119c7pu"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="false"/>
+                <a:da name="READONLY" value="FALSE"/>
+                <a:da name="TOOLTIP" 
+                      value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+              </v:var>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:a name="UUID" value="ecmc3f2a-0i23-41os-82db-bf121119c7cv"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="VariantPostBuild"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuild</a:v>
+                  <a:v>VariantPreCompile</a:v>
+                </a:da>
+              </v:var>
+              <v:ctr name="eMIOSInstance0Config" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                      value="EN: This container contains EMIOS0 configuration information."/>
+                <a:a name="UUID" 
+                      value="ecmc3f2a-0i23-41os-82db-bf121119c704"/>
+                <a:a name="EDITABLE" type="XPath">
+                  <a:tst expr="../eMIOSGeneral/eMIOSInstance0 = 'true'"/>
+                </a:a>
+                  <v:var name="GlobalPrescaler" type="INTEGER">
+                    <a:a name="DESC" 
+                          value="EN: Select the clock divider value for the global prescaler in range(1-256)."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                          type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                          value="ecmc3f2a-0i23-41os-82db-bf121119c706"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="DEFAULT" value="80"/>
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=256"/>
+                      <a:tst expr="&gt;=1"/>
+                    </a:da>
+                    <a:a name="EDITABLE" type="XPath">
+                      <a:tst expr="../../eMIOSGeneral/eMIOSInstance0 = 'true'"/>
+                    </a:a>
+                  </v:var>
+                  <v:var name="ExternalTimeBase" type="BOOLEAN">
+                    <a:a name="DESC" 
+                          value="EN: Enable or disable external timebase."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                          type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ecmc3f2a-0i23-41os-82db-bf121119c707"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="DEFAULT" value="false"/>
+                    <a:a name="EDITABLE" type="XPath">
+                      <a:tst expr="../../eMIOSGeneral/eMIOSInstance0 = 'true'"/>
+                    </a:a>
+                  </v:var>
+                  <v:var name="ServerTimeSlot" type="INTEGER">
+                    <a:a name="DESC" 
+                          value="EN: Select the address of a specific STAC server to which the STAC is assigned."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                          type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                          value="ecmc3f2a-0i23-41os-82db-bf121119c708"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="DEFAULT" value="0"/>
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=15"/>
+                      <a:tst expr="&gt;=0"/>
+                    </a:da>
+                    <a:a name="EDITABLE" type="XPath">
+                      <a:tst expr="../../eMIOSGeneral/eMIOSInstance0 = 'true'"/>
+                    </a:a>
+                  </v:var>
+                  <v:lst name="eMIOSChannel" type="MAP">
+                      <a:da name="MIN" value="0"/>
+                      <a:da name="MAX" value="5"/>
+                      <a:a name="EDITABLE" type="XPath">
+                        <a:tst expr="../../eMIOSGeneral/eMIOSInstance0 = 'true'"/>
+                      </a:a>
+                      <v:ctr name="eMIOSChannel" type="IDENTIFIABLE">
+                        <a:a name="DESC" 
+                            value="EN: Select the channel."/>
+                        <a:a name="UUID" 
+                            value="ecmc3f2a-0i23-41os-82db-bf121119c709"/>
+                          <v:var name="eMIOSChannelIndex" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                  value="EN: Select the emios channel."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                  type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" 
+                                  value="ecmc3f2a-0i23-41os-82db-bf121119c710"/>
+                            <a:a name="__ORIGIN" value="Elektrobit"/>
+                            <a:da name="DEFAULT" value="CHANNEL_23"/>
+                            <a:da name="RANGE">
+                              <a:v>CHANNEL_0</a:v>
+                              <a:v>CHANNEL_8</a:v>
+                              <a:v>CHANNEL_16</a:v>
+                              <a:v>CHANNEL_23</a:v>
+                              <a:v>CHANNEL_24</a:v>
+                            </a:da>
+                            <a:da name="INVALID" type="XPath">
+                                <a:tst expr="text:uniq(../../*/eMIOSChannelIndex, .)"
+                                       false="The eMIOSChannelIndex should be unique, please change it!"/>
+                            </a:da>
+                          </v:var>
+                          <v:var name="eMIOSChannelMode" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                  value="EN: Select the mode of operation of the Unified Channel.."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                  type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" 
+                                  value="ecmc3f2a-0i23-41os-82db-bf121119c711"/>
+                            <a:a name="__ORIGIN" value="Elektrobit"/>
+                            <a:da name="DEFAULT" value="EMIOS_UC_MODE_MCB_UP_COUNTER_INT_CLK"/>
+                            <a:da name="RANGE">
+                              <a:v>EMIOS_UC_MODE_MC_UP_CNT_CLR_START_INT_CLK</a:v>
+                              <a:v>EMIOS_UC_MODE_MC_UP_CNT_CLR_START_EXT_CLK</a:v>
+                              <a:v>EMIOS_UC_MODE_MC_UP_CNT_CLR_END_INT_CLK</a:v>
+                              <a:v>EMIOS_UC_MODE_MC_UP_CNT_CLR_END_EXT_CLK</a:v>
+                              <a:v>EMIOS_UC_MODE_MC_UPDOWN_CNT_FLAGX1_INT_CLK</a:v>
+                              <a:v>EMIOS_UC_MODE_MC_UPDOWN_CNT_FLAGX1_EXT_CLK</a:v>
+                              <a:v>EMIOS_UC_MODE_MC_UPDOWN_CNT_FLAGX2_INT_CLK</a:v>
+                              <a:v>EMIOS_UC_MODE_MC_UPDOWN_CNT_FLAGX2_EXT_CLK</a:v>
+                              <a:v>EMIOS_UC_MODE_MCB_UP_COUNTER_INT_CLK</a:v>
+                              <a:v>EMIOS_UC_MODE_MCB_UP_COUNTER_EXT_CLK</a:v>
+                              <a:v>EMIOS_UC_MODE_MCB_UPDOWN_CNT_FLAGX1_INT_CLK</a:v>
+                              <a:v>EMIOS_UC_MODE_MCB_UPDOWN_CNT_FLAGX1_EXT_CLK</a:v>
+                              <a:v>EMIOS_UC_MODE_MCB_UPDOWN_CNT_FLAGX2_INT_CLK</a:v>
+                              <a:v>EMIOS_UC_MODE_MCB_UPDOWN_CNT_FLAGX2_EXT_CLK</a:v>
+                            </a:da>
+                          </v:var>
+                          <v:var name="eMIOSChannelperiod" type="INTEGER">
+                            <a:a name="DESC" 
+                                  value="EN: Sets the period value of the channel."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                  type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" 
+                                  value="ecmc3f2a-0i23-41os-82db-bf121119c712"/>
+                            <a:a name="__ORIGIN" value="Elektrobit"/>
+                            <a:da name="DEFAULT" value="1000"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=16777215"/>
+                              <a:tst expr="&gt;=0"/>
+                            </a:da>
+                          </v:var>
+                          <v:var name="eMIOSChannelprescaler" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                  value="EN: Set the frequency division inside the channel."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                  type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" 
+                                  value="ecmc3f2a-0i23-41os-82db-bf121119c713"/>
+                            <a:a name="__ORIGIN" value="Elektrobit"/>
+                            <a:da name="DEFAULT" value="DIV_2"/>
+                            <a:da name="RANGE">
+                              <a:v>DIV_1</a:v>
+                              <a:v>DIV_2</a:v>
+                              <a:v>DIV_3</a:v>
+                              <a:v>DIV_4</a:v>
+                            </a:da>
+                          </v:var>
+                          <v:var name="eMIOSChannelfilter" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                  value="EN: Input filter, selecting the minimum input pulse width that can pass through the filter."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                  type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" 
+                                  value="ecmc3f2a-0i23-41os-82db-bf121119c714"/>
+                            <a:a name="__ORIGIN" value="Elektrobit"/>
+                            <a:da name="DEFAULT" value="EMIOS_INPUT_FILTER_BYPASS"/>
+                            <a:da name="RANGE">
+                              <a:v>EMIOS_INPUT_FILTER_BYPASS</a:v>
+                              <a:v>EMIOS_INPUT_FILTER_02</a:v>
+                              <a:v>EMIOS_INPUT_FILTER_04</a:v>
+                              <a:v>EMIOS_INPUT_FILTER_08</a:v>
+                              <a:v>EMIOS_INPUT_FILTER_16</a:v>
+                            </a:da>
+                          </v:var>
+                          <v:var name="eMIOSChanneltrigger" type="ENUMERATION">
+                            <a:a name="DESC" 
+                                  value="EN: Input signal trigger mode, ignore if not select external clock mode."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                  type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="CCFC"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" 
+                                  value="ecmc3f2a-0i23-41os-82db-bf121119c715"/>
+                            <a:a name="__ORIGIN" value="Elektrobit"/>
+                            <a:da name="DEFAULT" value="EMIOS_TRIG_EDGE_FALLING"/>
+                            <a:da name="RANGE">
+                              <a:v>EMIOS_TRIG_EDGE_FALLING</a:v>
+                              <a:v>EMIOS_TRIG_EDGE_RISING</a:v>
+                              <a:v>EMIOS_TRIG_EDGE_BOTH</a:v>
+                            </a:da>
+                          </v:var>
+                      </v:ctr>
+                  </v:lst>
+              </v:ctr>
+              <v:ctr name="eMIOSGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: General configuration (parameters) of the eMIOS Driver software module."/>
+                <a:a name="UUID" value="ecmc3f2a-0i23-41os-82db-bf121119c700"/>
+                <v:var name="eMIOSDevErrorDetect" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Switches the development error detection and notification on or off."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ecmc3f2a-0i23-41os-82db-bf121119c701"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:ref name="eMIOSSystemClock" type="REFERENCE">
+                  <a:a name="DESC" 
+                        value="EN: Reference to the System Clock Divider of the mcu module."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                        value="ecmc3f2a-0i23-41os-82db-bf041719c700"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="REF" 
+                    value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint"/>
+                </v:ref>
+                <v:var name="eMIOSInstance0" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: eMIOS 0 configuration switch."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ecmc3f2a-0i23-41os-82db-bf121119c702"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+              </v:ctr>
+            </v:ctr>
+          </d:chc>
+          <d:chc name="myEcuParameterDefinition" type="AR-ELEMENT" 
+                 value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="DEF" 
+                   value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+              <d:lst name="MODULE_REF">
+                <d:ref type="MODULE_REF" value="ASPath:/eMIOSConfig/eMIOS"/>
+              </d:lst>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

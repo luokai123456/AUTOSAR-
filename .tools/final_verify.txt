@@ -1,0 +1,2 @@
+﻿files: 40 links: 216 bad: 1
+  BAD ('��ӭ', '��������', 'file')

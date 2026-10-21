@@ -1,0 +1,904 @@
+<?xml version='1.0'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00046.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>FeeConfig</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-DEFINITION-COLLECTION UUID="6b6d2c2d-487d-4c6a-8ab3-488be68ea84e">
+          <SHORT-NAME>Fee_EcuParameterDefinition</SHORT-NAME>
+          <MODULE-REFS>
+            <MODULE-REF DEST="ECUC-MODULE-DEF">/FeeConfig/Fee</MODULE-REF>
+          </MODULE-REFS>
+        </ECUC-DEFINITION-COLLECTION>
+        <ECUC-MODULE-DEF UUID="8868f789-0903-4ae3-acdf-00d20f41a929">
+          <SHORT-NAME>Fee</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">Configuration of the Fee (Flash EEPROM Emulation) module.</L-2>
+          </DESC>
+          <ADMIN-DATA>
+            <DOC-REVISIONS>
+              <DOC-REVISION>
+                <REVISION-LABEL>4.4.0</REVISION-LABEL>
+                <ISSUED-BY>AUTOSAR</ISSUED-BY>
+              </DOC-REVISION>
+            </DOC-REVISIONS>
+          </ADMIN-DATA>
+          <POST-BUILD-VARIANT-SUPPORT>false</POST-BUILD-VARIANT-SUPPORT>
+          <REFINED-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/AUTOSAR/EcucDefs/Fee</REFINED-MODULE-DEF-REF>
+          <SUPPORTED-CONFIG-VARIANTS>
+            <SUPPORTED-CONFIG-VARIANT>VARIANT-POST-BUILD</SUPPORTED-CONFIG-VARIANT>
+            <SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+          </SUPPORTED-CONFIG-VARIANTS>
+          <CONTAINERS>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="f7e7186c-0c81-4139-9b92-f7787d5d1dea">
+              <SHORT-NAME>FeeClusterGroup</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">Vendor specific: Configuration of cluster group specific 
+                                  parameters for the Flash EEPROM Emulation module.</L-2>
+              </DESC>
+              <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+              <UPPER-MULTIPLICITY-INFINITE>1</UPPER-MULTIPLICITY-INFINITE>
+              <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+              <SUB-CONTAINERS>
+                <ECUC-PARAM-CONF-CONTAINER-DEF UUID="b37d68d7-8fea-4df3-b0d1-c12d6558f130">
+                  <SHORT-NAME>FeeCluster</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Vendor specific: Configuration of cluster specific 
+                                        parameters for the Flash EEPROM Emulation module.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>2</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY-INFINITE>1</UPPER-MULTIPLICITY-INFINITE>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <SUB-CONTAINERS>
+                    <ECUC-PARAM-CONF-CONTAINER-DEF UUID="e2aa7ba3-e909-4f77-adcb-87f5024a5461">
+                      <SHORT-NAME>FeeSector</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Vendor specific: Configuration of sector specific 
+                                                    parameters for the Flash EEPROM Emulation module.</L-2>
+                      </DESC>
+                      <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                      <UPPER-MULTIPLICITY-INFINITE>1</UPPER-MULTIPLICITY-INFINITE>
+                      <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                      <PARAMETERS>
+                        <ECUC-INTEGER-PARAM-DEF UUID="f1f1e86d-3ef1-406d-8f77-d90d0bc31809">
+                          <SHORT-NAME>FeeSectorIndex</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Vendor specific: Fee Sector Index is an invariant index, used to order Fee sectors  and loop 
+                                                over them in the correct, configured order. Its value should be equal with the position of the 
+                                                configured sector inside the configured sector list (the same value as the shown index).
+                                                Rationale: The generated .epc configuration might reorder the flash sectors(alphabetically), thus the index parameter
+                                                changes, becoming out of sync with the real intended order .
+                                                Range:
+                                                min = 0
+                                                max = 65534</L-2>
+                          </DESC>
+                          <ORIGIN>CCFC</ORIGIN>
+                          <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                          <MAX>65534</MAX>
+                          <MIN>0</MIN>
+                        </ECUC-INTEGER-PARAM-DEF>
+                      </PARAMETERS>
+                      <REFERENCES>
+                        <ECUC-REFERENCE-DEF UUID="305e1c54-4c44-4f69-aa5b-9a9424daeb5f">
+                          <SHORT-NAME>FeeSectorRef</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Vendor specific: Reference to a logical Fls sector 
+                                                    the Fee cluster consist of.</L-2>
+                          </DESC>
+                          <ORIGIN>CCFC</ORIGIN>
+                          <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                          <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Fls/FlsConfigSet/FlsSectorList/FlsSector</DESTINATION-REF>
+                        </ECUC-REFERENCE-DEF>
+                      </REFERENCES>
+                    </ECUC-PARAM-CONF-CONTAINER-DEF>
+                  </SUB-CONTAINERS>
+                </ECUC-PARAM-CONF-CONTAINER-DEF>
+              </SUB-CONTAINERS>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="4ddb4bf3-bc4e-435f-8ed3-2a6625ca28c3">
+              <SHORT-NAME>FeeBlockConfiguration</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">Configuration of block specific parameters for the Flash EEPROM Emulation module.</L-2>
+              </DESC>
+              <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+              <UPPER-MULTIPLICITY-INFINITE>1</UPPER-MULTIPLICITY-INFINITE>
+              <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+              <PARAMETERS>
+                <ECUC-INTEGER-PARAM-DEF UUID="49388d35-f441-44a4-ba3b-348c684b47a8">
+                  <SHORT-NAME>FeeBlockNumber</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Block identifier (handle).</L-2>
+                  </DESC>
+                  <SCOPE>ECU</SCOPE>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+                  <MAX>65534</MAX>
+                  <MIN>1</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="0e8daa45-6bd2-401b-850a-46332bd7b775">
+                  <SHORT-NAME>FeeBlockSize</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Size of a logical block in bytes.</L-2>
+                  </DESC>
+                  <SCOPE>ECU</SCOPE>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <MAX>65535</MAX>
+                  <MIN>1</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="8494d3e9-f4d5-48bc-b2dc-da3653a034a9">
+                  <SHORT-NAME>FeeImmediateData</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Marker for high priority data.</L-2>
+                  </DESC>
+                  <SCOPE>ECU</SCOPE>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="f119fb3c-dfa1-4e68-a688-2da23ccbd63e">
+                  <SHORT-NAME>FeeNumberOfWriteCycles</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Number of write cycles required for this block.</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <MAX>4294967295</MAX>
+                  <MIN>0</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-ENUMERATION-PARAM-DEF UUID="575d5090-9882-4d22-90c6-171f0cdae922">
+                  <SHORT-NAME>FeeBlockAssignment</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Choose to which project this block is assigned.
+                                            BootLoader - Block is used only by the boot loader project
+                                            Application - Block is used only by the application project
+                                            Shared - Block is used for the Application and Boot Loader projects</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>APPLICATION</DEFAULT-VALUE>
+                  <LITERALS>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>APPLICATION</SHORT-NAME>
+                      <ORIGIN>CCFC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>BOOTLOADER</SHORT-NAME>
+                      <ORIGIN>CCFC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>SHARED</SHORT-NAME>
+                      <ORIGIN>CCFC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ECUC-ENUMERATION-PARAM-DEF>
+              </PARAMETERS>
+              <REFERENCES>
+                <ECUC-REFERENCE-DEF UUID="45e55e9d-987d-4fe4-816f-ff6f4ee7267d">
+                  <SHORT-NAME>FeeClusterGroupRef</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Vendor specific: Reference to the Fee cluster group which the Fee 
+                                    block belongs to. In other words, FeeClusterGroupRef assigns the Fee block 
+                                    to particular Fee cluster group.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/FeeConfig/Fee/FeeClusterGroup</DESTINATION-REF>
+                </ECUC-REFERENCE-DEF>
+                <ECUC-REFERENCE-DEF UUID="3e56c41f-95df-484c-9ace-8b76d516b29f">
+                  <SHORT-NAME>FeeDeviceIndex</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Reference to the device this block is stored in.</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <REQUIRES-SYMBOLIC-NAME-VALUE>true</REQUIRES-SYMBOLIC-NAME-VALUE>
+                  <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Fls/FlsGeneral</DESTINATION-REF>
+                </ECUC-REFERENCE-DEF>
+              </REFERENCES>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="b003e899-aba1-457c-9663-694349581a3a">
+              <SHORT-NAME>FeeGeneral</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">Container for general parameters. These parameters are not specific to a block.</L-2>
+              </DESC>
+              <PARAMETERS>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="3b4df15a-1cc9-46e6-8c71-59a4290ce3ff">
+                  <SHORT-NAME>FeeDevErrorDetect</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Switches the development error detection and notification on or off.</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="9d1e5287-1be8-4c32-9ff0-ae7c5b812eb8">
+                  <SHORT-NAME>FeeEnableUserModeSupport</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Fee driver is an independent hardware module, so it can run in user mode without any specific measures. 
+                                                   The parameter is not used in the Fee implementation.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="0ca4f068-8282-44b2-81c3-1dcc501b07bc">
+                  <SHORT-NAME>FeeIndex</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Specifies the InstanceId of this module instance. If only one instance 
+                                is present it shall have the Id 0.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                  <MAX>254</MAX>
+                  <MIN>0</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-FUNCTION-NAME-DEF UUID="ECUC:7fc6976e-1df6-4320-9019-bfcfd29daf81">
+                  <SHORT-NAME>FeeNvmJobEndNotification</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">&lt;html&gt;&lt;p&gt; 
+                                Mapped to the job end notification routine provided by the upper layer 
+                                module (NvM_JobEndNotification).&lt;br /&gt;
+                                Note: Disable the end notification to have it set as NULL_PTR.
+                                &lt;/p&gt;&lt;/html&gt;</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <MULTIPLICITY-CONFIG-CLASSES>
+                    <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                  </MULTIPLICITY-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <ECUC-FUNCTION-NAME-DEF-VARIANTS>
+                    <ECUC-FUNCTION-NAME-DEF-CONDITIONAL>
+                      <DEFAULT-VALUE>NvM_JobEndNotification</DEFAULT-VALUE>
+                    </ECUC-FUNCTION-NAME-DEF-CONDITIONAL>
+                  </ECUC-FUNCTION-NAME-DEF-VARIANTS>
+                </ECUC-FUNCTION-NAME-DEF>
+                <ECUC-FUNCTION-NAME-DEF UUID="ECUC:5d3d2831-1ec6-4f60-8c7a-8e3318c3bcd8">
+                  <SHORT-NAME>FeeNvmJobErrorNotification</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">&lt;html&gt;&lt;p&gt;
+                                Mapped to the job error notification routine provided by the upper layer 
+                                module (NvM_JobErrorNotification).&lt;br /&gt;
+                                Note: Disable the error notification to have it set as NULL_PTR.
+                                &lt;/p&gt;&lt;/html&gt;</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <MULTIPLICITY-CONFIG-CLASSES>
+                    <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                  </MULTIPLICITY-CONFIG-CLASSES>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <ECUC-FUNCTION-NAME-DEF-VARIANTS>
+                    <ECUC-FUNCTION-NAME-DEF-CONDITIONAL>
+                      <DEFAULT-VALUE>NvM_JobErrorNotification</DEFAULT-VALUE>
+                    </ECUC-FUNCTION-NAME-DEF-CONDITIONAL>
+                  </ECUC-FUNCTION-NAME-DEF-VARIANTS>
+                </ECUC-FUNCTION-NAME-DEF>
+                <ECUC-FUNCTION-NAME-DEF UUID="ECUC:5d3d2831-1ec6-4f60-8c7a-8e3319a2bcd8">
+                  <SHORT-NAME>FeeClusterFormatNotification</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">&lt;html&gt;&lt;p&gt;
+                                Fee calls  this  notification to inform the user in case a cluster erase and write cluster header is performed during the Fee initialization.
+                                Note: Disable the error notification to have it set as NULL_PTR.
+                                &lt;/p&gt;&lt;/html&gt;</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <MULTIPLICITY-CONFIG-CLASSES>
+                    <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                  </MULTIPLICITY-CONFIG-CLASSES>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <ECUC-FUNCTION-NAME-DEF-VARIANTS>
+                    <ECUC-FUNCTION-NAME-DEF-CONDITIONAL>
+                      <DEFAULT-VALUE>NvM_ClusterFormatNotification</DEFAULT-VALUE>
+                    </ECUC-FUNCTION-NAME-DEF-CONDITIONAL>
+                  </ECUC-FUNCTION-NAME-DEF-VARIANTS>
+                </ECUC-FUNCTION-NAME-DEF>
+                <ECUC-FLOAT-PARAM-DEF UUID="10349864-9800-46ab-be5b-caee981d3a3a">
+                  <SHORT-NAME>FeeMainFunctionPeriod</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">The period between successive calls to the main function in seconds.</L-2>
+                  </DESC>
+                  <SCOPE>ECU</SCOPE>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <MAX>INF</MAX>
+                  <MIN INTERVAL-TYPE="OPEN">0.0</MIN>
+                </ECUC-FLOAT-PARAM-DEF>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="aa81864f-e422-4cad-8d77-9853b08d0977">
+                  <SHORT-NAME>FeePollingMode</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Pre-processor switch to enable and disable the polling mode for this module.</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="722d444e-c879-44b4-ade2-aec5ae3c92f3">
+                  <SHORT-NAME>FeeSetModeSupported</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Compiler switch to enable/disable the &apos;SetMode&apos; functionality of the FEE module.</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="1e7d43db-0a85-47e7-b8cc-cb5d0ffc8d4a">
+                  <SHORT-NAME>FeeVersionInfoApi</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Pre-processor switch to enable / disable the API to read out the modules version information.</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="8b6c9c86-11e8-447b-b9b6-342b6d91294e">
+                  <SHORT-NAME>FeeVirtualPageSize</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">The size in bytes to which logical blocks shall be aligned.</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <MAX>65535</MAX>
+                  <MIN>0</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:dde62024-fdc0-4af6-a0ae-0417c01e9c01">
+                  <SHORT-NAME>FeeInlineSupport</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Inline switch, configured to generate Local-INLINE when turned on and static when turned off.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>true</DEFAULT-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="8e2926aa-5fa5-4a11-a45d-a8d249e506d8">
+                  <SHORT-NAME>FeeDataBufferSize</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Vendor specific: Size of the data buffer in bytes. 
+                                    The data buffer is used to buffer data when Fee is copying data 
+                                    from one cluster to another and when Fee is reading the block header 
+                                    information on startup. 
+                                    Size of the data buffer affects number of Fls_MainFunction cycles. 
+                                    Bigger data buffer improves performance of the Fee cluster management 
+                                    operations and speeds up the startup phase as Fee can read more data 
+                                    in one cycle of Fls_MainFunction
+                                    Note: FeeDataBufferSize must be equal or greater than 
+                                    FEE_CLUSTER_OVERHEAD. Where FEE_CLUSTER_OVERHEAD is management overhead 
+                                    per logical cluster in bytes and can be calculated using the following 
+                                    formula: 
+                                    &amp;nbsp;&amp;nbsp;ceiling(&amp;nbsp;16&amp;nbsp;/&amp;nbsp;FEE_VIRTUAL_PAGE_SIZE&amp;nbsp;+&amp;nbsp;2&amp;nbsp;)&amp;nbsp;*&amp;nbsp;FEE_VIRTUAL_PAGE_SIZE</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>96</DEFAULT-VALUE>
+                  <MAX>65535</MAX>
+                  <MIN>0</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="60db403f-6bbd-4e60-bd2a-6c26d8daf82c">
+                  <SHORT-NAME>FeeBlockAlwaysAvailable</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Vendor specific: According to the AUTOSAR requirements, when the 
+                                write operation starts, corresponding block is marked as inconsistent. 
+                                It is marked as consistent after successful write. 
+                                It means that when write operation is interrupted (cancel, reset) 
+                                application cannot access the block data anymore. 
+                                Enabling this parameter allows to set the behavior against the AUTOSAR 
+                                requirements. In this case, the last valid information is always provided. 
+                                Valid information means:
+                                
+                                FEE_BLOCK_INVALID if the block was invalidated or the block is 
+                                    not present in the cluster at all.
+                                FEE_BLOCK_VALID in case the previous instance of the block exists and 
+                                    was not invalidated.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="f62fb2b8-859b-4706-a02b-eaa57e3a69ca">
+                  <SHORT-NAME>FeeLegacyMode</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">If this parameter is disabled, optimized immediate block handling is active.
+                                If enabled, the FEE driver is configured in the legacy mode.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="cf9d348d-7bfa-417c-9f49-7e16da214a61">
+                  <SHORT-NAME>FeeLegacyEraseMode</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">If enabled, the Fee_EraseImmediateBlock function invalidates the referred 
+                                block if it has been already written. Otherwise, the block is left intact.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="4cda7166-25e5-4195-a5a6-8c5f23d3f78d">
+                  <SHORT-NAME>FeeSwapForeignBlocksEnabled</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">The recommendation is not to use this mode Enabled for the production phase as it increases the cluster swap overall timing.
+                                This mode may be useful for developement phase if Fee is used in 2 projects running on the same ECU and the integrator wants
+                                to be able to change configuration for the application project without changing it for the second project.
+                                If disabled,the Fee driver will swap only blocks existing in the current configuration.
+                                If enabled, the Fee driver will swap foreign blocks. This is a limited support when using 2 subprojects with different Fee configurations
+                                running on the same ECU(example:boot loader and applications projects).For example if this paramters is enabled and Fee is running in application 1 mode, 
+                                it will swap blocks assigned to application 2, even if those blocks are not present in application 1 configuration.This allow to update the Fee configuration for application 2 without reconfiguring application 1.
+                                Nevertheless, this mode will result in a longer time for cluster swap.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="2a3721bf-f5e0-4a6c-9cc1-eb098c7e4ad2">
+                  <SHORT-NAME>FeeMarkEmptyBlocksInvalid</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">If the parameter is enabled, Fee will mark the never written blocks as INVALID,
+                                otherwise Fee will mark the never written blocks as INCONSISTENT. Having this define set as false is compatible with AUTOSAR 4.2.2 version.
+                                Previous AUTOSAR versions do not specify which status must be returned for empty blocks.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>true</DEFAULT-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-ENUMERATION-PARAM-DEF UUID="7bd01cab-7fdf-4ed1-9477-26d8d4d38ba1">
+                  <SHORT-NAME>FeeConfigAssignment</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Choose for which project this Fee configuration is used.
+                                        BootLoader - Configuration is used only by the boot loader project
+                                        Application - Configuration is used only by the application project</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>APPLICATION</DEFAULT-VALUE>
+                  <LITERALS>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>APPLICATION</SHORT-NAME>
+                      <ORIGIN>CCFC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                    <ECUC-ENUMERATION-LITERAL-DEF>
+                      <SHORT-NAME>BOOTLOADER</SHORT-NAME>
+                      <ORIGIN>CCFC</ORIGIN>
+                    </ECUC-ENUMERATION-LITERAL-DEF>
+                  </LITERALS>
+                </ECUC-ENUMERATION-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="c6c0281f-f92d-4314-b47d-64d4f67c2314">
+                  <SHORT-NAME>FeeMaximumNumberBlocks</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">This must be configured to total number of boot loader, application blocks and also some buffer for blocks added in the future.
+                                        This parameter will be used to statically allocate space for the block runtime information, 
+                                        so it should be configured to accommodate the total number of blocks running on the ECU in all project versions.
+                                        The parameter is used to support Fee Swap Foreign Blocks Feature.
+                                        Example of configuration:
+                                        If application uses 2 blocks, boot loader 1 block and another 1 is shared between application and bootloader then
+                                        this parameter must be configured to 2(only appl) + 1(only boot loader) + 1(shared) + X,
+                                        where x is the maximum number of blocks we estimate it will be added in future versions.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>1</DEFAULT-VALUE>
+                  <MAX>65534</MAX>
+                  <MIN>1</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+              </PARAMETERS>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="521af557-8d35-46f3-b1e2-eb4b99c3f5bc">
+              <SHORT-NAME>CommonPublishedInformation</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">CommonPublishedInformation
+                                Common container, aggregated by all modules. It contains published 
+                                information about vendor and versions.</L-2>
+              </DESC>
+              <PARAMETERS>
+                <ECUC-INTEGER-PARAM-DEF UUID="c904b377-a63e-4bae-805c-8d09a9b7f9fb">
+                  <SHORT-NAME>ArReleaseMajorVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">AUTOSAR Major Version
+                                    Vendor specific: Major version number of AUTOSAR specification 
+                                    on which the appropriate implementation is based on.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>4</DEFAULT-VALUE>
+                  <MAX>4</MAX>
+                  <MIN>4</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="e5207bde-2a73-4163-9e28-90e4545fff36">
+                  <SHORT-NAME>ArReleaseMinorVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">AUTOSAR Minor Version
+                                Vendor specific: Minor version number of AUTOSAR specification 
+                                on which the appropriate implementation is based on.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>4</DEFAULT-VALUE>
+                  <MAX>4</MAX>
+                  <MIN>4</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="ad8ce5a9-989a-49af-8be4-dd4934117737">
+                  <SHORT-NAME>ArReleaseRevisionVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">AUTOSAR Patch Version
+                                Vendor specific: Revision version number of AUTOSAR specification 
+                                on which the appropriate implementation is based on.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                  <MAX>0</MAX>
+                  <MIN>0</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="59afb104-1155-4175-b8a0-cd347cbde13c">
+                  <SHORT-NAME>ModuleId</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Module ID
+                                Vendor specific: Module ID of this module from Module List.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>21</DEFAULT-VALUE>
+                  <MAX>21</MAX>
+                  <MIN>21</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="eb8a66b7-c6f9-4161-ab20-2d760cebd505">
+                  <SHORT-NAME>SwMajorVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Software Major Version
+                                Vendor specific: Major version number of the vendor specific 
+                                implementation of the module. The numbering is vendor specific.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>3</DEFAULT-VALUE>
+                  <MAX>3</MAX>
+                  <MIN>3</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="d7db917a-c524-4164-8177-0410d9d3d51b">
+                  <SHORT-NAME>SwMinorVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Software Minor Version
+                                Vendor specific: Minor version number of the vendor specific 
+                                implementation of the module. The numbering is vendor specific.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                  <MAX>0</MAX>
+                  <MIN>0</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="d381c461-bab5-4018-b47f-4ece57d838c4">
+                  <SHORT-NAME>SwPatchVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Software Patch Version
+                                Vendor specific: Patch level version number of the vendor 
+                                specific implementation of the module. The numbering is vendor specific.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                  <MAX>0</MAX>
+                  <MIN>0</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-STRING-PARAM-DEF UUID="fd460519-3fed-45b8-8f0c-b4bf7e228781">
+                  <SHORT-NAME>VendorApiInfix</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Vendor Api Infix
+                                Vendor specific: In driver modules which can be instantiated several 
+                                times on a single ECU, BSW00347 requires that the name of APIs is extended 
+                                by the VendorId and a vendor specific name. 
+                                This parameter is used to specify the vendor specific name. In total, the 
+                                implementation specific name is generated as follows: 
+                                &lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;. 
+
+                                E.g.  assuming that the VendorId of the implementor is 123 and the 
+                                implementer chose a VendorApiInfix of &quot;v11r456&quot; a API name 
+                                Can_Write defined in the SWS will translate to Can_123_v11r456Write. 
+
+                                This parameter is mandatory for all modules with 
+                                upper multiplicity&amp;nbsp;&gt;&amp;nbsp;1. 
+                                It shall not be used for modules with upper multiplicity&amp;nbsp;=&amp;nbsp;1.</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>0</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>1</UPPER-MULTIPLICITY>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <ECUC-STRING-PARAM-DEF-VARIANTS>
+                    <ECUC-STRING-PARAM-DEF-CONDITIONAL>
+                      <DEFAULT-VALUE></DEFAULT-VALUE>
+                    </ECUC-STRING-PARAM-DEF-CONDITIONAL>
+                  </ECUC-STRING-PARAM-DEF-VARIANTS>
+                </ECUC-STRING-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="52c6ef48-7713-4004-8974-7f0b489f03ef">
+                  <SHORT-NAME>VendorId</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Vendor ID
+                                Vendor specific: Vendor ID of the dedicated implementation of this 
+                                module according to the AUTOSAR vendor list.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>176</DEFAULT-VALUE>
+                  <MAX>176</MAX>
+                  <MIN>176</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+              </PARAMETERS>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="df4f5d4d-8969-4316-8dea-2d7284c4421e">
+              <SHORT-NAME>FeePublishedInformation</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">Additional published parameters not covered by CommonPublishedInformation container.</L-2>
+              </DESC>
+              <PARAMETERS>
+                <ECUC-INTEGER-PARAM-DEF UUID="aeb609c8-2bac-4dd8-a5d0-6affd2008af5">
+                  <SHORT-NAME>FeeBlockOverhead</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Management overhead per logical block in bytes.</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                  <MAX>65535</MAX>
+                  <MIN>0</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-FLOAT-PARAM-DEF UUID="237b2bea-3cba-4a3c-a60a-fcc136809670">
+                  <SHORT-NAME>FeeMaximumBlockingTime</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">The maximum time the FEE API routines shall be blocked (delayed) 
+                                by internal operations.
+                                Note:
+                                The maximum blocking time depends on various conditions such as MCU 
+                                clock configuration, flash device configuration, configuration of underlying 
+                                flash driver, size of flash sectors used for EEPROM emulation, etc. 
+                                The maximum blocking time is not constant and can not be calculated 
+                                using simple formula.</L-2>
+                  </DESC>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>0.0</DEFAULT-VALUE>
+                  <MAX>1000000.0</MAX>
+                  <MIN>0.0</MIN>
+                </ECUC-FLOAT-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="e58668e3-e9db-4da0-900b-9348eae7e6c1">
+                  <SHORT-NAME>FeePageOverhead</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Management overhead per page in bytes.</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>AUTOSAR_ECUC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                  <MAX>65535</MAX>
+                  <MIN>0</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+              </PARAMETERS>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+          </CONTAINERS>
+        </ECUC-MODULE-DEF>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

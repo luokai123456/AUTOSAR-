@@ -1,0 +1,22 @@
+
+Name: generate/include/eDma_Cfg.h
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423202109085028224584034902922437732710137862720301
+ 8340660056857022316929551198484167774900201230161280
+
+Name: config/eDma.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 74155374890379697335560892728888549323004796743145829638136
+ 27163485801143160312658824936802747346405686466991764563
+
+Name: generate/source/eDma_Cfg.c
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420501991116384206910336123467738202066760611130835
+ 6917849382564616175271596406862694691111572300282665
+

@@ -1,0 +1,3281 @@
+/****************************************************************************
+*
+* Copyright (c) 2023  C*Core -   All Rights Reserved
+*
+* THIS SOFTWARE IS DISTRIBUTED "AS IS," AND ALL WARRANTIES ARE DISCLAIMED,
+* INCLUDING MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+*
+* PROJECT     : CCFC3007BC
+* DESCRIPTION : CCFC3007BC features h file
+* HISTORY     : Initial version
+* @file     CCFC3007BC_features.h
+* @version  1.0
+* @date     2023 - 04 - 11
+* @brief    Initial version.
+*
+*****************************************************************************/
+
+#ifndef CCFC3007BC_FEATURES_H_
+#define CCFC3007BC_FEATURES_H_
+#if defined(CCFC3007BC)
+
+/****************************************************************************/
+/****************************************************************************/
+/* Chip naming convention
+ * For example, CCFC3007PT_T192B6:
+ *  CC  : Company prefix
+ *  FC  : PowerPC 32bit {HC: PowerPC 64bit, RC: RISC-V, D: DSP, M: ARM/MCore}
+ *  3   : C3007 {1: M0, 2: C2003, 3: C3007, 4: M4, 5: HIFI5, 6: CRV4H}
+ *  007 : Chip series {007, 008, 009, ...}
+ *  PT  : Automotive electronic engine control, domain controller...
+ *          {BC: Automotive electronic body control,
+ *           BM: New energy BMS,
+ *           AR: Radar signal processing, ...}
+ *  T   : 3 cores {S:1, D(dual):2, T(triple):3, Q(quad):4, P(penta):5, H(hexa):6}
+ *  192 : 12MB CFlash {64: 4MB(64/16), ..., 192: 12MB(192/16), 256: 16MB(256/16)}
+ *  B   : BGA {L: LQFP/TQFP/HQFP, B: BGA, Q: QFN}
+ *  6   : 516Pin {5: 144Pin, 7: 176Pin, 2: 292Pin, 4: 416Pin, 6: 516Pin, 9: 216Pin, D: 32Pin, 1: 180Pin}
+ * */
+
+/* Chip [Package/FlashSize/NumOfCore/ChipType] define,
+ * LQFP: 1, TQFP: 2, HQFP: 3, BGA: B */
+#define PAC_LQFP80                  0x18u
+#define PAC_LQFP100                 0x13u
+#define PAC_LQFP144                 0x15u
+#define PAC_LQFP176                 0x17u
+#define PAC_TQFP144                 0x25u
+#define PAC_TQFP144B                0x45u   /* B, the second type of pinMux */
+#define PAC_HQFP216                 0x39u
+#define PAC_HQFP216B                0x59u   /* B, the second type of pinMux */
+#define PAC_BGA180                  0xB1u
+#define PAC_BGA180A                 0xC1u   /* The second type of pinMux */
+#define PAC_BGA292                  0xB2u
+#define PAC_BGA416                  0xB4u
+#define PAC_BGA516                  0xB6u
+#define PAC_BGA516P                 0xC6u   /* P, C3007: 300MHz -> 400MHz */
+#define PAC_BGA680                  0xBAu
+#define CHIP_PAC_MASK               0xFFu
+#define CHIP_PAC_SHIFT              0u
+#define CHIP_FLS_SIZE_MASK          0xFF00u /* FlashSize = CHIP_FLS_SIZE * 0.5MB */
+#define CHIP_FLS_SIZE_SHIFT         8u
+#define CHIP_NUM_CORE_MASK          0xF0000u
+#define CHIP_NUM_CORE_SHIFT         16u
+#define CHIP_TYPE_MASK              0xFFF00000UL
+#define CHIP_TYPE_SHIFT             20u
+/* All Chip [NumOfCore] Max */
+#define ALL_CHIP_NUM_CORE_MAX       6u
+
+/* CCFC3007BC package define */
+#define CCFC3007BC_T64L9_HQFP216    (0x37B30839UL)  /* 37B: 3007BC, 3: 3cores, 0x08: 4MB, 39: HQFP216  */
+#define CCFC3007BC_T128L9_HQFP216   (0x37B31039UL)  /* 37B: 3007BC, 3: 3cores, 0x10: 8MB, 39: HQFP216  */
+#define CCFC3007BC_T96B2_BGA292     (0x37B30CB2UL)  /* 37B: 3007BC, 3: 3cores, 0x0C: 6MB, B2: BGA292   */
+#define CCFC3007BC_T128B2_BGA292    (0x37B310B2UL)  /* 37B: 3007BC, 3: 3cores, 0x10: 8MB, B2: BGA292   */
+
+/* Chip model package selection */
+#define CCFC_CHIP_MODEL_PACKAGE     CCFC3007BC_T128L9_HQFP216
+
+#if ((CCFC_CHIP_MODEL_PACKAGE & CHIP_TYPE_MASK) != CHIP_TYPE)
+    #error "No valid CPU Type defined!"
+#endif
+/****************************************************************************/
+/****************************************************************************/
+
+
+/*===================Device resource definition start=======================*/
+
+/*----------------------------------Cores-----------------------------------*/
+#define RESOURCE_CHIP_CORE_NUM      (3u)    /* Number of chip cores. */
+#define RESOURCE_SUPPORT_CORE_0     (0u)    /* Supported. Core_0 */
+#define RESOURCE_SUPPORT_CORE_1     (1u)    /* Supported. Core_1 */
+#define RESOURCE_SUPPORT_CORE_2     (2u)    /* Supported. Core_2 */
+#define RESOURCE_SUPPORT_CHK_CORE_0 (0u)    /* Supported. Checker Core_0 */
+
+/*----------------------------------MCU-------------------------------------*/
+/* Note: PLLDIG(Dual PLL Digital Interface),
+ * CMU(Clock Monitor Unit),
+ * MC_CGM(Clock Generation Module),
+ * MC_ME(Mode Entry Module),
+ * MC_RGM(Reset Generation Module)... */
+#define RESOURCE_SUPPORT_MCU_MODE_STANDBY   /* Supported. MC_ME, Chip mode: standby mode. */
+#define RESOURCE_SUPPORT_MCU_FIRC_DIV       /* Supported. IRCOSC, FIRC function: control on/off(StandbyMode), clock division */
+#define RESOURCE_SUPPORT_MCU_AC11           /* Supported. */
+#define RESOURCE_SUPPORT_MCU_AC12           /* Supported. */
+#define RESOURCE_SUPPORT_MCU_AC0_DC1_FMT    /* Supported. */
+#define RESOURCE_SUPPORT_MCU_AC0_DC2_FMT    /* Supported. */
+
+#define RESOURCE_SUPPORT_MCU_I2S            /* Supported. */
+#define RESOURCE_SUPPORT_MCU_SSI            /* Supported. */
+
+#define RESOURCE_SUPPORT_MCU_FLASH_VARIABLE_SIZE    /* Supported. */
+#define RESOURCE_SUPPORT_MCU_RESET_EMIOS    /* Supported. MC_RGM, EMIOS module reset function */
+#define RESOURCE_SUPPORT_MCU_RESET_ETPU     /* Supported. MC_RGM, ETPU module reset function */
+
+#define RESOURCE_SUPPORT_MCU_CCTL0       /* Supported. */
+#define RESOURCE_SUPPORT_MCU_CCTL1       /* Supported. */
+#define RESOURCE_SUPPORT_MCU_CCTL2       /* Supported. */
+#define RESOURCE_SUPPORT_MCU_CCTL3       /* Supported. */
+#define RESOURCE_SUPPORT_MCU_CCTL4       /* Supported. */
+/* RESOURCE_SUPPORT_MCU_CCTL6 */       /* Unsupported. */
+/* RESOURCE_SUPPORT_MCU_CCTL7 */       /* Unsupported. */
+/* RESOURCE_SUPPORT_MCU_CCTL8 */       /* Unsupported. */
+/* RESOURCE_SUPPORT_MCU_CCTL9 */       /* Unsupported. */
+/* RESOURCE_SUPPORT_MCU_CCTL10 */      /* Unsupported. */
+/* RESOURCE_SUPPORT_MCU_CCTL11 */      /* Unsupported. */
+
+#define RESOURCE_SUPPORT_XBAR_0
+#define RESOURCE_SUPPORT_XBAR_1
+#define RESOURCE_SUPPORT_XBAR_0_PORT_NUM    (6U)
+#define RESOURCE_SUPPORT_XBAR_1_PORT_NUM    (4U)
+
+/*----------------------------------SMPU------------------------------------*/
+#define RESOURCE_SUPPORT_SMPU_INSTANCE_COUNT    (2U)    /* Supported.   SMPU instance 0/1.                              */
+#define RESOURCE_SUPPORT_SMPU_MASTER_NUM_COUNT  (11U)   /* Supported.   SMPU logical bus master number: count           */
+/* SMPU logical bus master number */
+#define RESOURCE_SUPPORT_SMPU_BUS_MASTER_NUM_0  (0U)    /* Supported.   SMPU logical bus master number 0:  Core_0       */
+#define RESOURCE_SUPPORT_SMPU_BUS_MASTER_NUM_1  (1U)    /* Supported.   SMPU logical bus master number 1:  Core_1       */
+#define RESOURCE_SUPPORT_SMPU_BUS_MASTER_NUM_2  (2U)    /* Supported.   SMPU logical bus master number 2:  Core_2       */
+#define RESOURCE_SUPPORT_SMPU_BUS_MASTER_NUM_3  (3U)    /* Supported.   SMPU logical bus master number 3:  DMA_0        */
+#define RESOURCE_SUPPORT_SMPU_BUS_MASTER_NUM_4  (4U)    /* Supported.   SMPU logical bus master number 4:  Ethernet     */
+/* RESOURCE_SUPPORT_SMPU_BUS_MASTER_NUM_5  */           /* Unsupported. SMPU logical bus master number 5:  Reserved     */
+/* RESOURCE_SUPPORT_SMPU_BUS_MASTER_NUM_6  */           /* Unsupported. SMPU logical bus master number 6:  Reserved     */
+/* RESOURCE_SUPPORT_SMPU_BUS_MASTER_NUM_7  */           /* Unsupported. SMPU logical bus master number 7:  Reserved     */
+#define RESOURCE_SUPPORT_SMPU_BUS_MASTER_NUM_8  (8U)    /* Supported.   SMPU logical bus master number 8:  Core_0 Debug */
+#define RESOURCE_SUPPORT_SMPU_BUS_MASTER_NUM_9  (9U)    /* Supported.   SMPU logical bus master number 9:  Core_1 Debug */
+#define RESOURCE_SUPPORT_SMPU_BUS_MASTER_NUM_10 (10U)   /* Supported.   SMPU logical bus master number 10: Core_2 Debug */
+#define RESOURCE_SUPPORT_SMPU_BUS_MASTER_NUM_11 (11U)   /* Supported.   SMPU logical bus master number 11: DMA_1        */
+/* RESOURCE_SUPPORT_SMPU_BUS_MASTER_NUM_12 */           /* Unsupported. SMPU logical bus master number 12: Reserved     */
+/* RESOURCE_SUPPORT_SMPU_BUS_MASTER_NUM_13 */           /* Unsupported. SMPU logical bus master number 13: Reserved     */
+#define RESOURCE_SUPPORT_SMPU_BUS_MASTER_NUM_14 (14U)   /* Supported.   SMPU logical bus master number 14: HSM          */
+#define RESOURCE_SUPPORT_SMPU_BUS_MASTER_NUM_15 (15U)   /* Supported.   SMPU logical bus master number 15: Nexus Debug  */
+#define RESOURCE_SUPPORT_SMPU_BUS_MASTER_NUM_MAX (15U)  /* SMPU logical bus master number: Max                          */
+
+/*----------------------------------PMC_dig: Power Management Controller----*/
+#define RESOURCE_SUPPORT_PMC_PAD_RETENTION  /* Supported. Pad Retention function. */
+
+/*----------------------------------INTC: Interrupt Controller--------------*/
+#define RESOURCE_SUPPORT_INTC_0             /* Supported. Interrupt Controller 0. */
+/* RESOURCE_SUPPORT_INTC_1 */               /* Unsupported. Interrupt Controller 1. */
+
+/*----------------------------------FLASH-----------------------------------*/
+
+/*----------------------------------RAM-------------------------------------*/
+
+/*----------------------------------SIULx: System Integration Unit LiteX----*/
+/* Note: The Unit provides control over all the I/O ports on this device. */
+/* RESOURCE_SUPPORT_SIUL_IP */              /* Unsupported. IP: SIUL */
+#define RESOURCE_SUPPORT_SIUL2_IP           /* Supported. IP: SIUL2 */
+
+/*----------------------------------EIOMUX: Enhanced IO Multiplexer---------*/
+/* RESOURCE_SUPPORT_EIOMUX */               /* Unsupported. IP: EIOMUX */
+/* RESOURCE_SUPPORT_EIOMUX2 */              /* Unsupported. IP: EIOMUX2 */
+
+/*----------------------------------EMDA/DMAMUX-----------------------------*/
+/* RESOURCE_SUPPORT_TRANS_8_32BYTES */      /* Unsupported. transport 8/32bytes unsupport transport 16bytes */
+/* RESOURCE_SUPPORT_DMAMUX10 */             /* Unsupported. DMAMUX_10 */
+
+/*----------------------------------WKPU: WakeUp Unit-----------------------*/
+#define RESOURCE_SUPPORT_WKPU_NMI           /* Supported. Non-maskable interrupts. */
+#define RESOURCE_SUPPORT_WKPU_MULT_WAKE_SRC /* Supported. Other multiple wake sources. */
+/* RESOURCE_SUPPORT_WKPU_MUX_COMBI */       /* Unsupported. Multiplex combination. */
+#ifdef RESOURCE_SUPPORT_WKPU_NMI
+#define NMI_IO_MUX_REG_WKPU_NCR             (1U)    /* NMI pin multiplexing control in the WKPU module. */
+#define NMI_IO_MUX_REG_SIUL2_SCR0           (2U)    /* NMI pin multiplexing control in the SIUL2 module. */
+#define RESOURCE_SUPPORT_WKPU_NMI_IO_MUX    (NMI_IO_MUX_REG_WKPU_NCR)   /* Supported. NMI pins(ESR1) support multiplexing. */
+#endif  /* RESOURCE_SUPPORT_WKPU_NMI */
+#ifdef RESOURCE_SUPPORT_WKPU_MULT_WAKE_SRC
+#define RESOURCE_SUPPORT_WKPU_WISR0_0_7     /* Supported. Wake up source WISR0 0-7. */
+#define RESOURCE_SUPPORT_WKPU_WISR0_8_15    /* Supported. Wake up source WISR0 8-15. */
+#define RESOURCE_SUPPORT_WKPU_WISR0_16_23   /* Supported. Wake up source WISR0 16-23. */
+#define RESOURCE_SUPPORT_WKPU_WISR0_24_31   /* Supported. Wake up source WISR0 24-31. */
+#define RESOURCE_SUPPORT_WKPU_WISR1_0_7     /* Supported. Wake up source WISR1 0-7. */
+#define RESOURCE_SUPPORT_WKPU_WISR1_8_15    /* Supported. Wake up source WISR1 8-15. */
+#define RESOURCE_SUPPORT_WKPU_WISR1_16_23   /* Supported. Wake up source WISR1 16-23. */
+#define RESOURCE_SUPPORT_WKPU_WISR1_24_31   /* Supported. Wake up source WISR1 24-31. */
+#endif  /* RESOURCE_SUPPORT_WKPU_MULT_WAKE_SRC */
+
+/*----------------------------------eQADC: Enhanced Queued ADC(SARADC)------*/
+/*
+ * Classification: EQADC Instance Resources (EQADC Function Definition Macro) */
+#define RESOURCE_SUPPORT_EQADC_INST0                /* Supported. EQADC Instance 0(EqadcHwUnit0/EqadcHwUnit1)       */
+/* RESOURCE_SUPPORT_EQADC_INST1 */                  /* Unsupported. EQADC Instance 1(EqadcHwUnit2/EqadcHwUnit3)     */
+/* RESOURCE_SUPPORT_EQADC_INST2 */                  /* Unsupported. EQADC Instance 2(EqadcHwUnit4/EqadcHwUnit5)     */
+/* RESOURCE_SUPPORT_EQADC_INST3 */                  /* Unsupported. EQADC Instance 3(EqadcHwUnit6/EqadcHwUnit7)     */
+/* RESOURCE_SUPPORT_EQADC_INST4 */                  /* Unsupported. EQADC Instance 4(EqadcHwUnit8/EqadcHwUnit9)     */
+/* RESOURCE_SUPPORT_EQADC_INST5 */                  /* Unsupported. EQADC Instance 5(EqadcHwUnit10/EqadcHwUnit11)   */
+/* RESOURCE_SUPPORT_EQADC_INST6 */                  /* Unsupported. EQADC Instance 6(EqadcHwUnit12)                 */
+/*
+ * Classification: EQADC Instance Function (EQADC Function Definition Macro) */
+#define RESOURCE_SUPPORT_EQADC_RED_LINE_CLIENT_CONFIG   /* Supported. Red Line Client Configuration                 */
+/* RESOURCE_SUPPORT_EQADC_SIUL2_TRIG_SRC_LIMIT */   /* Unsupported. eQADC CFIFO Trigger Source Limitation           */
+#define RESOURCE_SUPPORT_EQADC_VREF_SW_CTRL_1       (1U)    /* The enable bit of SDADC needs to be turned on,
+                                                             * SSCM module offsets the 0x38 register, bit2/3        */
+#define RESOURCE_SUPPORT_EQADC_VREF_SW_CTRL_2       (2U)    /* SSCM module offsets the 0x38 register, bit2/3/4      */
+#define RESOURCE_SUPPORT_EQADC_VREF_SW_CTRL_3       (3U)    /* SSCM module offsets the 0x38 register, bit2/3        */
+#define RESOURCE_SUPPORT_EQADC_VREF_SW              RESOURCE_SUPPORT_EQADC_VREF_SW_CTRL_3
+/* RESOURCE_SUPPORT_EQADC_TRIG_DELAY */             /* Unsupported. Function: EQADC CFIFO delay trigger             */
+#define RESOURCE_SUPPORT_EQADC_FIFO_CNT_6           (6U)    /* CFIFO_0 - CFIFO_5, RFIFO_0 - RFIFO_5                 */
+#define RESOURCE_SUPPORT_EQADC_FIFO_CNT_8           (8U)    /* CFIFO_0 - CFIFO_7, RFIFO_0 - RFIFO_7                 */
+#define RESOURCE_SUPPORT_EQADC_FIFO_CNT             RESOURCE_SUPPORT_EQADC_FIFO_CNT_6
+#define RESOURCE_SUPPORT_EQADC_RFIFO_ENTRY_CNT_4    (4U)    /* The entry of RFIFOx: 4                               */
+#define RESOURCE_SUPPORT_EQADC_RFIFO_ENTRY_CNT_8    (8U)    /* The entry of RFIFOx: 8                               */
+#define RESOURCE_SUPPORT_EQADC_RFIFO_ENTRY_CNT      RESOURCE_SUPPORT_EQADC_RFIFO_ENTRY_CNT_4
+#if (defined(RESOURCE_SUPPORT_EQADC_FIFO_CNT) && (RESOURCE_SUPPORT_EQADC_FIFO_CNT == RESOURCE_SUPPORT_EQADC_FIFO_CNT_8))
+/* RESOURCE_SUPPORT_EQADC_CFIFO_INJECTION */        /* Unsupported. Injection of CFIFOx                             */
+#endif  /* RESOURCE_SUPPORT_EQADC_FIFO_CNT */
+/* RESOURCE_SUPPORT_EQADC_RFIFO_CLK_SWITCH */       /* Unsupported. Clock Switch Enable for RFIFOx                  */
+/* RESOURCE_SUPPORT_EQADC_RFIFO_SOFT_RESET */       /* Unsupported. RFIFO Software Reset                            */
+/* RESOURCE_SUPPORT_EQADC_FIFO_DMA_CTRL_SEL */      /* Unsupported. CFIFOx/RFIFOx DMA ControllerSelect: DMA_0/DMA_1 */
+/* RESOURCE_SUPPORT_EQADC_WAKEUP */                 /* Unsupported. eQADC Wakeup function from low power mode       */
+/*
+ * Classification: EQADC On-Chip ADC Configuration (EQADC Function Definition Macro) */
+/* RESOURCE_SUPPORT_EQADC_CFG_OPEN_2_EMUX */        /* Unsupported. Both EMUX switches are turned on simultaneously */
+/* RESOURCE_SUPPORT_EQADC_CFG_ALL_ADC_2MSPS */      /* Unsupported. All ADC support a rate of 2MSPS                 */
+/* RESOURCE_SUPPORT_EQADC_CFG_ADC0_2MSPS */         /* Unsupported. Only ADC0 supports a rate of 2MSPS              */
+/* RESOURCE_SUPPORT_EQADC_CFG_PRECHARGE */          /* Unsupported. Precharge clock cycles selection.               */
+/* RESOURCE_SUPPORT_EQADC_CFG_MONITOR */            /* Unsupported. ADC channel sampling and conversion monitoring  */
+/* RESOURCE_SUPPORT_EQADC_CFG_AUTO_SHIFT */         /* Unsupported. Data auto >> 2bits. Default on                  */
+/*
+ * Classification: EQADC ADC Command (EQADC Function Definition Macro) */
+/* RESOURCE_SUPPORT_EQADC_CMD_OSR */                /* Unsupported. OverSample rate selection                       */
+#define RESOURCE_SUPPORT_EQADC_CMD_LST_2BIT         (0U)    /* Long Sampling Time: 2/8/64/128 Cycles                */
+#define RESOURCE_SUPPORT_EQADC_CMD_LST_3BIT         (1U)    /* Long Sampling Time: 2/4/6/8/16/32/64/128 Cycles      */
+#define RESOURCE_SUPPORT_EQADC_CMD_LST              RESOURCE_SUPPORT_EQADC_CMD_LST_2BIT
+
+/*----------------------------------SDADC: Sigma Delta ADC------------------*/
+/* RESOURCE_SUPPORT_SDADC_IP */             /* Unsupported. IP: SDADC */
+#ifdef RESOURCE_SUPPORT_SDADC_IP
+/* RESOURCE_SUPPORT_SDADC0  */              /* Unsupported. SDADC Instance 0  */
+/* RESOURCE_SUPPORT_SDADC1  */              /* Unsupported. SDADC Instance 1  */
+/* RESOURCE_SUPPORT_SDADC2  */              /* Unsupported. SDADC Instance 2  */
+/* RESOURCE_SUPPORT_SDADC3  */              /* Unsupported. SDADC Instance 3  */
+/* RESOURCE_SUPPORT_SDADC4  */              /* Unsupported. SDADC Instance 4  */
+/* RESOURCE_SUPPORT_SDADC5  */              /* Unsupported. SDADC Instance 5  */
+/* RESOURCE_SUPPORT_SDADC6  */              /* Unsupported. SDADC Instance 6  */
+/* RESOURCE_SUPPORT_SDADC7  */              /* Unsupported. SDADC Instance 7  */
+/* RESOURCE_SUPPORT_SDADC8  */              /* Unsupported. SDADC Instance 8  */
+/* RESOURCE_SUPPORT_SDADC9  */              /* Unsupported. SDADC Instance 9  */
+/* RESOURCE_SUPPORT_SDADC10 */              /* Unsupported. SDADC Instance 10 */
+/* RESOURCE_SUPPORT_SDADC11 */              /* Unsupported. SDADC Instance 11 */
+/* RESOURCE_SUPPORT_SDADC12 */              /* Unsupported. SDADC Instance 12 */
+/* RESOURCE_SUPPORT_SDADC13 */              /* Unsupported. SDADC Instance 13 */
+#endif
+
+/*----------------------------------ACMP: Analog Comparator-----------------*/
+/* RESOURCE_SUPPORT_ACMP */                 /* Unsupported. IP: ACMP */
+
+/*----------------------------------DAC: Digital-to-analog converter--------*/
+/* RESOURCE_SUPPORT_DAC */                  /* Unsupported. IP: DAC */
+
+/*----------------------------------STM: System Timer Module----------------*/
+#define RESOURCE_STM_INSTANCE_NUM           (3U)
+#define RESOURCE_SUPPORT_STM0               /* Supported. STM 0 */
+#define RESOURCE_SUPPORT_STM1               /* Supported. STM 1 */
+#define RESOURCE_SUPPORT_STM2               /* Supported. STM 2 */
+/* RESOURCE_SUPPORT_STM3 */                 /* Unsupported. STM 3 */
+/* RESOURCE_SUPPORT_STM4 */                 /* Unsupported. STM 4 */
+/* RESOURCE_SUPPORT_STM5 */                 /* Unsupported. STM 5 */
+
+/*----------------------------------PIT: Periodic Interrupt Timer-----------*/
+#define RESOURCE_SUPPORT_CLKSRC_AC0DC0      /* Supported. Clock Source AC0DC0    */
+/* RESOURCE_SUPPORT_CLKSRC_AC0DC4 */        /* Unsupported. Clock Source AC0DC4    */
+#define RESOURCE_SUPPORT_PIT0               /* Supported. PIT 0 */
+#define RESOURCE_SUPPORT_PIT1               /* Supported. PIT 1 */
+#define RESOURCE_SUPPORT_PIT_TRIG_DMA       /* Supported. Function: PIT trigger DMA */
+
+/*----------------------------------RTC/API: -------------------------------
+ *----------------------Real Time Clock/Autonomous Periodic Interrupt-------*/
+#define RESOURCE_SUPPORT_RTC_API            /* Supported. IP: RTC/API */
+
+/*----------------------------------SWT: Software Watchdog Timer------------*/
+#define RESOURCE_SUPPORT_SWT0               /* Supported. SWT 0 */
+#define RESOURCE_SUPPORT_SWT1               /* Supported. SWT 1 */
+#define RESOURCE_SUPPORT_SWT2               /* Supported. SWT 2 */
+#define RESOURCE_SUPPORT_SWT3               /* Supported. SWT 3 */
+/* RESOURCE_SUPPORT_SWT4 */                 /* Unsupported. SWT 4 */
+/* RESOURCE_SUPPORT_SWT5 */                 /* Unsupported. SWT 5 */
+/* RESOURCE_SUPPORT_SWT6 */                 /* Unsupported. SWT 6 */
+#define RESOURCE_SUPPORT_SWT7_AO            /* Supported. SWT 7_AO */
+#define RESOURCE_SUPPORT_WDG_ADDRMODE       /* Supported. Address feed the dog */
+#ifdef RESOURCE_SUPPORT_SWT7_AO
+#define RESOURCE_SUPPORT_SWT_AO_CTRL_0       0U /* SWT7 Enable Method 0  */
+#define RESOURCE_SUPPORT_SWT_AO_CTRL_1       1U /* SWT7 Enable Method 1 */
+#define RESOURCE_SUPPORT_SWT_AO_CTRL         RESOURCE_SUPPORT_SWT_AO_CTRL_0
+#endif
+
+/*----------------------------------eMIOS: Enhanced Modular IO Subsystem----*/
+#define RESOURCE_SUPPORT_EMIOS0             /* Supported. eMIOS_0    */
+#define RESOURCE_SUPPORT_EMIOS1             /* Supported. eMIOS_1    */
+#define RESOURCE_SUPPORT_EMIOS0_CH0_7       /* Supported. eMIOS_0 Channel_0~7.     */
+#define RESOURCE_SUPPORT_EMIOS0_CH8_15      /* Supported. eMIOS_0 Channel_8~15.    */
+#define RESOURCE_SUPPORT_EMIOS0_CH16_23     /* Supported. eMIOS_0 Channel_16~23.   */
+#define RESOURCE_SUPPORT_EMIOS0_CH24_31     /* Supported. eMIOS_0 Channel_24~31.   */
+#define RESOURCE_SUPPORT_EMIOS1_CH0_7       /* Supported. eMIOS_1 Channel_0~7.     */
+#define RESOURCE_SUPPORT_EMIOS1_CH8_15      /* Supported. eMIOS_1 Channel_8~15.    */
+#define RESOURCE_SUPPORT_EMIOS1_CH16_23     /* Supported. eMIOS_1 Channel_16~23.   */
+#define RESOURCE_SUPPORT_EMIOS1_CH24_31     /* Supported. eMIOS_1 Channel_24~31.   */
+#define RESOURCE_SUPPORT_EMIOS_OPWMT        /* Supported. eMIOS Mode: OPWMT.       */
+#define RESOURCE_SUPPORT_EMIOS_CH_CONTINUE  /* Supported. eMIOS channel continue */
+
+/*----------------------------------eTPU: Enhanced Time Processing Unit-----*/
+#define RESOURCE_SUPPORT_ETPU               /* Supported. IP: eTPU */
+
+/*----------------------------------GTM: Generic Timer Module---------------*/
+/* RESOURCE_SUPPORT_GTM104 */               /* Unsupported. IP: GTM1.04, about 18 submodules. */
+/* RESOURCE_SUPPORT_GTM410 */               /* Unsupported. IP: GTM4.10, about 26 submodules. */
+/* RESOURCE_SUPPORT_GTM_TIM0 */     /* Unsupported. GTM TIM0 */
+/* RESOURCE_SUPPORT_GTM_TIM1 */     /* Unsupported. GTM TIM1 */
+/* RESOURCE_SUPPORT_GTM_TIM2 */     /* Unsupported. GTM TIM2 */
+/* RESOURCE_SUPPORT_GTM_TIM3 */     /* Unsupported. GTM TIM3 */
+/* RESOURCE_SUPPORT_GTM_TIM4 */     /* Unsupported. GTM TIM4 */
+/* RESOURCE_SUPPORT_GTM_TIM5 */     /* Unsupported. GTM TIM5 */
+/* RESOURCE_SUPPORT_GTM_TIM6 */     /* Unsupported. GTM TIM6 */
+/* RESOURCE_SUPPORT_GTM_TIM7 */     /* Unsupported. GTM TIM7 */
+/* RESOURCE_SUPPORT_GTM_TO_MSC */           /* Unupported. GTM Trigger MSC */
+
+/*#define RESOURCE_SUPPORT_GTM_TOM0 */              /* Supported. GTM TOM0 */
+/*#define RESOURCE_SUPPORT_GTM_TOM1 */              /* Supported. GTM TOM1 */
+/*#define RESOURCE_SUPPORT_GTM_TOM2 */              /* Supported. GTM TOM2 */
+/*#define RESOURCE_SUPPORT_GTM_TOM3 */              /* Supported. GTM TOM3 */
+/*#define RESOURCE_SUPPORT_GTM_TOM4 */              /* Supported. GTM TOM4 */
+/*#define RESOURCE_SUPPORT_GTM_TOM5 */              /* Unsupported. GTM TOM5 */
+/*----------------------------------CCU7: Capture/Compare Unit 7------------*/
+/* RESOURCE_SUPPORT_CCU7_IP */              /* Unsupported. IP: CCU7, Capture/Compare Unit 7. */
+
+/*---------------------------------PWM3012----------------------------------*/
+/* RESOURCE_SUPPORT_PWM3012_IP */           /* Unsupported. IP: PWM3012 */
+
+/*----------------------------------MCAN------------------------------------*/
+/* MCAN: 3 MCAN Modules, support 12 MCAN controllers */
+#define RESOURCE_SUPPORT_MCAN_CONTROLLER_1      /* Supported. MCAN1 */
+#define RESOURCE_SUPPORT_MCAN_CONTROLLER_2      /* Supported. MCAN2 */     
+#define RESOURCE_SUPPORT_MCAN_CONTROLLER_3      /* Supported. MCAN3 */
+#define RESOURCE_SUPPORT_MCAN_CONTROLLER_4      /* Supported. MCAN4 */
+#define RESOURCE_SUPPORT_MCAN_CONTROLLER_5      /* Supported. MCAN5 */
+#define RESOURCE_SUPPORT_MCAN_CONTROLLER_6      /* Supported. MCAN6 */
+#define RESOURCE_SUPPORT_MCAN_CONTROLLER_7      /* Supported. MCAN7 */
+#define RESOURCE_SUPPORT_MCAN_CONTROLLER_8      /* Supported. MCAN8 */
+#define RESOURCE_SUPPORT_MCAN_CONTROLLER_9      /* Supported. MCAN9 */
+#define RESOURCE_SUPPORT_MCAN_CONTROLLER_10     /* Supported. MCAN10 */
+#define RESOURCE_SUPPORT_MCAN_CONTROLLER_11     /* Supported. MCAN11 */
+#define RESOURCE_SUPPORT_MCAN_CONTROLLER_12     /* Supported. MCAN12 */
+
+#define RESOURCE_SUPPORT_MCAN_RAM_SIZE     (20*1024U)   /* Supported. MCAN: MCAN1~MCAN4 shared 20KB RAM */
+#define RESOURCE_SUPPORT_MCAN_RAM1_SIZE    (64*1024U)   /* Supported. MCAN: MCAN5~MCAN8 shared 64KB RAM */
+#define RESOURCE_SUPPORT_MCAN_RAM2_SIZE    (20*1024U)   /* Supported. MCAN: MCAN9~MCAN12 shared 20KB RAM */
+
+/* RESOURCE_SUPPORT_MCAN_DMU */                         /* Unsupported. DMA Interface Unit */
+/* RESOURCE_SUPPORT_MCAN_TSU */                         /* Unsupported. Timestamping Unit */
+/* RESOURCE_SUPPORT_MCAN_CHANGE_EDIAN_CCFC3008PCSN */   /* Unsupported. CAN RAM Hardware Endianess Conversion */
+/* RESOURCE_SUPPORT_MCAN_CHANGE_EDIAN */                /* Unsupported. CAN RAM Hardware Endianess Conversion */
+
+/*----------------------------------CANFD-----------------------------------*/
+/* RESOURCE_SUPPORT_CANFD_IP */                 /* Unsupported. IP: CANFD */
+
+/*----------------------------------CAN SAMPLER-----------------------------*/
+#define RESOURCE_SUPPORT_CANSAMPLER_IP          /* Supported. IP: CANSAMPLER */
+#define RESOURCE_SUPPORT_CANSAMPLER_27_SOURCES  /* Supported. CAN SAMPLER: support 27 input sources */
+/* RESOURCE_SUPPORT_CANSAMPLER_52_SOURCES */    /* Unsupported. CAN SAMPLER: support 52 input sources */
+
+/*----------------------------------DSPI------------------------------------*/
+#define RESOURCE_SUPPORT_DSPI_0                     /* Supported. DSPI_0  */
+#define RESOURCE_SUPPORT_DSPI_1                     /* Supported. DSPI_1  */
+#define RESOURCE_SUPPORT_DSPI_2                     /* Supported. DSPI_2  */
+#define RESOURCE_SUPPORT_DSPI_3                     /* Supported. DSPI_3  */
+#define RESOURCE_SUPPORT_DSPI_4                     /* Supported. DSPI_4  */
+#define RESOURCE_SUPPORT_DSPI_5                     /* Supported. DSPI_5  */
+#define RESOURCE_SUPPORT_DSPI_6                     /* Supported. DSPI_6  */
+/* RESOURCE_SUPPORT_DSPI_7 */                       /* Unsupported. DSPI_7  */
+/* RESOURCE_SUPPORT_DSPI_8 */                       /* Unsupported. DSPI_8  */
+/* RESOURCE_SUPPORT_DSPI_9 */                       /* Unsupported. DSPI_9  */
+/* RESOURCE_SUPPORT_DSPI_10 */                      /* Unsupported. DSPI_10 */
+/* RESOURCE_SUPPORT_DSPI_11 */                      /* Unsupported. DSPI_11 */
+#define RESOURCE_SUPPORT_DSPI_12                    /* Supported. DSPI_12 */
+/* RESOURCE_SUPPORT_DSPI_13 */                      /* Unsupported. DSPI_13 */
+/* RESOURCE_SUPPORT_DSPI_14 */                      /* Unsupported. DSPI_14 */
+/* RESOURCE_SUPPORT_DSPI_15 */                      /* Unsupported. DSPI_15 */
+/* RESOURCE_SUPPORT_DSPI_16 */                      /* Unsupported. DSPI_16 */
+/* RESOURCE_SUPPORT_DSPI_17 */                      /* Unsupported. DSPI_17 */
+/* RESOURCE_SUPPORT_DSPI_18 */                      /* Unsupported. DSPI_18 */
+/* RESOURCE_SUPPORT_DSPI_19 */                      /* Unsupported. DSPI_19 */
+/* RESOURCE_SUPPORT_DSPI_20 */                      /* Unsupported. DSPI_20 */
+/* RESOURCE_SUPPORT_DSPI_21 */                      /* Unsupported. DSPI_21 */
+#define RESOURCE_SUPPORT_DSPI_LVDS                  /* Supported. exclude CCFC3008PT open LVDS */
+/* RESOURCE_SUPPORT_DSPI_LVDS_CCFC3008PT*/          /* Unsupported. CCFC3008PT open LVDS */
+#define RESOURCE_SUPPORT_DSPI_DISR                  /* Supported. DSPI Input Select function*/
+
+/*----------------------------------SSI: Synchronous Serial Interface-------*/
+/* Note: SSI = QSPI. */
+#define RESOURCE_SUPPORT_SSI_IP             /* Supported. IP: SSI */
+#ifdef RESOURCE_SUPPORT_SSI_IP
+#define RESOURCE_SUPPORT_SSI0               /* Supported. SSI 0 */
+
+#endif
+
+/*----------------------------------LINFlexD--------------------------------*/
+#define LINFLEXD_MAX                        (16u)
+#define RESOURCE_SUPPORT_LINFLEXD_0         /* Supported. LINFlexD 0  */
+#define RESOURCE_SUPPORT_LINFLEXD_1         /* Supported. LINFlexD 1  */
+#define RESOURCE_SUPPORT_LINFLEXD_2         /* Supported. LINFlexD 2  */
+#define RESOURCE_SUPPORT_LINFLEXD_3         /* Supported. LINFlexD 3  */
+#define RESOURCE_SUPPORT_LINFLEXD_4         /* Supported. LINFlexD 4  */
+#define RESOURCE_SUPPORT_LINFLEXD_5         /* Supported. LINFlexD 5  */
+#define RESOURCE_SUPPORT_LINFLEXD_6         /* Supported. LINFlexD 6  */
+#define RESOURCE_SUPPORT_LINFLEXD_7         /* Supported. LINFlexD 7  */
+#define RESOURCE_SUPPORT_LINFLEXD_8         /* Supported. LINFlexD 8  */
+#define RESOURCE_SUPPORT_LINFLEXD_9         /* Supported. LINFlexD 9  */
+#define RESOURCE_SUPPORT_LINFLEXD_10        /* Supported. LINFlexD 10 */
+#define RESOURCE_SUPPORT_LINFLEXD_11        /* Supported. LINFlexD 11 */
+#define RESOURCE_SUPPORT_LINFLEXD_12        /* Supported. LINFlexD 12 */
+#define RESOURCE_SUPPORT_LINFLEXD_14        /* Supported. LINFlexD 14 */
+#define RESOURCE_SUPPORT_LINFLEXD_15        /* Supported. LINFlexD 15 */
+#define RESOURCE_SUPPORT_LINFLEXD_16        /* Supported. LINFlexD 16 */
+
+/*----------------------------------I2C-------------------------------------*/
+#define RESOURCE_SUPPORT_I2C
+
+/*----------------------------------Ethernet--------------------------------*/
+#define RESOURCE_SUPPORT_ETH_EMAC_IP        /* Supported. IP: EMAC, Ethernet Media Access Controller */
+/* RESOURCE_SUPPORT_ETH_GMAC_IP */          /* Unsupported. IP: GMAC, Gigabit Ethernet MAC */
+
+/*----------------------------------SENT------------------------------------*/
+#define RESOURCE_SUPPORT_SENT               /* Supported. IP: SENT */
+
+/*----------------------------------CSENT-----------------------------------*/
+#define RESOURCE_SUPPORT_CSENT              /* Supported. IP: CSENT */
+
+/*----------------------------------PSI5------------------------------------*/
+#define RESOURCE_SUPPORT_PSI5_IP            /* Supported. IP: PSI5 */
+#define RESOURCE_SUPPORT_PSI5_0             /* Supported. 3 channels: 0-2  */
+#define RESOURCE_SUPPORT_PSI5_1             /* Supported. 2 channels: 0-1  */
+
+/*----------------------------------PSI5-S----------------------------------*/
+#define RESOURCE_SUPPORT_PSI5_S             /* Supported. IP: PSI5-S */
+
+/*----------------------------------FlexRay---------------------------------*/
+
+/*----------------------------------I2S-------------------------------------*/
+#define RESOURCE_SUPPORT_I2S                /* Supported. IP: I2S */
+
+/*----------------------------------SD_EMMC_HOST----------------------------*/
+/* RESOURCE_SUPPORT_SD_EMMC */              /* Unsupported. IP: SD_EMMC */
+
+/*----------------------------------SPORT-------------------------------------*/
+/* RESOURCE_SUPPORT_SPORT */                /* Unsupported. IP: SPORT */
+
+/*----------------------------------Crypto-------------------------------------*/
+/*
+    EB1: {3007PT, 3008PT, 3010PT, 3011PT, 3012PT, 3008PCSN}
+    EB2: {3007BC}
+    EB3: {3008PC}
+*/
+#define RESOURCE_SUPPORT_CRYPTO_EB2     (2U)
+
+/*===================Device resource definition end=========================*/
+
+/* PCS-progressive system clock switch  */
+#define FEATURE_CGM_PCS_ENABLE  TRUE
+
+/* MCU PLL1 clock define */
+#define PLL1_CLK_600MHZ         (600UL)
+#define PLL1_CLK_480MHZ         (480UL)
+#define PLL1_CLK_300MHZ         (300UL)
+#define PLL1_CLK_800MHZ         (800UL)
+#define MCU_PLL1_CLK            PLL1_CLK_800MHZ
+
+/* MCU System clock ratio define */
+#define MCU_SYSCLK_RATIO_2_1    (0x0201UL)
+#define MCU_SYSCLK_RATIO_3_2    (0x0302UL)
+#if (MCU_PLL1_CLK == PLL1_CLK_600MHZ)
+#define MCU_SYSCLK_RATIO        MCU_SYSCLK_RATIO_3_2
+#else
+#define MCU_SYSCLK_RATIO        MCU_SYSCLK_RATIO_2_1
+#endif
+
+/* Enable checker core for z70 */
+#define CHECKER_CORE_ENABLE
+
+/* MCU(PLL,CGM,ME_MC) module features */
+
+/* @brief Key and inverted key values so write access to MCTL register is permitted */
+#define FEATURE_MC_ME_KEY       (0x5AF0U)
+#define FEATURE_MC_ME_KEY_INV   (0xA50FU)
+
+/* @brief Fast IRC trimmed clock frequency(16MHz). */
+#define FEATURE_IRCOSC0_FREQ    (16000000U)
+
+/* @brief Fast XOSC clock frequency(40MHz). */
+#define XOSC_16MHZ              (16000000UL)
+#define XOSC_40MHZ              (40000000UL)
+#define FEATURE_XOSC0_FREQ      XOSC_40MHZ
+
+/* FLASH module features */
+
+/* Base pointer of flash peripheral */
+#define FLS_FMC                 (C55FMC)
+
+/* The size of 16K block. */
+#define FLS_16KB_SIZE           (0x4000U)
+/* The size of 32K block. */
+#define FLS_32KB_SIZE           (0x8000U)
+/* The size of 48K block. */
+#define FLS_48KB_SIZE           (0xC000U)
+/* The size of 64K block. */
+#define FLS_64KB_SIZE           (0x10000U)
+/* The size of 256K block. */
+#define FLS_256KB_SIZE          (0x40000U)
+
+/*
+ * @brief Flash block number for each address space
+ * */
+/* Low Block Number. */
+#define FLS_LOW_16K_BLOCK       (6U)
+#define FLS_LOW_32K_BLOCK       (2U)
+#define FLS_LOW_64K_BLOCK       (4U)
+#define FLS_LOW_BLOCK           (FLS_LOW_16K_BLOCK + FLS_LOW_32K_BLOCK + FLS_LOW_64K_BLOCK)
+#define FLS_LOW_OFFSET          (0U)
+
+/* Mid Block Number. */
+#define FLS_MID_16K_BLOCK       (0U)
+#define FLS_MID_32K_BLOCK       (0U)
+#define FLS_MID_48K_BLOCK       (2U)
+#define FLS_MID_64K_BLOCK       (0U)
+#define FLS_MID_BLOCK           (FLS_MID_16K_BLOCK + FLS_MID_32K_BLOCK + FLS_MID_48K_BLOCK + FLS_MID_64K_BLOCK)
+#define FLS_MID_OFFSET          (FLS_LOW_OFFSET + FLS_LOW_BLOCK)
+
+/* High Block Number. */
+#define FLS_HIGH_16K_BLOCK      (0U)
+#define FLS_HIGH_32K_BLOCK      (0U)
+#define FLS_HIGH_64K_BLOCK      (8U)
+#define FLS_HIGH_BLOCK          (FLS_HIGH_16K_BLOCK + FLS_HIGH_32K_BLOCK + FLS_HIGH_64K_BLOCK)
+#define FLS_HIGH_OFFSET         (FLS_MID_OFFSET + FLS_MID_BLOCK)
+
+/* 256K Block Number. */
+#define FLS_256K_BLOCK_FIRST    (32U)
+#define FLS_256K_BLOCK_SECOND   (0U)
+#define FLS_256K_BLOCK          (FLS_256K_BLOCK_FIRST + FLS_256K_BLOCK_SECOND)
+#define FLS_256K_FIRST_OFFSET   (FLS_HIGH_OFFSET + FLS_HIGH_BLOCK)
+#define FLS_256K_SECOND_OFFSET  (FLS_256K_FIRST_OFFSET + FLS_256K_BLOCK_FIRST)
+
+/* ALL Block Number. */
+#define FLS_BLOCK_ALL           (FLS_LOW_BLOCK + FLS_MID_BLOCK + FLS_HIGH_BLOCK + FLS_256K_BLOCK)
+
+/* Flash block offset */
+#define FLS_LOCK_OFFSET_LOW       (16U)
+#define FLS_LOCK_OFFSET_MID       (8U)
+
+/*
+ * @brief Flash block mask define
+ */
+/* Flash block lock mask */
+#define FLS_LOCK_MASK_LOW       (0xFFFFFFFFU >> (32U - FLS_LOW_BLOCK))
+#define FLS_LOCK_MASK_MID       (0xFFFFFFFFU >> (32U - FLS_MID_BLOCK))
+#define FLS_LOCK_MASK_HIGH      (0xFFFFFFFFU >> (32U - FLS_HIGH_BLOCK))
+#define FLS_LOCK_MASK_FIR256K   (0xFFFFFFFFU >> (32U - FLS_256K_BLOCK_FIRST))
+#define FLS_LOCK_MASK_SEC256K   (0x0000FFFFU >> (16U - FLS_256K_BLOCK_SECOND))
+
+/* Flash block select mask */
+#define FLS_SEL_MASK_LOW        (0xFFFFFFFFU >> (32U - FLS_LOW_BLOCK))
+#define FLS_SEL_MASK_MID        (0xFFFFFFFFU >> (32U - FLS_MID_BLOCK))
+#define FLS_SEL_MASK_HIGH       (0xFFFFFFFFU >> (32U - FLS_HIGH_BLOCK))
+#define FLS_SEL_MASK_FIR256K    (0xFFFFFFFFU >> (32U - FLS_256K_BLOCK_FIRST))
+#define FLS_SEL_MASK_SEC256K    (0x0000FFFFU)
+
+/* Flash register numbers */
+#define FLS_REG_NUM             (29U)
+
+typedef struct
+{
+    uint32_t addrStart;
+    uint32_t addrEnd;
+    uint32_t lockSelReg;
+    uint32_t lockSelBit;
+    uint32_t blockSize;
+} flash_info_t;
+
+typedef struct
+{
+    const char * regName;
+    uint32_t defValue;
+    uint32_t regAddr;
+} flash_regs_t;
+
+static const flash_info_t flashInfo[FLS_BLOCK_ALL] = {
+    /* Low Block */
+    {0x00404000U, 0x00407FFFU, 0U, 16U, FLS_16KB_SIZE},  /* block 0    P0 (BAF)         */
+    {0x00FC0000U, 0x00FC3FFFU, 0U, 17U, FLS_16KB_SIZE},  /* block 1    P0 (Normal Code) */
+    {0x00FC4000U, 0x00FC7FFFU, 0U, 18U, FLS_16KB_SIZE},  /* block 2    P0 (Normal Code) */
+    {0x00FC8000U, 0x00FCBFFFU, 0U, 19U, FLS_16KB_SIZE},  /* block 3    P1 (Normal Code) */
+    {0x00FCC000U, 0x00FCFFFFU, 0U, 20U, FLS_16KB_SIZE},  /* block 4    P1 (Normal Code) */
+    {0x0060C000U, 0x0060FFFFU, 0U, 21U, FLS_16KB_SIZE},  /* block 5    P1 (HSM Code)    */
+    {0x00FD0000U, 0x00FD7FFFU, 0U, 22U, FLS_32KB_SIZE},  /* block 6    P0 (Normal Code) */
+    {0x00FD8000U, 0x00FDFFFFU, 0U, 23U, FLS_32KB_SIZE},  /* block 7    P1 (Normal Code) */
+    {0x00FE0000U, 0x00FEFFFFU, 0U, 24U, FLS_64KB_SIZE},  /* block 8    P0 (Normal Code) */
+    {0x00FF0000U, 0x00FFFFFFU, 0U, 25U, FLS_64KB_SIZE},  /* block 9    P0 (Normal Code) */
+    {0x00610000U, 0x0061FFFFU, 0U, 26U, FLS_64KB_SIZE},  /* block 10   P1 (HSM Code)    */
+    {0x00620000U, 0x0062FFFFU, 0U, 27U, FLS_64KB_SIZE},  /* block 11   P1 (HSM Code)    */
+
+    /* Mid Block */
+    {0x006C0000U, 0x006CBFFFU, 0U, 8U, FLS_48KB_SIZE},   /* block 12   P0 (Normal Code) */
+    {0x006CC000U, 0x006D7FFFU, 0U, 9U, FLS_48KB_SIZE},   /* block 13   P1 (Normal Code) */
+
+    /* High Block */
+    {0x00800000U, 0x0080FFFFU, 1U, 0U, FLS_64KB_SIZE},   /* block 14   P3 (EEPROM) */
+    {0x00810000U, 0x0081FFFFU, 1U, 1U, FLS_64KB_SIZE},   /* block 15   P3 (EEPROM) */
+    {0x00820000U, 0x0082FFFFU, 1U, 2U, FLS_64KB_SIZE},   /* block 16   P3 (EEPROM) */
+    {0x00830000U, 0x0083FFFFU, 1U, 3U, FLS_64KB_SIZE},   /* block 17   P3 (EEPROM) */
+    {0x00840000U, 0x0084FFFFU, 1U, 4U, FLS_64KB_SIZE},   /* block 18   P3 (EEPROM) */
+    {0x00850000U, 0x0085FFFFU, 1U, 5U, FLS_64KB_SIZE},   /* block 19   P3 (EEPROM) */
+    {0x00860000U, 0x0086FFFFU, 1U, 6U, FLS_64KB_SIZE},   /* block 20   P3 (EEPROM) */
+    {0x00870000U, 0x0087FFFFU, 1U, 7U, FLS_64KB_SIZE},   /* block 21   P3 (EEPROM) */
+
+    /* 256K Block */
+    {0x01000000U, 0x0103FFFFU, 2U, 0U,  FLS_256KB_SIZE}, /* block 22   P4 */
+    {0x01040000U, 0x0107FFFFU, 2U, 1U,  FLS_256KB_SIZE}, /* block 23   P4 */
+    {0x01080000U, 0x010BFFFFU, 2U, 2U,  FLS_256KB_SIZE}, /* block 24   P4 */
+    {0x010C0000U, 0x010FFFFFU, 2U, 3U,  FLS_256KB_SIZE}, /* block 25   P4 */
+    {0x01100000U, 0x0113FFFFU, 2U, 4U,  FLS_256KB_SIZE}, /* block 26   P4 */
+    {0x01140000U, 0x0117FFFFU, 2U, 5U,  FLS_256KB_SIZE}, /* block 27   P4 */
+    {0x01180000U, 0x011BFFFFU, 2U, 6U,  FLS_256KB_SIZE}, /* block 28   P4 */
+    {0x011C0000U, 0x011FFFFFU, 2U, 7U,  FLS_256KB_SIZE}, /* block 29   P4 */
+    {0x01200000U, 0x0123FFFFU, 2U, 8U,  FLS_256KB_SIZE}, /* block 30   P4 */
+    {0x01240000U, 0x0127FFFFU, 2U, 9U,  FLS_256KB_SIZE}, /* block 31   P4 */
+    {0x01280000U, 0x012BFFFFU, 2U, 10U, FLS_256KB_SIZE}, /* block 32   P4 */
+    {0x012C0000U, 0x012FFFFFU, 2U, 11U, FLS_256KB_SIZE}, /* block 33   P4 */
+    {0x01300000U, 0x0133FFFFU, 2U, 12U, FLS_256KB_SIZE}, /* block 34   P4 */
+    {0x01340000U, 0x0137FFFFU, 2U, 13U, FLS_256KB_SIZE}, /* block 35   P4 */
+    {0x01380000U, 0x013BFFFFU, 2U, 14U, FLS_256KB_SIZE}, /* block 36   P4 */
+    {0x013C0000U, 0x013FFFFFU, 2U, 15U, FLS_256KB_SIZE}, /* block 37   P4 */
+    {0x01400000U, 0x0143FFFFU, 2U, 16U, FLS_256KB_SIZE}, /* block 38   P5 */
+    {0x01440000U, 0x0147FFFFU, 2U, 17U, FLS_256KB_SIZE}, /* block 39   P5 */
+    {0x01480000U, 0x014BFFFFU, 2U, 18U, FLS_256KB_SIZE}, /* block 40   P5 */
+    {0x014C0000U, 0x014FFFFFU, 2U, 19U, FLS_256KB_SIZE}, /* block 41   P5 */
+    {0x01500000U, 0x0153FFFFU, 2U, 20U, FLS_256KB_SIZE}, /* block 42   P5 */
+    {0x01540000U, 0x0157FFFFU, 2U, 21U, FLS_256KB_SIZE}, /* block 43   P5 */
+    {0x01580000U, 0x015BFFFFU, 2U, 22U, FLS_256KB_SIZE}, /* block 44   P5 */
+    {0x015C0000U, 0x015FFFFFU, 2U, 23U, FLS_256KB_SIZE}, /* block 45   P5 */
+    {0x01600000U, 0x0163FFFFU, 2U, 24U, FLS_256KB_SIZE}, /* block 46   P5 */
+    {0x01640000U, 0x0167FFFFU, 2U, 25U, FLS_256KB_SIZE}, /* block 47   P5 */
+    {0x01680000U, 0x016BFFFFU, 2U, 26U, FLS_256KB_SIZE}, /* block 48   P5 */
+    {0x016C0000U, 0x016FFFFFU, 2U, 27U, FLS_256KB_SIZE}, /* block 49   P5 */
+    {0x01700000U, 0x0173FFFFU, 2U, 28U, FLS_256KB_SIZE}, /* block 50   P5 */
+    {0x01740000U, 0x0177FFFFU, 2U, 29U, FLS_256KB_SIZE}, /* block 51   P5 */
+    {0x01780000U, 0x017BFFFFU, 2U, 30U, FLS_256KB_SIZE}, /* block 52   P5 */
+    {0x017C0000U, 0x017FFFFFU, 2U, 31U, FLS_256KB_SIZE}, /* block 53   P5 */
+};
+
+static const flash_regs_t flashRegs[FLS_REG_NUM] = {
+    {"MCR",    0x00000600U,     0xfffe0000U},
+    {"MCRA",   0x00000600U,     0xfffe0004U},
+    {"MCRE",   0x1880054BU,     0xfffe0008U},
+    {"LOCK0",  0xBFFFFFFFU,     0xfffe0010U},
+    {"LOCK1",  0x0000FFFFU,     0xfffe0014U},
+    {"LOCK2",  0xFFFFFFFFU,     0xfffe0018U},
+    {"LOCK3",  0x0000FFFFU,     0xfffe001cU},
+    {"LOCK0A", 0xBFFFFFFFU,     0xfffe0028U},
+    {"LOCK1A", 0x0000FFFFU,     0xfffe002cU},
+    {"SEL0",   0x00000000U,     0xfffe0038U},
+    {"SEL1",   0x00000000U,     0xfffe003cU},
+    {"SEL2",   0x00000000U,     0xfffe0040U},
+    {"SEL3",   0x00000000U,     0xfffe0044U},
+    {"UT0",    0x00000001U,     0xfffe0054U},
+    {"UM0",    0x00000000U,     0xfffe0058U},
+    {"UM1",    0x00000000U,     0xfffe005cU},
+    {"UM2",    0x00000000U,     0xfffe0060U},
+    {"UM3",    0x00000000U,     0xfffe0064U},
+    {"UM4",    0x00000000U,     0xfffe0068U},
+    {"UM5",    0x00000000U,     0xfffe006cU},
+    {"UM6",    0x00000000U,     0xfffe0070U},
+    {"UM7",    0x00000000U,     0xfffe0074U},
+    {"UM8",    0x00000000U,     0xfffe0078U},
+    {"UM9",    0x00000000U,     0xfffe007cU},
+    {"OPP0",   0x30000000U,     0xfffe0080U},
+    {"OPP1",   0x0000FF00U,     0xfffe0084U},
+    {"OPP2",   0x00000000U,     0xfffe0088U},
+    {"OPP3",   0x00000000U,     0xfffe008cU},
+    {"TMD",    0x00000000U,     0xfffe0090U},
+};
+
+/* PFLASH module features */
+
+/* Count of Calibration Region Descriptor */
+#define PFLASH_PFCRD_COUNT               (32U)
+/* Count of Safe Calibration Region Descriptor */
+#define PFLASH_PFCRD_SAFE_COUNT          (PFLASH_PFCRD_COUNT/2)
+/*
+ * Safe Calibration Control
+ * 0U: normal calibration
+ * 1U: safe calibration
+ * */
+#define PFLASH_Safe_Calibration          (0U)
+
+/* Flash Remap Size */
+typedef enum
+{
+    REMAP_SIZE_32B =   5U,
+    REMAP_SIZE_64B =   6U,
+    REMAP_SIZE_128B =  7U,
+    REMAP_SIZE_256B =  8U,
+    REMAP_SIZE_512B =  9U,
+    REMAP_SIZE_1KB =   10U,
+    REMAP_SIZE_2KB =   11U,
+    REMAP_SIZE_4KB =   12U,
+    REMAP_SIZE_8KB =   13U,
+    REMAP_SIZE_16KB =  14U,
+    REMAP_SIZE_32KB =  15U,
+    REMAP_SIZE_64KB =  16U,
+    REMAP_SIZE_128KB = 17U,
+    REMAP_SIZE_256KB = 18U,
+    REMAP_SIZE_512KB = 19U,
+    REMAP_SIZE_1MB =   20U,
+    REMAP_SIZE_2MB =   21U,
+    REMAP_SIZE_4MB =   22U,
+    REMAP_SIZE_8MB =   23U
+} flash_remap_size_t;
+
+typedef struct
+{
+    uint32_t flsLogicAddr;
+    uint32_t ramPhyAddr;
+    flash_remap_size_t remapSize;
+} flash_remap_config_t;
+
+/* MEMU module features */
+/* Peripheral RAM ECC Correctable Error Detect */
+#define MEMU_ERR_FLAG_PR_CE   (0x00100000U)
+/* Peripheral RAM ECC Uncorrectable Error Detect */
+#define MEMU_ERR_FLAG_PR_UCE  (0x00080000U)
+/* Peripheral RAM ECC Correctable error Overflow */
+#define MEMU_ERR_FLAG_PR_CEO  (0x00040000U)
+/* Peripheral RAM ECC Uncorrectable error Overflow */
+#define MEMU_ERR_FLAG_PR_UCO  (0x00020000U)
+/* Peripheral RAM ECC Error buffer Overflow */
+#define MEMU_ERR_FLAG_PR_EBO  (0x00010000U)
+/* Flash ECC Correctable Error Detect */
+#define MEMU_ERR_FLAG_F_CE    (0x00001000U)
+/* Flash ECC Uncorrectable Error Detect */
+#define MEMU_ERR_FLAG_F_UCE   (0x00000800U)
+/* Flash ECC Correctable Error Overflow */
+#define MEMU_ERR_FLAG_F_CEO   (0x00000400U)
+/* Flash ECC Uncorrectable Error Overflow */
+#define MEMU_ERR_FLAG_F_UCO   (0x00000200U)
+/* Flash ECC Error buffer Overflow */
+#define MEMU_ERR_FLAG_F_EBO   (0x00000100U)
+/* System RAM ECC and MBIST Correctable Error Detect */
+#define MEMU_ERR_FLAG_SR_CE   (0x00000010U)
+/* System RAM ECC and MBIST Uncorrectable Error Detect */
+#define MEMU_ERR_FLAG_SR_UCE  (0x00000008U)
+/* System RAM ECC and MBIST Correctable error Overflow */
+#define MEMU_ERR_FLAG_SR_CEO  (0x00000004U)
+/* System RAM ECC and MBIST Uncorrectable error Overflow */
+#define MEMU_ERR_FLAG_SR_UCO  (0x00000002U)
+/* System RAM ECC and MBIST Error buffer Overflow */
+#define MEMU_ERR_FLAG_SR_EBO  (0x00000001U)
+
+/* MEMU_ERR_FLAG grouped */
+#define MEMU_ERR_FLAG_PERRAM_all               (0x001F0000U)
+#define MEMU_ERR_FLAG_FLASH_all                (0x00001F00U)
+#define MEMU_ERR_FLAG_SYSRAM_all               (0x0000001FU)
+#define MEMU_ERR_FLAG_correctable_all          (0x00101010U)
+#define MEMU_ERR_FLAG_uncorrectable_all        (0x00080808U)
+#define MEMU_ERR_FLAG_correctable_overflows    (0x00040404U)
+#define MEMU_ERR_FLAG_uncorrectable_overflows  (0x00020202U)
+#define MEMU_ERR_FLAG_buffer_overflows         (0x00010101U)
+#define MEMU_ERR_FLAG_PERRAM_overflows         (0x00070000U)
+#define MEMU_ERR_FLAG_FLASH_overflows          (0x00000700U)
+#define MEMU_ERR_FLAG_SYSRAM_overflows         (0x00000007U)
+
+/* Size of Registers Arrays */
+#define SMPU_ERR_COUNT                           (16u)
+
+/* SMPU0 base pointer */
+#define SMPU0_PTR                               ((volatile SMPU_Type *)(0xFC010000UL))
+/* SMPU1 base pointer */
+#define SMPU1_PTR                               ((volatile SMPU_Type *)(0xFC014000UL))
+
+/* SMPU0 protect address region */
+#define SMPU0_START_ADDR            (0x00000000U)
+#define SMPU0_END_ADDR              (0xEFFFFFFFU)
+
+/* SMPU1 protect address region */
+#define SMPU1_START_ADDR            (0xF0000000U)
+#define SMPU1_END_ADDR              (0xFFFFFFFFU)
+
+
+/* Core MPU module features */
+
+typedef union
+{
+  vuint32_t R;
+  struct {
+    vuint32_t  :8;
+    vuint32_t RASIZE:7;  /* Number of Bits of Real Address supported */
+    vuint32_t  :6;
+    vuint32_t PIDSIZE:5; /* PID Register Size */
+    vuint32_t NMPUS:2;   /* Number of MPUs */
+    vuint32_t NTLBS:2;   /* Number of TLBs */
+    vuint32_t MAVN:2;    /* MMU Architecture Version Number */
+  } B;
+} MMUCFG;
+
+typedef union  {
+  vuint32_t R;
+  struct {
+    vuint32_t FASSOC:1;  /* Fully Associative */
+    vuint32_t  :7;
+    vuint32_t MINSIZE:4; /* Minimum Region Size */
+    vuint32_t MAXSIZE:4; /* Maximum Region Size */
+    vuint32_t IPROT:1;   /* Invalidate Protect Capability */
+    vuint32_t  :1;
+    vuint32_t UAMSKA:1;  /* Upper Address Masking Availability */
+    vuint32_t  :4;
+    vuint32_t SHENTRY:3; /* Number of Shared (configurable for I or D) Entries */
+    vuint32_t DENTRY:3;  /* Number of Data Entries */
+    vuint32_t IENTRY:3;  /* Number of Instruction Entries */
+  } B;
+} MPU0CFG;
+
+/* Maximum region size in bytes */
+#define CMPU_MAX_REGION_SIZE        (4*1024*1024*1024ULL)
+/* Minimum region size in bytes */
+#define CMPU_MIN_REGION_SIZE        (8U)
+
+/* MPU0CSR0 Bit Fields */
+#define CMPU_CSR_BYPS_MASK          0x0000E000u
+#define CMPU_CSR_BYPS_SHIFT         13u
+#define CMPU_CSR_BYPS(x)            (((uint32_t)(((uint32_t)(x))<<CMPU_CSR_BYPS_SHIFT))&CMPU_CSR_BYPS_MASK)
+#define CMPU_CSR_BYPS_GET(x)        (((uint32_t)(((uint32_t)(x))&CMPU_CSR_BYPS_MASK))>>CMPU_CSR_BYPS_SHIFT)
+#define CMPU_CSR_BYPU_MASK          0x00001C00u
+#define CMPU_CSR_BYPU_SHIFT         10u
+#define CMPU_CSR_BYPU(x)            (((uint32_t)(((uint32_t)(x))<<CMPU_CSR_BYPU_SHIFT))&CMPU_CSR_BYPU_MASK)
+#define CMPU_CSR_BYPU_GET(x)        (((uint32_t)(((uint32_t)(x))&CMPU_CSR_BYPU_MASK))>>CMPU_CSR_BYPU_SHIFT)
+#define CMPU_CSR_DEN_MASK           0x000000E0u
+#define CMPU_CSR_DEN_SHIFT          5u
+#define CMPU_CSR_DEN(x)             (((uint32_t)(((uint32_t)(x))<<CMPU_CSR_DEN_SHIFT))&CMPU_CSR_DEN_MASK)
+#define CMPU_CSR_DEN_GET(x)         (((uint32_t)(((uint32_t)(x))&CMPU_CSR_DEN_MASK))>>CMPU_CSR_DEN_SHIFT)
+#define CMPU_CSR_TIDCTL_MASK        0x00000008u
+#define CMPU_CSR_TIDCTL_SHIFT       3u
+#define CMPU_CSR_TIDCTL(x)          (((uint32_t)(((uint32_t)(x))<<CMPU_CSR_TIDCTL_SHIFT))&CMPU_CSR_TIDCTL_MASK)
+#define CMPU_CSR_TIDCTL_GET(x)      (((uint32_t)(((uint32_t)(x))&CMPU_CSR_TIDCTL_MASK))>>CMPU_CSR_TIDCTL_SHIFT)
+#define CMPU_CSR_MPUFI_MASK         0x00000002u
+#define CMPU_CSR_MPUFI_SHIFT        1u
+#define CMPU_CSR_MPUFI(x)           (((uint32_t)(((uint32_t)(x))<<CMPU_CSR_MPUFI_SHIFT))&CMPU_CSR_MPUFI_MASK)/*PRQA S 3471*/
+#define CMPU_CSR_MPUFI_GET(x)       (((uint32_t)(((uint32_t)(x))&CMPU_CSR_MPUFI_MASK))>>CMPU_CSR_MPUFI_SHIFT)
+#define CMPU_CSR_MPUEN_MASK         0x00000001u
+#define CMPU_CSR_MPUEN_SHIFT        0u
+#define CMPU_CSR_MPUEN(x)           (((uint32_t)(((uint32_t)(x))<<CMPU_CSR_MPUEN_SHIFT))&CMPU_CSR_MPUEN_MASK)
+#define CMPU_CSR_MPUEN_GET(x)       (((uint32_t)(((uint32_t)(x))&CMPU_CSR_MPUEN_MASK))>>CMPU_CSR_MPUEN_SHIFT)
+
+/* MAS0 Bit Fields */
+#define CMPU_MAS0_VALID_MASK        0x80000000u
+#define CMPU_MAS0_VALID_SHIFT       31u
+#define CMPU_MAS0_VALID(x)          (((uint32_t)(((uint32_t)(x))<<CMPU_MAS0_VALID_SHIFT))&CMPU_MAS0_VALID_MASK)
+#define CMPU_MAS0_VALID_GET(x)      (((uint32_t)(((uint32_t)(x))&CMPU_MAS0_VALID_MASK))>>CMPU_MAS0_VALID_SHIFT)
+#define CMPU_MAS0_IPROT_MASK        0x40000000u
+#define CMPU_MAS0_IPROT_SHIFT       30u
+#define CMPU_MAS0_IPROT(x)          (((uint32_t)(((uint32_t)(x))<<CMPU_MAS0_IPROT_SHIFT))&CMPU_MAS0_IPROT_MASK)
+#define CMPU_MAS0_IPROT_GET(x)      (((uint32_t)(((uint32_t)(x))&CMPU_MAS0_IPROT_MASK))>>CMPU_MAS0_IPROT_SHIFT)
+#define CMPU_MAS0_SEL_MASK          0x30000000u
+#define CMPU_MAS0_SEL_SHIFT         28u
+#define CMPU_MAS0_SEL(x)            (((uint32_t)(((uint32_t)(x))<<CMPU_MAS0_SEL_SHIFT))&CMPU_MAS0_SEL_MASK)
+#define CMPU_MAS0_SEL_GET(x)        (((uint32_t)(((uint32_t)(x))&CMPU_MAS0_SEL_MASK))>>CMPU_MAS0_SEL_SHIFT)
+#define CMPU_MAS0_RO_MASK           0x04000000u
+#define CMPU_MAS0_RO_SHIFT          26u
+#define CMPU_MAS0_RO(x)             (((uint32_t)(((uint32_t)(x))<<CMPU_MAS0_RO_SHIFT))&CMPU_MAS0_RO_MASK)
+#define CMPU_MAS0_RO_GET(x)         (((uint32_t)(((uint32_t)(x))&CMPU_MAS0_RO_MASK))>>CMPU_MAS0_RO_SHIFT)
+#define CMPU_MAS0_DEBUG_MASK        0x02000000u
+#define CMPU_MAS0_DEBUG_SHIFT       25u
+#define CMPU_MAS0_DEBUG(x)          (((uint32_t)(((uint32_t)(x))<<CMPU_MAS0_DEBUG_SHIFT))&CMPU_MAS0_DEBUG_MASK)
+#define CMPU_MAS0_DEBUG_GET(x)      (((uint32_t)(((uint32_t)(x))&CMPU_MAS0_DEBUG_MASK))>>CMPU_MAS0_DEBUG_SHIFT)
+#define CMPU_MAS0_INST_MASK         0x01000000u
+#define CMPU_MAS0_INST_SHIFT        24u
+#define CMPU_MAS0_INST(x)           (((uint32_t)(((uint32_t)(x))<<CMPU_MAS0_INST_SHIFT))&CMPU_MAS0_INST_MASK)
+#define CMPU_MAS0_INST_GET(x)       (((uint32_t)(((uint32_t)(x))&CMPU_MAS0_INST_MASK))>>CMPU_MAS0_INST_SHIFT)
+#define CMPU_MAS0_SHD_MASK          0x00800000u
+#define CMPU_MAS0_SHD_SHIFT         23u
+#define CMPU_MAS0_SHD(x)            (((uint32_t)(((uint32_t)(x))<<CMPU_MAS0_SHD_SHIFT))&CMPU_MAS0_SHD_MASK)
+#define CMPU_MAS0_SHD_GET(x)        (((uint32_t)(((uint32_t)(x))&CMPU_MAS0_SHD_MASK))>>CMPU_MAS0_SHD_SHIFT)
+#define CMPU_MAS0_ESEL_MASK         0x000F0000u
+#define CMPU_MAS0_ESEL_SHIFT        16u
+#define CMPU_MAS0_ESEL(x)           (((uint32_t)(((uint32_t)(x))<<CMPU_MAS0_ESEL_SHIFT))&CMPU_MAS0_ESEL_MASK)
+#define CMPU_MAS0_ESEL_GET(x)       (((uint32_t)(((uint32_t)(x))&CMPU_MAS0_ESEL_MASK))>>CMPU_MAS0_ESEL_SHIFT)
+#define CMPU_MAS0_UAMSK_MASK        0x00007000u
+#define CMPU_MAS0_UAMSK_SHIFT       12u
+#define CMPU_MAS0_UAMSK(x)          (((uint32_t)(((uint32_t)(x))<<CMPU_MAS0_UAMSK_SHIFT))&CMPU_MAS0_UAMSK_MASK)
+#define CMPU_MAS0_UAMSK_GET(x)      (((uint32_t)(((uint32_t)(x))&CMPU_MAS0_UAMSK_MASK))>>CMPU_MAS0_UAMSK_SHIFT)
+#define CMPU_MAS0_UW_MASK           0x00000800u
+#define CMPU_MAS0_UW_SHIFT          11u
+#define CMPU_MAS0_UW(x)             (((uint32_t)(((uint32_t)(x))<<CMPU_MAS0_UW_SHIFT))&CMPU_MAS0_UW_MASK)
+#define CMPU_MAS0_UW_GET(x)         (((uint32_t)(((uint32_t)(x))&CMPU_MAS0_UW_MASK))>>CMPU_MAS0_UW_SHIFT)
+#define CMPU_MAS0_SW_MASK           0x00000400u
+#define CMPU_MAS0_SW_SHIFT          10u
+#define CMPU_MAS0_SW(x)             (((uint32_t)(((uint32_t)(x))<<CMPU_MAS0_SW_SHIFT))&CMPU_MAS0_SW_MASK)
+#define CMPU_MAS0_SW_GET(x)         (((uint32_t)(((uint32_t)(x))&CMPU_MAS0_SW_MASK))>>CMPU_MAS0_SW_SHIFT)
+#define CMPU_MAS0_UXR_MASK          0x00000200u
+#define CMPU_MAS0_UXR_SHIFT         9u
+#define CMPU_MAS0_UXR(x)            (((uint32_t)(((uint32_t)(x))<<CMPU_MAS0_UXR_SHIFT))&CMPU_MAS0_UXR_MASK)
+#define CMPU_MAS0_UXR_GET(x)        (((uint32_t)(((uint32_t)(x))&CMPU_MAS0_UXR_MASK))>>CMPU_MAS0_UXR_SHIFT)
+#define CMPU_MAS0_SXR_MASK          0x00000100u
+#define CMPU_MAS0_SXR_SHIFT         8u
+#define CMPU_MAS0_SXR(x)            (((uint32_t)(((uint32_t)(x))<<CMPU_MAS0_SXR_SHIFT))&CMPU_MAS0_SXR_MASK)
+#define CMPU_MAS0_SXR_GET(x)        (((uint32_t)(((uint32_t)(x))&CMPU_MAS0_SXR_MASK))>>CMPU_MAS0_SXR_SHIFT)
+#define CMPU_MAS0_IOVR_MASK         0x00000080u
+#define CMPU_MAS0_IOVR_SHIFT        7u
+#define CMPU_MAS0_IOVR(x)           (((uint32_t)(((uint32_t)(x))<<CMPU_MAS0_IOVR_SHIFT))&CMPU_MAS0_IOVR_MASK)
+#define CMPU_MAS0_IOVR_GET(x)       (((uint32_t)(((uint32_t)(x))&CMPU_MAS0_IOVR_MASK))>>CMPU_MAS0_IOVR_SHIFT)
+#define CMPU_MAS0_GOVR_MASK         0x00000040u
+#define CMPU_MAS0_GOVR_SHIFT        6u
+#define CMPU_MAS0_GOVR(x)           (((uint32_t)(((uint32_t)(x))<<CMPU_MAS0_GOVR_SHIFT))&CMPU_MAS0_GOVR_MASK)
+#define CMPU_MAS0_GOVR_GET(x)       (((uint32_t)(((uint32_t)(x))&CMPU_MAS0_GOVR_MASK))>>CMPU_MAS0_GOVR_SHIFT)
+#define CMPU_MAS0_I_MASK            0x00000008u
+#define CMPU_MAS0_I_SHIFT           3u
+#define CMPU_MAS0_I(x)              (((uint32_t)(((uint32_t)(x))<<CMPU_MAS0_I_SHIFT))&CMPU_MAS0_I_MASK)
+#define CMPU_MAS0_I_GET(x)          (((uint32_t)(((uint32_t)(x))&CMPU_MAS0_I_MASK))>>CMPU_MAS0_I_SHIFT)
+#define CMPU_MAS0_G_MASK            0x00000002u
+#define CMPU_MAS0_G_SHIFT           1u
+#define CMPU_MAS0_G(x)              (((uint32_t)(((uint32_t)(x))<<CMPU_MAS0_G_SHIFT))&CMPU_MAS0_G_MASK)
+#define CMPU_MAS0_G_GET(x)          (((uint32_t)(((uint32_t)(x))&CMPU_MAS0_G_MASK))>>CMPU_MAS0_G_SHIFT)
+
+/* MAS1 Bit Fields */
+#define CMPU_MAS1_TID_MASK          0x00FF0000u
+#define CMPU_MAS1_TID_SHIFT         16u
+#define CMPU_MAS1_TID(x)            (((uint32_t)(((uint32_t)(x))<<CMPU_MAS1_TID_SHIFT))&CMPU_MAS1_TID_MASK)
+#define CMPU_MAS1_TID_GET(x)        (((uint32_t)(((uint32_t)(x))&CMPU_MAS1_TID_MASK))>>CMPU_MAS1_TID_SHIFT)
+#define CMPU_MAS1_TIDMSK_MASK       0x000000FFu
+#define CMPU_MAS1_TIDMSK_SHIFT      0u
+#define CMPU_MAS1_TIDMSK(x)         (((uint32_t)(((uint32_t)(x))<<CMPU_MAS1_TIDMSK_SHIFT))&CMPU_MAS1_TIDMSK_MASK)
+#define CMPU_MAS1_TIDMSK_GET(x)     (((uint32_t)(((uint32_t)(x))&CMPU_MAS1_TIDMSK_MASK))>>CMPU_MAS1_TIDMSK_SHIFT)
+
+/* EMIOS module features */
+/* @brief EMIOS support all modes for each channel. */
+#define FEATURE_EMIOS_ALL_MODE_ON_CHANNEL
+/* @brief EMIOS support Quadrature decode mode. */
+#define FEATURE_EMIOS_QD_MODE_SUPPORT
+/* @brief EMIOS has channel pair in the IRQ interrupt. */
+#define FEATURE_EMIOS_CHANNELS_PER_IRQ          (1U)
+/* @brief EMIOS number channels maximum. */
+#define FEATURE_EMIOS_CHANNEL_MAX_COUNT         (32U)
+/* @brief EMIOS channels and counter buses select. */
+#define FEATURE_EMIOS_BUS_A_SELECT              (1U)
+#define FEATURE_EMIOS_BUS_B_SELECT              (1U)
+#define FEATURE_EMIOS_BUS_C_SELECT              (0U)
+#define FEATURE_EMIOS_BUS_D_SELECT              (1U)
+#define FEATURE_EMIOS_BUS_E_SELECT              (0U)
+#define FEATURE_EMIOS_BUS_F_SELECT              (0U)
+/* @brief EMIOS channels and counter buses offset. */
+#define FEATURE_EMIOS_BUS_B_SELECT_OFFSET(x)    (x)
+#define FEATURE_EMIOS_BUS_C_SELECT_OFFSET(x)    (x)
+#define FEATURE_EMIOS_BUS_D_SELECT_OFFSET(x)    (x)
+#define FEATURE_EMIOS_BUS_E_SELECT_OFFSET(x)    (x)
+/* @brief EMIOS number of channels available. */
+#define FEATURE_EMIOS_CH_7_0_ENABLE             (1U)
+#define FEATURE_EMIOS_CH_15_8_ENABLE            (0U)
+#define FEATURE_EMIOS_CH_23_16_ENABLE           (1U)
+#define FEATURE_EMIOS_CH_31_24_ENABLE           (0U)
+#define FEATURE_EMIOS_CH_COUNT                  ((FEATURE_EMIOS_CH_7_0_ENABLE   * 8U) + \
+                                                 (FEATURE_EMIOS_CH_15_8_ENABLE  * 8U) + \
+                                                 (FEATURE_EMIOS_CH_23_16_ENABLE * 8U) + \
+                                                 (FEATURE_EMIOS_CH_31_24_ENABLE * 8U))
+/* @brief EMIOS channels offset. */
+#define FEATURE_EMIOS_CH_7_0_SUB_OFFSET(x)      (x)
+#define FEATURE_EMIOS_CH_15_8_SUB_OFFSET(x)     (x)
+#define FEATURE_EMIOS_CH_23_16_SUB_OFFSET(x)    (x - 8U)
+#define FEATURE_EMIOS_CH_31_24_SUB_OFFSET(x)    (x)
+
+/* PWM_PAL module features */
+#define FEATURE_PWMPAL_EMIOS_HAS_CHANNEL_MAPPING    (1)
+#define PWMPAL_INDEX_2_HW_CHANNELS {0,1,2,3,4,5,6,7,16,17,18,19,20,21,22,23}
+
+/* SIUL2 MSCR IO */
+#define PA0     0
+#define PA1     1
+#define PA2     2
+#define PA3     3
+#define PA4     4
+#define PA8     8
+#define PA9     9
+#define PA10    10
+#define PA11    11
+#define PA12    12
+#define PA13    13
+#define PA14    14
+#define PA15    15
+#define PB8     24
+#define PB9     25
+#define PB10    26
+#define PB11    27
+#define PC0     32
+#define PC1     33
+#define PC2     34
+#define PC3     35
+#define PC4     36
+#define PC5     37
+#define PC6     38
+#define PC7     39
+#define PC8     40
+#define PC9     41
+#define PC10    42
+#define PC11    43
+#define PC12    44
+#define PC13    45
+#define PC14    46
+#define PC15    47
+#define PD0     48
+#define PD1     49
+#define PD2     50
+#define PD3     51
+#define PD4     52
+#define PD5     53
+#define PD6     54
+#define PD7     55
+#define PD8     56
+#define PD9     57
+#define PD10    58
+#define PD12    60
+#define PD13    61
+#define PD14    62
+#define PD15    63
+#define PE0     64
+#define PE1     65
+#define PE2     66
+#define PE3     67
+#define PE4     68
+#define PE5     69
+#define PE6     70
+#define PE7     71
+#define PE8     72
+#define PE9     73
+#define PE10    74
+#define PE11    75
+#define PE12    76
+#define PF0     80
+#define PF1     81
+#define PF2     82
+#define PF3     83
+#define PF4     84
+#define PF5     85
+#define PF6     86
+#define PF7     87
+#define PF8     88
+#define PF9     89
+#define PF10    90
+#define PF11    91
+#define PF12    92
+#define PF13    93
+#define PF14    94
+#define PF15    95
+#define PG0     96
+#define PG13    109
+#define PG14    110
+#define PG15    111
+#define PH0     112
+#define PH1     113
+#define PH2     114
+#define PH3     115
+#define PH4     116
+#define PH5     117
+#define PH6     118
+#define PH7     119
+#define PH8     120
+#define PH9     121
+#define PH10    122
+#define PH11    123
+#define PH12    124
+#define PH13    125
+#define PH14    126
+#define PH15    127
+#define PI8     136
+#define PI9     137
+#define PI10    138
+#define PI11    139
+#define PI12    140
+#define PI13    141
+#define PI14    142
+#define PI15    143
+#define PJ0     144
+#define PJ1     145
+#define PJ2     146
+#define PJ3     147
+#define PJ4     148
+#define PJ5     149
+#define PJ6     150
+#define PJ7     151
+#define PJ8     152
+#define PJ9     153
+#define PJ10    154
+#define PJ11    155
+#define PJ12    156
+#define PJ13    157
+#define PJ14    158
+#define PJ15    159
+#define PK12    172
+#define PK13    173
+#define PK14    174
+#define PK15    175
+#define PL0     176
+#define PL1     177
+#define PL2     178
+#define PL3     179
+#define PL4     180
+#define PL5     181
+#define PL6     182
+#define PL7     183
+#define PL8     184
+#define PL9     185
+#define PL10    186
+#define PL11    187
+#define PL12    188
+#define PL13    189
+#define PL14    190
+#define PL15    191
+#define PM0     192
+#define PM1     193
+#define PM2     194
+#define PM3     195
+#define PM4     196
+#define PM5     197
+#define PM6     198
+#define PM7     199
+#define PM8     200
+#define PM9     201
+#define PM10    202
+#define PM11    203
+#define PM12    204
+#define PM13    205
+#define PM14    206
+#define PM15    207
+#define PN0     208
+#define PN1     209
+#define PN2     210
+#define PN3     211
+#define PN4     212
+#define PN5     213
+#define PN6     214
+#define PN7     215
+#define PN8     216
+#define PN9     217
+#define PN10    218
+#define PN11    219
+#define PN12    220
+#define PN13    221
+#define PN14    222
+#define PN15    223
+#define PQ0     224
+#define PQ1     225
+#define PQ2     226
+#define PQ3     227
+#define PQ4     228
+#define PQ5     229
+#define PQ6     230
+#define PQ7     231
+#define PQ8     232
+#define PQ9     233
+#define PQ10    234
+#define PQ11    235
+#define PQ12    236
+#define PQ13    237
+#define PQ14    238
+#define PQ15    239
+#define PS0     257
+#define PS1     258
+#define PS2     259
+#define PS3     260
+#define PS4     261
+#define PS5     262
+#define PS6     263
+#define PS7     264
+#define PS8     265
+#define PS9     266
+#define PS10    267
+#define PS11    268
+#define PS12    269
+#define PS13    270
+#define PS14    271
+#define PS15    272
+#define PT0     273
+#define PT1     274
+#define PT2     275
+#define PT3     276
+#define PT4     277
+#define PT5     278
+#define PT6     279
+#define PT7     280
+#define PT8     281
+#define PT9     282
+#define PT10    283
+#define PT11    284
+#define PT12    285
+#define PT13    286
+#define PT14    287
+#define PT15    288
+#define PV0     289
+#define PV1     290
+#define PV2     291
+#define PV3     292
+#define PV4     293
+#define PV5     294
+#define PV6     295
+#define PV7     296
+#define PV8     297
+#define PV9     298
+#define PV10    299
+#define PV11    300
+#define PV12    301
+#define PV13    302
+#define PV14    303
+#define PV15    304
+#define PW0     305
+#define PW1     306
+#define PW2     307
+#define PW3     308
+#define PW4     309
+#define PW5     310
+#define PW6     311
+#define PW7     312
+#define PW8     313
+#define PW9     314
+#define PW10    315
+#define PW11    316
+#define PW12    317
+#define PW13    318
+#define PW14    319
+#define PW15    320
+#define PX0     321
+#define PX1     322
+#define PX2     240
+#define PX3     323
+#define PX4     324
+#define PX5     325
+#define PX6     326
+#define PX7     327
+#define PX8     328
+#define PX9     329
+#define PX10    330
+#define PX11    331
+#define PY4     340
+
+/*
+ * @brief EIRQ Pin definition
+ */
+#define EIRQ0           (0U)
+#define EIRQ1           (1U)
+#define EIRQ2           (2U)
+#define EIRQ3           (3U)
+#define EIRQ4           (4U)
+#define EIRQ5           (5U)
+#define EIRQ6           (6U)
+#define EIRQ7           (7U)
+#define EIRQ8           (8U)
+#define EIRQ9           (9U)
+#define EIRQ10          (10U)
+#define EIRQ11          (11U)
+#define EIRQ12          (12U)
+#define EIRQ13          (13U)
+#define EIRQ14          (14U)
+#define EIRQ15          (15U)
+#define EIRQ_MAX_NUM    (16U)
+
+/* The SIUL2 EIRQ MUX index for EIRQ0 - EIRQ6 */
+#define  EIRQ0_INDEX       (779U)
+#define  EIRQ1_INDEX       (780U)
+#define  EIRQ2_INDEX       (781U)
+#define  EIRQ3_INDEX       (782U)
+#define  EIRQ4_INDEX       (783U)
+#define  EIRQ5_INDEX       (784U)
+#define  EIRQ6_INDEX       (785U)
+
+
+typedef struct
+{
+    uint8_t  eirq_index;
+    uint32_t mux_index;
+    uint32_t pad_mux;
+    uint16_t eirq_pin;
+} siul_eirq_info_t;
+
+/* #define MC_ME_PERIPH_INSTANCE_COUNT 66U */
+
+/*! @brief Clock names. */
+/* typedef enum {
+    MC_ME_PCTL_SIUL_INDEX                    = 15u,
+    MC_ME_PCTL_PIT_RTC_0_INDEX               = 30u,
+    MC_ME_PCTL_PIT_RTC_1_INDEX               = 31u,
+    MC_ME_PCTL_DMAMUX_INDEX                  = 36u,
+    MC_ME_PCTL_CRC_0_INDEX                   = 38u,
+    MC_ME_PCTL_CAM_RAM_2_INDEX               = 62u,
+    MC_ME_PCTL_MCAN12_INDEX                  = 63u,
+    MC_ME_PCTL_MCAN11_INDEX                  = 64u,
+    MC_ME_PCTL_CAM_RAM_1_INDEX               = 66u,
+    MC_ME_PCTL_MCAN4_INDEX                   = 67u,
+    MC_ME_PCTL_MCAN3_INDEX                   = 68u,
+    MC_ME_PCTL_MCAN2_INDEX                   = 69u,
+    MC_ME_PCTL_MCAN1_INDEX                   = 70u,
+    MC_ME_PCTL_TTCAN_1_INDEX                 = 71u,
+    MC_ME_PCTL_TTCAN_INDEX                   = 72u,
+    MC_ME_PCTL_CAN_RAM_1_INDEX               = 73u,
+    MC_ME_PCTL_CAN_RAM_CTRL_INDEX            = 74u,
+    MC_ME_PCTL_MCAN5_INDEX                   = 75u,
+    MC_ME_PCTL_MCAN6_INDEX                   = 76u,
+    MC_ME_PCTL_MCAN7_INDEX                   = 77u,
+    MC_ME_PCTL_MCAN8_INDEX                   = 78u,
+    MC_ME_PCTL_MCAN10_INDEX                  = 79u,
+    MC_ME_PCTL_MCAN9_INDEX                   = 80u,
+    MC_ME_PCTL_TTCAN_2_INDEX                 = 81u,
+    MC_ME_PCTL_CAN_SAMPLER_INDEX             = 82u,
+    MC_ME_PCTL_RTC_INDEX                     = 83u,
+    MC_ME_PCTL_LINFlexD_16_INDEX             = 84u,
+    MC_ME_PCTL_LINFlexD_14_INDEX             = 85u,
+    MC_ME_PCTL_LINFlexD_6_INDEX              = 87u,
+    MC_ME_PCTL_LINFlexD_5_INDEX              = 88u,
+    MC_ME_PCTL_LINFlexD_4_INDEX              = 89u,
+    MC_ME_PCTL_LINFlexD_3_INDEX              = 90u,
+    MC_ME_PCTL_LINFlexD_1_INDEX              = 91u,
+    MC_ME_PCTL_LINFlexD_0_INDEX              = 92u,
+    MC_ME_PCTL_DSPI_12_INDEX                 = 93u,
+    MC_ME_PCTL_DSPI_6_INDEX                  = 96u,
+    MC_ME_PCTL_DSPI_4_INDEX                  = 97u,
+    MC_ME_PCTL_DSPI_1_INDEX                  = 98u,
+    MC_ME_PCTL_DSPI_0_INDEX                  = 99u,
+    MC_ME_PCTL_IIC_0_INDEX                   = 101u,
+    MC_ME_PCTL_SENT_INDEX                    = 104u,
+    MC_ME_PCTL_PSI5_0_INDEX                  = 111u,
+    MC_ME_PCTL_ADCSAR_0_INDEX                = 127u,
+    MC_ME_PCTL_ETPU_INDEX                    = 129u,
+    MC_ME_PCTL_ETPU_C_INDEX                  = 130u,
+    MC_ME_PCTL_EMIOS_0_INDEX                 = 131u,
+    MC_ME_PCTL_EMIOS_1_INDEX                 = 132u,
+    MC_ME_PCTL_CANFD_1_INDEX                 = 148u,
+    MC_ME_PCTL_CANFD_9_INDEX                 = 156u,
+    MC_ME_PCTL_PSI5_S_0_INDEX                = 162u,
+    MC_ME_PCTL_CRC_1_INDEX                   = 166u,
+    MC_ME_PCTL_LINFlexD_15_INDEX             = 213u,
+    MC_ME_PCTL_LINFlexD_12_INDEX             = 214u,
+    MC_ME_PCTL_LINFlexD_11_INDEX             = 215u,
+    MC_ME_PCTL_LINFlexD_10_INDEX             = 216u,
+    MC_ME_PCTL_LINFlexD_9_INDEX              = 217u,
+    MC_ME_PCTL_LINFlexD_8_INDEX              = 218u,
+    MC_ME_PCTL_LINFlexD_7_INDEX              = 219u,
+    MC_ME_PCTL_LINFlexD_2_INDEX              = 220u,
+    MC_ME_PCTL_DSPI_5_INDEX                  = 225u,
+    MC_ME_PCTL_DSPI_3_INDEX                  = 226u,
+    MC_ME_PCTL_DSPI_2_INDEX                  = 227u,
+    MC_ME_PCTL_IIC_1_INDEX                   = 229u,
+    MC_ME_PCTL_SENT_1_INDEX                  = 232u,
+    MC_ME_PCTL_PSI5_1_INDEX                  = 239u,
+    MC_ME_PCTL_ADCSAR_1_INDEX                = 254u,
+    MC_ME_PCTLn_COUNT                        = 256u,
+} peripheral_names_t; */
+
+typedef enum
+{
+    INTR_PRI_0 = 0U,    /* Min priority */
+    INTR_PRI_1 = 1U,
+    INTR_PRI_2 = 2U,
+    INTR_PRI_3 = 3U,
+    INTR_PRI_4 = 4U,
+    INTR_PRI_5 = 5U,
+    INTR_PRI_6 = 6U,
+    INTR_PRI_7 = 7U,
+    INTR_PRI_8 = 8U,
+    INTR_PRI_9 = 9U,
+    INTR_PRI_10 = 10U,
+    INTR_PRI_11 = 11U,
+    INTR_PRI_12 = 12U,
+    INTR_PRI_13 = 13U,
+    INTR_PRI_14 = 14U,
+    INTR_PRI_15 = 15U,
+    INTR_PRI_16 = 16U,
+    INTR_PRI_17 = 17U,
+    INTR_PRI_18 = 18U,
+    INTR_PRI_19 = 19U,
+    INTR_PRI_20 = 20U,
+    INTR_PRI_21 = 21U,
+    INTR_PRI_22 = 22U,
+    INTR_PRI_23 = 23U,
+    INTR_PRI_24 = 24U,
+    INTR_PRI_25 = 25U,
+    INTR_PRI_26 = 26U,
+    INTR_PRI_27 = 27U,
+    INTR_PRI_28 = 28U,
+    INTR_PRI_29 = 29U,
+    INTR_PRI_30 = 30U,
+    INTR_PRI_31 = 31U,
+    INTR_PRI_32 = 32U,
+    INTR_PRI_33 = 33U,
+    INTR_PRI_34 = 34U,
+    INTR_PRI_35 = 35U,
+    INTR_PRI_36 = 36U,
+    INTR_PRI_37 = 37U,
+    INTR_PRI_38 = 38U,
+    INTR_PRI_39 = 39U,
+    INTR_PRI_40 = 40U,
+    INTR_PRI_41 = 41U,
+    INTR_PRI_42 = 42U,
+    INTR_PRI_43 = 43U,
+    INTR_PRI_44 = 44U,
+    INTR_PRI_45 = 45U,
+    INTR_PRI_46 = 46U,
+    INTR_PRI_47 = 47U,
+    INTR_PRI_48 = 48U,
+    INTR_PRI_49 = 49U,
+    INTR_PRI_50 = 50U,
+    INTR_PRI_51 = 51U,
+    INTR_PRI_52 = 52U,
+    INTR_PRI_53 = 53U,
+    INTR_PRI_54 = 54U,
+    INTR_PRI_55 = 55U,
+    INTR_PRI_56 = 56U,
+    INTR_PRI_57 = 57U,
+    INTR_PRI_58 = 58U,
+    INTR_PRI_59 = 59U,
+    INTR_PRI_60 = 60U,
+    INTR_PRI_61 = 61U,
+    INTR_PRI_62 = 62U,
+    INTR_PRI_63 = 63U,
+    INTR_PRI_BUTT
+} IntrPrior;
+
+/**
+ * @brief Interrupt Source ID
+ */
+typedef enum
+{
+    NotAvail_IRQn               = -128, /**< Not available device specific interrupt */
+    SOFT_SET_0_IRQn             = 0u,   /* Software setable flag 0 INTC_SSCIR0[CLR0] */
+    SOFT_SET_1_IRQn             = 1u,   /* Software setable flag 1 INTC_SSCIR0[CLR1] */
+    SOFT_SET_2_IRQn             = 2u,   /* Software setable flag 2 INTC_SSCIR0[CLR2] */
+    SOFT_SET_3_IRQn             = 3u,   /* Software setable flag 3 INTC_SSCIR0[CLR3] */
+    SOFT_SET_4_IRQn             = 4u,   /* Software setable flag 4 INTC_SSCIR0[CLR4] */
+    SOFT_SET_5_IRQn             = 5u,   /* Software setable flag 5 INTC_SSCIR0[CLR5] */
+    SOFT_SET_6_IRQn             = 6u,   /* Software setable flag 6 INTC_SSCIR0[CLR6] */
+    SOFT_SET_7_IRQn             = 7u,   /* Software setable flag 7 INTC_SSCIR0[CLR7] */
+    SOFT_SET_8_IRQn             = 8u,   /* Software setable flag 8 INTC_SSCIR0[CLR8] */
+    SOFT_SET_9_IRQn             = 9u,   /* Software setable flag 9 INTC_SSCIR0[CLR9] */
+    SOFT_SET_10_IRQn            = 10u,  /* Software setable flag 10 INTC_SSCIR0[CLR10] */
+    SOFT_SET_11_IRQn            = 11u,  /* Software setable flag 11 INTC_SSCIR0[CLR11] */
+    SOFT_SET_12_IRQn            = 12u,  /* Software setable flag 12 INTC_SSCIR0[CLR12] */
+    SOFT_SET_13_IRQn            = 13u,  /* Software setable flag 13 INTC_SSCIR0[CLR13] */
+    SOFT_SET_14_IRQn            = 14u,  /* Software setable flag 14 INTC_SSCIR0[CLR14] */
+    SOFT_SET_15_IRQn            = 15u,  /* Software setable flag 15 INTC_SSCIR0[CLR15] */
+    SOFT_SET_16_IRQn            = 16u,  /* Software setable flag 16 INTC_SSCIR0[CLR16] */
+    SOFT_SET_17_IRQn            = 17u,  /* Software setable flag 17 INTC_SSCIR0[CLR17] */
+    SOFT_SET_18_IRQn            = 18u,  /* Software setable flag 18 INTC_SSCIR0[CLR18] */
+    SOFT_SET_19_IRQn            = 19u,  /* Software setable flag 19 INTC_SSCIR0[CLR19] */
+    SOFT_SET_20_IRQn            = 20u,  /* Software setable flag 20 INTC_SSCIR0[CLR20] */
+    SOFT_SET_21_IRQn            = 21u,  /* Software setable flag 21 INTC_SSCIR0[CLR21] */
+    SOFT_SET_22_IRQn            = 22u,  /* Software setable flag 22 INTC_SSCIR0[CLR22] */
+    SOFT_SET_23_IRQn            = 23u,  /* Software setable flag 23 INTC_SSCIR0[CLR23] */
+    SOFT_SET_24_IRQn            = 24u,  /* Software setable flag 24 INTC_SSCIR0[CLR24] */
+    SOFT_SET_25_IRQn            = 25u,  /* Software setable flag 25 INTC_SSCIR0[CLR25] */
+    SOFT_SET_26_IRQn            = 26u,  /* Software setable flag 26 INTC_SSCIR0[CLR26] */
+    SOFT_SET_27_IRQn            = 27u,  /* Software setable flag 27 INTC_SSCIR0[CLR27] */
+    SOFT_SET_28_IRQn            = 28u,  /* Software setable flag 28 INTC_SSCIR0[CLR28] */
+    SOFT_SET_29_IRQn            = 29u,  /* Software setable flag 29 INTC_SSCIR0[CLR29] */
+    SOFT_SET_30_IRQn            = 30u,  /* Software setable flag 30 INTC_SSCIR0[CLR30] */
+    SOFT_SET_31_IRQn            = 31u,  /* Software setable flag 31 INTC_SSCIR0[CLR31] */
+    SWT0_IRQn                   = 32u,  /* Platform watchdog timer0 SWT_0_IR[TIF] */
+    SWT1_IRQn                   = 33u,  /* Platform watchdog timer1 SWT_1_IR[TIF] */
+    SWT2_IRQn                   = 34u,  /* Platform watchdog timer2 SWT_2_IR[TIF] */
+    SWT3_IRQn                   = 35u,  /* Platform watchdog timer3 SWT_3_IR[TIF] */
+    STM0_CH0_IRQn               = 36u,  /* Platform periodic timer 0_0 (STM) STM_0_CIR0[CIF] */
+    STM0_CH1_IRQn               = 37u,  /* Platform periodic timer 0_1 (STM) STM_0_CIR1[CIF] */
+    STM0_CH2_IRQn               = 38u,  /* Platform periodic timer 0_2 (STM) STM_0_CIR2[CIF] */
+    STM0_CH3_IRQn               = 39u,  /* Platform periodic timer 0_3 (STM) STM_0_CIR3[CIF] */
+    STM1_CH0_IRQn               = 40u,  /* Platform periodic timer 1_0 (STM) STM_1_CIR0[CIF] */
+    STM1_CH1_IRQn               = 41u,  /* Platform periodic timer 1_1 (STM) STM_1_CIR1[CIF] */
+    STM1_CH2_IRQn               = 42u,  /* Platform periodic timer 1_2 (STM) STM_1_CIR2[CIF] */
+    STM1_CH3_IRQn               = 43u,  /* Platform periodic timer 1_3 (STM) STM_1_CIR3[CIF] */
+    STM2_CH0_IRQn               = 44u,  /* Platform periodic timer 2_0 (STM) STM_2_CIR0[CIF] */
+    STM2_CH1_IRQn               = 45u,  /* Platform periodic timer 2_1 (STM) STM_2_CIR1[CIF] */
+    STM2_CH2_IRQn               = 46u,  /* Platform periodic timer 2_2 (STM) STM_2_CIR2[CIF] */
+    STM2_CH3_IRQn               = 47u,  /* Platform periodic timer 2_3 (STM) STM_2_CIR3[CIF] */
+
+    DMA0_ERR0_127_IRQn          = 52u,  /* eDMA Combined Error 127 - 0 eDMA Channel Error Flags */
+    DMA0_CH0_IRQn               = 53u,  /* eDMA Channel 0 DMA_INTL[INT0] */
+    DMA0_CH1_IRQn               = 54u,  /* eDMA Channel 1 DMA_INTL[INT1] */
+    DMA0_CH2_IRQn               = 55u,  /* eDMA Channel 2 DMA_INTL[INT2] */
+    DMA0_CH3_IRQn               = 56u,  /* eDMA Channel 3 DMA_INTL[INT3] */
+    DMA0_CH4_IRQn               = 57u,  /* eDMA Channel 4 DMA_INTL[INT4] */
+    DMA0_CH5_IRQn               = 58u,  /* eDMA Channel 5 DMA_INTL[INT5] */
+    DMA0_CH6_IRQn               = 59u,  /* eDMA Channel 6 DMA_INTL[INT6] */
+    DMA0_CH7_IRQn               = 60u,  /* eDMA Channel 7 DMA_INTL[INT7] */
+    DMA0_CH8_IRQn               = 61u,  /* eDMA Channel 8 DMA_INTL[INT8] */
+    DMA0_CH9_IRQn               = 62u,  /* eDMA Channel 9 DMA_INTL[INT9] */
+    DMA0_CH10_IRQn              = 63u,  /* eDMA Channel 10 DMA_INTL[INT10] */
+    DMA0_CH11_IRQn              = 64u,  /* eDMA Channel 11 DMA_INTL[INT11] */
+    DMA0_CH12_IRQn              = 65u,  /* eDMA Channel 12 DMA_INTL[INT12] */
+    DMA0_CH13_IRQn              = 66u,  /* eDMA Channel 13 DMA_INTL[INT13] */
+    DMA0_CH14_IRQn              = 67u,  /* eDMA Channel 14 DMA_INTL[INT14] */
+    DMA0_CH15_IRQn              = 68u,  /* eDMA Channel 15 DMA_INTL[INT15] */
+    DMA0_CH16_IRQn              = 69u,  /* eDMA Channel 16 DMA_INTL[INT16] */
+    DMA0_CH17_IRQn              = 70u,  /* eDMA Channel 17 DMA_INTL[INT17] */
+    DMA0_CH18_IRQn              = 71u,  /* eDMA Channel 18 DMA_INTL[INT18] */
+    DMA0_CH19_IRQn              = 72u,  /* eDMA Channel 19 DMA_INTL[INT19] */
+    DMA0_CH20_IRQn              = 73u,  /* eDMA Channel 20 DMA_INTL[INT20] */
+    DMA0_CH21_IRQn              = 74u,  /* eDMA Channel 21 DMA_INTL[INT21] */
+    DMA0_CH22_IRQn              = 75u,  /* eDMA Channel 22 DMA_INTL[INT22] */
+    DMA0_CH23_IRQn              = 76u,  /* eDMA Channel 23 DMA_INTL[INT23] */
+    DMA0_CH24_IRQn              = 77u,  /* eDMA Channel 24 DMA_INTL[INT24] */
+    DMA0_CH25_IRQn              = 78u,  /* eDMA Channel 25 DMA_INTL[INT25] */
+    DMA0_CH26_IRQn              = 79u,  /* eDMA Channel 26 DMA_INTL[INT26] */
+    DMA0_CH27_IRQn              = 80u,  /* eDMA Channel 27 DMA_INTL[INT27] */
+    DMA0_CH28_IRQn              = 81u,  /* eDMA Channel 28 DMA_INTL[INT28] */
+    DMA0_CH29_IRQn              = 82u,  /* eDMA Channel 29 DMA_INTL[INT29] */
+    DMA0_CH30_IRQn              = 83u,  /* eDMA Channel 30 DMA_INTL[INT30] */
+    DMA0_CH31_IRQn              = 84u,  /* eDMA Channel 31 DMA_INTL[INT31] */
+    DMA0_CH32_IRQn              = 85u,  /* eDMA Channel 32 DMA_INTH[INT32] */
+    DMA0_CH33_IRQn              = 86u,  /* eDMA Channel 33 DMA_INTH[INT33] */
+    DMA0_CH34_IRQn              = 87u,  /* eDMA Channel 34 DMA_INTH[INT34] */
+    DMA0_CH35_IRQn              = 88u,  /* eDMA Channel 35 DMA_INTH[INT35] */
+    DMA0_CH36_IRQn              = 89u,  /* eDMA Channel 36 DMA_INTH[INT36] */
+    DMA0_CH37_IRQn              = 90u,  /* eDMA Channel 37 DMA_INTH[INT37] */
+    DMA0_CH38_IRQn              = 91u,  /* eDMA Channel 38 DMA_INTH[INT38] */
+    DMA0_CH39_IRQn              = 92u,  /* eDMA Channel 39 DMA_INTH[INT39] */
+    DMA0_CH40_IRQn              = 93u,  /* eDMA Channel 40 DMA_INTH[INT40] */
+    DMA0_CH41_IRQn              = 94u,  /* eDMA Channel 41 DMA_INTH[INT41] */
+    DMA0_CH42_IRQn              = 95u,  /* eDMA Channel 42 DMA_INTH[INT42] */
+    DMA0_CH43_IRQn              = 96u,  /* eDMA Channel 43 DMA_INTH[INT43] */
+    DMA0_CH44_IRQn              = 97u,  /* eDMA Channel 44 DMA_INTH[INT44] */
+    DMA0_CH45_IRQn              = 98u,  /* eDMA Channel 45 DMA_INTH[INT45] */
+    DMA0_CH46_IRQn              = 99u,  /* eDMA Channel 46 DMA_INTH[INT46] */
+    DMA0_CH47_IRQn              = 100u, /* eDMA Channel 47 DMA_INTH[INT47] */
+    DMA0_CH48_IRQn              = 101u, /* eDMA Channel 48 DMA_INTH[INT48] */
+    DMA0_CH49_IRQn              = 102u, /* eDMA Channel 49 DMA_INTH[INT49] */
+    DMA0_CH50_IRQn              = 103u, /* eDMA Channel 50 DMA_INTH[INT50] */
+    DMA0_CH51_IRQn              = 104u, /* eDMA Channel 51 DMA_INTH[INT51] */
+    DMA0_CH52_IRQn              = 105u, /* eDMA Channel 52 DMA_INTH[INT52] */
+    DMA0_CH53_IRQn              = 106u, /* eDMA Channel 53 DMA_INTH[INT53] */
+    DMA0_CH54_IRQn              = 107u, /* eDMA Channel 54 DMA_INTH[INT54] */
+    DMA0_CH55_IRQn              = 108u, /* eDMA Channel 55 DMA_INTH[INT55] */
+    DMA0_CH56_IRQn              = 109u, /* eDMA Channel 56 DMA_INTH[INT56] */
+    DMA0_CH57_IRQn              = 110u, /* eDMA Channel 57 DMA_INTH[INT57] */
+    DMA0_CH58_IRQn              = 111u, /* eDMA Channel 58 DMA_INTH[INT58] */
+    DMA0_CH59_IRQn              = 112u, /* eDMA Channel 59 DMA_INTH[INT59] */
+    DMA0_CH60_IRQn              = 113u, /* eDMA Channel 60 DMA_INTH[INT60] */
+    DMA0_CH61_IRQn              = 114u, /* eDMA Channel 61 DMA_INTH[INT61] */
+    DMA0_CH62_IRQn              = 115u, /* eDMA Channel 62 DMA_INTH[INT62] */
+    DMA0_CH63_IRQn              = 116u, /* eDMA Channel 63 DMA_INTH[INT63] */
+    DMA1_CH0_IRQn               = 117u, /* eDMA Channel 64 DMA_INTH[INT64] */
+    DMA1_CH1_IRQn               = 118u, /* eDMA Channel 65 DMA_INTH[INT65] */
+    DMA1_CH2_IRQn               = 119u, /* eDMA Channel 66 DMA_INTH[INT66] */
+    DMA1_CH3_IRQn               = 120u, /* eDMA Channel 67 DMA_INTH[INT67] */
+    DMA1_CH4_IRQn               = 121u, /* eDMA Channel 68 DMA_INTH[INT68] */
+    DMA1_CH5_IRQn               = 122u, /* eDMA Channel 69 DMA_INTH[INT69] */
+    DMA1_CH6_IRQn               = 123u, /* eDMA Channel 70 DMA_INTH[INT70] */
+    DMA1_CH7_IRQn               = 124u, /* eDMA Channel 71 DMA_INTH[INT71] */
+    DMA1_CH8_IRQn               = 125u, /* eDMA Channel 72 DMA_INTH[INT72] */
+    DMA1_CH9_IRQn               = 126u, /* eDMA Channel 73 DMA_INTH[INT73] */
+    DMA1_CH10_IRQn              = 127u, /* eDMA Channel 74 DMA_INTH[INT74] */
+    DMA1_CH11_IRQn              = 128u, /* eDMA Channel 75 DMA_INTH[INT75] */
+    DMA1_CH12_IRQn              = 129u, /* eDMA Channel 76 DMA_INTH[INT76] */
+    DMA1_CH13_IRQn              = 130u, /* eDMA Channel 77 DMA_INTH[INT77] */
+    DMA1_CH14_IRQn              = 131u, /* eDMA Channel 78 DMA_INTH[INT78] */
+    DMA1_CH15_IRQn              = 132u, /* eDMA Channel 79 DMA_INTH[INT79] */
+    DMA1_CH16_IRQn              = 133u, /* eDMA Channel 80 DMA_INTH[INT80] */
+    DMA1_CH17_IRQn              = 134u, /* eDMA Channel 81 DMA_INTH[INT81] */
+    DMA1_CH18_IRQn              = 135u, /* eDMA Channel 82 DMA_INTH[INT82] */
+    DMA1_CH19_IRQn              = 136u, /* eDMA Channel 83 DMA_INTH[INT83] */
+    DMA1_CH20_IRQn              = 137u, /* eDMA Channel 84 DMA_INTH[INT84] */
+    DMA1_CH21_IRQn              = 138u, /* eDMA Channel 85 DMA_INTH[INT85] */
+    DMA1_CH22_IRQn              = 139u, /* eDMA Channel 86 DMA_INTH[INT86] */
+    DMA1_CH23_IRQn              = 140u, /* eDMA Channel 87 DMA_INTH[INT87] */
+    DMA1_CH24_IRQn              = 141u, /* eDMA Channel 88 DMA_INTH[INT88] */
+    DMA1_CH25_IRQn              = 142u, /* eDMA Channel 89 DMA_INTH[INT89] */
+    DMA1_CH26_IRQn              = 143u, /* eDMA Channel 90 DMA_INTH[INT90] */
+    DMA1_CH27_IRQn              = 144u, /* eDMA Channel 91 DMA_INTH[INT91] */
+    DMA1_CH28_IRQn              = 145u, /* eDMA Channel 92 DMA_INTH[INT92] */
+    DMA1_CH29_IRQn              = 146u, /* eDMA Channel 93 DMA_INTH[INT93] */
+    DMA1_CH30_IRQn              = 147u, /* eDMA Channel 94 DMA_INTH[INT94] */
+    DMA1_CH31_IRQn              = 148u, /* eDMA Channel 95 DMA_INTH[INT95] */
+    DMA1_CH32_IRQn              = 149u, /* eDMA Channel 96 DMA_INTH[INT96] */
+    DMA1_CH33_IRQn              = 150u, /* eDMA Channel 97 DMA_INTH[INT97] */
+    DMA1_CH34_IRQn              = 151u, /* eDMA Channel 98 DMA_INTH[INT98] */
+    DMA1_CH35_IRQn              = 152u, /* eDMA Channel 99 DMA_INTH[INT99] */
+    DMA1_CH36_IRQn              = 153u, /* eDMA Channel 100 DMA_INTH[INT100] */
+    DMA1_CH37_IRQn              = 154u, /* eDMA Channel 101 DMA_INTH[INT101] */
+    DMA1_CH38_IRQn              = 155u, /* eDMA Channel 102 DMA_INTH[INT102] */
+    DMA1_CH39_IRQn              = 156u, /* eDMA Channel 103 DMA_INTH[INT103] */
+    DMA1_CH40_IRQn              = 157u, /* eDMA Channel 104 DMA_INTH[INT104] */
+    DMA1_CH41_IRQn              = 158u, /* eDMA Channel 105 DMA_INTH[INT105] */
+    DMA1_CH42_IRQn              = 159u, /* eDMA Channel 106 DMA_INTH[INT106] */
+    DMA1_CH43_IRQn              = 160u, /* eDMA Channel 107 DMA_INTH[INT107] */
+    DMA1_CH44_IRQn              = 161u, /* eDMA Channel 108 DMA_INTH[INT108] */
+    DMA1_CH45_IRQn              = 162u, /* eDMA Channel 109 DMA_INTH[INT109] */
+    DMA1_CH46_IRQn              = 163u, /* eDMA Channel 110 DMA_INTH[INT110] */
+    DMA1_CH47_IRQn              = 164u, /* eDMA Channel 111 DMA_INTH[INT111] */
+    DMA1_CH48_IRQn              = 165u, /* eDMA Channel 112 DMA_INTH[INT112] */
+    DMA1_CH49_IRQn              = 166u, /* eDMA Channel 113 DMA_INTH[INT113] */
+    DMA1_CH50_IRQn              = 167u, /* eDMA Channel 114 DMA_INTH[INT114] */
+    DMA1_CH51_IRQn              = 168u, /* eDMA Channel 115 DMA_INTH[INT115] */
+    DMA1_CH52_IRQn              = 169u, /* eDMA Channel 116 DMA_INTH[INT116] */
+    DMA1_CH53_IRQn              = 170u, /* eDMA Channel 117 DMA_INTH[INT117] */
+    DMA1_CH54_IRQn              = 171u, /* eDMA Channel 118 DMA_INTH[INT118] */
+    DMA1_CH55_IRQn              = 172u, /* eDMA Channel 119 DMA_INTH[INT119] */
+    DMA1_CH56_IRQn              = 173u, /* eDMA Channel 120 DMA_INTH[INT120] */
+    DMA1_CH57_IRQn              = 174u, /* eDMA Channel 121 DMA_INTH[INT121] */
+    DMA1_CH58_IRQn              = 175u, /* eDMA Channel 122 DMA_INTH[INT122] */
+    DMA1_CH59_IRQn              = 176u, /* eDMA Channel 123 DMA_INTH[INT123] */
+    DMA1_CH60_IRQn              = 177u, /* eDMA Channel 124 DMA_INTH[INT124] */
+    DMA1_CH61_IRQn              = 178u, /* eDMA Channel 125 DMA_INTH[INT125] */
+    DMA1_CH62_IRQn              = 179u, /* eDMA Channel 126 DMA_INTH[INT126] */
+    DMA1_CH63_IRQn              = 180u, /* eDMA Channel 127 DMA_INTH[INT127] */
+
+    FLASH_MCR_DONE_IRQn         = 185u, /* Flash controller Prog/Erase/Suspend IRQ_0 MCR[DONE] */
+
+    CSENT0_RX_ERR_IRQn          = 197u,
+    CSENT0_RX_VALID_IRQn        = 198u,
+    CSENT0_TX_ACTIVE_IRQn       = 199u,
+    CSENT0_TX_DONE_IRQn         = 200u,
+    CSENT1_RX_ERR_IRQn          = 201u,
+    CSENT1_RX_VALID_IRQn        = 202u,
+    CSENT1_TX_ACTIVE_IRQn       = 203u,
+    CSENT1_TX_DONE_IRQn         = 204u,
+    FEC_PMT_IRQn                = 205u,
+    FEC_LPI_IRQn                = 206u,
+    FEC_SBD_PERCH_RX_0_IRQn     = 207u,
+    FEC_SBD_PERCH_RX_1_IRQn     = 208u,
+    FEC_SBD_PERCH_RX_2_IRQn     = 209u,
+    FEC_SBD_PERCH_RX_3_IRQn     = 210u,
+    FEC_SBD_PERCH_TX_0_IRQn     = 211u,
+    FEC_SBD_PERCH_TX_1_IRQn     = 212u,
+    FEC_SBD_PERCH_TX_2_IRQn     = 213u,
+    FEC_SBD_PERCH_TX_3_IRQn     = 214u,
+    FEC_SBD_SFTY_UE_IRQn        = 215u,
+    FEC_SBD_SFTY_CE_IRQn        = 216u,
+    FEC_SBD_INTR_IRQn           = 217u,
+    ETHERNET_0_0_IRQn           = 218u, /* Ethernet_0_0 EIR[TXF] */
+    ETHERNET_0_1_IRQn           = 219u, /* Ethernet_0_1 EIR[RXF] */
+    ETHERNET_0_2_IRQn           = 220u, /* Ethernet_0_2 EIR[HBERR] EIR[BABR] EIR[BABT] EIR[GRA] */
+    WKPU_WISR1_16_23_IRQn       = 221u, /* WISR1: EIF16~23 */
+    WKPU_WISR1_24_31_IRQn       = 222u, /* WISR1: EIF24~31 */
+
+    CANFD9_IRQn                 = 224u,
+
+    PIT_0_TFLG0_IRQn            = 226u, /* Periodic Interrupt Timer (PIT0) PIT_0_TFLG0[TIF] */
+    PIT_0_TFLG1_IRQn            = 227u, /* Periodic Interrupt Timer (PIT1) PIT_0_TFLG1[TIF] */
+    PIT_0_TFLG2_IRQn            = 228u, /* Periodic Interrupt Timer (PIT2) PIT_0_TFLG2[TIF] */
+    PIT_0_TFLG3_IRQn            = 229u, /* Periodic Interrupt Timer (PIT3) PIT_0_TFLG3[TIF] */
+    PIT_0_TFLG4_IRQn            = 230u, /* Periodic Interrupt Timer (PIT4) PIT_0_TFLG4[TIF] */
+    PIT_0_TFLG5_IRQn            = 231u, /* Periodic Interrupt Timer (PIT5) PIT_0_TFLG5[TIF] */
+    PIT_0_TFLG6_IRQn            = 232u, /* Periodic Interrupt Timer (PIT6) PIT_0_TFLG6[TIF] */
+    PIT_0_TFLG7_IRQn            = 233u, /* Periodic Interrupt Timer (PIT7) PIT_0_TFLG7[TIF] */
+    ETPU_IPI_INT_GLEX_IRQn      = 234u,
+    ETPU_IPI_INT_ECC_SERROR_IRQn= 235u,
+    ETPU1_CH0_IRQn              = 236u,
+    ETPU1_CH1_IRQn              = 237u,
+    ETPU1_CH2_IRQn              = 238u,
+    PIT_0_RTI_TFLG_IRQn         = 239u, /* PIT_RTI PIT_0_RTI_TFLG[TIF] */
+    PIT_1_TFLG0_IRQn            = 240u, /* PIT_64_Upper PIT_1_TFLG0[TIF] */
+    PIT_1_TFLG1_IRQn            = 241u, /* PIT_64_Lower PIT_1_TFLG1[TIF] */
+    XOSC_COUNTER_IRQn           = 242u, /* XOSC counter XOSC */
+    SIU_EXT_0_7_IRQn            = 243u, /* SIU External Interrupt_0 SIU External Interrupt_0 */
+    SIU_EXT_8_15_IRQn           = 244u, /* SIU External Interrupt_1 SIU External Interrupt_1 */
+    ETPU1_CH3_IRQn              = 245u,
+    ETPU1_CH4_IRQn              = 246u,
+    ETPU1_CH5_IRQn              = 247u,
+    ETPU1_CH6_IRQn              = 248u,
+    ETPU1_CH7_IRQn              = 249u,
+    ETPU1_CH8_IRQn              = 250u,
+    MC_ME_0_IRQn                = 251u, /* MC_ME 0 ME_IS[I_SAFE] */
+    MC_ME_1_IRQn                = 252u, /* MC_ME 1 ME_IS[I_MTC] */
+    MC_ME_2_IRQn                = 253u, /* MC_ME 2 ME_IS[I_IMODE] */
+    MC_ME_3_IRQn                = 254u, /* MC_ME 3 ME_IS[I_ICONF] */
+    MC_RGM_0_IRQn               = 255u, /* MC_RGM 0 MC_RGM Functional and destructive reset alternate event interrupt */
+    ETPU1_CH9_IRQn              = 256u,
+    ETPU1_CH10_IRQn             = 257u,
+    ETPU1_CH11_IRQn             = 258u,
+    DSPI0_ERR_IRQn              = 259u, /* DSPI0_0 DSPI_0_SR[TFUF] | DSPI_0_SR[RFOF] | DSPI_0_SR[TFIWF] */
+    DSPI0_EOQF_IRQn             = 260u, /* DSPI0_1 DSPI_0_SR[EOQF] */
+    DSPI0_TFFF_IRQn             = 261u, /* DSPI0_2 DSPI_0_SR[TFFF] */
+    DSPI0_TCF_IRQn              = 262u, /* DSPI0_3 DSPI_0_SR[TCF] */
+    DSPI0_RFDF_IRQn             = 263u, /* DSPI0_4 DDSPI_0_SR[RFDF] */
+    DSPI0_CMD_TCF_IRQn          = 264u,
+    DSPI0_CMDFFF_IRQn           = 265u,
+    DSPI0_SPEF_IRQn             = 266u, /* DSPI0_7 DSPI_0_SR[SPEF] */
+    ETPU1_CH12_IRQn             = 267u,
+    DSPI1_ERR_IRQn              = 268u, /* DSPI1_0 DSPI_1_SR[TFUF] | DSPI_1_SR[RFOF] | */
+    DSPI1_EOQF_IRQn             = 269u, /* DSPI1_1 DSPI_1_SR[EOQF] */
+    DSPI1_TFFF_IRQn             = 270u, /* DSPI1_2 DSPI_1_SR[TFFF] */
+    DSPI1_TCF_IRQn              = 271u, /* DSPI1_3 DSPI_1_SR[TCF] */
+    DSPI1_RFDF_IRQn             = 272u, /* DSPI1_4 DSPI_1_SR[RFDF] */
+    DSPI1_CMD_TCF_IRQn          = 273u,
+    DSPI1_CMDFFF_IRQn           = 274u,
+    DSPI1_SPEF_IRQn             = 275u, /* DSPI1_7 DSPI_1_SR[SPEF] */
+    ETPU1_CH13_IRQn             = 276u,
+    DSPI2_ERR_IRQn              = 277u, /* DSPI2_0 DSPI_2_SR[TFUF] | DSPI_2_SR[RFOF]| */
+    DSPI2_EOQF_IRQn             = 278u, /* DSPI2_1 DSPI_2_SR[EOQF] */
+    DSPI2_TFFF_IRQn             = 279u, /* DSPI2_2 DSPI_2_SR[TFFF] */
+    DSPI2_TCF_IRQn              = 280u, /* DSPI2_3 DSPI_2_SR[TCF] */
+    DSPI2_RFDF_IRQn             = 281u, /* DSPI2_4 DSPI_2_SR[RFDF] */
+    DSPI2_CMD_TCF_IRQn          = 282u,
+    DSPI2_CMDFFF_IRQn           = 283u,
+    DSPI2_SPEF_IRQn             = 284u, /* DSPI2_7 DSPI_2_SR[SPEF] */
+    ETPU1_CH14_IRQn             = 285u,
+    DSPI3_ERR_IRQn              = 286u, /* DSPI3_0 DSPI_3_SR[TFUF] | DSPI_3_SR[RFOF]| */
+    DSPI3_EOQF_IRQn             = 287u, /* DSPI3_1 DSPI_3_SR[EOQF] */
+    DSPI3_TFFF_IRQn             = 288u, /* DSPI3_2 DSPI_3_SR[TFFF] */
+    DSPI3_TCF_IRQn              = 289u, /* DSPI3_3 DSPI_3_SR[TCF] */
+    DSPI3_RFDF_IRQn             = 290u, /* DSPI3_4 DSPI_3_SR[RFDF] */
+    DSPI3_CMD_TCF_IRQn          = 291u,
+    DSPI3_CMDFFF_IRQn           = 292u,
+    DSPI3_SPEF_IRQn             = 293u, /* DSPI3_7 DSPI_3_SR[SPEF] */
+    ETPU1_CH15_IRQn             = 294u,
+    DSPI4_ERR_IRQn              = 295u, /* DSPI4_0 DSPI_4_SR[TFUF] | DSPI_4_SR[RFOF]| */
+    DSPI4_EOQF_IRQn             = 296u, /* DSPI4_1 DSPI_4_SR[EOQF] */
+    DSPI4_TFFF_IRQn             = 297u, /* DSPI4_2 DSPI_4_SR[TFFF] */
+    DSPI4_TCF_IRQn              = 298u, /* DSPI4_3 DSPI_4_SR[TCF] */
+    DSPI4_RFDF_IRQn             = 299u, /* DSPI4_4 DSPI_4_SR[RFDF] */
+    DSPI4_SPITCF_CMD_TCF_IRQn   = 300u, /* DSPI4_5 DSPI_4_SR[SPITCF] | */
+    DSPI4_DSITCF_CMDFFF_IRQn    = 301u, /* DSPI4_6 DSPI_4_SR[DSITCF] | */
+    DSPI4_SPEF_DPEF_IRQn        = 302u, /* DSPI4_7 DSPI_4_SR[SPEF] | DSPI_4_SR[DPEF] */
+    DSPI4_DDIF_IRQn             = 303u, /* DSPI4_8 DSPI_4_SR[DDIF] */
+    DSPI5_ERR_IRQn              = 304u, /* DSPI5_0 DSPI_5_SR[TFUF] | DSPI_5_SR[RFOF]| */
+    DSPI5_EOQF_IRQn             = 305u, /* DSPI5_1 DSPI_5_SR[EOQF] */
+    DSPI5_TFFF_IRQn             = 306u, /* DSPI5_2 DSPI_5_SR[TFFF] */
+    DSPI5_TCF_IRQn              = 307u, /* DSPI5_3 DSPI_5_SR[TCF] */
+    DSPI5_RFDF_IRQn             = 308u, /* DSPI5_4 DSPI_5_SR[RFDF] */
+    DSPI5_SPITCF_CMD_TCF_IRQn   = 309u, /* DSPI5_5 DSPI_5_SR[SPITCF] | DSPI_5_SR[CMD_TCF] */
+    DSPI5_DSITCF_CMDFFF_IRQn    = 310u, /* DSPI5_6 DSPI_5_SR[DSITCF] | DSPI_5_SR[CMDFFF] */
+    DSPI5_SPEF_DPEF_IRQn        = 311u, /* DSPI5_7 DSPI_5_SR[SPEF] | DSPI_5_SR[DPEF] */
+    DSPI5_DDIF_IRQn             = 312u, /* DSPI5_8 DSPI_5_SR[DDIF] */
+    DSPI6_ERR_IRQn              = 313u, /* DSPI6_0 DSPI_6_SR[TFUF] | DSPI_6_SR[RFOF]| */
+    DSPI6_EOQF_IRQn             = 314u, /* DSPI6_1 DSPI_6_SR[EOQF] */
+    DSPI6_TFFF_IRQn             = 315u, /* DSPI6_2 DSPI_6_SR[TFFF] */
+    DSPI6_TCF_IRQn              = 316u, /* DSPI6_3 DSPI_6_SR[TCF] */
+    DSPI6_RFDF_IRQn             = 317u, /* DSPI6_4 DSPI_6_SR[RFDF] */
+    DSPI6_SPITCF_CMD_TCF_IRQn   = 318u, /* DSPI6_5 DSPI_6_SR[SPITCF] | DSPI_6_SR[CMD_TCF] */
+    DSPI6_DSITCF_CMDFFF_IRQn    = 319u, /* DSPI6_6 DSPI_6_SR[DSITCF] | DSPI_6_SR[CMDFFF] */
+    DSPI6_SPEF_DPEF_IRQn        = 320u, /* DSPI6_7 DSPI_6_SR[SPEF] | DSPI_6_SR[DPEF] */
+    DSPI6_DDIF_IRQn             = 321u, /* DSPI6_8 DSPI_6_SR[DDIF] */
+    ETPU1_CH16_IRQn             = 322u,
+    ETPU1_CH17_IRQn             = 323u,
+    ETPU1_CH18_IRQn             = 324u,
+    ETPU1_CH19_IRQn             = 325u,
+    ETPU1_CH20_IRQn             = 326u,
+    ETPU1_CH21_IRQn             = 327u,
+    ETPU1_CH22_IRQn             = 328u,
+    ETPU1_CH23_IRQn             = 329u,
+    ETPU1_CH24_IRQn             = 330u,
+    ETPU1_CH25_IRQn             = 331u,
+    ETPU1_CH26_IRQn             = 332u,
+    ETPU1_CH27_IRQn             = 333u,
+    ETPU1_CH28_IRQn             = 334u,
+    ETPU1_CH29_IRQn             = 335u,
+    ETPU1_CH30_IRQn             = 336u,
+    ETPU1_CH31_IRQn             = 337u,
+    ETPU2_CH0_IRQn              = 338u,
+    ETPU2_CH1_IRQn              = 339u,
+    ETPU2_CH2_IRQn              = 340u,
+    ETPU2_CH3_IRQn              = 341u,
+    ETPU2_CH4_IRQn              = 342u,
+    ETPU2_CH5_IRQn              = 343u,
+    ETPU2_CH6_IRQn              = 344u,
+    ETPU2_CH7_IRQn              = 345u,
+    ETPU2_CH8_IRQn              = 346u,
+    ETPU2_CH9_IRQn              = 347u,
+    ETPU2_CH10_IRQn             = 348u,
+    ETPU2_CH11_IRQn             = 349u,
+    ETPU2_CH12_IRQn             = 350u,
+    ETPU2_CH13_IRQn             = 351u,
+    ETPU2_CH14_IRQn             = 352u,
+    ETPU2_CH15_IRQn             = 353u,
+    ETPU2_CH16_IRQn             = 354u,
+    ETPU2_CH17_IRQn             = 355u,
+    ETPU2_CH18_IRQn             = 356u,
+    ETPU2_CH19_IRQn             = 357u,
+    ETPU2_CH20_IRQn             = 358u,
+    ETPU2_CH21_IRQn             = 359u,
+    ETPU2_CH22_IRQn             = 360u,
+    ETPU2_CH23_IRQn             = 361u,
+    ETPU2_CH24_IRQn             = 362u,
+    ETPU2_CH25_IRQn             = 363u,
+    ETPU2_CH26_IRQn             = 364u,
+    ETPU2_CH27_IRQn             = 365u,
+    ETPU2_CH28_IRQn             = 366u,
+    DSPI12_ERR_IRQn             = 367u, /* DSPI12_0 DSPI_12_SR[TFUF] | DSPI_12_SR[RFOF]| */
+    DSPI12_EOQF_IRQn            = 368u, /* DSPI12_1 DSPI_12_SR[EOQF] */
+    DSPI12_TFFF_IRQn            = 369u, /* DSPI12_2 DSPI_12_SR[TFFF] */
+    DSPI12_TCF_IRQn             = 370u, /* DSPI12_3 DSPI_12_SR[TCF] */
+    DSPI12_RFDF_IRQn            = 371u, /* DSPI12_4 DSPI_12_SR[RFDF] */
+    DSPI12_CMD_TCF_IRQn         = 372u,
+    DSPI12_CMDFFF_IRQn          = 373u,
+    DSPI12_SPEF_IRQn            = 374u, /* DSPI12_7 DSPI_12_SR[SPEF] */
+    API_IRQn                    = 375U,
+    LINFLEXD0_RX_IRQn           = 376u, /* Linflex/eSCI0_0 LINFlex_0_RXI */
+    LINFLEXD0_TX_IRQn           = 377u, /* Linflex/eSCI0_1 LINFlex_0_TXI */
+    LINFLEXD0_ERR_IRQn          = 378u, /* Linflex/eSCI0_2 LINFlex_0_ERR */
+    ETPU2_CH29_IRQn             = 379u,
+    LINFLEXD1_RX_IRQn           = 380u, /* Linflex/eSCI1_0 LINFlex_1_RXI */
+    LINFLEXD1_TX_IRQn           = 381u, /* Linflex/eSCI1_1 LINFlex_1_TXI */
+    LINFLEXD1_ERR_IRQn          = 382u, /* Linflex/eSCI1_2 LINFlex_1_ERR */
+    ETPU2_CH30_IRQn             = 383u,
+    LINFLEXD2_RX_IRQn           = 384u, /* Linflex/eSCI2_0 LINFlex_2_RXI */
+    LINFLEXD2_TX_IRQn           = 385u, /* Linflex/eSCI2_1 LINFlex_2_TXI */
+    LINFLEXD2_ERR_IRQn          = 386u, /* Linflex/eSCI2_2 LINFlex_2_ERR */
+    ETPU2_CH31_IRQn             = 387u,
+    ETPU_GLEX_SINGLE_IRQn       = 388u,
+    ETPU_ECC_SERROR_SINGLE_IRQn = 389u,
+    ETPU3_CH0_IRQn              = 390u,
+    ETPU3_CH1_IRQn              = 391u,
+    ETPU3_CH2_IRQn              = 392u,
+    ETPU3_CH3_IRQn              = 393u,
+    ETPU3_CH4_IRQn              = 394u,
+    ETPU3_CH5_IRQn              = 395u,
+    ETPU3_CH6_IRQn              = 396u,
+    ETPU3_CH7_IRQn              = 397u,
+    ETPU3_CH8_IRQn              = 398u,
+    ETPU3_CH9_IRQn              = 399u,
+    ETPU3_CH10_IRQn             = 400u,
+    ETPU3_CH11_IRQn             = 401u,
+    ETPU3_CH12_IRQn             = 402u,
+    ETPU3_CH13_IRQn             = 403u,
+    ETPU3_CH14_IRQn             = 404u,
+    ETPU3_CH15_IRQn             = 405u,
+    ETPU3_CH16_IRQn             = 406u,
+    ETPU3_CH17_IRQn             = 407u,
+    ETPU3_CH18_IRQn             = 408u,
+    ETPU3_CH19_IRQn             = 409u,
+    ETPU3_CH20_IRQn             = 410u,
+    ETPU3_CH21_IRQn             = 411u,
+    ETPU3_CH22_IRQn             = 412u,
+    ETPU3_CH23_IRQn             = 413u,
+    ETPU3_CH24_IRQn             = 414u,
+    ETPU3_CH25_IRQn             = 415u,
+    LINFLEXD16_RX_IRQn          = 416u, /* Linflex/eSCI16_0 LINFlex_16_RXI */
+    LINFLEXD16_TX_IRQn          = 417u, /* Linflex/eSCI16_1 LINFlex_16_TXI */
+    LINFLEXD16_ERR_IRQn         = 418u, /* Linflex/eSCI16_2 LINFlex_16_ERR */
+    ETPU3_CH26_IRQn             = 419u,
+    ETPU3_CH27_IRQn             = 420u,
+    ETPU3_CH28_IRQn             = 421u,
+    ETPU3_CH29_IRQn             = 422u,
+    ETPU3_CH30_IRQn             = 423u,
+    ETPU3_CH31_IRQn             = 424u,
+    WKPU_WISR1_0_7_IRQn         = 425u, /* WISR1: EIF0~7   */
+    WKPU_WISR1_8_15_IRQn        = 426u, /* WISR1: EIF8~15  */
+    WKPU_WISR0_0_7_IRQn         = 427u, /* WISR0: EIF0~7   */
+    WKPU_WISR0_8_15_IRQn        = 428u, /* WISR0: EIF8~15  */
+    WKPU_WISR0_16_23_IRQn       = 429u, /* WISR0: EIF16~23 */
+    WKPU_WISR0_24_31_IRQn       = 430u, /* WISR0: EIF24~31 */
+    CANFD1_IRQn                 = 431u,
+    LINFLEXD14_RX_IRQn          = 432u, /* Linflex/eSCI14_0 LINFlex_14_RXI */
+    LINFLEXD14_TX_IRQn          = 433u, /* Linflex/eSCI14_1 LINFlex_14_TXI */
+    LINFLEXD14_ERR_IRQn         = 434u, /* Linflex/eSCI14_2 LINFlex_14_ERR */
+    LINFLEXD6_RX_IRQn           = 435u,
+    LINFLEXD15_RX_IRQn          = 436u, /* Linflex/eSCI15_0 LINFlex_15_RXI */
+    LINFLEXD15_TX_IRQn          = 437u, /* Linflex/eSCI15_1 LINFlex_15_TXI */
+    LINFLEXD15_ERR_IRQn         = 438u, /* Linflex/eSCI15_2 LINFlex_15_ERR */
+    LINFLEXD6_TX_IRQn           = 439u,
+    IIC0_SR_IRQn                = 440u, /* IIC_0_0 I2C0_SR[IBAL] | I2C0_SR[TCF] | I2C0_SR[IAAS] */
+    M_TTCAN2_TIME_MARK_IRQn     = 441u,
+    IIC1_SR_IRQn                = 442u, /* IIC_1_0 I2C1_SR[IBAL] | I2C1_SR[TCF] | I2C1_SR[IAAS] */
+    M_TTCAN2_LINE0_IRQn         = 443u,
+    M_TTCAN2_LINE1_IRQn         = 444u,
+    MCAN9_0_IRQn                = 445u,
+    MCAN9_1_IRQn                = 446u,
+    MCAN10_0_IRQn               = 447u,
+    MCAN10_1_IRQn               = 448u,
+    MCAN11_0_IRQn               = 449u,
+    MCAN11_1_IRQn               = 450u,
+    MCAN12_0_IRQn               = 451u,
+    MCAN12_1_IRQn               = 452u,
+    FLEXRAY0_0_IRQn             = 453u, /* FlexRay_0_0 FR_0_LRNEIF | DRNEIF */
+    FLEXRAY0_1_IRQn             = 454u, /* FlexRay_0_1 FR_0_LRCEIF | DRCEIF */
+    FLEXRAY0_2_IRQn             = 455u, /* FlexRay_0_2 FR_0_FNEAIF */
+    FLEXRAY0_3_IRQn             = 456u, /* FlexRay_0_3 FR_0_FNEBIF */
+    FLEXRAY0_4_IRQn             = 457u, /* FlexRay_0_4 FR_0_WUPIF */
+    FLEXRAY0_5_IRQn             = 458u, /* FlexRay_0_5 FR_0_PRIF */
+    FLEXRAY0_6_IRQn             = 459u, /* FlexRay_0_6 FR_0_CHIF */
+    FLEXRAY0_7_IRQn             = 460u, /* FlexRay_0_7 FR_0_TBIF */
+    FLEXRAY0_8_IRQn             = 461u, /* FlexRay_0_8 FR_0_RBIF */
+    FLEXRAY0_9_IRQn             = 462u, /* FlexRay_0_9 FR_0_MIF */
+    SSI0_IRQn                   = 463u,
+    SSI1_IRQn                   = 464u,
+    FLEXRAY1_0_IRQn             = 465u, /* FlexRay_1_0 FR_1_LRNEIF | DRNEIF */
+    FLEXRAY1_1_IRQn             = 466u, /* FlexRay_1_1 FR_1_LRCEIF | DRCEIF */
+    FLEXRAY1_2_IRQn             = 467u, /* FlexRay_1_2 FR_1_FNEAIF */
+    FLEXRAY1_3_IRQn             = 468u, /* FlexRay_1_3 FR_1_FNEBIF */
+    FLEXRAY1_4_IRQn             = 469u, /* FlexRay_1_4 FR_1_WUPIF */
+    FLEXRAY1_5_IRQn             = 470u, /* FlexRay_1_5 FR_1_PRIF */
+    FLEXRAY1_6_IRQn             = 471u, /* FlexRay_1_6 FR_1_CHIF */
+    FLEXRAY1_7_IRQn             = 472u, /* FlexRay_1_7 FR_1_TBIF */
+    FLEXRAY1_8_IRQn             = 473u, /* FlexRay_1_8 FR_1_RBIF */
+    FLEXRAY1_9_IRQn             = 474u, /* FlexRay_1_9 FR_1_MIF */
+    I2S0_IRQn                   = 475u, /* FlexRay_1_10 FR_1_STPCLK */
+    I2S1_IRQn                   = 476u,
+    PMC_GR_S_IRQn               = 477u, /* Power Monitor Unit GR_S[VD15] | GR_S[VD14] | GR_S[VD13] | */
+    PMC_ERP_TEMP_IRQn           = 478u, /* Power management Unit (temp sensor) EPR_TD[TEMP_3] | EPR_TD[TEMP_2] | */
+    LINFLEXD3_RX_IRQn           = 479u,
+    LINFLEXD3_TX_IRQn           = 480u,
+    LINFLEXD3_ERR_IRQn          = 481u,
+    LINFLEXD4_RX_IRQn           = 482u,
+    LINFLEXD4_TX_IRQn           = 483u,
+    LINFLEXD4_ERR_IRQn          = 484u,
+    LINFLEXD5_RX_IRQn           = 485u,
+    LINFLEXD5_TX_IRQn           = 486u,
+    LINFLEXD5_ERR_IRQn          = 487u,
+    FCCU_0_IRQn                 = 488u, /* FCCU_0 FCCU_IRQ_STAT[ALRM_STAT] */
+    FCCU_1_IRQn                 = 489u, /* FCCU_1 FCU_IRQ_STAT[CFG_TO_STAT] */
+
+    LINFLEXD6_ERR_IRQn          = 492u,
+    LINFLEXD12_RX_IRQn          = 493u,
+    STCU2_0_RUNSW_LBIE_IRQn     = 494u, /* STCU2_0 STCU_RUNSW[LBIE] */
+    STCU2_1_RUNSW_MBIE_IRQn     = 495u, /* STCU2_1 STCU_RUNSW[MBIE] */
+    HSM2HOST_0_IRQn             = 496u, /* Hardware Security Module 0 HSM2HTIE[0] */
+    HSM2HOST_1_IRQn             = 497u, /* Hardware Security Module 1 HSM2HTIE[1] */
+    HSM2HOST_2_IRQn             = 498u, /* Hardware Security Module 2 HSM2HTIE[2] */
+    HSM2HOST_3_IRQn             = 499u, /* Hardware Security Module 3 HSM2HTIE[3] */
+    HSM2HOST_4_IRQn             = 500u, /* Hardware Security Module 4 HSM2HTIE[4] */
+    HSM2HOST_5_IRQn             = 501u, /* Hardware Security Module 5 HSM2HTIE[5] */
+    HSM2HOST_6_IRQn             = 502u, /* Hardware Security Module 6 HSM2HTIE[6] */
+    HSM2HOST_7_IRQn             = 503u, /* Hardware Security Module 7 HSM2HTIE[7] */
+    HSM2HOST_8_IRQn             = 504u, /* Hardware Security Module 8 HSM2HTIE[8] */
+    HSM2HOST_9_IRQn             = 505u, /* Hardware Security Module 9 HSM2HTIE[9] */
+    HSM2HOST_10_IRQn            = 506u, /* Hardware Security Module 10 HSM2HTIE[10] */
+    HSM2HOST_11_IRQn            = 507u, /* Hardware Security Module 11 HSM2HTIE[11] */
+    HSM2HOST_12_IRQn            = 508u, /* Hardware Security Module 12 HSM2HTIE[12] */
+    HSM2HOST_13_IRQn            = 509u, /* Hardware Security Module 13 HSM2HTIE[13] */
+    HSM2HOST_14_IRQn            = 510u, /* Hardware Security Module 14 HSM2HTIE[14] */
+    HSM2HOST_15_IRQn            = 511u, /* Hardware Security Module 15 HSM2HTIE[15] */
+    HSM2HOST_16_IRQn            = 512u, /* Hardware Security Module 16 HSM2HTIE[16] */
+    HSM2HOST_17_IRQn            = 513u, /* Hardware Security Module 17 HSM2HTIE[17] */
+    HSM2HOST_18_IRQn            = 514u, /* Hardware Security Module 18 HSM2HTIE[18] */
+    HSM2HOST_19_IRQn            = 515u, /* Hardware Security Module 19 HSM2HTIE[19] */
+    HSM2HOST_20_IRQn            = 516u, /* Hardware Security Module 20 HSM2HTIE[20] */
+    HSM2HOST_21_IRQn            = 517u, /* Hardware Security Module 21 HSM2HTIE[21] */
+    HSM2HOST_22_IRQn            = 518u, /* Hardware Security Module 22 HSM2HTIE[22] */
+    HSM2HOST_23_IRQn            = 519u, /* Hardware Security Module 23 HSM2HTIE[23] */
+    HSM2HOST_24_IRQn            = 520u, /* Hardware Security Module 24 HSM2HTIE[24] */
+    HSM2HOST_25_IRQn            = 521u, /* Hardware Security Module 25 HSM2HTIE[25] */
+    HSM2HOST_26_IRQn            = 522u, /* Hardware Security Module 26 HSM2HTIE[26] */
+    HSM2HOST_27_IRQn            = 523u, /* Hardware Security Module 27 HSM2HTIE[27] */
+    HSM2HOST_28_IRQn            = 524u, /* Hardware Security Module 28 HSM2HTIE[28] */
+    HSM2HOST_29_IRQn            = 525u, /* Hardware Security Module 29 HSM2HTIE[29] */
+    HSM2HOST_30_IRQn            = 526u, /* Hardware Security Module 30 HSM2HTIE[30] */
+    HSM2HOST_31_IRQn            = 527u, /* Hardware Security Module 31 HSM2HTIE[31] */
+    DECFILTER_0_IRQn            = 528u, /* Decimation Filter 0(Connects to EQADC01) */
+    EQADC01_FIFO_OVERRUN_IRQn   = 529u, /* EQADC01_FISRx(0~5)[TORF | RFOF | CFUF] */
+    DECFILTER_1_IRQn            = 530u, /* Decimation Filter 1(Connects to EQADC23) */
+    EQADC23_FIFO_OVERRUN_IRQn   = 531u, /* EQADC23_FISRx(0~5)[TORF | RFOF | CFUF] */
+    DECFILTER_2_IRQn            = 532u, /* Decimation Filter 2(Connects to EQADC45) */
+    EQADC45_FIFO_OVERRUN_IRQn   = 533u, /* EQADC45_FISRx(0~5)[TORF | RFOF | CFUF] */
+    DECFILTER_3_IRQn            = 534u, /* Decimation Filter 3(Connects to EQADC67) */
+    EQADC67_FIFO_OVERRUN_IRQn   = 535u, /* EQADC67_FISRx(0~5)[TORF | RFOF | CFUF] */
+    DECFILTER_4_IRQn            = 536u, /* Decimation Filter 4(Connects to EQADC89) */
+    EQADC89_FIFO_OVERRUN_IRQn   = 537u, /* EQADC89_FISRx(0~5)[TORF | RFOF | CFUF] */
+
+    LINFLEXD7_RX_IRQn           = 539u,
+    LINFLEXD7_TX_IRQn           = 540u,
+    LINFLEXD7_ERR_IRQn          = 541u,
+    LINFLEXD12_TX_IRQn          = 542u,
+
+    SDADC_0_IRQn                = 544u, /* SDADC_0 */
+    SDADC_1_IRQn                = 545u, /* SDADC_1 */
+    SDADC_2_IRQn                = 546u, /* SDADC_2 */
+    SDADC_3_IRQn                = 547u, /* SDADC_3 */
+    SDADC_4_IRQn                = 548u, /* SDADC_4 */
+    SDADC_5_IRQn                = 549u, /* SDADC_5 */
+    SDADC_6_IRQn                = 550u, /* SDADC_6 */
+    SDADC_7_IRQn                = 551u, /* SDADC_7 */
+    SDADC_8_IRQn                = 552u, /* SDADC_8 */
+    SDADC_9_IRQn                = 553u, /* SDADC_9 */
+    LINFLEXD8_RX_IRQn           = 554u,
+    LINFLEXD8_TX_IRQn           = 555u,
+    LINFLEXD8_ERR_IRQn          = 556u,
+    LINFLEXD12_ERR_IRQn         = 557u,
+    SENT0_COMBINED_FAST_IRQn    = 558u, /* SENT_COMBINED_FAST_0 SENT_0_FMSG_RDY[0] | */
+    SENT0_COMBINED_SLOW_IRQn    = 559u, /* SENT_COMBINED_SLOW_0 SENT_0_SMSG_RDY[0] | */
+    SENT0_COMBINED_ERR_IRQn     = 560u, /* SENT_COMBINED_ERR_0 SENT_0_GBL_STATUS[FMDU] | */
+    SENT1_COMBINED_FAST_IRQn    = 561u, /* SENT_COMBINED_FAST_1 SENT_1_FMSG_RDY[0] | */
+    SENT1_COMBINED_SLOW_IRQn    = 562u, /* SENT_COMBINED_SLOW_1 SENT_1_SMSG_RDY[0] | */
+    SENT1_COMBINED_ERR_IRQn     = 563u, /* SENT_COMBINED_ERR_1 SENT_1_GBL_STATUS[FMDU] | */
+    SENT0_CH0_FAST_IRQn         = 564u,  /* SENT_0_CH0_FAST, SENT_0_FMSG_RDY[0] */
+    SENT0_CH0_SLOW_IRQn         = 565u,  /* SENT_0_CH0_SLOW, SENT_0_SMSG_RDY[0] */
+    SENT0_CH0_ERR_IRQn          = 566u,   /* SENT_0_CH0_ERR,  SENT_0_CH0_STATUS[4:7] | */
+    SENT0_CH1_FAST_IRQn         = 567u,  /* SENT_0_CH1_FAST, SENT_0_FMSG_RDY[1] */
+    SENT0_CH1_SLOW_IRQn         = 568u,  /* SENT_0_CH1_SLOW, SENT_0_SMSG_RDY[1] */
+    SENT0_CH1_ERR_IRQn          = 569u,   /* SENT_0_CH1_ERR,  SENT_0_CH1_STATUS[4:7] | */
+    SENT0_CH2_FAST_IRQn         = 570u,  /* SENT_0_CH2_FAST, SENT_0_FMSG_RDY[2] */
+    SENT0_CH2_SLOW_IRQn         = 571u,  /* SENT_0_CH2_SLOW, SENT_0_SMSG_RDY[2] */
+    SENT0_CH2_ERR_IRQn          = 572u,   /* SENT_0_CH2_ERR,  SENT_0_CH2_STATUS[4:7] | */
+    SENT0_CH3_FAST_IRQn         = 573u,  /* SENT_0_CH3_FAST, SENT_0_FMSG_RDY[3] */
+    SENT0_CH3_SLOW_IRQn         = 574u,  /* SENT_0_CH3_SLOW, SENT_0_SMSG_RDY[3] */
+    SENT0_CH3_ERR_IRQn          = 575u,   /* SENT_0_CH3_ERR,  SENT_0_CH3_STATUS[4:7] | */
+    SENT0_CH4_FAST_IRQn         = 576u,  /* SENT_0_CH4_FAST, SENT_0_FMSG_RDY[4] */
+    SENT0_CH4_SLOW_IRQn         = 577u,  /* SENT_0_CH4_SLOW, SENT_0_SMSG_RDY[4] */
+    SENT0_CH4_ERR_IRQn          = 578u,   /* SENT_0_CH4_ERR,  SENT_0_CH4_STATUS[4:7] | */
+    SENT1_CH0_FAST_IRQn         = 579u,  /* SENT_1_CH0_FAST, SENT_1_FMSG_RDY[0] */
+    SENT1_CH0_SLOW_IRQn         = 580u,  /* SENT_1_CH0_SLOW, SENT_1_SMSG_RDY[0] */
+    SENT1_CH0_ERR_IRQn          = 581u,   /* SENT_1_CH0_ERR,  SENT_1_CH0_STATUS[4:7] | */
+    SENT1_CH1_FAST_IRQn         = 582u,  /* SENT_1_CH1_FAST, SENT_1_FMSG_RDY[1] */
+    SENT1_CH1_SLOW_IRQn         = 583u,  /* SENT_1_CH1_SLOW, SENT_1_SMSG_RDY[1] */
+    SENT1_CH1_ERR_IRQn          = 584u,   /* SENT_1_CH1_ERR,  SENT_1_CH1_STATUS[4:7] | */
+    SENT1_CH2_FAST_IRQn         = 585u,  /* SENT_1_CH2_FAST, SENT_1_FMSG_RDY[2] */
+    SENT1_CH2_SLOW_IRQn         = 586u,  /* SENT_1_CH2_SLOW, SENT_1_SMSG_RDY[2] */
+    SENT1_CH2_ERR_IRQn          = 587u,   /* SENT_1_CH2_ERR,  SENT_1_CH3_STATUS[4:7] | */
+    SENT1_CH3_FAST_IRQn         = 588u,  /* SENT_1_CH3_FAST, SENT_1_FMSG_RDY[3] */
+    SENT1_CH3_SLOW_IRQn         = 589u,  /* SENT_1_CH3_SLOW, SENT_1_SMSG_RDY[3] */
+    SENT1_CH3_ERR_IRQn          = 590u,   /* SENT_1_CH3_ERR,  SENT_1_CH3_STATUS[4:7] | */
+    SENT1_CH4_FAST_IRQn         = 591u,  /* SENT_1_CH4_FAST, SENT_1_FMSG_RDY[4] */
+    SENT1_CH4_SLOW_IRQn         = 592u,  /* SENT_1_CH4_SLOW, SENT_1_SMSG_RDY[4] */
+    SENT1_CH4_ERR_IRQn          = 593u,   /* SENT_1_CH4_ERR,  SENT_1_CH4_STATUS[4:7] | */
+    SENT0_CH5_FAST_IRQn         = 594u,  /* SENT_0_CH5_FAST, SENT_0_FMSG_RDY[5] */
+    SENT0_CH5_SLOW_IRQn         = 595u,  /* SENT_0_CH5_SLOW, SENT_0_SMSG_RDY[5] */
+    SENT0_CH5_ERR_IRQn          = 596u,   /* SENT_0_CH5_ERR,  SENT_0_CH5_STATUS[4:7] | */
+    SENT0_CH6_FAST_IRQn         = 597u,  /* SENT_0_CH6_FAST, SENT_0_FMSG_RDY[6] */
+    SENT0_CH6_SLOW_IRQn         = 598u,  /* SENT_0_CH6_SLOW, SENT_0_SMSG_RDY[6] */
+    SENT0_CH6_ERR_IRQn          = 599u,   /* SENT_0_CH6_ERR,  SENT_0_CH6_STATUS[4:7] | */
+    SENT0_CH7_FAST_IRQn         = 600u,  /* SENT_0_CH7_FAST, SENT_0_FMSG_RDY[7] */
+    SENT0_CH7_SLOW_IRQn         = 601u,  /* SENT_0_CH7_SLOW, SENT_0_SMSG_RDY[7] */
+    SENT0_CH7_ERR_IRQn          = 602u,   /* SENT_0_CH7_ERR,  SENT_0_CH7_STATUS[4:7] | */
+    SENT1_CH5_FAST_IRQn         = 603u,  /* SENT_1_CH5_FAST, SENT_1_FMSG_RDY[5] */
+    SENT1_CH5_SLOW_IRQn         = 604u,  /* SENT_1_CH5_SLOW, SENT_1_SMSG_RDY[5] */
+    SENT1_CH5_ERR_IRQn          = 605u,   /* SENT_1_CH5_ERR,  SENT_1_CH5_STATUS[4:7] | */
+    SENT1_CH6_FAST_IRQn         = 606u,  /* SENT_1_CH6_FAST, SENT_1_FMSG_RDY[6] */
+    SENT1_CH6_SLOW_IRQn         = 607u,  /* SENT_1_CH6_SLOW, SENT_1_SMSG_RDY[6] */
+    SENT1_CH6_ERR_IRQn          = 608u,   /* SENT_1_CH6_ERR,  SENT_1_CH6_STATUS[4:7] | */
+    LINFLEXD9_RX_IRQn           = 609u,
+    LINFLEXD9_TX_IRQn           = 610u,
+    LINFLEXD9_ERR_IRQn          = 611u,
+    PSI5_0_CH0_0_IRQn           = 612u, /* PSI5_0_CH0_0 PSI5_0_CH_0_DSR[IS_DMA_TF_PM_DS] | PSI5_0_CH_0_DSR[IS_DMA_TF_SF] | */
+    PSI5_0_CH0_1_IRQn           = 613u, /* PSI5_0_CH0_1 PSI5_0_CH_0_GISR[IS_CESM[6:1]] | */
+    PSI5_0_CH0_2_IRQn           = 614u, /* PSI5_0_CH0_2 PSI5_0_CH_0_NDSR[NDS31] | */
+    PSI5_0_CH0_3_IRQn           = 615u, /* PSI5_0_CH0_3 PSI5_0_CH_0_OWSR[NDS31] | */
+    PSI5_0_CH0_4_IRQn           = 616u, /* PSI5_0_CH0_4 PSI5_0_CH_0_EISR[NDS31] | */
+    PSI5_0_CH0_5_IRQn           = 617u, /* PSI5_0_CH0_5 PSI5_0_CH_0_DSR[*] | */
+    PSI5_0_CH1_0_IRQn           = 618u, /* PSI5_0_CH1_0 PSI5_0_CH_1_DSR[IS_DMA_TF_PM_DS] | PSI5_0_CH_1_DSR[IS_DMA_TF_SF] | */
+    PSI5_0_CH1_1_IRQn           = 619u, /* PSI5_0_CH1_1 PSI5_0_CH_1_GISR[IS_CESM[6:1]] | */
+    PSI5_0_CH1_2_IRQn           = 620u, /* PSI5_0_CH1_2 PSI5_0_CH_1_NDSR[NDS31] | */
+    PSI5_0_CH1_3_IRQn           = 621u, /* PSI5_0_CH1_3 PSI5_0_CH_1_OWSR[NDS31] | */
+    PSI5_0_CH1_4_IRQn           = 622u, /* PSI5_0_CH1_4 PSI5_0_CH_1_EISR[NDS31] | */
+    PSI5_0_CH1_5_IRQn           = 623u, /* PSI5_0_CH1_5 PSI5_0_CH_1_DSR[*] | */
+    PSI5_1_CH0_0_IRQn           = 624u, /* PSI5_1_CH0_0 PSI5_1_CH_0_DSR[IS_DMA_TF_PM_DS] | PSI5_1_CH_0_DSR[IS_DMA_TF_SF] | */
+    PSI5_1_CH0_1_IRQn           = 625u, /* PSI5_1_CH0_1 PSI5_1_CH_0_GISR[IS_CESM[6:1]] | */
+    PSI5_1_CH0_2_IRQn           = 626u, /* PSI5_1_CH0_2 PSI5_1_CH_0_NDSR[NDS31] | */
+    PSI5_1_CH0_3_IRQn           = 627u, /* PSI5_1_CH0_3 PSI5_1_CH_0_OWSR[NDS31] | */
+    PSI5_1_CH0_4_IRQn           = 628u, /* PSI5_1_CH0_4 PSI5_1_CH_0_EISR[NDS31] | */
+    PSI5_1_CH0_5_IRQn           = 629u, /* PSI5_1_CH0_5 PSI5_1_CH_0_DSR[*] | */
+    PSI5_0_CH2_0_IRQn           = 630u, /* PSI5_0_CH2_0 PSI5_0_CH_2_DSR[IS_DMA_TF_PM_DS] | PSI5_0_CH_2_DSR[IS_DMA_TF_SF] | */
+    PSI5_0_CH2_1_IRQn           = 631u, /* PSI5_0_CH2_1 PSI5_0_CH_2_GISR[IS_CESM[6:1]] | */
+    PSI5_0_CH2_2_IRQn           = 632u, /* PSI5_0_CH2_2 PSI5_0_CH_2_NDSR[NDS31] | */
+    PSI5_0_CH2_3_IRQn           = 633u, /* PSI5_0_CH2_3 PSI5_0_CH_2_OWSR[NDS31] | */
+    PSI5_0_CH2_4_IRQn           = 634u, /* PSI5_0_CH2_4 PSI5_0_CH_2_EISR[NDS31] | */
+    PSI5_0_CH2_5_IRQn           = 635u, /* PSI5_0_CH2_5 PSI5_0_CH_2_DSR[*] | */
+    PSI5_1_CH1_0_IRQn           = 636u, /* PSI5_1_CH1_0 PSI5_1_CH_1_DSR[IS_DMA_TF_PM_DS] | PSI5_1_CH_1_DSR[IS_DMA_TF_SF] | */
+    PSI5_1_CH1_1_IRQn           = 637u, /* PSI5_1_CH1_1 PSI5_1_CH_1_GISR[IS_CESM[6:1]] | */
+    PSI5_1_CH1_2_IRQn           = 638u, /* PSI5_1_CH1_2 PSI5_1_CH_1_NDSR[NDS31] | */
+    PSI5_1_CH1_3_IRQn           = 639u, /* PSI5_1_CH1_3 PSI5_1_CH_1_OWSR[NDS31] | */
+    PSI5_1_CH1_4_IRQn           = 640u, /* PSI5_1_CH1_4 PSI5_1_CH_1_EISR[NDS31] | */
+    PSI5_1_CH1_5_IRQn           = 641u, /* PSI5_1_CH1_5 PSI5_1_CH_1_DSR[*] | */
+    LINFLEXD10_RX_IRQn          = 642u,
+    LINFLEXD10_TX_IRQn          = 643u,
+    LINFLEXD10_ERR_IRQn         = 644u,
+    LINFLEXD11_RX_IRQn          = 645u,
+    LINFLEXD11_TX_IRQn          = 646u,
+    LINFLEXD11_ERR_IRQn         = 647u,
+    RTC_IRQn                    = 648u,
+    EMIOS1_CH0_IRQn             = 649u,
+    EMIOS1_CH1_IRQn             = 650u,
+    EMIOS1_CH2_IRQn             = 651u,
+    EMIOS1_CH3_IRQn             = 652u,
+    EMIOS1_CH4_IRQn             = 653u,
+    SIPI_0_ERR_IRQn             = 654u, /* SIPI_0 SIPI_ERR[TOEn] | SIPI_ERR[TIDEn] | */
+    SIPI_1_SR_IRQn              = 655u, /* SIPI_1 SIPI_SR[GCRCE) */
+    SIPI_2_CSR0_IRQn            = 656u, /* SIPI_2 SIPI_CSR0[RAR] | SIPI_CSR0[ACKR] */
+    SIPI_3_CSR1_IRQn            = 657u, /* SIPI_3 SIPI_CSR1[RAR] | SIPI_CSR1[ACKR] */
+    SIPI_4_CSR2_IRQn            = 658u, /* SIPI_4 SIPI_CSR2[RAR] | SIPI_CSR2[ACKR] */
+    SIPI_5_CSR3_IRQn            = 659u, /* SIPI_5 SIPI_CSR3[RAR] | SIPI_CSR3[ACKR] */
+    SIPI_6_SR_IRQn              = 660u, /* SIPI_6 SIPI_SR[TE0] | SIPI_SR[TE1] | ... */
+    LFAST0_0_TISR_IRQn          = 661u, /* LFAST0_0 LFAST_0_TISR[TXPNGF] | ... */
+    LFAST0_1_TISR_IRQn          = 662u, /* LFAST0_1 LFAST_0_TISR[TXIEF] | ... */
+    LFAST0_2_RISR_IRQn          = 663u, /* LFAST0_2 LFAST_0_RISR[RXCTSF] | ... */
+    LFAST0_3_RISR_IRQn          = 664u, /* LFAST0_3 LFAST_0_RISR[RXUOF] | ... */
+    LFAST0_4_RIISR_IRQn         = 665u, /* LFAST0_4 LFAST_0_RIISR[ICPFF] | ... */
+    EMIOS1_CH5_IRQn             = 666u,
+    EMIOS1_CH6_IRQn             = 667u,
+    EMIOS1_CH7_IRQn             = 668u,
+    EMIOS1_CH8_IRQn             = 669u,
+    EMIOS1_CH9_IRQn             = 670u,
+    EMIOS1_CH10_IRQn            = 671u,
+    EMIOS1_CH11_IRQn            = 672u,
+    EMIOS1_CH12_IRQn            = 673u,
+    JTAGM_SR_IRQn               = 674u, /* JTAGM JTAGM_SR[SPU_INT] | JTAGM_SR[Idle] */
+    JDC_MSR_IRQn                = 675u, /* JDC JDC_MSR[JIN_INT] | */
+    EMIOS1_CH13_IRQn            = 676u,
+    M_TTCAN0_LINE0_IRQn         = 677u, /* M_TTCAN0_0 M_TTCAN_0 interrupt line0 */
+    M_TTCAN0_LINE1_IRQn         = 678u, /* M_TTCAN0_1 M_TTCAN_0 interrupt line1 */
+    M_TTCAN0_TIME_MARK_IRQn     = 679u, /* M_TTCAN0_2 M_TTCAN_0 Register Time Mark interrupt */
+    EMIOS1_CH14_IRQn            = 680u,
+    EMIOS1_CH15_IRQn            = 681u,
+    EMIOS1_CH16_IRQn            = 682u,
+    EMIOS1_CH17_IRQn            = 683u,
+    EMIOS1_CH18_IRQn            = 684u,
+    M_TTCAN1_LINE0_IRQn         = 685u,
+    M_TTCAN1_LINE1_IRQn         = 686u,
+    M_TTCAN1_TIME_MARK_IRQn     = 687u,
+    MCAN1_0_IRQn                = 688u, /* M_CAN1_0 m_can1_int0 */
+    MCAN1_1_IRQn                = 689u, /* M_CAN1_1 m_can1_int1 */
+    MCAN2_0_IRQn                = 690u, /* M_CAN2_0 m_can2_int0 */
+    MCAN2_1_IRQn                = 691u, /* M_CAN2_1 m_can2_int1 */
+    MCAN3_0_IRQn                = 692u, /* M_CAN3_0 m_can3_int0 */
+    MCAN3_1_IRQn                = 693u, /* M_CAN3_1 m_can3_int1 */
+    MCAN4_0_IRQn                = 694u, /* M_CAN4_0 m_can4_int0 */
+    MCAN4_1_IRQn                = 695u, /* M_CAN4_1 m_can4_int1 */
+    MCAN5_0_IRQn                = 696u, /* M_CAN5_0 m_can5_int0 */
+    MCAN5_1_IRQn                = 697u, /* M_CAN5_1 m_can5_int1 */
+    MCAN6_0_IRQn                = 698u, /* M_CAN6_0 m_can6_int0 */
+    MCAN6_1_IRQn                = 699u, /* M_CAN6_1 m_can6_int1 */
+    MCAN7_0_IRQn                = 700u, /* M_CAN7_0 m_can7_int0 */
+    MCAN7_1_IRQn                = 701u, /* M_CAN7_1 m_can7_int1 */
+    MCAN8_0_IRQn                = 702u, /* M_CAN8_0 m_can8_int0 */
+    MCAN8_1_IRQn                = 703u, /* M_CAN8_1 m_can8_int1 */
+    EMIOS1_CH19_IRQn            = 704u,
+    EMIOS1_CH20_IRQn            = 705u,
+    GTM_AEI_IRQn                = 706u, /* GTM_AEI_IRQ AEI gtm_icm.gtm_aei_irq aei */
+    GTM_ARU_0_IRQn              = 707u, /* GTM_ARU_IRQ[0] gtm_icm.gtm_aru_irq[0] */
+    GTM_ARU_1_IRQn              = 708u, /* GTM_ARU_IRQ[1] gtm_icm.gtm_aru_irq[1] */
+    GTM_ARU_2_IRQn              = 709u, /* GTM_ARU_IRQ[2] gtm_icm.gtm_aru_irq[2] */
+    GTM_BRC_IRQn                = 710u, /* GTM_BRC_IRQ gtm_icm.gtm_brc_irq */
+    GTM_CMP_IRQn                = 711u, /* GTM_CMP_IRQ gtm_icm.gtm_cmp_irq */
+    GTM_SPE0_IRQn               = 712u, /* GTM_SPE0_IRQ gtm_icm.gtm_spe0_irq */
+    GTM_SPE1_IRQn               = 713u, /* GTM_SPE1_IRQ gtm_icm.gtm_spe1_irq */
+    GTM_PSM0_0_IRQn             = 714u, /* GTM_PSM0_IRQ[0] gtm_icm.gtm_psm0_irq[0] */
+    GTM_PSM0_1_IRQn             = 715u, /* GTM_PSM0_IRQ[1] gtm_icm.gtm_psm0_irq[1] */
+    GTM_PSM0_2_IRQn             = 716u, /* GTM_PSM0_IRQ[2] gtm_icm.gtm_psm0_irq[2] */
+    GTM_PSM0_3_IRQn             = 717u, /* GTM_PSM0_IRQ[3] gtm_icm.gtm_psm0_irq[3] */
+    GTM_PSM0_4_IRQn             = 718u, /* GTM_PSM0_IRQ[4] gtm_icm.gtm_psm0_irq[4] */
+    GTM_PSM0_5_IRQn             = 719u, /* GTM_PSM0_IRQ[5] gtm_icm.gtm_psm0_irq[5] */
+    GTM_PSM0_6_IRQn             = 720u, /* GTM_PSM0_IRQ[6] gtm_icm.gtm_psm0_irq[6] */
+    GTM_PSM0_7_IRQn             = 721u, /* GTM_PSM0_IRQ[7] gtm_icm.gtm_psm0_irq[7] */
+    GTM_DPLL_0_IRQn             = 722u, /* GTM_DPLL_IRQ[0] gtm_icm.gtm_dpll_irq[0] */
+    GTM_DPLL_1_IRQn             = 723u, /* GTM_DPLL_IRQ[1] gtm_icm.gtm_dpll_irq[1] */
+    GTM_DPLL_2_IRQn             = 724u, /* GTM_DPLL_IRQ[2] gtm_icm.gtm_dpll_irq[2] */
+    GTM_DPLL_3_IRQn             = 725u, /* GTM_DPLL_IRQ[3] gtm_icm.gtm_dpll_irq[3] */
+    GTM_DPLL_4_IRQn             = 726u, /* GTM_DPLL_IRQ[4] gtm_icm.gtm_dpll_irq[4] */
+    GTM_DPLL_5_IRQn             = 727u, /* GTM_DPLL_IRQ[5] gtm_icm.gtm_dpll_irq[5] */
+    GTM_DPLL_6_IRQn             = 728u, /* GTM_DPLL_IRQ[6] gtm_icm.gtm_dpll_irq[6] */
+    GTM_DPLL_7_IRQn             = 729u, /* GTM_DPLL_IRQ[7] gtm_icm.gtm_dpll_irq[7] */
+    GTM_DPLL_8_IRQn             = 730u, /* GTM_DPLL_IRQ[8] gtm_icm.gtm_dpll_irq[8] */
+    GTM_DPLL_9_IRQn             = 731u, /* GTM_DPLL_IRQ[9] gtm_icm.gtm_dpll_irq[9] */
+    GTM_DPLL_10_IRQn            = 732u, /* GTM_DPLL_IRQ[10] gtm_icm.gtm_dpll_irq[10] */
+    GTM_DPLL_11_IRQn            = 733u, /* GTM_DPLL_IRQ[11] gtm_icm.gtm_dpll_irq[11] */
+    GTM_DPLL_12_IRQn            = 734u, /* GTM_DPLL_IRQ[12] gtm_icm.gtm_dpll_irq[12] */
+    GTM_DPLL_13_IRQn            = 735u, /* GTM_DPLL_IRQ[13] gtm_icm.gtm_dpll_irq[13] */
+    GTM_DPLL_14_IRQn            = 736u, /* GTM_DPLL_IRQ[14] gtm_icm.gtm_dpll_irq[14] */
+    GTM_DPLL_15_IRQn            = 737u, /* GTM_DPLL_IRQ[15] gtm_icm.gtm_dpll_irq[15] */
+    GTM_DPLL_16_IRQn            = 738u, /* GTM_DPLL_IRQ[16] gtm_icm.gtm_dpll_irq[16] */
+    GTM_DPLL_17_IRQn            = 739u, /* GTM_DPLL_IRQ[17] gtm_icm.gtm_dpll_irq[17] */
+    GTM_DPLL_18_IRQn            = 740u, /* GTM_DPLL_IRQ[18] gtm_icm.gtm_dpll_irq[18] */
+    GTM_DPLL_19_IRQn            = 741u, /* GTM_DPLL_IRQ[19] gtm_icm.gtm_dpll_irq[19] */
+    GTM_DPLL_20_IRQn            = 742u, /* GTM_DPLL_IRQ[20] gtm_icm.gtm_dpll_irq[20] */
+    GTM_DPLL_21_IRQn            = 743u, /* GTM_DPLL_IRQ[21] gtm_icm.gtm_dpll_irq[21] */
+    GTM_DPLL_22_IRQn            = 744u, /* GTM_DPLL_IRQ[22] gtm_icm.gtm_dpll_irq[22] */
+    GTM_DPLL_23_IRQn            = 745u, /* GTM_DPLL_IRQ[23] gtm_icm.gtm_dpll_irq[23] */
+    GTM_DPLL_24_IRQn            = 746u, /* GTM_DPLL_IRQ[24] gtm_icm.gtm_dpll_irq[24] */
+    GTM_DPLL_25_IRQn            = 747u, /* GTM_DPLL_IRQ[25] gtm_icm.gtm_dpll_irq[25] */
+    GTM_DPLL_26_IRQn            = 748u, /* GTM_DPLL_IRQ[26] gtm_icm.gtm_dpll_irq[26] */
+    GTM_TIM0_0_IRQn             = 749u, /* GTM_TIM0_IRQ[0] gtm_icm.gtm_tim0_irq[0] */
+    GTM_TIM0_1_IRQn             = 750u, /* GTM_TIM0_IRQ[1] gtm_icm.gtm_tim0_irq[1] */
+    GTM_TIM0_2_IRQn             = 751u, /* GTM_TIM0_IRQ[2] gtm_icm.gtm_tim0_irq[2] */
+    GTM_TIM0_3_IRQn             = 752u, /* GTM_TIM0_IRQ[3] gtm_icm.gtm_tim0_irq[3] */
+    GTM_TIM0_4_IRQn             = 753u, /* GTM_TIM0_IRQ[4] gtm_icm.gtm_tim0_irq[4] */
+    GTM_TIM0_5_IRQn             = 754u, /* GTM_TIM0_IRQ[5] gtm_icm.gtm_tim0_irq[5] */
+    GTM_TIM0_6_IRQn             = 755u, /* GTM_TIM0_IRQ[6] gtm_icm.gtm_tim0_irq[6] */
+    GTM_TIM0_7_IRQn             = 756u, /* GTM_TIM0_IRQ[7] gtm_icm.gtm_tim0_irq[7] */
+    GTM_TIM1_0_IRQn             = 757u, /* GTM_TIM1_IRQ[0] gtm_icm.gtm_tim1_irq[0] */
+    GTM_TIM1_1_IRQn             = 758u, /* GTM_TIM1_IRQ[1] gtm_icm.gtm_tim1_irq[1] */
+    GTM_TIM1_2_IRQn             = 759u, /* GTM_TIM1_IRQ[2] gtm_icm.gtm_tim1_irq[2] */
+    GTM_TIM1_3_IRQn             = 760u, /* GTM_TIM1_IRQ[3] gtm_icm.gtm_tim1_irq[3] */
+    GTM_TIM1_4_IRQn             = 761u, /* GTM_TIM1_IRQ[4] gtm_icm.gtm_tim1_irq[4] */
+    GTM_TIM1_5_IRQn             = 762u, /* GTM_TIM1_IRQ[5] gtm_icm.gtm_tim1_irq[5] */
+    GTM_TIM1_6_IRQn             = 763u, /* GTM_TIM1_IRQ[6] gtm_icm.gtm_tim1_irq[6] */
+    GTM_TIM1_7_IRQn             = 764u, /* GTM_TIM1_IRQ[7] gtm_icm.gtm_tim1_irq[7] */
+    GTM_TIM2_0_IRQn             = 765u, /* GTM_TIM2_IRQ[0] gtm_icm.gtm_tim2_irq[0] */
+    GTM_TIM2_1_IRQn             = 766u, /* GTM_TIM2_IRQ[1] gtm_icm.gtm_tim2_irq[1] */
+    GTM_TIM2_2_IRQn             = 767u, /* GTM_TIM2_IRQ[2] gtm_icm.gtm_tim2_irq[2] */
+    GTM_TIM2_3_IRQn             = 768u, /* GTM_TIM2_IRQ[3] gtm_icm.gtm_tim2_irq[3] */
+    GTM_TIM2_4_IRQn             = 769u, /* GTM_TIM2_IRQ[4] gtm_icm.gtm_tim2_irq[4] */
+    GTM_TIM2_5_IRQn             = 770u, /* GTM_TIM2_IRQ[5] gtm_icm.gtm_tim2_irq[5] */
+    GTM_TIM2_6_IRQn             = 771u, /* GTM_TIM2_IRQ[6] gtm_icm.gtm_tim2_irq[6] */
+    GTM_TIM2_7_IRQn             = 772u, /* GTM_TIM2_IRQ[7] gtm_icm.gtm_tim2_irq[7] */
+    GTM_TIM3_0_IRQn             = 773u, /* GTM_TIM3_IRQ[0] gtm_icm.gtm_tim3_irq[0] */
+    GTM_TIM3_1_IRQn             = 774u, /* GTM_TIM3_IRQ[1] gtm_icm.gtm_tim3_irq[1] */
+    GTM_TIM3_2_IRQn             = 775u, /* GTM_TIM3_IRQ[2] gtm_icm.gtm_tim3_irq[2] */
+    GTM_TIM3_3_IRQn             = 776u, /* GTM_TIM3_IRQ[3] gtm_icm.gtm_tim3_irq[3] */
+    GTM_TIM3_4_IRQn             = 777u, /* GTM_TIM3_IRQ[4] gtm_icm.gtm_tim3_irq[4] */
+    GTM_TIM3_5_IRQn             = 778u, /* GTM_TIM3_IRQ[5] gtm_icm.gtm_tim3_irq[5] */
+    GTM_TIM3_6_IRQn             = 779u, /* GTM_TIM3_IRQ[6] gtm_icm.gtm_tim3_irq[6] */
+    GTM_TIM3_7_IRQn             = 780u, /* GTM_TIM3_IRQ[7] gtm_icm.gtm_tim3_irq[7] */
+    GTM_MCS0_0_IRQn             = 781u, /* GTM_MCS0_IRQ[0] gtm_icm.gtm_mcs0_irq[0] */
+    GTM_MCS0_1_IRQn             = 782u, /* GTM_MCS0_IRQ[1] gtm_icm.gtm_mcs0_irq[1] */
+    GTM_MCS0_2_IRQn             = 783u, /* GTM_MCS0_IRQ[2] gtm_icm.gtm_mcs0_irq[2] */
+    GTM_MCS0_3_IRQn             = 784u, /* GTM_MCS0_IRQ[3] gtm_icm.gtm_mcs0_irq[3] */
+    GTM_MCS0_4_IRQn             = 785u, /* GTM_MCS0_IRQ[4] gtm_icm.gtm_mcs0_irq[4] */
+    GTM_MCS0_5_IRQn             = 786u, /* GTM_MCS0_IRQ[5] gtm_icm.gtm_mcs0_irq[5] */
+    GTM_MCS0_6_IRQn             = 787u, /* GTM_MCS0_IRQ[6] gtm_icm.gtm_mcs0_irq[6] */
+    GTM_MCS0_7_IRQn             = 788u, /* GTM_MCS0_IRQ[7] gtm_icm.gtm_mcs0_irq[7] */
+    GTM_MCS1_0_IRQn             = 789u, /* GTM_MCS1_IRQ[0] gtm_icm.gtm_mcs1_irq[0] */
+    GTM_MCS1_1_IRQn             = 790u, /* GTM_MCS1_IRQ[1] gtm_icm.gtm_mcs1_irq[1] */
+    GTM_MCS1_2_IRQn             = 791u, /* GTM_MCS1_IRQ[2] gtm_icm.gtm_mcs1_irq[2] */
+    GTM_MCS1_3_IRQn             = 792u, /* GTM_MCS1_IRQ[3] gtm_icm.gtm_mcs1_irq[3] */
+    GTM_MCS1_4_IRQn             = 793u, /* GTM_MCS1_IRQ[4] gtm_icm.gtm_mcs1_irq[4] */
+    GTM_MCS1_5_IRQn             = 794u, /* GTM_MCS1_IRQ[5] gtm_icm.gtm_mcs1_irq[5] */
+    GTM_MCS1_6_IRQn             = 795u, /* GTM_MCS1_IRQ[6] gtm_icm.gtm_mcs1_irq[6] */
+    GTM_MCS1_7_IRQn             = 796u, /* GTM_MCS1_IRQ[7] gtm_icm.gtm_mcs1_irq[7] */
+    GTM_MCS2_0_IRQn             = 797u, /* GTM_MCS2_IRQ[0] gtm_icm.gtm_mcs2_irq[0] */
+    GTM_MCS2_1_IRQn             = 798u, /* GTM_MCS2_IRQ[1] gtm_icm.gtm_mcs2_irq[1] */
+    GTM_MCS2_2_IRQn             = 799u, /* GTM_MCS2_IRQ[2] gtm_icm.gtm_mcs2_irq[2] */
+    GTM_MCS2_3_IRQn             = 800u, /* GTM_MCS2_IRQ[3] gtm_icm.gtm_mcs2_irq[3] */
+    GTM_MCS2_4_IRQn             = 801u, /* GTM_MCS2_IRQ[4] gtm_icm.gtm_mcs2_irq[4] */
+    GTM_MCS2_5_IRQn             = 802u, /* GTM_MCS2_IRQ[5] gtm_icm.gtm_mcs2_irq[5] */
+    GTM_MCS2_6_IRQn             = 803u, /* GTM_MCS2_IRQ[6] gtm_icm.gtm_mcs2_irq[6] */
+    GTM_MCS2_7_IRQn             = 804u, /* GTM_MCS2_IRQ[7] gtm_icm.gtm_mcs2_irq[7] */
+    GTM_MCS3_0_IRQn             = 805u, /* GTM_MCS3_IRQ[0] gtm_icm.gtm_mcs3_irq[0] */
+    GTM_MCS3_1_IRQn             = 806u, /* GTM_MCS3_IRQ[1] gtm_icm.gtm_mcs3_irq[1] */
+    GTM_MCS3_2_IRQn             = 807u, /* GTM_MCS3_IRQ[2] gtm_icm.gtm_mcs3_irq[2] */
+    GTM_MCS3_3_IRQn             = 808u, /* GTM_MCS3_IRQ[3] gtm_icm.gtm_mcs3_irq[3] */
+    GTM_MCS3_4_IRQn             = 809u, /* GTM_MCS3_IRQ[4] gtm_icm.gtm_mcs3_irq[4] */
+    GTM_MCS3_5_IRQn             = 810u, /* GTM_MCS3_IRQ[5] gtm_icm.gtm_mcs3_irq[5] */
+    GTM_MCS3_6_IRQn             = 811u, /* GTM_MCS3_IRQ[6] gtm_icm.gtm_mcs3_irq[6] */
+    GTM_MCS3_7_IRQn             = 812u, /* GTM_MCS3_IRQ[7] gtm_icm.gtm_mcs3_irq[7] */
+    GTM_TOM0_0_IRQn             = 813u, /* GTM_TOM0_IRQ[0] gtm_icm.gtm_tom0_irq[0] */
+    GTM_TOM0_1_IRQn             = 814u, /* GTM_TOM0_IRQ[1] gtm_icm.gtm_tom0_irq[1] */
+    GTM_TOM0_2_IRQn             = 815u, /* GTM_TOM0_IRQ[2] gtm_icm.gtm_tom0_irq[2] */
+    GTM_TOM0_3_IRQn             = 816u, /* GTM_TOM0_IRQ[3] gtm_icm.gtm_tom0_irq[3] */
+    GTM_TOM0_4_IRQn             = 817u, /* GTM_TOM0_IRQ[4] gtm_icm.gtm_tom0_irq[4] */
+    GTM_TOM0_5_IRQn             = 818u, /* GTM_TOM0_IRQ[5] gtm_icm.gtm_tom0_irq[5] */
+    GTM_TOM0_6_IRQn             = 819u, /* GTM_TOM0_IRQ[6] gtm_icm.gtm_tom0_irq[6] */
+    GTM_TOM0_7_IRQn             = 820u, /* GTM_TOM0_IRQ[7] gtm_icm.gtm_tom0_irq[7] */
+    GTM_TOM1_0_IRQn             = 821u, /* GTM_TOM1_IRQ[0] gtm_icm.gtm_tom1_irq[0] */
+    GTM_TOM1_1_IRQn             = 822u, /* GTM_TOM1_IRQ[1] gtm_icm.gtm_tom1_irq[1] */
+    GTM_TOM1_2_IRQn             = 823u, /* GTM_TOM1_IRQ[2] gtm_icm.gtm_tom1_irq[2] */
+    GTM_TOM1_3_IRQn             = 824u, /* GTM_TOM1_IRQ[3] gtm_icm.gtm_tom1_irq[3] */
+    GTM_TOM1_4_IRQn             = 825u, /* GTM_TOM1_IRQ[4] gtm_icm.gtm_tom1_irq[4] */
+    GTM_TOM1_5_IRQn             = 826u, /* GTM_TOM1_IRQ[5] gtm_icm.gtm_tom1_irq[5] */
+    GTM_TOM1_6_IRQn             = 827u, /* GTM_TOM1_IRQ[6] gtm_icm.gtm_tom1_irq[6] */
+    GTM_TOM1_7_IRQn             = 828u, /* GTM_TOM1_IRQ[7] gtm_icm.gtm_tom1_irq[7] */
+    GTM_TOM2_0_IRQn             = 829u, /* GTM_TOM2_IRQ[0] gtm_icm.gtm_tom2_irq[0] */
+    GTM_TOM2_1_IRQn             = 830u, /* GTM_TOM2_IRQ[1] gtm_icm.gtm_tom2_irq[1] */
+    GTM_TOM2_2_IRQn             = 831u, /* GTM_TOM2_IRQ[2] gtm_icm.gtm_tom2_irq[2] */
+    GTM_TOM2_3_IRQn             = 832u, /* GTM_TOM2_IRQ[3] gtm_icm.gtm_tom2_irq[3] */
+    GTM_TOM2_4_IRQn             = 833u, /* GTM_TOM2_IRQ[4] gtm_icm.gtm_tom2_irq[4] */
+    GTM_TOM2_5_IRQn             = 834u, /* GTM_TOM2_IRQ[5] gtm_icm.gtm_tom2_irq[5] */
+    GTM_TOM2_6_IRQn             = 835u, /* GTM_TOM2_IRQ[6] gtm_icm.gtm_tom2_irq[6] */
+    GTM_TOM2_7_IRQn             = 836u, /* GTM_TOM2_IRQ[7] gtm_icm.gtm_tom2_irq[7] */
+    GTM_ATOM0_0_IRQn            = 837u, /* GTM_ATOM0_IRQ[0] gtm_icm.gtm_atom0_irq[0] */
+    GTM_ATOM0_1_IRQn            = 838u, /* GTM_ATOM0_IRQ[1] gtm_icm.gtm_atom0_irq[1] */
+    GTM_ATOM0_2_IRQn            = 839u, /* GTM_ATOM0_IRQ[2] gtm_icm.gtm_atom0_irq[2] */
+    GTM_ATOM0_3_IRQn            = 840u, /* GTM_ATOM0_IRQ[3] gtm_icm.gtm_atom0_irq[3] */
+    GTM_ATOM1_0_IRQn            = 841u, /* GTM_ATOM1_IRQ[0] gtm_icm.gtm_atom1_irq[0] */
+    GTM_ATOM1_1_IRQn            = 842u, /* GTM_ATOM1_IRQ[1] gtm_icm.gtm_atom1_irq[1] */
+    GTM_ATOM1_2_IRQn            = 843u, /* GTM_ATOM1_IRQ[2] gtm_icm.gtm_atom1_irq[2] */
+    GTM_ATOM1_3_IRQn            = 844u, /* GTM_ATOM1_IRQ[3] gtm_icm.gtm_atom1_irq[3] */
+    GTM_ATOM2_0_IRQn            = 845u, /* GTM_ATOM2_IRQ[0] gtm_icm.gtm_atom2_irq[0] */
+    GTM_ATOM2_1_IRQn            = 846u, /* GTM_ATOM2_IRQ[1] gtm_icm.gtm_atom2_irq[1] */
+    GTM_ATOM2_2_IRQn            = 847u, /* GTM_ATOM2_IRQ[2] gtm_icm.gtm_atom2_irq[2] */
+    GTM_ATOM2_3_IRQn            = 848u, /* GTM_ATOM2_IRQ[3] gtm_icm.gtm_atom2_irq[3] */
+    GTM_ATOM3_0_IRQn            = 849u, /* GTM_ATOM3_IRQ[0] gtm_icm.gtm_atom3_irq[0] */
+    GTM_ATOM3_1_IRQn            = 850u, /* GTM_ATOM3_IRQ[1] gtm_icm.gtm_atom3_irq[1] */
+    GTM_ATOM3_2_IRQn            = 851u, /* GTM_ATOM3_IRQ[2] gtm_icm.gtm_atom3_irq[2] */
+    GTM_ATOM3_3_IRQn            = 852u, /* GTM_ATOM3_IRQ[3] gtm_icm.gtm_atom3_irq[3] */
+    GTM_ATOM4_0_IRQn            = 853u, /* GTM_ATOM4_IRQ[0] gtm_icm.gtm_atom4_irq[0] */
+    GTM_ATOM4_1_IRQn            = 854u, /* GTM_ATOM4_IRQ[1] gtm_icm.gtm_atom4_irq[1] */
+    GTM_ATOM4_2_IRQn            = 855u, /* GTM_ATOM4_IRQ[2] gtm_icm.gtm_atom4_irq[2] */
+    GTM_ATOM4_3_IRQn            = 856u, /* GTM_ATOM4_IRQ[3] gtm_icm.gtm_atom4_irq[3] */
+    GTM_SPE2_IRQn               = 857u, /* GTM_SPE2_IRQ gtm_icm.gtm_spe2_irq */
+    GTM_SPE3_IRQn               = 858u, /* GTM_SPE3_IRQ gtm_icm.gtm_spe3_irq */
+    GTM_PSM1_0_IRQn             = 859u, /* GTM_PSM1_IRQ[0] gtm_icm.gtm_psm1_irq[0] */
+    GTM_PSM1_1_IRQn             = 860u, /* GTM_PSM1_IRQ[1] gtm_icm.gtm_psm1_irq[1] */
+    GTM_PSM1_2_IRQn             = 861u, /* GTM_PSM1_IRQ[2] gtm_icm.gtm_psm1_irq[2] */
+    GTM_PSM1_3_IRQn             = 862u, /* GTM_PSM1_IRQ[3] gtm_icm.gtm_psm1_irq[3] */
+    GTM_PSM1_4_IRQn             = 863u, /* GTM_PSM1_IRQ[4] gtm_icm.gtm_psm1_irq[4] */
+    GTM_PSM1_5_IRQn             = 864u, /* GTM_PSM1_IRQ[5] gtm_icm.gtm_psm1_irq[5] */
+    GTM_PSM1_6_IRQn             = 865u, /* GTM_PSM1_IRQ[6] gtm_icm.gtm_psm1_irq[6] */
+    GTM_PSM1_7_IRQn             = 866u, /* GTM_PSM1_IRQ[7] gtm_icm.gtm_psm1_irq[7] */
+    GTM_TIM4_0_IRQn             = 867u, /* GTM_TIM4_IRQ[0] gtm_icm.gtm_tim4_irq[0] */
+    GTM_TIM4_1_IRQn             = 868u, /* GTM_TIM4_IRQ[1] gtm_icm.gtm_tim4_irq[1] */
+    GTM_TIM4_2_IRQn             = 869u, /* GTM_TIM4_IRQ[2] gtm_icm.gtm_tim4_irq[2] */
+    GTM_TIM4_3_IRQn             = 870u, /* GTM_TIM4_IRQ[3] gtm_icm.gtm_tim4_irq[3] */
+    GTM_TIM4_4_IRQn             = 871u, /* GTM_TIM4_IRQ[4] gtm_icm.gtm_tim4_irq[4] */
+    GTM_TIM4_5_IRQn             = 872u, /* GTM_TIM4_IRQ[5] gtm_icm.gtm_tim4_irq[5] */
+    GTM_TIM4_6_IRQn             = 873u, /* GTM_TIM4_IRQ[6] gtm_icm.gtm_tim4_irq[6] */
+    GTM_TIM4_7_IRQn             = 874u, /* GTM_TIM4_IRQ[7] gtm_icm.gtm_tim4_irq[7] */
+    GTM_TIM5_0_IRQn             = 875u, /* GTM_TIM5_IRQ[0] gtm_icm.gtm_tim5_irq[0] */
+    GTM_TIM5_1_IRQn             = 876u, /* GTM_TIM5_IRQ[1] gtm_icm.gtm_tim5_irq[1] */
+    GTM_TIM5_2_IRQn             = 877u, /* GTM_TIM5_IRQ[2] gtm_icm.gtm_tim5_irq[2] */
+    GTM_TIM5_3_IRQn             = 878u, /* GTM_TIM5_IRQ[3] gtm_icm.gtm_tim5_irq[3] */
+    GTM_TIM5_4_IRQn             = 879u, /* GTM_TIM5_IRQ[4] gtm_icm.gtm_tim5_irq[4] */
+    GTM_TIM5_5_IRQn             = 880u, /* GTM_TIM5_IRQ[5] gtm_icm.gtm_tim5_irq[5] */
+    GTM_TIM5_6_IRQn             = 881u, /* GTM_TIM5_IRQ[6] gtm_icm.gtm_tim5_irq[6] */
+    GTM_TIM5_7_IRQn             = 882u, /* GTM_TIM5_IRQ[7] gtm_icm.gtm_tim5_irq[7] */
+    GTM_MCS4_0_IRQn             = 883u, /* GTM_MCS4_IRQ[0] gtm_icm.gtm_mcs4_irq[0] */
+    GTM_MCS4_1_IRQn             = 884u, /* GTM_MCS4_IRQ[1] gtm_icm.gtm_mcs4_irq[1] */
+    GTM_MCS4_2_IRQn             = 885u, /* GTM_MCS4_IRQ[2] gtm_icm.gtm_mcs4_irq[2] */
+    GTM_MCS4_3_IRQn             = 886u, /* GTM_MCS4_IRQ[3] gtm_icm.gtm_mcs4_irq[3] */
+    GTM_MCS4_4_IRQn             = 887u, /* GTM_MCS4_IRQ[4] gtm_icm.gtm_mcs4_irq[4] */
+    GTM_MCS4_5_IRQn             = 888u, /* GTM_MCS4_IRQ[5] gtm_icm.gtm_mcs4_irq[5] */
+    GTM_MCS4_6_IRQn             = 889u, /* GTM_MCS4_IRQ[6] gtm_icm.gtm_mcs4_irq[6] */
+    GTM_MCS4_7_IRQn             = 890u, /* GTM_MCS4_IRQ[7] gtm_icm.gtm_mcs4_irq[7] */
+    GTM_MCS5_0_IRQn             = 891u, /* GTM_MCS5_IRQ[0] gtm_icm.gtm_mcs5_irq[0] */
+    GTM_MCS5_1_IRQn             = 892u, /* GTM_MCS5_IRQ[1] gtm_icm.gtm_mcs5_irq[1] */
+    GTM_MCS5_2_IRQn             = 893u, /* GTM_MCS5_IRQ[2] gtm_icm.gtm_mcs5_irq[2] */
+    GTM_MCS5_3_IRQn             = 894u, /* GTM_MCS5_IRQ[3] gtm_icm.gtm_mcs5_irq[3] */
+    GTM_MCS5_4_IRQn             = 895u, /* GTM_MCS5_IRQ[4] gtm_icm.gtm_mcs5_irq[4] */
+    GTM_MCS5_5_IRQn             = 896u, /* GTM_MCS5_IRQ[5] gtm_icm.gtm_mcs5_irq[5] */
+    GTM_MCS5_6_IRQn             = 897u, /* GTM_MCS5_IRQ[6] gtm_icm.gtm_mcs5_irq[6] */
+    GTM_MCS5_7_IRQn             = 898u, /* GTM_MCS5_IRQ[7] gtm_icm.gtm_mcs5_irq[7] */
+    GTM_TOM3_0_IRQn             = 899u, /* GTM_TOM3_IRQ[0] gtm_icm.gtm_tom3_irq[0] */
+    GTM_TOM3_1_IRQn             = 900u, /* GTM_TOM3_IRQ[1] gtm_icm.gtm_tom3_irq[1] */
+    GTM_TOM3_2_IRQn             = 901u, /* GTM_TOM3_IRQ[2] gtm_icm.gtm_tom3_irq[2] */
+    GTM_TOM3_3_IRQn             = 902u, /* GTM_TOM3_IRQ[3] gtm_icm.gtm_tom3_irq[3] */
+    GTM_TOM3_4_IRQn             = 903u, /* GTM_TOM3_IRQ[4] gtm_icm.gtm_tom3_irq[4] */
+    GTM_TOM3_5_IRQn             = 904u, /* GTM_TOM3_IRQ[5] gtm_icm.gtm_tom3_irq[5] */
+    GTM_TOM3_6_IRQn             = 905u, /* GTM_TOM3_IRQ[6] gtm_icm.gtm_tom3_irq[6] */
+    GTM_TOM3_7_IRQn             = 906u, /* GTM_TOM3_IRQ[7] gtm_icm.gtm_tom3_irq[7] */
+    GTM_TOM4_0_IRQn             = 907u, /* GTM_TOM4_IRQ[0] gtm_icm.gtm_tom4_irq[0] */
+    GTM_TOM4_1_IRQn             = 908u, /* GTM_TOM4_IRQ[1] gtm_icm.gtm_tom4_irq[1] */
+    GTM_TOM4_2_IRQn             = 909u, /* GTM_TOM4_IRQ[2] gtm_icm.gtm_tom4_irq[2] */
+    GTM_TOM4_3_IRQn             = 910u, /* GTM_TOM4_IRQ[3] gtm_icm.gtm_tom4_irq[3] */
+    GTM_TOM4_4_IRQn             = 911u, /* GTM_TOM4_IRQ[4] gtm_icm.gtm_tom4_irq[4] */
+    GTM_TOM4_5_IRQn             = 912u, /* GTM_TOM4_IRQ[5] gtm_icm.gtm_tom4_irq[5] */
+    GTM_TOM4_6_IRQn             = 913u, /* GTM_TOM4_IRQ[6] gtm_icm.gtm_tom4_irq[6] */
+    GTM_TOM4_7_IRQn             = 914u, /* GTM_TOM4_IRQ[7] gtm_icm.gtm_tom4_irq[7] */
+    GTM_ATOM5_0_IRQn            = 915u, /* GTM_ATOM5_IRQ[0] gtm_icm.gtm_atom5_irq[0] */
+    GTM_ATOM5_1_IRQn            = 916u, /* GTM_ATOM5_IRQ[1] gtm_icm.gtm_atom5_irq[1] */
+    GTM_ATOM5_2_IRQn            = 917u, /* GTM_ATOM5_IRQ[2] gtm_icm.gtm_atom5_irq[2] */
+    GTM_ATOM5_3_IRQn            = 918u, /* GTM_ATOM5_IRQ[3] gtm_icm.gtm_atom5_irq[3] */
+    GTM_ATOM6_0_IRQn            = 919u, /* GTM_ATOM6_IRQ[0] gtm_icm.gtm_atom6_irq[0] */
+    GTM_ATOM6_1_IRQn            = 920u, /* GTM_ATOM6_IRQ[1] gtm_icm.gtm_atom6_irq[1] */
+    GTM_ATOM6_2_IRQn            = 921u, /* GTM_ATOM6_IRQ[2] gtm_icm.gtm_atom6_irq[2] */
+    GTM_ATOM6_3_IRQn            = 922u, /* GTM_ATOM6_IRQ[3] gtm_icm.gtm_atom6_irq[3] */
+    GTM_ATOM7_0_IRQn            = 923u, /* GTM_ATOM7_IRQ[0] gtm_icm.gtm_atom7_irq[0] */
+    GTM_ATOM7_1_IRQn            = 924u, /* GTM_ATOM7_IRQ[1] gtm_icm.gtm_atom7_irq[1] */
+    GTM_ATOM7_2_IRQn            = 925u, /* GTM_ATOM7_IRQ[2] gtm_icm.gtm_atom7_irq[2] */
+    GTM_ATOM7_3_IRQn            = 926u, /* GTM_ATOM7_IRQ[3] gtm_icm.gtm_atom7_irq[3] */
+    GTM_ATOM8_0_IRQn            = 927u, /* GTM_ATOM8_IRQ[0] gtm_icm.gtm_atom8_irq[0] */
+    GTM_ATOM8_1_IRQn            = 928u, /* GTM_ATOM8_IRQ[1] gtm_icm.gtm_atom8_irq[1] */
+    GTM_ATOM8_2_IRQn            = 929u, /* GTM_ATOM8_IRQ[2] gtm_icm.gtm_atom8_irq[2] */
+    GTM_ATOM8_3_IRQn            = 930u, /* GTM_ATOM8_IRQ[3] gtm_icm.gtm_atom8_irq[3] */
+    GTM_ERR_IRQn                = 931u, /* GTM_ERR_IRQ gtm_err_irq */
+    EMIOS1_CH21_IRQn            = 932u,
+    EMIOS1_CH22_IRQn            = 933u,
+    EMIOS1_CH23_IRQn            = 934u,
+    EMIOS1_CH24_IRQn            = 935u,
+    EMIOS1_CH25_IRQn            = 936u,
+    EMIOS1_CH26_IRQn            = 937u,
+    EMIOS1_CH27_IRQn            = 938u,
+    EMIOS1_CH28_IRQn            = 939u,
+    EMIOS1_CH29_IRQn            = 940u,
+    EMIOS1_CH30_IRQn            = 941u,
+    EMIOS1_CH31_IRQn            = 942u,
+    EMIOS0_CH0_IRQn             = 943u,
+    EMIOS0_CH1_IRQn             = 944u,
+    EMIOS0_CH2_IRQn             = 945u,
+    PSI5_S_MBOX_ERR_SR0_IRQn    = 946u, /* PS_SR_IRQ[0] PS_MBOX_SR_IRQ[0] PS_ERR_SR_IRQ[0] */
+    PSI5_S_MBOX_ERR_SR1_IRQn    = 947u, /* PS_SR_IRQ[1] PS_MBOX_SR_IRQ[1] PS_ERR_SR_IRQ[1] */
+    PSI5_S_MBOX_ERR_SR2_IRQn    = 948u, /* PS_SR_IRQ[2] PS_MBOX_SR_IRQ[2] PS_ERR_SR_IRQ[2] */
+    PSI5_S_MBOX_ERR_SR3_IRQn    = 949u, /* PS_SR_IRQ[3] PS_MBOX_SR_IRQ[3] PS_ERR_SR_IRQ[3] */
+    PSI5_S_MBOX_ERR_SR4_IRQn    = 950u, /* PS_SR_IRQ[4] PS_MBOX_SR_IRQ[4] PS_ERR_SR_IRQ[4] */
+    PSI5_S_MBOX_ERR_SR5_IRQn    = 951u, /* PS_SR_IRQ[5] PS_MBOX_SR_IRQ[5] PS_ERR_SR_IRQ[5] */
+    PSI5_S_MBOX_ERR_SR6_IRQn    = 952u, /* PS_SR_IRQ[6] PS_MBOX_SR_IRQ[6] PS_ERR_SR_IRQ[6] */
+    PSI5_S_MBOX_ERR_SR7_IRQn    = 953u, /* PS_SR_IRQ[7] PS_MBOX_SR_IRQ[7] PS_ERR_SR_IRQ[7] */
+    PSI5_S_E2SSR1_IRQn          = 954u, /* PSI5_E2SSR[1] */
+    PSI5_S_E2SSR2_IRQn          = 955u, /* PSI5_E2SSR[2] */
+    PSI5_S_E2SSR3_IRQn          = 956u, /* PSI5_E2SSR[3] */
+    PSI5_S_E2SSR4_IRQn          = 957u, /* PSI5_E2SSR[4] */
+    PSI5_S_E2SSR5_IRQn          = 958u, /* PSI5_E2SSR[5] */
+    PSI5_S_E2SSR6_IRQn          = 959u, /* PSI5_E2SSR[6] */
+    PSI5_S_E2SSR7_IRQn          = 960u, /* PSI5_E2SSR[7] */
+    PSI5_S_GLSR_IRQn            = 961u, /* PS_GLSR */
+    PSI5_S_0_UART_RX_IRQn       = 962u,
+    PSI5_S_0_UART_TX_IRQn       = 963u,
+    PSI5_S_0_UART_ERR_IRQn      = 964u,
+    EQADC01_FIFO_0_IRQn         = 965u, /* EQADC01_FISR0 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC01_FIFO_1_IRQn         = 966u, /* EQADC01_FISR1 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC01_FIFO_2_IRQn         = 967u, /* EQADC01_FISR2 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC01_FIFO_3_IRQn         = 968u, /* EQADC01_FISR3 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC01_FIFO_4_IRQn         = 969u, /* EQADC01_FISR4 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC01_FIFO_5_IRQn         = 970u, /* EQADC01_FISR5 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC23_FIFO_0_IRQn         = 971u, /* EQADC23_FISR0 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC23_FIFO_1_IRQn         = 972u, /* EQADC23_FISR1 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC23_FIFO_2_IRQn         = 973u, /* EQADC23_FISR2 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC23_FIFO_3_IRQn         = 974u, /* EQADC23_FISR3 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC23_FIFO_4_IRQn         = 975u, /* EQADC23_FISR4 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC23_FIFO_5_IRQn         = 976u, /* EQADC23_FISR5 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC45_FIFO_0_IRQn         = 977u, /* EQADC45_FISR0 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC45_FIFO_1_IRQn         = 978u, /* EQADC45_FISR1 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC45_FIFO_2_IRQn         = 979u, /* EQADC45_FISR2 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC45_FIFO_3_IRQn         = 980u, /* EQADC45_FISR3 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC45_FIFO_4_IRQn         = 981u, /* EQADC45_FISR4 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC45_FIFO_5_IRQn         = 982u, /* EQADC45_FISR5 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC67_FIFO_0_IRQn         = 983u, /* EQADC67_FISR0 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC67_FIFO_1_IRQn         = 984u, /* EQADC67_FISR1 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC67_FIFO_2_IRQn         = 985u, /* EQADC67_FISR2 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC67_FIFO_3_IRQn         = 986u, /* EQADC67_FISR3 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC67_FIFO_4_IRQn         = 987u, /* EQADC67_FISR4 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC67_FIFO_5_IRQn         = 988u, /* EQADC67_FISR5 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC89_FIFO_0_IRQn         = 989u, /* EQADC89_FISR0 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC89_FIFO_1_IRQn         = 990u, /* EQADC89_FISR1 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC89_FIFO_2_IRQn         = 991u, /* EQADC89_FISR2 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC89_FIFO_3_IRQn         = 992u, /* EQADC89_FISR3 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC89_FIFO_4_IRQn         = 993u, /* EQADC89_FISR4 [NCF | PF | EOQF | CFFF | RFDF] */
+    EQADC89_FIFO_5_IRQn         = 994u, /* EQADC89_FISR5 [NCF | PF | EOQF | CFFF | RFDF] */
+    EMIOS0_CH3_IRQn             = 995u,
+    EMIOS0_CH4_IRQn             = 996u,
+    EMIOS0_CH5_IRQn             = 997u,
+    EMIOS0_CH6_IRQn             = 998u,
+    EMIOS0_CH7_IRQn             = 999u,
+    EMIOS0_CH8_IRQn             = 1000u,
+    EMIOS0_CH9_IRQn             = 1001u,
+    EMIOS0_CH10_IRQn            = 1002u,
+    EMIOS0_CH11_IRQn            = 1003u,
+    EMIOS0_CH12_IRQn            = 1004u,
+    EMIOS0_CH13_IRQn            = 1005u,
+    EMIOS0_CH14_IRQn            = 1006u,
+    EMIOS0_CH15_IRQn            = 1007u,
+    EMIOS0_CH16_IRQn            = 1008u,
+    EMIOS0_CH17_IRQn            = 1009u,
+    EMIOS0_CH18_IRQn            = 1010u,
+    EMIOS0_CH19_IRQn            = 1011u,
+    EMIOS0_CH20_IRQn            = 1012u,
+    EMIOS0_CH21_IRQn            = 1013u,
+    EMIOS0_CH22_IRQn            = 1014u,
+    EMIOS0_CH23_IRQn            = 1015u,
+    EMIOS0_CH24_IRQn            = 1016u,
+    EMIOS0_CH25_IRQn            = 1017u,
+    EMIOS0_CH26_IRQn            = 1018u,
+    EMIOS0_CH27_IRQn            = 1019u,
+    EMIOS0_CH28_IRQn            = 1020u,
+    EMIOS0_CH29_IRQn            = 1021u,
+    EMIOS0_CH30_IRQn            = 1022u,
+    EMIOS0_CH31_IRQn            = 1023u,
+    INTR_ID_BUTT                = 1024u
+} IntrId;
+
+/* DSPI module features */
+/* On this platform DSPI in extended mode is supported */
+#define FEATURE_DSPI_HAS_EXTENDED_MODE 0U
+
+/* Define interrupt vector for dspi */
+#define FEATURES_DSPI_EOQ_INTERUPT_VECTOR    { DSPI0_EOQF_IRQn, DSPI1_EOQF_IRQn, DSPI2_EOQF_IRQn, DSPI3_EOQF_IRQn,\
+                                               DSPI4_EOQF_IRQn, DSPI5_EOQF_IRQn, DSPI6_EOQF_IRQn, DSPI12_EOQF_IRQn}
+
+#define FEATURES_DSPI_SEND_INTERUPT_VECTOR    { DSPI0_TFFF_IRQn, DSPI1_TFFF_IRQn, DSPI2_TFFF_IRQn, DSPI3_TFFF_IRQn,\
+                                                DSPI4_TFFF_IRQn, DSPI5_TFFF_IRQn, DSPI6_TFFF_IRQn, DSPI12_TFFF_IRQn}
+
+#define FEATURES_DSPI_RECEIVE_INTERUPT_VECTOR { DSPI0_RFDF_IRQn, DSPI1_RFDF_IRQn, DSPI2_RFDF_IRQn, DSPI3_RFDF_IRQn, \
+                                                DSPI4_RFDF_IRQn, DSPI5_RFDF_IRQn, DSPI6_RFDF_IRQn, DSPI12_RFDF_IRQn}
+
+#define FEATURES_DSPI_FAULT_INTERUPT_VECTOR   { DSPI0_ERR_IRQn, DSPI1_ERR_IRQn, DSPI2_ERR_IRQn,DSPI3_ERR_IRQn, \
+                                                DSPI4_ERR_IRQn, DSPI5_ERR_IRQn, DSPI6_ERR_IRQn, DSPI12_ERR_IRQn}
+
+
+typedef enum
+{
+    /* DMAMUX_0: DMAMUX Channel 0 - 7 (eDMA_0 Channel 0 - 7) */
+    DMAMUX0_RESERVED_0_A            = 0U,   /* DMAMUX_0: Source 0  */
+    DMAMUX0_ADC01_DECFILT_IN        = 1U,   /* DMAMUX_0: Source 1  */
+    DMAMUX0_ADC01_DECFILT_OUT       = 2U,   /* DMAMUX_0: Source 2  */
+                                            /* DMAMUX_0: Source 3  */
+                                            /* DMAMUX_0: Source 4  */
+    DMAMUX0_DSPI_0_RX               = 5U,   /* DMAMUX_0: Source 5  */
+    DMAMUX0_DSPI_0_TX               = 6U,   /* DMAMUX_0: Source 6  */
+    DMAMUX0_DSPI_4_RX               = 7U,   /* DMAMUX_0: Source 7  */
+    DMAMUX0_DSPI_4_TX               = 8U,   /* DMAMUX_0: Source 8  */
+                                            /* DMAMUX_0: Source 9  */
+                                            /* DMAMUX_0: Source 10 */
+                                            /* DMAMUX_0: Source 11 */
+    DMAMUX0_MCAN_1                  = 12U,  /* DMAMUX_0: Source 12 */
+    DMAMUX0_MCAN_2                  = 13U,  /* DMAMUX_0: Source 13 */
+    DMAMUX0_SENT_0_RX_FAST          = 14U,  /* DMAMUX_0: Source 14 */
+    DMAMUX0_SENT_0_RX_SLOW          = 15U,  /* DMAMUX_0: Source 15 */
+    DMAMUX0_LINFLEXD_0_RX           = 16U,  /* DMAMUX_0: Source 16 */
+    DMAMUX0_LINFLEXD_0_TX           = 17U,  /* DMAMUX_0: Source 17 */
+    DMAMUX0_LINFLEXD_14_RX          = 18U,  /* DMAMUX_0: Source 18 */
+    DMAMUX0_DSPI_0_CMD              = 19U,  /* DMAMUX_0: Source 19 */
+    DMAMUX0_DSPI_4_CMD              = 20U,  /* DMAMUX_0: Source 20 */
+    DMAMUX0_MCAN_3                  = 21U,  /* DMAMUX_0: Source 21 */
+    DMAMUX0_MCAN_4                  = 22U,  /* DMAMUX_0: Source 22 */
+    DMAMUX0_MCAN_5                  = 23U,  /* DMAMUX_0: Source 23 */
+    DMAMUX0_MCAN_6                  = 24U,  /* DMAMUX_0: Source 24 */
+    DMAMUX0_MCAN_7                  = 25U,  /* DMAMUX_0: Source 25 */
+    DMAMUX0_MCAN_8                  = 26U,  /* DMAMUX_0: Source 26 */
+    DMAMUX0_ETPU_0                  = 27U,  /* DMAMUX_0: Source 27 */
+    DMAMUX0_ETPU_1                  = 28U,  /* DMAMUX_0: Source 28 */
+    DMAMUX0_ETPU_2                  = 29U,  /* DMAMUX_0: Source 29 */
+    DMAMUX0_ETPU_12                 = 30U,  /* DMAMUX_0: Source 30 */
+    DMAMUX0_ETPU_13                 = 31U,  /* DMAMUX_0: Source 31 */
+    DMAMUX0_ETPU_14                 = 32U,  /* DMAMUX_0: Source 32 */
+    DMAMUX0_ETPU_15                 = 33U,  /* DMAMUX_0: Source 33 */
+    DMAMUX0_ETPU_28                 = 34U,  /* DMAMUX_0: Source 34 */
+    DMAMUX0_ETPU_29                 = 35U,  /* DMAMUX_0: Source 35 */
+    DMAMUX0_ETPUB_0                 = 36U,  /* DMAMUX_0: Source 36 */
+    DMAMUX0_ETPUB_1                 = 37U,  /* DMAMUX_0: Source 37 */
+    DMAMUX0_ETPUB_2                 = 38U,  /* DMAMUX_0: Source 38 */
+    DMAMUX0_ETPUB_3                 = 39U,  /* DMAMUX_0: Source 39 */
+    DMAMUX0_ETPUB_12                = 40U,  /* DMAMUX_0: Source 40 */
+    DMAMUX0_ETPUB_13                = 41U,  /* DMAMUX_0: Source 41 */
+    DMAMUX0_ETPUB_14                = 42U,  /* DMAMUX_0: Source 42 */
+    DMAMUX0_ETPUB_15                = 43U,  /* DMAMUX_0: Source 43 */
+    DMAMUX0_ETPUB_28                = 44U,  /* DMAMUX_0: Source 44 */
+    DMAMUX0_ETPUB_29                = 45U,  /* DMAMUX_0: Source 45 */
+    DMAMUX0_ETPUB_30                = 46U,  /* DMAMUX_0: Source 46 */
+    DMAMUX0_ETPUB_31                = 47U,  /* DMAMUX_0: Source 47 */
+                                            /* DMAMUX_0: Source 48 */
+                                            /* DMAMUX_0: Source 49 */
+                                            /* DMAMUX_0: Source 50 */
+    DMAMUX0_EQADC0_ADC01_RFIFO0     = 51U,  /* DMAMUX_0: Source 51 */
+    DMAMUX0_EQADC0_ADC01_RFIFO1     = 52U,  /* DMAMUX_0: Source 52 */
+    DMAMUX0_EQADC0_ADC01_RFIFO2     = 53U,  /* DMAMUX_0: Source 53 */
+    DMAMUX0_EQADC0_ADC01_RFIFO3     = 54U,  /* DMAMUX_0: Source 54 */
+    DMAMUX0_EQADC0_ADC01_RFIFO4     = 55U,  /* DMAMUX_0: Source 55 */
+    DMAMUX0_EQADC0_ADC01_RFIFO5     = 56U,  /* DMAMUX_0: Source 56 */
+    DMAMUX0_EQADC0_ADC01_CFIFO0     = 57U,  /* DMAMUX_0: Source 57 */
+    DMAMUX0_EQADC0_ADC01_CFIFO1     = 58U,  /* DMAMUX_0: Source 58 */
+    DMAMUX0_EQADC0_ADC01_CFIFO2     = 59U,  /* DMAMUX_0: Source 59 */
+    DMAMUX0_EQADC0_ADC01_CFIFO3     = 60U,  /* DMAMUX_0: Source 60 */
+    DMAMUX0_EQADC0_ADC01_CFIFO4     = 61U,  /* DMAMUX_0: Source 61 */
+    DMAMUX0_EQADC0_ADC01_CFIFO5     = 62U,  /* DMAMUX_0: Source 62 */
+    DMAMUX0_ALWAYS_ON_0             = 63U,  /* DMAMUX_0: Source 63 */
+
+    /* DMAMUX_1: DMAMUX Channel 8 - 15 (eDMA_0 Channel 8 - 15) */
+    DMAMUX1_RESERVED_0_A            = 64U,  /* DMAMUX_1: Source 0  */
+    DMAMUX1_DSPI_12_RX              = 65U,  /* DMAMUX_1: Source 1  */
+    DMAMUX1_DSPI_12_TX              = 66U,  /* DMAMUX_1: Source 2  */
+    DMAMUX1_LINFLEXD_0_RX           = 67U,  /* DMAMUX_1: Source 3  */
+    DMAMUX1_LINFLEXD_0_TX           = 68U,  /* DMAMUX_1: Source 4  */
+    DMAMUX1_LINFLEXD_1_RX           = 69U,  /* DMAMUX_1: Source 5  */
+    DMAMUX1_LINFLEXD_1_TX           = 70U,  /* DMAMUX_1: Source 6  */
+    DMAMUX1_LINFLEXD_14_RX          = 71U,  /* DMAMUX_1: Source 7  */
+    DMAMUX1_LINFLEXD_14_TX          = 72U,  /* DMAMUX_1: Source 8  */
+    DMAMUX1_SENT_0_RX_FAST          = 73U,  /* DMAMUX_1: Source 9  */
+    DMAMUX1_SENT_0_RX_SLOW          = 74U,  /* DMAMUX_1: Source 10 */
+                                            /* DMAMUX_1: Source 11 */
+                                            /* DMAMUX_1: Source 12 */
+                                            /* DMAMUX_1: Source 13 */
+                                            /* DMAMUX_1: Source 14 */
+    DMAMUX1_SIUL2_REQ0              = 79U,  /* DMAMUX_1: Source 15 */
+    DMAMUX1_SIUL2_REQ1              = 80U,  /* DMAMUX_1: Source 16 */
+                                            /* DMAMUX_1: Source 17 */
+                                            /* DMAMUX_1: Source 18 */
+                                            /* DMAMUX_1: Source 19 */
+                                            /* DMAMUX_1: Source 20 */
+                                            /* DMAMUX_1: Source 21 */
+                                            /* DMAMUX_1: Source 22 */
+                                            /* DMAMUX_1: Source 23 */
+                                            /* DMAMUX_1: Source 24 */
+                                            /* DMAMUX_1: Source 25 */
+                                            /* DMAMUX_1: Source 26 */
+                                            /* DMAMUX_1: Source 27 */
+                                            /* DMAMUX_1: Source 28 */
+                                            /* DMAMUX_1: Source 29 */
+                                            /* DMAMUX_1: Source 30 */
+                                            /* DMAMUX_1: Source 31 */
+                                            /* DMAMUX_1: Source 32 */
+                                            /* DMAMUX_1: Source 33 */
+                                            /* DMAMUX_1: Source 34 */
+                                            /* DMAMUX_1: Source 35 */
+                                            /* DMAMUX_1: Source 36 */
+                                            /* DMAMUX_1: Source 37 */
+                                            /* DMAMUX_1: Source 38 */
+                                            /* DMAMUX_1: Source 39 */
+                                            /* DMAMUX_1: Source 40 */
+                                            /* DMAMUX_1: Source 41 */
+                                            /* DMAMUX_1: Source 42 */
+                                            /* DMAMUX_1: Source 43 */
+                                            /* DMAMUX_1: Source 44 */
+    DMAMUX1_LINFLEXD_15_RX          = 109U, /* DMAMUX_1: Source 45 */
+    DMAMUX1_LINFLEXD_15_TX          = 110U, /* DMAMUX_1: Source 46 */
+    DMAMUX1_DSPI_5_RX               = 111U, /* DMAMUX_1: Source 47 */
+    DMAMUX1_DSPI_5_TX               = 112U, /* DMAMUX_1: Source 48 */
+    DMAMUX1_DSPI_5_CMD              = 113U, /* DMAMUX_1: Source 49 */
+    DMAMUX1_DSPI_12_CMD             = 114U, /* DMAMUX_1: Source 50 */
+                                            /* DMAMUX_1: Source 51 */
+                                            /* DMAMUX_1: Source 52 */
+    DMAMUX1_DSPI_0_RX               = 117U, /* DMAMUX_1: Source 53 */
+    DMAMUX1_DSPI_0_TX               = 118U, /* DMAMUX_1: Source 54 */
+    DMAMUX1_ADC01_DECFILT_IN        = 119U, /* DMAMUX_1: Source 55 */
+                                            /* DMAMUX_1: Source 56 */
+                                            /* DMAMUX_1: Source 57 */
+                                            /* DMAMUX_1: Source 58 */
+    DMAMUX1_ALWAYS_ON_0             = 123U, /* DMAMUX_1: Source 59 */
+    DMAMUX1_ALWAYS_ON_1             = 124U, /* DMAMUX_1: Source 60 */
+    DMAMUX1_ALWAYS_ON_2             = 125U, /* DMAMUX_1: Source 61 */
+    DMAMUX1_ALWAYS_ON_3             = 126U, /* DMAMUX_1: Source 62 */
+    DMAMUX1_ALWAYS_ON_4             = 127U, /* DMAMUX_1: Source 63 */
+
+    /* DMAMUX_2: DMAMUX Channel 16 - 23 (eDMA_0 Channel 16 - 23) */
+    DMAMUX2_RESERVED_0_A            = 128U, /* DMAMUX_2: Source 0  */
+                                            /* DMAMUX_2: Source 1  */
+                                            /* DMAMUX_2: Source 2  */
+    DMAMUX2_DSPI_1_RX               = 131U, /* DMAMUX_2: Source 3  */
+    DMAMUX2_DSPI_1_TX               = 132U, /* DMAMUX_2: Source 4  */
+    DMAMUX2_SENT_1_RX_FAST          = 133U, /* DMAMUX_2: Source 5  */
+    DMAMUX2_SENT_1_RX_SLOW          = 134U, /* DMAMUX_2: Source 6  */
+    DMAMUX2_PSI5_0_CH0_RX_PSI5      = 135U, /* DMAMUX_2: Source 7  */
+    DMAMUX2_PSI5_0_CH0_RX_SENT      = 136U, /* DMAMUX_2: Source 8  */
+    DMAMUX2_SIUL2_REQ2              = 137U, /* DMAMUX_2: Source 9  */
+    DMAMUX2_SIUL2_REQ4              = 138U, /* DMAMUX_2: Source 10 */
+                                            /* DMAMUX_2: Source 11 */
+                                            /* DMAMUX_2: Source 12 */
+                                            /* DMAMUX_2: Source 13 */
+                                            /* DMAMUX_2: Source 14 */
+                                            /* DMAMUX_2: Source 15 */
+                                            /* DMAMUX_2: Source 16 */
+                                            /* DMAMUX_2: Source 17 */
+                                            /* DMAMUX_2: Source 18 */
+                                            /* DMAMUX_2: Source 19 */
+                                            /* DMAMUX_2: Source 20 */
+                                            /* DMAMUX_2: Source 21 */
+                                            /* DMAMUX_2: Source 22 */
+                                            /* DMAMUX_2: Source 23 */
+                                            /* DMAMUX_2: Source 24 */
+                                            /* DMAMUX_2: Source 25 */
+                                            /* DMAMUX_2: Source 26 */
+                                            /* DMAMUX_2: Source 27 */
+                                            /* DMAMUX_2: Source 28 */
+                                            /* DMAMUX_2: Source 29 */
+                                            /* DMAMUX_2: Source 30 */
+                                            /* DMAMUX_2: Source 31 */
+                                            /* DMAMUX_2: Source 32 */
+                                            /* DMAMUX_2: Source 33 */
+                                            /* DMAMUX_2: Source 34 */
+                                            /* DMAMUX_2: Source 35 */
+                                            /* DMAMUX_2: Source 36 */
+                                            /* DMAMUX_2: Source 37 */
+                                            /* DMAMUX_2: Source 38 */
+                                            /* DMAMUX_2: Source 39 */
+                                            /* DMAMUX_2: Source 40 */
+                                            /* DMAMUX_2: Source 41 */
+    DMAMUX2_DSPI_1_CMD              = 170U, /* DMAMUX_2: Source 42 */
+    DMAMUX2_DSPI_2_RX               = 171U, /* DMAMUX_2: Source 43 */
+    DMAMUX2_DSPI_2_TX               = 172U, /* DMAMUX_2: Source 44 */
+    DMAMUX2_LINFLEXD_2_RX           = 173U, /* DMAMUX_2: Source 45 */
+    DMAMUX2_LINFLEXD_2_TX           = 174U, /* DMAMUX_2: Source 46 */
+                                            /* DMAMUX_2: Source 47 */
+                                            /* DMAMUX_2: Source 48 */
+    DMAMUX2_PSI5_SPS                = 177U, /* DMAMUX_2: Source 49 */
+    DMAMUX2_PSI5_SRX                = 178U, /* DMAMUX_2: Source 50 */
+                                            /* DMAMUX_2: Source 51 */
+                                            /* DMAMUX_2: Source 52 */
+                                            /* DMAMUX_2: Source 53 */
+                                            /* DMAMUX_2: Source 54 */
+                                            /* DMAMUX_2: Source 55 */
+                                            /* DMAMUX_2: Source 56 */
+                                            /* DMAMUX_2: Source 57 */
+                                            /* DMAMUX_2: Source 58 */
+                                            /* DMAMUX_2: Source 59 */
+                                            /* DMAMUX_2: Source 60 */
+                                            /* DMAMUX_2: Source 61 */
+                                            /* DMAMUX_2: Source 62 */
+    DMAMUX2_ALWAYS_ON_0             = 191U, /* DMAMUX_2: Source 63 */
+
+    /* DMAMUX_3: DMAMUX Channel 24 - 31 (eDMA_0 Channel 24 - 31) */
+    DMAMUX3_RESERVED_0_A            = 192U, /* DMAMUX_3: Source 0  */
+                                            /* DMAMUX_3: Source 1  */
+    DMAMUX3_DSPI_2_RX               = 194U, /* DMAMUX_3: Source 2  */
+    DMAMUX3_DSPI_2_TX               = 195U, /* DMAMUX_3: Source 3  */
+    DMAMUX3_LINFLEXD_2_RX           = 196U, /* DMAMUX_3: Source 4  */
+    DMAMUX3_LINFLEXD_2_TX           = 197U, /* DMAMUX_3: Source 5  */
+    DMAMUX3_I2C_0_RX                = 198U, /* DMAMUX_3: Source 6  */
+    DMAMUX3_I2C_0_TX                = 199U, /* DMAMUX_3: Source 7  */
+    DMAMUX3_PSI5_1_CH0_RX_PSI5      = 200U, /* DMAMUX_3: Source 8  */
+    DMAMUX3_PSI5_1_CH0_RX_SENT      = 201U, /* DMAMUX_3: Source 9  */
+    DMAMUX3_SIUL2_REQ5              = 202U, /* DMAMUX_3: Source 10 */
+                                            /* DMAMUX_3: Source 11 */
+                                            /* DMAMUX_3: Source 12 */
+                                            /* DMAMUX_3: Source 13 */
+                                            /* DMAMUX_3: Source 14 */
+                                            /* DMAMUX_3: Source 15 */
+                                            /* DMAMUX_3: Source 16 */
+                                            /* DMAMUX_3: Source 17 */
+                                            /* DMAMUX_3: Source 18 */
+                                            /* DMAMUX_3: Source 19 */
+                                            /* DMAMUX_3: Source 20 */
+                                            /* DMAMUX_3: Source 21 */
+                                            /* DMAMUX_3: Source 22 */
+                                            /* DMAMUX_3: Source 23 */
+                                            /* DMAMUX_3: Source 24 */
+                                            /* DMAMUX_3: Source 25 */
+                                            /* DMAMUX_3: Source 26 */
+                                            /* DMAMUX_3: Source 27 */
+                                            /* DMAMUX_3: Source 28 */
+                                            /* DMAMUX_3: Source 29 */
+                                            /* DMAMUX_3: Source 30 */
+                                            /* DMAMUX_3: Source 31 */
+                                            /* DMAMUX_3: Source 32 */
+                                            /* DMAMUX_3: Source 33 */
+                                            /* DMAMUX_3: Source 34 */
+                                            /* DMAMUX_3: Source 35 */
+                                            /* DMAMUX_3: Source 36 */
+                                            /* DMAMUX_3: Source 37 */
+                                            /* DMAMUX_3: Source 38 */
+                                            /* DMAMUX_3: Source 39 */
+                                            /* DMAMUX_3: Source 40 */
+    DMAMUX3_SIUL2_REQ8              = 233U, /* DMAMUX_3: Source 41 */
+    DMAMUX3_SIUL2_REQ3              = 234U, /* DMAMUX_3: Source 42 */
+                                            /* DMAMUX_3: Source 43 */
+                                            /* DMAMUX_3: Source 44 */
+    DMAMUX3_DSPI_2_CMD              = 237U, /* DMAMUX_3: Source 45 */
+    DMAMUX3_DSPI_1_RX               = 238U, /* DMAMUX_3: Source 46 */
+    DMAMUX3_DSPI_1_TX               = 239U, /* DMAMUX_3: Source 47 */
+                                            /* DMAMUX_3: Source 48 */
+                                            /* DMAMUX_3: Source 49 */
+    DMAMUX3_PSI5_STX                = 242U, /* DMAMUX_3: Source 50 */
+                                            /* DMAMUX_3: Source 51 */
+                                            /* DMAMUX_3: Source 52 */
+                                            /* DMAMUX_3: Source 53 */
+                                            /* DMAMUX_3: Source 54 */
+                                            /* DMAMUX_3: Source 55 */
+                                            /* DMAMUX_3: Source 56 */
+                                            /* DMAMUX_3: Source 57 */
+                                            /* DMAMUX_3: Source 58 */
+                                            /* DMAMUX_3: Source 59 */
+                                            /* DMAMUX_3: Source 60 */
+                                            /* DMAMUX_3: Source 61 */
+                                            /* DMAMUX_3: Source 62 */
+    DMAMUX3_ALWAYS_ON_0             = 255U, /* DMAMUX_3: Source 63 */
+
+    /* DMAMUX_4: DMAMUX Channel 32 - 47 (eDMA_0 Channel 32 - 47) */
+    DMAMUX4_RESERVED_0_A            = 256U, /* DMAMUX_4: Source 0  */
+                                            /* DMAMUX_4: Source 1  */
+                                            /* DMAMUX_4: Source 2  */
+                                            /* DMAMUX_4: Source 3  */
+                                            /* DMAMUX_4: Source 4  */
+    DMAMUX4_DSPI_3_RX               = 261U, /* DMAMUX_4: Source 5  */
+    DMAMUX4_DSPI_3_TX               = 262U, /* DMAMUX_4: Source 6  */
+    DMAMUX4_LINFLEXD_0_RX           = 263U, /* DMAMUX_4: Source 7  */
+    DMAMUX4_LINFLEXD_0_TX           = 264U, /* DMAMUX_4: Source 8  */
+    DMAMUX4_LINFLEXD_14_RX          = 265U, /* DMAMUX_4: Source 9  */
+    DMAMUX4_LINFLEXD_14_TX          = 266U, /* DMAMUX_4: Source 10 */
+    DMAMUX4_PSI5_0_CH1_RX_PSI5      = 267U, /* DMAMUX_4: Source 11 */
+    DMAMUX4_PSI5_0_CH1_RX_SENT      = 268U, /* DMAMUX_4: Source 12 */
+                                            /* DMAMUX_4: Source 13 */
+                                            /* DMAMUX_4: Source 14 */
+    DMAMUX4_SIUL2_REQ9              = 271U, /* DMAMUX_4: Source 15 */
+                                            /* DMAMUX_4: Source 16 */
+                                            /* DMAMUX_4: Source 17 */
+                                            /* DMAMUX_4: Source 18 */
+                                            /* DMAMUX_4: Source 19 */
+                                            /* DMAMUX_4: Source 20 */
+                                            /* DMAMUX_4: Source 21 */
+                                            /* DMAMUX_4: Source 22 */
+                                            /* DMAMUX_4: Source 23 */
+                                            /* DMAMUX_4: Source 24 */
+                                            /* DMAMUX_4: Source 25 */
+                                            /* DMAMUX_4: Source 26 */
+                                            /* DMAMUX_4: Source 27 */
+                                            /* DMAMUX_4: Source 28 */
+                                            /* DMAMUX_4: Source 29 */
+                                            /* DMAMUX_4: Source 30 */
+                                            /* DMAMUX_4: Source 31 */
+                                            /* DMAMUX_4: Source 32 */
+                                            /* DMAMUX_4: Source 33 */
+    DMAMUX4_DSPI_3_CMD              = 290U, /* DMAMUX_4: Source 34 */
+                                            /* DMAMUX_4: Source 35 */
+                                            /* DMAMUX_4: Source 36 */
+                                            /* DMAMUX_4: Source 37 */
+    DMAMUX4_ADC01_DECFILT_IN        = 294U, /* DMAMUX_4: Source 38 */
+    DMAMUX4_DSPI_0_CMD              = 295U, /* DMAMUX_4: Source 39 */
+    DMAMUX4_DSPI_0_RX               = 296U, /* DMAMUX_4: Source 40 */
+    DMAMUX4_DSPI_0_TX               = 297U, /* DMAMUX_4: Source 41 */
+    DMAMUX4_AMU_0                   = 298U, /* DMAMUX_4: Source 42 */
+    DMAMUX4_MCAN_5                  = 299U, /* DMAMUX_4: Source 43 */
+    DMAMUX4_MCAN_6                  = 300U, /* DMAMUX_4: Source 44 */
+    DMAMUX4_SIUL2_REQ6              = 301U, /* DMAMUX_4: Source 45 */
+    DMAMUX4_SIUL2_REQ7              = 302U, /* DMAMUX_4: Source 46 */
+    DMAMUX4_SIUL2_REQ12             = 303U, /* DMAMUX_4: Source 47 */
+    DMAMUX4_SIUL2_REQ13             = 304U, /* DMAMUX_4: Source 48 */
+    DMAMUX4_SIUL2_REQ14             = 305U, /* DMAMUX_4: Source 49 */
+    DMAMUX4_SIUL2_REQ15             = 306U, /* DMAMUX_4: Source 50 */
+                                            /* DMAMUX_4: Source 51 */
+                                            /* DMAMUX_4: Source 52 */
+                                            /* DMAMUX_4: Source 53 */
+                                            /* DMAMUX_4: Source 54 */
+                                            /* DMAMUX_4: Source 55 */
+                                            /* DMAMUX_4: Source 56 */
+                                            /* DMAMUX_4: Source 57 */
+                                            /* DMAMUX_4: Source 58 */
+                                            /* DMAMUX_4: Source 59 */
+                                            /* DMAMUX_4: Source 60 */
+                                            /* DMAMUX_4: Source 61 */
+                                            /* DMAMUX_4: Source 62 */
+    DMAMUX4_ALWAYS_ON_0             = 319U, /* DMAMUX_4: Source 63 */
+
+    /* DMAMUX_5: DMAMUX Channel 48 - 63 (eDMA_0 Channel 48 - 63) */
+    DMAMUX5_RESERVED_0_A            = 320U, /* DMAMUX_5: Source 0  */
+                                            /* DMAMUX_5: Source 1  */
+                                            /* DMAMUX_5: Source 2  */
+                                            /* DMAMUX_5: Source 3  */
+    DMAMUX5_DSPI_5_RX               = 324U, /* DMAMUX_5: Source 4  */
+    DMAMUX5_DSPI_5_TX               = 325U, /* DMAMUX_5: Source 5  */
+    DMAMUX5_LINFLEXD_1_RX           = 326U, /* DMAMUX_5: Source 6  */
+    DMAMUX5_LINFLEXD_1_TX           = 327U, /* DMAMUX_5: Source 7  */
+    DMAMUX5_LINFLEXD_15_RX          = 328U, /* DMAMUX_5: Source 8  */
+    DMAMUX5_LINFLEXD_15_TX          = 329U, /* DMAMUX_5: Source 9  */
+    DMAMUX5_SENT_0_RX_FAST          = 330U, /* DMAMUX_5: Source 10 */
+    DMAMUX5_SENT_0_RX_SLOW          = 331U, /* DMAMUX_5: Source 11 */
+                                            /* DMAMUX_5: Source 12 */
+                                            /* DMAMUX_5: Source 13 */
+    DMAMUX5_SIUL2_REQ10             = 334U, /* DMAMUX_5: Source 14 */
+                                            /* DMAMUX_5: Source 15 */
+                                            /* DMAMUX_5: Source 16 */
+                                            /* DMAMUX_5: Source 17 */
+                                            /* DMAMUX_5: Source 18 */
+                                            /* DMAMUX_5: Source 19 */
+                                            /* DMAMUX_5: Source 20 */
+                                            /* DMAMUX_5: Source 21 */
+                                            /* DMAMUX_5: Source 22 */
+                                            /* DMAMUX_5: Source 23 */
+                                            /* DMAMUX_5: Source 24 */
+                                            /* DMAMUX_5: Source 25 */
+                                            /* DMAMUX_5: Source 26 */
+                                            /* DMAMUX_5: Source 27 */
+                                            /* DMAMUX_5: Source 28 */
+                                            /* DMAMUX_5: Source 29 */
+                                            /* DMAMUX_5: Source 30 */
+                                            /* DMAMUX_5: Source 31 */
+                                            /* DMAMUX_5: Source 32 */
+    DMAMUX5_DSPI_5_CMD              = 353U, /* DMAMUX_5: Source 33 */
+    DMAMUX5_MCAN_1                  = 354U, /* DMAMUX_5: Source 34 */
+    DMAMUX5_MCAN_2                  = 355U, /* DMAMUX_5: Source 35 */
+    DMAMUX5_DSPI_3_RX               = 356U, /* DMAMUX_5: Source 36 */
+    DMAMUX5_DSPI_3_TX               = 357U, /* DMAMUX_5: Source 37 */
+                                            /* DMAMUX_5: Source 38 */
+    DMAMUX5_LINFLEXD_2_RX           = 359U, /* DMAMUX_5: Source 39 */
+    DMAMUX5_LINFLEXD_2_TX           = 360U, /* DMAMUX_5: Source 40 */
+                                            /* DMAMUX_5: Source 41 */
+    DMAMUX5_AMU_1                   = 362U, /* DMAMUX_5: Source 42 */
+    DMAMUX5_MCAN_7                  = 363U, /* DMAMUX_5: Source 43 */
+    DMAMUX5_MCAN_8                  = 364U, /* DMAMUX_5: Source 44 */
+    DMAMUX5_MCAN_9                  = 365U, /* DMAMUX_5: Source 45 */
+    DMAMUX5_MCAN_10                 = 366U, /* DMAMUX_5: Source 46 */
+    DMAMUX5_MCAN_11                 = 367U, /* DMAMUX_5: Source 47 */
+    DMAMUX5_MCAN_12                 = 368U, /* DMAMUX_5: Source 48 */
+                                            /* DMAMUX_5: Source 49 */
+                                            /* DMAMUX_5: Source 50 */
+                                            /* DMAMUX_5: Source 51 */
+                                            /* DMAMUX_5: Source 52 */
+                                            /* DMAMUX_5: Source 53 */
+                                            /* DMAMUX_5: Source 54 */
+                                            /* DMAMUX_5: Source 55 */
+                                            /* DMAMUX_5: Source 56 */
+                                            /* DMAMUX_5: Source 57 */
+                                            /* DMAMUX_5: Source 58 */
+                                            /* DMAMUX_5: Source 59 */
+                                            /* DMAMUX_5: Source 60 */
+                                            /* DMAMUX_5: Source 61 */
+                                            /* DMAMUX_5: Source 62 */
+    DMAMUX5_ALWAYS_ON_0             = 383U, /* DMAMUX_5: Source 63 */
+
+    /* DMAMUX_6: DMAMUX Channel 64 - 79 (eDMA_1 Channel 0 - 15) */
+    DMAMUX6_RESERVED_0_A            = 384U, /* DMAMUX_6: Source 0  */
+                                            /* DMAMUX_6: Source 1  */
+                                            /* DMAMUX_6: Source 2  */
+                                            /* DMAMUX_6: Source 3  */
+                                            /* DMAMUX_6: Source 4  */
+                                            /* DMAMUX_6: Source 5  */
+                                            /* DMAMUX_6: Source 6  */
+                                            /* DMAMUX_6: Source 7  */
+                                            /* DMAMUX_6: Source 8  */
+    DMAMUX6_PSI5_0_CH2_RX_PSI5      = 393U, /* DMAMUX_6: Source 9  */
+    DMAMUX6_PSI5_0_CH2_RX_SENT      = 394U, /* DMAMUX_6: Source 10 */
+    DMAMUX6_PSI5_1_CH1_RX_PSI5      = 395U, /* DMAMUX_6: Source 11 */
+    DMAMUX6_PSI5_1_CH1_RX_SENT      = 396U, /* DMAMUX_6: Source 12 */
+    DMAMUX6_DSPI_6_RX               = 397U, /* DMAMUX_6: Source 13 */
+    DMAMUX6_DSPI_6_TX               = 398U, /* DMAMUX_6: Source 14 */
+    DMAMUX6_DSPI_6_CMD              = 399U, /* DMAMUX_6: Source 15 */
+    DMAMUX6_LINFLEXD_16_RX          = 400U, /* DMAMUX_6: Source 16 */
+    DMAMUX6_LINFLEXD_16_TX          = 401U, /* DMAMUX_6: Source 17 */
+    DMAMUX6_I2C_1_RX                = 402U, /* DMAMUX_6: Source 18 */
+    DMAMUX6_I2C_1_TX                = 403U, /* DMAMUX_6: Source 19 */
+                                            /* DMAMUX_6: Source 20 */
+                                            /* DMAMUX_6: Source 21 */
+                                            /* DMAMUX_6: Source 22 */
+                                            /* DMAMUX_6: Source 23 */
+    DMAMUX6_DSPI_1_CMD              = 408U, /* DMAMUX_6: Source 24 */
+    DMAMUX6_DSPI_1_RX               = 409U, /* DMAMUX_6: Source 25 */
+    DMAMUX6_DSPI_1_TX               = 410U, /* DMAMUX_6: Source 26 */
+    DMAMUX6_DSPI_12_CMD             = 411U, /* DMAMUX_6: Source 27 */
+    DMAMUX6_DSPI_12_RX              = 412U, /* DMAMUX_6: Source 28 */
+    DMAMUX6_DSPI_12_TX              = 413U, /* DMAMUX_6: Source 29 */
+    DMAMUX6_SENT_1_RX_FAST          = 414U, /* DMAMUX_6: Source 30 */
+    DMAMUX6_SENT_1_RX_SLOW          = 415U, /* DMAMUX_6: Source 31 */
+                                            /* DMAMUX_6: Source 32 */
+                                            /* DMAMUX_6: Source 33 */
+                                            /* DMAMUX_6: Source 34 */
+                                            /* DMAMUX_6: Source 35 */
+                                            /* DMAMUX_6: Source 36 */
+                                            /* DMAMUX_6: Source 37 */
+                                            /* DMAMUX_6: Source 38 */
+                                            /* DMAMUX_6: Source 39 */
+                                            /* DMAMUX_6: Source 40 */
+                                            /* DMAMUX_6: Source 41 */
+                                            /* DMAMUX_6: Source 42 */
+                                            /* DMAMUX_6: Source 43 */
+                                            /* DMAMUX_6: Source 44 */
+                                            /* DMAMUX_6: Source 45 */
+                                            /* DMAMUX_6: Source 46 */
+                                            /* DMAMUX_6: Source 47 */
+    DMAMUX6_MCAN_3                  = 432U, /* DMAMUX_6: Source 48 */
+    DMAMUX6_ETPUC_0                 = 433U, /* DMAMUX_6: Source 49 */
+    DMAMUX6_ETPUC_1                 = 434U, /* DMAMUX_6: Source 50 */
+    DMAMUX6_ETPUC_2                 = 435U, /* DMAMUX_6: Source 51 */
+    DMAMUX6_ETPUC_3                 = 436U, /* DMAMUX_6: Source 52 */
+    DMAMUX6_ETPUC_4                 = 437U, /* DMAMUX_6: Source 53 */
+    DMAMUX6_ETPUC_5                 = 438U, /* DMAMUX_6: Source 54 */
+    DMAMUX6_ETPUC_6                 = 439U, /* DMAMUX_6: Source 55 */
+    DMAMUX6_ETPUC_7                 = 440U, /* DMAMUX_6: Source 56 */
+                                            /* DMAMUX_6: Source 57 */
+                                            /* DMAMUX_6: Source 58 */
+                                            /* DMAMUX_6: Source 59 */
+                                            /* DMAMUX_6: Source 60 */
+                                            /* DMAMUX_6: Source 61 */
+                                            /* DMAMUX_6: Source 62 */
+    DMAMUX6_ALWAYS_ON_0             = 447U, /* DMAMUX_6: Source 63 */
+
+    /* DMAMUX_7: DMAMUX Channel 80 - 95 (eDMA_1 Channel 16 - 31) */
+    DMAMUX7_RESERVED_0_A            = 448U, /* DMAMUX_7: Source 0  */
+                                            /* DMAMUX_7: Source 1  */
+                                            /* DMAMUX_7: Source 2  */
+                                            /* DMAMUX_7: Source 3  */
+                                            /* DMAMUX_7: Source 4  */
+                                            /* DMAMUX_7: Source 5  */
+                                            /* DMAMUX_7: Source 6  */
+                                            /* DMAMUX_7: Source 7  */
+                                            /* DMAMUX_7: Source 8  */
+    DMAMUX7_EMIOS_1_CH9             = 457U, /* DMAMUX_7: Source 9  */
+    DMAMUX7_EMIOS_1_CH10            = 458U, /* DMAMUX_7: Source 10 */
+    DMAMUX7_EMIOS_1_CH11            = 459U, /* DMAMUX_7: Source 11 */
+    DMAMUX7_EMIOS_1_CH12            = 460U, /* DMAMUX_7: Source 12 */
+    DMAMUX7_EMIOS_1_CH13            = 461U, /* DMAMUX_7: Source 13 */
+    DMAMUX7_EMIOS_1_CH14            = 462U, /* DMAMUX_7: Source 14 */
+    DMAMUX7_EMIOS_1_CH15            = 463U, /* DMAMUX_7: Source 15 */
+    DMAMUX7_EMIOS_1_CH16            = 464U, /* DMAMUX_7: Source 16 */
+    DMAMUX7_EMIOS_1_CH17            = 465U, /* DMAMUX_7: Source 17 */
+    DMAMUX7_EMIOS_1_CH18            = 466U, /* DMAMUX_7: Source 18 */
+    DMAMUX7_EMIOS_1_CH19            = 467U, /* DMAMUX_7: Source 19 */
+    DMAMUX7_EMIOS_1_CH20            = 468U, /* DMAMUX_7: Source 20 */
+    DMAMUX7_EMIOS_1_CH21            = 469U, /* DMAMUX_7: Source 21 */
+    DMAMUX7_EMIOS_1_CH22            = 470U, /* DMAMUX_7: Source 22 */
+    DMAMUX7_EMIOS_1_CH23            = 471U, /* DMAMUX_7: Source 23 */
+    DMAMUX7_EMIOS_1_CH24            = 472U, /* DMAMUX_7: Source 24 */
+    DMAMUX7_EMIOS_1_CH25            = 473U, /* DMAMUX_7: Source 25 */
+    DMAMUX7_EMIOS_1_CH26            = 474U, /* DMAMUX_7: Source 26 */
+    DMAMUX7_EMIOS_1_CH27            = 475U, /* DMAMUX_7: Source 27 */
+    DMAMUX7_EMIOS_1_CH28            = 476U, /* DMAMUX_7: Source 28 */
+    DMAMUX7_EMIOS_1_CH29            = 477U, /* DMAMUX_7: Source 29 */
+    DMAMUX7_EMIOS_1_CH30            = 478U, /* DMAMUX_7: Source 30 */
+    DMAMUX7_EMIOS_1_CH31            = 479U, /* DMAMUX_7: Source 31 */
+                                            /* DMAMUX_7: Source 32 */
+                                            /* DMAMUX_7: Source 33 */
+                                            /* DMAMUX_7: Source 34 */
+    DMAMUX7_PSI5_0_CH0_RX_PSI5      = 483U, /* DMAMUX_7: Source 35 */
+    DMAMUX7_PSI5_0_CH0_RX_SENT      = 484U, /* DMAMUX_7: Source 36 */
+    DMAMUX7_PSI5_0_CH1_RX_PSI5      = 485U, /* DMAMUX_7: Source 37 */
+    DMAMUX7_PSI5_0_CH1_RX_SENT      = 486U, /* DMAMUX_7: Source 38 */
+    DMAMUX7_PSI5_0_CH2_RX_PSI5      = 487U, /* DMAMUX_7: Source 39 */
+    DMAMUX7_PSI5_0_CH2_RX_SENT      = 488U, /* DMAMUX_7: Source 40 */
+                                            /* DMAMUX_7: Source 41 */
+                                            /* DMAMUX_7: Source 42 */
+                                            /* DMAMUX_7: Source 43 */
+                                            /* DMAMUX_7: Source 44 */
+    DMAMUX7_DSPI_3_CMD              = 493U, /* DMAMUX_7: Source 45 */
+    DMAMUX7_DSPI_3_RX               = 494U, /* DMAMUX_7: Source 46 */
+    DMAMUX7_DSPI_3_TX               = 495U, /* DMAMUX_7: Source 47 */
+    DMAMUX7_DSPI_5_CMD              = 496U, /* DMAMUX_7: Source 48 */
+    DMAMUX7_DSPI_5_RX               = 497U, /* DMAMUX_7: Source 49 */
+    DMAMUX7_DSPI_5_TX               = 498U, /* DMAMUX_7: Source 50 */
+    DMAMUX7_MCAN_4                  = 499U, /* DMAMUX_7: Source 51 */
+    DMAMUX7_SSI_0_TX                = 500U, /* DMAMUX_7: Source 52 */
+    DMAMUX7_SSI_0_RX                = 501U, /* DMAMUX_7: Source 53 */
+                                            /* DMAMUX_7: Source 54 */
+                                            /* DMAMUX_7: Source 55 */
+                                            /* DMAMUX_7: Source 56 */
+                                            /* DMAMUX_7: Source 57 */
+                                            /* DMAMUX_7: Source 58 */
+                                            /* DMAMUX_7: Source 59 */
+                                            /* DMAMUX_7: Source 60 */
+                                            /* DMAMUX_7: Source 61 */
+                                            /* DMAMUX_7: Source 62 */
+    DMAMUX7_ALWAYS_ON_0             = 511U, /* DMAMUX_7: Source 63 */
+
+    /* DMAMUX_8: DMAMUX Channel 96 - 111 (eDMA_1 Channel 32 - 47) */
+    DMAMUX8_RESERVED_0_A            = 512U, /* DMAMUX_8: Source 0  */
+                                            /* DMAMUX_8: Source 1  */
+                                            /* DMAMUX_8: Source 2  */
+                                            /* DMAMUX_8: Source 3  */
+                                            /* DMAMUX_8: Source 4  */
+                                            /* DMAMUX_8: Source 5  */
+                                            /* DMAMUX_8: Source 6  */
+                                            /* DMAMUX_8: Source 7  */
+                                            /* DMAMUX_8: Source 8  */
+    DMAMUX8_EMIOS_0_CH8             = 521U, /* DMAMUX_8: Source 9  */
+    DMAMUX8_EMIOS_0_CH9             = 522U, /* DMAMUX_8: Source 10 */
+    DMAMUX8_EMIOS_0_CH10            = 523U, /* DMAMUX_8: Source 11 */
+    DMAMUX8_EMIOS_0_CH11            = 524U, /* DMAMUX_8: Source 12 */
+    DMAMUX8_EMIOS_0_CH12            = 525U, /* DMAMUX_8: Source 13 */
+    DMAMUX8_EMIOS_0_CH13            = 526U, /* DMAMUX_8: Source 14 */
+    DMAMUX8_EMIOS_0_CH14            = 527U, /* DMAMUX_8: Source 15 */
+    DMAMUX8_EMIOS_0_CH15            = 528U, /* DMAMUX_8: Source 16 */
+    DMAMUX8_EMIOS_0_CH20            = 529U, /* DMAMUX_8: Source 17 */
+    DMAMUX8_EMIOS_0_CH21            = 530U, /* DMAMUX_8: Source 18 */
+    DMAMUX8_EMIOS_0_CH22            = 531U, /* DMAMUX_8: Source 19 */
+    DMAMUX8_EMIOS_0_CH23            = 532U, /* DMAMUX_8: Source 20 */
+    DMAMUX8_EMIOS_0_CH24            = 533U, /* DMAMUX_8: Source 21 */
+    DMAMUX8_EMIOS_0_CH25            = 534U, /* DMAMUX_8: Source 22 */
+    DMAMUX8_EMIOS_0_CH26            = 535U, /* DMAMUX_8: Source 23 */
+    DMAMUX8_EMIOS_0_CH27            = 536U, /* DMAMUX_8: Source 24 */
+    DMAMUX8_EMIOS_0_CH28            = 537U, /* DMAMUX_8: Source 25 */
+    DMAMUX8_EMIOS_0_CH29            = 538U, /* DMAMUX_8: Source 26 */
+    DMAMUX8_EMIOS_0_CH30            = 539U, /* DMAMUX_8: Source 27 */
+    DMAMUX8_EMIOS_0_CH31            = 540U, /* DMAMUX_8: Source 28 */
+    DMAMUX8_EMIOS_1_CH4             = 541U, /* DMAMUX_8: Source 29 */
+    DMAMUX8_EMIOS_1_CH5             = 542U, /* DMAMUX_8: Source 30 */
+    DMAMUX8_EMIOS_1_CH6             = 543U, /* DMAMUX_8: Source 31 */
+    DMAMUX8_EMIOS_1_CH7             = 544U, /* DMAMUX_8: Source 32 */
+    DMAMUX8_EMIOS_1_CH8             = 545U, /* DMAMUX_8: Source 33 */
+    DMAMUX8_PSI5_1_CH0_RX_PSI5      = 546U, /* DMAMUX_8: Source 34 */
+    DMAMUX8_PSI5_1_CH0_RX_SENT      = 547U, /* DMAMUX_8: Source 35 */
+    DMAMUX8_PSI5_1_CH1_RX_PSI5      = 548U, /* DMAMUX_8: Source 36 */
+    DMAMUX8_PSI5_1_CH1_RX_SENT      = 549U, /* DMAMUX_8: Source 37 */
+    DMAMUX8_ADC01_DECFILT_IN        = 550U, /* DMAMUX_8: Source 38 */
+    DMAMUX8_ADC01_DECFILT_OUT       = 551U, /* DMAMUX_8: Source 39 */
+                                            /* DMAMUX_8: Source 40 */
+    DMAMUX8_EMIOS_0_CH5             = 553U, /* DMAMUX_8: Source 41 */
+                                            /* DMAMUX_8: Source 42 */
+    DMAMUX8_DSPI_4_CMD              = 555U, /* DMAMUX_8: Source 43 */
+    DMAMUX8_DSPI_4_RX               = 556U, /* DMAMUX_8: Source 44 */
+    DMAMUX8_DSPI_4_TX               = 557U, /* DMAMUX_8: Source 45 */
+    DMAMUX8_LINFLEXD_3_TX           = 558U, /* DMAMUX_8: Source 46 */
+    DMAMUX8_LINFLEXD_3_RX           = 559U, /* DMAMUX_8: Source 47 */
+    DMAMUX8_LINFLEXD_4_TX           = 560U, /* DMAMUX_8: Source 48 */
+    DMAMUX8_LINFLEXD_4_RX           = 561U, /* DMAMUX_8: Source 49 */
+    DMAMUX8_LINFLEXD_5_TX           = 562U, /* DMAMUX_8: Source 50 */
+    DMAMUX8_LINFLEXD_5_RX           = 563U, /* DMAMUX_8: Source 51 */
+    DMAMUX8_LINFLEXD_6_TX           = 564U, /* DMAMUX_8: Source 52 */
+    DMAMUX8_LINFLEXD_6_RX           = 565U, /* DMAMUX_8: Source 53 */
+    DMAMUX8_LINFLEXD_7_TX           = 566U, /* DMAMUX_8: Source 54 */
+    DMAMUX8_LINFLEXD_7_RX           = 567U, /* DMAMUX_8: Source 55 */
+    DMAMUX8_LINFLEXD_8_TX           = 568U, /* DMAMUX_8: Source 56 */
+    DMAMUX8_LINFLEXD_8_RX           = 569U, /* DMAMUX_8: Source 57 */
+    DMAMUX8_LINFLEXD_9_TX           = 570U, /* DMAMUX_8: Source 58 */
+    DMAMUX8_LINFLEXD_9_RX           = 571U, /* DMAMUX_8: Source 59 */
+    DMAMUX8_LINFLEXD_10_TX          = 572U, /* DMAMUX_8: Source 60 */
+    DMAMUX8_LINFLEXD_10_RX          = 573U, /* DMAMUX_8: Source 61 */
+    DMAMUX8_LINFLEXD_11_TX          = 574U, /* DMAMUX_8: Source 62 */
+    DMAMUX8_ALWAYS_ON_0             = 575U, /* DMAMUX_8: Source 63 */
+
+    /* DMAMUX_9: DMAMUX Channel 112 - 127 (eDMA_1 Channel 48 - 63) */
+    DMAMUX9_RESERVED_0_A            = 576U, /* DMAMUX_9: Source 0  */
+                                            /* DMAMUX_9: Source 1  */
+                                            /* DMAMUX_9: Source 2  */
+                                            /* DMAMUX_9: Source 3  */
+                                            /* DMAMUX_9: Source 4  */
+                                            /* DMAMUX_9: Source 5  */
+                                            /* DMAMUX_9: Source 6  */
+                                            /* DMAMUX_9: Source 7  */
+                                            /* DMAMUX_9: Source 8  */
+                                            /* DMAMUX_9: Source 9  */
+                                            /* DMAMUX_9: Source 10 */
+    DMAMUX9_I2C_0_RX                = 587U, /* DMAMUX_9: Source 11 */
+    DMAMUX9_I2C_0_TX                = 588U, /* DMAMUX_9: Source 12 */
+                                            /* DMAMUX_9: Source 13 */
+                                            /* DMAMUX_9: Source 14 */
+                                            /* DMAMUX_9: Source 15 */
+                                            /* DMAMUX_9: Source 16 */
+                                            /* DMAMUX_9: Source 17 */
+                                            /* DMAMUX_9: Source 18 */
+                                            /* DMAMUX_9: Source 19 */
+                                            /* DMAMUX_9: Source 20 */
+                                            /* DMAMUX_9: Source 21 */
+                                            /* DMAMUX_9: Source 22 */
+                                            /* DMAMUX_9: Source 23 */
+                                            /* DMAMUX_9: Source 24 */
+                                            /* DMAMUX_9: Source 25 */
+                                            /* DMAMUX_9: Source 26 */
+                                            /* DMAMUX_9: Source 27 */
+                                            /* DMAMUX_9: Source 28 */
+                                            /* DMAMUX_9: Source 29 */
+                                            /* DMAMUX_9: Source 30 */
+                                            /* DMAMUX_9: Source 31 */
+                                            /* DMAMUX_9: Source 32 */
+                                            /* DMAMUX_9: Source 33 */
+    DMAMUX9_MCAN_1                  = 610U, /* DMAMUX_9: Source 34 */
+    DMAMUX9_MCAN_2                  = 611U, /* DMAMUX_9: Source 35 */
+                                            /* DMAMUX_9: Source 36 */
+                                            /* DMAMUX_9: Source 37 */
+                                            /* DMAMUX_9: Source 38 */
+                                            /* DMAMUX_9: Source 39 */
+                                            /* DMAMUX_9: Source 40 */
+    DMAMUX9_DSPI_2_CMD              = 617U, /* DMAMUX_9: Source 41 */
+    DMAMUX9_DSPI_2_RX               = 618U, /* DMAMUX_9: Source 42 */
+    DMAMUX9_DSPI_2_TX               = 619U, /* DMAMUX_9: Source 43 */
+    DMAMUX9_SIUL2_REQ11             = 620U, /* DMAMUX_9: Source 44 */
+    DMAMUX9_EMIOS_0_CH0             = 621U, /* DMAMUX_9: Source 45 */
+    DMAMUX9_EMIOS_0_CH1             = 622U, /* DMAMUX_9: Source 46 */
+    DMAMUX9_EMIOS_0_CH2             = 623U, /* DMAMUX_9: Source 47 */
+    DMAMUX9_EMIOS_0_CH3             = 624U, /* DMAMUX_9: Source 48 */
+    DMAMUX9_EMIOS_0_CH4             = 625U, /* DMAMUX_9: Source 49 */
+    DMAMUX9_EMIOS_0_CH6             = 626U, /* DMAMUX_9: Source 50 */
+    DMAMUX9_EMIOS_0_CH7             = 627U, /* DMAMUX_9: Source 51 */
+    DMAMUX9_EMIOS_0_CH16            = 628U, /* DMAMUX_9: Source 52 */
+    DMAMUX9_EMIOS_0_CH17            = 629U, /* DMAMUX_9: Source 53 */
+    DMAMUX9_EMIOS_0_CH18            = 630U, /* DMAMUX_9: Source 54 */
+    DMAMUX9_EMIOS_0_CH19            = 631U, /* DMAMUX_9: Source 55 */
+    DMAMUX9_EMIOS_1_CH0             = 632U, /* DMAMUX_9: Source 56 */
+    DMAMUX9_EMIOS_1_CH1             = 633U, /* DMAMUX_9: Source 57 */
+    DMAMUX9_EMIOS_1_CH2             = 634U, /* DMAMUX_9: Source 58 */
+    DMAMUX9_EMIOS_1_CH3             = 635U, /* DMAMUX_9: Source 59 */
+    DMAMUX9_LINFLEXD_11_RX          = 636U, /* DMAMUX_9: Source 60 */
+    DMAMUX9_LINFLEXD_12_TX          = 637U, /* DMAMUX_9: Source 61 */
+    DMAMUX9_LINFLEXD_12_RX          = 638U, /* DMAMUX_9: Source 62 */
+    DMAMUX9_ALWAYS_ON_0             = 639U  /* DMAMUX_9: Source 63 */
+} eDMARequestSourceType;
+
+/* CONSOLE CONFIG */
+/* notice the RESOURCE_CHIP_CORE_NUM is 3 */
+#define CONSOLE_GPIO_CONFIG     {     \
+                                    /* CORE_0 uart TX-RX: PAD_NUM, MSCR_IO_VAL, MUX_REG, MUX_REG_VAL */   \
+                                    {{PQ13, 0x32840002, PQ13, 0}, {PQ15, 0x308C0000, 352, 2}},   \
+                                    /* CORE_1 uart TX-RX */   \
+                                    {{PC2,  0x32840006, PC2,  0}, {PC1,  0x308C0000, 351, 6}},   \
+                                    /* CORE_2 uart TX-RX */   \
+                                    {{PC10, 0x32840002, PC10, 0}, {PC15, 0x308C0000, 350, 6}}   \
+                                }
+/* CONSOLE CONFIG END */
+#define LINFLEXD_GPIO_CONFIG    {     \
+                                    /* LINFlexD_0 TX, RX */                           \
+                                    {{PA12, 0x32840002, 0, 0}, {PA13, 0x308C0000,  336, 1}},  \
+                                    /* LINFlexD_1 TX, RX*/                            \
+                                    {{PC9,  0x32840004, 0, 0}, {PC8,  0x308C0000,  337, 6}},  \
+                                    /* LINFlexD_2 TX, RX */                               \
+                                    {{PD14, 0x32840002, 0, 0}, {PD15, 0x308C0000,  338, 1}},  \
+                                    /* LINFlexD_3 TX, RX */                               \
+                                    {{PI8,  0x3284000C, 0, 0}, {PI9,  0x308C0000,  339, 0}},  \
+                                    /* LINFlexD_4 TX, RX */                               \
+                                    {{PC3,  0x3284000D, 0, 0}, {PC4,  0x308C0000,  340, 0}},  \
+                                    /* LINFlexD_5 TX, RX */                               \
+                                    {{PC5,  0x3284000D, 0, 0}, {PC6,  0x308C0000,  341, 0}},  \
+                                    /* LINFlexD_6 TX, RX */                               \
+                                    /*{{PD0,  0x3284000D, 0, 0}, {PD1,  0x308C0000,  342, 0}},  */\
+                                    {{PM11,  0x3284000D, 0, 0}, {PM12,  0x308C0000,  342, 1}},  \
+                                    /* LINFlexD_7 TX, RX */                               \
+                                    /*{{PD2,  0x3284000D, 0, 0}, {PD3,  0x308C0000,  343, 0}},  */\
+                                    {{PX11,  0x3284000C, 0, 0}, {PM11,  0x308C0000,  343, 2}},  \
+                                    /* LINFlexD_8 TX, RX */                               \
+                                    {{PT8,  0x3284000B, 0, 0}, {PT9,  0x308C0000,  344, 2}},  \
+									/* LINFlexD_9 TX, RX */                               \
+									{{PD9,  0x3284000E, 0, 0}, {PD10, 0x308C0000,  345, 0}},  \
+                                    /* LINFlexD_10 TX, RX */                              \
+                                    {{PN12, 0x3284000E, 0, 0}, {PN14, 0x308C0000, 346, 1}},  \
+                                    /* LINFlexD_11 TX, RX */                              \
+                                    {{PE12, 0x3284000C, 0, 0}, {PQ0,  0x308C0000, 347, 1}},  \
+                                    /* LINFlexD_12 TX, RX */                              \
+                                    {{PF1,  0x3284000D, 0, 0}, {PF4,  0x308C0000,  348, 0}},  \
+                                    /* LINFlexD_14 TX, RX */                              \
+                                    {{PC10, 0x32840002, 0, 0}, {PC12, 0x308C0000, 350, 2}},  \
+                                    /* LINFlexD_15 TX, RX */                              \
+                                    {{PC2,  0x32840006, 0, 0}, {PC1,  0x308C0000,  351, 6}},  \
+                                    /* LINFlexD_16 TX, RX */                              \
+                                    {{PQ13, 0x32840002, 0, 0}, {PQ15, 0x308C0000, 352, 2}}   \
+                                }
+
+#define LINFLEXD_EDMA_CONFIG    { \
+                                    {{EDMA_CHN33_NUMBER,  DMAMUX4_LINFLEXD_0_TX,  FALSE}, {EDMA_CHN32_NUMBER,  DMAMUX4_LINFLEXD_0_RX,  FALSE}}, \
+                                    {{EDMA_CHN49_NUMBER,  DMAMUX5_LINFLEXD_1_TX,  FALSE}, {EDMA_CHN48_NUMBER,  DMAMUX5_LINFLEXD_1_RX,  FALSE}}, \
+                                    {{EDMA_CHN51_NUMBER,  DMAMUX5_LINFLEXD_2_TX,  FALSE}, {EDMA_CHN50_NUMBER,  DMAMUX5_LINFLEXD_2_RX,  FALSE}}, \
+                                    {{EDMA_CHN98_NUMBER,  DMAMUX8_LINFLEXD_3_TX,  FALSE}, {EDMA_CHN99_NUMBER,  DMAMUX8_LINFLEXD_3_RX,  FALSE}}, \
+                                    {{EDMA_CHN100_NUMBER, DMAMUX8_LINFLEXD_4_TX,  FALSE}, {EDMA_CHN101_NUMBER, DMAMUX8_LINFLEXD_4_RX,  FALSE}}, \
+                                    {{EDMA_CHN100_NUMBER, DMAMUX8_LINFLEXD_5_TX,  FALSE}, {EDMA_CHN101_NUMBER, DMAMUX8_LINFLEXD_5_RX,  FALSE}}, \
+                                    {{EDMA_CHN100_NUMBER, DMAMUX8_LINFLEXD_6_TX,  FALSE}, {EDMA_CHN101_NUMBER, DMAMUX8_LINFLEXD_6_RX,  FALSE}}, \
+                                    {{EDMA_CHN100_NUMBER, DMAMUX8_LINFLEXD_7_TX,  FALSE}, {EDMA_CHN101_NUMBER, DMAMUX8_LINFLEXD_7_RX,  FALSE}}, \
+                                    {{EDMA_CHN100_NUMBER, DMAMUX8_LINFLEXD_8_TX,  FALSE}, {EDMA_CHN101_NUMBER, DMAMUX8_LINFLEXD_8_RX,  FALSE}}, \
+                                    {{EDMA_CHN100_NUMBER, DMAMUX8_LINFLEXD_9_TX,  FALSE}, {EDMA_CHN101_NUMBER, DMAMUX8_LINFLEXD_9_RX,  FALSE}}, \
+                                    {{EDMA_CHN100_NUMBER, DMAMUX8_LINFLEXD_10_TX, FALSE}, {EDMA_CHN101_NUMBER, DMAMUX8_LINFLEXD_10_RX, FALSE}}, \
+                                    {{EDMA_CHN100_NUMBER, DMAMUX8_LINFLEXD_11_TX, FALSE}, {EDMA_CHN118_NUMBER, DMAMUX9_LINFLEXD_11_RX, FALSE}}, \
+                                    {{EDMA_CHN119_NUMBER, DMAMUX9_LINFLEXD_12_TX, FALSE}, {EDMA_CHN120_NUMBER, DMAMUX9_LINFLEXD_12_RX, FALSE}}, \
+                                    {{EDMA_CHN35_NUMBER,  DMAMUX4_LINFLEXD_14_TX, FALSE}, {EDMA_CHN34_NUMBER,  DMAMUX4_LINFLEXD_14_RX, FALSE}}, \
+                                    {{EDMA_CHN53_NUMBER,  DMAMUX5_LINFLEXD_15_TX, FALSE}, {EDMA_CHN54_NUMBER,  DMAMUX5_LINFLEXD_15_RX, FALSE}}, \
+                                    {{EDMA_CHN65_NUMBER,  DMAMUX6_LINFLEXD_16_TX, FALSE}, {EDMA_CHN64_NUMBER,  DMAMUX6_LINFLEXD_16_RX, FALSE}} \
+                                }
+/* FOR SSI MODULE CONFIG */
+
+#define SSI_MOD_MAX 1
+/* ONLY ONE SSI, AND USE MULTIPLEX */
+#define SSI_USE_MULTIPLEX   1
+/* default SSI */
+#define USE_SSI_0           1
+
+
+#define SSI_EDMA_CONFIG     { \
+                                {{EDMA_CHN80_NUMBER, DMAMUX7_SSI_0_TX, FALSE}, {EDMA_CHN81_NUMBER, DMAMUX7_SSI_0_RX, FALSE}}, \
+                            }
+#if 1 /* SSI0 default Port */
+#define SSI_GPIO_CONFIG     {   \
+                                {{PC11, 0x328D000D, 0, 0}, \
+                                {PC12, 0x32840000,  0, 0}, \
+                                {PC13, 0x328D000C,  0, 0x2}, \
+                                {PC14, 0x328D000E,  1, 0x2}, \
+                                {PF2,  0x328D000E,  2, 0x2}, \
+                                {PM6,  0x328D000D,  3, 0x2}  \
+                                },\
+                             }
+#define SSI_0_CS_OUT_LOW   (SIUL2.GPDO[PC12].R = 0U)
+#define SSI_0_CS_OUT_HIGH  (SIUL2.GPDO[PC12].R = 1U)
+
+#else /*  SSI0 Port Multiplex */
+#define SSI_GPIO_CONFIG      {  \
+                                {{PV7,  0x328D000B,  0, 0}, \
+                                 {PV15, 0x32840000,  0, 0}, \
+                                 {PW0,  0x328D000B,  0, 0x1}, \
+                                 {PW6,  0x328D000B,  1, 0x1}, \
+                                 {PX0,  0x328D000C,  2, 0x1}, \
+                                 {PX6,  0x328D000C,  3, 0x1}  \
+                                }\
+                             }
+#define SSI_0_CS_OUT_LOW   (SIUL2.GPDO[PV15].R = 0U)
+#define SSI_0_CS_OUT_HIGH  (SIUL2.GPDO[PV15].R = 1U)
+#endif /* END SSI Port config */
+
+#define DMA_CHECK_ACTIVE(__dma_ch__) eDMA_1.TCD[__dma_ch__].CSR.B.ACTIVE
+#define DMA_CHECK_DONE(__dma_ch__)   eDMA_1.TCD[__dma_ch__].CSR.B.DONE
+
+/* FOR SSI MODULE CONFIG END*/
+
+/* I2C MODULE CONFIG */
+#define I2C_MODULE_CLK PER_CLK
+#define I2C_MOD_MAX 2
+#define I2C_GPIO_CONFIG    {     \
+                                /* I2C 0 SCL-SDA */                           \
+                                {{PC6,  0x318D0001, 297, 1}, {PC7,  0x318D0001, 296, 1}},  \
+								/* {{PD1,  0x318D0001, 297, 2}, {PD2,  0x318D0001, 296, 2}}, */  \
+                                /* I2C 1 SCL-SDA */                            \
+                                {{PQ13, 0x318D0004, 299, 2}, {PQ15, 0x318D0001, 298, 2}},  \
+								/* {{PM0, 0x318D0004, 299, 1}, {PM3, 0x318D0001, 298, 1}}*/ \
+                           }
+
+/* I2C MODULE CONFIG END */
+
+/* FOR PSI5 MODULE CONFIG */
+#define PSI5_0_CH_MAX 3U
+#define PSI5_1_CH_MAX 2U
+#define PSI5_CH_MAX (PSI5_0_CH_MAX + PSI5_1_CH_MAX)
+#define PSI5_GPIO_CONFIG 	{     \
+								/* PSI_0 TX RX */                           \
+								{{PC0,  0x32840005, PC0, 0}, {PC1,  0x308C0000, 304, 2}},  \
+								{{PC5,  0x32840005, PC5, 0}, {PC6,  0x308C0000, 308, 1}},  \
+								{{PF3,  0x32840005, PF3, 0}, {PF2,  0x308C0000, 316, 1}},  \
+								/* PSI_1 TX RX */                            \
+								{{PC3, 	0x32840005, PC3, 0}, {PC4, 	0x308C0000, 312, 1}},  \
+								{{PJ10, 0x32840005, PJ10,0}, {PJ11, 0x308C0000, 320, 1}} \
+							}
+/* FOR PSI5 MODULE CONFIG END */
+/* FOR PSI5_S MODULE CONFIG */
+#define PSI5_S_CH_MAX 1U
+#define PSI5_S_GPIO_CONFIG 	{     \
+								/* PSI5_0 TCK - TX - RX */                           \
+								{{PC4,  0x32840002, 0, 0}, {PC5,  0x32840002, 0, 0}, {PC6,  0x308C0000, 843-512, 2}},  \
+							}
+/* FOR PSI5_S MODULE CONFIG END */
+
+#endif  /* defined(CCFC3007BC) */
+#endif /* CCFC3007BC_FEATURES_H_ */

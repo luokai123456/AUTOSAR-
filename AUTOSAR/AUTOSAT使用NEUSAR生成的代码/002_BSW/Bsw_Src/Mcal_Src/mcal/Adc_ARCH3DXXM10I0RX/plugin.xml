@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+  <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="Adc_ModuleId"
+             name="Adc Module">
+
+    <module id="Adc_CCFC3007PT"
+            label="Adc"
+            mandatory="false"
+            allowMultiple="false"
+            description="Adc MCAL module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Adc"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3007PT"/>
+    </module>
+    <module id="Adc_CCFC3008PT"
+            label="Adc"
+            mandatory="false"
+            allowMultiple="false"
+            description="Adc MCAL module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Adc"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PT"/>
+    </module>
+    <module id="Adc_CCFC3007BC"
+            label="Adc"
+            mandatory="false"
+            allowMultiple="false"
+            description="Adc MCAL module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Adc"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3007BC"/>
+    </module>
+    <module id="Adc_CCFC3008PC"
+            label="Adc"
+            mandatory="false"
+            allowMultiple="false"
+            description="Adc MCAL module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Adc"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PC"/>
+    </module>
+    <module id="Adc_CCFC3012PT"
+            label="Adc"
+            mandatory="false"
+            allowMultiple="false"
+            description="Adc MCAL module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Adc"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3012PT"/>
+    </module>
+    <module id="Adc_CCFC3008PCSN"
+            label="Adc"
+            mandatory="false"
+            allowMultiple="false"
+            description="Adc MCAL module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Adc"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PCSN"/>
+    </module>
+    <module id="Adc_CCFC3010PT"
+            label="Adc"
+            mandatory="false"
+            allowMultiple="false"
+            description="Adc MCAL module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Adc"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3010PT"/>
+    </module>
+    <module id="Adc_CCFC3011PT"
+            label="Adc"
+            mandatory="false"
+            allowMultiple="false"
+            description="Adc MCAL module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Adc"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3011PT"/>
+    </module>
+    <module id="Adc_CCFC3010PTD"
+            label="Adc"
+            mandatory="false"
+            allowMultiple="false"
+            description="Adc MCAL module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Adc"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3010PTD"/>
+    </module>
+    <module id="Adc_CCFC3008PCSA"
+            label="Adc"
+            mandatory="false"
+            allowMultiple="false"
+            description="Adc MCAL module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Adc"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PCSA"/>
+    </module>
+    <!-- <module id="Adc_CCFC3009PT"
+            label="Adc"
+            mandatory="false"
+            allowMultiple="false"
+            description="Adc MCAL module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Adc"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3009PT"/>
+    </module> -->
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="Adc_Configuration"
+             name="Adc_Configuration">
+
+    <configuration moduleId="Adc_CCFC3007PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Adc -->
+          <resource value="config/Adc1.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AdcConfig/Adc"/>
+      </data>
+      <editor id="Adc_Editor_01"
+              label="Default"
+              tooltip="Adc MCAL module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AdcConfig/Adc"/>
+          <parameter name="title" value="Adc"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Adc_CCFC3008PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Adc -->
+          <resource value="config/Adc1.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AdcConfig/Adc"/>
+      </data>
+      <editor id="Adc_Editor_02"
+              label="Default"
+              tooltip="Adc MCAL module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AdcConfig/Adc"/>
+          <parameter name="title" value="Adc"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Adc_CCFC3007BC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Adc -->
+          <resource value="config/Adc2.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AdcConfig/Adc"/>
+      </data>
+      <editor id="Adc_Editor_03"
+              label="Default"
+              tooltip="Adc MCAL module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AdcConfig/Adc"/>
+          <parameter name="title" value="Adc"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Adc_CCFC3012PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Adc -->
+          <resource value="config/Adc3.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AdcConfig/Adc"/>
+      </data>
+      <editor id="Adc_Editor_04"
+              label="Default"
+              tooltip="Adc MCAL module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AdcConfig/Adc"/>
+          <parameter name="title" value="Adc"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Adc_CCFC3008PC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Adc -->
+          <resource value="config/Adc4.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AdcConfig/Adc"/>
+      </data>
+      <editor id="Adc_Editor_05"
+              label="Default"
+              tooltip="Adc MCAL module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AdcConfig/Adc"/>
+          <parameter name="title" value="Adc"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Adc_CCFC3008PCSN">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Adc -->
+          <resource value="config/Adc5.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AdcConfig/Adc"/>
+      </data>
+      <editor id="Adc_Editor_06"
+              label="Default"
+              tooltip="Adc MCAL module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AdcConfig/Adc"/>
+          <parameter name="title" value="Adc"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Adc_CCFC3010PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Adc -->
+          <resource value="config/Adc6.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AdcConfig/Adc"/>
+      </data>
+      <editor id="Adc_Editor_07"
+              label="Default"
+              tooltip="Adc MCAL module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AdcConfig/Adc"/>
+          <parameter name="title" value="Adc"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Adc_CCFC3011PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Adc -->
+          <resource value="config/Adc3.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AdcConfig/Adc"/>
+      </data>
+      <editor id="Adc_Editor_08"
+              label="Default"
+              tooltip="Adc MCAL module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AdcConfig/Adc"/>
+          <parameter name="title" value="Adc"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Adc_CCFC3010PTD">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Adc -->
+          <resource value="config/Adc7.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AdcConfig/Adc"/>
+      </data>
+      <editor id="Adc_Editor_09"
+              label="Default"
+              tooltip="Adc MCAL module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AdcConfig/Adc"/>
+          <parameter name="title" value="Adc"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Adc_CCFC3008PCSA">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Adc -->
+          <resource value="config/Adc8.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AdcConfig/Adc"/>
+      </data>
+      <editor id="Adc_Editor_10"
+              label="Default"
+              tooltip="Adc MCAL module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AdcConfig/Adc"/>
+          <parameter name="title" value="Adc"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <!-- <configuration moduleId="Adc_CCFC3009PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <resource value="config/Adc9.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AdcConfig/Adc"/>
+      </data>
+      <editor id="Adc_Editor_11"
+              label="Default"
+              tooltip="Adc MCAL module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AdcConfig/Adc"/>
+          <parameter name="title" value="Adc"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration> -->
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+             id="EPCGenerator"
+             name="EPC Generator">
+
+    <generator moduleId="Adc_CCFC3007PT"
+                 id="Adc_Editor_01"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3008PT"
+                 id="Adc_Editor_02"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3007BC"
+                 id="Adc_Editor_03"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3012PT"
+                 id="Adc_Editor_04"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3008PC"
+                 id="Adc_Editor_05"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3008PCSN"
+                 id="Adc_Editor_06"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3010PT"
+                 id="Adc_Editor_07"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3011PT"
+                 id="Adc_Editor_08"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3010PTD"
+                 id="Adc_Editor_09"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3008PCSA"
+                 id="Adc_Editor_10"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <!-- <generator moduleId="Adc_CCFC3009PT"
+                 id="Adc_Editor_11"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator> -->
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="Adc_Generator"
+              name="Adc_Generator">
+
+    <generator moduleId="Adc_CCFC3007PT"
+               id="Adc_Generate_01"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3008PT"
+               id="Adc_Generate_02"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3007BC"
+               id="Adc_Generate_03"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3012PT"
+               id="Adc_Generate_04"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3008PC"
+               id="Adc_Generate_05"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3008PCSN"
+               id="Adc_Generate_06"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3010PT"
+               id="Adc_Generate_07"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3011PT"
+               id="Adc_Generate_08"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3010PTD"
+               id="Adc_Generate_09"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Adc_CCFC3008PCSA"
+               id="Adc_Generate_10"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <!-- <generator moduleId="Adc_CCFC3009PT"
+               id="Adc_Generate_11"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator> -->
+  </extension>
+
+  <extension point="org.eclipse.help.toc">
+    <toc file="anchors.xml" primary="true"/>
+    <toc file="$nl$/Adc/toc.xml" primary="false"/>
+    <!-- toc file="$nl$/ReleaseNotes/toc.xml" primary="false"/ !-->
+  </extension>
+</plugin>

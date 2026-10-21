@@ -1,0 +1,298 @@
+﻿/******************************************************************************
+ *
+ *  ASAP2 file:     TrfDQToAlphaBeta.a2l
+ *
+ * 
+ *
+ * Code generation for model "TrfDQToAlphaBeta".
+ *
+ * Model version              : 1.13
+ * Simulink Coder version : 10.6 R2022b
+ * C source code generated on : Thu Jun 18 16:28:47 2026
+ *
+ * Target selection: ert.tlc
+ * Embedded hardware selection: Infineon->TriCore
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+ASAP2_VERSION  1 71     /* Version 1.71 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+
+  /begin HEADER "Header Comments go here"
+  /end HEADER
+
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+    /end MOD_PAR
+
+    /begin MOD_COMMON  "Mod Common Comment Here"
+      BYTE_ORDER     MSB_LAST
+
+      ALIGNMENT_BYTE 1
+      ALIGNMENT_WORD 2
+      ALIGNMENT_LONG 4
+      ALIGNMENT_FLOAT32_IEEE 4
+      ALIGNMENT_FLOAT64_IEEE 8
+      ALIGNMENT_INT64 8
+    /end MOD_COMMON
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      TFDA_AngleFactor_C
+    /* Long Identifier        */      "Angle correction factor for inverse Park transformation"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@TFDA_AngleFactor_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TrfDQToAlphaBeta_CM_single_dash_
+    /* Lower Limit            */      -3.000000
+    /* Upper Limit            */      3.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      TFDA_Open_Loop_SwitchC
+    /* Long Identifier        */      "Angle correction factor for inverse Park transformation"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@TFDA_Open_Loop_SwitchC@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TrfDQToAlphaBeta_CM_single_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      TFDA_Open_Loop_Ud_C
+    /* Long Identifier        */      "Angle correction factor for inverse Park transformation"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@TFDA_Open_Loop_Ud_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TrfDQToAlphaBeta_CM_single_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      100.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      TFDA_Open_Loop_Uq_C
+    /* Long Identifier        */      "Angle correction factor for inverse Park transformation"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@TFDA_Open_Loop_Uq_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TrfDQToAlphaBeta_CM_single_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      100.000000
+  /end CHARACTERISTIC 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_UdSp
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfDQToAlphaBeta_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_UdSp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_UqSp
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfDQToAlphaBeta_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_UqSp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_ElecAngle
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfDQToAlphaBeta_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_ElecAngle@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_ElecSpeed
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfDQToAlphaBeta_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_ElecSpeed@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SampleTime1
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfDQToAlphaBeta_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SampleTime1@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFDA_AlphaVoltSp
+    /* Long identifier        */      "Alpha-axis voltage setpoint in stationary frame"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfDQToAlphaBeta_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -1500.000000
+    /* Upper limit            */      1500.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFDA_AlphaVoltSp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFDA_BetaVoltSp
+    /* Long identifier        */      "Beta-axis voltage setpoint in stationary frame"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfDQToAlphaBeta_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -1500.000000
+    /* Upper limit            */      1500.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFDA_BetaVoltSp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFDA_ElecAngleCorrPreNorm
+    /* Long identifier        */      "Speed-corrected electrical angle before normalization"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfDQToAlphaBeta_CM_single_rad
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -10.000000
+    /* Upper limit            */      10.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFDA_ElecAngleCorrPreNorm@ */
+  /end MEASUREMENT 
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TrfDQToAlphaBeta_CM_single
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      ""
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TrfDQToAlphaBeta_CM_single_V
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TrfDQToAlphaBeta_CM_single_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "-"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TrfDQToAlphaBeta_CM_single_rad
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rad"
+  /end COMPU_METHOD
+
+  /begin  RECORD_LAYOUT Record_FLOAT32_IEEE
+    FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin GROUP
+    /* Name                   */      TrfDQToAlphaBeta
+    /* Long identifier        */      "TrfDQToAlphaBeta"
+    /* Root                   */      ROOT
+    /begin SUB_GROUP
+      TrfDQToAlphaBeta_TFDA_InvParkTransform_100us_sys
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTCR_UdSp
+      CTCR_UqSp
+      SGPP_ElecAngle
+      SGPP_ElecSpeed
+      SGPP_SampleTime1
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfDQToAlphaBeta_TFDA_InvParkTransform_100us_sys
+    /* Long identifier        */      "TrfDQToAlphaBeta/TFDA_InvParkTransform_100us_sys"
+    /begin SUB_GROUP
+      TrfDQToAlphaBeta_TFDA_InvParkTransform_100us_sys_AngleCompensate
+    /end SUB_GROUP
+    /begin REF_CHARACTERISTIC
+      TFDA_Open_Loop_SwitchC
+      TFDA_Open_Loop_Ud_C
+      TFDA_Open_Loop_Uq_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      CTCR_UdSp
+      CTCR_UqSp
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfDQToAlphaBeta_TFDA_InvParkTransform_100us_sys_AngleCompensate
+    /* Long identifier        */      "TrfDQToAlphaBeta/TFDA_InvParkTransform_100us_sys/AngleCompensate"
+    /begin SUB_GROUP
+      TrfDQToAlphaBeta_TFDA_InvParkTransform_100us_sys_AngleCompensate_Local_Variable_Storage
+      TrfDQToAlphaBeta_TFDA_InvParkTransform_100us_sys_AngleCompensate_Parameter
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_ElecAngle
+      SGPP_ElecSpeed
+      SGPP_SampleTime1
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfDQToAlphaBeta_TFDA_InvParkTransform_100us_sys_AngleCompensate_Local_Variable_Storage
+    /* Long identifier        */      "TrfDQToAlphaBeta/TFDA_InvParkTransform_100us_sys/AngleCompensate/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      TFDA_ElecAngleCorrPreNorm
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfDQToAlphaBeta_TFDA_InvParkTransform_100us_sys_AngleCompensate_Parameter
+    /* Long identifier        */      "TrfDQToAlphaBeta/TFDA_InvParkTransform_100us_sys/AngleCompensate/Parameter"
+    /begin REF_CHARACTERISTIC
+      TFDA_AngleFactor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /end MODULE
+
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF TrfDQToAlphaBeta.a2l*/

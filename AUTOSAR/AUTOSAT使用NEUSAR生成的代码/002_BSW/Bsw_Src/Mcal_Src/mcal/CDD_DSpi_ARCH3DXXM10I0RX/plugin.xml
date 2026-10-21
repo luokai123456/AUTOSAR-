@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+  <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="CDD_DSpi_ModuleId"
+             name="CDD_DSpi Module">
+
+    <module id="CDD_DSpi_CCFC3007PT"
+            label="CDD_DSpi"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_DSpi BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="CDD_DSpi"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3007PT"/>
+    </module>
+    <module id="CDD_DSpi_CCFC3008PT"
+            label="CDD_DSpi"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_DSpi BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="CDD_DSpi"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PT"/>
+    </module>
+    <module id="CDD_DSpi_CCFC3007BC"
+            label="CDD_DSpi"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_DSpi BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="CDD_DSpi"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3007BC"/>
+    </module>
+    <module id="CDD_DSpi_CCFC3008PC"
+            label="CDD_DSpi"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_DSpi BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="CDD_DSpi"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PC"/>
+    </module>
+    <module id="CDD_DSpi_CCFC3012PT"
+            label="CDD_DSpi"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_DSpi BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="CDD_DSpi"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3012PT"/>
+    </module>
+    <module id="CDD_DSpi_CCFC3008PCSN"
+            label="CDD_DSpi"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_DSpi BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="CDD_DSpi"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PCSN"/>
+    </module>
+    <module id="CDD_DSpi_CCFC3010PT"
+            label="CDD_DSpi"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_DSpi BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="CDD_DSpi"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3010PT"/>
+    </module>
+    <module id="CDD_DSpi_CCFC3011PT"
+            label="CDD_DSpi"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_DSpi BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="CDD_DSpi"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3011PT"/>
+      </module>
+    <module id="CDD_DSpi_CCFC3010PTD"
+            label="CDD_DSpi"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_DSpi BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="CDD_DSpi"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3010PTD"/>
+    </module>
+    <module id="CDD_DSpi_CCFC3008PCSA"
+            label="CDD_DSpi"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_DSpi BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="CDD_DSpi"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PCSA"/>
+    </module>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="CDD_DSpi_Configuration"
+             name="CDD_DSpi_Configuration">
+
+    <configuration moduleId="CDD_DSpi_CCFC3007PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for CDD_DSpi -->
+          <resource value="config/CDD_DSpi1.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/DSpiConfig/CDD_DSpi"/>
+      </data>
+      <editor id="CDD_DSpi_Editor_01"
+              label="Default"
+              tooltip="CDD_DSpi BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/DSpiConfig/CDD_DSpi"/>
+          <parameter name="title" value="CDD_DSpi"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="CDD_DSpi_CCFC3008PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for CDD_DSpi -->
+          <resource value="config/CDD_DSpi1.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/DSpiConfig/CDD_DSpi"/>
+      </data>
+      <editor id="CDD_DSpi_Editor_02"
+              label="Default"
+              tooltip="CDD_DSpi BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/DSpiConfig/CDD_DSpi"/>
+          <parameter name="title" value="CDD_DSpi"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="CDD_DSpi_CCFC3007BC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for CDD_DSpi -->
+          <resource value="config/CDD_DSpi1.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/DSpiConfig/CDD_DSpi"/>
+      </data>
+      <editor id="CDD_DSpi_Editor_03"
+              label="Default"
+              tooltip="CDD_DSpi BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/DSpiConfig/CDD_DSpi"/>
+          <parameter name="title" value="CDD_DSpi"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="CDD_DSpi_CCFC3012PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for CDD_DSpi -->
+          <resource value="config/CDD_DSpi2.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/DSpiConfig/CDD_DSpi"/>
+      </data>
+      <editor id="CDD_DSpi_Editor_04"
+              label="Default"
+              tooltip="CDD_DSpi BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/DSpiConfig/CDD_DSpi"/>
+          <parameter name="title" value="CDD_DSpi"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="CDD_DSpi_CCFC3008PC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for CDD_DSpi -->
+          <resource value="config/CDD_DSpi1.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/DSpiConfig/CDD_DSpi"/>
+      </data>
+      <editor id="CDD_DSpi_Editor_05"
+              label="Default"
+              tooltip="CDD_DSpi BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/DSpiConfig/CDD_DSpi"/>
+          <parameter name="title" value="CDD_DSpi"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="CDD_DSpi_CCFC3008PCSN">
+    <schema>
+      <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <!-- register the main xdm configuration schema for CDD_DSpi -->
+        <resource value="config/CDD_DSpi1.xdm" type="xdm"/>
+    </schema>
+    <data>
+      <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+      <schemaNode path="ASPath:/DSpiConfig/CDD_DSpi"/>
+    </data>
+    <editor id="CDD_DSpi_Editor_06"
+            label="Default"
+            tooltip="CDD_DSpi BSW module">
+      <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+        <parameter name="schema" value="ASPath:/DSpiConfig/CDD_DSpi"/>
+        <parameter name="title" value="CDD_DSpi"/>
+        <parameter name="noTabs" value="false"/>
+        <parameter name="noLinks" value="true"/>
+        <parameter name="groupLinks" value="false"/>
+        <parameter name="groupContainers" value="false"/>
+        <parameter name="groupTables" value="true"/>
+        <parameter name="optionalGeneralTab" value="true"/>
+      </class>
+    </editor>
+  </configuration>
+
+  <configuration moduleId="CDD_DSpi_CCFC3010PT">
+    <schema>
+      <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <!-- register the main xdm configuration schema for CDD_DSpi -->
+        <resource value="config/CDD_DSpi2.xdm" type="xdm"/>
+    </schema>
+    <data>
+      <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+      <schemaNode path="ASPath:/DSpiConfig/CDD_DSpi"/>
+    </data>
+    <editor id="CDD_DSpi_Editor_07"
+            label="Default"
+            tooltip="CDD_DSpi BSW module">
+      <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+        <parameter name="schema" value="ASPath:/DSpiConfig/CDD_DSpi"/>
+        <parameter name="title" value="CDD_DSpi"/>
+        <parameter name="noTabs" value="false"/>
+        <parameter name="noLinks" value="true"/>
+        <parameter name="groupLinks" value="false"/>
+        <parameter name="groupContainers" value="false"/>
+        <parameter name="groupTables" value="true"/>
+        <parameter name="optionalGeneralTab" value="true"/>
+      </class>
+    </editor>
+  </configuration>
+
+  <configuration moduleId="CDD_DSpi_CCFC3011PT">
+    <schema>
+      <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <!-- register the main xdm configuration schema for CDD_DSpi -->
+        <resource value="config/CDD_DSpi2.xdm" type="xdm"/>
+    </schema>
+    <data>
+      <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+      <schemaNode path="ASPath:/DSpiConfig/CDD_DSpi"/>
+    </data>
+    <editor id="CDD_DSpi_Editor_08"
+            label="Default"
+            tooltip="CDD_DSpi BSW module">
+      <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+        <parameter name="schema" value="ASPath:/DSpiConfig/CDD_DSpi"/>
+        <parameter name="title" value="CDD_DSpi"/>
+        <parameter name="noTabs" value="false"/>
+        <parameter name="noLinks" value="true"/>
+        <parameter name="groupLinks" value="false"/>
+        <parameter name="groupContainers" value="false"/>
+        <parameter name="groupTables" value="true"/>
+        <parameter name="optionalGeneralTab" value="true"/>
+      </class>
+    </editor>
+  </configuration>
+
+  <configuration moduleId="CDD_DSpi_CCFC3010PTD">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for CDD_DSpi -->
+          <resource value="config/CDD_DSpi2.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/DSpiConfig/CDD_DSpi"/>
+      </data>
+      <editor id="CDD_DSpi_Editor_09"
+              label="Default"
+              tooltip="CDD_DSpi BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/DSpiConfig/CDD_DSpi"/>
+          <parameter name="title" value="CDD_DSpi"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+  <configuration moduleId="CDD_DSpi_CCFC3008PCSA">
+    <schema>
+      <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <!-- register the main xdm configuration schema for CDD_DSpi -->
+        <resource value="config/CDD_DSpi1.xdm" type="xdm"/>
+    </schema>
+    <data>
+      <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+      <schemaNode path="ASPath:/DSpiConfig/CDD_DSpi"/>
+    </data>
+    <editor id="CDD_DSpi_Editor_10"
+            label="Default"
+            tooltip="CDD_DSpi BSW module">
+      <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+        <parameter name="schema" value="ASPath:/DSpiConfig/CDD_DSpi"/>
+        <parameter name="title" value="CDD_DSpi"/>
+        <parameter name="noTabs" value="false"/>
+        <parameter name="noLinks" value="true"/>
+        <parameter name="groupLinks" value="false"/>
+        <parameter name="groupContainers" value="false"/>
+        <parameter name="groupTables" value="true"/>
+        <parameter name="optionalGeneralTab" value="true"/>
+      </class>
+    </editor>
+  </configuration>
+
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+             id="EPCGenerator"
+             name="EPC Generator">
+
+    <generator moduleId="CDD_DSpi_CCFC3007PT"
+                 id="CDD_DSpi_Generator_01"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_DSpi_CCFC3008PT"
+                 id="CDD_DSpi_Generator_02"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_DSpi_CCFC3007BC"
+                 id="CDD_DSpi_Generator_03"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_DSpi_CCFC3012PT"
+                 id="CDD_DSpi_Generator_04"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_DSpi_CCFC3008PC"
+                 id="CDD_DSpi_Generator_05"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_DSpi_CCFC3008PCSN"
+                 id="CDD_DSpi_Generator_06"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_DSpi_CCFC3010PT"
+                 id="CDD_DSpi_Generator_07"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_DSpi_CCFC3011PT"
+                 id="CDD_DSpi_Generator_08"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_DSpi_CCFC3010PTD"
+                 id="CDD_DSpi_Generator_09"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+    
+    <generator moduleId="CDD_DSpi_CCFC3008PCSA"
+                 id="CDD_DSpi_Generator_10"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+             id="CDD_DSpi_Generator"
+             name="CDD_DSpi_Generator">
+
+    <generator moduleId="CDD_DSpi_CCFC3007PT"
+               id="CDD_DSpi_Generate_01"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_DSpi_CCFC3007BC"
+               id="CDD_DSpi_Generate_02"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_DSpi_CCFC3008PT"
+               id="CDD_DSpi_Generate_03"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_DSpi_CCFC3008PC"
+               id="CDD_DSpi_Generate_04"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_DSpi_CCFC3012PT"
+               id="CDD_DSpi_Generate_05"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_DSpi_CCFC3008PCSN"
+               id="CDD_DSpi_Generate_06"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_DSpi_CCFC3010PT"
+               id="CDD_DSpi_Generate_07"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_DSpi_CCFC3011PT"
+               id="CDD_DSpi_Generate_08"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_DSpi_CCFC3010PTD"
+               id="CDD_DSpi_Generate_09"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="CDD_DSpi_CCFC3008PCSA"
+               id="CDD_DSpi_Generate_10"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate" value="generate"/>
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+  </extension>
+
+  <extension point="org.eclipse.help.toc">
+    <toc file="anchors.xml" primary="true"/>
+    <toc file="$nl$/CDD_DSpi/toc.xml" primary="false"/>
+    <!-- toc file="$nl$/ReleaseNotes/toc.xml" primary="false"/ !-->
+  </extension>
+</plugin>

@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+  <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="Os_Module"
+             name="Os_Module">
+
+    <module id="Os_CCFC3007PT"
+            label="Os"
+            mandatory="false"
+            allowMultiple="false"
+            description="Os BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="Os"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3007PT"/>
+    </module>
+
+    <module id="Os_CCFC3007BC"
+              label="Os"
+              mandatory="false"
+              allowMultiple="false"
+              description="Os BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Os"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3007BC"/>
+    </module>
+
+    <module id="Os_CCFC3008PT"
+              label="Os"
+              mandatory="false"
+              allowMultiple="false"
+              description="Os BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Os"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3008PT"/>
+    </module>
+
+    <module id="Os_CCFC3008PC"
+              label="Os"
+              mandatory="false"
+              allowMultiple="false"
+              description="Os BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Os"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3008PC"/>
+    </module>
+
+    <module id="Os_CCFC3012PT"
+              label="Os"
+              mandatory="false"
+              allowMultiple="false"
+              description="Os BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Os"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3012PT"/>
+    </module>
+
+    <module id="Os_CCFC3008PCSN"
+              label="Os"
+              mandatory="false"
+              allowMultiple="false"
+              description="Os BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Os"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3008PCSN"/>
+    </module>
+
+
+    <module id="Os_CCFC3010PT"
+              label="Os"
+              mandatory="false"
+              allowMultiple="false"
+              description="Os BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Os"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3010PT"/>
+    </module>
+
+    <module id="Os_CCFC3011PT"
+              label="Os"
+              mandatory="false"
+              allowMultiple="false"
+              description="Os BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Os"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3011PT"/>
+    </module>
+
+    <!--
+    <module id="Os_CCFC3009PT"
+              label="Os"
+              mandatory="false"
+              allowMultiple="false"
+              description="Os BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Os"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3009PT"/>
+    </module>
+    -->
+
+    <module id="Os_CCFC3008PCSA"
+              label="Os"
+              mandatory="false"
+              allowMultiple="false"
+              description="Os BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Os"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3008PCSA"/>
+    </module>
+
+    <module id="Os_CCFC3010PTD"
+              label="Os"
+              mandatory="false"
+              allowMultiple="false"
+              description="Os BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Os"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3010PTD"/>
+    </module>
+
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="Os_Configuration"
+             name="Os_Configuration">
+
+    <configuration moduleId="Os_CCFC3007PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Os.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/OsConfig/Os"/>
+      </data>
+
+      <editor id="Os_Editor_01"
+              label="Default"
+              tooltip="Os BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/OsConfig/Os"/>
+              <parameter name="title" value="Os"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Os_CCFC3007BC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Os.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/OsConfig/Os"/>
+      </data>
+
+      <editor id="Os_Editor_02"
+              label="Default"
+              tooltip="Os BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/OsConfig/Os"/>
+              <parameter name="title" value="Os"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Os_CCFC3008PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Os.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/OsConfig/Os"/>
+      </data>
+
+      <editor id="Os_Editor_03"
+              label="Default"
+              tooltip="Os BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/OsConfig/Os"/>
+              <parameter name="title" value="Os"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Os_CCFC3008PC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Os.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/OsConfig/Os"/>
+      </data>
+
+      <editor id="Os_Editor_04"
+              label="Default"
+              tooltip="Os BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/OsConfig/Os"/>
+              <parameter name="title" value="Os"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Os_CCFC3012PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Os.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/OsConfig/Os"/>
+      </data>
+
+      <editor id="Os_Editor_05"
+              label="Default"
+              tooltip="Os BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/OsConfig/Os"/>
+              <parameter name="title" value="Os"/>
+          </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Os_CCFC3008PCSN">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Os.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/OsConfig/Os"/>
+      </data>
+
+      <editor id="Os_Editor_06"
+              label="Default"
+              tooltip="Os BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/OsConfig/Os"/>
+              <parameter name="title" value="Os"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Os_CCFC3010PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Os.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/OsConfig/Os"/>
+      </data>
+
+      <editor id="Os_Editor_07"
+              label="Default"
+              tooltip="Os BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/OsConfig/Os"/>
+              <parameter name="title" value="Os"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Os_CCFC3011PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Os.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/OsConfig/Os"/>
+      </data>
+
+      <editor id="Os_Editor_08"
+              label="Default"
+              tooltip="Os BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/OsConfig/Os"/>
+              <parameter name="title" value="Os"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Os_CCFC3008PCSA">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Os.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/OsConfig/Os"/>
+      </data>
+
+      <editor id="Os_Editor_09"
+              label="Default"
+              tooltip="Os BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/OsConfig/Os"/>
+              <parameter name="title" value="Os"/>
+          </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Os_CCFC3010PTD">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Os.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/OsConfig/Os"/>
+      </data>
+
+      <editor id="Os_Editor_10"
+              label="Default"
+              tooltip="Os BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/OsConfig/Os"/>
+              <parameter name="title" value="Os"/>
+          </class>
+      </editor>
+    </configuration>
+
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="EPCGenerator"
+              name="EPC Generator">
+      <generator id="Os_EPC_Generate_01"
+                  moduleId="Os_CCFC3007PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Os_EPC_Generate_02"
+                  moduleId="Os_CCFC3007BC"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Os_EPC_Generate_03"
+                  moduleId="Os_CCFC3008PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Os_EPC_Generate_04"
+                  moduleId="Os_CCFC3008PC"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Os_EPC_Generate_05"
+                  moduleId="Os_CCFC3012PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Os_EPC_Generate_06"
+                  moduleId="Os_CCFC3008PCSN"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Os_EPC_Generate_07"
+                  moduleId="Os_CCFC3010PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Os_EPC_Generate_08"
+                  moduleId="Os_CCFC3011PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Os_EPC_Generate_09"
+                  moduleId="Os_CCFC3008PCSA"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Os_EPC_Generate_10"
+                  moduleId="Os_CCFC3010PTD"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="Os_Generator"
+              name="Os_Generator">
+      <generator id="Os_Generate_01"
+                  moduleId="Os_CCFC3007PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Os_Generate_02"
+                  moduleId="Os_CCFC3007BC"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Os_Generate_03"
+                  moduleId="Os_CCFC3008PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Os_Generate_04"
+                  moduleId="Os_CCFC3008PC"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Os_Generate_05"
+                  moduleId="Os_CCFC3012PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Os_Generate_06"
+                  moduleId="Os_CCFC3008PCSN"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Os_Generate_07"
+                  moduleId="Os_CCFC3010PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Os_Generate_08"
+                  moduleId="Os_CCFC3011PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Os_Generate_09"
+                  moduleId="Os_CCFC3008PCSA"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+      <generator id="Os_Generate_10"
+                  moduleId="Os_CCFC3010PTD"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+  </extension>
+</plugin>

@@ -1,0 +1,2141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<datamodel version="7.0" xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+  <d:ctr type="AUTOSAR" factory="autosar" xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="PortConfig" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="Port" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.4.0</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC" value="EN: Configuration of the Port module." />
+              <a:a name="LOWER-MULTIPLICITY" value="1" />
+              <a:a name="POSTBUILDVARIANTSUPPORT" value="true" />
+              <a:a name="RELEASE" value="asc:4.4.0" />
+              <a:a name="UPPER-MULTIPLICITY" value="1" />
+              <a:a name="UUID" value="644fc548-e347-4cfa-802f-4e56e6fa0ebe" />
+              <v:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN">
+                <a:a name="DESC" value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points." />
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Post Build Variant Used" />
+                <a:a name="ORIGIN" value="EB" />
+                <a:a name="POSTBUILDVARIANTVALUE" value="false" />
+                <a:a name="UUID" value="58a698ed-802e-4f25-a77d-551b5230a7b8" />
+                <a:a name="__ORIGIN" value="Elektrobit" />
+                <a:da name="DEFAULT" value="false" />
+                <a:da name="READONLY" value="FALSE" />
+                <a:da name="TOOLTIP" value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points." />
+              </v:var>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Config Variant" />
+                <a:a name="UUID" value="a96de1e1-0091-4ab3-a7aa-7a9511eb1ddc" />
+                <a:a name="__ORIGIN" value="Elektrobit" />
+                <a:da name="DEFAULT" value="VariantPostBuild" />
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuild</a:v>
+                  <a:v>VariantPreCompile</a:v>
+                </a:da>
+              </v:var>
+              <v:ctr name="PortConfigSet" type="IDENTIFIABLE">
+                <a:a name="DESC" value="EN: This container contains the configuration parameters and sub containers of the AUTOSAR Port module." />
+                <a:a name="UUID" value="0b2184cb-1cf1-4aa5-a234-1c53838fef97" />
+                <v:ctr name="NotUsedPortPin" type="IDENTIFIABLE">
+                  <a:a name="DESC" value="EN: The init parameters values for the notused pins in the PORT configuration." />
+                  <a:a name="UUID" value="22cc5c28-b5e8-4acf-bbcb-775b52cd87e0" />
+                  <v:var name="PortPinWpde" type="BOOLEAN">
+                    <a:a name="DESC">
+                      <a:v>EN: Enable Weak Pull Down for the configured Pin.
+                                                 Checked box means Weak Pull Down configurations is enabled for the pin.
+                                                 This is an implementation specific parameter.</a:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="ed9175b2-76e2-4115-80ca-c9cf37276172" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="false" />
+                  </v:var>
+                  <v:var name="PortPinWpue" type="BOOLEAN">
+                    <a:a name="DESC">
+                      <a:v>EN: Enable Weak Pull Up for the configured Pin.
+                                                 Checked box means Weak Pull Up configurations is enabled for the pin.
+                                                 This is an implementation specific parameter.</a:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="1bf4cd27-9edb-445b-9fab-abddd857e341" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="false" />
+                  </v:var>
+                  <v:var name="PortPinDirection" type="ENUMERATION">
+                    <a:a name="LABEL" value="PortPin Direction" />
+                    <a:a name="DESC">
+                      <a:v><![CDATA[
+                                       <html>
+                                         <p>
+                                            Configure DIRECTION for the configured Pin.
+                                         </p>
+                                       </html>
+                                    ]]></a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="Ccfc" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="ECUC:a25bd9ff-6fe8-9b5c-b874-235891a34f3e" />
+                    <a:da name="DEFAULT" value="PORT_PIN_IN" />
+                    <a:da name="RANGE">
+                      <a:v>PORT_PIN_IN</a:v>
+                      <a:v>PORT_PIN_OUT</a:v>
+                    </a:da>
+                  </v:var>
+                  <v:var name="PortPinLevelValue" type="ENUMERATION">
+                    <a:a name="LABEL" value="PortPin Level Value" />
+                    <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                                                            <html>
+                                                              <p>
+                                                                Port Pin Level value from Port pin list.
+                                                              </p>
+                                                            </html>
+                                                            ]]></a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                      <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="ECUC:0fba48fe-308f-e323-7981-add911304ff8" />
+                    <a:da name="DEFAULT" value="PORT_PIN_LEVEL_LOW" />
+                    <a:da name="RANGE">
+                      <a:v>PORT_PIN_LEVEL_HIGH</a:v>
+                      <a:v>PORT_PIN_LEVEL_LOW</a:v>
+                    </a:da>
+                  </v:var>
+                </v:ctr>
+                <v:lst name="PortContainer" type="MAP">
+                  <a:da name="MIN" value="1" />
+                  <v:ctr name="PortContainer" type="IDENTIFIABLE">
+                    <a:a name="DESC" value="EN: Container collecting the PortPins." />
+                    <a:a name="UUID" value="dc2cf48e-9aff-4073-93fc-b77e9c4e0617" />
+                    <v:var name="PortNumberOfPortPins" type="INTEGER">
+                      <a:a name="LABEL" value="PortNumberOfPortPins" />
+                      <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                                                    <html>
+                                                      <p>
+                                                        The number of specified PortPins in this PortContainer.
+                                                      </p>
+                                                    </html>
+                                                    ]]></a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                      <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                      <a:a name="UUID" value="ECUC:560a7c73-d4e1-37f3-4b17-733286dab86d" />
+                      <a:da name="DEFAULT" type="XPath">
+                        <a:tst expr="num:i(count(node:fallback(node:current()/../PortPin/*,text:split('1 2 3'))))" />
+                      </a:da>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&gt;=1" />
+                        <a:tst expr="&lt;=500" />
+                      </a:da>
+                      <a:da name="RANGE" type="XPath">
+                        <a:tst expr="node:fallback(., 1) = count(node:fallback(node:current()/../PortPin/*,text:split('1 2 3')))" false=" For calculating the correct value use the CALC button" />
+                      </a:da>
+                      <a:da name="TOOLTIP" type="XPath" expr="num:i(num:i(count(node:current()/../PortPin/*)))" />
+                    </v:var>
+                    <v:lst name="PortPin" type="MAP">
+                      <a:da name="MIN" value="1" />
+                      <v:ctr name="PortPin" type="IDENTIFIABLE">
+                        <a:a name="DESC" value="EN: Configuration of the individual port pins." />
+                        <a:a name="UUID" value="3f7c642c-2643-4d21-a144-eda571dc3ee9" />
+                        <v:var name="PortPinPullEnable" type="BOOLEAN">
+                          <a:a name="DESC">
+                            <a:v>Check if  Pull Up/Down is enabled</a:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID" value="cb2b9ee1-c249-4df2-b6c2-d3fc12f38d68" />
+                          <a:a name="__ORIGIN" value="Elektrobit" />
+                          <a:da name="DEFAULT" value="false" />
+                        </v:var>
+                        <v:var name="PortPinPullSelect" type="ENUMERATION">
+                          <a:a name="DESC">
+                            <a:v>Select Pull Up or Pull Down</a:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID" value="348c8144-96a8-442a-8f94-b1428fb73a0f" />
+                          <a:a name="__ORIGIN" value="Elektrobit" />
+                          <a:da name="DEFAULT" value="PULL_DOWM" />
+                          <a:da name="RANGE">
+                            <a:v>PULL_DOWM</a:v>
+                            <a:v>PULL_UP</a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="PortPinDrivingStrength" type="ENUMERATION">
+                          <a:a name="DESC">
+                            <a:v>Select Driving Strength</a:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID" value="348c8144-96a8-442a-8f94-b1428fb73a0f" />
+                          <a:a name="__ORIGIN" value="Elektrobit" />
+                          <a:da name="DEFAULT" value="PORT_16MA" />
+                          <a:da name="RANGE">
+                            <a:v>PORT_2MA</a:v>
+                            <a:v>PORT_4MA</a:v>
+                            <a:v>PORT_8MA</a:v>
+                            <a:v>PORT_12MA</a:v>
+                            <a:v>PORT_16MA</a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="PortPinOpenDrainOutput" type="BOOLEAN">
+                          <a:a name="DESC">
+                            <a:v>Check if OutPut is enabled</a:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID" value="e7fc4b4b-68a6-412a-befc-83473a0b779c" />
+                          <a:a name="__ORIGIN" value="Elektrobit" />
+                          <a:da name="DEFAULT" value="false" />
+                        </v:var>
+                        <v:var name="PortPinDirection" type="ENUMERATION">
+                            <a:a name="LABEL" value="PortPin Direction"/>
+                            <a:a name="DESC">
+                              <a:v>
+                                <![CDATA[EN:
+                                    <html>
+                                      <p>
+                                        Selects the direction of the pin (IN, OUT or both) that will be configured by Port_Init() function if the pin is configured as GPIO.
+                                        If the direction is not changeable, the value configured here is fixed. For the Alternative Function modes (PortPinMode is different than GPIO),
+                                        the setting in this enumeration control is kept in the port configuration structure and it is used when Port_SetPinMode() is called at runtime to change the mode of the pin to GPIO.
+                                        If your Alternative Function is an input functionality that requires the IBE bit to be set in the MSCR, please select the checkbox 'PortPinWithReadback.
+                                      </p>
+                                    </html>
+                                    ]]>
+                              </a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" value="ECUC:dafa241d-31e0-493f-8e05-3716f0464317"/>
+                            <a:da name="DEFAULT" value="PORT_PIN_IN"/>
+                            <a:da name="RANGE">
+                              <a:v>PORT_PIN_IN</a:v>
+                              <a:v>PORT_PIN_OUT</a:v>
+                            </a:da>
+                            <a:da name="INVALID" type="XPath">
+                              <a:tst expr="( (. != 'PORT_PIN_IN') and contains(concat(',',string(ecu:get(&apos;PortOnlyInputPins&apos;)),','),concat(',',node:fallback(../PortPinPcr,0),',')) )" true="For pads in Only Input mode the PortPinDirection value shall be set to PORT_PIN_IN" />
+                            </a:da>
+                        </v:var>
+                        <v:var name="PortPinWithReadBack" type="BOOLEAN">
+                          <a:a name="DESC">
+                            <a:v>EN: Enables/Disables the read back possibility for this pin. Checked box means the Read Back is enabled.
+                                                        When ReadBack is enabled, the Input Bufer of the pin gets enabled by setting the IBE bit in the MSCR (PCR) of the pin. Some alternate functions working as inputs might require having the IBE set to 1, so check this box in order to achieve this.</a:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID" value="e7fc4b4b-68a6-412a-befc-83473a0b779c" />
+                          <a:a name="__ORIGIN" value="Elektrobit" />
+                          <a:da name="DEFAULT" value="false" />
+                        </v:var>
+                        <v:var name="PortPinModeChangeable" type="BOOLEAN">
+                          <a:a name="LABEL" value="PortPin Mode Changeable" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v><![CDATA[EN:
+                                                            <html>
+                                                              <p>
+                                                                Parameter to indicate if the mode of a port pin is changeable during runtime.
+                                                                True: Port Pin mode changeable allowed.
+                                                                False: Port Pin mode changeable not permitted
+                                                              </p>
+                                                            </html>
+                                                            ]]></a:v>
+                          </a:a>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <icc:v class="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                            <icc:v class="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="UUID" value="ECUC:07555032-f5a6-2c08-1748-faa9669d4996" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="DEFAULT" value="true" />
+                        </v:var>
+                        <v:var name="PortPinDirectionChangeable" type="BOOLEAN">
+                          <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v><![CDATA[EN:
+                                                            <html>
+                                                              <p>
+                                                                Enable/Disable the changeability for the configured Pin.
+                                                                Checked box means the Direction Changeability is enabled.
+                                                                This is an implementation specific parameter.
+                                                              </p>
+                                                            </html>
+                                                            ]]></a:v>
+                          </a:a>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <icc:v class="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                            <icc:v class="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="UUID" value="ECUC:4e9f4de8-fc13-e3bd-27f9-ce554472182e" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="DEFAULT" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                        </v:var>
+                        <v:var name="PortPinSafeMode" type="BOOLEAN">
+                          <a:a name="DESC">
+                            <a:v>Safe Mode Control</a:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID" value="e7fc4b4b-68a6-412a-befc-83473a0b779c" />
+                          <a:a name="__ORIGIN" value="Elektrobit" />
+                          <a:da name="DEFAULT" value="false" />
+                        </v:var>
+                        <v:var name="PortPinModeSelector" type="BOOLEAN">
+                          <a:a name="DESC">
+                            <a:v>Safe Mode Control</a:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID" value="e7fc4b4b-68a6-412a-befc-83473a0b779c" />
+                          <a:a name="__ORIGIN" value="Elektrobit" />
+                          <a:da name="DEFAULT" value="false" />
+                        </v:var>
+                        <v:var name="PortPinDataOutput" type="ENUMERATION">
+                          <a:a name="DESC">
+                            <a:v>Select Pull Up or Pull Down</a:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID" value="348c8144-96a8-442a-8f94-b1428fb73a0f" />
+                          <a:a name="__ORIGIN" value="Elektrobit" />
+                          <a:da name="DEFAULT" value="Low" />
+                          <a:da name="RANGE">
+                            <a:v>Low</a:v>
+                            <a:v>High</a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="PortPinId" type="INTEGER">
+                          <a:a name="LABEL" value="PortPin Id" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v><![CDATA[EN:
+                                                        <html>
+                                                          <p>
+                                                            Pin Id of the port pin.
+                                                            This value will be assigned to the symbolic name
+                                                            derived from the port pin container short name.
+                                                          </p>
+                                                        </html>
+                                                        ]]></a:v>
+                          </a:a>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <icc:v class="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                            <icc:v class="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="UUID" value="ECUC:f5d289c9-9087-742c-ad27-310f30c21a7d" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="DEFAULT" type="XPath" expr="num:i((node:fallback(node:current()/../@index, '1') + 1) + (count(node:fallback(../../../../*/PortPin/*/PortPinId,text:split('1 2 3')))) - count(node:fallback(../../*,text:split('1 2 3'))))" />
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=1" />
+                            <a:tst expr="&lt;=342" />
+                          </a:da>
+                          <a:da name="RANGE" type="XPath">
+                            <a:tst expr="text:uniq((node:fallback(../../../../*/PortPin/*/PortPinId,text:split('1 2 3'))), node:fallback(.,1))" false="The value of PortPinId is not unique for this configuration." />
+                            <a:tst expr="node:fallback(., 1) &lt;= count(node:fallback(../../../../*/PortPin/*, text:split('1 2 3')))" false="The value of PortPinId can't be higher than the number of defined pins" />
+                          </a:da>
+                        </v:var>
+                        <v:var name="PortPinPcr" type="INTEGER">
+                          <a:a name="LABEL" value="PortPinPcr" />
+                          <a:a name="DESC">
+                            <a:v><![CDATA[EN:
+                                                            <html>
+                                                              <p>
+                                                                Pin Id of the port pin.This value will be assigned to the symbolic name derived from the port pin container short name.
+                                                              </p>
+                                                            </html>
+                                                            ]]></a:v>
+                          </a:a>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="Ccfc" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID" value="ECUC:01514c4d-a9bf-05ff-efe2-dabce07a2395" />
+                          <a:da name="DEFAULT" type="XPath" expr="num:i((node:fallback(node:current()/../@index, '0') + 0) + (count(node:fallback(../../../../*/PortPin/*/PortPinPcr,text:split('1 2 3')))) - count(node:fallback(../../*,text:split('1 2 3'))))" />
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;=0" />
+                            <a:tst expr="&lt;=340" />
+                          </a:da>
+                          <a:da name="RANGE" type="XPath">
+                            <a:tst expr="contains(concat(',',string(ecu:get(&apos;PortNotAvailablePins&apos;)),','),concat(',',node:fallback(.,0),','))" true ="Invalid Pin number for current package"/>
+                            <a:tst expr="text:uniq((node:fallback(../../../../*/PortPin/*/PortPinPcr,text:split('1 2 3'))), node:fallback(.,0))" false="PortPinPcr is repeated for two or more ports. Use the Calc button to calculate correct default value." />
+                            <a:tst expr="node:fallback(.,0) &gt; ecu:get('PortMaxPinNumber')" true="Invalid Pin number for current package" />
+                          </a:da>
+                        </v:var>
+                        <v:var name="PortPinLevelValue" type="ENUMERATION">
+                          <a:a name="LABEL" value="PortPin Level Value" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <a:v><![CDATA[
+                                      <html>
+                                        <p>
+                                          Port Pin Level value from Port pin list.
+                                        </p>
+                                      </html>
+                                    ]]></a:v>
+                          </a:a>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd">
+                            <icc:v class="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                            <icc:v class="PostBuild" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:a name="UUID" value="ECUC:5254775c-f65c-49df-31d4-158724c60f2f" xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" />
+                          <a:da name="DEFAULT" value="PORT_PIN_LEVEL_NOTCHANGED" />
+                          <a:da name="EDITABLE" value="false"/>
+                          <a:da name="RANGE">
+                            <a:v>PORT_PIN_LEVEL_HIGH</a:v>
+                            <a:v>PORT_PIN_LEVEL_LOW</a:v>
+                            <a:v>PORT_PIN_LEVEL_NOTCHANGED</a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="PortPinInitialMode" type="ENUMERATION">
+                          <a:a name="LABEL" value="PortPin Initial Mode"/>
+                          <a:a name="DESC">
+                            <a:v>
+                              <![CDATA[EN:
+                                  <html>
+                                    <p>
+                                      Port pin mode from mode list for use with Port_Init() function.
+                                      NOTE: This parameter is not used in the current implementation and is retained as per std
+                                      AUTOSAR_EcucParamDef.arxml file.
+                                    </p>
+                                  </html>
+                                  ]]>
+                            </a:v>
+                          </a:a>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:62444a8a-0d6a-43a5-b035-23fce3437ddf"/>
+                          <a:da name="DEFAULT" value="PORT_GPIO_MODE"/>
+                          <a:da name="READONLY" value="true"/>
+                          <a:da name="RANGE">
+                            <a:v>PORT_GPIO_MODE</a:v>
+                            <a:v>PORT_ALT1_FUNC_MODE</a:v>
+                            <a:v>PORT_ALT2_FUNC_MODE</a:v>
+                            <a:v>PORT_ALT3_FUNC_MODE</a:v>
+                            <a:v>PORT_ALT4_FUNC_MODE</a:v>
+                            <a:v>PORT_ALT5_FUNC_MODE</a:v>
+                            <a:v>PORT_ALT6_FUNC_MODE</a:v>
+                            <a:v>PORT_ALT7_FUNC_MODE</a:v>
+                            <a:v>PORT_ALT8_FUNC_MODE</a:v>
+                            <a:v>PORT_ALT9_FUNC_MODE</a:v>
+                            <a:v>PORT_ALT10_FUNC_MODE</a:v>
+                            <a:v>PORT_ALT11_FUNC_MODE</a:v>
+                            <a:v>PORT_ONLY_INPUT_MODE</a:v>
+                            <a:v>PORT_ALT13_FUNC_MODE</a:v>
+                            <a:v>PORT_ANALOG_INPUT_MODE</a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="PortPinMode" type="ENUMERATION">
+                          <a:a name="DESC">
+                            <a:v>EN: Selects the PORT pin mode from the modes list.
+                                     By default more than one mode are allowed. That way it is e.g. possible to combine DIO with another mode such as ICU.
+                                     For the Alternative Function modes (not a GPIO mode) the OUT direction is hw selected for that pin. If the IN direction is needed too, it can be set at runtime.
+                                     NOTE: To set the IN direction take care, please, that all the possible module inputs, possible as Alternative Functions for the pad mode,
+                                     are hw connected together, if IN direction is enabled, to the pad.</a:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID" value="6f3d0a60-c1b3-4fe7-8e89-091f40c8421e" />
+                          <a:a name="__ORIGIN" value="Elektrobit" />
+                          <a:da name="DEFAULT" value="PORT_PIN_MODE_GPIO" />
+                          <a:da name="RANGE" type="XPath">
+                            <a:tst expr="0 = 0" true="PORT_PIN_MODE_GPIO" />
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 0" true="GTM_GTM_TIM2_IN0_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 0" true="EMIOS_EMIOS_ODIS"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 0" true="GMAC_GETH_MDIOA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 0" true="GMAC_GETH_MDIO"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 0" true="GTM_GTM_TOUT9"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 0" true="DSPI3_DSPI3_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 0" true="DSPI3_DSPI3_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 0" true="LINFLEX3_LINFLEX3_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 0" true="DSPI3_DSPI3_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 0" true="M_CAN_5_CAN10_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 0" true="EMIOS_EMIOS_20"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 1" true="GTM_GTM_TIM2_IN1_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 1" true="EMIOS_EMIOS_0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 1" true="LINFLEX3_LINFLEX3_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 1" true="DSPI3_DSPI3_SINE"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 1" true="M_CAN_5_CAN10_RXDA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 1" true="PSI5_PSI5_RX0A"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 1" true="EMIOS_EMIOS_6_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 1" true="SENT_SENT_SENT0B"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 1" true="SENT_SENT_SPC0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 1" true="GTM_GTM_TOUT10"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 1" true="LINFLEX3_LINFLEX3_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 1" true="DSPI3_DSPI3_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 1" true="EMIOS_EMIOS_6_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 2" true="GTM_GTM_TIM2_IN1_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 2" true="SENT_SENT_SENT1B"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 2" true="GTM_GTM_TOUT11"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 2" true="DSPI3_DSPI3_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 2" true="DSPI3_DSPI3_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 2" true="PSI5_PSI5_TX0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 2" true="M_CAN_4_CAN03_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 2" true="DSPI19_DSPI19_PCS4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 2" true="EMIOS_EMIOS_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 3" true="GTM_GTM_TIM2_IN2_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 3" true="EMIOS_EMIOS_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 3" true="SAR_ADC_SDADC_EDSADC_ITR5F"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 3" true="PSI5_PSI5_RX1A"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 3" true="M_CAN_4_CAN03_RXDA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 3" true="PSI5S_PSI5S_RXA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 3" true="SENT_SENT_SENT2B"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 3" true="SENT_SENT_SPC2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 3" true="EMIOS_EMIOS_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 3" true="GTM_GTM_TOUT12"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 3" true="DSPI3_DSPI3_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 3" true="DSPI3_DSPI3_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 3" true="EMIOS_EMIOS_16"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 4" true="GTM_GTM_TIM2_IN3_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 4" true="SENT_SENT_SENT3B"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 4" true="SENT_SENT_SPC3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 4" true="LINFLEX10_LINFLEX10_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 4" true="GTM_GTM_TOUT13"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 4" true="PSI5S_PSI5S_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 4" true="M_CAN_6_CAN11_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 4" true="PSI5_PSI5_TX1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 4" true="EMIOS_EMIOS_17"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 5" true="GTM_GTM_TIM2_IN4_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 5" true="EMIOS_EMIOS_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 5" true="EMIOS_EMIOS_16"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 5" true="SENT_SENT_SENT4B"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 5" true="SENT_SENT_SPC4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 5" true="M_CAN_6_CAN11_RXDB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 5" true="GTM_GTM_DTMT1_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 5" true="GTM_GTM_TOUT14"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 5" true="DSPI19_DSPI19_PCS3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 5" true="EMIOS_EMIOS_18"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 6" true="GTM_GTM_TIM2_IN5_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 6" true="SAR_ADC_SDADC_EDSADC_ITR4F"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 6" true="SENT_SENT_SENT5B"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 6" true="SENT_SENT_SPC5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 6" true="LINFLEX5_LINFLEX5_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 6" true="GTM_GTM_TOUT15"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 6" true="EMIOS_19"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 7" true="GTM_GTM_TIM2_IN6_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 7" true="EMIOS_EMIOS_6_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 7" true="SENT_SENT_SENT6B"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 7" true="SENT_SENT_SPC6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 7" true="EMIOS_EMIOS_20"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 7" true="EMIOS_EMIOS_17"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 7" true="GTM_GTM_DTMT0_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 7" true="GTM_GTM_TOUT16"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 7" true="LINFLEX5_LINFLEX5_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 7" true="ACMP2_EVADC_FC2BFLOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 7" true="EMIOS_EMIOS_6_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 8" true="GTM_GTM_TIM2_IN7_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 8" true="EMIOS_EMIOS_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 8" true="SENT_SENT_SENT7B"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 8" true="SENT_SENT_SPC7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 8" true="EMIOS_EMIOS_18"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 8" true="LINFLEX10_LINFLEX10_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 8" true="GTM_GTM_TOUT17"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 8" true="DSPI19_DSPI19_PCS6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 8" true="LINFLEX10_LINFLEX10_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 8" true="EMIOS_EMIOS_16"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 9" true="GTM_GTM_TIM1_IN0_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 9" true="GTM_GTM_TIM0_IN0_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 9" true="EMIOS_EMIOS_16"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 9" true="SENT_SENT_SENT8B"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 9" true="SENT_SENT_SPC8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 9" true="EMIOS_EMIOS_19"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 9" true="SAR_ADC_SDADC_EDSADC_ITR3F"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 9" true="GTM_GTM_TOUT18"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 9" true="DSPI19_DSPI19_PCS7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 9" true="LINFLEX4_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 9" true="DSPI4_DSPI4_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 9" true="EMIOS_EMIOS_18"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 10" true="GTM_GTM_TIM1_IN1_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 10" true="GTM_GTM_TIM0_IN1_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 10" true="SENT_SENT_SENT9B"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 10" true="SENT_SENT_SPC9"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 10" true="GTM_GTM_TOUT19"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 10" true="DSPI4_DSPI4_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 10" true="DSPI4_DSPI4_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 10" true="EMIOS_EMIOS_21"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 11" true="GTM_GTM_TIM1_IN2_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 11" true="GTM_GTM_TIM0_IN2_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 11" true="GTM_GTM_TOUT20"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 11" true="DSPI4_DSPI4_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 11" true="DSPI4_DSPI4_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 12" true="GTM_GTM_TIM1_IN3_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 12" true="GTM_GTM_TIM0_IN3_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 12" true="LINFLEX4_LINFLEX4_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 12" true="DSPI4_DSPI4_SINA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 12" true="GTM_GTM_TOUT21"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 12" true="EMIOS_EMIOS_21"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 19" true="GTM_GTM_TIM2_IN0_14"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 19" true="GTM_GTM_TIM0_IN5_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 19" true="DSPI19_DSPI19_PCS0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 19" true="SAR_ADC_SDADC_EDSADC_ITR7F"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 19" true="M_CAN_2_CAN01_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 20" true="GTM_GTM_TIM2_IN1_14"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 20" true="GTM_GTM_TIM0_IN6_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 20" true="M_CAN_2_CAN01_RXDC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 20" true="SAR_ADC_SDADC_EDSADC_ITR7E"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 21" true="GTM_GTM_TIM2_IN3_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 21" true="GTM_GTM_TIM2_IN2_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 21" true="DSPI19_DSPI19_SINC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 21" true="LINFLEX9_LINFLEX9_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 21" true="DSPI19_DSPI19_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 22" true="GTM_GTM_TIM2_IN5_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 22" true="DSPI19_DSPI19_SINC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 22" true="DSPI19_DSPI19_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 23" true="GTM_GTM_TIM2_IN7_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 23" true="DSPI19_DSPI19_SCKC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 23" true="SAR_ADC_SDADC_EDSADC_ITR8F"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 23" true="LINFLEX9_LINFLEX9_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 23" true="LINFLEX9_LINFLEX9_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 23" true="DSPI19_DSPI19_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 32" true="GTM_GTM_TIM1_IN0_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 32" true="GTM_GTM_TIM0_IN0_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 32" true="EMIOS_EMIOS_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 32" true="LINFLEX2_LINFLEX2_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 32" true="DSPI2_DSPI2_SING"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 32" true="EMIOS_EMIOS_0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 32" true="GTM_GTM_DTMA0_0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 32" true="GTM_GTM_TOUT0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 32" true="LINFLEX2_LINFLEX2_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 32" true="DSPI2_DSPI2_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 32" true="DSPI19_DSPI19_PCS1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 32" true="M_CAN_1_CAN00_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 32" true="EMIOS_EMIOS_0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 33" true="GTM_GTM_TIM1_IN1_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 33" true="GTM_GTM_TIM0_IN1_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 33" true="LINFLEX2_LINFLEX2_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 33" true="DSPI2_DSPI2_SINB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 33" true="M_CAN_1_CAN00_RXDA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 33" true="GTM_GTM_TOUT1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 33" true="DSPI19_DSPI19_PCS2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 33" true="EMIOS_EMIOS_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 34" true="GTM_GTM_TIM1_IN2_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 34" true="GTM_GTM_TIM0_IN2_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 34" true="EMIOS_EMIOS_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 34" true="EMIOS_EMIOS_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 34" true="GTM_GTM_TOUT2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 34" true="LINFLEX1_LINFLEX1_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 34" true="DSPI1_DSPI1_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 34" true="DSPI19_DSPI19_PCS3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 34" true="PSI5_PSI5_TX0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 34" true="M_CAN_3_CAN02_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 34" true="EMIOS_EMIOS_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 35" true="GTM_GTM_TIM1_IN3_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 35" true="GTM_GTM_TIM0_IN3_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 35" true="M_CAN_3_CAN02_RXDB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 35" true="LINFLEX1_LINFLEX1_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 35" true="DSPI1_DSPI1_SING"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 35" true="PSI5_PSI5_RX0B"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 35" true="GTM_GTM_TOUT3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 35" true="DSPI2_DSPI2_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 35" true="DSPI2_DSPI2_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 35" true="DSPI19_DSPI19_PCS4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 35" true="EMIOS_EMIOS_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 36" true="GTM_GTM_TIM1_IN4_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 36" true="GTM_GTM_TIM0_IN4_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 36" true="EMIOS_EMIOS_16"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 36" true="DSPI19_DSPI19_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 36" true="EMIOS_EMIOS_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 36" true="I2C0_I2C0_SDAA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 36" true="I2C0_I2C0_SDA_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 36" true="M_CAN_6_CAN11_RXDA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 36" true="TTCAN0_CAN0_ECTT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 36" true="GTM_GTM_TOUT4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 36" true="DSPI2_DSPI2_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 36" true="DSPI2_DSPI2_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 36" true="DSPI19_DSPI19_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 36" true="PSI5S_PSI5S_CLK"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 36" true="EMIOS_EMIOS_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 37" true="GTM_GTM_TIM1_IN5_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 37" true="GTM_GTM_TIM0_IN5_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 37" true="I2C0_I2C0_SCLA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 37" true="I2C0_I2C0_SCL_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 37" true="PSI5_PSI5_RX1B"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 37" true="PSI5S_PSI5S_RXB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 37" true="DSPI19_DSPI19_SINA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 37" true="SENT_SENT_SENT3C"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 37" true="TTCAN0_CAN0_ECTT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 37" true="GTM_GTM_TOUT5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 37" true="M_CAN_6_CAN11_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 37" true="DSPI19_DSPI19_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 37" true="EMIOS_EMIOS_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 38" true="GTM_GTM_TIM1_IN6_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 38" true="GTM_GTM_TIM0_IN6_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 38" true="EMIOS_EMIOS_0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 38" true="SENT_SENT_SENT2C"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 38" true="SAR_ADC_SDADC_EDSADC_ITR5E"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 38" true="EMIOS_EMIOS_21"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 38" true="EMIOS_EMIOS_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 38" true="DSPI19_DSPI19_SINA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 38" true="GTM_GTM_TOUT6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 38" true="PSI5S_PSI5S_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 38" true="DSPI19_DSPI19_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 38" true="PSI5_PSI5_TX1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 38" true="EMIOS_EMIOS_0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 39" true="GTM_GTM_TIM1_IN7_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 39" true="GTM_GTM_TIM0_IN7_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 39" true="EMIOS_EMIOS_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 39" true="SENT_SENT_SENT1C"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 39" true="SENT_SENT_SPC1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 39" true="SAR_ADC_SDADC_EDSADC_ITR4E"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 39" true="EMIOS_EMIOS_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 39" true="DSPI19_DSPI19_SCKA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 39" true="GTM_GTM_TOUT7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 39" true="DSPI19_DSPI19_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 39" true="EMIOS_EMIOS_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 40" true="GTM_GTM_TIM2_IN0_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 40" true="EMIOS_EMIOS_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 40" true="SENT_SENT_SENT0C"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 40" true="EMIOS_EMIOS_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 40" true="SAR_ADC_SDADC_EDSADC_ITR3E"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 40" true="EMIOS_EMIOS_22"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 40" true="GTM_GTM_DTMA0_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 40" true="GTM_GTM_TOUT8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 40" true="DSPI19_DSPI19_PCS5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 40" true="GMAC_GETH_MDC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 40" true="EMIOS_EMIOS_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 41" true="GTM_GTM_TIM0_IN2_10"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 41" true="LINFLEX8_LINFLEX8_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 41" true="LINFLEX2_LINFLEX2_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 41" true="DSPI2_DSPI2_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 41" true="LINFLEX8_LINFLEX8_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 41" true="M_CAN_2_CAN01_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 42" true="GTM_GTM_TIM0_IN3_10"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 42" true="LINFLEX2_LINFLEX2_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 42" true="DSPI2_DSPI2_SINC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 42" true="M_CAN_2_CAN01_RXDE"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 42" true="LINFLEX8_LINFLEX8_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 43" true="GTM_GTM_TIM0_IN7_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 48" true="GTM_GTM_TIM1_IN4_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 48" true="GTM_GTM_TIM0_IN4_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 48" true="LINFLEX11_LINFLEX11_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 48" true="GMAC_GETH_RXERC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 48" true="GTM_GTM_TOUT102"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 48" true="LINFLEX11_LINFLEX11_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 49" true="GTM_GTM_TIM1_IN1_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 49" true="GTM_GTM_TIM0_IN1_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 49" true="DSPI17_DSPI17_SINA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 49" true="GTM_GTM_DTMT0_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 49" true="GTM_GTM_TOUT103"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 49" true="DSPI17_DSPI17_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 49" true="DSPI11_DSPI11_PCS1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 49" true="ACMP1_EVADC_FC1BFLOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 50" true="GTM_GTM_TIM1_IN2_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 50" true="GTM_GTM_TIM0_IN2_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 50" true="M_CAN_3_CAN02_RXDE"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 50" true="DSPI11_DSPI11_SIN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 50" true="DSPI17_DSPI17_SCKA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 50" true="EMIOS_EMIOS_24"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 50" true="GTM_GTM_TOUT104"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 50" true="DSPI17_DSPI17_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 50" true="DSPI11_DSPI11_PCS0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 50" true="ACMP3_EVADC_FC3BFLOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 51" true="GTM_GTM_TIM1_IN3_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 51" true="GTM_GTM_TIM0_IN3_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 51" true="DSPI17_DSPI17_SINA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 51" true="EMIOS_EMIOS_23"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 51" true="GTM_GTM_TOUT105"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 51" true="DSPI17_DSPI17_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 51" true="DSPI11_DSPI11_PCS0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 51" true="M_CAN_3_CAN02_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 52" true="GTM_GTM_TIM1_IN6_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 52" true="GTM_GTM_TIM0_IN6_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 52" true="DSPI17_DSPI17_SINC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 52" true="EMIOS_EMIOS_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 52" true="EMIOS_EMIOS_21"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 52" true="LINFLEX11_LINFLEX11_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 52" true="GTM_GTM_TOUT106"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 52" true="DSPI17_DSPI17_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 52" true="DSPI11_DSPI11_PCS0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 53" true="GTM_GTM_TIM1_IN2_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 53" true="GTM_GTM_TIM0_IN2_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 53" true="GTM_GTM_TOUT107"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 53" true="LINFLEX2_LINFLEX2_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 53" true="DSPI2_DSPI2_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 53" true="EMIOS_EMIOS_23"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 53" true="DSPI2_DSPI2_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 53" true="DSPI2_DSPI2_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 54" true="GTM_GTM_TIM1_IN3_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 54" true="GTM_GTM_TIM0_IN3_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 54" true="LINFLEX2_LINFLEX2_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 54" true="DSPI2_DSPI2_SIND"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 54" true="DSPI19_DSPI19_SINB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 54" true="GTM_GTM_TOUT108"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 54" true="DSPI2_DSPI2_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 54" true="DSPI2_DSPI2_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 54" true="DSPI19_DSPI19_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 54" true="EMIOS_EMIOS_22"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 54" true="DSPI17_DSPI17_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 54" true="ACMP7_EVADC_FC7BFLOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 55" true="GTM_GTM_TIM1_IN0_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 55" true="GTM_GTM_TIM0_IN0_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 55" true="DSPI19_DSPI19_SINB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 55" true="EMIOS_EMIOS_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 55" true="GTM_GTM_TOUT109"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 55" true="DSPI19_DSPI19_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 55" true="M_CAN_7_CAN12_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 56" true="GTM_GTM_TIM1_IN5_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 56" true="GTM_GTM_TIM0_IN5_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 56" true="M_CAN_7_CAN12_RXDB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 56" true="EMIOS_EMIOS_22"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 56" true="DSPI19_DSPI19_SCKB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 56" true="EMIOS_EMIOS_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 56" true="GTM_GTM_TOUT110"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 56" true="DSPI19_DSPI19_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 63" true="GTM_GTM_TIM2_IN0_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 63" true="LINFLEX3_LINFLEX3_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 63" true="DSPI3_DSPI3_SINB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 63" true="GTM_GTM_DTMA2_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 63" true="GTM_GTM_TOUT119"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 63" true="LINFLEX3_LINFLEX3_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 63" true="DSPI3_DSPI3_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 63" true="M_CAN_6_CAN11_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 63" true="GMAC_GETH_TXD3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 64" true="GTM_GTM_TIM2_IN1_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 64" true="GTM_GTM_TOUT120"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 64" true="DSPI3_DSPI3_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 64" true="DSPI3_DSPI3_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 64" true="LINFLEX3_LINFLEX3_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 64" true="DSPI3_DSPI3_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 64" true="M_CAN_7_CAN12_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 64" true="GMAC_GETH_TXD2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 65" true="GTM_GTM_TIM2_IN1_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 65" true="GTM_GTM_TOUT95"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 65" true="DSPI16_DSPI16_PCS5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 65" true="DSPI17_DSPI17_PCS5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 65" true="DSPI11_DSPI11_PCS1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 65" true="GMAC_GETH_TXD1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 65" true="EMIOS_EMIOS_20"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 66" true="GTM_GTM_TIM2_IN2_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 66" true="DSPI11_DSPI11_SIN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 66" true="DSPI17_DSPI17_SINB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 66" true="GTM_GTM_TOUT96"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 66" true="DSPI17_DSPI17_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 66" true="GMAC_GETH_TXD0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 66" true="EMIOS_EMIOS_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 67" true="GTM_GTM_TIM2_IN2_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 67" true="GMAC_GETH_RXCLKB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 67" true="GTM_GTM_TOUT121"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 67" true="DSPI3_DSPI3_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 67" true="DSPI3_DSPI3_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 67" true="M_CAN_8_CAN13_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 67" true="GMAC_GETH_TXER"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 67" true="GMAC_GETH_TXCLK"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 67" true="SSI0_SSI0_SCK"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 68" true="GTM_GTM_TIM2_IN3_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 68" true="GMAC_GETH_TXCLKA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 68" true="GMAC_GETH_GREFCLK"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 68" true="GTM_GTM_TOUT122"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 68" true=" SSI0_SSI0_CS"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 69" true="GTM_GTM_TIM2_IN3_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 69" true="DSPI17_DSPI17_SCKB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 69" true="GTM_GTM_TOUT97"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 69" true="DSPI17_DSPI17_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 69" true="DSPI11_DSPI11_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 69" true="GMAC_GETH_TXEN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 69" true="EMIOS_EMIOS_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 69" true=" SSI0_SSI0_DATA0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 69" true=" SSI0_SSI0_DATA0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 70" true="GTM_GTM_TIM2_IN4_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 70" true="GMAC_GETH_RXD3A"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 70" true="M_CAN_6_CAN11_RXDD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 70" true="GTM_GTM_TOUT123"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 70" true=" SSI0_SSI0_DATA1_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 70" true=" SSI0_SSI0_DATA1_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 71" true="GTM_GTM_TIM2_IN5_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 71" true="GMAC_GETH_RXD2A"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 71" true="M_CAN_7_CAN12_RXDD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 71" true="GTM_GTM_TOUT124"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 71" true=" SSI0_SSI0_DATA2_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 71" true=" SSI0_SSI0_DATA2_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 72" true="GTM_GTM_TIM2_IN4_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 72" true="DSPI17_DSPI17_SINB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 72" true="GMAC_GETH_RXD1A"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 72" true="GTM_GTM_TOUT98"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 72" true="DSPI17_DSPI17_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 72" true="DSPI11_DSPI11_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 72" true="EMIOS_EMIOS_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 72" true=" SSI0_SSI0_DATA3_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 72" true=" SSI0_SSI0_DATA3_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 73" true="GTM_GTM_TIM2_IN5_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 73" true="GTM_GTM_TIM2_IN0_9"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 73" true="M_CAN_4_CAN03_RXDD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 73" true="LINFLEX1_LINFLEX1_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 73" true="DSPI1_DSPI1_SINE"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 73" true="DSPI11_DSPI11_SIN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 73" true="GMAC_GETH_RXD0A"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 73" true="DSPI17_DSPI17_PCS0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 73" true="GTM_GTM_TOUT99"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 73" true="DSPI16_DSPI16_PCS3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 73" true="DSPI17_DSPI17_PCS3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 73" true="EMIOS_EMIOS_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 74" true="GTM_GTM_TIM2_IN6_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 74" true="GMAC_GETH_RXDVA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 74" true="GMAC_GETH_CRSB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 74" true="GTM_GTM_TOUT100"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 74" true="DSPI16_DSPI16_PCS4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 74" true="DSPI17_DSPI17_PCS4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 74" true="DSPI11_DSPI11_PCS0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 74" true="EMIOS_EMIOS_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 75" true="GTM_GTM_TIM2_IN7_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 75" true="GMAC_GETH_REFCLKA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 75" true="GMAC_GETH_TXCLKB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 75" true="GMAC_GETH_RXCLKA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 75" true="GTM_GTM_TOUT101"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 75" true="LINFLEX1_LINFLEX1_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 75" true="DSPI1_DSPI1_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 75" true="GTM_GTM_CLK2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 75" true="M_CAN_4_CAN03_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 75" true="EMIOS_EMIOS_0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 76" true="GTM_GTM_TIM2_IN6_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 76" true="GMAC_GETH_RXERA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 76" true="M_CAN_8_CAN13_RXDD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 76" true="GTM_GTM_TOUT125"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 77" true="GTM_GTM_TIM2_IN7_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 77" true="GMAC_GETH_RXDVB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 77" true="GMAC_GETH_CRSA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 77" true="GTM_GTM_TOUT126"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 78" true="GTM_GTM_TIM0_IN7_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 78" true="GMAC_GETH_COLA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 78" true="GTM_GTM_TOUT127"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 79" true="M_CAN_1_CAN00_RXDC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 79" true="GMAC_GETH_RXCLKC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 79" true="GTM_GTM_TOUT128"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 79" true="GMAC_GETH_MDC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 80" true="GMAC_GETH_MDIOC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 80" true="GMAC_GETH_MDIO"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 80" true="GTM_GTM_TOUT129"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 80" true="DSPI3_DSPI3_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 80" true="DSPI3_DSPI3_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 80" true="M_CAN_1_CAN00_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 81" true="GTM_GTM_TIM2_IN5_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 81" true="LINFLEX10_LINFLEX10_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 81" true="GTM_GTM_TOUT91"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 81" true="LINFLEX10_LINFLEX10_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 81" true="DSPI11_DSPI11_PCS1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 81" true="M_CAN_5_CAN10_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 82" true="GTM_GTM_TIM2_IN6_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 82" true="I2C0_I2C0_SCLB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 82" true="I2C0_I2C0_SCL_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 82" true="M_CAN_5_CAN10_RXDD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 82" true="LINFLEX10_LINFLEX10_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 82" true="GTM_GTM_TOUT92"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 83" true="GTM_GTM_TIM2_IN7_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 83" true="I2C0_I2C0_SDAB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 83" true="I2C0_I2C0_SDA_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 83" true="GTM_GTM_TOUT93"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 84" true="GTM_GTM_TIM2_IN0_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 84" true="GTM_GTM_TOUT94"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 96" true="GTM_GTM_TIM1_IN3_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 96" true="GTM_GTM_TIM0_IN3_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 96" true="GTM_GTM_TOUT80"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 96" true="LINFLEX0_LINFLEX0_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 96" true="M_CAN_2_CAN01_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 96" true="EMIOS_EMIOS_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 97" true="GTM_GTM_TIM1_IN4_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 97" true="GTM_GTM_TIM0_IN4_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 97" true="LINFLEX0_LINFLEX0_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 97" true="M_CAN_2_CAN01_RXDB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 97" true="GTM_GTM_TOUT81"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 97" true="LINFLEX0_LINFLEX0_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 97" true="EMIOS_EMIOS_20"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 98" true="GTM_GTM_TIM1_IN5_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 98" true="GTM_GTM_TIM0_IN5_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 98" true="GTM_GTM_TOUT82"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 98" true="LINFLEX2_LINFLEX2_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 98" true="DSPI2_DSPI2_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 98" true="DSPI18_DSPI18_PCS1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 98" true="DSPI2_DSPI2_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 98" true="DSPI2_DSPI2_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 99" true="GTM_GTM_TIM1_IN6_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 99" true="GTM_GTM_TIM0_IN6_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 99" true="LINFLEX2_LINFLEX2_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 99" true="DSPI2_DSPI2_SINA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 99" true="DSPI11_DSPI11_SIN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 99" true="GTM_GTM_TOUT83"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 99" true="LINFLEX2_LINFLEX2_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 99" true="DSPI2_DSPI2_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 99" true="DSPI18_DSPI18_PCS3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 99" true="DSPI1_DSPI1_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 99" true="DSPI1_DSPI1_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 99" true="DSPI3_DSPI3_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 99" true="DSPI3_DSPI3_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 100" true="GTM_GTM_TIM1_IN7_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 100" true="GTM_GTM_TIM0_IN7_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 100" true="GTM_GTM_DTMT0_0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 100" true="GTM_GTM_TOUT84"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 100" true="GMAC_GETH_PPS"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 101" true="GTM_GTM_TIM1_IN0_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 101" true="GTM_GTM_TIM0_IN0_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 101" true="GTM_GTM_DTMA2_0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 101" true="GTM_GTM_TOUT85"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 102" true="GTM_GTM_TIM1_IN1_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 102" true="GTM_GTM_TIM0_IN1_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 102" true="GTM_GTM_TOUT86"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 102" true="DSPI18_DSPI18_PCS2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 102" true="M_CAN_8_CAN13_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 103" true="GTM_GTM_TIM1_IN0_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 103" true="GTM_GTM_TIM0_IN0_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 103" true="M_CAN_5_CAN10_RXDB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 103" true="M_CAN_8_CAN13_RXDA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 103" true="LINFLEX9_LINFLEX9_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 103" true="GTM_GTM_TOUT87"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 103" true="DSPI18_DSPI18_PCS4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 103" true="LINFLEX9_LINFLEX9_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 104" true="GTM_GTM_TIM2_IN2_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 104" true="M_CAN_3_CAN02_RXDD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 104" true="LINFLEX1_LINFLEX1_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 104" true="DSPI1_DSPI1_SIND"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 104" true="GTM_GTM_TOUT88"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 105" true="GTM_GTM_TIM2_IN3_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 105" true="LINFLEX9_LINFLEX9_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 105" true="GTM_GTM_TOUT89"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 105" true="DSPI11_DSPI11_PCS1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 105" true="M_CAN_5_CAN10_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 106" true="GTM_GTM_TIM2_IN4_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 106" true="GTM_GTM_TOUT90"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 106" true="DSPI11_DSPI11_PCS0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 106" true="LINFLEX1_LINFLEX1_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 106" true="DSPI1_DSPI1_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 106" true="M_CAN_3_CAN02_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 112" true="GTM_GTM_TIM2_IN3_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 112" true="GTM_GTM_TOUT71"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 112" true="LINFLEX1_LINFLEX1_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 112" true="DSPI1_DSPI1_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 112" true="M_CAN_3_CAN02_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 112" true="DSPI1_DSPI1_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 112" true="DSPI1_DSPI1_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 113" true="GTM_GTM_TIM2_IN4_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 113" true="M_CAN_3_CAN02_RXDA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 113" true="LINFLEX1_LINFLEX1_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 113" true="DSPI1_DSPI1_SINA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 113" true="DSPI18_DSPI18_PCS0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 113" true="GTM_GTM_TOUT72"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 113" true="LINFLEX1_LINFLEX1_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 113" true="DSPI1_DSPI1_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 113" true="DSPI18_DSPI18_PCS5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 114" true="GTM_GTM_TIM2_IN5_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 114" true="DSPI18_DSPI18_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 114" true="DSPI18_DSPI18_SINE"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 114" true="GTM_GTM_TOUT73"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 114" true="LINFLEX0_LINFLEX0_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 114" true="DSPI18_DSPI18_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 114" true="M_CAN_2_CAN01_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 115" true="GTM_GTM_TIM2_IN6_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 115" true="M_CAN_2_CAN01_RXDA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 115" true="LINFLEX0_LINFLEX0_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 115" true="DSPI18_DSPI18_SCKA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 115" true="GTM_GTM_TOUT74"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 115" true="LINFLEX0_LINFLEX0_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 115" true="DSPI18_DSPI18_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 115" true="DSPI11_DSPI11_PCS1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 116" true="GTM_GTM_TIM2_IN7_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 116" true="I2C0_I2C0_SCLC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 116" true="I2C0_I2C0_SCL_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 116" true="DSPI18_DSPI18_SINA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 116" true="GTM_GTM_TOUT75"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 116" true="LINFLEX1_LINFLEX1_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 116" true="DSPI1_DSPI1_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 116" true="DSPI18_DSPI18_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 116" true="EMIOS_EMIOS_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 117" true="GTM_GTM_TIM2_IN0_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 117" true="LINFLEX1_LINFLEX1_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 117" true="DSPI1_DSPI1_SINB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 117" true="I2C0_I2C0_SDAC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 117" true="I2C0_I2C0_SDA_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 117" true="DSPI18_DSPI18_SINA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 117" true="GTM_GTM_TOUT76"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 117" true="LINFLEX1_LINFLEX1_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 117" true="DSPI1_DSPI1_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 117" true="DSPI18_DSPI18_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 117" true="DSPI11_DSPI11_PCS0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 117" true="EMIOS_EMIOS_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 118" true="GTM_GTM_TIM2_IN2_14"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 118" true="GTM_GTM_TIM1_IN0_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 118" true="GTM_GTM_TIM0_IN0_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 118" true="DSPI18_DSPI18_SINB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 118" true="GTM_GTM_TOUT77"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 118" true="LINFLEX3_LINFLEX3_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 118" true="DSPI3_DSPI3_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 118" true="DSPI18_DSPI18_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 118" true="DSPI18_DSPI18_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 118" true="DSPI3_DSPI3_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 118" true="DSPI3_DSPI3_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 118" true="EMIOS_EMIOS_0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 119" true="GTM_GTM_TIM1_IN1_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 119" true="GTM_GTM_TIM0_IN1_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 119" true="LINFLEX3_LINFLEX3_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 119" true="DSPI3_DSPI3_SINA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 119" true="DSPI18_DSPI18_SINB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 119" true="GTM_GTM_TOUT78"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 119" true="LINFLEX3_LINFLEX3_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 119" true="DSPI3_DSPI3_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 119" true="DSPI18_DSPI18_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 119" true="EMIOS_EMIOS_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 120" true="GTM_GTM_TIM1_IN2_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 120" true="GTM_GTM_TIM0_IN2_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 120" true="DSPI18_DSPI18_SCKB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 120" true="GTM_GTM_TOUT79"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 120" true="DSPI18_DSPI18_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 120" true="DSPI3_DSPI3_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 120" true="DSPI3_DSPI3_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 120" true="EMIOS_EMIOS_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 127" true="GTM_GTM_TIM1_IN6_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 127" true="GTM_GTM_TIM1_IN4_9"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 127" true="GTM_GTM_TIM0_IN6_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 127" true="M_CAN_4_CAN03_RXDC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 127" true="GTM_GTM_TOUT59"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 127" true="LINFLEX3_LINFLEX3_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 127" true="DSPI3_DSPI3_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 127" true="DSPI3_DSPI3_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 127" true="DSPI3_DSPI3_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 128" true="GTM_GTM_TIM2_IN3_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 128" true="GTM_GTM_DTMA1_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 128" true="GTM_GTM_TOUT60"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 130" true="GTM_GTM_TIM2_IN4_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 130" true="LINFLEX3_LINFLEX3_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 130" true="DSPI3_DSPI3_SINC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 130" true="EMIOS_EMIOS_24_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 130" true="EMIOS_EMIOS_24_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 130" true="GTM_GTM_TOUT61"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 130" true="LINFLEX3_LINFLEX3_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 130" true="DSPI3_DSPI3_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 130" true="M_CAN_4_CAN03_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 131" true="GTM_GTM_TIM2_IN6_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 131" true="M_CAN_7_CAN12_RXDA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 131" true="LINFLEX9_LINFLEX9_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 131" true="GTM_GTM_TOUT62"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 132" true="GTM_GTM_TIM2_IN7_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 132" true="GTM_GTM_TIM1_IN5_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 132" true="M_CAN_1_CAN00_RXDB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 132" true="LINFLEX9_LINFLEX9_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 132" true="GTM_GTM_TOUT63"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 132" true="LINFLEX9_LINFLEX9_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 132" true="M_CAN_7_CAN12_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 132" true="EMIOS_EMIOS_21"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 133" true="GTM_GTM_TIM1_IN7_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 133" true="GTM_GTM_TIM0_IN7_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 133" true="GTM_GTM_TOUT64"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 133" true="DSPI1_DSPI1_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 133" true="DSPI1_DSPI1_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 133" true="DSPI16_DSPI16_PCS0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 133" true="DSPI17_DSPI17_PCS0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 133" true="M_CAN_1_CAN00_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 133" true="EMIOS_EMIOS_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 134" true="GTM_GTM_TIM2_IN5_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 134" true="M_CAN_4_CAN03_RXDE"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 134" true="LINFLEX1_LINFLEX1_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 134" true="DSPI1_DSPI1_SINC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 134" true="DSPI16_DSPI16_PCS0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 134" true="GTM_GTM_TOUT65"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 134" true="DSPI16_DSPI16_PCS1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 134" true="DSPI17_DSPI17_PCS1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 134" true="EMIOS_EMIOS_16"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 135" true="GTM_GTM_TIM2_IN6_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 135" true="GTM_GTM_TOUT66"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 135" true="LINFLEX1_LINFLEX1_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 135" true="DSPI1_DSPI1_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 135" true="DSPI16_DSPI16_PCS6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 135" true="DSPI18_DSPI18_PCS7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 135" true="M_CAN_4_CAN03_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 135" true="DSPI1_DSPI1_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 135" true="DSPI1_DSPI1_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 135" true="EMIOS_EMIOS_18"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 136" true="GTM_GTM_TIM2_IN7_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 136" true="DSPI16_DSPI16_SCKA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 136" true="GTM_GTM_TOUT67"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 136" true="DSPI16_DSPI16_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 136" true="EMIOS_EMIOS_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 137" true="GTM_GTM_TIM2_IN0_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 137" true="DSPI16_DSPI16_SINA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 137" true="GTM_GTM_TOUT68"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 137" true="DSPI16_DSPI16_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 137" true="EMIOS_EMIOS_17"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 138" true="GTM_GTM_TIM2_IN1_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 138" true="DSPI16_DSPI16_PCS0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 138" true="GTM_GTM_TOUT69"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 138" true="DSPI16_DSPI16_PCS2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 138" true="DSPI17_DSPI17_PCS2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 138" true="DSPI16_DSPI16_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 138" true="EMIOS_EMIOS_19"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 139" true="GTM_GTM_TIM2_IN2_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 139" true="DSPI16_DSPI16_SINA"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 139" true="GTM_GTM_TOUT70"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 139" true="DSPI16_DSPI16_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 140" true="GTM_GTM_TIM2_IN4_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 140" true="LINFLEX11_LINFLEX11_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 140" true="GTM_GTM_TOUT51"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 140" true="LINFLEX11_LINFLEX11_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 141" true="GTM_GTM_TIM2_IN5_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 141" true="LINFLEX11_LINFLEX11_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 141" true="GTM_GTM_TOUT52"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 142" true="GTM_GTM_TIM1_IN0_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 142" true="GTM_GTM_TIM0_IN0_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 142" true="LINFLEX11_LINFLEX11_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 142" true="GTM_GTM_DTMA1_0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 142" true="GTM_GTM_TOUT53"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 142" true="DSPI3_DSPI3_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 142" true="DSPI3_DSPI3_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 142" true="GMAC_GETH_MDC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 143" true="GTM_GTM_TIM1_IN1_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 143" true="GTM_GTM_TIM0_IN1_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 143" true="GMAC_GETH_MDIOD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 143" true="GMAC_GETH_MDIO"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 143" true="GTM_GTM_TOUT54"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 144" true="GTM_GTM_TIM1_IN2_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 144" true="GTM_GTM_TIM0_IN2_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 144" true="GTM_GTM_TOUT55"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 145" true="GTM_GTM_TIM1_IN3_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 145" true="GTM_GTM_TIM0_IN3_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 145" true="LINFLEX11_LINFLEX11_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 145" true="GTM_GTM_TOUT56"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 145" true="DSPI3_DSPI3_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 145" true="DSPI3_DSPI3_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 145" true="LINFLEX11_LINFLEX11_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 146" true="GTM_GTM_TIM1_IN4_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 146" true="GTM_GTM_TIM0_IN4_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 146" true="LINFLEX3_LINFLEX3_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 146" true="DSPI3_DSPI3_SINF"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 146" true="JTAG_TDI"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 146" true="GTM_GTM_TOUT57"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 146" true="DSPI3_DSPI3_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 146" true="DSPI3_DSPI3_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 146" true="EMIOS_EMIOS_22"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 147" true="GTM_GTM_TIM1_IN5_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 147" true="GTM_GTM_TIM0_IN5_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 147" true="EMIOS_EMIOS_23_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 147" true="GMAC_GETH_RXERB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 147" true="GTM_GTM_TOUT58"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 147" true="LINFLEX3_LINFLEX3_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 147" true="DSPI3_DSPI3_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 147" true="DSPI3_DSPI3_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 147" true="DSPI3_DSPI3_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 147" true="EMIOS_EMIOS_23_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 147" true="JTAG_TDO"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 148" true="GTM_GTM_TIM1_IN1_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 148" true="GTM_GTM_TIM0_IN1_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 148" true="LINFLEX6_LINFLEX6_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 148" true="GTM_GTM_TOUT47"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 148" true="LINFLEX6_LINFLEX6_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 149" true="GTM_GTM_TIM1_IN0_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 149" true="GTM_GTM_TIM0_IN0_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 149" true="LINFLEX7_LINFLEX7_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 149" true="GTM_GTM_TOUT48"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 149" true="LINFLEX7_LINFLEX7_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 150" true="GTM_GTM_TIM1_IN3_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 150" true="GTM_GTM_TIM0_IN3_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 150" true="GTM_GTM_TOUT49"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 150" true="LINFLEX5_LINFLEX5_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 151" true="GTM_GTM_TIM1_IN4_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 151" true="GTM_GTM_TIM0_IN4_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 151" true="LINFLEX5_LINFLEX5_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 151" true="GTM_GTM_TOUT50"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 152" true="LINFLEX7_LINFLEX7_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 152" true="DSPI4_DSPI4_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 152" true="DSPI4_DSPI4_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 152" true="M_CAN_8_CAN13_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 153" true="DSPI16_DSPI16_SINC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 153" true="M_CAN_8_CAN13_RXDC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 153" true="LINFLEX4_LINFLEX4_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 153" true="DSPI4_DSPI4_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 153" true="DSPI16_DSPI16_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 154" true="GTM_GTM_TIM2_IN6_14"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 154" true="DSPI16_DSPI16_SINC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 154" true="LINFLEX4_LINFLEX4_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 154" true="DSPI4_DSPI4_SINC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 154" true="DSPI16_DSPI16_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 155" true="DSPI16_DSPI16_SCKC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 155" true="DSPI4_DSPI4_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 155" true="DSPI4_DSPI4_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 155" true="DSPI16_DSPI16_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 156" true="DSPI16_DSPI16_SCKB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 156" true="DSPI16_DSPI16_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 157" true="DSPI16_DSPI16_SINB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 157" true="LINFLEX4_LINFLEX4_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 157" true="DSPI4_DSPI4_SIND"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 157" true="DSPI16_DSPI16_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 158" true="DSPI16_DSPI16_SINB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 158" true="LINFLEX4_LINFLEX4_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 158" true="DSPI4_DSPI4_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 158" true="DSPI16_DSPI16_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 159" true="DSPI4_DSPI4_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 159" true="DSPI4_DSPI4_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 160" true="GTM_GTM_TIM1_IN5_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 160" true="GTM_GTM_TIM0_IN5_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 160" true="M_CAN_5_CAN10_RXDC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 160" true="GTM_GTM_TOUT41"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 161" true="GTM_GTM_TIM1_IN6_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 161" true="GTM_GTM_TIM0_IN6_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 161" true="LINFLEX6_LINFLEX6_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 161" true="GTM_GTM_TOUT42"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 161" true="GTM_GTM_CLK0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 161" true="M_CAN_5_CAN10_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 162" true="GTM_GTM_TIM1_IN6_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 162" true="GTM_GTM_TIM0_IN6_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 162" true="LINFLEX7_LINFLEX7_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 162" true="GTM_GTM_TOUT43"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 162" true="M_CAN_7_CAN12_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 163" true="GTM_GTM_TIM1_IN7_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 163" true="GTM_GTM_TIM0_IN7_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 163" true="LINFLEX6_LINFLEX6_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 163" true="M_CAN_7_CAN12_RXDC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 163" true="GTM_GTM_TOUT44"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 163" true="LINFLEX7_LINFLEX7_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 164" true="GTM_GTM_TIM1_IN7_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 164" true="GTM_GTM_TIM0_IN7_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 164" true="GTM_GTM_TOUT45"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 165" true="GTM_GTM_TIM1_IN2_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 165" true="GTM_GTM_TIM0_IN2_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 165" true="GTM_GTM_TOUT46"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 165" true="LINFLEX6_LINFLEX6_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 166" true="GTM_GTM_TIM1_IN2_10"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 166" true="M_CAN_6_CAN11_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 167" true="GTM_GTM_TIM1_IN3_10"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 167" true="M_CAN_6_CAN11_RXDC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 233" true="GTM_GTM_TIM2_IN2_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 233" true="GTM_GTM_TOUT36"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 234" true="GTM_GTM_TOUT37"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 235" true="GTM_GTM_TIM1_IN3_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 235" true="GTM_GTM_TIM0_IN3_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 235" true="M_CAN_4_CAN03_RXDB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 235" true="LINFLEX3_LINFLEX3_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 235" true="DSPI3_DSPI3_SIND"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 235" true="GTM_GTM_TOUT38"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 235" true="LINFLEX3_LINFLEX3_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 235" true="DSPI3_DSPI3_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 236" true="GTM_GTM_TIM1_IN4_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 236" true="GTM_GTM_TIM0_IN4_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 236" true="GTM_GTM_TOUT39"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 236" true="LINFLEX3_LINFLEX3_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 236" true="DSPI3_DSPI3_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 236" true="DSPI3_DSPI3_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 236" true="DSPI3_DSPI3_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 236" true="M_CAN_4_CAN03_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 237" true="GTM_GTM_TIM1_IN5_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 237" true="GTM_GTM_TIM0_IN5_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 237" true="GTM_GTM_TOUT40"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 237" true="GTM_GTM_CLK1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 237" true="EMIOS_EMIOS_20"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 238" true="LINFLEX2_LINFLEX2_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 238" true="DSPI2_DSPI2_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 238" true="M_CAN_3_CAN02_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 239" true="M_CAN_3_CAN02_RXDC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 239" true="LINFLEX2_LINFLEX2_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 239" true="DSPI2_DSPI2_SINF"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 239" true="LINFLEX6_LINFLEX6_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 240" true="LINFLEX6_LINFLEX6_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 240" true="SPORTA_SPORTA_CLK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 240" true="SPORTA_SPORTA_CLK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 241" true="GTM_GTM_TIM1_IN4_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 241" true="GTM_GTM_TIM0_IN4_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 241" true="SAR_ADC_SDADC_EDSADC_ITR0E"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 241" true="GTM_GTM_DTMT1_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 241" true="GTM_GTM_TOUT22"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 241" true="LINFLEX5_LINFLEX5_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 241" true="ACMP2_EVADC_FC2BFLOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 241" true="SPORTA_SPORTA_FS_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 241" true="SPORTA_SPORTA_FS_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 242" true="GTM_GTM_TIM1_IN5_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 242" true="GTM_GTM_TIM0_IN5_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 242" true="SAR_ADC_SDADC_EDSADC_ITR1E"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 242" true="PSI5_PSI5_RX0C"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 242" true="SENT_SENT_SENT9C"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 242" true="LINFLEX8_LINFLEX8_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 242" true="GTM_GTM_TOUT23"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 242" true="DSPI3_DSPI3_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 242" true="DSPI3_DSPI3_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 242" true="DSPI18_DSPI18_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 242" true="SPORTA_SPORTA_D0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 242" true="SPORTA_SPORTA_D0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 243" true="GTM_GTM_TIM1_IN6_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 243" true="GTM_GTM_TIM0_IN6_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 243" true="SAR_ADC_SDADC_EDSADC_ITR2E"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 243" true="SENT_SENT_SENT8C"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 243" true="GTM_GTM_TOUT24"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 243" true="DSPI3_DSPI3_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 243" true="DSPI3_DSPI3_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 243" true="PSI5_PSI5_TX0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 243" true="ACMP3_EVADC_FC3BFLOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 243" true="SPORTA_SPORTA_D1_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 243" true="SPORTA_SPORTA_D1_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 244" true="GTM_GTM_TIM1_IN7_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 244" true="GTM_GTM_TIM0_IN7_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 244" true="PSI5_PSI5_RX1C"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 244" true="SENT_SENT_SENT7C"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 244" true="GTM_GTM_TOUT25"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 244" true="SPORTA_SPORTA_TDV"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 245" true="GTM_GTM_TIM1_IN0_10"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 245" true="GTM_GTM_TIM0_IN0_10"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 245" true="SAR_ADC_SDADC_EDSADC_ITR0F"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 245" true="SENT_SENT_SENT6C"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 245" true="EMIOS_EMIOS_ODIS"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 245" true="LINFLEX5_LINFLEX5_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 245" true="GTM_GTM_TOUT26"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 245" true="PSI5_PSI5_TX1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 245" true="CAN13_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 245" true="SPORTB_SPORTB_CLK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 245" true="SPORTB_SPORTB_CLK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 246" true="GTM_GTM_TIM1_IN1_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 246" true="GTM_GTM_TIM0_IN1_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 246" true="SAR_ADC_SDADC_EDSADC_ITR1F"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 246" true="PSI5S_PSI5S_RXC"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 246" true="EMIOS_EMIOS_19"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 246" true="SENT_SENT_SENT5C"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 246" true="M_CAN_8_CAN13_RXDB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 246" true="GTM_GTM_TOUT27"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 246" true="DSPI16_DSPI16_PCS7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 246" true="DSPI17_DSPI17_PCS7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 247" true="GTM_GTM_TIM1_IN2_9"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 247" true="GTM_GTM_TIM0_IN2_9"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 247" true="SAR_ADC_SDADC_EDSADC_ITR2F"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 247" true="SENT_SENT_SENT4C"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 247" true="EMIOS_EMIOS_18"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 247" true="LINFLEX8_LINFLEX8_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 247" true="GTM_GTM_TOUT28"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 247" true="DSPI2_DSPI2_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 247" true="DSPI2_DSPI2_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 247" true="EVADC_FC1BFLOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 247" true="PSI5S_PSI5S_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 247" true="SPORTB_SPORTB_D0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 247" true="SPORTB_SPORTB_D0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 248" true="GTM_GTM_TIM1_IN3_9"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 248" true="GTM_GTM_TIM0_IN3_9"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 248" true="M_CAN_1_CAN00_RXDE"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 248" true="EMIOS_EMIOS_20"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 248" true="EMIOS_EMIOS_17"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 248" true="GTM_GTM_TOUT29"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 248" true="DSPI2_DSPI2_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 248" true="DSPI2_DSPI2_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 248" true="LINFLEX8_LINFLEX8_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 248" true="ACMP3_EVADC_FC3BFLOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 248" true="SPORTB_SPORTB_D1_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 248" true="SPORTB_SPORTB_D1_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 249" true="GTM_GTM_TIM1_IN4_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 249" true="GTM_GTM_TIM0_IN4_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 249" true="LINFLEX2_LINFLEX2_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 249" true="DSPI2_DSPI2_SINE"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 249" true="GTM_GTM_TOUT30"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 249" true="LINFLEX2_LINFLEX2_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 249" true="DSPI2_DSPI2_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 249" true="M_CAN_1_CAN00_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 249" true="EMIOS_EMIOS_19"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 249" true="FCCU_FCCU_EIN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 249" true="FCCU_FCCU_EOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 249" true="SPORTB_SPORTB_TDV"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 250" true="GTM_GTM_TIM1_IN1_9"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 250" true="GTM_GTM_TIM0_IN1_9"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 250" true="GTM_GTM_TOUT31"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 250" true="LINFLEX2_LINFLEX2_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 250" true="DSPI2_DSPI2_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 250" true="DSPI2_DSPI2_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 250" true="DSPI2_DSPI2_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 250" true="M_CAN_2_CAN01_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 250" true="LINFLEX0_LINFLEX0_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 250" true="EMIOS_EMIOS_18"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 250" true="SPORTB_SPORTB_FS_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 250" true="SPORTB_SPORTB_FS_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 250" true="PWM_PWM0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 250" true="PWM_PWM0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 251" true="GTM_GTM_TIM1_IN0_9"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 251" true="GTM_GTM_TIM0_IN0_9"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 251" true="M_CAN_2_CAN01_RXDD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 251" true="LINFLEX0_LINFLEX0_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 251" true="GTM_GTM_TOUT32"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 251" true="DSPI17_DSPI17_PCS6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 251" true="DSPI1_DSPI1_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 251" true="DSPI1_DSPI1_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 251" true="PSI5S_PSI5S_CLK"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 251" true="EMIOS_EMIOS_17"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 251" true="FCCU_FCCU_EIN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 251" true="FCCU_FCCU_EOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 252" true="GTM_GTM_TIM1_IN2_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 252" true="GTM_GTM_TIM0_IN2_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 252" true="GTM_GTM_TOUT33"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 252" true="DSPI1_DSPI1_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 252" true="DSPI1_DSPI1_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 252" true="EMIOS_EMIOS_16"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 252" true="PWM_PWM1_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 252" true="PWM_PWM1_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 253" true="GTM_GTM_TIM2_IN0_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 253" true="M_CAN_1_CAN00_RXDD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 253" true="GTM_GTM_TOUT34"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 253" true="LINFLEX1_LINFLEX1_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 253" true="DSPI1_DSPI1_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 253" true="DSPI1_DSPI1_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 253" true="DSPI1_DSPI1_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 253" true="EMIOS_EMIOS_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 254" true="GTM_GTM_TIM2_IN1_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 254" true="LINFLEX1_LINFLEX1_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 254" true="DSPI1_DSPI1_SINF"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 254" true="GTM_GTM_TOUT35"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 254" true="LINFLEX1_LINFLEX1_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 254" true="DSPI1_DSPI1_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 254" true="DSPI18_DSPI18_PCS6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 254" true="M_CAN_1_CAN00_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 254" true="EMIOS_EMIOS_6"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 255" true="GTM_GTM_TIM2_IN0_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 255" true="DSPI18_DSPI18_SCKD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 255" true="DSPI18_DSPI18_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 255" true="EMIOS_EMIOS_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 255" true="PWM_PWM2_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 255" true="PWM_PWM2_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 256" true="GTM_GTM_TIM2_IN1_7"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 256" true="EMIOS_EMIOS_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 257" true="GTM_GTM_TIM2_IN3_9"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 257" true="LINFLEX4_LINFLEX4_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 257" true="DSPI4_DSPI4_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 257" true="M_CAN_1_CAN00_TXD"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 257" true="EMIOS_EMIOS_20"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 257" true="PWM_PWM3_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 257" true="PWM_PWM3_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 258" true="GTM_GTM_TIM2_IN4_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 258" true="LINFLEX4_LINFLEX4_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 258" true="DSPI4_DSPI4_SINB"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 258" true="M_CAN_1_CAN00_RXDG"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 258" true="EMIOS_EMIOS_0"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 259" true="GTM_GTM_TIM2_IN5_9"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 259" true="DSPI4_DSPI4_SCK_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 259" true="DSPI4_DSPI4_SCK_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 259" true="EMIOS_EMIOS_1"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 260" true="GTM_GTM_TIM2_IN6_8"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 260" true="DSPI18_DSPI18_SIND"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 260" true="DSPI4_DSPI4_PCS0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 260" true="DSPI4_DSPI4_PCS0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 260" true="DSPI18_DSPI18_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 260" true="EMIOS_EMIOS_2"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 261" true="GTM_GTM_TIM2_IN7_9"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 261" true="DSPI18_DSPI18_SIND"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 261" true="LINFLEX8_LINFLEX8_RX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 261" true="LINFLEX8_LINFLEX8_TX"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 261" true="DSPI18_DSPI18_SOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 261" true="ACMP7_EVADC_FC7BFLOUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 261" true="EMIOS_EMIOS_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 262" true="GPIO_AN24_P40.0_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 262" true="GPIO_AN24_P40.0_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 262" true="SENT_SENT_SENT0A"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 262" true="EMIOS_EMIOS_3"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 263" true="GPIO_AN25_P40.1_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 263" true="GPIO_AN25_P40.1_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 263" true="SENT_SENT_SENT1A"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 263" true="EMIOS_EMIOS_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 270" true="GPIO_AN26_P40.2_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 270" true="GPIO_AN26_P40.2_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 270" true="SENT_SENT_SENT2A"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 270" true="EMIOS_EMIOS_4"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 271" true="GPIO_AN27_P40.3_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 271" true="GPIO_AN27_P40.3_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 271" true="SENT_SENT_SENT3A"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 271" true="EMIOS_EMIOS_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 272" true="GPIO_AN32_P40.4_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 272" true="GPIO_AN32_P40.4_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 272" true="SENT_SENT_SENT4A"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 272" true="EMIOS_EMIOS_5"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 273" true="GPIO_AN33_P40.5_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 273" true="GPIO_AN33_P40.5_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 273" true="SENT_SENT_SENT5A"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 273" true="EMIOS_EMIOS_17"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 274" true="GPIO_AN36_P40.6_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 274" true="GPIO_AN36_P40.6_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 274" true="SENT_SENT_SENT6A"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 274" true="EMIOS_EMIOS_18"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 275" true="GPIO_AN37_P40.7_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 275" true="GPIO_AN37_P40.7_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 275" true="SENT_SENT_SENT7A"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 275" true="EMIOS_EMIOS_18"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 276" true="GPIO_AN38_P40.8_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 276" true="GPIO_AN38_P40.8_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 276" true="SENT_SENT_SENT8A"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 276" true="EMIOS_EMIOS_19"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 277" true="GPIO_AN39_P40.9_OUT"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 277" true="GPIO_AN39_P40.9_IN"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 277" true="SENT_SENT_SENT9A"/> 
+                            <a:tst expr="node:fallback(../PortPinPcr, 0) = 277" true="EMIOS_EMIOS_19"/> 
+                          </a:da>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="(text:uniq((node:fallback(../../*/PortPinMode,text:split('1 2 3'))), node:fallback(.,0)) or (.='PORT_PIN_MODE_GPIO'))" false="PortPinMode repeated for two or more ports. The only mode that can be repeated for Pins is PORT_PIN_MODE_GPIO"/>
+                          </a:da>
+                        </v:var>
+                      <v:ctr name="PortInterruptSource" type="IDENTIFIABLE">
+                        <a:a name="DESC" value="EN: Siult2 Interrup set."/>
+                        <a:a name="UUID" value="72871dbe-a1ce-068f-5302-7c4eb4a751d7"/>
+                        <a:a name="OPTIONAL" value="true"/>
+
+                        <v:var name="eirq_index" type="ENUMERATION">
+                        <a:a name="DESC" value="EN: eirq Interrupt number." />
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                        <a:a name="UUID" value="ae2525a3-5e35-4adf-b970-afc529971d1e" />
+                        <a:a name="__ORIGIN" value="Elektrobit" />
+                        <a:da name="DEFAULT" value="EIRQ0" />
+                        <a:da name="RANGE">
+                            <a:v>EIRQ0</a:v>
+                            <a:v>EIRQ1</a:v>
+                            <a:v>EIRQ2</a:v>
+                            <a:v>EIRQ3</a:v>
+                            <a:v>EIRQ4</a:v>
+                            <a:v>EIRQ5</a:v>
+                            <a:v>EIRQ6</a:v>
+                            <a:v>EIRQ7</a:v>
+                            <a:v>EIRQ8</a:v>
+                            <a:v>EIRQ9</a:v>
+                            <a:v>EIRQ10</a:v>
+                            <a:v>EIRQ11</a:v>
+                            <a:v>EIRQ12</a:v>
+                            <a:v>EIRQ13</a:v>
+                            <a:v>EIRQ14</a:v>
+                            <a:v>EIRQ15</a:v>
+                            <a:v>EIRQ16</a:v>
+                            <a:v>EIRQ17</a:v>
+                            <a:v>EIRQ18</a:v>
+                            <a:v>EIRQ19</a:v>
+                            <a:v>EIRQ20</a:v>
+                            <a:v>EIRQ21</a:v>
+                            <a:v>EIRQ22</a:v>
+                            <a:v>EIRQ23</a:v>
+                        </a:da>
+                        </v:var>
+
+                        <v:var name="event_edge_sel" type="ENUMERATION">
+                        <a:a name="DESC" value="EN: Select trigger source along events." />
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                        <a:a name="UUID" value="ae2525a2-5e35-4adf-b970-afc529971d1e" />
+                        <a:a name="__ORIGIN" value="Elektrobit" />
+                        <a:da name="DEFAULT" value="SIUL2_EVENT_DISABLED" />
+                        <a:da name="RANGE">
+                                  <a:v>SIUL2_EVENT_DISABLED</a:v>
+                                  <a:v>SIUL2_EVENT_RISING_EDGE</a:v>
+                                  <a:v>SIUL2_EVENT_FALLING_EDGE</a:v>
+                                  <a:v>SIUL2_EVENT_EITHER_EDGE</a:v>
+                        </a:da>
+                        </v:var>
+
+                        <v:var name="eirq_callback" type="FUNCTION-NAME">
+                        <a:a name="DESC">
+                            <a:v>
+                                <![CDATA[EN:<html><p>
+                                    callback function.<br>
+                                </p></html>]]>
+                            </a:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:bf476e30-7c7b-406c-9ed5-850380c1f713"/>
+                        <a:da name="DEFAULT" value="eirq_callBack"/>
+                        </v:var>
+                      </v:ctr>
+
+                        <v:lst name="PortPinEcucPartitionRef">
+                          <v:ref name="PortPinEcucPartitionRef" type="REFERENCE">
+                            <a:a name="DESC">
+                              <a:v>EN: Maps the Port pin to zero a multiple ECUC partitions. The ECUC partitions referenced are a subset of the ECUC partitions where the Port driver is mapped to.</a:v>
+                              <a:v>EN: Tags: atp.Status=draft</a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                              <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true" />
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                            <a:a name="SCOPE" value="ECU" />
+                            <a:a name="UUID" value="07a3f7c5-d8ac-4b09-aae6-17c730545210" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition" />
+                          </v:ref>
+                        </v:lst>
+                      </v:ctr>
+                    </v:lst>
+                    <v:lst name="PortLVDS" type="MAP">
+                      <v:ctr name="PortLVDS" type="IDENTIFIABLE">
+                        <a:a name="DESC"
+                        value="EN: Configuration of the individual port pins."/>
+                        <a:a name="UUID"
+                        value="ECUC:1068f065-a030-4205-8de9-30b561da3ba3"/>
+                        <v:var name="PortLVDSPinPair" type="ENUMERATION">
+                          <a:a name="DESC"
+                          value="EN: Parameter identifies the PortPinPair supporting the LVDS feature."/>
+                          <a:a name="LABEL" value="Port LVDS Pin Pair" />
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID"
+                          value="ECUC:61633d90-a96c-46a2-b4fb-22d23da0c927"/>
+                          <a:da name="DEFAULT" type="XPath" expr="ecu:list('Port.AvailablePinPairLVDS')[position()-1=node:fallback(node:current()/../@index,0)]" />
+                          <a:da name="RANGE" type="XPath" expr="ecu:list('Port.AvailablePinPairLVDS')"/>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="text:uniq((node:fallback(../../../../*/PortLVDS/*/PortLVDSPinPair,text:split('1 2 3'))), node:fallback(.,0))" false="PortLVDSPinPair is repeated for two or more ports. Use the Calc button to calculate correct default value." />
+                          </a:da>
+                        </v:var>
+                        <v:var name="PortLVDSPinMode" type="ENUMERATION">
+                          <a:a name="DESC"
+                          value="EN: Selects the PORT LVDS pin mode from the modes list."/>
+                          <a:a name="LABEL" value="Port LVDS Pin Mode" />
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID"
+                          value="ECUC:61633d90-a96c-46a2-b4fb-22d23da0c927"/>
+                          <a:da name="RANGE" type="XPath">
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_150_151'" true="DSPI13_SOUT"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_83_84'" true="DSPI11_SOUT"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_83_72'" true="DSPI11_SOUT"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_148_149'" true="LIN3_TX"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_81_69'" true="DSPI11_SCK"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_123_124'" true="DSPI15_SOUT"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_87_107'" true="DSPI14_SOUT"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_87_88'" true="DSPI14_SOUT"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_85_86'" true="DSPI14_SCK"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_148_149'" true="DSPI13_SCK"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_81_83'" true="DSPI11_SCK"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_81_82'" true="DSPI11_SCK"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_83_84'" true="DSPI18_SOUT"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_148_149'" true="DSPI20_SCK"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_81_82'" true="DSPI18_SCK"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_121_122'" true="DSPI15_SCK"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_142_143'" true="DSPI18_SIN"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_105_106'" true="DSPI18_SIN"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_142_143'" true="LIN3_RX"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_150_151'" true="DSPI20_SOUT"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_142_143'" true="DSPI20_SIN"/>
+                            <a:tst expr="node:fallback(../PortLVDSPinPair, 0) = 'PORT_140_141'" true="DSPI20_SIN"/>
+                          </a:da>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="text:uniq((node:fallback(../../../../*/PortLVDS/*/PortLVDSPinMode,text:split('1 2 3'))), node:fallback(.,0))" false="PortLVDSPinMode is repeated for two or more ports." />
+                          </a:da>
+                        </v:var>
+                        <v:var name="PortLVDSBGEnable" type="BOOLEAN">
+                          <a:a name="DESC"
+                              value="EN: LVDS internal bg enable signal."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="LABEL" value="Port LVDS BG Enable" />
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="627d855c-60d4-ef57-66ae-3083b0d15910"/>
+                          <a:da name="DEFAULT" value="false"/>
+                        </v:var>
+                        <v:var name="PortLVDSEnable" type="BOOLEAN">
+                          <a:a name="DESC"
+                              value="EN: LVDS enable signal."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="LABEL" value="Port LVDS Enable" />
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="627d855c-60d4-ef57-66ae-3083b0d15910"/>
+                          <a:da name="DEFAULT" value="false"/>
+                        </v:var>
+                        <v:var name="PortLVDSSRCLV" type="ENUMERATION">
+                          <a:a name="DESC"
+                          value="EN: src_lv used to driver configure"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="LABEL" value="Port LVDS SRC LV" />
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID"
+                          value="ECUC:61633d90-a96c-46a2-b4fb-22d23da0c927"/>
+                          <a:da name="DEFAULT" value="PORT_325MV"/>
+                          <a:da name="RANGE">
+                            <a:v>PORT_325MV</a:v>
+                            <a:v>PORT_265MV</a:v>
+                            <a:v>PORT_385MV</a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="PortLVDSIREnable" type="BOOLEAN">
+                          <a:a name="DESC"
+                              value="EN: LVDS internal resisitance enable signal"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="LABEL" value="Port LVDS IR Enable" />
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="627d855c-60d4-ef57-66ae-3083b0d15910"/>
+                          <a:da name="DEFAULT" value="false"/>
+                        </v:var>
+                      </v:ctr>
+                    </v:lst>
+                  </v:ctr>
+                </v:lst>
+              </v:ctr>
+              <v:ctr name="PortGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC">
+                  <a:v><![CDATA[EN:
+                        <html>
+                          <p>
+                            Module wide configuration parameters of the PORT driver.
+                          </p>
+                        </html>
+                        ]]></a:v>
+                </a:a>
+                <a:a name="UUID" value="ECUC:002fc40a-1304-484b-980a-9290886a1f0b" />
+                <!-- @implements PortDevErrorDetect_Object -->
+                <v:var name="PortDevErrorDetect" type="BOOLEAN">
+                  <a:a name="LABEL" value="Port Development Error Detect" />
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                          <html>
+                            <p>
+                              Switches the Development Error Detection and Notification ON or OFF.
+                            </p>
+                          </html>
+                          ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ECUC:6a7bcc4d-97ad-4a4a-a4bd-a3e4a89090c2" />
+                  <a:da name="DEFAULT" value="true" />
+                </v:var>
+                <!-- @implements PortSetPinDirectionApi_Object -->
+                <v:var name="PortSetPinDirectionApi" type="BOOLEAN">
+                  <a:a name="LABEL" value="Port SetPinDirection Api" />
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                          <html>
+                            <p>
+                              Pre-processor switch to enable/disable the use of the function Port_SetPinDirection().
+                            </p>
+                          </html>
+                          ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ECUC:f223bc4c-3516-482a-ae62-48f144566318" />
+                  <a:da name="DEFAULT" value="true" />
+                </v:var>
+                <!-- @implements PortSetPinModeApi_Object -->
+                <v:var name="PortSetPinModeApi" type="BOOLEAN">
+                  <a:a name="LABEL" value="Port SetPinMode Api" />
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                          <html>
+                            <p>
+                              The function for changing the pin modes is not supported by the safety implementation.
+                            </p>
+                          </html>
+                          ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ECUC:1f7dd044-d03f-43b6-842f-d9374c1d2746" />
+                  <a:da name="DEFAULT" value="true" />
+                </v:var>
+                <!-- @implements PortVersionInfoApi_Object -->
+                <v:var name="PortVersionInfoApi" type="BOOLEAN">
+                  <a:a name="LABEL" value="Port VersionInfo Api" />
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                          <html>
+                            <p>
+                               Pre-processor switch to enable/disable the API to read out the modules version information.
+                            </p>
+                          </html>
+                          ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ECUC:2c37b26f-6eb3-4634-b10b-a635599a9f1b" />
+                  <a:da name="DEFAULT" value="true" />
+                </v:var>
+                <!-- @implements PortSetPinModeDoesNotTouchGpioLevel_Object -->
+                <v:var name="PortSetPinModeDoesNotTouchGpioLevel" type="BOOLEAN">
+                  <a:a name="LABEL" value="Port SetPinMode Does Not Touch GPIO Levels" />
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                          <html>
+                            <p>
+                               Pre-processor switch. When not checked, the function Port_SetPinMode() will set the output level of the pin to the value configured in the PortPinLevelValue combo when called at run time to change mode of a pin from alternate function to GPIO. When checked, the function Port_SetPinMode() will not touch the output level of the pin when called at run time to change mode of a pin from alternate function to GPIO.
+                            </p>
+                          </html>
+                          ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ECUC:2c37b26f-6cb3-4634-b20b-b635599a9f1b" />
+                  <a:da name="DEFAULT" value="false" />
+                </v:var>
+                <!-- @implements PortEnableUserModeSupport_Object -->
+                <v:var name="PortEnableUserModeSupport" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:<html>
+                                When this parameter is enabled, the Port module will adapt to run from User Mode, with the following measures:<p/>
+                                a) configuring REG_PROT for SIUL2 IP so that the registers under protection can be accessed from user mode by setting UAA bit in REG_PROT_GCR to 1<p/>
+                                b) using 'call trusted function' stubs for all internal function calls that access registers requiring supervisor mode.<p/>
+                                for more information, please see chapter 5.7 User Mode Support in IM <p/>
+                                Note: Implementation Specific Parameter.
+                            </html>]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="LABEL" value="Port Enable User Mode Support" />
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ECUC:2c37b26f-6cb3-4634-b20b-b637799a9f1c" />
+                  <a:da name="DEFAULT" value="false" />
+                </v:var>
+                <v:var name="PortInlineSupport" type="BOOLEAN">
+                    <a:a name="LABEL" value="PortInlineSupport"/>
+                    <a:a name="DESC"
+                         value="EN: Whether on or off INLINE can be configured."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:94cb0b73-61e0-a5ec-c2e0-1e14bf1d4c83"/>
+                    <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <!-- <v:var name="IoDriverEnhance" type="BOOLEAN">
+                    <a:a name="LABEL" value="IoDriverEnhance"/>
+                    <a:a name="DESC"
+                         value="EN: This configuration item enables the enhanced mode of the IO driver."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:94cb0b73-61e0-a5ec-c2e0-1e14bf1d4c93"/>
+                    <a:da name="DEFAULT" value="false"/>
+                </v:var> -->
+                <v:lst name="PortEcucPartitionRef">
+                  <v:ref name="PortEcucPartitionRef" type="REFERENCE">
+                    <a:a name="DESC" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd">
+                      <a:v>EN: Maps the Port driver to zero a multiple ECUC partitions to make the modules API available in this partition.</a:v>
+                      <a:v>EN: Tags: atp.Status=draft</a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd">
+                      <icc:v mclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                      <icc:v mclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile" xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                    <a:a name="SCOPE" value="ECU" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                    <a:a name="UUID" value="8167e8ff-941c-49d8-af88-adb54fa12226" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                    <a:a name="__ORIGIN" value="Elektrobit" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                    <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition" xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" />
+                  </v:ref>
+                </v:lst>
+              </v:ctr>
+              <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <a:a name="DESC" value="EN: Common container, aggregated by all modules. It contains published information about vendor and versions." />
+                <a:a name="UUID" value="41ef6bd5-47f0-4c21-8f10-371deb236f8a" />
+                <v:var name="ArReleaseMajorVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Major version number of AUTOSAR specification on which the appropriate implementation is based on." />
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="d0b44564-eb24-42e7-8b48-49a0aa88429d" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="4" />
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4" />
+                    <a:tst expr="&gt;=4" />
+                  </a:da>
+                </v:var>
+                <v:var name="ArReleaseMinorVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Minor version number of AUTOSAR specification on which the appropriate implementation is based on." />
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="5020f6c8-c51c-4d26-8846-671307d1aea8" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="4" />
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4" />
+                    <a:tst expr="&gt;=4" />
+                  </a:da>
+                </v:var>
+                <v:var name="ArReleaseRevisionVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Revision version number of AUTOSAR specification on which the appropriate implementation is based on." />
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="3cb33bb5-559a-40c0-a257-9b123b542d6e" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="0" />
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=0" />
+                    <a:tst expr="&gt;=0" />
+                  </a:da>
+                </v:var>
+                <v:var name="ModuleId" type="INTEGER">
+                  <a:a name="DESC" value="EN: Module ID of this module from Module List." />
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="d44e0fc5-66b2-44d9-ae9f-9eb674893cef" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="124" />
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=124" />
+                    <a:tst expr="&gt;=124" />
+                  </a:da>
+                </v:var>
+                <v:var name="SwMajorVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Major version number of the vendor specific implementation of the module. The numbering is vendor specific." />
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ae2525a3-5e35-4adf-b970-afc529971d1e" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="3" />
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=3" />
+                    <a:tst expr="&gt;=3" />
+                  </a:da>
+                </v:var>
+                <v:var name="SwMinorVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Minor version number of the vendor specific implementation of the module. The numbering is vendor specific." />
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="d45433a7-8172-4311-9ae7-97e12a16c767" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="0" />
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=0" />
+                    <a:tst expr="&gt;=0" />
+                  </a:da>
+                </v:var>
+                <v:var name="SwPatchVersion" type="INTEGER">
+                  <a:a name="DESC" value="EN: Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific." />
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="d5356d3f-1401-47cb-8d5f-d69c6bcb4773" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="0" />
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=0" />
+                    <a:tst expr="&gt;=0" />
+                  </a:da>
+                </v:var>
+                <v:lst name="VendorApiInfix">
+                  <a:da name="MAX" value="1" />
+                  <v:var name="VendorApiInfix" type="STRING">
+                    <a:a name="DESC">
+                      <a:v>EN: In driver modules which can be instantiated several times on a single ECU, BSW00347 requires that the name of APIs is extended by the VendorId and a vendor specific name.
+                          This parameter is used to specify the vendor specific name. In total, the implementation specific name is generated as follows:
+                          &lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;.
+                          E.g.  assuming that the VendorId of the implementor is 123 and the implementer chose a VendorApiInfix of "v11r456" a api name Can_Write defined in the SWS will translate to Can_123_v11r456Write.
+                          This parameter is mandatory for all modules with upper multiplicity &gt; 1. It shall not be used for modules with upper multiplicity =1.</a:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="a985730b-489d-47d6-b849-e3b2999c5ac3" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="" />
+                  </v:var>
+                </v:lst>
+                <v:var name="VendorId" type="INTEGER">
+                  <a:a name="DESC" value="EN: Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list." />
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="9bb43c84-1db3-4492-9543-21be84372021" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="176" />
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=176" />
+                    <a:tst expr="&gt;=176" />
+                  </a:da>
+                </v:var>
+              </v:ctr>
+              <d:ref type="REFINED_MODULE_DEF" value="ASPath:/AUTOSAR/EcucDefs/Port" />
+            </v:ctr>
+          </d:chc>
+          <d:chc name="myEcuParameterDefinition" type="AR-ELEMENT" value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="DEF" value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION" />
+              <d:lst name="MODULE_REF">
+                <d:ref type="MODULE_REF" value="ASPath:/PortConfig/Port" />
+              </d:lst>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>

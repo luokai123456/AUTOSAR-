@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Fls
+Bundle-SymbolicName: Fls_ARCH3DXXM10I0RX;singleton:=true
+Bundle-Version: 0.0.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: Ccfc
+Require-Bundle: dreisoft.tresos.autosar2.plugin,
+ dreisoft.tresos.launcher2.plugin,
+ dreisoft.tresos.generator.api.plugin;bundle-version="26.2.0"

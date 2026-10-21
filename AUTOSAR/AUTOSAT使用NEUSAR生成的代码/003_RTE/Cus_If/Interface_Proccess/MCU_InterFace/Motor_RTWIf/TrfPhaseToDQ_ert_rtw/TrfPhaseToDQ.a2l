@@ -1,0 +1,437 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     TrfPhaseToDQ.a2l
+ *
+ * 
+ *
+ * Code generation for model "TrfPhaseToDQ".
+ *
+ * Model version              : 1.6
+ * Simulink Coder version : 10.6 R2022b
+ * C source code generated on : Thu May 28 16:28:24 2026
+ *
+ * Target selection: ert.tlc
+ * Embedded hardware selection: Infineon->TriCore
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+ASAP2_VERSION  1 31     /* Version 1.31 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+
+  /begin HEADER "Header Comments go here"
+  /end HEADER
+
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+    /end MOD_PAR
+
+    /begin MOD_COMMON  "Mod Common Comment Here"
+      BYTE_ORDER     MSB_LAST
+
+      ALIGNMENT_BYTE 1
+      ALIGNMENT_WORD 2
+      ALIGNMENT_LONG 4
+      ALIGNMENT_FLOAT32_IEEE 4
+      ALIGNMENT_FLOAT64_IEEE 4
+    /end MOD_COMMON
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      TFPD_DAxisFiltFreq_C
+    /* Long Identifier        */      "Cutoff frequency for d-axis current filter"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@TFPD_DAxisFiltFreq_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TrfPhaseToDQ_CM_single_Hz
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      50000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      TFPD_QAxisFiltFreq_C
+    /* Long Identifier        */      "Cutoff frequency for q-axis current filter"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@TFPD_QAxisFiltFreq_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TrfPhaseToDQ_CM_single_Hz
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      50000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      TFPD_SensorSelection_C
+    /* Long Identifier        */      "Current sensor configuration selection (1-4)"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@TFPD_SensorSelection_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TrfPhaseToDQ_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      4.000000
+  /end CHARACTERISTIC 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_ElecAngle
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPhaseToDQ_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_ElecAngle@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseACurrent
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPhaseToDQ_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseACurrent@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseBCurrent
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPhaseToDQ_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseBCurrent@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseCCurrent
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPhaseToDQ_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseCCurrent@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SampleTime1
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPhaseToDQ_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SampleTime1@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPD_AlphaCurrent
+    /* Long identifier        */      "Alpha-axis current in stationary reference frame"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPhaseToDQ_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2000.000000
+    /* Upper limit            */      2000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPD_AlphaCurrent@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPD_BetaCurrent
+    /* Long identifier        */      "Beta-axis current in stationary reference frame"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPhaseToDQ_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2000.000000
+    /* Upper limit            */      2000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPD_BetaCurrent@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPD_CurrentMagFilt
+    /* Long identifier        */      "Filtered magnitude of current vector"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPhaseToDQ_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2000.000000
+    /* Upper limit            */      2000.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPD_CurrentMagFilt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPD_IdFiltered
+    /* Long identifier        */      "Filtered d-axis current after low-pass filtering"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPhaseToDQ_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2000.000000
+    /* Upper limit            */      2000.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPD_IdFiltered@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPD_IdMeasured
+    /* Long identifier        */      "Measured d-axis current"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPhaseToDQ_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2000.000000
+    /* Upper limit            */      2000.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPD_IdMeasured@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPD_IqFiltered
+    /* Long identifier        */      "Filtered q-axis current after low-pass filtering"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPhaseToDQ_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2000.000000
+    /* Upper limit            */      2000.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPD_IqFiltered@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPD_IqMeasured
+    /* Long identifier        */      "Measured q-axis current"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPhaseToDQ_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2000.000000
+    /* Upper limit            */      2000.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPD_IqMeasured@ */
+  /end MEASUREMENT 
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TrfPhaseToDQ_CM_single
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TrfPhaseToDQ_CM_single_A
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "A"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TrfPhaseToDQ_CM_single_Hz
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "Hz"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TrfPhaseToDQ_CM_uint8_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%3.0"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin  RECORD_LAYOUT Record_FLOAT32_IEEE
+    FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_UBYTE
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin GROUP
+    /* Name                   */      TrfPhaseToDQ
+    /* Long identifier        */      "TrfPhaseToDQ"
+    /* Root                   */      ROOT
+    /begin SUB_GROUP
+      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_ElecAngle
+      SGPP_PhaseACurrent
+      SGPP_PhaseBCurrent
+      SGPP_PhaseCCurrent
+      SGPP_SampleTime1
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys
+    /* Long identifier        */      "TrfPhaseToDQ/TFPD_ClarkeParkTransform_100us_sys"
+    /begin SUB_GROUP
+      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ClarkeTransform
+      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ParkTransform
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ClarkeTransform
+    /* Long identifier        */      "TrfPhaseToDQ/TFPD_ClarkeParkTransform_100us_sys/ClarkeTransform"
+    /begin SUB_GROUP
+      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ClarkeTransform_ClarkAB_AmpInv
+      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ClarkeTransform_ClarkeABC_AmpInv
+      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ClarkeTransform_ClarkeAC_AmpInv
+      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ClarkeTransform_ClarkeBC_AmpInv
+      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ClarkeTransform_Local_Variable_Storage
+      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ClarkeTransform_Local_Variable_Storage1
+      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ClarkeTransform_Parameter
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ClarkeTransform_ClarkAB_AmpInv
+    /* Long identifier        */      "TrfPhaseToDQ/TFPD_ClarkeParkTransform_100us_sys/ClarkeTransform/ClarkAB_AmpInv"
+    /begin REF_MEASUREMENT
+      SGPP_PhaseACurrent
+      SGPP_PhaseBCurrent
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ClarkeTransform_ClarkeABC_AmpInv
+    /* Long identifier        */      "TrfPhaseToDQ/TFPD_ClarkeParkTransform_100us_sys/ClarkeTransform/ClarkeABC_AmpInv"
+    /begin REF_MEASUREMENT
+      SGPP_PhaseACurrent
+      SGPP_PhaseBCurrent
+      SGPP_PhaseCCurrent
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ClarkeTransform_ClarkeAC_AmpInv
+    /* Long identifier        */      "TrfPhaseToDQ/TFPD_ClarkeParkTransform_100us_sys/ClarkeTransform/ClarkeAC_AmpInv"
+    /begin REF_MEASUREMENT
+      SGPP_PhaseACurrent
+      SGPP_PhaseCCurrent
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ClarkeTransform_ClarkeBC_AmpInv
+    /* Long identifier        */      "TrfPhaseToDQ/TFPD_ClarkeParkTransform_100us_sys/ClarkeTransform/ClarkeBC_AmpInv"
+    /begin REF_MEASUREMENT
+      SGPP_PhaseBCurrent
+      SGPP_PhaseCCurrent
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ClarkeTransform_Local_Variable_Storage
+    /* Long identifier        */      "TrfPhaseToDQ/TFPD_ClarkeParkTransform_100us_sys/ClarkeTransform/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      TFPD_AlphaCurrent
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ClarkeTransform_Local_Variable_Storage1
+    /* Long identifier        */      "TrfPhaseToDQ/TFPD_ClarkeParkTransform_100us_sys/ClarkeTransform/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      TFPD_BetaCurrent
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ClarkeTransform_Parameter
+    /* Long identifier        */      "TrfPhaseToDQ/TFPD_ClarkeParkTransform_100us_sys/ClarkeTransform/Parameter"
+    /begin REF_CHARACTERISTIC
+      TFPD_SensorSelection_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ParkTransform
+    /* Long identifier        */      "TrfPhaseToDQ/TFPD_ClarkeParkTransform_100us_sys/ParkTransform"
+    /begin SUB_GROUP
+      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ParkTransform_LowPassFilter
+      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ParkTransform_LowPassFilter1
+      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ParkTransform_Parameter
+      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ParkTransform_Parameter1
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_ElecAngle
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ParkTransform_LowPassFilter
+    /* Long identifier        */      "TrfPhaseToDQ/TFPD_ClarkeParkTransform_100us_sys/ParkTransform/LowPassFilter"
+    /begin REF_MEASUREMENT
+      SGPP_SampleTime1
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ParkTransform_LowPassFilter1
+    /* Long identifier        */      "TrfPhaseToDQ/TFPD_ClarkeParkTransform_100us_sys/ParkTransform/LowPassFilter1"
+    /begin REF_MEASUREMENT
+      SGPP_SampleTime1
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ParkTransform_Parameter
+    /* Long identifier        */      "TrfPhaseToDQ/TFPD_ClarkeParkTransform_100us_sys/ParkTransform/Parameter"
+    /begin REF_CHARACTERISTIC
+      TFPD_DAxisFiltFreq_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPhaseToDQ_TFPD_ClarkeParkTransform_100us_sys_ParkTransform_Parameter1
+    /* Long identifier        */      "TrfPhaseToDQ/TFPD_ClarkeParkTransform_100us_sys/ParkTransform/Parameter1"
+    /begin REF_CHARACTERISTIC
+      TFPD_QAxisFiltFreq_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /end MODULE
+
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF TrfPhaseToDQ.a2l*/

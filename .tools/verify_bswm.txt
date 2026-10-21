@@ -1,0 +1,5 @@
+﻿md files: 52 wikilinks: 353 anchors: 44 bad: 0
+BswM requirements: 181 groups: ['SWS_BswM_CONSTR', 'SWS_BswM_000xx', 'SWS_BswM_001xx', 'SWS_BswM_002xx', 'SWS_BswM_910xx']
+canvas OK AUTOSAR_�ܹ���ͼ.canvas 16 9
+canvas OK BswM_�����߼���ͼ.canvas 11 11
+unbalanced: []

@@ -1,0 +1,818 @@
+<?xml version='1.0'?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00046.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>I2cConfig</SHORT-NAME>
+      <ELEMENTS>
+        <ECUC-DEFINITION-COLLECTION>
+          <SHORT-NAME>myEcuParameterDefinition</SHORT-NAME>
+          <MODULE-REFS>
+            <MODULE-REF DEST="ECUC-MODULE-DEF">/I2cConfig/CDD_I2c</MODULE-REF>
+          </MODULE-REFS>
+        </ECUC-DEFINITION-COLLECTION>
+        <ECUC-MODULE-DEF UUID="ECUC:5feec965-9afd-c000-1c21-e85146fc0016">
+          <SHORT-NAME>CDD_I2c</SHORT-NAME>
+          <DESC>
+            <L-2 L="EN">This container holds the configuration of a single CDD I2C Driver.</L-2>
+          </DESC>
+          <ADMIN-DATA>
+            <DOC-REVISIONS>
+              <DOC-REVISION>
+                <REVISION-LABEL>4.4.0</REVISION-LABEL>
+                <ISSUED-BY>AUTOSAR</ISSUED-BY>
+              </DOC-REVISION>
+            </DOC-REVISIONS>
+          </ADMIN-DATA>
+          <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+          <UPPER-MULTIPLICITY-INFINITE>1</UPPER-MULTIPLICITY-INFINITE>
+          <POST-BUILD-VARIANT-SUPPORT>true</POST-BUILD-VARIANT-SUPPORT>
+          <SUPPORTED-CONFIG-VARIANTS>
+            <SUPPORTED-CONFIG-VARIANT>VARIANT-POST-BUILD</SUPPORTED-CONFIG-VARIANT>
+            <SUPPORTED-CONFIG-VARIANT>VARIANT-PRE-COMPILE</SUPPORTED-CONFIG-VARIANT>
+          </SUPPORTED-CONFIG-VARIANTS>
+          <CONTAINERS>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:735f4f07-0a8e-1de4-c096-5b5183a8ef04">
+              <SHORT-NAME>GeneralConfiguration</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">This container contains the configuration parameters and sub containers of the Non-Autosar I2c driver.</L-2>
+              </DESC>
+              <PARAMETERS>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:028f1991-f598-ed8c-f82b-e36c29b96b6d">
+                  <SHORT-NAME>I2cDmaUsed</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                        &lt;html&gt;
+                          &lt;p&gt;I2cDmaUsed&lt;/p&gt;
+                          &lt;p&gt;Check this in order to be able to use DMA in the I2c driver.&lt;/p&gt;
+                          Note: Implementation Specific Parameter. &lt;p/&gt;
+                        &lt;/html&gt;</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+                <ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:3dc49a9b-76e7-917b-6928-f74e2e2f094f">
+                  <SHORT-NAME>I2cInlineSupport</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">Whether on or off INLINE can be configured.</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>true</DEFAULT-VALUE>
+                </ECUC-BOOLEAN-PARAM-DEF>
+              </PARAMETERS>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:74312f8c-2723-79bc-7d03-5df3009e6e2b">
+              <SHORT-NAME>I2cGlobalConfig</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">This container contains the global configuration parameter of the I2c driver. This container is a MultipleConfigurationContainer, i.e. this container and its sub-containers exit once per configuration set.</L-2>
+              </DESC>
+              <SUB-CONTAINERS>
+                <ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:0923735c-e36a-5d1d-6174-167706c985f6">
+                  <SHORT-NAME>I2cChannel</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">
+                          &lt;html&gt;
+                            This container contains the configuration (parameters) of the I2c Controller(s).
+                            &lt;h1&gt;Note:&lt;/h1&gt;&quot;User should use unique names for naming the I2c channels across different I2cGlobalConfig Sets.&quot;
+                          &lt;/html&gt;</L-2>
+                  </DESC>
+                  <LOWER-MULTIPLICITY>1</LOWER-MULTIPLICITY>
+                  <UPPER-MULTIPLICITY>2</UPPER-MULTIPLICITY>
+                  <MULTIPLICITY-CONFIG-CLASSES>
+                    <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                    <ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-MULTIPLICITY-CONFIGURATION-CLASS>
+                  </MULTIPLICITY-CONFIG-CLASSES>
+                  <POST-BUILD-VARIANT-MULTIPLICITY>false</POST-BUILD-VARIANT-MULTIPLICITY>
+                  <PARAMETERS>
+                    <ECUC-INTEGER-PARAM-DEF UUID="ECUC:c08217c8-3b66-afba-8469-99c2cad7e249">
+                      <SHORT-NAME>I2cChannelId</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                            &lt;html&gt;
+                              Identifies the I2c channel. &lt;p/&gt;
+                              Note: Implementation Specific Parameter. &lt;p/&gt;
+                            &lt;/html&gt;</L-2>
+                      </DESC>
+                      <SCOPE>ECU</SCOPE>
+                      <ORIGIN>CCFC</ORIGIN>
+                      <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                      <VALUE-CONFIG-CLASSES>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                      </VALUE-CONFIG-CLASSES>
+                      <SYMBOLIC-NAME-VALUE>true</SYMBOLIC-NAME-VALUE>
+                      <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                      <MAX>1</MAX>
+                      <MIN>0</MIN>
+                    </ECUC-INTEGER-PARAM-DEF>
+                    <ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:cc338849-23d3-50b5-58d8-14090eb1031e">
+                      <SHORT-NAME>I2cHwChannel</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                            &lt;html&gt;
+                              Selects the physical I2c Channel. &lt;p/&gt;
+                              Note: Implementation Specific Parameter. &lt;p/&gt;
+                            &lt;/html&gt;</L-2>
+                      </DESC>
+                      <ORIGIN>CCFC</ORIGIN>
+                      <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                      <VALUE-CONFIG-CLASSES>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                      </VALUE-CONFIG-CLASSES>
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                      <DEFAULT-VALUE>I2C_0</DEFAULT-VALUE>
+                      <LITERALS>
+                        <ECUC-ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>I2C_0</SHORT-NAME>
+                          <ORIGIN>CCFC</ORIGIN>
+                        </ECUC-ENUMERATION-LITERAL-DEF>
+                        <ECUC-ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>I2C_1</SHORT-NAME>
+                          <ORIGIN>CCFC</ORIGIN>
+                        </ECUC-ENUMERATION-LITERAL-DEF>
+                      </LITERALS>
+                    </ECUC-ENUMERATION-PARAM-DEF>
+                    <ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:c5752e05-0de6-9ff5-0420-9d9d79c5067e">
+                      <SHORT-NAME>I2cMasterSlaveConfiguration</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                            &lt;html&gt;
+                              Selects the master slave configuration. &lt;p/&gt;
+                              Select wether the selected channel will be used as Master or Slave. &lt;p/&gt;
+                              Note: Implementation Specific Parameter. &lt;p/&gt;
+                            &lt;/html&gt;</L-2>
+                      </DESC>
+                      <SCOPE>LOCAL</SCOPE>
+                      <ORIGIN>CCFC</ORIGIN>
+                      <POST-BUILD-VARIANT-VALUE>true</POST-BUILD-VARIANT-VALUE>
+                      <VALUE-CONFIG-CLASSES>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                      </VALUE-CONFIG-CLASSES>
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                      <DEFAULT-VALUE>MASTER_MODE</DEFAULT-VALUE>
+                      <LITERALS>
+                        <ECUC-ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>MASTER_MODE</SHORT-NAME>
+                          <ORIGIN>CCFC</ORIGIN>
+                        </ECUC-ENUMERATION-LITERAL-DEF>
+                        <ECUC-ENUMERATION-LITERAL-DEF>
+                          <SHORT-NAME>SLAVE_MODE</SHORT-NAME>
+                          <ORIGIN>CCFC</ORIGIN>
+                        </ECUC-ENUMERATION-LITERAL-DEF>
+                      </LITERALS>
+                    </ECUC-ENUMERATION-PARAM-DEF>
+                    <ECUC-INTEGER-PARAM-DEF UUID="ECUC:38805379-48a5-3d93-a81d-68a5ea74c1d7">
+                      <SHORT-NAME>I2cBaudRate</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">The baud rate needs to be handwritten.</L-2>
+                      </DESC>
+                      <SCOPE>LOCAL</SCOPE>
+                      <ORIGIN>CCFC</ORIGIN>
+                      <POST-BUILD-VARIANT-VALUE>true</POST-BUILD-VARIANT-VALUE>
+                      <VALUE-CONFIG-CLASSES>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                      </VALUE-CONFIG-CLASSES>
+                      <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                      <DEFAULT-VALUE>400000</DEFAULT-VALUE>
+                      <MIN>1</MIN>
+                    </ECUC-INTEGER-PARAM-DEF>
+                  </PARAMETERS>
+                  <REFERENCES>
+                    <ECUC-CHOICE-REFERENCE-DEF UUID="ECUC:9a8cd5a4-e355-d6fa-53fe-19af47067c63">
+                      <SHORT-NAME>PortTriggerCounterRef</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                          &lt;html&gt;
+                          Vendor specific:
+                          &lt;h1&gt;Crc External Trigger Counter&lt;/h1&gt;&lt;p&gt;
+                          Reference to the pin configuration .
+                          &lt;/p&gt;&lt;/html&gt;</L-2>
+                      </DESC>
+                      <SCOPE>LOCAL</SCOPE>
+                      <ORIGIN>CCFC</ORIGIN>
+                      <POST-BUILD-VARIANT-VALUE>true</POST-BUILD-VARIANT-VALUE>
+                      <VALUE-CONFIG-CLASSES>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                      </VALUE-CONFIG-CLASSES>
+                      <DESTINATION-REFS>
+                        <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Port/PortConfigSet/PortContainer/PortPin</DESTINATION-REF>
+                      </DESTINATION-REFS>
+                    </ECUC-CHOICE-REFERENCE-DEF>
+                    <ECUC-REFERENCE-DEF UUID="ECUC:0fc7050e-d6a1-0239-fa1f-9911c4de00f2">
+                      <SHORT-NAME>I2cClockRef</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">Reference to the CPU clock configuration, which is set in the MCU driver configuration</L-2>
+                      </DESC>
+                      <SCOPE>LOCAL</SCOPE>
+                      <ORIGIN>CCFC</ORIGIN>
+                      <POST-BUILD-VARIANT-VALUE>true</POST-BUILD-VARIANT-VALUE>
+                      <VALUE-CONFIG-CLASSES>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                        <ECUC-VALUE-CONFIGURATION-CLASS>
+                          <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                          <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                        </ECUC-VALUE-CONFIGURATION-CLASS>
+                      </VALUE-CONFIG-CLASSES>
+                      <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint</DESTINATION-REF>
+                    </ECUC-REFERENCE-DEF>
+                  </REFERENCES>
+                  <SUB-CONTAINERS>
+                    <ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:15583250-5cfd-c273-4e95-85b2f4a3f52c">
+                      <SHORT-NAME>I2cMasterConfiguration</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                            &lt;html&gt;
+                              This container contains the configuration (parameters) of the Master Configuration.
+                            &lt;/html&gt;</L-2>
+                      </DESC>
+                      <PARAMETERS>
+                        <ECUC-INTEGER-PARAM-DEF UUID="ECUC:03833b65-d9d9-24c6-d63d-769a05c4af30">
+                          <SHORT-NAME>I2cSlaveAddress</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">
+                                  &lt;html&gt;
+                                  &lt;p&gt;The address of the slave: Configures I2C_IBAD[ADR]&lt;/p&gt;
+                                  &lt;p&gt;Configures the I2c slave address. &lt;/p&gt;
+                                  Note: Implementation Specific Parameter. &lt;p/&gt;
+                                  &lt;/html&gt;</L-2>
+                          </DESC>
+                          <SCOPE>LOCAL</SCOPE>
+                          <ORIGIN>CCFC</ORIGIN>
+                          <POST-BUILD-VARIANT-VALUE>true</POST-BUILD-VARIANT-VALUE>
+                          <VALUE-CONFIG-CLASSES>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                          </VALUE-CONFIG-CLASSES>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <DEFAULT-VALUE>48</DEFAULT-VALUE>
+                          <MAX>127</MAX>
+                          <MIN>0</MIN>
+                        </ECUC-INTEGER-PARAM-DEF>
+                        <ECUC-ENUMERATION-PARAM-DEF UUID="ECUC:55bcced9-bfdb-33cd-f3bb-7d67ffa64017">
+                          <SHORT-NAME>I2cAsyncMethod</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">
+                                  &lt;html&gt;
+                                  &lt;p&gt;Configures the asynchronous mechanism used by the &apos;AsyncTransmit&apos; function (interrupts or DMA).&lt;/p&gt;
+                                  Note: Implementation Specific Parameter. &lt;p/&gt;
+                                  &lt;/html&gt;</L-2>
+                          </DESC>
+                          <SCOPE>LOCAL</SCOPE>
+                          <ORIGIN>CCFC</ORIGIN>
+                          <POST-BUILD-VARIANT-VALUE>true</POST-BUILD-VARIANT-VALUE>
+                          <VALUE-CONFIG-CLASSES>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                          </VALUE-CONFIG-CLASSES>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <DEFAULT-VALUE>I2C_USING_INTERRUPTS</DEFAULT-VALUE>
+                          <LITERALS>
+                            <ECUC-ENUMERATION-LITERAL-DEF>
+                              <SHORT-NAME>I2C_USING_INTERRUPTS</SHORT-NAME>
+                              <ORIGIN>CCFC</ORIGIN>
+                            </ECUC-ENUMERATION-LITERAL-DEF>
+                            <ECUC-ENUMERATION-LITERAL-DEF>
+                              <SHORT-NAME>I2C_USING_DMA</SHORT-NAME>
+                              <ORIGIN>CCFC</ORIGIN>
+                            </ECUC-ENUMERATION-LITERAL-DEF>
+                          </LITERALS>
+                        </ECUC-ENUMERATION-PARAM-DEF>
+                        <ECUC-FUNCTION-NAME-DEF UUID="ECUC:d9c99739-587b-5f5b-45f5-2efdc64758fe">
+                          <SHORT-NAME>I2cMasterCallback</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">&lt;html&gt;
+                              &lt;p&gt;I2c master callback. This function will be called for master i2c events.&lt;/p&gt;
+                              Note: Implementation Specific Parameter.
+                            &lt;/html&gt;</L-2>
+                          </DESC>
+                          <SCOPE>LOCAL</SCOPE>
+                          <ORIGIN>CCFC</ORIGIN>
+                          <POST-BUILD-VARIANT-VALUE>true</POST-BUILD-VARIANT-VALUE>
+                          <VALUE-CONFIG-CLASSES>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                          </VALUE-CONFIG-CLASSES>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <ECUC-FUNCTION-NAME-DEF-VARIANTS>
+                            <ECUC-FUNCTION-NAME-DEF-CONDITIONAL>
+                              <DEFAULT-VALUE>NULL_PTR</DEFAULT-VALUE>
+                            </ECUC-FUNCTION-NAME-DEF-CONDITIONAL>
+                          </ECUC-FUNCTION-NAME-DEF-VARIANTS>
+                        </ECUC-FUNCTION-NAME-DEF>
+                        <ECUC-FUNCTION-NAME-DEF UUID="ECUC:9230ea3d-ac53-2cd4-c329-b36f8eab1a36">
+                          <SHORT-NAME>I2cMasterCallbackParam</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">&lt;html&gt;
+                              &lt;p&gt;I2c master callback Param. This function will be called for master i2c events.&lt;/p&gt;
+                              Note: Implementation Specific Parameter.
+                            &lt;/html&gt;</L-2>
+                          </DESC>
+                          <SCOPE>LOCAL</SCOPE>
+                          <ORIGIN>CCFC</ORIGIN>
+                          <POST-BUILD-VARIANT-VALUE>true</POST-BUILD-VARIANT-VALUE>
+                          <VALUE-CONFIG-CLASSES>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                          </VALUE-CONFIG-CLASSES>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <ECUC-FUNCTION-NAME-DEF-VARIANTS>
+                            <ECUC-FUNCTION-NAME-DEF-CONDITIONAL>
+                              <DEFAULT-VALUE>NULL_PTR</DEFAULT-VALUE>
+                            </ECUC-FUNCTION-NAME-DEF-CONDITIONAL>
+                          </ECUC-FUNCTION-NAME-DEF-VARIANTS>
+                        </ECUC-FUNCTION-NAME-DEF>
+                      </PARAMETERS>
+                      <REFERENCES>
+                        <ECUC-REFERENCE-DEF UUID="ECUC:6ff14518-8c5f-d41e-d793-88f90bd9d363">
+                          <SHORT-NAME>I2cDmaChannelRef</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">Reference to the dma channel of the edma module.</L-2>
+                          </DESC>
+                          <SCOPE>LOCAL</SCOPE>
+                          <ORIGIN>CCFC</ORIGIN>
+                          <POST-BUILD-VARIANT-VALUE>true</POST-BUILD-VARIANT-VALUE>
+                          <VALUE-CONFIG-CLASSES>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                          </VALUE-CONFIG-CLASSES>
+                          <DESTINATION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/eDmaConfig/eDma/eDmaConfigSet/eDmaChannelConfig</DESTINATION-REF>
+                        </ECUC-REFERENCE-DEF>
+                      </REFERENCES>
+                    </ECUC-PARAM-CONF-CONTAINER-DEF>
+                    <ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:1d86b139-8e68-164c-4fc0-094794b60520">
+                      <SHORT-NAME>I2cSlaveConfiguration</SHORT-NAME>
+                      <DESC>
+                        <L-2 L="EN">
+                            &lt;html&gt;
+                              This container contains the configuration (parameters) of the Slave Channel.
+                            &lt;/html&gt;</L-2>
+                      </DESC>
+                      <PARAMETERS>
+                        <ECUC-INTEGER-PARAM-DEF UUID="ECUC:e63d9cc5-3583-dba0-ae33-53dd2e3dc786">
+                          <SHORT-NAME>I2cSlaveAddress</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">
+                                  &lt;html&gt;
+                                  &lt;p&gt;The address of the slave: Configures I2C_IBAD[ADR]&lt;/p&gt;
+                                  &lt;p&gt;Configures the I2c slave address. &lt;/p&gt;
+                                  Note: Implementation Specific Parameter. &lt;p/&gt;
+                                  &lt;/html&gt;</L-2>
+                          </DESC>
+                          <SCOPE>LOCAL</SCOPE>
+                          <ORIGIN>CCFC</ORIGIN>
+                          <POST-BUILD-VARIANT-VALUE>true</POST-BUILD-VARIANT-VALUE>
+                          <VALUE-CONFIG-CLASSES>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                          </VALUE-CONFIG-CLASSES>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <DEFAULT-VALUE>48</DEFAULT-VALUE>
+                          <MAX>127</MAX>
+                          <MIN>0</MIN>
+                        </ECUC-INTEGER-PARAM-DEF>
+                        <ECUC-BOOLEAN-PARAM-DEF UUID="ECUC:dc85c8d8-e12a-dd5f-b0a6-ac512bb4f72e">
+                          <SHORT-NAME>I2CSlaveListening</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">
+                              &lt;html&gt;
+                                &lt;p&gt;I2cSlaveListening&lt;/p&gt;
+                                &lt;p&gt;Check this in order to chose slave mode (always listening or on demand only).&lt;/p&gt;
+                                Note: Implementation Specific Parameter. &lt;p/&gt;
+                              &lt;/html&gt;</L-2>
+                          </DESC>
+                          <SCOPE>LOCAL</SCOPE>
+                          <ORIGIN>CCFC</ORIGIN>
+                          <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                          <VALUE-CONFIG-CLASSES>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                          </VALUE-CONFIG-CLASSES>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <DEFAULT-VALUE>false</DEFAULT-VALUE>
+                        </ECUC-BOOLEAN-PARAM-DEF>
+                        <ECUC-FUNCTION-NAME-DEF UUID="ECUC:4724c342-f8ad-2503-17a8-36ba463b9c0b">
+                          <SHORT-NAME>I2cSlaveCallback</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">&lt;html&gt;
+                              &lt;p&gt;I2c slave callback. This function will be called for slave i2c events.&lt;/p&gt;
+                              Note: Implementation Specific Parameter.
+                            &lt;/html&gt;</L-2>
+                          </DESC>
+                          <SCOPE>LOCAL</SCOPE>
+                          <ORIGIN>CCFC</ORIGIN>
+                          <POST-BUILD-VARIANT-VALUE>true</POST-BUILD-VARIANT-VALUE>
+                          <VALUE-CONFIG-CLASSES>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                          </VALUE-CONFIG-CLASSES>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <ECUC-FUNCTION-NAME-DEF-VARIANTS>
+                            <ECUC-FUNCTION-NAME-DEF-CONDITIONAL>
+                              <DEFAULT-VALUE>NULL_PTR</DEFAULT-VALUE>
+                            </ECUC-FUNCTION-NAME-DEF-CONDITIONAL>
+                          </ECUC-FUNCTION-NAME-DEF-VARIANTS>
+                        </ECUC-FUNCTION-NAME-DEF>
+                        <ECUC-FUNCTION-NAME-DEF UUID="ECUC:91157b04-2a1d-97f2-d1ef-9ad447143090">
+                          <SHORT-NAME>I2cSlaveCallbackParam</SHORT-NAME>
+                          <DESC>
+                            <L-2 L="EN">&lt;html&gt;
+                              &lt;p&gt;I2c slave callback Param. This function will be called for slave i2c events.&lt;/p&gt;
+                              Note: Implementation Specific Parameter.
+                            &lt;/html&gt;</L-2>
+                          </DESC>
+                          <SCOPE>LOCAL</SCOPE>
+                          <ORIGIN>CCFC</ORIGIN>
+                          <POST-BUILD-VARIANT-VALUE>true</POST-BUILD-VARIANT-VALUE>
+                          <VALUE-CONFIG-CLASSES>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>POST-BUILD</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                            <ECUC-VALUE-CONFIGURATION-CLASS>
+                              <CONFIG-CLASS>PRE-COMPILE</CONFIG-CLASS>
+                              <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                            </ECUC-VALUE-CONFIGURATION-CLASS>
+                          </VALUE-CONFIG-CLASSES>
+                          <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                          <ECUC-FUNCTION-NAME-DEF-VARIANTS>
+                            <ECUC-FUNCTION-NAME-DEF-CONDITIONAL>
+                              <DEFAULT-VALUE>NULL_PTR</DEFAULT-VALUE>
+                            </ECUC-FUNCTION-NAME-DEF-CONDITIONAL>
+                          </ECUC-FUNCTION-NAME-DEF-VARIANTS>
+                        </ECUC-FUNCTION-NAME-DEF>
+                      </PARAMETERS>
+                    </ECUC-PARAM-CONF-CONTAINER-DEF>
+                  </SUB-CONTAINERS>
+                </ECUC-PARAM-CONF-CONTAINER-DEF>
+              </SUB-CONTAINERS>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+            <ECUC-PARAM-CONF-CONTAINER-DEF UUID="ECUC:5b271f4f-cbaa-f3e8-e05f-e5d6362321d2">
+              <SHORT-NAME>CommonPublishedInformation</SHORT-NAME>
+              <DESC>
+                <L-2 L="EN">&lt;html&gt;
+                            Common container, aggregated by all modules.
+                            It contains published information about vendor and versions.
+                        &lt;/html&gt;</L-2>
+              </DESC>
+              <PARAMETERS>
+                <ECUC-INTEGER-PARAM-DEF UUID="ECUC:0500b073-b7f1-37bf-5b1a-d629b126aa01">
+                  <SHORT-NAME>ArReleaseMajorVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">&lt;html&gt;
+                        Major version number of AUTOSAR specification on which the appropriate implementation is based on. &lt;p/&gt;
+                      &lt;/html&gt;</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>4</DEFAULT-VALUE>
+                  <MAX>4</MAX>
+                  <MIN>4</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="ECUC:20f5130a-d2ad-a0de-9c88-70a2a41175fd">
+                  <SHORT-NAME>ArReleaseMinorVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">&lt;html&gt;
+                        Minor version number of AUTOSAR specification on which the appropriate implementation is based on. &lt;p/&gt;
+                      &lt;/html&gt;</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>4</DEFAULT-VALUE>
+                  <MAX>4</MAX>
+                  <MIN>4</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="ECUC:e10d1c65-5dc4-f922-e14b-d4544da88e06">
+                  <SHORT-NAME>ArReleaseRevisionVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">&lt;html&gt;
+                        Revision version number of AUTOSAR specification on which the appropriate implementation is based on. &lt;p/&gt;
+                      &lt;/html&gt;</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                  <MAX>0</MAX>
+                  <MIN>0</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="ECUC:1e0285ab-acb4-9e31-ccef-8bf6131b88ba">
+                  <SHORT-NAME>ModuleId</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">&lt;html&gt;
+                        Module ID of this module from Module List.
+                        Note: Implementation Specific Parameter
+                      &lt;/html&gt;</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>255</DEFAULT-VALUE>
+                  <MAX>255</MAX>
+                  <MIN>255</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="ECUC:dc0d56ca-068c-3dfd-4862-082b335e3686">
+                  <SHORT-NAME>SwMajorVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">&lt;html&gt;
+                        Major version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                        Note: Implementation Specific Parameter
+                      &lt;/html&gt;</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>3</DEFAULT-VALUE>
+                  <MAX>3</MAX>
+                  <MIN>3</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="ECUC:5d092b57-61d9-9ee1-44aa-33bc4304a291">
+                  <SHORT-NAME>SwMinorVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">&lt;html&gt;
+                        Minor version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                        Note: Implementation Specific Parameter
+                      &lt;/html&gt;</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                  <MAX>0</MAX>
+                  <MIN>0</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="ECUC:e39d9d5b-831f-3fde-87c6-b3fc50476518">
+                  <SHORT-NAME>SwPatchVersion</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">&lt;html&gt;
+                        Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                        Note: Implementation Specific Parameter
+                      &lt;/html&gt;</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>0</DEFAULT-VALUE>
+                  <MAX>0</MAX>
+                  <MIN>0</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+                <ECUC-STRING-PARAM-DEF UUID="ECUC:b52e5666-75bc-8867-c1b1-7ff4685578e7">
+                  <SHORT-NAME>VendorApiInfix</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">&lt;html&gt;
+                        In driver modules which can be instantiated several times on a single ECU, BSW00347 requires that the name of APIs is extended by the VendorId and a vendor specific name.
+                        This parameter is used to specify the vendor specific name. In total, the Implementation specific name is generated as follows:
+                        &lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;&lt;Api name from SWS&gt;.
+                        E.g. assuming that the VendorId of the implementor is 123 and the implementer chose a VendorApiInfix of &quot;v11r456&quot; a api name
+                        Can_Write defined in the SWS will translate to Can_123_v11r456Write.
+                        This parameter is mandatory for all modules with upper multiplicity &gt;
+                        1. It shall not be used for modules with upper multiplicity =1.
+                        Note: Implementation Specific Parameter
+                      &lt;/html&gt;</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <ECUC-STRING-PARAM-DEF-VARIANTS>
+                    <ECUC-STRING-PARAM-DEF-CONDITIONAL>
+                      <DEFAULT-VALUE></DEFAULT-VALUE>
+                    </ECUC-STRING-PARAM-DEF-CONDITIONAL>
+                  </ECUC-STRING-PARAM-DEF-VARIANTS>
+                </ECUC-STRING-PARAM-DEF>
+                <ECUC-INTEGER-PARAM-DEF UUID="ECUC:4fea5787-d523-e863-1647-5653a55471be">
+                  <SHORT-NAME>VendorId</SHORT-NAME>
+                  <DESC>
+                    <L-2 L="EN">&lt;html&gt;
+                        Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list.
+                        Note: Implementation Specific Parameter
+                      &lt;/html&gt;</L-2>
+                  </DESC>
+                  <SCOPE>LOCAL</SCOPE>
+                  <ORIGIN>CCFC</ORIGIN>
+                  <POST-BUILD-VARIANT-VALUE>false</POST-BUILD-VARIANT-VALUE>
+                  <VALUE-CONFIG-CLASSES>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-POST-BUILD</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                    <ECUC-VALUE-CONFIGURATION-CLASS>
+                      <CONFIG-CLASS>PUBLISHED-INFORMATION</CONFIG-CLASS>
+                      <CONFIG-VARIANT>VARIANT-PRE-COMPILE</CONFIG-VARIANT>
+                    </ECUC-VALUE-CONFIGURATION-CLASS>
+                  </VALUE-CONFIG-CLASSES>
+                  <SYMBOLIC-NAME-VALUE>false</SYMBOLIC-NAME-VALUE>
+                  <DEFAULT-VALUE>176</DEFAULT-VALUE>
+                  <MAX>176</MAX>
+                  <MIN>176</MIN>
+                </ECUC-INTEGER-PARAM-DEF>
+              </PARAMETERS>
+            </ECUC-PARAM-CONF-CONTAINER-DEF>
+          </CONTAINERS>
+        </ECUC-MODULE-DEF>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

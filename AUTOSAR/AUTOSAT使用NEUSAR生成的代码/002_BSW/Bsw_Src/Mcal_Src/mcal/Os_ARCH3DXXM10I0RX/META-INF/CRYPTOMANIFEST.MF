@@ -1,0 +1,8 @@
+
+Name: config/Os.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420866978336760036600681838646012874911324108215480
+ 2639967021859143463963900905969889632629418131434784
+

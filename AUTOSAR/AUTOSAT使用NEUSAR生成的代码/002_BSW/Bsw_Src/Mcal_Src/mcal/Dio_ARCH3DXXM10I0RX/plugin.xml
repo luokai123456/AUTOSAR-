@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+  <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="Dio_ModuleId"
+             name="Dio Module">
+
+    <module id="Dio_CCFC3007PT"
+            label="Dio"
+            mandatory="false"
+            allowMultiple="false"
+            description="Dio BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Dio"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3007PT"/>
+    </module>
+    <module id="Dio_CCFC3008PT"
+            label="Dio"
+            mandatory="false"
+            allowMultiple="false"
+            description="Dio BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Dio"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PT"/>
+    </module>
+    <module id="Dio_CCFC3007BC"
+            label="Dio"
+            mandatory="false"
+            allowMultiple="false"
+            description="Dio BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Dio"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3007BC"/>
+    </module>
+    <module id="Dio_CCFC3008PC"
+            label="Dio"
+            mandatory="false"
+            allowMultiple="false"
+            description="Dio BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Dio"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PC"/>
+    </module>
+    <module id="Dio_CCFC3012PT"
+            label="Dio"
+            mandatory="false"
+            allowMultiple="false"
+            description="Dio BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Dio"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3012PT"/>
+    </module>
+
+    <module id="Dio_CCFC3008PCSN"
+            label="Dio"
+            mandatory="false"
+            allowMultiple="false"
+            description="Dio BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Dio"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PCSN"/>
+    </module>
+    
+    <module id="Dio_CCFC3010PT"
+            label="Dio"
+            mandatory="false"
+            allowMultiple="false"
+            description="Dio BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Dio"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3010PT"/>
+    </module>
+    <module id="Dio_CCFC3011PT"
+            label="Dio"
+            mandatory="false"
+            allowMultiple="false"
+            description="Dio BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Dio"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3011PT"/>
+    </module>
+    <module id="Dio_CCFC3008PCSA"
+            label="Dio"
+            mandatory="false"
+            allowMultiple="false"
+            description="Dio BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Dio"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PCSA"/>
+    </module>
+
+    <module id="Dio_CCFC3010PTD"
+            label="Dio"
+            mandatory="false"
+            allowMultiple="false"
+            description="Dio BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Dio"
+            categoryLayer="MCAL"
+            categoryCategory="IO"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3010PTD"/>
+    </module>
+
+    </extension>
+	
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="Dio_Configuration"
+             name="Dio_Configuration">
+
+    <configuration moduleId="Dio_CCFC3007PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Dio -->
+          <resource value="config/Dio1.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/DioConfig/Dio"/>
+      </data>
+      <editor id="Dio_Editor_01"
+              label="Default"
+              tooltip="Dio BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/DioConfig/Dio"/>
+          <parameter name="title" value="Dio"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Dio_CCFC3008PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Dio -->
+          <resource value="config/Dio1.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/DioConfig/Dio"/>
+      </data>
+      <editor id="Dio_Editor_02"
+              label="Default"
+              tooltip="Dio BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/DioConfig/Dio"/>
+          <parameter name="title" value="Dio"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Dio_CCFC3007BC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Dio -->
+          <resource value="config/Dio1.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/DioConfig/Dio"/>
+      </data>
+      <editor id="Dio_Editor_03"
+              label="Default"
+              tooltip="Dio BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/DioConfig/Dio"/>
+          <parameter name="title" value="Dio"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Dio_CCFC3008PC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Dio -->
+          <resource value="config/Dio3.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/DioConfig/Dio"/>
+      </data>
+      <editor id="Dio_Editor_04"
+              label="Default"
+              tooltip="Dio BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/DioConfig/Dio"/>
+          <parameter name="title" value="Dio"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Dio_CCFC3012PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Dio -->
+          <resource value="config/Dio2.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/DioConfig/Dio"/>
+      </data>
+      <editor id="Dio_Editor_05"
+              label="Default"
+              tooltip="Dio BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/DioConfig/Dio"/>
+          <parameter name="title" value="Dio"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Dio_CCFC3008PCSN">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Dio -->
+          <resource value="config/Dio3.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/DioConfig/Dio"/>
+      </data>
+      <editor id="Dio_Editor_06"
+              label="Default"
+              tooltip="Dio BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/DioConfig/Dio"/>
+          <parameter name="title" value="Dio"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Dio_CCFC3010PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <resource value="config/Dio2.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/DioConfig/Dio"/>
+      </data>
+      <editor id="Dio_Editor_07"
+              label="Default"
+              tooltip="Dio BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/DioConfig/Dio"/>
+          <parameter name="title" value="Dio"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Dio_CCFC3011PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <resource value="config/Dio2.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/DioConfig/Dio"/>
+      </data>
+      <editor id="Dio_Editor_08"
+              label="Default"
+              tooltip="Dio BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/DioConfig/Dio"/>
+          <parameter name="title" value="Dio"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Dio_CCFC3008PCSA">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <resource value="config/Dio3.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/DioConfig/Dio"/>
+      </data>
+      <editor id="Dio_Editor_09"
+              label="Default"
+              tooltip="Dio BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/DioConfig/Dio"/>
+          <parameter name="title" value="Dio"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Dio_CCFC3010PTD">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Dio -->
+          <resource value="config/Dio2.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/DioConfig/Dio"/>
+      </data>
+      <editor id="Dio_Editor_10"
+              label="Default"
+              tooltip="Dio BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/DioConfig/Dio"/>
+          <parameter name="title" value="Dio"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+             id="EPCGenerator"
+             name="EPC Generator">
+
+    <generator moduleId="Dio_CCFC3007PT"
+                 id="Dio_Generator_01"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Dio_CCFC3008PT"
+                 id="Dio_Generator_02"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Dio_CCFC3007BC"
+                 id="Dio_Generator_03"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Dio_CCFC3008PC"
+                 id="Dio_Generator_04"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Dio_CCFC3012PT"
+                 id="Dio_Generator_05"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Dio_CCFC3008PCSN"
+                 id="Dio_Generator_06"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Dio_CCFC3010PT"
+                 id="Dio_Generator_07"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+    <generator moduleId="Dio_CCFC3011PT"
+                 id="Dio_Generator_08"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+    <generator moduleId="Dio_CCFC3008PCSA"
+                 id="Dio_Generator_09"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Dio_CCFC3010PTD"
+                 id="Dio_Generator_10"
+                 class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+      <parameter name="cfgFilePath" value="output"/>
+      <parameter name="generateAllModules" value="false"/>
+      <parameter name="generateIntoOneFile" value="false"/>
+      <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+ </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="Dio_Generator"
+              name="Dio_Generator">
+
+    <generator moduleId="Dio_CCFC3007PT"
+               id="Dio_Generate_01"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom generators -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+      <!-- custom template paths -->
+    </generator>
+
+    <generator moduleId="Dio_CCFC3008PT"
+               id="Dio_Generate_02"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom generators -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+      <!-- custom template paths -->
+    </generator>
+
+    <generator moduleId="Dio_CCFC3007BC"
+               id="Dio_Generate_03"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom generators -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+      <!-- custom template paths -->
+    </generator>
+
+    <generator moduleId="Dio_CCFC3008PC"
+               id="Dio_Generate_04"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom generators -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+      <!-- custom template paths -->
+    </generator>
+
+    <generator moduleId="Dio_CCFC3012PT"
+               id="Dio_Generate_05"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom generators -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+      <!-- custom template paths -->
+    </generator>
+
+    <generator moduleId="Dio_CCFC3008PCSN"
+               id="Dio_Generate_06"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom generators -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+      <!-- custom template paths -->
+    </generator>
+  
+    <generator moduleId="Dio_CCFC3010PT"
+               id="Dio_Generate_07"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+    <generator moduleId="Dio_CCFC3011PT"
+               id="Dio_Generate_08"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+    <generator moduleId="Dio_CCFC3008PCSA"
+               id="Dio_Generate_09"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Dio_CCFC3010PTD"
+               id="Dio_Generate_10"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom generators -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+      <!-- custom template paths -->
+    </generator>
+
+  </extension>
+ 
+  <extension point="org.eclipse.help.toc">
+    <toc file="anchors.xml" primary="true"/>
+    <toc file="$nl$/Dio/toc.xml" primary="false"/>
+    <!-- toc file="$nl$/ReleaseNotes/toc.xml" primary="false"/ !-->
+  </extension>
+</plugin>

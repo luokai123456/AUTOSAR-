@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+  <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="Crypto_Module"
+             name="Crypto_Module">
+
+    <module id="Crypto_CCFC3007PT"
+            label="Crypto"
+            mandatory="false"
+            allowMultiple="false"
+            description="Crypto BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="Crypto"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3007PT"/>
+    </module>
+
+    <module id="Crypto_CCFC3007BC"
+              label="Crypto"
+              mandatory="false"
+              allowMultiple="false"
+              description="Crypto BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Crypto"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3007BC"/>
+    </module>
+
+    <module id="Crypto_CCFC3008PT"
+              label="Crypto"
+              mandatory="false"
+              allowMultiple="false"
+              description="Crypto BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Crypto"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3008PT"/>
+    </module>
+
+    <module id="Crypto_CCFC3008PC"
+              label="Crypto"
+              mandatory="false"
+              allowMultiple="false"
+              description="Crypto BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Crypto"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3008PC"/>
+    </module>
+
+    <module id="Crypto_CCFC3012PT"
+              label="Crypto"
+              mandatory="false"
+              allowMultiple="false"
+              description="Crypto BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Crypto"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3012PT"/>
+    </module>
+
+    <module id="Crypto_CCFC3008PCSN"
+              label="Crypto"
+              mandatory="false"
+              allowMultiple="false"
+              description="Crypto BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Crypto"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3008PCSN"/>
+    </module>
+
+    <module id="Crypto_CCFC3010PT"
+              label="Crypto"
+              mandatory="false"
+              allowMultiple="false"
+              description="Crypto BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Crypto"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3010PT"/>
+    </module>
+
+    <module id="Crypto_CCFC3010PTD"
+              label="Crypto"
+              mandatory="false"
+              allowMultiple="false"
+              description="Crypto BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Crypto"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3010PTD"/>
+    </module>
+
+    <module id="Crypto_CCFC3011PT"
+              label="Crypto"
+              mandatory="false"
+              allowMultiple="false"
+              description="Crypto BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Crypto"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3011PT"/>
+    </module>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="Crypto_Configuration"
+             name="Crypto_Configuration">
+
+    <configuration moduleId="Crypto_CCFC3007PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Crypto.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CryptoConfig/Crypto"/>
+      </data>
+
+      <editor id="Crypto_Editor_01"
+              label="Default"
+              tooltip="Crypto BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/CryptoConfig/Crypto"/>
+              <parameter name="title" value="Crypto"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Crypto_CCFC3007BC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Crypto.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CryptoConfig/Crypto"/>
+      </data>
+
+      <editor id="Crypto_Editor_02"
+              label="Default"
+              tooltip="Crypto BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/CryptoConfig/Crypto"/>
+              <parameter name="title" value="Crypto"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Crypto_CCFC3008PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Crypto.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CryptoConfig/Crypto"/>
+      </data>
+
+      <editor id="Crypto_Editor_03"
+              label="Default"
+              tooltip="Crypto BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/CryptoConfig/Crypto"/>
+              <parameter name="title" value="Crypto"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Crypto_CCFC3008PC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Crypto.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CryptoConfig/Crypto"/>
+      </data>
+
+      <editor id="Crypto_Editor_04"
+              label="Default"
+              tooltip="Crypto BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/CryptoConfig/Crypto"/>
+              <parameter name="title" value="Crypto"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Crypto_CCFC3012PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Crypto.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CryptoConfig/Crypto"/>
+      </data>
+
+      <editor id="Crypto_Editor_05"
+              label="Default"
+              tooltip="Crypto BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/CryptoConfig/Crypto"/>
+              <parameter name="title" value="Crypto"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Crypto_CCFC3010PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Crypto.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CryptoConfig/Crypto"/>
+      </data>
+
+      <editor id="Crypto_Editor_06"
+              label="Default"
+              tooltip="Crypto BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/CryptoConfig/Crypto"/>
+              <parameter name="title" value="Crypto"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Crypto_CCFC3010PTD">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Crypto.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CryptoConfig/Crypto"/>
+      </data>
+
+      <editor id="Crypto_Editor_07"
+              label="Default"
+              tooltip="Crypto BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/CryptoConfig/Crypto"/>
+              <parameter name="title" value="Crypto"/>
+          </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Crypto_CCFC3011PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Crypto.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CryptoConfig/Crypto"/>
+      </data>
+
+      <editor id="Crypto_Editor_08"
+              label="Default"
+              tooltip="Crypto BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/CryptoConfig/Crypto"/>
+              <parameter name="title" value="Crypto"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Crypto_CCFC3008PCSN">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Crypto.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/CryptoConfig/Crypto"/>
+      </data>
+
+      <editor id="Crypto_Editor_09"
+              label="Default"
+              tooltip="Crypto BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/CryptoConfig/Crypto"/>
+              <parameter name="title" value="Crypto"/>
+          </class>
+      </editor>
+    </configuration>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="Crypto_Generator"
+              name="Crypto_Generator">
+      <generator id="Crypto_Generate_01"
+                  moduleId="Crypto_CCFC3007PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Crypto_Generate_02"
+                  moduleId="Crypto_CCFC3007BC"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Crypto_Generate_03"
+                  moduleId="Crypto_CCFC3008PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Crypto_Generate_04"
+                  moduleId="Crypto_CCFC3008PC"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Crypto_Generate_05"
+                  moduleId="Crypto_CCFC3012PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Crypto_Generate_06"
+                  moduleId="Crypto_CCFC3010PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Crypto_Generate_07"
+                  moduleId="Crypto_CCFC3010PTD"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Crypto_Generate_08"
+                  moduleId="Crypto_CCFC3011PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Crypto_Generate_09"
+                  moduleId="Crypto_CCFC3008PCSN"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+  </extension>
+</plugin>

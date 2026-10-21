@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+  <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="Fr_Module"
+             name="Fr_Module">
+
+    <module id="Fr_CCFC3007PT"
+            label="Fr"
+            mandatory="false"
+            allowMultiple="false"
+            description="Fr BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="Fr"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3007PT"/>
+    </module>
+
+    <module id="FrIf_CCFC3007PT"
+            label="FrIf"
+            mandatory="false"
+            allowMultiple="false"
+            description="FrIf BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="FrIf"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3007PT"/>
+    </module>
+
+    <module id="Fr_CCFC3008PT"
+              label="Fr"
+              mandatory="false"
+              allowMultiple="false"
+              description="Fr BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Fr"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3008PT"/>
+    </module>
+
+    <module id="FrIf_CCFC3008PT"
+            label="FrIf"
+            mandatory="false"
+            allowMultiple="false"
+            description="FrIf BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="FrIf"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3008PT"/>
+    </module>
+
+    <module id="Fr_CCFC3012PT"
+              label="Fr"
+              mandatory="false"
+              allowMultiple="false"
+              description="Fr BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Fr"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3012PT"/>
+    </module>
+    <module id="FrIf_CCFC3012PT"
+            label="FrIf"
+            mandatory="false"
+            allowMultiple="false"
+            description="FrIf BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="FrIf"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3012PT"/>
+    </module>
+    <module id="Fr_CCFC3010PT"
+              label="Fr"
+              mandatory="false"
+              allowMultiple="false"
+              description="Fr BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Fr"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3010PT"/>
+    </module>
+    <module id="FrIf_CCFC3010PT"
+            label="FrIf"
+            mandatory="false"
+            allowMultiple="false"
+            description="FrIf BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="FrIf"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3010PT"/>
+    </module>
+    <module id="Fr_CCFC3011PT"
+              label="Fr"
+              mandatory="false"
+              allowMultiple="false"
+              description="Fr BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Fr"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3011PT"/>
+    </module>
+    <module id="FrIf_CCFC3011PT"
+            label="FrIf"
+            mandatory="false"
+            allowMultiple="false"
+            description="FrIf BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="FrIf"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3011PT"/>
+    </module>
+
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="Fr_Configuration"
+             name="Fr_Configuration">
+
+    <configuration moduleId="Fr_CCFC3007PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Fr.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FrConfig/Fr"/>
+      </data>
+
+      <editor id="Fr_Editor_01"
+              label="Default"
+              tooltip="Fr BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/FrConfig/Fr"/>
+              <parameter name="title" value="Fr"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="FrIf_CCFC3007PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/FrIf.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FrIfConfig/FrIf"/>
+      </data>
+
+      <editor id="FrIf_Editor_01"
+              label="Default"
+              tooltip="FrIf BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/FrIfConfig/FrIf"/>
+              <parameter name="title" value="FrIf"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Fr_CCFC3008PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Fr.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FrConfig/Fr"/>
+      </data>
+
+      <editor id="Fr_Editor_02"
+              label="Default"
+              tooltip="Fr BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/FrConfig/Fr"/>
+              <parameter name="title" value="Fr"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="FrIf_CCFC3008PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/FrIf.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FrIfConfig/FrIf"/>
+      </data>
+
+      <editor id="FrIf_Editor_02"
+              label="Default"
+              tooltip="FrIf BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/FrIfConfig/FrIf"/>
+              <parameter name="title" value="FrIf"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Fr_CCFC3012PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Fr.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FrConfig/Fr"/>
+      </data>
+
+      <editor id="Fr_Editor_03"
+              label="Default"
+              tooltip="Fr BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/FrConfig/Fr"/>
+              <parameter name="title" value="Fr"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="FrIf_CCFC3012PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/FrIf.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FrIfConfig/FrIf"/>
+      </data>
+
+      <editor id="FrIf_Editor_03"
+              label="Default"
+              tooltip="FrIf BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/FrIfConfig/FrIf"/>
+              <parameter name="title" value="FrIf"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Fr_CCFC3010PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Fr.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FrConfig/Fr"/>
+      </data>
+
+      <editor id="Fr_Editor_04"
+              label="Default"
+              tooltip="Fr BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/FrConfig/Fr"/>
+              <parameter name="title" value="Fr"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="FrIf_CCFC3010PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/FrIf.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FrIfConfig/FrIf"/>
+      </data>
+
+      <editor id="FrIf_Editor_04"
+              label="Default"
+              tooltip="FrIf BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/FrIfConfig/FrIf"/>
+              <parameter name="title" value="FrIf"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Fr_CCFC3011PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Fr.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FrConfig/Fr"/>
+      </data>
+
+      <editor id="Fr_Editor_05"
+              label="Default"
+              tooltip="Fr BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/FrConfig/Fr"/>
+              <parameter name="title" value="Fr"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="FrIf_CCFC3011PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/FrIf.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FrIfConfig/FrIf"/>
+      </data>
+
+      <editor id="FrIf_Editor_05"
+              label="Default"
+              tooltip="FrIf BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/FrIfConfig/FrIf"/>
+              <parameter name="title" value="FrIf"/>
+          </class>
+      </editor>
+    </configuration>
+
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="EPCGenerator"
+              name="EPC Generator">
+      <generator id="Fr_EPC_Generate_01"
+                  moduleId="Fr_CCFC3007PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="FrIf_EPC_Generate_01"
+                  moduleId="FrIf_CCFC3007PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Fr_EPC_Generate_02"
+                  moduleId="Fr_CCFC3008PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="FrIf_EPC_Generate_02"
+                  moduleId="FrIf_CCFC3008PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Fr_EPC_Generate_03"
+                  moduleId="Fr_CCFC3012PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="FrIf_EPC_Generate_03"
+                  moduleId="FrIf_CCFC3012PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Fr_EPC_Generate_04"
+                  moduleId="Fr_CCFC3010PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="FrIf_EPC_Generate_04"
+                  moduleId="FrIf_CCFC3010PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Fr_EPC_Generate_05"
+                  moduleId="Fr_CCFC3011PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="FrIf_EPC_Generate_05"
+                  moduleId="FrIf_CCFC3011PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="Fr_Generator"
+              name="Fr_Generator">
+      <generator id="Fr_Generate_01"
+                  moduleId="Fr_CCFC3007PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="FrIf_Generate_01"
+                  moduleId="FrIf_CCFC3007PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Fr_Generate_02"
+                  moduleId="Fr_CCFC3008PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="FrIf_Generate_02"
+                  moduleId="FrIf_CCFC3008PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Fr_Generate_03"
+                  moduleId="Fr_CCFC3012PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="FrIf_Generate_03"
+                  moduleId="FrIf_CCFC3012PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Fr_Generate_04"
+                  moduleId="Fr_CCFC3010PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="FrIf_Generate_04"
+                  moduleId="FrIf_CCFC3010PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Fr_Generate_05"
+                  moduleId="Fr_CCFC3011PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="FrIf_Generate_05"
+                  moduleId="FrIf_CCFC3011PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+
+  </extension>
+</plugin>

@@ -1,0 +1,12 @@
+#ifndef ERRORHANDLER_DTCDEF_H
+#define ERRORHANDLER_DTCDEF_H
+
+
+#define EH_DTC_TEST (100)
+#define EH_DTC_TEST_LW (101)
+#define EH_DTC_TEST_ASW (102)
+#define EH_DTC_TEST_LW_ASW (103)
+#define EH_DTC_STG2_AAAA (110)
+
+
+#endif  /* ERRORHANDLER_DTCDEF_H */

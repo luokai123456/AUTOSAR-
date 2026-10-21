@@ -1,0 +1,1332 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     CtlTorqueLoopController.a2l
+ *
+ * 
+ *
+ * Code generation for model "CtlTorqueLoopController".
+ *
+ * Model version              : 1.21
+ * Simulink Coder version : 10.6 R2022b
+ * C source code generated on : Thu May 28 16:40:23 2026
+ *
+ * Target selection: ert.tlc
+ * Embedded hardware selection: Infineon->TriCore
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+ASAP2_VERSION  1 31     /* Version 1.31 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+
+  /begin HEADER "Header Comments go here"
+  /end HEADER
+
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+    /end MOD_PAR
+
+    /begin MOD_COMMON  "Mod Common Comment Here"
+      BYTE_ORDER     MSB_LAST
+
+      ALIGNMENT_BYTE 1
+      ALIGNMENT_WORD 2
+      ALIGNMENT_LONG 4
+      ALIGNMENT_FLOAT32_IEEE 4
+      ALIGNMENT_FLOAT64_IEEE 4
+    /end MOD_COMMON
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_CurrentMax_C
+    /* Long Identifier        */      "Maximum peak phase current limit"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_CurrentMax_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single_A
+    /* Lower Limit            */      -2000.000000
+    /* Upper Limit            */      2000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_FluxWknDeactRate_C
+    /* Long Identifier        */      "Ramp-down rate limit for flux controller deactivation"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_FluxWknDeactRate_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10000000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_FluxWknEnable_C
+    /* Long Identifier        */      "Enable flag for flux weakening controller"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_FluxWknEnable_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_uint8
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_FluxWknKi_C
+    /* Long Identifier        */      "Integral gain of flux weakening PI controller"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_FluxWknKi_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single
+    /* Lower Limit            */      -10000.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_FluxWknKp_C
+    /* Long Identifier        */      "Proportional gain of flux weakening PI controller"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_FluxWknKp_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single
+    /* Lower Limit            */      -100000.000000
+    /* Upper Limit            */      100000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_FluxWknVoltHyst_C
+    /* Long Identifier        */      "Voltage hysteresis for flux weakening activation"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_FluxWknVoltHyst_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single_V
+    /* Lower Limit            */      -10000.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_IdDischargeMode_C
+    /* Long Identifier        */      "D-axis current setpoint for discharge operation"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_IdDischargeMode_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single_A
+    /* Lower Limit            */      -5000.000000
+    /* Upper Limit            */      5000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_IdMapMotor_C
+    /* Long Identifier        */      ""
+    /* Characteristic Type    */      CUBOID
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_IdMapMotor_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      CtlTorqueLoopController_CM_single
+      /* Number of Axis Pts   */      50
+      /* Lower Limit          */      -3.4E+38
+      /* Upper Limit          */      3.4E+38
+      AXIS_PTS_REF                    CTLC_TorqueAxis_C
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      CtlTorqueLoopController_CM_single
+      /* Number of Axis Pts   */      35
+      /* Lower Limit          */      -3.4E+38
+      /* Upper Limit          */      3.4E+38
+      AXIS_PTS_REF                    CTLC_SpeedAxis_C
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Z-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      SGPP_DcLinkVoltMeas
+      /* Conversion Method    */      CtlTorqueLoopController_CM_single
+      /* Number of Axis Pts   */      3
+      /* Lower Limit          */      -3.4E+38
+      /* Upper Limit          */      3.4E+38
+      AXIS_PTS_REF                    CTLC_VoltageAxis_C
+    /end AXIS_DESCR
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_IdRateLimit_C
+    /* Long Identifier        */      "Rate limiter for d-axis current change"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_IdRateLimit_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      20000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_IdSetpointCal_C
+    /* Long Identifier        */      "D-axis current setpoint for calibration mode"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_IdSetpointCal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single_A
+    /* Lower Limit            */      -2000.000000
+    /* Upper Limit            */      2000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_IqMapMotor_C
+    /* Long Identifier        */      ""
+    /* Characteristic Type    */      CUBOID
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_IqMapMotor_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      CtlTorqueLoopController_CM_single
+      /* Number of Axis Pts   */      50
+      /* Lower Limit          */      -3.4E+38
+      /* Upper Limit          */      3.4E+38
+      AXIS_PTS_REF                    CTLC_TorqueAxis_C
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      CtlTorqueLoopController_CM_single
+      /* Number of Axis Pts   */      35
+      /* Lower Limit          */      -3.4E+38
+      /* Upper Limit          */      3.4E+38
+      AXIS_PTS_REF                    CTLC_SpeedAxis_C
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Z-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      SGPP_DcLinkVoltMeas
+      /* Conversion Method    */      CtlTorqueLoopController_CM_single
+      /* Number of Axis Pts   */      3
+      /* Lower Limit          */      -3.4E+38
+      /* Upper Limit          */      3.4E+38
+      AXIS_PTS_REF                    CTLC_VoltageAxis_C
+    /end AXIS_DESCR
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_IqRateLimit_C
+    /* Long Identifier        */      "Rate limiter for q-axis current change"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_IqRateLimit_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      20000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_IqSetpointCal_C
+    /* Long Identifier        */      "Q-axis current setpoint for calibration mode"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_IqSetpointCal_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single_A
+    /* Lower Limit            */      -2000.000000
+    /* Upper Limit            */      2000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_SpeedCorrMax_C
+    /* Long Identifier        */      "Maximum speed correction during flux weakening"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_SpeedCorrMax_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single_rpm
+    /* Lower Limit            */      -100000.000000
+    /* Upper Limit            */      100000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_SpeedCtrlKi_C
+    /* Long Identifier        */      "Integral gain of speed PI controller"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_SpeedCtrlKi_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_SpeedCtrlKp_C
+    /* Long Identifier        */      "Proportional gain of speed PI controller"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_SpeedCtrlKp_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_SpeedFilterFreq_C
+    /* Long Identifier        */      "Filter cutoff frequency for interpolation speed"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_SpeedFilterFreq_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single_Hz
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      100000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTLC_VoltReserveEarly_C
+    /* Long Identifier        */      "Voltage factor for early flux weakening activation"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_VoltReserveEarly_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_VoltVectorMagFiltered
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_VoltVectorMagFiltered@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTDM_TorqueLimitNeg
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTDM_TorqueLimitNeg@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTDM_TorqueLimitPos
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTDM_TorqueLimitPos@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTDM_TorqueSpLimited
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTDM_TorqueSpLimited@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTLC_IdSpLimited
+    /* Long identifier        */      "D-axis current reference after limitation for control loop"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2000.000000
+    /* Upper limit            */      2000.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTLC_IdSpLimited@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTLC_IqSpLimited
+    /* Long identifier        */      "Q-axis current reference after limitation for control loop"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2000.000000
+    /* Upper limit            */      2000.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTLC_IqSpLimited@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_OperationMode
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlTorqueLoopController_CM_EnumCtlMode
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      14
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_OperationMode@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_SpeedIntegralDisable
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlTorqueLoopController_CM_boolean
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_SpeedIntegralDisable@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_SpeedIntegralReset
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_SpeedIntegralReset@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.Delay1_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.Delay1_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.Delay1_DSTATE_l
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.Delay1_DSTATE_l@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.Delay_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.Delay_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.Delay_DSTATE_b
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlTorqueLoopController_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.Delay_DSTATE_b@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.Delay_DSTATE_e
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlTorqueLoopController_CM_boolean
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.Delay_DSTATE_e@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.Delay_DSTATE_f
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.Delay_DSTATE_f@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.Delay_DSTATE_g
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.Delay_DSTATE_g@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.Delay_DSTATE_h
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.Delay_DSTATE_h@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.Delay_DSTATE_p
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.Delay_DSTATE_p@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.Delay_DSTATE_p4
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlTorqueLoopController_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.Delay_DSTATE_p4@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.UnitDelay_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.UnitDelay_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.UnitDelay_DSTATE_a
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlTorqueLoopController_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.UnitDelay_DSTATE_a@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.icLoad
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlTorqueLoopController_CM_boolean
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.icLoad@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.icLoad_e
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlTorqueLoopController_CM_boolean
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.icLoad_e@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.icLoad_g
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlTorqueLoopController_CM_boolean
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.icLoad_g@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.icLoad_h
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlTorqueLoopController_CM_boolean
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.icLoad_h@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.icLoad_h5
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlTorqueLoopController_CM_boolean
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.icLoad_h5@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.icLoad_i
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlTorqueLoopController_CM_boolean
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.icLoad_i@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.icLoad_n
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlTorqueLoopController_CM_boolean
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.icLoad_n@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlTorqueLoopController_DW.icLoad_o
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlTorqueLoopController_CM_boolean
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlTorqueLoopController_DW.icLoad_o@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_DcLinkVoltMeas
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_DcLinkVoltMeas@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_MechSpeed
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_MechSpeed@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SampleTime2
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SampleTime2@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SpeedSp
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlTorqueLoopController_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SpeedSp@ */
+  /end MEASUREMENT 
+
+  /begin AXIS_PTS 
+    /* Name                   */      CTLC_SpeedAxis_C
+    /* Long Identifier        */      ""
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_SpeedAxis_C@ */
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      Axis_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single
+    /* Number of Axis Pts     */      35
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end AXIS_PTS 
+
+  /begin AXIS_PTS 
+    /* Name                   */      CTLC_TorqueAxis_C
+    /* Long Identifier        */      ""
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_TorqueAxis_C@ */
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      Axis_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single
+    /* Number of Axis Pts     */      50
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end AXIS_PTS 
+
+  /begin AXIS_PTS 
+    /* Name                   */      CTLC_VoltageAxis_C
+    /* Long Identifier        */      ""
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTLC_VoltageAxis_C@ */
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      Axis_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlTorqueLoopController_CM_single
+    /* Number of Axis Pts     */      3
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end AXIS_PTS 
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlTorqueLoopController_CM_EnumCtlMode
+    /* Long identifier        */      "Enumerated data type: EnumCtlMode"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.6"
+    /* Units                  */      ""
+    /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_CtlTorqueLoopController_CM_EnumCtlMode
+  /end COMPU_METHOD
+
+  /begin COMPU_VTAB
+    /* Name of Table          */      VTAB_FOR_CtlTorqueLoopController_CM_EnumCtlMode
+    /* Long identifier        */      "Enumerated data type: EnumCtlMode"
+    /* Conversion Type        */      TAB_VERB
+    /* Number of Elements     */      15
+    /* Table Element          */      0 "Init"
+    /* Table Element          */      1 "LowVoltReady"
+    /* Table Element          */      2 "HighVoltStandby"
+    /* Table Element          */      3 "Ready"
+    /* Table Element          */      4 "HighVoltDischarge"
+    /* Table Element          */      5 "LowVoltDischarge"
+    /* Table Element          */      6 "Discharge"
+    /* Table Element          */      7 "PowerDown"
+    /* Table Element          */      8 "Fault"
+    /* Table Element          */      9 "OpenLoopCtrl"
+    /* Table Element          */      10 "VoltDirectCtrl"
+    /* Table Element          */      11 "CurrCtrl"
+    /* Table Element          */      12 "TorqueCtrl"
+    /* Table Element          */      13 "SpeedCtrl"
+    /* Table Element          */      14 "ZeroPointCal"
+  /end COMPU_VTAB
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlTorqueLoopController_CM_boolean
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%1.0"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlTorqueLoopController_CM_single
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlTorqueLoopController_CM_single_A
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "A"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlTorqueLoopController_CM_single_Hz
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "Hz"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlTorqueLoopController_CM_single_V
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlTorqueLoopController_CM_single_rpm
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rpm"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlTorqueLoopController_CM_uint8
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%3.0"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin  RECORD_LAYOUT Record_BOOLEAN
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_FLOAT32_IEEE
+    FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_UBYTE
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /* Record Layouts for Lookup Tables in Standard Axis format */
+
+  /begin RECORD_LAYOUT Axis_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end RECORD_LAYOUT 
+
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController
+    /* Long identifier        */      "CtlTorqueLoopController"
+    /* Root                   */      ROOT
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTCR_VoltVectorMagFiltered
+      CTDM_TorqueLimitNeg
+      CTDM_TorqueLimitPos
+      CTDM_TorqueSpLimited
+      CTSO_OperationMode
+      CTSO_SpeedIntegralDisable
+      CTSO_SpeedIntegralReset
+      SGPP_DcLinkVoltMeas
+      SGPP_MechSpeed
+      SGPP_SampleTime2
+      SGPP_SpeedSp
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefLimit
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_CurrentModeGen
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_DischargeModeGen
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTSO_OperationMode
+      CtlTorqueLoopController_DW.UnitDelay_DSTATE_a
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_CurrentModeGen
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/CurrentModeGen"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_CurrentModeGen_Parameter1
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_CurrentModeGen_Parameter2
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_CurrentModeGen_Parameter3
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_CurrentModeGen_Parameter7
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_CurrentModeGen_RateLimiter
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_CurrentModeGen_RateLimiter1
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_CurrentModeGen_Parameter1
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/CurrentModeGen/Parameter1"
+    /begin REF_CHARACTERISTIC
+      CTLC_IqSetpointCal_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_CurrentModeGen_Parameter2
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/CurrentModeGen/Parameter2"
+    /begin REF_CHARACTERISTIC
+      CTLC_IdRateLimit_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_CurrentModeGen_Parameter3
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/CurrentModeGen/Parameter3"
+    /begin REF_CHARACTERISTIC
+      CTLC_IqRateLimit_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_CurrentModeGen_Parameter7
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/CurrentModeGen/Parameter7"
+    /begin REF_CHARACTERISTIC
+      CTLC_IdSetpointCal_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_CurrentModeGen_RateLimiter
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/CurrentModeGen/RateLimiter"
+    /begin REF_MEASUREMENT
+      CtlTorqueLoopController_DW.Delay_DSTATE_g
+      CtlTorqueLoopController_DW.icLoad_e
+      SGPP_SampleTime2
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_CurrentModeGen_RateLimiter1
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/CurrentModeGen/RateLimiter1"
+    /begin REF_MEASUREMENT
+      CtlTorqueLoopController_DW.Delay_DSTATE_p
+      CtlTorqueLoopController_DW.icLoad_h5
+      SGPP_SampleTime2
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_DischargeModeGen
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/DischargeModeGen"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_DischargeModeGen_Parameter2
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_DischargeModeGen_Parameter2
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/DischargeModeGen/Parameter2"
+    /begin REF_CHARACTERISTIC
+      CTLC_IdDischargeMode_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_TorqueRefCalc
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_IdIqCmdLookup
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_IdIqCmdLookup
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/IdIqCmdLookup"
+    /begin REF_CHARACTERISTIC
+      CTLC_IdMapMotor_C
+      CTLC_IqMapMotor_C
+      CTLC_SpeedAxis_C
+      CTLC_TorqueAxis_C
+      CTLC_VoltageAxis_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      SGPP_DcLinkVoltMeas
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_CalcUVecMax
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_FwCtl
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_Limit
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_StateFw
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_CalcUVecMax
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/CalcUVecMax"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_CalcUVecMax_Parameter2
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_DcLinkVoltMeas
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_CalcUVecMax_Parameter2
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/CalcUVecMax/Parameter2"
+    /begin REF_CHARACTERISTIC
+      CTLC_VoltReserveEarly_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_FwCtl
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/FwCtl"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_FwCtl_Fw_PI
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_FwCtl_Parameter1
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_FwCtl_Parameter2
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_FwCtl_Parameter3
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_FwCtl_RampDown
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTCR_VoltVectorMagFiltered
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_FwCtl_Fw_PI
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/FwCtl/Fw_PI"
+    /begin REF_MEASUREMENT
+      CtlTorqueLoopController_DW.Delay1_DSTATE
+      CtlTorqueLoopController_DW.Delay_DSTATE
+      CtlTorqueLoopController_DW.icLoad
+      CtlTorqueLoopController_DW.icLoad_o
+      SGPP_SampleTime2
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_FwCtl_Parameter1
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/FwCtl/Parameter1"
+    /begin REF_CHARACTERISTIC
+      CTLC_FluxWknKp_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_FwCtl_Parameter2
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/FwCtl/Parameter2"
+    /begin REF_CHARACTERISTIC
+      CTLC_FluxWknEnable_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_FwCtl_Parameter3
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/FwCtl/Parameter3"
+    /begin REF_CHARACTERISTIC
+      CTLC_FluxWknKi_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_FwCtl_RampDown
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/FwCtl/RampDown"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_FwCtl_RampDown_Parameter2
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_FwCtl_RampDown_RateLimiter
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_FwCtl_RampDown_Parameter2
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/FwCtl/RampDown/Parameter2"
+    /begin REF_CHARACTERISTIC
+      CTLC_FluxWknDeactRate_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_FwCtl_RampDown_RateLimiter
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/FwCtl/RampDown/RateLimiter"
+    /begin REF_MEASUREMENT
+      CtlTorqueLoopController_DW.UnitDelay_DSTATE
+      SGPP_SampleTime2
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_Limit
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/Limit"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_Limit_LowPassFilter
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_Limit_Parameter
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_Limit_Saturation
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_MechSpeed
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_Limit_LowPassFilter
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/Limit/LowPassFilter"
+    /begin REF_MEASUREMENT
+      CtlTorqueLoopController_DW.Delay_DSTATE_h
+      SGPP_SampleTime2
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_Limit_Parameter
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/Limit/Parameter"
+    /begin REF_CHARACTERISTIC
+      CTLC_SpeedFilterFreq_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_Limit_Saturation
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/Limit/Saturation"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_Limit_Saturation_EnaAntiWindup
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_Limit_Saturation_Saturation
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_Limit_Saturation_EnaAntiWindup
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/Limit/Saturation/EnaAntiWindup"
+    /begin REF_MEASUREMENT
+      CtlTorqueLoopController_DW.Delay_DSTATE_b
+      CtlTorqueLoopController_DW.icLoad_n
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_Limit_Saturation_Saturation
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/Limit/Saturation/Saturation"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_Limit_Saturation_Saturation_Parameter
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_Limit_Saturation_Saturation_Parameter
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/Limit/Saturation/Saturation/Parameter"
+    /begin REF_CHARACTERISTIC
+      CTLC_SpeedCorrMax_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_StateFw
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/StateFw"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_StateFw_HysteresisCtrl
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_StateFw_Parameter2
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTCR_VoltVectorMagFiltered
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_StateFw_HysteresisCtrl
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/StateFw/HysteresisCtrl"
+    /begin REF_MEASUREMENT
+      CtlTorqueLoopController_DW.Delay_DSTATE_e
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_IdIqFromTorque_SpeedCalcForLookup_StateFw_Parameter2
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/IdIqFromTorque/SpeedCalcForLookup/StateFw/Parameter2"
+    /begin REF_CHARACTERISTIC
+      CTLC_FluxWknVoltHyst_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_TorqueRefCalc
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/TorqueRefCalc"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_TorqueRefCalc_SpeedModeRefCalc
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTSO_OperationMode
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_TorqueRefCalc_SpeedModeRefCalc
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/TorqueRefCalc/SpeedModeRefCalc"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_TorqueRefCalc_SpeedModeRefCalc_EnAwUp
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_TorqueRefCalc_SpeedModeRefCalc_PI_SpeedLoop
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_TorqueRefCalc_SpeedModeRefCalc_Parameter1
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_TorqueRefCalc_SpeedModeRefCalc_Parameter7
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_TorqueRefCalc_SpeedModeRefCalc_TqSaturation
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_TorqueRefCalc_SpeedModeRefCalc_EnAwUp
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/TorqueRefCalc/SpeedModeRefCalc/EnAwUp"
+    /begin REF_MEASUREMENT
+      CTSO_SpeedIntegralReset
+      CtlTorqueLoopController_DW.Delay_DSTATE_p4
+      CtlTorqueLoopController_DW.icLoad_i
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_TorqueRefCalc_SpeedModeRefCalc_PI_SpeedLoop
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/TorqueRefCalc/SpeedModeRefCalc/PI_SpeedLoop"
+    /begin REF_MEASUREMENT
+      CTSO_SpeedIntegralDisable
+      CTSO_SpeedIntegralReset
+      CtlTorqueLoopController_DW.Delay1_DSTATE_l
+      CtlTorqueLoopController_DW.Delay_DSTATE_f
+      CtlTorqueLoopController_DW.icLoad_g
+      CtlTorqueLoopController_DW.icLoad_h
+      SGPP_MechSpeed
+      SGPP_SampleTime2
+      SGPP_SpeedSp
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_TorqueRefCalc_SpeedModeRefCalc_Parameter1
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/TorqueRefCalc/SpeedModeRefCalc/Parameter1"
+    /begin REF_CHARACTERISTIC
+      CTLC_SpeedCtrlKi_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_TorqueRefCalc_SpeedModeRefCalc_Parameter7
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/TorqueRefCalc/SpeedModeRefCalc/Parameter7"
+    /begin REF_CHARACTERISTIC
+      CTLC_SpeedCtrlKp_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_TorqueRefCalc_SpeedModeRefCalc_TqSaturation
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/TorqueRefCalc/SpeedModeRefCalc/TqSaturation"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_TorqueRefCalc_SpeedModeRefCalc_TqSaturation_Saturation_Dynamic
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefCompute_SpeedTorqueMode_TorqueRefCalc_SpeedModeRefCalc_TqSaturation_Saturation_Dynamic
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefCompute/SpeedTorqueMode/TorqueRefCalc/SpeedModeRefCalc/TqSaturation/Saturation
+Dynamic"
+    /begin REF_MEASUREMENT
+      CTDM_TorqueLimitNeg
+      CTDM_TorqueLimitPos
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefLimit
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefLimit"
+    /begin SUB_GROUP
+      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefLimit_Parameter7
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlTorqueLoopController_CTLC_CalcIdIqRef_1ms_sys_IdIqRefLimit_Parameter7
+    /* Long identifier        */      "CtlTorqueLoopController/CTLC_CalcIdIqRef_1ms_sys/IdIqRefLimit/Parameter7"
+    /begin REF_CHARACTERISTIC
+      CTLC_CurrentMax_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /end MODULE
+
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF CtlTorqueLoopController.a2l*/

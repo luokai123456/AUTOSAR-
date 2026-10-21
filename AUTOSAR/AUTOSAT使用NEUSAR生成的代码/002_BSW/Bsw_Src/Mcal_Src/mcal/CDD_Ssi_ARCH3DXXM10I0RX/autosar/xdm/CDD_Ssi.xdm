@@ -1,0 +1,267 @@
+<?xml version='1.0'?>
+<datamodel version="7.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:ce="http://www.tresos.de/_projects/DataModel2/18/childenable.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="SsiConfig" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="CDD_Ssi" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.4.0</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC" 
+                   value="EN: This container holds the configuration of a single CDD_Ssi Driver."/>
+              <a:a name="LOWER-MULTIPLICITY" value="1"/>
+              <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+              <a:a name="RELEASE" value="asc:4.4.0"/>
+              <a:a name="UPPER-MULTIPLICITY" value="*"/>
+              <a:a name="UUID" value="3db3850a-dd22-4180-a582-ab48f9cd3fsd"/>
+              <v:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN">
+                <a:a name="DESC" 
+                     value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Post Build Variant Used"/>
+                <a:a name="ORIGIN" value="EB"/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="UUID" value="d542189e-cd06-474d-891d-c1e7987143545"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="false"/>
+                <a:da name="READONLY" value="FALSE"/>
+                <a:da name="TOOLTIP" 
+                      value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+              </v:var>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:a name="UUID" value="cc2ff55c-7bd3-44b3-9425-c344af4abdf1"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="VariantPostBuild"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuild</a:v>
+                  <a:v>VariantPreCompile</a:v>
+                </a:da>
+              </v:var>
+                 <v:var name="SSIInlineSupport" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:<html> Enables or disables the declaration and definition of inline functions.</p></html>]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="83cd7281-02ef-4467-825e-9c9f09200929" />
+                  <a:da name="DEFAULT" value="true" />
+                </v:var>
+
+              <v:ctr name="SSI_ConfigList" type="IDENTIFIABLE">
+                <a:a name="LABEL" value="Ssi Config"/>
+                <a:a name="DESC">
+                    <a:v>
+                        <![CDATA[EN:<html><p>
+                            List of eTPU. 
+                        </p></html>]]>
+                    </a:v>
+                </a:a>
+                <a:a name="UUID" value="ECUC:c7525242-deac-4777-bef8-4c2672af382e"/>
+
+              <v:var name="Instance" type="ENUMERATION">
+                <a:a name="DESC" value="EN: Filter Prescaler Clock." />
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                <a:a name="SCOPE" value="LOCAL" />
+                <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a41" />
+                <a:a name="__ORIGIN" value="Elektrobit" />
+                <a:da name="DEFAULT" value="SSI1_StPtr" />
+                <a:da name="RANGE">
+                  <a:v>SSI0_StPtr</a:v>
+                  <a:v>SSI1_StPtr</a:v>
+              </a:da>
+              </v:var>
+
+              <v:var name="State" type="ENUMERATION">
+                <a:a name="DESC" value="EN: Filter Prescaler Clock." />
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                <a:a name="SCOPE" value="LOCAL" />
+                <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a42" />
+                <a:a name="__ORIGIN" value="Elektrobit" />
+                <a:da name="DEFAULT" value="HAL_SSI_STATE_RESET" />
+                <a:da name="RANGE">
+                  <a:v>HAL_SSI_STATE_RESET</a:v>
+                  <a:v>HAL_SSI_STATE_READY</a:v>
+                  <a:v>HAL_SSI_STATE_BUSY</a:v>
+                  <a:v>HAL_SSI_STATE_BUSY_TX</a:v>
+                  <a:v>HAL_SSI_STATE_BUSY_RX</a:v>
+                  <a:v>HAL_SSI_STATE_BUSY_TX_RX</a:v>
+                  <a:v>HAL_SSI_STATE_ERROR</a:v>
+              </a:da>
+              </v:var>
+
+              <v:ctr name="Ssi_Init" type="IDENTIFIABLE">
+                <a:a name="DESC" value="EN: Configure eTPU engine B timebases." />
+                <a:a name="UUID" value="e4a13be6-e686-4996-838a-251635c72817" />
+              
+                  <v:var name="DFS" type="ENUMERATION">
+                  <a:a name="DESC" value="EN: DFS." />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a43" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="DFS_08_BIT" />
+                  <a:da name="RANGE">
+                    <a:v>DFS_01_BIT</a:v>
+                    <a:v>DFS_02_BIT</a:v>
+                    <a:v>DFS_03_BIT</a:v>
+                    <a:v>DFS_04_BIT</a:v>
+                    <a:v>DFS_05_BIT</a:v>
+                    <a:v>DFS_06_BIT</a:v>
+                    <a:v>DFS_07_BIT</a:v>
+                    <a:v>DFS_08_BIT</a:v>
+                    <a:v>DFS_09_BIT</a:v>
+                    <a:v>DFS_10_BIT</a:v>
+                    <a:v>DFS_11_BIT</a:v>
+                    <a:v>DFS_12_BIT</a:v>
+                    <a:v>DFS_13_BIT</a:v>
+                    <a:v>DFS_14_BIT</a:v>
+                    <a:v>DFS_15_BIT</a:v>
+                    <a:v>DFS_16_BIT</a:v>
+                    <a:v>DFS_17_BIT</a:v>
+                    <a:v>DFS_18_BIT</a:v>
+                    <a:v>DFS_19_BIT</a:v>
+                    <a:v>DFS_20_BIT</a:v>
+                    <a:v>DFS_21_BIT</a:v>
+                    <a:v>DFS_22_BIT</a:v>
+                    <a:v>DFS_23_BIT</a:v>
+                    <a:v>DFS_24_BIT</a:v>
+                    <a:v>DFS_25_BIT</a:v>
+                    <a:v>DFS_26_BIT</a:v>
+                    <a:v>DFS_27_BIT</a:v>
+                    <a:v>DFS_28_BIT</a:v>
+                    <a:v>DFS_29_BIT</a:v>
+                    <a:v>DFS_30_BIT</a:v>
+                    <a:v>DFS_31_BIT</a:v>
+                    <a:v>DFS_32_BIT</a:v>
+                  </a:da>
+                </v:var>
+                
+                <v:var name="Format" type="ENUMERATION">
+                  <a:a name="DESC" value="EN: Code RAM MISC Enable." />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a44" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="STD_mode" />
+                  <a:da name="RANGE">
+                    <a:v>STD_mode</a:v>
+                    <a:v>DUAL_mode</a:v>
+                    <a:v>QUAD_mode</a:v>
+                    <a:v>QPI_mode</a:v>
+                  </a:da>
+                </v:var>
+
+                <v:var name="SSI_BaudRatePrescaler" type="INTEGER">
+                  <a:a name="DESC" value="EN: Code RAM MISC Enable.0x04" />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a45" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="4" />
+                </v:var>
+
+            </v:ctr>
+
+                <v:var name="timeout" type="ENUMERATION">
+                  <a:a name="DESC" value="ssi_timeout." />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="53eb3161-324a-448a-97a8-f8c9d3125a4b" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="ssi_timeout" />
+                  <a:da name="RANGE">
+                    <a:v>ssi_timeout</a:v>
+                  </a:da>
+                </v:var>
+                </v:ctr>
+              
+                
+            </v:ctr>
+          </d:chc>
+          <d:chc name="myEcuParameterDefinition" type="AR-ELEMENT" 
+                 value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="DEF" 
+                   value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+              <d:lst name="MODULE_REF">
+                <d:ref type="MODULE_REF" value="ASPath:/SsiConfig/CDD_Ssi"/>
+              </d:lst>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

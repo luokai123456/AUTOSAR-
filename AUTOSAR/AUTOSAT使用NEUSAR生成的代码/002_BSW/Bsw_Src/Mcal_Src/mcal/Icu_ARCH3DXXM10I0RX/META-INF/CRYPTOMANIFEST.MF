@@ -1,0 +1,85 @@
+
+Name: config/Icu5.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423000291778808448726077915262185326835470734353289
+ 9666324950523996448354878188390593225220742256854272
+
+Name: config/Icu10.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425220420675260769196923187851891223457515104692340
+ 0177553197885718355986192976862877393541318573035478
+
+Name: config/Icu6.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425737522216598795778590615923125006077805815515832
+ 4948297061308187433808159791558893491389026761793410
+
+Name: config/Icu1.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594749061649506022915458672031319114627020763558484935
+ 383480363013510248349392214360074226734640244042906414
+
+Name: config/Icu4.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425196846290897145316869760512327661339330647514477
+ 3170119382604947293105407945155491481723361466602090
+
+Name: config/Icu3.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773968379711217581504605005695533058610707695196545
+ 642449908700732996820353563813704440539674062025800351
+
+Name: config/Icu2.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421799938743974507533306177416933796064526594799164
+ 0048505158408712471531661406530141180716446715255355
+
+Name: config/Icu8.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 44189296901935645191081695070153764079587182788127440933560
+ 8083506779939265375629336851335904783378471639615
+
+Name: config/Icu7.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423379310134534183737536068950184322844601195533464
+ 4828591522905177609635808551470191757727832664734725
+
+Name: generate/include/Icu_Cfg.h
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420410795436859661038905383927485201015280633399780
+ 5632404535060713349720011128147638969388539438110684
+
+Name: generate/source/Icu_Cfg.c
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421678305139852932594405448636481781810045030144516
+ 2483987837450417017742584390963097402229129990490338
+
+Name: config/Icu9.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421597539634848801539597297849382363515617773881227
+ 5493150999436282800348530800508340388553982214627938
+

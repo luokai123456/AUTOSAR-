@@ -1,0 +1,214 @@
+SWS_CanNm_00005 | 7.7.1 | If the Repeat Message State is not entered via CanNm_NetworkRequest OR CanNmImmediateNmTransmissions is zero the transmission of NM PDU shall be delayed by CanNmMsgCycleOffset after entering
+SWS_CanNm_00006 | 7.7.1 | If Normal Operation State is entered from Ready Sleep State the transmission of NM PDUs shall be started immediately.
+SWS_CanNm_00013 | 7.6 | The CanNm module shall set the Source Node Identifier with the configuration parameter CanNmNodeId unless CanNmPduNidPosition is set to off.
+SWS_CanNm_00023 | 7.4 | During initialization the CanNm module shall deactivate the bus load reduction.
+SWS_CanNm_00025 | 7.4 | During initialization the CanNm module shall set each byte of the user data to 0xFF.
+SWS_CanNm_00033 | 7.4 | After initialization the CanNm module shall stop the transmission of Network Management PDUs by stopping the Message Cycle Timer.
+SWS_CanNm_00035 | 7.7.2 | On the call of the callback function CanNm_RxIndication, the CanNm module shall copy the data of the Network Management PDU referenced in the function parameter to an internal buffer.
+SWS_CanNm_00037 | 7.9.4 | On the call of the callback function CanNm_RxIndication, the CanNm module shall call the Nm callback function Nm_PduRxIndication, if and only if CanNmPduRxIndicationEnabled (configuration pa
+SWS_CanNm_00040 | 7.7.1 | If the CanNm Message Cycle Timer expires the CanNm module shall restart with CanNmMsgCycleTime.
+SWS_CanNm_00051 | 7.7.1 | If transmission of Network Management PDU s has been stopped the CanNm module shall cancel the Message Cycle Timer.
+SWS_CanNm_00052 | 7.8 | The bus load reduction mechanism shall be statically configurable by means of the CanNmBusLoadReductionEnabled parameter (see 10.2).
+SWS_CanNm_00060 | 7.4 | The function CanNm_Init shall select the active configuration set by means of a configuration pointer parameter being passed (see 8.3.1).
+SWS_CanNm_00061 | 7.4 | If CanNmGlobalPnSupport is set to TRUE and CanNm is initialized (call of CanNm_Init) then CanNm shall stop the NM Message Tx Timeout Timer.
+SWS_CanNm_00064 | 7.12 | If CanNmGlobalPnSupport is set to TRUE and CanNmMsgTimeoutTime is defined and CanNm requests the transmission of a NM PDU Specification of CAN Network Management AUTOSAR CP R21-11 53 of 117 
+SWS_CanNm_00065 | 7.12 | If CanNmGlobalPnSupport is set to TRUE and CanNmMsgTimeoutTime is defined and CanNm_TxConfirmation is called then CanNm shall stop the NM Message Tx Timeout Timer.
+SWS_CanNm_00066 | 7.12 | If CanNm_TxConfirmation is called with result E_NOT_OK or if CanNmGlobalPnSupport is set to TRUE and NM Message Tx Timeout Timer has expired then CanNm shall call the function Nm_TxTimeoutEx
+SWS_CanNm_00069 | 7.8 | If the bus load reduction mechanism is globally enabled (CanNmBusLoadReductionEnabled is TRUE), for a particular network activated, PDU transmission ability is enabled and the function CanNm
+SWS_CanNm_00071 | 7.7.1 | The immediate transmission confirmation mechanism shall be configurable by means of the CanNmImmediateTxConfEnabled (see 10.2).
+SWS_CanNm_00072 | 7.7.1 | The Network Management PDUs transmission capability shall be configurable by means of CanNmPassiveModeEnabled (see chapter 10.2).
+SWS_CanNm_00073 | 7.12 | If CanNmPassiveModeEnabled is set to TRUE (see SWS_CanNm_00072) or CanNmImmediateTxConfEnabled is set to TRUE CanNm shall not perform transmission error handling and omit the requirements SW
+SWS_CanNm_00074 | 7.6 | The location of the Source Node Identifier shall be configurable by means of CanNmPduNidPosition to Byte 0, Byte 1, or off.
+SWS_CanNm_00075 | 7.6 | The location of the Control Bit Vector shall be configurable by means of CanNmPduCbvPosition to Byte 0, Byte 1, or off.
+SWS_CanNm_00085 | 7.4 | During initialization the CanNm module shall set the Control Bit Vector to 0x00.
+SWS_CanNm_00086 | 7.13 | If CanNmUserDataEnabled is enabled but no user data bytes are available , the CanNm module shall raise an error during configuration or compilation time.
+SWS_CanNm_00087 | 7.1 | Every netwo rk node in a CanNm cluster shall transmit periodic Network Management PDU s as long as it requires bus -communication; otherwise it shall transmit no Network Management PDUs.
+SWS_CanNm_00088 | 7.1 | If CanNmStayInPbsEnabled is disabled and bus communication in a CanNm cluster is released and there are no Network Management PDU s on the bus for a configurable amount of time determined by
+SWS_CanNm_00089 | 7.1 | The AUTOSAR CanNm state machine shall contain states, transitions and triggers required for the AUTOSAR CanNm algorithm seen from point of view of one single node in the network management c
+SWS_CanNm_00091 | 7.2 | When CanNm_GetState is called CanNm shall return the current NM state and mode.
+SWS_CanNm_00092 | 7.2 | The AUTOSAR CanNm shall contain three operational modes visible at the module’s interface:  Network Mode  Prepare Bus-Sleep Mode  Bus-Sleep Mode
+SWS_CanNm_00093 | 7.2 | Changes of the AUTOSAR CanNm operational modes shall be notified to the upper layer by means of callback functions.
+SWS_CanNm_00094 | 7.2.1 | The Network Mode shall consist of three internal states:  Repeat Message State  Normal Operation State  Ready Sleep State
+SWS_CanNm_00096 | 7.2.1 | When the Network Mode is entered, the CanNm module shall start the NM-Timeout Timer.
+SWS_CanNm_00097 | 7.2.1 | When the Network Mode is entered, CanNm shall notify the upper layer of the new current operational mode by calling the callback function Nm_NetworkMode.
+SWS_CanNm_00098 | 7.2.1 | At successful reception of a Network Management PDU (call of CanNm_RxIndication) in the Network Mode, the CanNm module shall restart the NM-Timeout Timer if PDU transmission ability is enabl
+SWS_CanNm_00099 | 7.2.1 | At successful transmission of a Network Management PDU (call of CanNm_TxConfirmation with E_OK) in the Network Mode, the CanNm module shall restart the NM-Timeout Timer.
+SWS_CanNm_00100 | 7.2.1.1 | When the Repeat Message State is entered the CanNm module shall (re -)start transmission of Network Management PDUs unless passive mode is enabled and/or communication is disabled.
+SWS_CanNm_00101 | 7.2.1.1 | When the NM -Timeout Timer expires in the Repeat Message State, the CanNm module shall (re-)start the NM-Timeout Timer.
+SWS_CanNm_00102 | 7.2.1.1 | The network management state machine shall stay in the Repeat Message State for a configurable amount of time determined by the CanNmRepeatMessageTime (configuration parameter); after that t
+SWS_CanNm_00103 | 7.2.1.1 | When Repeat Message State is left and if the network has been requested (see SWS_CanNm_00104), the CanNm module shall enter the Normal Operation State.
+SWS_CanNm_00104 | 7.3 | The function call CanNm_NetworkRequest shall request the network. I.e. the CanNm module shall change network state to ‘requested’.
+SWS_CanNm_00105 | 7.3 | The function call CanNm_NetworkRelease shall release the network. I.e. the CanNm module shall change network state to ‘released’ .
+SWS_CanNm_00106 | 7.2.1.1 | When Repeat Message State is left and if the network has been released (see SWS_CanNm_00105), the CanNm module shall enter the Ready Sleep State.
+SWS_CanNm_00107 | 7.2.1.1 | If CanNmNodeDetectionEnabled is set to TRUE CanNm shall clear the Repeat Message Bit when leaving the Repeat Message State.
+SWS_CanNm_00108 | 7.2.1.3 | When the Ready Sleep State is entered from Repeat Message State or Normal Operation State, the CanNm module shall stop transmission of Network Management PDUs.
+SWS_CanNm_00109 | 7.2.1.3 | When the NM -Timeout Timer expires in the Ready Sleep State, the CanNm module shall enter the Prepare Bus-Sleep Mode.
+SWS_CanNm_00110 | 7.2.1.3 | When the network is requested and the current state is the Ready Sleep State, the CanNm module shall enter Normal Operation State (refer to SWS_CanNm_00104).
+SWS_CanNm_00111 | 7.2.1.3 | If CanNmNodeDetectionEnabled is set to TRUE and Repeat Message Request Bit is received in the Ready Sleep State, the CanNm module shall enter the Repeat Message State.
+SWS_CanNm_00112 | 7.2.1.3 | If CanNmNodeDetectionEnabled is set to TRUE and function CanNm_RepeatMessageRequest is called in the Ready Sleep State, the CanNm module shall enter the Repeat Message State.
+SWS_CanNm_00113 | 7.2.1.3 | If CanNmNodeDetectionEnabled is set to TRUE and function CanNm_RepeatMessageRequest is called in Ready Sleep State the CanNm module shall set the Repeat Message Bit.
+SWS_CanNm_00114 | 7.2.2 | When Prepare Bus -Sleep Mode is entered, the CanNm module shall notify the upper layer by calling Nm_PrepareBusSleepMode.
+SWS_CanNm_00115 | 7.2.2 | If CanNmStayInPbsEnabled is disabled CanNm shall stay in the Prepare Bus -Sleep Mode for a configurab le amount of time determined by the CanNmWaitBusSleepTime (configuration parameter); aft
+SWS_CanNm_00116 | 7.2.1.2 | When the Normal Operation State is entered from Ready Sleep State, the CanNm module shall start transmission of Network Management PDUs.
+SWS_CanNm_00117 | 7.2.1.2 | When the NM -Timeout Timer expires in the Normal Operation State, the CanNm module shall (re-)start the NM-Timeout Timer.
+SWS_CanNm_00118 | 7.2.1.2 | When the net work is released and the current state is Normal Operation State, the CanNm module shall enter the Ready Sleep state (refer to SWS_CanNm_00105).
+SWS_CanNm_00119 | 7.2.1.2 | If CanNmNodeDetectionEnabled is set to T RUE and Repeat Message Request Bit is received in the Normal Operation State, the CanNm module shall enter the Repeat Message State.
+SWS_CanNm_00120 | 7.2.1.2 | If CanNmNodeDetectionEnabled is set to TRUE and function CanNm_RepeatMessageRequest is called in the Normal Operation State, the CanNm module shall enter the Repeat Message State.
+SWS_CanNm_00121 | 7.2.1.2 | If CanNmNodeDetectionEnabled is set to TRUE and function CanNm_RepeatMessageRequest is called in the Normal Operation State the CanNm module shall set the Repeat Message Bit.
+SWS_CanNm_00122 | 7.2.2 | When the network has been requested (see SWS_CanNm_00104) in the Prepare Bus -Sleep Mode and the CanNm module has entered Network Mode and if CanNmImmediateRestartEnabled (configuration para
+SWS_CanNm_00123 | 7.2.2 | When the network is requested in the Prepare Bus -Sleep Mode, the CanNm module shall enter the Network Mode; by default the CanNm Module shall enter the Repeat Message State (refer to SWS_Ca
+SWS_CanNm_00124 | 7.2.2 | At successful recept ion of a Network Management PDU in the Prepare Bus -Sleep Mode, the CanNm Module shall enter the Network Mode; by default the CanNm Module shall enter the Repeat Message
+SWS_CanNm_00126 | 7.2.3 | When Bus -Sleep Mode is entered, except by default at initialization, the CanNm module shall notify the upper layer by calling the callback function Nm_BusSleepMode.
+SWS_CanNm_00127 | 7.2.3 | When the CanNm module successfully receives a Network Management PDU (call of CanNm_RxIndication) in the Bus -Sleep Mode, the CanNm module shall notify the upper layer by calling the callbac
+SWS_CanNm_00128 | 7.2.3 | If CanNm_PassiveStartUp is called in the Bus-Sleep Mode or Prepare Bus-Sleep Mode, the CanNm module shall enter the Network Mode; by default the CanNm module shall enter the Repeat Message S
+SWS_CanNm_00129 | 7.2.3 | When the network is requested in Bus -Sleep Mode, the CanNm module shall e nter the Network Mode ; by default the CanNm module shall enter the Repeat Message State (refer to SWS_CanNm_00314 
+SWS_CanNm_00130 | 8.3.17 | The service call CanNm_RequestBusSynchronization shall trigger transmission of a single Network Management PDU if CanNmPassiveModeEnabled (configuration parameter) is not defined.
+SWS_CanNm_00132 | 8.3.11 | The service call CanNm_GetNodeIdentifier shall provide the node identifier out of the most recently received Network Managem ent PDU if CanNmNodeIdEnabled is set to TRUE.
+SWS_CanNm_00133 | 8.3.12 | The service call CanNm_GetLocalNodeIdentifier shall provide the node identifier configured for the local host node if CanNmNodeIdEnabled is set to TRUE.
+SWS_CanNm_00137 | 7.2.1.1 | If the service CanNm_RepeatMessageRequest is called in Repeat Message State, Prepare Bus -Sleep Mode or Bus -Sleep Mode, the CanNm module shall not execute the service and return E_NOT_OK.
+SWS_CanNm_00138 | 8.3.14 | The service call CanNm_GetPduData shall provide whole PDU data (Node ID, Control Bit Vector and Use r Data) of the most recently received Network Management PDU if CanNmNodeDetectionEnabled 
+SWS_CanNm_00141 | 7.4 | If the initialization of the CanNm module ( CanNm_Init) is successful, the CanNm module shall set the Network Management State to Bus- Sleep Mode.
+SWS_CanNm_00143 | 7.4 | When initialized, by default, the CanNm module shall set the network state to ‘released’
+SWS_CanNm_00144 | 7.4 | When initialized, by default, the CanNm module shall enter the Bus-Sleep Mode.
+SWS_CanNm_00146 | 7.5.1 | The AUTOSAR CanNm algorithm shall be processor independent, which means; it shall not rely on any processor specific hardware support and thus shall be realizable on any processor architectu
+SWS_CanNm_00147 | 7.2.1 | If CanNm_PassiveStartUp is called in the Network Mode, the CanNm module shall not execute this service and shall return E_NOT_OK.
+SWS_CanNm_00149 | 7.9.1 | Detection of remote sleep indication s hall be statically configurable with use of the CanNmRemoteSleepIndEnabled switch (configuration parameter).
+SWS_CanNm_00150 | 7.9.1 | If the CanNm module receives no Network Management PDUs in the Normal Operation State for a configurable amount of time dete rmined by CanNmRemoteSleepIndTime (configuration parameter), the 
+SWS_CanNm_00151 | 7.9.1 | If Remote Sleep Indication has been previously detected and if a Network Management PDU is received in the Normal Operation State or Ready Sleep State again, the module CanNm shal l call the
+SWS_CanNm_00152 | 7.9.1 | If Remote Sleep Indication has been previously detected and if Repeat Message State is entered from Normal Operation State or Ready Specification of CAN Network Management AUTOSAR CP R21-11 
+SWS_CanNm_00153 | 8.3.18 | Service call CanNm_CheckRemoteSleepIndication shall provide the information about current status of Remote Sleep Indication (i.e. already detected or not).
+SWS_CanNm_00154 | 7.9.1 | When the service CanNm_CheckRemoteSleepIndication is called and the state is Bus-Sleep Mode, Prepare Bus -Sleep Mode or Repeat Message State the CanNm module shall not execute the service an
+SWS_CanNm_00156 | 7.8 | When the Repeat Message State is entered from Bus - Sleep Mode, Prepare Bus -Sleep Mode, Normal Operation or Ready Sleep State t he CanNm module shall deactivate the busload reduction.
+SWS_CanNm_00157 | 7.8 | When the Normal Operation State is entered from Repeat Message State or Ready Sleep State and CanNmBusLoadReductionEnabled is TRUE the CanNm module shall activate the busload reduction.
+SWS_CanNm_00158 | 7.9.2 | Support of NM user data shall be statically configurable with use of the CanNmUserDataEnabled switch (configuration parameter).
+SWS_CanNm_00159 | 7.9.2 | When CanNm_SetUserData is called the CanNm module shall set the Network Management user data fo r the Network Management PDU s transmitted next on the bus.
+SWS_CanNm_00160 | 7.9.2 | When CanNm_GetUserData is called CanNm module shall return the N etwork Management user data of the most recently received Network Management PDU.
+SWS_CanNm_00161 | 7.9.3 | Passive Mode shall be statically configurable with use of the CanNmPassiveModeEnabled switch (configuration parameter).
+SWS_CanNm_00166 | 7.9.5 | All changes of the AUTOSAR CanNm states shall be notified to the upper layer by calling Nm_StateChangeNotification if t he callback Nm_StateChangeNotification is enabled (configuration param
+SWS_CanNm_00170 | 7.9.6 | If t he service CanNm_DisableCommunication is called the CanNm module shall disable the Network Management PDU transmission ability.
+SWS_CanNm_00172 | 8.3.6 | The service CanNm_DisableCommunication shall return E_NOT_OK, if the current mode is not Network Mode.
+SWS_CanNm_00173 | 7.9.6 | When the Network Management PDU transmission ability is disabled, the CanNm module shall stop the CanNm Message Cycle Timer in order to stop the transmission of Network Management PDUs.
+SWS_CanNm_00174 | 7.9.6 | When the Network Management PDU transmission ability is disabled, the CanNm module shall stop the NM-Timeout Timer.
+SWS_CanNm_00175 | 7.9.6 | When the Network Management PDU transmission ability is disabled, the CanNm module shall stop the Remote Sleep Indication Detection.
+SWS_CanNm_00176 | 8.3.7 | The service CanNm_EnableCommunication shall enable the Network Management PDU transmission ability if the Network Management PDU transmission ability is disabled.
+SWS_CanNm_00177 | 8.3.7 | The service CanNm_EnableCommunication shall return E_NOT_OK if the Network Management PDU transmission ability is enabled.
+SWS_CanNm_00178 | 7.9.6 | When the Network Management PDU transmission ability is enabled, the transmission of NM PDUs shall be started latest within the next NM main function.
+SWS_CanNm_00179 | 7.9.6 | When the Network Management PDU transmission ability is enabled, the CanNm module shall restart the NM-Timeout Timer.
+SWS_CanNm_00180 | 7.9.6 | If CanNmRemoteSleepIndEnabled is TRUE and t he Network Management PDU transmission ability is enabled, the CanNm module shall re -start the Remote Sleep Indication Detection.
+SWS_CanNm_00181 | 7.9.6 | The service CanNm_RequestBusSynchronization shall return E_NOT_OK if the Network Management PDU transmission ability is disabled.
+SWS_CanNm_00185 | 7.16.2 | Support of bus synchronization on demand shall be statically configurable with use of the CanNmBusSynchronizationEnabled switch (configuration parameter).
+SWS_CanNm_00187 | 8.3.17 | If CanNm_RequestBusSynchronization is called in Bus-Sleep Mode and Prepare Bus-Sleep Mode the CanNm module shall not execute the service and shall return E_NOT_OK.
+SWS_CanNm_00189 | 8 | The CanNm module shall not return development errors by API functions; in case of a development error, the execution of the respective API function shall be aborted and E_NOT_OK shall be ret
+SWS_CanNm_00190 | 8 | The CanNm module shall not return production errors by API functions; in case of a production error, the execution of the respective API function shall be aborted and E_NOT_OK shall be retur
+SWS_CanNm_00192 | 8 | When a CanNm service with an invalid network handle is called, the called function shall not be executed and it shall return E_NOT_OK to the calling function if applicable. If development er
+SWS_CanNm_00193 | 7.2.1.1 | When the NM -Timeout Timer expires in the Repeat Message State the CanNm module shall report CANNM_E_NETWORK_TIMEOUT to the DET.
+SWS_CanNm_00194 | 7.2.1.2 | When the NM -Timeout Timer expires in the Normal Operation State the CanNm module shall report CANNM_E_NETWORK_TIMEOUT to the DET.
+SWS_CanNm_00195 | 8 | When a CanNm service with an invalid PDU ID is called, the called function shall not be executed and it shall return E_NOT_OK to the calling function if applicable. If development error dete
+SWS_CanNm_00202 | 10.2.4 | The container CanNmChannelConfig specifies configuration parameter that shall be located in a data structure of type CanNm_ConfigType.
+SWS_CanNm_00203 | 10.2.4 | Runtime configurable parameters listed below shall be configurable for each network management cluster separately.
+SWS_CanNm_00206 | 7.2.1 | The CAN NM module shall res et the NM-Timeout Timer every time it is started or restarted.
+SWS_CanNm_00208 | 8.3.1 | Service Name CanNm_Init Syntax void CanNm_Init ( const CanNm_ConfigType* cannmConfigPtr ) Service ID [hex] 0x00 Sync/Async Synchronous Reentrancy Non Reentrant Parameters (in) cannmConfigPtr
+SWS_CanNm_00211 | 8.3.3 | Service Name CanNm_PassiveStartUp Syntax Std_ReturnType CanNm_PassiveStartUp ( NetworkHandleType nmChannelHandle ) Service ID [hex] 0x01 Sync/Async Asynchronous Reentrancy Reentrant (but not
+SWS_CanNm_00213 | 8.3.4 | Service Name CanNm_NetworkRequest Syntax Std_ReturnType CanNm_NetworkRequest ( NetworkHandleType nmChannelHandle ) Service ID [hex] 0x02 Sync/Async Asynchronous Reentrancy Reentrant (but not
+SWS_CanNm_00214 | 8.3.5 | Service Name CanNm_NetworkRelease Syntax Std_ReturnType CanNm_NetworkRelease ( NetworkHandleType nmChannelHandle ) Specification of CAN Network Management AUTOSAR CP R21-11 63 of 117 Documen
+SWS_CanNm_00215 | 8.3.6 | Service Name CanNm_DisableCommunication Syntax Std_ReturnType CanNm_DisableCommunication ( NetworkHandleType nmChannelHandle ) Service ID [hex] 0x0c Sync/Async Asynchronous Reentrancy Reentr
+SWS_CanNm_00216 | 8.3.7 | Service Name CanNm_EnableCommunication Syntax Std_ReturnType CanNm_EnableCommunication ( NetworkHandleType nmChannelHandle ) Service ID [hex] 0x0d Sync/Async Asynchronous Reentrancy Reentran
+SWS_CanNm_00217 | 8.3.8 | Service Name CanNm_SetUserData Syntax Std_ReturnType CanNm_SetUserData ( NetworkHandleType nmChannelHandle, const uint8* nmUserDataPtr ) Service ID [hex] 0x04 Sync/Async Synchronous Reentran
+SWS_CanNm_00218 | 8.3.9 | Service Name CanNm_GetUserData Specification of CAN Network Management AUTOSAR CP R21-11 66 of 117 Document ID 13: AUTOSAR_SWS_CANNetworkManagement Syntax Std_ReturnType CanNm_GetUserData ( 
+SWS_CanNm_00219 | 8.3.11 | Service Name CanNm_GetNodeIdentifier Syntax Std_ReturnType CanNm_GetNodeIdentifier ( NetworkHandleType nmChannelHandle, uint8* nmNodeIdPtr ) Service ID [hex] 0x06 Sync/Async Synchronous Reen
+SWS_CanNm_00220 | 8.3.12 | Service Name CanNm_GetLocalNodeIdentifier Syntax Std_ReturnType CanNm_GetLocalNodeIdentifier ( NetworkHandleType nmChannelHandle, uint8* nmNodeIdPtr ) Service ID [hex] 0x07 Sync/Async Synchr
+SWS_CanNm_00221 | 8.3.13 | Service Name CanNm_RepeatMessageRequest Syntax Std_ReturnType CanNm_RepeatMessageRequest ( NetworkHandleType nmChannelHandle ) Service ID [hex] 0x08 Sync/Async Asynchronous Reentrancy Reentr
+SWS_CanNm_00222 | 8.3.14 | Service Name CanNm_GetPduData Syntax Std_ReturnType CanNm_GetPduData ( NetworkHandleType nmChannelHandle, uint8* nmPduDataPtr ) Service ID [hex] 0x0a Sync/Async Synchronous Reentrancy Reentr
+SWS_CanNm_00223 | 8.3.15 | Service Name CanNm_GetState Syntax Std_ReturnType CanNm_GetState ( NetworkHandleType nmChannelHandle, Nm_StateType* nmStatePtr, Nm_ModeType* nmModePtr ) Service ID [hex] 0x0b Sync/Async Sync
+SWS_CanNm_00224 | 8.3.16 | Service Name CanNm_GetVersionInfo Syntax void CanNm_GetVersionInfo ( Std_VersionInfoType* versioninfo ) Service ID [hex] 0xf1 Sync/Async Synchronous Reentrancy Reentrant Parameters (in) None
+SWS_CanNm_00226 | 8.3.17 | Service Name CanNm_RequestBusSynchronization Syntax Std_ReturnType CanNm_RequestBusSynchronization ( NetworkHandleType nmChannelHandle ) Service ID [hex] 0xc0 Sync/Async Synchronous Reentran
+SWS_CanNm_00227 | 8.3.18 | Service Name CanNm_CheckRemoteSleepIndication Syntax Std_ReturnType CanNm_CheckRemoteSleepIndication ( NetworkHandleType nmChannelHandle, boolean* nmRemoteSleepIndPtr ) Service ID [hex] 0xd0
+SWS_CanNm_00228 | 8.4.1 | Service Name CanNm_TxConfirmation Syntax void CanNm_TxConfirmation ( PduIdType TxPduId, Std_ReturnType result ) Specification of CAN Network Management AUTOSAR CP R21-11 76 of 117 Document I
+SWS_CanNm_00231 | 8.4.2 | Service Name CanNm_RxIndication Syntax void CanNm_RxIndication ( PduIdType RxPduId, const PduInfoType* PduInfoPtr ) Service ID [hex] 0x42 Sync/Async Synchronous Reentrancy Reentrant for diff
+SWS_CanNm_00234 | 8.5.1 | Service Name CanNm_MainFunction Syntax void CanNm_MainFunction ( void ) Service ID [hex] 0x13 Description Main function of the CanNm which processes the algorithm describes in that document.
+SWS_CanNm_00237 | 7.7.1 | The CanNm module shall provide the periodic transmission mode. In this transmission mode the CanNm module shall send Network Management PDUs periodically.
+SWS_CanNm_00238 | 7.7.1 | The CanNm module shall optionally provide the periodic transmission mode with bus load reduction. In this transmission mode the CanNm module shall transmit Network Management PDUs due to a s
+SWS_CanNm_00244 | 8 | The CanNm module shall reject the execution of a service called with an invalid parameter and shall inform the DET.
+SWS_CanNm_00245 | 8.1 | Module Header File Imported Type ComStack_Types ComStack_Types.h NetworkHandleType ComStack_Types.h PNCHandleType ComStack_Types.h PduIdType Specification of CAN Network Management AUTOSAR C
+SWS_CanNm_00246 | 7.5.2 | The configuration parameter CanNmTimeoutTime shall determine the AUTOSAR CanNm timing parameter NM-Timeout Time.
+SWS_CanNm_00247 | 7.5.2 | The configuration parameter CanNmRepeatMessageTime shall determine the AUTOSAR CanNm timing parameter Repeat Message Time.
+SWS_CanNm_00248 | 7.5.2 | The configuration parameter CanNmWaitBusSleepTime shall determine the AUTOSAR CanNm timing parameter Wait Bus-Sleep Time.
+SWS_CanNm_00249 | 7.5.2 | The configuration parameter CanNmRemoteSleepIndTime shall determine the AUTOSAR CanNm timing parameter Remote Sleep Indication Time.
+SWS_CanNm_00253 | 8.3.1 | Caveats of CanNm_Init: The function CanNm_Init has to be called after initialization of the CanIf.
+SWS_CanNm_00254 | 8.3.3 | Caveats of CanNm_PassiveStartUp: The CanNm module is initialized correctly.
+SWS_CanNm_00255 | 8.3.4 | The function CanNm_NetworkRequest shall change the Network state to ‘requested’.
+SWS_CanNm_00256 | 8.3.4 | Caveats of CanNm_NetworkRequest: The CanNm module is initialized correctly.
+SWS_CanNm_00257 | 8.3.4 | Configuration of CanNm_NetworkRequest: Optional (Only available if CanNmPassiveModeEnabled is not defined).
+SWS_CanNm_00259 | 8.3.5 | Caveats of CanNm_NetworkRelease: The CanNm module is initialized correctly.
+SWS_CanNm_00260 | 8.3.5 | Configuration of CanNm_NetworkRelease: Optional (Only available if CanNmPassiveModeEnabled is not defined)
+SWS_CanNm_00261 | 8.3.6 | Caveats of CanNm_DisableCommunication: The CanNm module is initialized correctly.
+SWS_CanNm_00262 | 8.3.6 | Configuration of CanNm_DisableCommunication: Optional (Only available if CanNmComControlEnabled is set to TRUE)
+SWS_CanNm_00263 | 8.3.7 | Caveats of CanNm_EnableCommunication: The CanNm module is initialized correctly.
+SWS_CanNm_00264 | 8.3.7 | Configuration of CanNm_EnableCommunication: Optional (Only available if CanNmComControlEnabled is set to TRUE).
+SWS_CanNm_00265 | 8.3.8 | Caveats of CanNm_SetUserData: The CanNm module is initialized correctly.
+SWS_CanNm_00266 | 8.3.8 | Configuration of CanNm_SetUserData: Optional (Only available if CanNmUserDataEnabled is se t to TRUE and CanNmPassiveModeEnabled is not defined)
+SWS_CanNm_00267 | 8.3.9 | Caveats of CanNm_GetUserData: The CanNm module is initialized correctly.
+SWS_CanNm_00268 | 8.3.9 | Configuration of CanNm_GetUserData: Optional (Only available if CanNmUserDataEnabled is set to TRUE).
+SWS_CanNm_00269 | 8.3.11 | Caveats of CanNm_GetNodeIdentifier: The CanNm module is initialized correctly.
+SWS_CanNm_00271 | 8.3.12 | Caveats of CanNm_GetLocalNodeIdentifier: The CanNm module is initialized correctly.
+SWS_CanNm_00273 | 8.3.13 | Caveats of CanNm_RepeatMessageRequest: The CanNm module is initialized correctly.
+SWS_CanNm_00275 | 8.3.14 | Caveats of CanNm_GetPduData: The CanNm module is initialized correctly.
+SWS_CanNm_00277 | 8.3.15 | Caveats of CanNm_GetState: The CanNm module is initialized correctly.
+SWS_CanNm_00279 | 8.3.17 | Caveats of CanNm_RequestBusSynchronization: The CanNm module is initialized correctly.
+SWS_CanNm_00280 | 8.3.17 | Configuration of CanNm_RequestBusSynchronization: Optional (Only available if CanNmBusSynchronizationEnabled is set to TRUE) and CanNmPassiveModeEnabled is not defined.
+SWS_CanNm_00281 | 8.3.18 | Caveats of CanNm_CheckRemoteSleepIndication: The CanNm module is initialized correctly.
+SWS_CanNm_00282 | 8.3.18 | Configuration of CanNm_CheckRemoteSleepIndication: Optional (Only available if CanNmRemoteSleepIndEnabled is set to TRUE).
+SWS_CanNm_00283 | 8.4.1 | Caveats of CanNm_TxConfirmation:  The call context is either on interrupt level (interrupt mode) or on task level (polling mode). This callback service is re -entrant for multiple CAN contr
+SWS_CanNm_00284 | 8.4.1 | Configuration of CanNm_TxConfirmation: Optional (Only available if CanNmPassiveModeEnabled and CanNmImmediateTxConfEnabled are set to FALSE).
+SWS_CanNm_00285 | 8.4.2 | Caveats of CanNm_RxIndication:  Until this service returns the CAN Interface will not access canSduPtr. The canSduPtr is only valid and can be used by upper layers until the indication retu
+SWS_CanNm_00295 | 8.3.7 | The service CanNm_EnableCommunication shall return E_NOT_OK, if the current mode is not Network Mode.
+SWS_CanNm_00305 | 5.1.2 | ComStack_Types.h shall be included. Note: The following header files are indirectly included by ComStack_Types.h  Std_Types.h (for AUTOSAR standard types )  Platform_Types.h (for platform 
+SWS_CanNm_00308 | 5.1.2 | Det.h shall be included for interfacing the Default Error Tracer.
+SWS_CanNm_00309 | 5.1.2 | NmStack_Types.h shall be included for common network management types.
+SWS_CanNm_00312 | 5.1.2 | CanIf.h shall be included for interfacing the CanIf.
+SWS_CanNm_00314 | 7.2.1 | When the Network Mode is entered from Bus -Sleep, by default, the CanNm module shall enter the Repeat Message State.
+SWS_CanNm_00315 | 7.2.1 | When the Network Mode is entered from Prepare Bus-Sleep Mode, by default, the CanNm module shall enter the Repeat Message State.
+SWS_CanNm_00316 | 7.14.1 | Type of error Related error code Error value API service used without module initialization CANNM_E_UNINIT 0x01 API service called with wrong channel handle CANNM_E_INVALID_CHANNEL 0x02 API 
+SWS_CanNm_00317 | 7.14.2 | Type of error Related error code Error value Reception of NM PDUs in Bus-Sleep Mode. CANNM_E_NET_START_IND 0x04 NM-Timeout Timer has abnormally expired outside of the Ready Sleep State; it m
+SWS_CanNm_00324 | 8.6.1 | API Function Header File Description Det_Report- RuntimeError Det.h Service to report runtime errors. If a callout has been configured then this callout shall be called. Nm_BusSleep- Mode Nm
+SWS_CanNm_00325 | 8.6.2 | API Function Header File Description CanIf_Transmit CanIf.h Requests transmission of a PDU. CanSM_Tx- TimeoutException CanSM_ CanIf.h This function shall notify the CanSM module, that the Ca
+SWS_CanNm_00326 | 5.1.2 | PduR_CanNm.h shall be included if COM user data support is enabled.
+SWS_CanNm_00327 | 7.9.2.1 | If CanNmComUserDataSupport is enabled the API CanNm_SetUserData shall not be available.
+SWS_CanNm_00328 | 7.9.2.1 | If CanNmComUserDataSupport is enabled and NM-PDU is not configured for triggered transmission in CanIf (CanIfTxPduTriggerTransmit set to FALSE) CanNm shall collect the NM User Data from the 
+SWS_CanNm_00329 | 7.9.2.1 | If CanNmComUserDataSupport is enabled and CanNm_TxConfirmation is called CanNm shall forward the transmission confirmation result to PduR by calling PduR_CanNmTxConfirmation.
+SWS_CanNm_00330 | 8.3.10 | If CanNmComUserDataSupport or CanNmGlobalPnSupport is enabled the CanNm implementation shall provide an API CanNm_Transmit.
+SWS_CanNm_00331 | 8.3.10 | Service Name CanNm_Transmit Syntax Std_ReturnType CanNm_Transmit ( PduIdType TxPduId, const PduInfoType* PduInfoPtr ) Service ID [hex] 0x49 Sync/Async Synchronous Reentrancy Reentrant for di
+SWS_CanNm_00332 | 7.9.2.1 | If CanNmComUserDataSupport is enabled and the number of available user data bytes does not match to the length of the referenced I-PDU an error shall be reported at generation time.
+SWS_CanNm_00333 | 8.3.10 | If CanNmComUserDataSupport is enabled and if CanNm is in RepeatMessage state or NormalOperation state and if CanNm_Transmit() is called CanNm shall request an additional transmission of the 
+SWS_CanNm_00334 | 7.7.1 | When entering the Repeat Message State from Bus Sleep Mode or Prepare Bus Sleep Mode because of CanNm_NetworkRequest() (active wakeup) and if CanNmImmediateNmTransmissions is greater zero, t
+SWS_CanNm_00335 | 7.7.1 | If NM PDUs shall be transmitted with CanNmImmediate- NmCycleTime (See [SWS_CanNm_00334] and [SWS_CanNm_00454]), CanNm shall ensure that CanNmImmediateNmTransmissions (including first immedia
+SWS_CanNm_00336 | 7.2.3 | When the CanNm module successfully receives a Network Management PDU (call of CanNm_RxIndication) in the Bus -Sleep Mode, the CanNm module shall report the error CANNM_E_NET_START_IND to the
+SWS_CanNm_00338 | 8.3.19 | Service Name CanNm_SetSleepReadyBit Syntax Std_ReturnType CanNm_SetSleepReadyBit ( NetworkHandleType nmChannelHandle, boolean nmSleepReadyBit ) Service ID [hex] 0x17 Sync/Async Synchronous R
+SWS_CanNm_00339 | 8.3.19 | Caveats of CanNm_SetSleepReadyBit: The CanNm module is initialized correctly.
+SWS_CanNm_00340 | 8.3.19 | Configuration of CanNm_SetSleepReadyBit: Optional (Only available if CanNmCoordinatorSyncSupport is set to TRUE).
+SWS_CanNm_00341 | 7.9.7 | If CanNmCoordinatorSyncSupport is set to TRUE and CanNm has entered Network Mode or called Nm_CoordReadyToSleepCancellation before it shall notify the Nm by calling Nm_CoordReadyToSleepIndic
+SWS_CanNm_00342 | 7.9.7 | If CanNmCoordinatorSyncSupport is set to TRUE and the API CanNm_SetSleepReadyBit is called CanNm shall set the “NM Coordinator Sleep ready Bit” to the passed value and trigger a single Netwo
+SWS_CanNm_00344 | 8.4.3 | Service Name CanNm_ConfirmPnAvailability Syntax void CanNm_ConfirmPnAvailability ( NetworkHandleType nmChannelHandle ) Service ID [hex] 0x16 Sync/Async Synchronous Reentrancy Reentrant (but 
+SWS_CanNm_00345 | 8.4.3 | Caveats of CanNm_ConfirmPnAvailability: The CanNm module is initialized correctly.
+SWS_CanNm_00346 | 8.4.3 | Configuration of CanNm_ConfirmPnAvailability: Optional (Only available if CanNmGlobalPnSupport is set to TRUE).
+SWS_CanNm_00348 | 7.9.7 | If CanNmCoordinatorSyncSupport is set to TRUE and CanNm called Nm_CoordReadyToSleepIndication and is still in Network Mode it shall notify the Nm by calling Nm_CoordReadyToSleepCancellation 
+SWS_CanNm_00351 | 8.4.4 | The function CanNm_TriggerTransmit shall copy the NM PDU data of the according NM PDU requested by TxPduId
+SWS_CanNm_00352 | 8.3.2 | If development error detection for the CanNm module is enabled: The function CanNm_DeInit shall raise the error CANNM_E_NOT_IN_BUS_SLEEP if not all CAN networks are in Bus Sleep mode.
+SWS_CanNm_00401 | 7.6 | If the CanNm performs a state change from Bus Sleep Mode or Prepare Bus Sleep Mode to Network Mode due to a call to CanNm_NetworkRequest (i.e. due to an active wakeup) and CanNmActiveWakeupB
+SWS_CanNm_00402 | 7.6 | If the CanNm module leaves the Network Mode and CanNmActiveWakeupBitEnabled is TRUE, th e CanNm module shall clear the ActiveWakeupBit in the CBV.
+SWS_CanNm_00405 | 7.10 | The position of the Car Wakeup bit in the NM -PDU is defined by the configuration parameters CanNmCarWakeUpBytePosition and CanNmCarWakeUpBitPosition.
+SWS_CanNm_00406 | 7.10.1 | If the Car Wakeup bit within any received NM -PDU is 1, CanNmCarWakeUpRxEnabled is TRUE, and CanNmCarWakeUpFilterEnabled is FALSE CanNm shall call Nm_CarWakeUpIndication and perform the stan
+SWS_CanNm_00407 | 7.10.1 | If CanNm_GetPduData is called in the context of Nm_CarWakeUpIndication and if CannNmNodeDetectionEnabled or CanNmUserDataEnabled or CanNmNodeIdEnabled is set to TRUE CanNm shall return the P
+SWS_CanNm_00408 | 7.10.1 | If CanNmCarWakeUpFilterEnabled is TRUE, the Car Wakeup bit within any received NM -PDU is 1, CanNmCarWakeUpRxEnabled is TRUE and the Node ID in the received NM -PDU is equal to CanNmCarWakeU
+SWS_CanNm_00409 | 7.11.1 | If the CanNmPnEnabled is FALSE, the CanNm shall not drop NM PDUs from further Rx Indication handling and the partial networking extensions shall be disabled.
+SWS_CanNm_00410 | 7.11.1 | If CanNmPnEnabled is TRUE, the PNI bit in the received NM - PDU is 0 and CanNmAllNmMessagesKeepAwake is TRUE, the CanNm module shall not drop NM PDUs from further Rx Indication handling omit
+SWS_CanNm_00411 | 7.11.1 | If CanNmPnEnabled is TRUE, the PNI bit in the received NM - PDU is 0 and CanNmAllNmMessagesKeepAwake is FALSE, the CanNm module shall ignore the received NM-PDU.
+SWS_CanNm_00413 | 7.11.2 | If CanNmPnEnabled is TRUE the CanNm module shall set the value of the transmitted PNI bit to 1.
+SWS_CanNm_00414 | 7.11.2 | If CanNmPnEnabled is FALSE the CanNm module shall set the value of the transmitted PNI bit always to 0.
+SWS_CanNm_00444 | 7.11.7 | If CanNm_NetworkRequest is called , CanNmPnHandleMultipleNetworkRequests is TRUE and CanNm is in Ready Sleep State, Normal Operation State or Repeat Message State, CanNm shall change to or r
+SWS_CanNm_00446 | 7.12 | If CanNmGlobalPnSupport is set to TRUE and NM Message Tx Timeout Timer has expired then CanNm shall call the function CanSM_TxTimeoutException.
+SWS_CanNm_00447 | 8.2.1 | Name CanNm_ConfigType Kind Structure Elements implementation specific Type -- Comment -- Description This type shall contain at least all parameters that are post-build able according to cha
+SWS_CanNm_00450 | 7.9.2.1 | If CanNmComUserDataSupport is enabled and PduR_CanNmTriggerTransmit returns E_NOT_OK, the NM shall use the last transmitted value for NmUserData.
+SWS_CanNm_00454 | 7.7.1 | If CanNmPnHandleMultipleNetworkRequests is set to TRUE CanNm_NetworkRequest shall trigger a state transition from Network Mode to Repeat Message state. If PDU transmission ability is enabled
+SWS_CanNm_91001 | 8.4.4 | Service Name CanNm_TriggerTransmit Syntax Std_ReturnType CanNm_TriggerTransmit ( PduIdType TxPduId, PduInfoType* PduInfoPtr ) Service ID [hex] 0x41 Sync/Async Synchronous Reentrancy Reentran
+SWS_CanNm_91002 | 8.3.2 | Service Name CanNm_DeInit Syntax void CanNm_DeInit ( void ) Service ID [hex] 0x10 Sync/Async Synchronous Reentrancy Non Reentrant Parameters (in) None Parameters (inout) None Parameters (out

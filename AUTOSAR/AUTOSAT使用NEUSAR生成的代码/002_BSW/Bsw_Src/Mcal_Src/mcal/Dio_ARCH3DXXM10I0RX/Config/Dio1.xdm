@@ -1,0 +1,497 @@
+<?xml version='1.0'?>
+<datamodel version="7.0"
+  xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd"
+  xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd"
+  xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd"
+  xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar"
+    xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd"
+    xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd"
+    xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd"
+    xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd"
+    xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"
+    xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="DioConfig" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="Dio" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.4.0</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC"
+                value="EN: Configuration of the Dio (Digital IO) module." />
+              <a:a name="LOWER-MULTIPLICITY" value="1" />
+              <a:a name="POSTBUILDVARIANTSUPPORT" value="false" />
+              <a:a name="RELEASE" value="asc:4.4.0" />
+              <a:a name="UPPER-MULTIPLICITY" value="1" />
+              <a:a name="UUID" value="98f1dee6-c4b3-42b1-9f47-305f852bfd2a" />
+              <v:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN">
+                <a:a name="DESC"
+                  value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points." />
+                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                  type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Post Build Variant Used" />
+                <a:a name="ORIGIN" value="EB" />
+                <a:a name="POSTBUILDVARIANTVALUE" value="false" />
+                <a:a name="UUID" value="7414f80c-42e9-4f31-a57b-a446dcdcd72f" />
+                <a:a name="__ORIGIN" value="Elektrobit" />
+                <a:da name="DEFAULT" value="false" />
+                <a:da name="READONLY" value="TRUE" />
+                <a:da name="TOOLTIP"
+                  value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points." />
+              </v:var>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                  type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Config Variant" />
+                <a:a name="UUID" value="e7755202-c5d9-41c1-ae97-644045b0e88d" />
+                <a:a name="__ORIGIN" value="Elektrobit" />
+                <a:da name="DEFAULT" value="VariantPreCompile" />
+                <a:da name="RANGE">
+                  <a:v>VariantLinkTime</a:v>
+                  <a:v>VariantPreCompile</a:v>
+                </a:da>
+              </v:var>
+              <v:ctr name="DioConfig" type="IDENTIFIABLE">
+                <a:a name="DESC"
+                  value="EN: This container contains the configuration parameters and sub containers of the AUTOSAR DIO module." />
+                <a:a name="UUID" value="86aa0cf2-4b19-47b7-8477-19112142a025" />
+                <v:lst name="DioPort" type="MAP">
+                  <a:da name="MIN" value="1" />
+                  <v:ctr name="DioPort" type="IDENTIFIABLE">
+                    <a:a name="DESC"
+                      value="EN: Configuration of individual DIO ports, consisting of channels and possible channel groups." />
+                    <a:a name="UUID"
+                      value="9a42bc2b-623f-4157-9f52-c34d66c8b574" />
+                    <v:var name="DioPortId" type="INTEGER">
+                      <a:a name="DESC"
+                        value="EN: Numeric identifier of the DIO port. Not all MCU ports may be used for DIO, thus there may be &quot;gaps&quot; in the list of all IDs. This value will be" />
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                      <a:a name="SCOPE" value="ECU" />
+                      <a:a name="SYMBOLICNAMEVALUE" value="true" />
+                      <a:a name="UUID"
+                        value="7fe4ba26-864d-4018-9db6-b95fdd07f53f" />
+                      <a:a name="__ORIGIN" value="Elektrobit" />
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=21" />
+                        <a:tst expr="&gt;=0" />
+                      </a:da>
+                      <a:da name="RANGE" type="XPath">
+                        <a:tst expr="text:uniq(../../*/DioPortId, .)"
+                          false="DioPortId is repeated for two or more ports." />
+                      </a:da>
+                    </v:var>
+                    <v:lst name="DioPortEcucPartitionRef">
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst
+                          expr="(num:i(count(./*)) = 0) and (num:i(count(../../../../DioGeneral/DioEcucPartitionRef/*)) > 0)"
+                          true="At least one partition need to be defined in DioPortEcucPartitionRef" />
+                      </a:da>
+                      <v:ref name="DioPortEcucPartitionRef" type="REFERENCE">
+                        <a:a name="DESC">
+                          <a:v>EN: Maps the DIO ports to zero or multiple ECUC partitions. The ECUC
+                            partitions referenced are a subset of the ECUC partitions where the DIO
+                            driver is mapped to.</a:v>
+                          <a:v>EN: Tags: atp.Status=draft</a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                          type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PreCompile">VariantLinkTime</icc:v>
+                          <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                          <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                        <a:a name="SCOPE" value="ECU" />
+                        <a:a name="UUID"
+                          value="09b4e000-cae4-47e2-9206-24f2a3b14115" />
+                        <a:a name="__ORIGIN" value="Elektrobit" />
+                        <a:da name="REF"
+                          value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition" />
+                        <a:da name="INVALID" type="XPath">
+                          <a:tst expr="text:uniq(../*, .)"
+                            false="Duplicate Partition." />
+                          <a:tst
+                            expr="count(text:grep(../../../../../DioGeneral/DioEcucPartitionRef/*,.)) > 0"
+                            false="The ECUC partition must be defined on the DioEcucPartitionRef." />
+                        </a:da>
+                      </v:ref>
+                    </v:lst>
+                    <v:lst name="DioChannel" type="MAP">
+                      <v:ctr name="DioChannel" type="IDENTIFIABLE">
+                        <a:a name="DESC"
+                          value="EN: Configuration of an individual DIO channel." />
+                        <a:a name="UUID"
+                          value="bd75f0f2-e5f4-40e8-b981-6147ba4654e9" />
+                        <v:var name="DioChannelId" type="INTEGER">
+                          <a:a name="DESC"
+                            value="EN: Channel Id of the DIO channel. This value will be assigned to the symbolic names." />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                          <a:a name="SCOPE" value="ECU" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="true" />
+                          <a:a name="UUID"
+                            value="29f9bcc8-6767-4ba7-97a9-413c9bb1f1b4" />
+                          <a:a name="__ORIGIN" value="Elektrobit" />
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=15" />
+                            <a:tst expr="&gt;=0" />
+                          </a:da>
+                          <a:da name="RANGE" type="XPath">
+                            <a:tst expr="text:uniq(../../*/DioChannelId, .)"
+                              false="DioChannelId is repeated for two or more channels." />
+                            <a:tst
+                              expr="(bit:and(num:hextoint(ecu:list('Dio.PhysicsWriteAvailablePins')[num:dectoint((node:current())/../../../DioPortId)+1]), bit:shr((bit:shl(1,15)), num:dectoint(node:current()))) != '0') or (bit:and(num:hextoint(ecu:list('Dio.PhysicsReadAvailablePins')[num:dectoint((node:current())/../../../DioPortId)+1]), bit:shr((bit:shl(1,15)), num:dectoint(node:current()))) != '0')"
+                              false="This channel is not available in the selected package.Please see Elt. Desc note for a list of available channels for selected package." />
+                          </a:da>
+                        </v:var>
+                        <v:lst name="DioChannelEcucPartitionRef">
+                          <v:ref name="DioChannelEcucPartitionRef"
+                            type="REFERENCE">
+                            <a:a name="DESC">
+                              <a:v>EN: Maps a DIO channel to zero or multiple ECUC partitions. The
+                                ECUC partitions referenced are a subset of the ECUC partitions where
+                                the related DIO port is mapped to.</a:v>
+                              <a:v>EN: Tags: atp.Status=draft</a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v mclass="PreCompile">VariantLinkTime</icc:v>
+                              <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                            <a:a name="SCOPE" value="ECU" />
+                            <a:a name="UUID"
+                              value="adfcddb4-25cd-4eee-80d0-30b08fc72542" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="REF"
+                              value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition" />
+                              <a:da name="INVALID" type="XPath">
+                                <a:tst expr="text:uniq(../*, .)" false="Duplicate Partition."/>
+                                <a:tst expr="count(text:grep(../../../../DioPortEcucPartitionRef/*,.)) > 0"
+                                    false="The ECUC partition must be defined on the DioPortEcucPartitionRef."/>
+                            </a:da>
+                          </v:ref>
+                        </v:lst>
+                      </v:ctr>
+                    </v:lst>
+                    <v:lst name="DioChannelGroup" type="MAP">
+                      <v:ctr name="DioChannelGroup" type="IDENTIFIABLE">
+                        <a:a name="DESC"
+                          value="EN: Definition and configuration of DIO channel groups. A channel group represents several adjoining DIO channels represented by a logical group." />
+                        <a:a name="UUID"
+                          value="ac3f66e2-cf29-40ea-a6e3-894d6d05197d" />
+                        <v:var name="DioChannelGroupIdentification"
+                          type="STRING">
+                          <a:a name="DESC"
+                            value="EN: The DIO channel group is identified in DIO API by a pointer to a data structure (of type Dio_ChannelGroupType). That data structure contains the channel group information." />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                          <a:a name="SCOPE" value="ECU" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="true" />
+                          <a:a name="UUID"
+                            value="103f62e5-60e6-4699-ba91-d1827a23bda9" />
+                          <a:a name="__ORIGIN" value="Elektrobit" />
+                          <a:da name="DEFAULT" value="DioChannelGroup_0" />
+                        </v:var>
+                        <v:var name="DioPortMask" type="INTEGER">
+                          <a:a name="DESC"
+                            value="EN: This shall be the mask which defines the positions of the channel" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="Link">VariantLinkTime</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                          <a:a name="SCOPE" value="LOCAL" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID"
+                            value="3b8e568d-307a-41c0-a242-e0103d45c585" />
+                          <a:a name="__ORIGIN" value="Elektrobit" />
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=65535" />
+                            <a:tst expr="&gt;=0" />
+                          </a:da>
+                          <a:da name="RANGE" type="XPath">
+                            <a:tst
+                              expr="(. = '1') or (.= '2' ) or  (.= '3' ) or  (.= '4' ) or  (.= '6' ) or  (.= '7' ) or  (.= '8' ) or  (.= '12' ) or  (.= '14' ) or  (.= '15' ) or  (.= '16' ) or  (.= '24' ) or  (.= '28' ) or  (.= '30' ) or  (.= '31' ) or  (.= '32' )
+                                    or  (.= '48' ) or  (.= '56' ) or  (.= '60' ) or  (.= '62' ) or  (.= '63' ) or  (.= '64' ) or  (.= '96' ) or  (.= '112' ) or  (.= '120' ) or  (.= '124' ) or  (.= '126' ) or  (.= '127' ) or  (.= '128' ) or  (.= '192' ) or  (.= '224' )
+                                    or  (.= '240' ) or  (.= '248' ) or  (.= '252' ) or  (.= '254' ) or  (.= '255' ) or  (.= '256' ) or  (.= '384' ) or  (.= '448' ) or  (.= '480' ) or  (.= '496' ) or  (.= '504' ) or  (.= '508' ) or  (.= '510' ) or  (.= '511' )
+                                    or  (.= '512' ) or  (.= '768' ) or  (.= '896' ) or  (.= '960' ) or  (.= '992' )  or  (.= '1008' ) or  (.= '1016' ) or  (.= '1020' ) or  (.= '1022' ) or  (.= '1023' ) or  (.= '1024' ) or  (.= '1536' ) or  (.= '1792' ) or  (.= '1920' )
+                                    or  (.= '1984' ) or  (.= '2016' ) or  (.= '2032' ) or  (.= '2040' ) or  (.= '2044' ) or  (.= '2046' ) or  (.= '2047' ) or  (.= '2048' ) or  (.= '3072' )
+                                    or  (.= '3584' ) or  (.= '3840' ) or  (.= '3968' ) or  (.= '4032' ) or  (.= '4064' ) or  (.= '4080' ) or  (.= '4088' ) or  (.= '4092' ) or  (.= '4094' ) or  (.= '4095' ) or  (.= '4096' ) or  (.= '6144' ) or  (.= '7168' )
+                                    or  (.= '7680' ) or  (.= '7936' ) or  (.= '8064' ) or  (.= '8128' ) or  (.= '8160' ) or  (.= '8176' ) or  (.= '8184' ) or  (.= '8188' ) or  (.= '8190' ) or  (.= '8191' ) or  (.= '8192' ) or  (.= '12288' ) or  (.= '14336' )
+                                    or  (.= '15360' ) or  (.= '15872' ) or  (.= '16128' ) or  (.= '16256' ) or  (.= '16320' ) or  (.= '16352' ) or  (.= '16368' ) or  (.= '16376' ) or  (.= '16380' ) or  (.= '16382' ) or  (.= '16383' ) or    (.= '16384' )
+                                    or  (.= '24576' ) or  (.= '28672' ) or  (.= '30720' ) or  (.= '31744' ) or  (.= '32256' ) or  (.= '32512' ) or  (.= '32640' ) or  (.= '32704' ) or  (.= '32736' ) or  (.= '32752' ) or  (.= '32760' ) or  (.= '32764' ) or  (.= '32766' )
+                                    or  (.= '32767' ) or  (.= '32768' ) or  (.= '49152' ) or  (.= '57344' ) or  (.= '61440' ) or  (.= '63488' ) or  (.= '64512' ) or  (.= '65024' ) or  (.= '65280' ) or  (.= '65408' ) or  (.= '65472' ) or  (.= '65504' ) or  (.= '65520' )
+                                    or  (.= '65528' ) or  (.= '65532' ) or  (.= '65534' ) or  (.= '65535' )"
+                              false="Only the values 1,2,3,4,6,7,8,12,14,15,16,24,28,30,31,32,48,56,60,62,63,64,96,112,120,124,126,127,128,192,224,240,248,252,254,255,256,384,448,480,496,504,508,510,511,512,768,896,960,992,1008,1016,1020,1022,1023,1024,1536,1792,1920,1984,2016,2032,2040,2044,2046,2047,2048,3072,3584,3840,3968,4032,4064,4080,4088,4092,4094,4095,4096,6144,7168,7680,7936,8064,8128,8160,8176,8184,8188,8190,8191,8192,12288,14336,15360,15872,16128,16256,16320,16352,16368,16376,16380,16382,16383,16384,24576,28672,30720,31744,32256,32512,32640,32704,32736,32752,32760,32764,32766,32767,32768,49152,57344,61440,63488,64512,65024,65280,65408,65472,65504,65520,65528,65532,65534,65535 are allowed" />
+                          </a:da>
+                        </v:var>
+                        <v:var name="DioPortOffset" type="INTEGER">
+                          <a:a name="DESC"
+                            value="EN: The location of a Channel Group on a port is measured by the LSB. This value can be exported from DioPortMask. calculationFormula = The position where the first bit of the DioPortMask calculated from the LSB is set to '1'" />
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="Link">VariantLinkTime</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                          <a:a name="SCOPE" value="LOCAL" />
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID"
+                            value="128cf8bb-871e-4917-ace8-3c1eb8f05acd" />
+                          <a:a name="__ORIGIN" value="Elektrobit" />
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=15" />
+                            <a:tst expr="&gt;=0" />
+                          </a:da>
+                          <a:da name="RANGE" type="XPath">
+                            <a:tst
+                              expr=". =(num:i(number(text:split(text:grep(text:split('0_1 1_2 0_3 2_4 1_6 0_7 3_8 2_12 1_14 0_15 4_16 3_24 2_28 1_30 0_31 5_32 4_48 3_56 2_60 1_62 0_63 6_64 5_96 4_112 3_120 2_124 1_126 0_127 7_128 6_192 5_224 4_240 3_248 2_252 1_254 0_255 8_256 7_384 6_448 5_480 4_496 3_504 2_508 1_510 0_511 9_512 8_768 7_896 6_960 5_992 4_1008 3_1016 2_1020 1_1022 0_1023 10_1024 9_1536 8_1792 7_1920 6_1984 5_2016 4_2032 3_2040 2_2044 1_2046 0_2047 11_2048 10_3072 9_3584 8_3840 7_3968 6_4032 5_4064 4_4080 3_4088 2_4092 1_4094 0_4095 12_4096 11_6144 10_7168 9_7680 8_7936 7_8064 6_8128 5_8160 4_8176 3_8184 2_8188 1_8190 0_8191 13_8192 12_12288 11_14336 10_15360 9_15872 8_16128 7_16256 6_16320 5_16352 4_16368 3_16376 2_16380 1_16382 0_16383 14_16384 13_24576 12_28672 11_30720 10_31744 9_32256 8_32512 7_32640 6_32704 5_32736 4_32752 3_32760 2_32764 1_32766 0_32767 15_32768 14_49152 13_57344 12_61440 11_63488 10_64512 9_65024 8_65280 7_65408 6_65472 5_65504 4_65520 3_65528 2_65532 1_65534 0_65535'),concat('^[0-9]+_', ../DioPortMask)),'_')[1])))"
+                              false="The value of the offset must match with the DioPortMask. For the correct value use the CALC button" />
+                          </a:da>
+                        </v:var>
+                        <v:lst name="DioChannelGroupEcucPartitionRef">
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst
+                              expr="(num:i(count(./*)) = 0) and (num:i(count(../../../DioPortEcucPartitionRef/*)) > 0)"
+                              true="At least one partition need to be defined in DioChannelGroupEcucPartitionRef" />
+                          </a:da>
+                          <v:ref name="DioChannelGroupEcucPartitionRef"
+                            type="REFERENCE">
+                            <a:a name="DESC">
+                              <a:v>EN: Maps a DIO channel group to zero or multiple ECUC partitions.
+                                The ECUC partitions referenced are a subset of the ECUC partitions
+                                where the related DIO port is mapped to.</a:v>
+                              <a:v>EN: Tags: atp.Status=draft</a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v mclass="PreCompile">VariantLinkTime</icc:v>
+                              <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                              <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                            <a:a name="SCOPE" value="ECU" />
+                            <a:a name="UUID"
+                              value="dfbf1b44-7d85-4888-9570-e8a20837e9be" />
+                            <a:a name="__ORIGIN" value="Elektrobit" />
+                            <a:da name="REF"
+                              value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition" />
+                            <a:da name="INVALID" type="XPath">
+                              <a:tst expr="text:uniq(../*, .)"
+                                false="Duplicate Partition." />
+                              <a:tst
+                                expr="count(text:grep(../../../../DioPortEcucPartitionRef/*,.)) > 0"
+                                false="The ECUC partition must be defined on the DioPortEcucPartitionRef." />
+                            </a:da>
+                          </v:ref>
+                        </v:lst>
+                      </v:ctr>
+                    </v:lst>
+                  </v:ctr>
+                </v:lst>
+              </v:ctr>
+              <v:ctr name="DioGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC"
+                  value="EN: General DIO module configuration parameters." />
+                <a:a name="UUID" value="a2f224eb-843c-444c-bbc1-b1cba0a63abf" />
+                <v:var name="DioDevErrorDetect" type="BOOLEAN">
+                  <a:a name="DESC"
+                    value="EN: Switches the development error detection and notification on or off." />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                    type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="5e466ab7-9b94-4edd-8979-4176cae589cf" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="false" />
+                </v:var>
+                <v:var name="DioFlipChannelApi" type="BOOLEAN">
+                  <a:a name="DESC"
+                    value="EN: Adds / removes the service Dio_FlipChannel() from the code." />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                    type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="4911389b-cebf-4b07-ae72-e37f5630ee91" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+				  <a:da name="DEFAULT" value="false" />
+                </v:var>
+                <v:var name="DioMaskedWritePortApi" type="BOOLEAN">
+                  <a:a name="DESC"
+                    value="EN: Adds / removes the service Dio_MaskedWritePort() from the code." />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                    type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="355b716a-9298-46b5-91ac-d9b9f745e6a1" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="false" />
+                </v:var>
+                <v:var name="DioVersionInfoApi" type="BOOLEAN">
+                  <a:a name="DESC"
+                    value="EN: Adds / removes the service Dio_ GetVersionInfo() from the code." />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                    type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="0cbc5ad2-6a4b-49a9-ba68-9f5942715a5a" />
+                  <a:a name="__ORIGIN" value="Elektrobit" />
+                  <a:da name="DEFAULT" value="false" />
+                </v:var>
+                <v:var name="DioReadZeroForUndefinedPortPins" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>
+                          <![CDATA[
+                              <html><p>
+                                Define whether the Dio_ReadPort() function contains... Ability of...
+                                Read undefined port pin 0. <br>
+                                True - Enables the Dio_ReadPort() feature to read undefined port pins as 0. <br>
+                                False - disables the Dio_ReadPort() function to read undefined port pins as 0
+                                (Supports normal Dio_ReadPort() functionality). <br>
+                              </p></html>
+                          ]]>
+                      </a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    <icc:v class="PreCompile">VariantLinkTime</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ECUC:d0bcf82f-cdd3-fb64-9e7d-b41c58f704a5" />
+                  <a:da name="DEFAULT" value="true" />
+                </v:var>
+                <v:var name="DioMulticoreSupport" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:<html><p>This parameter globally enables the possibility to support multicore. If this parmeter is enabled, at least one EcucPartition needs to be defined (in all variants).<br>
+                  <h1>Note</h1>This is an Implementation Specific Parameter.
+                      </p></html>]]></a:v>
+                  </a:a>
+                  <a:a name="SCOPE" value="LOCAL" />
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false" />
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="LABEL" value="DioMulticoreSupport" />
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ECUC:8436de9b-c7e1-4ac0-9e50-145f0870a2ab" />
+                  <a:da name="DEFAULT" value="false" />
+                  <a:a name="EDITABLE" value="true" />
+                  <a:a name="INVALID" type="XPath">
+                    <a:tst
+                      expr="(. = 'true') and not(num:i(count(../../DioGeneral/DioEcucPartitionRef/*) > 0))"
+                      true="Dio Multicore Support is only enabled when at least one EcucPartition needs to be defined (in all variants)." />
+                  </a:a>
+                </v:var>
+                <v:var name="DioInlineSupport" type="BOOLEAN">
+                    <a:a name="DESC"
+                         value="EN: Whether on or off INLINE can be configured."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:94cb0b73-61e0-a5ec-c2e0-1e14bf1d4c83"/>
+                    <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:lst name="DioEcucPartitionRef">
+                  <v:ref name="DioEcucPartitionRef" type="REFERENCE">
+                    <a:a name="DESC">
+                      <a:v>EN: Maps the DIO driver to zero or multiple ECUC partitions to make the
+                        modules API available in this partition.</a:v>
+                      <a:v>EN: Tags: atp.Status=draft</a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantLinkTime</icc:v>
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                    <a:a name="SCOPE" value="ECU" />
+                    <a:a name="UUID"
+                      value="3de0c6e2-a1a3-4ccc-88fb-d80d2e2709f1" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="REF"
+                      value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition" />
+                    <a:da name="INVALID" type="XPath">
+                      <a:tst expr="../../../DioGeneral/DioMulticoreSupport"
+                        false="The Dio Multicore Support parameter is not enabled" />
+                    </a:da>
+                  </v:ref>
+                </v:lst>
+              </v:ctr>
+              <d:ref type="REFINED_MODULE_DEF"
+                value="ASPath:/AUTOSAR/EcucDefs/Dio" />
+            </v:ctr>
+          </d:chc>
+          <d:chc name="myEcuParameterDefinition" type="AR-ELEMENT"
+            value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="DEF"
+                value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION" />
+              <d:lst name="MODULE_REF">
+                <d:ref type="MODULE_REF" value="ASPath:/DioConfig/Dio" />
+              </d:lst>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

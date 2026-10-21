@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+  <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="Resource_Module"
+             name="Resource_Module">
+
+    <module id="Resource_CCFC3007PT"
+            label="Resource"
+            mandatory="true"
+            allowMultiple="false"
+            description="Resource BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="Resource"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3007PT"/>
+    </module>
+
+    <module id="Resource_CCFC3007BC"
+              label="Resource"
+              mandatory="true"
+              allowMultiple="false"
+              description="Resource BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Resource"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3007BC"/>
+    </module>
+
+    <module id="Resource_CCFC3008PT"
+              label="Resource"
+              mandatory="true"
+              allowMultiple="false"
+              description="Resource BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Resource"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3008PT"/>
+    </module>
+
+    <module id="Resource_CCFC3008PC"
+              label="Resource"
+              mandatory="true"
+              allowMultiple="false"
+              description="Resource BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Resource"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3008PC"/>
+    </module>
+
+    <module id="Resource_CCFC3012PT"
+              label="Resource"
+              mandatory="true"
+              allowMultiple="false"
+              description="Resource BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Resource"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3012PT"/>
+    </module>
+
+    <module id="Resource_CCFC3008PCSN"
+              label="Resource"
+              mandatory="true"
+              allowMultiple="false"
+              description="Resource BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Resource"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3008PCSN"/>
+    </module>
+    <module id="Resource_CCFC3010PT"
+              label="Resource"
+              mandatory="true"
+              allowMultiple="false"
+              description="Resource BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Resource"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3010PT"/>
+    </module>
+    <module id="Resource_CCFC3011PT"
+              label="Resource"
+              mandatory="true"
+              allowMultiple="false"
+              description="Resource BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Resource"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3011PT"/>
+    </module>
+    <!--
+    <module id="Resource_CCFC3009PT"
+              label="Resource"
+              mandatory="true"
+              allowMultiple="false"
+              description="Resource BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Resource"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3009PT"/>
+    </module>
+    -->
+    <module id="Resource_CCFC3008PCSA"
+              label="Resource"
+              mandatory="true"
+              allowMultiple="false"
+              description="Resource BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Resource"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3008PCSA"/>
+    </module>
+    <module id="Resource_CCFC3010PTD"
+              label="Resource"
+              mandatory="true"
+              allowMultiple="false"
+              description="Resource BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="Resource"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3010PTD"/>
+    </module>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="Resource_Configuration"
+             name="Resource_Configuration">
+
+    <configuration moduleId="Resource_CCFC3007PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Resource1.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/ResourceConfig/Resource"/>
+      </data>
+
+      <editor id="Resource_Editor_01"
+              label="Default"
+              tooltip="Resource BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/ResourceConfig/Resource"/>
+              <parameter name="title" value="Resource"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Resource_CCFC3007BC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Resource2.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/ResourceConfig/Resource"/>
+      </data>
+
+      <editor id="Resource_Editor_02"
+              label="Default"
+              tooltip="Resource BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/ResourceConfig/Resource"/>
+              <parameter name="title" value="Resource"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Resource_CCFC3008PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Resource3.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/ResourceConfig/Resource"/>
+      </data>
+
+      <editor id="Resource_Editor_03"
+              label="Default"
+              tooltip="Resource BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/ResourceConfig/Resource"/>
+              <parameter name="title" value="Resource"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Resource_CCFC3008PC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Resource4.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/ResourceConfig/Resource"/>
+      </data>
+
+      <editor id="Resource_Editor_04"
+              label="Default"
+              tooltip="Resource BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/ResourceConfig/Resource"/>
+              <parameter name="title" value="Resource"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Resource_CCFC3012PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Resource5.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/ResourceConfig/Resource"/>
+      </data>
+
+      <editor id="Resource_Editor_05"
+              label="Default"
+              tooltip="Resource BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/ResourceConfig/Resource"/>
+              <parameter name="title" value="Resource"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Resource_CCFC3008PCSN">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Resource6.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/ResourceConfig/Resource"/>
+      </data>
+
+      <editor id="Resource_Editor_06"
+              label="Default"
+              tooltip="Resource BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/ResourceConfig/Resource"/>
+              <parameter name="title" value="Resource"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Resource_CCFC3010PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Resource7.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/ResourceConfig/Resource"/>
+      </data>
+      <editor id="Resource_Editor_07"
+              label="Default"
+              tooltip="Resource BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/ResourceConfig/Resource"/>
+              <parameter name="title" value="Resource"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Resource_CCFC3011PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Resource8.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/ResourceConfig/Resource"/>
+      </data>
+      <editor id="Resource_Editor_08"
+              label="Default"
+              tooltip="Resource BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/ResourceConfig/Resource"/>
+              <parameter name="title" value="Resource"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Resource_CCFC3009PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Resource9.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/ResourceConfig/Resource"/>
+      </data>
+      <editor id="Resource_Editor_09"
+              label="Default"
+              tooltip="Resource BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/ResourceConfig/Resource"/>
+              <parameter name="title" value="Resource"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Resource_CCFC3008PCSA">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Resource10.xdm" type="xdm"/>
+      </schema>
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/ResourceConfig/Resource"/>
+      </data>
+      <editor id="Resource_Editor_10"
+              label="Default"
+              tooltip="Resource BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/ResourceConfig/Resource"/>
+              <parameter name="title" value="Resource"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="Resource_CCFC3010PTD">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Resource11.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/ResourceConfig/Resource"/>
+      </data>
+
+      <editor id="Resource_Editor_11"
+              label="Default"
+              tooltip="Resource BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/ResourceConfig/Resource"/>
+              <parameter name="title" value="Resource"/>
+          </class>
+      </editor>
+    </configuration>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="Resource_Generator"
+              name="Resource_Generator">
+      <generator id="Resource_Generate_01"
+                  moduleId="Resource_CCFC3007PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Resource_Generate_02"
+                  moduleId="Resource_CCFC3007BC"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Resource_Generate_03"
+                  moduleId="Resource_CCFC3008PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Resource_Generate_04"
+                  moduleId="Resource_CCFC3008PC"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Resource_Generate_05"
+                  moduleId="Resource_CCFC3012PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Resource_Generate_06"
+                  moduleId="Resource_CCFC3008PCSN"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+            <generator id="Resource_Generate_07"
+                  moduleId="Resource_CCFC3010PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Resource_Generate_08"
+                  moduleId="Resource_CCFC3011PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Resource_Generate_09"
+                  moduleId="Resource_CCFC3009PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="Resource_Generate_10"
+                  moduleId="Resource_CCFC3008PCSA"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+       <generator id="Resource_Generate_11"
+                  moduleId="Resource_CCFC3010PTD"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+  </extension>
+
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <!-- 3007PT -->
+    <ecuresource
+      target="PA" derivate="CCFC3007PT" 
+      moduleId="Resource_CCFC3007PT"
+      file="resource/PA_CCFC3007PT_mapbga516_192.properties">
+      <parameter name="subderivative" value="CCFC3007PT_mapbga516_192"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3007PT"
+      moduleId="Resource_CCFC3007PT"
+      file="resource/PA_CCFC3007PT_mapbga416_128.properties">
+      <parameter name="subderivative" value="CCFC3007PT_mapbga416_128"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3007PT"
+      moduleId="Resource_CCFC3007PT"
+      file="resource/PA_CCFC3007PT_mapbga416_192.properties">
+      <parameter name="subderivative" value="CCFC3007PT_mapbga416_192"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3007PT"
+      moduleId="Resource_CCFC3007PT"
+      file="resource/PA_CCFC3007PT_mapbga292_64.properties">
+      <parameter name="subderivative" value="CCFC3007PT_mapbga292_64"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3007PT"
+      moduleId="Resource_CCFC3007PT"
+      file="resource/PA_CCFC3007PT_mapbga292_128.properties">
+      <parameter name="subderivative" value="CCFC3007PT_mapbga292_128"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3007PT"
+      moduleId="Resource_CCFC3007PT"
+      file="resource/PA_CCFC3007PT_mapbga292_192.properties">
+      <parameter name="subderivative" value="CCFC3007PT_mapbga292_192"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3007PT"
+      moduleId="Resource_CCFC3007PT"
+      file="resource/PA_CCFC3007PT_mapqfp216B_64.properties">
+      <parameter name="subderivative" value="CCFC3007PT_mapqfp216B_64"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3007PT"
+      moduleId="Resource_CCFC3007PT"
+      file="resource/PA_CCFC3007PT_mapqfp216B_192.properties">
+      <parameter name="subderivative" value="CCFC3007PT_mapqfp216B_192"/>
+    </ecuresource>
+    <!-- 3007BC -->
+    <ecuresource
+      target="PA" derivate="CCFC3007BC"
+      moduleId="Resource_CCFC3007BC"
+      file="resource/PA_CCFC3007BC_mapbga292_128.properties">
+      <parameter name="subderivative" value="CCFC3007BC_mapbga292_128"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3007BC"
+      moduleId="Resource_CCFC3007BC"
+      file="resource/PA_CCFC3007BC_mapbga292_96.properties">
+      <parameter name="subderivative" value="CCFC3007BC_mapbga292_96"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3007BC"
+      moduleId="Resource_CCFC3007BC"
+      file="resource/PA_CCFC3007BC_mapqfp216_128.properties">
+      <parameter name="subderivative" value="CCFC3007BC_mapqfp216_128"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3007BC"
+      moduleId="Resource_CCFC3007BC"
+      file="resource/PA_CCFC3007BC_mapqfp216_64.properties">
+      <parameter name="subderivative" value="CCFC3007BC_mapqfp216_64"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3007BC"
+      moduleId="Resource_CCFC3007BC"
+      file="resource/PA_CCFC3007BC_mapbga292_64.properties">
+      <parameter name="subderivative" value="CCFC3007BC_mapbga292_64"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3007BC"
+      moduleId="Resource_CCFC3007BC"
+      file="resource/PA_CCFC3007BC_mapqfp216_64_A.properties">
+      <parameter name="subderivative" value="CCFC3007BC_mapqfp216_64_A"/>
+    </ecuresource>
+    <!-- 3008PT -->
+    <ecuresource
+      target="PA" derivate="CCFC3008PT"
+      moduleId="Resource_CCFC3008PT"
+      file="resource/PA_CCFC3008PT_mapbga416_64.properties">
+      <parameter name="subderivative" value="CCFC3008PT_mapbga416_64"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3008PT"
+      moduleId="Resource_CCFC3008PT"
+      file="resource/PA_CCFC3008PT_mapbga292_64.properties">
+      <parameter name="subderivative" value="CCFC3008PT_mapbga292_64"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3008PT"
+      moduleId="Resource_CCFC3008PT"
+      file="resource/PA_CCFC3008PT_mapqfp216_64.properties">
+      <parameter name="subderivative" value="CCFC3008PT_mapqfp216_64"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3008PT"
+      moduleId="Resource_CCFC3008PT"
+      file="resource/PA_CCFC3008PT_mapqfp144_64.properties">
+      <parameter name="subderivative" value="CCFC3008PT_mapqfp144_64"/>
+    </ecuresource>
+    <!-- 3008PC -->
+    <ecuresource
+      target="PA" derivate="CCFC3008PC"
+      moduleId="Resource_CCFC3008PC"
+      file="resource/PA_CCFC3008PC_mapbga180_48.properties">
+      <parameter name="subderivative" value="CCFC3008PC_mapbga180_48"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3008PC"
+      moduleId="Resource_CCFC3008PC"
+      file="resource/PA_CCFC3008PC_maptqfp144_32.properties">
+      <parameter name="subderivative" value="CCFC3008PC_maptqfp144_32"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3008PC"
+      moduleId="Resource_CCFC3008PC"
+      file="resource/PA_CCFC3008PC_maptqfp144_48.properties">
+      <parameter name="subderivative" value="CCFC3008PC_maptqfp144_48"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3008PC"
+      moduleId="Resource_CCFC3008PC"
+      file="resource/PA_CCFC3008PC_maptqfp144B_48.properties">
+      <parameter name="subderivative" value="CCFC3008PC_maptqfp144B_48"/>
+    </ecuresource>
+    <!-- 3008PCSN -->
+    <ecuresource
+      target="PA" derivate="CCFC3008PCSN"
+      moduleId="Resource_CCFC3008PCSN"
+      file="resource/PA_CCFC3008PCSN_mapbga180_64.properties">
+      <parameter name="subderivative" value="CCFC3008PCSN_mapbga180_64"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3008PCSN"
+      moduleId="Resource_CCFC3008PCSN"
+      file="resource/PA_CCFC3008PCSN_maptqfp144_64.properties">
+      <parameter name="subderivative" value="CCFC3008PCSN_maptqfp144_64"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3008PCSN"
+      moduleId="Resource_CCFC3008PCSN"
+      file="resource/PA_CCFC3008PCSN_mapbga180_64_A.properties">
+      <parameter name="subderivative" value="CCFC3008PCSN_mapbga180_64_A"/>
+    </ecuresource>
+    <!-- 3012PT -->
+    <ecuresource
+      target="PA" derivate="CCFC3012PT"
+      moduleId="Resource_CCFC3012PT"
+      file="resource/PA_CCFC3012PT_mapbga516_264.properties">
+      <parameter name="subderivative" value="CCFC3012PT_mapbga516_264"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3012PT"
+      moduleId="Resource_CCFC3012PT"
+      file="resource/PA_CCFC3012PT_mapbga292_264.properties">
+      <parameter name="subderivative" value="CCFC3012PT_mapbga292_264"/>
+    </ecuresource>
+    <!-- 3010PT -->
+    <ecuresource
+      target="PA" derivate="CCFC3010PT"
+      moduleId="Resource_CCFC3010PT"
+      file="resource/PA_CCFC3010PT_mapbga292_96.properties">
+      <parameter name="subderivative" value="CCFC3010PT_mapbga292_96"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3010PT"
+      moduleId="Resource_CCFC3010PT"
+      file="resource/PA_CCFC3010PT_mapbga292_128.properties">
+      <parameter name="subderivative" value="CCFC3010PT_mapbga292_128"/>
+    </ecuresource>
+    <!-- 3011PT -->
+    <ecuresource
+      target="PA" derivate="CCFC3011PT"
+      moduleId="Resource_CCFC3011PT"
+      file="resource/PA_CCFC3011PT_mapbga516_168.properties">
+      <parameter name="subderivative" value="CCFC3011PT_mapbga516_168"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3011PT"
+      moduleId="Resource_CCFC3011PT"
+      file="resource/PA_CCFC3011PT_mapbga292_168.properties">
+      <parameter name="subderivative" value="CCFC3011PT_mapbga292_168"/>
+    </ecuresource>
+    <!-- 3009PT -->
+    <!-- <ecuresource
+      target="PA" derivate="CCFC3009PT"
+      moduleId="Resource_CCFC3009PT"
+      file="resource/PA_CCFC3009PT_mapbga680_384.properties">
+      <parameter name="subderivative" value="CCFC3009PT_mapbga680_384"/>
+    </ecuresource> -->
+    <!-- 3008PCSA -->
+    <ecuresource
+      target="PA" derivate="CCFC3008PCSA"
+      moduleId="Resource_CCFC3008PCSA"
+      file="resource/PA_CCFC3008PCSA_maplqfp80_32.properties">
+      <parameter name="subderivative" value="CCFC3008PCSA_maplqfp80_32"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3008PCSA"
+      moduleId="Resource_CCFC3008PCSA"
+      file="resource/PA_CCFC3008PCSA_maptqfp144_32.properties">
+      <parameter name="subderivative" value="CCFC3008PCSA_maptqfp144_32"/>
+    </ecuresource>
+    <!-- 3010PTD -->
+    <ecuresource
+      target="PA" derivate="CCFC3010PTD"
+      moduleId="Resource_CCFC3010PTD"
+      file="resource/PA_CCFC3010PTD_mapbga292_64.properties">
+      <parameter name="subderivative" value="CCFC3010PTD_mapbga292_64"/>
+    </ecuresource>
+    <ecuresource
+      target="PA" derivate="CCFC3010PTD"
+      moduleId="Resource_CCFC3010PTD"
+      file="resource/PA_CCFC3010PTD_mapbga292_96.properties">
+      <parameter name="subderivative" value="CCFC3010PTD_mapbga292_96"/>
+    </ecuresource>
+  </extension>
+
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresourcefinder">
+    <ecuresourcefinder>
+      <finder class="dreisoft.tresos.autosar2.api.ecuresource.DefaultEcuResourceFinder">
+        <parameter name="name" value="subderivative"/>
+        <parameter name="path" value="ASPath:/ResourceConfig/Resource/ResourceGeneral/ResourceSubderivative"/>
+      </finder>
+    </ecuresourcefinder>
+  </extension>
+
+  <extension point="org.eclipse.help.toc">
+    <toc file="anchors.xml" primary="true"/>
+    <toc file="$nl$/Resource/toc.xml" primary="false"/>
+    <!-- toc file="$nl$/ReleaseNotes/toc.xml" primary="false"/ !-->
+  </extension>
+</plugin>

@@ -1,0 +1,2014 @@
+﻿/******************************************************************************
+ *
+ *  ASAP2 file:     SigSignalAdapter.a2l
+ *
+ * 
+ *
+ * Code generation for model "SigSignalAdapter".
+ *
+ * Model version              : 1.342
+ * Simulink Coder version : 10.6 R2022b
+ * C source code generated on : Tue Oct 13 17:10:44 2026
+ *
+ * Target selection: ert.tlc
+ * Embedded hardware selection: Infineon->TriCore
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+ASAP2_VERSION  1 71     /* Version 1.71 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+
+  /begin HEADER "Header Comments go here"
+  /end HEADER
+
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+    /end MOD_PAR
+
+    /begin MOD_COMMON  "Mod Common Comment Here"
+      BYTE_ORDER     MSB_LAST
+
+      ALIGNMENT_BYTE 1
+      ALIGNMENT_WORD 2
+      ALIGNMENT_LONG 4
+      ALIGNMENT_FLOAT32_IEEE 4
+      ALIGNMENT_FLOAT64_IEEE 8
+      ALIGNMENT_INT64 8
+    /end MOD_COMMON
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_BatteryVoltGain_C
+    /* Long Identifier        */      "Battery voltage sensor gain calibration"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_BatteryVoltGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_BatteryVoltOffset_C
+    /* Long Identifier        */      "Battery voltage sensor offset calibration"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_BatteryVoltOffset_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_ClrHWFaultEnable_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_ClrHWFaultEnable_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_uint8
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      200.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_ClrHWFault_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_ClrHWFault_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_logical
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_DcLinkVoltGain_C
+    /* Long Identifier        */      "DC-link voltage sensor gain calibration"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_DcLinkVoltGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_DcLinkVoltOffset_C
+    /* Long Identifier        */      "DC-link voltage sensor offset calibration"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_DcLinkVoltOffset_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_IgnitionAVoltGain_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_IgnitionAVoltGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_IgnitionAVoltOffset_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_IgnitionAVoltOffset_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_IgnitionBVoltGain_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_IgnitionBVoltGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_IgnitionBVoltOffset_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_IgnitionBVoltOffset_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_IgnitionCVoltGain_C
+    /* Long Identifier        */      "Ignition voltage sensor gain calibration"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_IgnitionCVoltGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_IgnitionCVoltOffset_C
+    /* Long Identifier        */      "Ignition voltage sensor offset calibration"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_IgnitionCVoltOffset_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_KL15VoltGain_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_KL15VoltGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_Kl15VoltOffset_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_Kl15VoltOffset_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_MotorInitAngleOffset_C
+    /* Long Identifier        */      "Initial angle offset for motor alignment"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_MotorInitAngleOffset_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_MotorTempGain_C
+    /* Long Identifier        */      "Motor temperature sensor gain calibration"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_MotorTempGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_MotorTempOffset_C
+    /* Long Identifier        */      "Motor temperature sensor offset calibration"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_MotorTempOffset_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_PhaseACurrentGain_C
+    /* Long Identifier        */      "Phase A current sensor gain calibration value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_PhaseACurrentGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -100.000000
+    /* Upper Limit            */      100.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_PhaseAPwmDuty_C
+    /* Long Identifier        */      "Phase A PWM duty cycle parameter setpoint"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_PhaseAPwmDuty_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single_percent_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      200.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_PhaseBPwmDuty_C
+    /* Long Identifier        */      "Phase B PWM duty cycle parameter setpoint"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_PhaseBPwmDuty_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single_percent_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      200.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_PhaseCCurrentGain_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_PhaseCCurrentGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_PhaseCPwmDuty_C
+    /* Long Identifier        */      "Phase C PWM duty cycle parameter setpoint"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_PhaseCPwmDuty_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single_percent_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      200.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_PowerChipVoltGain_C
+    /* Long Identifier        */      "Battery voltage sensor gain calibration"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_PowerChipVoltGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_PowerChipVoltOffset_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_PowerChipVoltOffset_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_PwmParamEnable_C
+    /* Long Identifier        */      "Enable flag for PWM parameter setpoint mode"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_PwmParamEnable_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_SetDriverStsEnable_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_SetDriverStsEnable_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_uint8
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      200.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_SetDriverSts_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_SetDriverSts_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_uint8
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      200.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_SetFreqEnable_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_SetFreqEnable_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_uint8
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      200.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_SetFreq_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_SetFreq_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      20000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_SetHighASCFlgEnable_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_SetHighASCFlgEnable_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_uint8
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      200.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_SetHighASCFlg_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_SetHighASCFlg_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_uint8
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      200.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_SetPwrOffDlyFlgEnable_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_SetPwrOffDlyFlgEnable_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_uint8
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      200.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_SetPwrOffDlyFlg_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_SetPwrOffDlyFlg_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_logical
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_TMotSnsr1TableHigh_M
+    /* Long Identifier        */      ""
+    /* Characteristic Type    */      CURVE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_TMotSnsr1TableHigh_M@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      SigSignalAdapter_CM_single
+      /* Number of Axis Pts   */      301
+      /* Lower Limit          */      -3.4E+38
+      /* Upper Limit          */      3.4E+38
+      AXIS_PTS_REF                    SGSA_UTMotSnsr1SampleHighTemp_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_UTIgbtPha123Table_M
+    /* Long Identifier        */      ""
+    /* Characteristic Type    */      CURVE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_UTIgbtPha123Table_M@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      SigSignalAdapter_CM_single
+      /* Number of Axis Pts   */      44
+      /* Lower Limit          */      -3.4E+38
+      /* Upper Limit          */      3.4E+38
+      AXIS_PTS_REF                    SGSA_UTIgbtPha123SampleTemp_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_AdcIAZero
+    /* Long identifier        */      "Phase A current ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_AdcIAZero@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_AdcICZero
+    /* Long identifier        */      "Phase A current ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_AdcICZero@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_BatteryVoltAdc
+    /* Long identifier        */      "Battery supply voltage ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4095.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_BatteryVoltAdc@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_DcLinkVoltAdc
+    /* Long identifier        */      "DC-link voltage ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4095.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_DcLinkVoltAdc@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_DcLinkVoltAdcBkUp
+    /* Long identifier        */      "DC-link voltage ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4095.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_DcLinkVoltAdcBkUp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_IgnitionVoltAdc
+    /* Long identifier        */      "Ignition supply voltage ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4095.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_IgnitionVoltAdc@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_MotorTempAdc
+    /* Long identifier        */      "Motor temperature ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4095.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_MotorTempAdc@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_MotorTempAdcBkUp
+    /* Long identifier        */      "Motor temperature ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4095.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_MotorTempAdcBkUp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_PhaseACurrentAdc
+    /* Long identifier        */      "Phase A current ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4095.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_PhaseACurrentAdc@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_PhaseACurrentAdcBkUp
+    /* Long identifier        */      "Phase A current ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4095.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_PhaseACurrentAdcBkUp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_PhaseASwitchTempAdc
+    /* Long identifier        */      "Phase A power switch temperature ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4095.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_PhaseASwitchTempAdc@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_PhaseASwitchTempAdcBkUp
+    /* Long identifier        */      "Phase A power switch temperature ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4095.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_PhaseASwitchTempAdcBkUp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_PhaseBSwitchTempAdc
+    /* Long identifier        */      "Phase B power switch temperature ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4095.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_PhaseBSwitchTempAdc@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_PhaseBSwitchTempAdcBkUp
+    /* Long identifier        */      "Phase A power switch temperature ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4095.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_PhaseBSwitchTempAdcBkUp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_PhaseCCurrentAdc
+    /* Long identifier        */      "Phase C current ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4095.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_PhaseCCurrentAdc@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_PhaseCCurrentAdcBkUp
+    /* Long identifier        */      "Phase A current ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4095.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_PhaseCCurrentAdcBkUp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_PhaseCSwitchTempAdc
+    /* Long identifier        */      "Phase C power switch temperature ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4095.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_PhaseCSwitchTempAdc@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_PhaseCSwitchTempAdcBkUp
+    /* Long identifier        */      "Phase A power switch temperature ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4095.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_PhaseCSwitchTempAdcBkUp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      HWAL_PowerChipVoltAdc
+    /* Long identifier        */      "Battery supply voltage ADC raw value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4095.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@HWAL_PowerChipVoltAdc@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_ClrHWFault
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigSignalAdapter_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_ClrHWFault@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseADuty
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseADuty@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseBDuty
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseBDuty@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseCDuty
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseCDuty@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SetDriverSts
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigSignalAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SetDriverSts@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SetFreq
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SetFreq@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SetHighASCFlg
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigSignalAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SetHighASCFlg@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SetPwrOffDlyFlg
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigSignalAdapter_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SetPwrOffDlyFlg@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_ElecAngle
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_ElecAngle@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_ResolverErr
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigSignalAdapter_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_ResolverErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_BatteryVolt
+    /* Long identifier        */      "Battery supply voltage measurement"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      50.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_BatteryVolt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_DcLinkVoltMeas
+    /* Long identifier        */      "DC-link voltage measurement"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      10000.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_DcLinkVoltMeas@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_DcLinkVoltMeasAD
+    /* Long identifier        */      "DC-link voltage measurement AD"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      10000.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_DcLinkVoltMeasAD@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_DriveErr
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigSignalAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_DriveErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_ElecAngle
+    /* Long identifier        */      "Electrical rotor angle"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single_rad
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -65535.000000
+    /* Upper limit            */      65535.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_ElecAngle@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_HDriFault
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigSignalAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_HDriFault@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_HwOvercurSt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigSignalAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_HwOvercurSt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_HwOvervoltSt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigSignalAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_HwOvervoltSt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_IgnitionVolt
+    /* Long identifier        */      "Ignition supply voltage measurement"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      50.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_IgnitionVolt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_LDriFault
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigSignalAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_LDriFault@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_MotorTemp1
+    /* Long identifier        */      "Motor temperature sensor 1 reading"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -50.000000
+    /* Upper limit            */      250.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_MotorTemp1@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_MotorTemp1AD
+    /* Long identifier        */      "Motor temperature sensor 1 reading"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -50.000000
+    /* Upper limit            */      250.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_MotorTemp1AD@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PWMSts
+    /* Long identifier        */      "PWM State"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigSignalAdapter_CM_uint8_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      10.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PWMSts@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseACurrent
+    /* Long identifier        */      "Phase A current measurement"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2000.000000
+    /* Upper limit            */      2000.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseACurrent@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseACurrentAD
+    /* Long identifier        */      "Phase C current measurement"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2000.000000
+    /* Upper limit            */      2000.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseACurrentAD@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseASwitchTemp
+    /* Long identifier        */      "Phase A power switch temperature measurement"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -50.000000
+    /* Upper limit            */      450.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseASwitchTemp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseASwitchTempAD
+    /* Long identifier        */      "Phase A power switch temperature measurement"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -50.000000
+    /* Upper limit            */      450.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseASwitchTempAD@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseBSwitchTemp
+    /* Long identifier        */      "Phase B power switch temperature measurement"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -50.000000
+    /* Upper limit            */      450.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseBSwitchTemp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseBSwitchTempAD
+    /* Long identifier        */      "Phase A power switch temperature measurement"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -50.000000
+    /* Upper limit            */      450.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseBSwitchTempAD@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseCCurrent
+    /* Long identifier        */      "Phase C current measurement"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2000.000000
+    /* Upper limit            */      2000.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseCCurrent@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseCCurrentAD
+    /* Long identifier        */      "Phase C current measurement"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2000.000000
+    /* Upper limit            */      2000.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseCCurrentAD@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseCSwitchTemp
+    /* Long identifier        */      "Phase C power switch temperature measurement"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -50.000000
+    /* Upper limit            */      450.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseCSwitchTemp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseCSwitchTempAD
+    /* Long identifier        */      "Phase A power switch temperature measurement"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -50.000000
+    /* Upper limit            */      450.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseCSwitchTempAD@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PwrChipVolt
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigSignalAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2000.000000
+    /* Upper limit            */      2000.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PwrChipVolt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_ResolverError
+    /* Long identifier        */      "Resolver fault detection status"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigSignalAdapter_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_ResolverError@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigSignalAdapter_B.Switch2
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigSignalAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigSignalAdapter_B.Switch2@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigSignalAdapter_B.output
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigSignalAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigSignalAdapter_B.output@ */
+  /end MEASUREMENT 
+
+  /begin AXIS_PTS 
+    /* Name                   */      SGSA_UTIgbtPha123SampleTemp_A
+    /* Long Identifier        */      ""
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_UTIgbtPha123SampleTemp_A@ */
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      Axis_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Number of Axis Pts     */      44
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end AXIS_PTS 
+
+  /begin AXIS_PTS 
+    /* Name                   */      SGSA_UTMotSnsr1SampleHighTemp_A
+    /* Long Identifier        */      ""
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_UTMotSnsr1SampleHighTemp_A@ */
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      Axis_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigSignalAdapter_CM_single
+    /* Number of Axis Pts     */      301
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end AXIS_PTS 
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigSignalAdapter_CM_logical
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%1.0"
+    /* Units                  */      ""
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigSignalAdapter_CM_single
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      ""
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigSignalAdapter_CM_single_A
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "A"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigSignalAdapter_CM_single_V
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigSignalAdapter_CM_single_percent_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "%"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigSignalAdapter_CM_single_rad
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rad"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigSignalAdapter_CM_uint8
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%3.0"
+    /* Units                  */      ""
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigSignalAdapter_CM_uint8_A
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%3.0"
+    /* Units                  */      "A"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigSignalAdapter_CM_uint8_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%3.0"
+    /* Units                  */      "-"
+  /end COMPU_METHOD
+
+  /begin  RECORD_LAYOUT Record_BOOLEAN
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_FLOAT32_IEEE
+    FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_UBYTE
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /* Record Layouts for Lookup Tables in Standard Axis format */
+
+  /begin RECORD_LAYOUT Axis_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end RECORD_LAYOUT 
+
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter
+    /* Long identifier        */      "SigSignalAdapter"
+    /* Root                   */      ROOT
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys
+      SigSignalAdapter_SGSA_Read_100us_sys
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_ClrHWFault
+      SGPP_PhaseADuty
+      SGPP_PhaseBDuty
+      SGPP_PhaseCDuty
+      SGPP_SetDriverSts
+      SGPP_SetFreq
+      SGPP_SetHighASCFlg
+      SGPP_SetPwrOffDlyFlg
+      SGRD_ElecAngle
+      SGRD_ResolverErr
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys"
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD1
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD2
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_ConvPowerChipVolt
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_Subsystem
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD"
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_1D_LUT
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_1D_LUT1
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_1D_LUT2
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Local_Variable_Storage3
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Local_Variable_Storage4
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Local_Variable_Storage5
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Local_Variable_Storage6
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Local_Variable_Storage7
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Local_Variable_Storage8
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Parameter10
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Parameter11
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Parameter12
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Parameter7
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Parameter8
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Parameter9
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD1
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD1"
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD1_Local_Variable_Storage1
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD1_Parameter2
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD1_Parameter3
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD1_Local_Variable_Storage1
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD1/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      HWAL_BatteryVoltAdc
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD1_Parameter2
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD1/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGSA_BatteryVoltGain_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD1_Parameter3
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD1/Parameter3"
+    /begin REF_CHARACTERISTIC
+      SGSA_BatteryVoltOffset_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD2
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD2"
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD2_Local_Variable_Storage2
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD2_Parameter5
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD2_Parameter6
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD2_Local_Variable_Storage2
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD2/Local Variable Storage2"
+    /begin REF_MEASUREMENT
+      HWAL_IgnitionVoltAdc
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD2_Parameter5
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD2/Parameter5"
+    /begin REF_CHARACTERISTIC
+      SGSA_KL15VoltGain_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD2_Parameter6
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD2/Parameter6"
+    /begin REF_CHARACTERISTIC
+      SGSA_Kl15VoltOffset_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_1D_LUT
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD/1D LUT"
+    /begin REF_CHARACTERISTIC
+      SGSA_UTIgbtPha123SampleTemp_A
+      SGSA_UTIgbtPha123Table_M
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_1D_LUT1
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD/1D LUT1"
+    /begin REF_CHARACTERISTIC
+      SGSA_UTIgbtPha123SampleTemp_A
+      SGSA_UTIgbtPha123Table_M
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_1D_LUT2
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD/1D LUT2"
+    /begin REF_CHARACTERISTIC
+      SGSA_UTIgbtPha123SampleTemp_A
+      SGSA_UTIgbtPha123Table_M
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Local_Variable_Storage3
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD/Local Variable Storage3"
+    /begin REF_MEASUREMENT
+      HWAL_PhaseASwitchTempAdc
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Local_Variable_Storage4
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD/Local Variable Storage4"
+    /begin REF_MEASUREMENT
+      HWAL_PhaseBSwitchTempAdc
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Local_Variable_Storage5
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD/Local Variable Storage5"
+    /begin REF_MEASUREMENT
+      HWAL_PhaseCSwitchTempAdc
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Local_Variable_Storage6
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD/Local Variable Storage6"
+    /begin REF_MEASUREMENT
+      HWAL_PhaseASwitchTempAdcBkUp
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Local_Variable_Storage7
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD/Local Variable Storage7"
+    /begin REF_MEASUREMENT
+      HWAL_PhaseBSwitchTempAdcBkUp
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Local_Variable_Storage8
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD/Local Variable Storage8"
+    /begin REF_MEASUREMENT
+      HWAL_PhaseCSwitchTempAdcBkUp
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Parameter10
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD/Parameter10"
+    /begin REF_CHARACTERISTIC
+      SGSA_IgnitionAVoltOffset_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Parameter11
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD/Parameter11"
+    /begin REF_CHARACTERISTIC
+      SGSA_IgnitionCVoltGain_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Parameter12
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD/Parameter12"
+    /begin REF_CHARACTERISTIC
+      SGSA_IgnitionCVoltOffset_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Parameter7
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD/Parameter7"
+    /begin REF_CHARACTERISTIC
+      SGSA_IgnitionAVoltGain_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Parameter8
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD/Parameter8"
+    /begin REF_CHARACTERISTIC
+      SGSA_IgnitionBVoltGain_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_AdcToPhysicalAndGetAD_Parameter9
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/AdcToPhysicalAndGetAD/Parameter9"
+    /begin REF_CHARACTERISTIC
+      SGSA_IgnitionBVoltOffset_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_ConvPowerChipVolt
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/ConvPowerChipVolt"
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_ConvPowerChipVolt_Local_Variable_Storage1
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_ConvPowerChipVolt_Parameter2
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_ConvPowerChipVolt_Parameter3
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_ConvPowerChipVolt_Local_Variable_Storage1
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/ConvPowerChipVolt/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      HWAL_PowerChipVoltAdc
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_ConvPowerChipVolt_Parameter2
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/ConvPowerChipVolt/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGSA_PowerChipVoltGain_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_ConvPowerChipVolt_Parameter3
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/ConvPowerChipVolt/Parameter3"
+    /begin REF_CHARACTERISTIC
+      SGSA_PowerChipVoltOffset_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_Subsystem
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/Subsystem"
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_Subsystem_1D_LUT
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_Subsystem_Local_Variable_Storage1
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_Subsystem_Local_Variable_Storage3
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_Subsystem_Parameter10
+      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_Subsystem_Parameter7
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_Subsystem_1D_LUT
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/Subsystem/1D LUT"
+    /begin REF_CHARACTERISTIC
+      SGSA_TMotSnsr1TableHigh_M
+      SGSA_UTMotSnsr1SampleHighTemp_A
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_Subsystem_Local_Variable_Storage1
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/Subsystem/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      HWAL_MotorTempAdcBkUp
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_Subsystem_Local_Variable_Storage3
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/Subsystem/Local Variable Storage3"
+    /begin REF_MEASUREMENT
+      HWAL_MotorTempAdc
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_Subsystem_Parameter10
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/Subsystem/Parameter10"
+    /begin REF_CHARACTERISTIC
+      SGSA_MotorTempOffset_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_ReadTempVolt_1ms_sys_Subsystem_Parameter7
+    /* Long identifier        */      "SigSignalAdapter/SGSA_ReadTempVolt_1ms_sys/Subsystem/Parameter7"
+    /begin REF_CHARACTERISTIC
+      SGSA_MotorTempGain_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys"
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_Read_100us_sys_AdcToPhysicalAndGetAD
+      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD
+      SigSignalAdapter_SGSA_Read_100us_sys_PwmStateGet
+      SigSignalAdapter_SGSA_Read_100us_sys_ResolverAngleZeroAdjust
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys_AdcToPhysicalAndGetAD
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys/AdcToPhysicalAndGetAD"
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_Read_100us_sys_AdcToPhysicalAndGetAD_Local_Variable_Storage
+      SigSignalAdapter_SGSA_Read_100us_sys_AdcToPhysicalAndGetAD_Local_Variable_Storage9
+      SigSignalAdapter_SGSA_Read_100us_sys_AdcToPhysicalAndGetAD_Parameter1
+      SigSignalAdapter_SGSA_Read_100us_sys_AdcToPhysicalAndGetAD_Parameter4
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys_AdcToPhysicalAndGetAD_Local_Variable_Storage
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys/AdcToPhysicalAndGetAD/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      HWAL_DcLinkVoltAdc
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys_AdcToPhysicalAndGetAD_Local_Variable_Storage9
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys/AdcToPhysicalAndGetAD/Local Variable Storage9"
+    /begin REF_MEASUREMENT
+      HWAL_DcLinkVoltAdcBkUp
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys_AdcToPhysicalAndGetAD_Parameter1
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys/AdcToPhysicalAndGetAD/Parameter1"
+    /begin REF_CHARACTERISTIC
+      SGSA_DcLinkVoltGain_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys_AdcToPhysicalAndGetAD_Parameter4
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys/AdcToPhysicalAndGetAD/Parameter4"
+    /begin REF_CHARACTERISTIC
+      SGSA_DcLinkVoltOffset_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys/PhaseCurrentAdcToPhysicalAndGetAD"
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD_Local_Variable_Storage
+      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD_Local_Variable_Storage1
+      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD_Local_Variable_Storage2
+      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD_Local_Variable_Storage3
+      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD_Local_Variable_Storage4
+      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD_Local_Variable_Storage5
+      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD_Parameter1
+      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD_Parameter5
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD_Local_Variable_Storage
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys/PhaseCurrentAdcToPhysicalAndGetAD/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      HWAL_PhaseACurrentAdc
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD_Local_Variable_Storage1
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys/PhaseCurrentAdcToPhysicalAndGetAD/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      HWAL_AdcIAZero
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD_Local_Variable_Storage2
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys/PhaseCurrentAdcToPhysicalAndGetAD/Local Variable Storage2"
+    /begin REF_MEASUREMENT
+      HWAL_PhaseCCurrentAdc
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD_Local_Variable_Storage3
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys/PhaseCurrentAdcToPhysicalAndGetAD/Local Variable Storage3"
+    /begin REF_MEASUREMENT
+      HWAL_PhaseACurrentAdcBkUp
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD_Local_Variable_Storage4
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys/PhaseCurrentAdcToPhysicalAndGetAD/Local Variable Storage4"
+    /begin REF_MEASUREMENT
+      HWAL_AdcICZero
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD_Local_Variable_Storage5
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys/PhaseCurrentAdcToPhysicalAndGetAD/Local Variable Storage5"
+    /begin REF_MEASUREMENT
+      HWAL_PhaseCCurrentAdcBkUp
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD_Parameter1
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys/PhaseCurrentAdcToPhysicalAndGetAD/Parameter1"
+    /begin REF_CHARACTERISTIC
+      SGSA_PhaseACurrentGain_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys_PhaseCurrentAdcToPhysicalAndGetAD_Parameter5
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys/PhaseCurrentAdcToPhysicalAndGetAD/Parameter5"
+    /begin REF_CHARACTERISTIC
+      SGSA_PhaseCCurrentGain_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys_PwmStateGet
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys/PwmStateGet"
+    /begin REF_MEASUREMENT
+      SigSignalAdapter_B.Switch2
+      SigSignalAdapter_B.output
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys_ResolverAngleZeroAdjust
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys/ResolverAngleZeroAdjust"
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_Read_100us_sys_ResolverAngleZeroAdjust_Parameter4
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGRD_ElecAngle
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_Read_100us_sys_ResolverAngleZeroAdjust_Parameter4
+    /* Long identifier        */      "SigSignalAdapter/SGSA_Read_100us_sys/ResolverAngleZeroAdjust/Parameter4"
+    /begin REF_CHARACTERISTIC
+      SGSA_MotorInitAngleOffset_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys"
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Clear_HW_Fault
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_Driver_State
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_High_ASC_Flag
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_PWM_Frequency
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_PWM_Run
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_Power_Off_Delay_Flag
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_SetDriverSts
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Clear_HW_Fault
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Clear HW Fault"
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Clear_HW_Fault_Parameter2
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Clear_HW_Fault_Parameter3
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_ClrHWFault
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Clear_HW_Fault_Parameter2
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Clear HW Fault/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGSA_ClrHWFault_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Clear_HW_Fault_Parameter3
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Clear HW Fault/Parameter3"
+    /begin REF_CHARACTERISTIC
+      SGSA_ClrHWFaultEnable_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_Driver_State
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set Driver State"
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_Driver_State_Parameter2
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_Driver_State_Parameter3
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SigSignalAdapter_B.Switch2
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_Driver_State_Parameter2
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set Driver State/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGSA_SetDriverSts_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_Driver_State_Parameter3
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set Driver State/Parameter3"
+    /begin REF_CHARACTERISTIC
+      SGSA_SetDriverStsEnable_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_High_ASC_Flag
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set High ASC Flag"
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_High_ASC_Flag_Parameter2
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_High_ASC_Flag_Parameter3
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_High_ASC_Flag_Subsystem
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_SetHighASCFlg
+      SigSignalAdapter_B.output
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_High_ASC_Flag_Parameter2
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set High ASC Flag/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGSA_SetHighASCFlg_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_High_ASC_Flag_Parameter3
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set High ASC Flag/Parameter3"
+    /begin REF_CHARACTERISTIC
+      SGSA_SetHighASCFlgEnable_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_High_ASC_Flag_Subsystem
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set High ASC Flag/Subsystem"
+    /begin REF_MEASUREMENT
+      SigSignalAdapter_B.output
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_PWM_Frequency
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set PWM Frequency"
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_PWM_Frequency_Parameter2
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_PWM_Frequency_Parameter3
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_SetFreq
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_PWM_Frequency_Parameter2
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set PWM Frequency/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGSA_SetFreq_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_PWM_Frequency_Parameter3
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set PWM Frequency/Parameter3"
+    /begin REF_CHARACTERISTIC
+      SGSA_SetFreqEnable_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_PWM_Run
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set PWM Run"
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_PWM_Run_Parameter1
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_PWM_Run_Parameter2
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_PWM_Run_Parameter3
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_PWM_Run_Parameter4
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_PhaseADuty
+      SGPP_PhaseBDuty
+      SGPP_PhaseCDuty
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_PWM_Run_Parameter1
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set PWM Run/Parameter1"
+    /begin REF_CHARACTERISTIC
+      SGSA_PhaseBPwmDuty_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_PWM_Run_Parameter2
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set PWM Run/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGSA_PhaseCPwmDuty_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_PWM_Run_Parameter3
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set PWM Run/Parameter3"
+    /begin REF_CHARACTERISTIC
+      SGSA_PwmParamEnable_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_PWM_Run_Parameter4
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set PWM Run/Parameter4"
+    /begin REF_CHARACTERISTIC
+      SGSA_PhaseAPwmDuty_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_Power_Off_Delay_Flag
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set Power Off Delay Flag"
+    /begin SUB_GROUP
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_Power_Off_Delay_Flag_Parameter2
+      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_Power_Off_Delay_Flag_Parameter3
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_SetPwrOffDlyFlg
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_Power_Off_Delay_Flag_Parameter2
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set Power Off Delay Flag/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGSA_SetPwrOffDlyFlg_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigSignalAdapter_SGSA_WriteCommand_100us_sys_Set_Power_Off_Delay_Flag_Parameter3
+    /* Long identifier        */      "SigSignalAdapter/SGSA_WriteCommand_100us_sys/Set Power Off Delay Flag/Parameter3"
+    /begin REF_CHARACTERISTIC
+      SGSA_SetPwrOffDlyFlgEnable_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /end MODULE
+
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF SigSignalAdapter.a2l*/

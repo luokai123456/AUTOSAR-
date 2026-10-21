@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+  <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="Fee_ModuleId"
+             name="Fee Module">
+
+    <module id="Fee_CCFC3007PT"
+            label="Fee"
+            mandatory="false"
+            allowMultiple="false"
+            description="Fee BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM_HF7"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Fee"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3007PT"/>
+    </module>
+
+    <module id="Fee_CCFC3007BC"
+            label="Fee"
+            mandatory="false"
+            allowMultiple="false"
+            description="Fee BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM_HF7"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Fee"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3007BC"/>
+    </module>
+
+    <module id="Fee_CCFC3008PT"
+            label="Fee"
+            mandatory="false"
+            allowMultiple="false"
+            description="Fee BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM_HF7"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Fee"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PT"/>
+    </module>
+
+    <module id="Fee_CCFC3008PC"
+            label="Fee"
+            mandatory="false"
+            allowMultiple="false"
+            description="Fee BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM_HF7"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Fee"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PC"/>
+    </module>
+
+    <module id="Fee_CCFC3012PT"
+            label="Fee"
+            mandatory="false"
+            allowMultiple="false"
+            description="Fee BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM_HF7"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Fee"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3012PT"/>
+    </module>
+
+    <module id="Fee_CCFC3008PCSN"
+            label="Fee"
+            mandatory="false"
+            allowMultiple="false"
+            description="Fee BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM_HF7"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Fee"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PCSN"/>
+    </module>
+
+    <module id="Fee_CCFC3010PT"
+            label="Fee"
+            mandatory="false"
+            allowMultiple="false"
+            description="Fee BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM_HF7"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Fee"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3010PT"/>
+    </module>
+
+    <module id="Fee_CCFC3011PT"
+            label="Fee"
+            mandatory="false"
+            allowMultiple="false"
+            description="Fee BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM_HF7"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Fee"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3011PT"/>
+    </module>
+
+    <module id="Fee_CCFC3008PCSA"
+            label="Fee"
+            mandatory="false"
+            allowMultiple="false"
+            description="Fee BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM_HF7"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Fee"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3008PCSA"/>
+    </module>
+
+    <module id="Fee_CCFC3010PTD"
+            label="Fee"
+            mandatory="false"
+            allowMultiple="false"
+            description="Fee BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix="RTM_HF7"
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix="0003"
+            categoryType="Fee"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <ecuType target="PA" derivate="CCFC3010PTD"/>
+    </module>
+
+  </extension>
+	
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="Fee_ConfigId"
+             name="Fee Configuration">
+    <configuration moduleId="Fee_CCFC3007PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Fee -->
+          <resource value="config/Fee.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FeeConfig/Fee"/>
+      </data>
+
+      <editor id="Fee_Editor_01"
+              label="Default"
+              tooltip="Fee BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/FeeConfig/Fee"/>
+          <parameter name="title" value="Fee"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Fee_CCFC3007BC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Fee -->
+          <resource value="config/Fee.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FeeConfig/Fee"/>
+      </data>
+
+      <editor id="Fee_Editor_02"
+              label="Default"
+              tooltip="Fee BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/FeeConfig/Fee"/>
+          <parameter name="title" value="Fee"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Fee_CCFC3008PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Fee -->
+          <resource value="config/Fee.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FeeConfig/Fee"/>
+      </data>
+
+      <editor id="Fee_Editor_03"
+              label="Default"
+              tooltip="Fee BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/FeeConfig/Fee"/>
+          <parameter name="title" value="Fee"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Fee_CCFC3008PC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Fee -->
+          <resource value="config/Fee.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FeeConfig/Fee"/>
+      </data>
+
+      <editor id="Fee_Editor_04"
+              label="Default"
+              tooltip="Fee BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/FeeConfig/Fee"/>
+          <parameter name="title" value="Fee"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Fee_CCFC3012PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Fee -->
+          <resource value="config/Fee.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FeeConfig/Fee"/>
+      </data>
+
+      <editor id="Fee_Editor_05"
+              label="Default"
+              tooltip="Fee BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/FeeConfig/Fee"/>
+          <parameter name="title" value="Fee"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Fee_CCFC3008PCSN">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Fee -->
+          <resource value="config/Fee.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FeeConfig/Fee"/>
+      </data>
+
+      <editor id="Fee_Editor_06"
+              label="Default"
+              tooltip="Fee BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/FeeConfig/Fee"/>
+          <parameter name="title" value="Fee"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Fee_CCFC3010PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Fee -->
+          <resource value="config/Fee.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FeeConfig/Fee"/>
+      </data>
+
+      <editor id="Fee_Editor_07"
+              label="Default"
+              tooltip="Fee BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/FeeConfig/Fee"/>
+          <parameter name="title" value="Fee"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Fee_CCFC3011PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Fee -->
+          <resource value="config/Fee.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FeeConfig/Fee"/>
+      </data>
+
+      <editor id="Fee_Editor_08"
+              label="Default"
+              tooltip="Fee BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/FeeConfig/Fee"/>
+          <parameter name="title" value="Fee"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Fee_CCFC3008PCSA">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Fee -->
+          <resource value="config/Fee.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FeeConfig/Fee"/>
+      </data>
+
+      <editor id="Fee_Editor_10"
+              label="Default"
+              tooltip="Fee BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/FeeConfig/Fee"/>
+          <parameter name="title" value="Fee"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="Fee_CCFC3010PTD">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <!-- register the main xdm configuration schema for Fee -->
+          <resource value="config/Fee.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/FeeConfig/Fee"/>
+      </data>
+
+      <editor id="Fee_Editor_11"
+              label="Default"
+              tooltip="Fee BSW module">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/FeeConfig/Fee"/>
+          <parameter name="title" value="Fee"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+
+  </extension>
+
+ <extension point="dreisoft.tresos.launcher2.plugin.generator"
+             id="EPCGenerator"
+             name="EPC Generator">
+    <generator moduleId="Fee_CCFC3007PT"
+                id="Fee_Generator_01"
+                class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+    <parameter name="cfgFilePath" value="output"/>
+    <parameter name="generateAllModules" value="false"/>
+    <parameter name="generateIntoOneFile" value="false"/>
+    <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Fee_CCFC3007BC"
+                id="Fee_Generator_02"
+                class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+    <parameter name="cfgFilePath" value="output"/>
+    <parameter name="generateAllModules" value="false"/>
+    <parameter name="generateIntoOneFile" value="false"/>
+    <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Fee_CCFC3008PT"
+                id="Fee_Generator_03"
+                class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+    <parameter name="cfgFilePath" value="output"/>
+    <parameter name="generateAllModules" value="false"/>
+    <parameter name="generateIntoOneFile" value="false"/>
+    <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Fee_CCFC3008PC"
+                id="Fee_Generator_04"
+                class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+    <parameter name="cfgFilePath" value="output"/>
+    <parameter name="generateAllModules" value="false"/>
+    <parameter name="generateIntoOneFile" value="false"/>
+    <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Fee_CCFC3012PT"
+                id="Fee_Generator_05"
+                class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+    <parameter name="cfgFilePath" value="output"/>
+    <parameter name="generateAllModules" value="false"/>
+    <parameter name="generateIntoOneFile" value="false"/>
+    <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+        <generator moduleId="Fee_CCFC3008PCSN"
+                id="Fee_Generator_06"
+                class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+    <parameter name="cfgFilePath" value="output"/>
+    <parameter name="generateAllModules" value="false"/>
+    <parameter name="generateIntoOneFile" value="false"/>
+    <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Fee_CCFC3010PT"
+                id="Fee_Generator_07"
+                class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+    <parameter name="cfgFilePath" value="output"/>
+    <parameter name="generateAllModules" value="false"/>
+    <parameter name="generateIntoOneFile" value="false"/>
+    <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Fee_CCFC3011PT"
+                id="Fee_Generator_08"
+                class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+    <parameter name="cfgFilePath" value="output"/>
+    <parameter name="generateAllModules" value="false"/>
+    <parameter name="generateIntoOneFile" value="false"/>
+    <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Fee_CCFC3008PCSA"
+                id="Fee_Generator_10"
+                class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+    <parameter name="cfgFilePath" value="output"/>
+    <parameter name="generateAllModules" value="false"/>
+    <parameter name="generateIntoOneFile" value="false"/>
+    <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+    <generator moduleId="Fee_CCFC3010PTD"
+                id="Fee_Generator_11"
+                class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+    <parameter name="cfgFilePath" value="output"/>
+    <parameter name="generateAllModules" value="false"/>
+    <parameter name="generateIntoOneFile" value="false"/>
+    <parameter name="contentType" value="asc:4.4.0"/>
+    </generator>
+
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="Fee_GeneratorId"
+              name="Fee Generator">
+
+    <generator moduleId="Fee_CCFC3007PT"
+               id="Fee_Templates_01"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Fee_CCFC3007BC"
+               id="Fee_Templates_02"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Fee_CCFC3008PT"
+               id="Fee_Templates_03"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Fee_CCFC3008PC"
+               id="Fee_Templates_04"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Fee_CCFC3012PT"
+               id="Fee_Templates_05"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Fee_CCFC3008PCSN"
+               id="Fee_Templates_06"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Fee_CCFC3010PT"
+               id="Fee_Templates_07"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Fee_CCFC3011PT"
+               id="Fee_Templates_08"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Fee_CCFC3008PCSA"
+               id="Fee_Templates_10"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+    <generator moduleId="Fee_CCFC3010PTD"
+               id="Fee_Templates_11"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+      <!-- common template path parameters -->
+      <parameter name="templates" mode="generate,verify" value="generate"/>
+      <!-- custom template paths -->
+      <parameter name="mode_type" mode="generate" value="generate"/>
+    </generator>
+
+  </extension>
+ 
+  <extension point="org.eclipse.help.toc">
+    <toc file="anchors.xml" primary="true"/>
+    <toc file="$nl$/Fee/toc.xml" primary="false"/>
+    <!-- toc file="$nl$/ReleaseNotes/toc.xml" primary="false"/ !-->
+  </extension>
+</plugin>

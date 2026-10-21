@@ -1,0 +1,7 @@
+md files: 40 wikilinks: 216 with anchors: 24
+bad links: 1
+   ('��ӭ', '��������', 'file missing')
+canvas OK: AUTOSAR_�ܹ���ͼ.canvas nodes 16 edges 9
+canvas OK: CanNm_�����߼���ͼ.canvas nodes 11 edges 11
+requirements: 273 group headings: ['SWS_CanNm_000xx', 'SWS_CanNm_001xx', 'SWS_CanNm_002xx', 'SWS_CanNm_003xx', 'SWS_CanNm_004xx', 'SWS_CanNm_005xx', 'SWS_CanNm_910xx']
+unbalanced fences: []

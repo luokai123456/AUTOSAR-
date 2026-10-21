@@ -1,0 +1,1194 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     CtlCurrentRegulator.a2l
+ *
+ * 
+ *
+ * Code generation for model "CtlCurrentRegulator".
+ *
+ * Model version              : 1.19
+ * Simulink Coder version : 10.6 R2022b
+ * C source code generated on : Thu May 28 16:46:10 2026
+ *
+ * Target selection: ert.tlc
+ * Embedded hardware selection: Infineon->TriCore
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+ASAP2_VERSION  1 31     /* Version 1.31 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+
+  /begin HEADER "Header Comments go here"
+  /end HEADER
+
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+    /end MOD_PAR
+
+    /begin MOD_COMMON  "Mod Common Comment Here"
+      BYTE_ORDER     MSB_LAST
+
+      ALIGNMENT_BYTE 1
+      ALIGNMENT_WORD 2
+      ALIGNMENT_LONG 4
+      ALIGNMENT_FLOAT32_IEEE 4
+      ALIGNMENT_FLOAT64_IEEE 4
+    /end MOD_COMMON
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTCR_DAxisInductDecoupEna_C
+    /* Long Identifier        */      "Enable d-axis inductance term for decoupling"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTCR_DAxisInductDecoupEna_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlCurrentRegulator_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTCR_DAxisInductance_C
+    /* Long Identifier        */      "D-axis inductance nominal value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTCR_DAxisInductance_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlCurrentRegulator_CM_single_H
+    /* Lower Limit            */      -100.000000
+    /* Upper Limit            */      100.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTCR_DAxisKi_C
+    /* Long Identifier        */      "D-axis current controller integral gain"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTCR_DAxisKi_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlCurrentRegulator_CM_single_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      100.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTCR_DAxisKp_C
+    /* Long Identifier        */      "D-axis current controller proportional gain"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTCR_DAxisKp_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlCurrentRegulator_CM_single_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      100.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTCR_DecoupUseSetpointEna_C
+    /* Long Identifier        */      "Enable use setpoint current for decoupling calculation"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTCR_DecoupUseSetpointEna_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlCurrentRegulator_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTCR_PmFluxLinkage_C
+    /* Long Identifier        */      "Permanent magnet flux linkage nominal value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTCR_PmFluxLinkage_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlCurrentRegulator_CM_single_V_per_s
+    /* Lower Limit            */      -100.000000
+    /* Upper Limit            */      100.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTCR_QAxisFluxDecoupEna_C
+    /* Long Identifier        */      "Enable permanent magnet flux term for decoupling"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTCR_QAxisFluxDecoupEna_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlCurrentRegulator_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTCR_QAxisInductDecoupEna_C
+    /* Long Identifier        */      "Enable q-axis inductance term for decoupling"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTCR_QAxisInductDecoupEna_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlCurrentRegulator_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTCR_QAxisInductance_C
+    /* Long Identifier        */      "Q-axis inductance nominal value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTCR_QAxisInductance_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlCurrentRegulator_CM_single
+    /* Lower Limit            */      -100.000000
+    /* Upper Limit            */      100.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTCR_QAxisKi_C
+    /* Long Identifier        */      "Q-axis current controller integral gain"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTCR_QAxisKi_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlCurrentRegulator_CM_single_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTCR_QAxisKp_C
+    /* Long Identifier        */      "Q-axis current controller proportional gain"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTCR_QAxisKp_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlCurrentRegulator_CM_single_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      100.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTCR_ResistDecoupEna_C
+    /* Long Identifier        */      "Enable resistance term for decoupling"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTCR_ResistDecoupEna_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlCurrentRegulator_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTCR_StatorResistance_C
+    /* Long Identifier        */      "Stator winding resistance nominal value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTCR_StatorResistance_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlCurrentRegulator_CM_single_Ohm
+    /* Lower Limit            */      -100.000000
+    /* Upper Limit            */      100.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTCR_VSFilterFreq_C
+    /* Long Identifier        */      "Voltage vector magnitude filter frequency"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTCR_VSFilterFreq_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlCurrentRegulator_CM_single
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTCR_VoltLimitFactor_C
+    /* Long Identifier        */      "DC-link voltage limitation factor (typically 1/√3)"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTCR_VoltLimitFactor_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlCurrentRegulator_CM_single_dash_
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTCR_VoltVectorMagFilterFreq_C
+    /* Long Identifier        */      "Voltage vector magnitude filter frequency"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTCR_VoltVectorMagFilterFreq_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlCurrentRegulator_CM_single
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      10000.000000
+  /end CHARACTERISTIC 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_CurrentVs
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_CurrentVs@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_DAxisAntiWindupEna
+    /* Long identifier        */      "D-axis anti-windup enable flag"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlCurrentRegulator_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_DAxisAntiWindupEna@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_Ki_Out_Ud
+    /* Long identifier        */      "D-axis voltage setpoint output from current controller"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_Ki_Out_Ud@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_Ki_Out_Uq
+    /* Long identifier        */      "D-axis voltage setpoint output from current controller"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_Ki_Out_Uq@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_Kp_Out_Ud
+    /* Long identifier        */      "D-axis voltage setpoint output from current controller"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_Kp_Out_Ud@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_Kp_Out_Uq
+    /* Long identifier        */      "D-axis voltage setpoint output from current controller"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_Kp_Out_Uq@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_LimitVs
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_LimitVs@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_Pi_Out_Ud
+    /* Long identifier        */      "D-axis voltage setpoint output from current controller"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_Pi_Out_Ud@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_Pi_Out_Uq
+    /* Long identifier        */      "D-axis voltage setpoint output from current controller"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_Pi_Out_Uq@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_QAxisAntiWindupEna
+    /* Long identifier        */      "Q-axis anti-windup enable flag"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlCurrentRegulator_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_QAxisAntiWindupEna@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_UdSp
+    /* Long identifier        */      "D-axis voltage setpoint output from current controller"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -1500.000000
+    /* Upper limit            */      1500.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_UdSp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_UqSp
+    /* Long identifier        */      "Q-axis voltage setpoint output from current controller"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -1500.000000
+    /* Upper limit            */      1500.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_UqSp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_Uq_Err
+    /* Long identifier        */      "D-axis voltage setpoint output from current controller"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_Uq_Err@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_VoltVectorMagFiltered
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -1500.000000
+    /* Upper limit            */      1500.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_VoltVectorMagFiltered@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTCR_VsLpfVal
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single_percent_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTCR_VsLpfVal@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTLC_IdSpLimited
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTLC_IdSpLimited@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTLC_IqSpLimited
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTLC_IqSpLimited@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_CurrentIntegralDisable
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlCurrentRegulator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_CurrentIntegralDisable@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_CurrentIntegralReset
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlCurrentRegulator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_CurrentIntegralReset@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlCurrentRegulator_DW.Delay1_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlCurrentRegulator_DW.Delay1_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlCurrentRegulator_DW.Delay1_DSTATE_a
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlCurrentRegulator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlCurrentRegulator_DW.Delay1_DSTATE_a@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlCurrentRegulator_DW.Delay1_DSTATE_j
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlCurrentRegulator_DW.Delay1_DSTATE_j@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlCurrentRegulator_DW.Delay_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlCurrentRegulator_DW.Delay_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlCurrentRegulator_DW.Delay_DSTATE_b
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlCurrentRegulator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlCurrentRegulator_DW.Delay_DSTATE_b@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlCurrentRegulator_DW.Delay_DSTATE_c
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlCurrentRegulator_DW.Delay_DSTATE_c@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlCurrentRegulator_DW.Delay_DSTATE_h
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlCurrentRegulator_DW.Delay_DSTATE_h@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlCurrentRegulator_DW.icLoad
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlCurrentRegulator_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlCurrentRegulator_DW.icLoad@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlCurrentRegulator_DW.icLoad_d
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlCurrentRegulator_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlCurrentRegulator_DW.icLoad_d@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlCurrentRegulator_DW.icLoad_f
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlCurrentRegulator_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlCurrentRegulator_DW.icLoad_f@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlCurrentRegulator_DW.icLoad_g
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlCurrentRegulator_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlCurrentRegulator_DW.icLoad_g@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlCurrentRegulator_DW.icLoad_j
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlCurrentRegulator_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlCurrentRegulator_DW.icLoad_j@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlCurrentRegulator_DW.icLoad_p
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlCurrentRegulator_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlCurrentRegulator_DW.icLoad_p@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_DcLinkVoltMeas
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_DcLinkVoltMeas@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_ElecSpeed
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_ElecSpeed@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SampleTime1
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SampleTime1@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPD_IdMeasured
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPD_IdMeasured@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPD_IqMeasured
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlCurrentRegulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPD_IqMeasured@ */
+  /end MEASUREMENT 
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlCurrentRegulator_CM_logical
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%1.0"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlCurrentRegulator_CM_single
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlCurrentRegulator_CM_single_H
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "H"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlCurrentRegulator_CM_single_Ohm
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "Ohm"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlCurrentRegulator_CM_single_V
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlCurrentRegulator_CM_single_V_per_s
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V/s"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlCurrentRegulator_CM_single_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlCurrentRegulator_CM_single_percent_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "%"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlCurrentRegulator_CM_uint8
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%3.0"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlCurrentRegulator_CM_uint8_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%3.0"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin  RECORD_LAYOUT Record_BOOLEAN
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_FLOAT32_IEEE
+    FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_UBYTE
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator
+    /* Long identifier        */      "CtlCurrentRegulator"
+    /* Root                   */      ROOT
+    /begin SUB_GROUP
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTLC_IdSpLimited
+      CTLC_IqSpLimited
+      CTSO_CurrentIntegralDisable
+      CTSO_CurrentIntegralReset
+      SGPP_DcLinkVoltMeas
+      SGPP_ElecSpeed
+      SGPP_SampleTime1
+      TFPD_IdMeasured
+      TFPD_IqMeasured
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys"
+    /begin SUB_GROUP
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_EnAwUp
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_Local_Variable_Storage
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_Local_Variable_Storage1
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_PI_DAxis
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_PI_QAxis
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_Parameter1
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_Parameter2
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_Parameter3
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_Parameter7
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/DecoupleFeedforward"
+    /begin SUB_GROUP
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter10
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter11
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter2
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter3
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter4
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter5
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter6
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter7
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter8
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter9
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTLC_IdSpLimited
+      CTLC_IqSpLimited
+      SGPP_ElecSpeed
+      TFPD_IdMeasured
+      TFPD_IqMeasured
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/DecoupleFeedforward/Parameter"
+    /begin REF_CHARACTERISTIC
+      CTCR_DecoupUseSetpointEna_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter10
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/DecoupleFeedforward/Parameter10"
+    /begin REF_CHARACTERISTIC
+      CTCR_QAxisInductDecoupEna_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter11
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/DecoupleFeedforward/Parameter11"
+    /begin REF_CHARACTERISTIC
+      CTCR_QAxisFluxDecoupEna_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter2
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/DecoupleFeedforward/Parameter2"
+    /begin REF_CHARACTERISTIC
+      CTCR_QAxisInductance_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter3
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/DecoupleFeedforward/Parameter3"
+    /begin REF_CHARACTERISTIC
+      CTCR_StatorResistance_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter4
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/DecoupleFeedforward/Parameter4"
+    /begin REF_CHARACTERISTIC
+      CTCR_PmFluxLinkage_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter5
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/DecoupleFeedforward/Parameter5"
+    /begin REF_CHARACTERISTIC
+      CTCR_ResistDecoupEna_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter6
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/DecoupleFeedforward/Parameter6"
+    /begin REF_CHARACTERISTIC
+      CTCR_DAxisInductDecoupEna_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter7
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/DecoupleFeedforward/Parameter7"
+    /begin REF_CHARACTERISTIC
+      CTCR_StatorResistance_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter8
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/DecoupleFeedforward/Parameter8"
+    /begin REF_CHARACTERISTIC
+      CTCR_ResistDecoupEna_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_DecoupleFeedforward_Parameter9
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/DecoupleFeedforward/Parameter9"
+    /begin REF_CHARACTERISTIC
+      CTCR_DAxisInductance_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_EnAwUp
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/EnAwUp"
+    /begin SUB_GROUP
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_EnAwUp_Local_Variable_Storage
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_EnAwUp_Local_Variable_Storage1
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTSO_CurrentIntegralReset
+      CtlCurrentRegulator_DW.Delay1_DSTATE_a
+      CtlCurrentRegulator_DW.Delay_DSTATE_b
+      CtlCurrentRegulator_DW.icLoad_f
+      CtlCurrentRegulator_DW.icLoad_j
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_EnAwUp_Local_Variable_Storage
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/EnAwUp/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      CTCR_QAxisAntiWindupEna
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_EnAwUp_Local_Variable_Storage1
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/EnAwUp/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      CTCR_DAxisAntiWindupEna
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_Local_Variable_Storage
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      CTCR_Pi_Out_Ud
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_Local_Variable_Storage1
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      CTCR_Pi_Out_Uq
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_PI_DAxis
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/PI_DAxis"
+    /begin SUB_GROUP
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_PI_DAxis_Local_Variable_Storage
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_PI_DAxis_Local_Variable_Storage1
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTLC_IdSpLimited
+      CTSO_CurrentIntegralDisable
+      CTSO_CurrentIntegralReset
+      CtlCurrentRegulator_DW.Delay1_DSTATE
+      CtlCurrentRegulator_DW.Delay_DSTATE
+      CtlCurrentRegulator_DW.icLoad
+      CtlCurrentRegulator_DW.icLoad_d
+      SGPP_SampleTime1
+      TFPD_IdMeasured
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_PI_DAxis_Local_Variable_Storage
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/PI_DAxis/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      CTCR_Kp_Out_Ud
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_PI_DAxis_Local_Variable_Storage1
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/PI_DAxis/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      CTCR_Ki_Out_Ud
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_PI_QAxis
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/PI_QAxis"
+    /begin SUB_GROUP
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_PI_QAxis_Local_Variable_Storage
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_PI_QAxis_Local_Variable_Storage1
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_PI_QAxis_Local_Variable_Storage2
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTLC_IqSpLimited
+      CTSO_CurrentIntegralDisable
+      CTSO_CurrentIntegralReset
+      CtlCurrentRegulator_DW.Delay1_DSTATE_j
+      CtlCurrentRegulator_DW.Delay_DSTATE_c
+      CtlCurrentRegulator_DW.icLoad_g
+      CtlCurrentRegulator_DW.icLoad_p
+      SGPP_SampleTime1
+      TFPD_IqMeasured
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_PI_QAxis_Local_Variable_Storage
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/PI_QAxis/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      CTCR_Kp_Out_Uq
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_PI_QAxis_Local_Variable_Storage1
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/PI_QAxis/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      CTCR_Ki_Out_Uq
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_PI_QAxis_Local_Variable_Storage2
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/PI_QAxis/Local Variable Storage2"
+    /begin REF_MEASUREMENT
+      CTCR_Uq_Err
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_Parameter1
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/Parameter1"
+    /begin REF_CHARACTERISTIC
+      CTCR_DAxisKi_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_Parameter2
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/Parameter2"
+    /begin REF_CHARACTERISTIC
+      CTCR_QAxisKp_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_Parameter3
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/Parameter3"
+    /begin REF_CHARACTERISTIC
+      CTCR_QAxisKi_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys_Parameter7
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/Parameter7"
+    /begin REF_CHARACTERISTIC
+      CTCR_DAxisKp_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/ VoltageSaturation"
+    /begin SUB_GROUP
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_LowPassFilter
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_Parameter1
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_Parameter8
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_Subsystem
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_DcLinkVoltMeas
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_LowPassFilter
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/ VoltageSaturation/LowPassFilter"
+    /begin REF_MEASUREMENT
+      SGPP_SampleTime1
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_Parameter1
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/ VoltageSaturation/Parameter1"
+    /begin REF_CHARACTERISTIC
+      CTCR_VoltVectorMagFilterFreq_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_Parameter8
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/ VoltageSaturation/Parameter8"
+    /begin REF_CHARACTERISTIC
+      CTCR_VoltLimitFactor_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_Subsystem
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/ VoltageSaturation/Subsystem"
+    /begin SUB_GROUP
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_Subsystem_Local_Variable_Storage
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_Subsystem_Local_Variable_Storage1
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_Subsystem_Local_Variable_Storage2
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_Subsystem_LowPassFilter
+      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_Subsystem_Parameter1
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_Subsystem_Local_Variable_Storage
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/ VoltageSaturation/Subsystem/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      CTCR_CurrentVs
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_Subsystem_Local_Variable_Storage1
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/ VoltageSaturation/Subsystem/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      CTCR_LimitVs
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_Subsystem_Local_Variable_Storage2
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/ VoltageSaturation/Subsystem/Local Variable Storage2"
+    /begin REF_MEASUREMENT
+      CTCR_VsLpfVal
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_Subsystem_LowPassFilter
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/ VoltageSaturation/Subsystem/LowPassFilter"
+    /begin REF_MEASUREMENT
+      CtlCurrentRegulator_DW.Delay_DSTATE_h
+      SGPP_SampleTime1
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlCurrentRegulator_CTCR_RegulateCurrent_100us_sys__VoltageSaturation_Subsystem_Parameter1
+    /* Long identifier        */      "CtlCurrentRegulator/CTCR_RegulateCurrent_100us_sys/ VoltageSaturation/Subsystem/Parameter1"
+    /begin REF_CHARACTERISTIC
+      CTCR_VSFilterFreq_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /end MODULE
+
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF CtlCurrentRegulator.a2l*/

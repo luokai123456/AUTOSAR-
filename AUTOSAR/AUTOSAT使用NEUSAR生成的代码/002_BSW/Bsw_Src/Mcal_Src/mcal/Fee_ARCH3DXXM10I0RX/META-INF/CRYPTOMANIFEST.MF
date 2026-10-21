@@ -1,0 +1,22 @@
+
+Name: config/Fee.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773966350194846263990278532005259763921280597235757
+ 281121414343362078474364717245779918205750644532940023
+
+Name: generate/include/Fee_Cfg.h
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424953311132708958496120705080315254770609610792757
+ 0864468714121687614381596148827130182721812719087160
+
+Name: generate/source/Fee_Cfg.c
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421931867808785398417591772916501418167830569655044
+ 5285960689742034587859635906611585263063757554396719
+

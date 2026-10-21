@@ -1,0 +1,320 @@
+==== CanNm.c 函数 (65) ====
+  368 static CanNm_PnEiraCalculation
+  375 extern CanNm_PnEraCalculation
+  382 static CanNm_PnFilterHandling
+  391 static CanNm_CopyRxMessageData
+  398 static CanNm_MainRxTxConfHandling
+  404 static CanNm_RepeatMessageIndHandling
+  410 static CanNm_BusCommunicationHandling
+  415 static CanNm_TimeoutTimerHandling
+  419 static CanNm_RepeatMessageTimerHandling
+  423 static CanNm_WaitBusSleepTimerHandling
+  427 static CanNm_MessageTimerHandling
+  431 static CanNm_MessageTimeoutTimerHandling
+  435 static CanNm_TransitionToRepeatMessage
+  439 static CanNm_TransitionToNetworkMode
+  445 static CanNm_PnLocal_Init
+  452 static CanNm_DisablePnFilter
+  458 static CanNm_LocalInit
+  462 static CanNm_TriggerTransmission
+  467 static CanNm_StateTransition
+  504 static CanNm_PnEiraCalculation
+  605 extern CanNm_PnEraCalculation
+  686 static CanNm_PnFilterHandling
+  763 static CanNm_CopyRxMessageData
+  795 static CanNm_MainRxTxConfHandling
+  885 static CanNm_RepeatMessageIndHandling
+  940 static CanNm_BusCommunicationHandling
+  976 static CanNm_TimeoutTimerHandling
+ 1031 static CanNm_RepeatMessageTimerHandling
+ 1068 static CanNm_WaitBusSleepTimerHandling
+ 1100 static CanNm_RemoteSleepTimerHandling
+ 1137 static CanNm_MessageTimerHandling
+ 1234 static CanNm_MessageTimeoutTimerHandling
+ 1274 extern CanNm_CarWakeupIndication
+ 1314 extern CanNm_CoordReadyToSleepHandling
+ 1350 static CanNm_TransitionToRepeatMessage
+ 1429 static CanNm_TransitionToNetworkMode
+ 1508 static CanNm_PnLocal_Init
+ 1584 static CanNm_DisablePnFilter
+ 1611 static CanNm_TriggerTransmission
+ 1716 static CanNm_LocalInit
+ 1838 static CanNm_StateTransition
+ 2025 extern CanNm_Init
+ 2078 extern CanNm_PassiveStartUp
+ 2146 extern CanNm_NetworkRequest
+ 2218 extern CanNm_NetworkRelease
+ 2280 extern CanNm_DisableCommunication
+ 2342 extern CanNm_EnableCommunication
+ 2409 static CanNm_CommunicationControlHandling
+ 2467 extern CanNm_SetUserData
+ 2538 extern CanNm_GetUserData
+ 2607 extern CanNm_Transmit
+ 2700 extern CanNm_GetNodeIdentifier
+ 2765 extern CanNm_GetLocalNodeIdentifier
+ 2826 extern CanNm_RepeatMessageRequest
+ 2884 extern CanNm_GetPduData
+ 2961 extern CanNm_GetState
+ 3047 extern CanNm_GetVersionInfo
+ 3101 extern CanNm_RequestBusSynchronization
+ 3160 extern CanNm_CheckRemoteSleepIndication
+ 3223 extern CanNm_SetSleepReadyBit
+ 3301 extern CanNm_TxConfirmation
+ 3362 extern CanNm_RxIndication
+ 3546 extern CanNm_ConfirmPnAvailability
+ 3593 extern CanNm_GetMessageReceive
+ 3618 extern CanNm_MainFunction
+
+==== CanNm.c static / 全局变量定义 ====
+  345 static VAR(uint8, CANNM_VAR_INIT) CanNm_ModuleInitState = CANNM_UNINIT;
+  347 static VAR(boolean, CANNM_VAR_INIT) CanNM_Message_Receive = FALSE;
+  507 uint8       pnClusterRequestByte = CANNM_ZERO;
+  508 uint8       pnClusterRequestBit = CANNM_ZERO;
+  509 uint8       pnClusterRequestNew = CANNM_ZERO;
+  510 uint8       PnClusterRequestNewSize = CANNM_ZERO;
+  511 boolean     pnClusterRequestChanged = FALSE;
+  512 PduInfoType nmPnInfo = {NULL_PTR,CANNM_ZERO};
+  611 uint8       pnClusterRequestByte = CANNM_ZERO;
+  612 uint8       pnClusterRequestBit = CANNM_ZERO;
+  613 uint8       pnClusterRequestNew = CANNM_ZERO;
+  614 boolean     pnClusterRequestChanged = FALSE;
+  615 PduInfoType nmPnInfo = {NULL_PTR,CANNM_ZERO};
+  694 boolean      msgRelevant = FALSE;
+  695 uint8        rxMsgBytePos;
+  696 uint8        reqCluster;
+  745 return msgRelevant;
+  771 uint8  rxMsgByte;
+  983 uint8 errorId = CANNM_E_NO_ERROR;
+ 1144 Std_ReturnType success;
+ 1320 uint8 sleepReadyBit;
+ 1359 boolean immediateTxRequested = FALSE;
+ 1511 uint8 pnClusterRequestByte = CANNM_ZERO;
+ 1512 uint8 pnClusterRequestBit = CANNM_ZERO;
+ 1513 uint8 pnFilterMaskSize = CANNM_ZERO;
+ 1618 Std_ReturnType retVal = E_NOT_OK;
+ 1619 uint8 pnClusterRequestByte = CANNM_ZERO;
+ 1620 PduInfoType nmPduInfo;
+ 1700 return retVal;
+ 1719 uint8       userDataByte;
+ 1720 uint8       nidPosition;
+ 1721 uint8       cbvPosition;
+ 1847 Nm_StateType  lastNmState = CanNm_GetNmState(channel);
+ 1850 boolean additionalTransmissionRequired = FALSE;
+ 1990 Std_ReturnType retVal;
+ 2032 NetworkHandleType channel;
+ 2033 uint8 errorId = CANNM_E_NO_ERROR;
+ 2084 Std_ReturnType retVal = E_NOT_OK;
+ 2085 uint8 errorId = CANNM_E_NO_ERROR;
+ 2103 NetworkHandleType channel = CanNm_GetSysToNmChInd(nmChannelHandle);
+ 2130 return retVal;
+ 2152 Std_ReturnType retVal = E_NOT_OK;
+ 2153 uint8 errorId = CANNM_E_NO_ERROR;
+ 2172 NetworkHandleType channel = CanNm_GetSysToNmChInd(nmChannelHandle);
+ 2203 return retVal;
+ 2224 Std_ReturnType  retVal = E_NOT_OK;
+ 2225 uint8 errorId = CANNM_E_NO_ERROR;
+ 2245 NetworkHandleType channel = CanNm_GetSysToNmChInd(nmChannelHandle);
+ 2262 return retVal;
+ 2286 Std_ReturnType retVal = E_NOT_OK;
+ 2287 uint8 errorId = CANNM_E_NO_ERROR;
+ 2307 NetworkHandleType channel = CanNm_GetSysToNmChInd(nmChannelHandle);
+ 2326 return retVal;
+ 2348 Std_ReturnType retVal = E_NOT_OK;
+ 2349 uint8 errorId = CANNM_E_NO_ERROR;
+ 2369 NetworkHandleType channel = CanNm_GetSysToNmChInd(nmChannelHandle);
+ 2391 return retVal;
+ 2415 uint8 txCtlSta;
+ 2474 Std_ReturnType retVal = E_NOT_OK;
+ 2475 uint8 errorId = CANNM_E_NO_ERROR;
+ 2476 uint8 txMesssageDataByte = CANNM_ZERO;
+ 2477 uint8 userDataByte = CANNM_ZERO;
+ 2495 NetworkHandleType channel = CanNm_GetSysToNmChInd(nmChannelHandle);
+ 2518 return retVal;
+ 2545 Std_ReturnType retVal = E_NOT_OK;
+ 2546 uint8 errorId = CANNM_E_NO_ERROR;
+ 2547 uint8 userDataByte;
+ 2565 NetworkHandleType channel = CanNm_GetSysToNmChInd(nmChannelHandle);
+ 2586 return retVal;
+ 2614 Std_ReturnType retVal= E_NOT_OK;
+ 2615 uint8 errorId = CANNM_E_NO_ERROR;
+ 2617 uint8 channel;
+ 2682 return retVal;
+ 2707 Std_ReturnType retVal = E_NOT_OK;
+ 2708 uint8 errorId = CANNM_E_NO_ERROR;
+ 2728 NetworkHandleType channel = CanNm_GetSysToNmChInd(nmChannelHandle);
+ 2749 return retVal;
+ 2772 Std_ReturnType retVal = E_NOT_OK;
+ 2773 uint8 errorId = CANNM_E_NO_ERROR;
+ 2793 NetworkHandleType channel = CanNm_GetSysToNmChInd(nmChannelHandle);
+ 2809 return retVal;
+ 2832 Std_ReturnType retVal = E_NOT_OK;
+ 2833 uint8 errorId = CANNM_E_NO_ERROR;
+ 2848 NetworkHandleType channel = CanNm_GetSysToNmChInd(nmChannelHandle);
+ 2866 return retVal;
+ 2891 Std_ReturnType retVal = E_NOT_OK;
+ 2892 uint8 errorId = CANNM_E_NO_ERROR;
+ 2893 uint8 msgDataByte;
+ 2913 NetworkHandleType channel = CanNm_GetSysToNmChInd(nmChannelHandle);
+ 2943 return retVal;
+ 2969 Std_ReturnType retVal = E_NOT_OK;
+ 2970 uint8 errorId = CANNM_E_NO_ERROR;
+ 2996 NetworkHandleType channel = CanNm_GetSysToNmChInd(nmChannelHandle);
+ 3032 return retVal;
+ 3053 uint8 errorId = CANNM_E_NO_ERROR;
+ 3107 Std_ReturnType retVal = E_NOT_OK;
+ 3108 uint8 errorId = CANNM_E_NO_ERROR;
+ 3122 NetworkHandleType channel = CanNm_GetSysToNmChInd(nmChannelHandle);
+ 3143 return retVal;
+ 3167 Std_ReturnType retVal = E_NOT_OK;
+ 3168 uint8 errorId = CANNM_E_NO_ERROR;
+ 3186 NetworkHandleType channel = CanNm_GetSysToNmChInd(nmChannelHandle);
+ 3205 return retVal;
+ 3230 Std_ReturnType retVal = E_NOT_OK;
+ 3231 uint8 errorId = CANNM_E_NO_ERROR;
+ 3249 NetworkHandleType channel = CanNm_GetSysToNmChInd(nmChannelHandle);
+ 3285 return retVal;
+ 3304 uint8 errorId = CANNM_E_NO_ERROR;
+ 3306 NetworkHandleType channel;  /* channel = (NetworkHandleType)TxPduId */
+ 3369 uint8  errorId = CANNM_E_NO_ERROR;
+ 3370 uint8  controlBitVector = CANNM_ZERO;
+ 3372 uint8  channel;
+ 3373 uint8  num;
+ 3549 uint8 errorId = CANNM_E_NO_ERROR;
+ 3564 NetworkHandleType channel = CanNm_GetSysToNmChInd(nmChannelHandle);
+ 3595 boolean nmRecFlag;
+ 3600 return nmRecFlag;
+ 3621 uint8 errorId = CANNM_E_NO_ERROR;
+ 3623 NetworkHandleType channel;
+ 3624 uint8 commState;
+
+==== CanNm_Cfg.h 关键宏 ====
+   69 #define CANNM_MAX_NUMBER_OF_COMM_CHANNELS                                   7U
+   70 #define CANNM_NUMBER_OF_CANNM_CHANNELS                                      2U
+  105 #define CANNM_PN_INFO_LENGTH                                                0U
+  111 #define CanNm_GetPnInfoLength()                 CANNM_PN_INFO_LENGTH
+  113 #define CanNm_GetSizeOfChannelConfig()          CANNM_NUMBER_OF_CANNM_CHANNELS
+  114 #define CanNm_GetSizeOfSysToNmChInd()			CANNM_MAX_NUMBER_OF_COMM_CHANNELS
+  115 #define CanNm_GetSizeOfPnClusterReqNew()        CANNM_PN_INFO_LENGTH
+  116 #define CanNm_GetSizeOfPnClusterResetTimer()    CANNM_PN_INFO_LENGTH
+  117 #define CanNm_GetSizeOfPnFilterMask()           CANNM_PN_INFO_LENGTH
+  443 #define CANNM_START_SEC_VAR_INIT
+  449 #define CANNM_STOP_SEC_VAR_INIT
+  453 #define CANNM_START_SEC_VAR_NO_INIT
+  491 #define CANNM_STOP_SEC_VAR_NO_INIT
+  499 #define CANNM_START_SEC_CONFIG_DATA
+  509 #define CANNM_STOP_SEC_CONFIG_DATA
+
+==== CanNm_Cfg.c 初始化片段（前 120 行） ====
+    1 /*
+    2 *******************************************************************************
+    3 *
+    4 * File name: CanNm_Cfg.c
+    5 *
+    6 * Copyright 2018-2025 Neusoft Reach Corporation. All rights reserved.
+    7 *
+    8 *******************************************************************************
+    9 *
+   10 * History
+   11 *------------------------------------------------------------------------------
+   12 *******************************************************************************
+   13 * Version: 1.0
+   14 * Author/Date : yong.zhang/2018.12.13
+   15 * Change: New created.
+   16 * Cause: New
+   17 *******************************************************************************
+   18 * Version: 1.1
+   19 * Author/Date : jiafeng/2019.12.27
+   20 * Change: add elements in structure.
+   21 * Cause: Optimization
+   22 *******************************************************************************
+   23 * Version: 1.2
+   24 * Author/Date : jia_feng/2020.01.16
+   25 * Change: Optimize the configuration of CanNm ,delete some extra configurations.
+   26 * Cause: Optimization
+   27 ********************************************************************************
+   28 * Version: 3.0
+   29 * Author/Date : jia_feng/2020.04.20
+   30 * Change: Add the configuration of BusLoadReductionActive in CanNm_ChannelConfig[].
+   31 * Cause: Optimization
+   32 ********************************************************************************
+   33 * Version: 3.1
+   34 * Author/Date : jia_feng/2020.05.09
+   35 * Change: Optimize variable definition.
+   36 * Cause: Optimization
+   37 ********************************************************************************
+   38 * Version: 3.2
+   39 * Author/Date : jia_feng/2020.06.17
+   40 * Change: Add Tx Rx message buffer for every channel(CanNm_TxMessageData,
+   41 *         CanNm_RxMessageData).
+   42 * Cause: Bugfix.
+   43 ********************************************************************************
+   44 */
+   45 /*
+   46 *******************************************************************************
+   47 *    Include
+   48 *******************************************************************************
+   49 */
+   50 #include "CanNm_Cfg.h"
+   52 /*
+   53 *******************************************************************************
+   54 *    Local Macros
+   55 *******************************************************************************
+   56 */
+   57 /*
+   58 *******************************************************************************
+   59 *    Local Types
+   60 *******************************************************************************
+   61 */
+   62 /*
+   63 *******************************************************************************
+   64 *    Local Variables
+   65 *******************************************************************************
+   66 */
+   67 /*
+   68 *******************************************************************************
+   69 *    Local Constants
+   70 *******************************************************************************
+   71 */
+   72 /*
+   73 *******************************************************************************
+   74 *    Local Functions
+   75 *******************************************************************************
+   76 */
+   77 /*
+   78 *******************************************************************************
+   79 *    Global Variable
+   80 *******************************************************************************
+   81 */
+   82 #define CANNM_START_SEC_VAR_INIT
+   83 /* PolySpace +1 MISRA-C3:20.1 [Justified:Unset] "NSCA_Polyspace_Common_MemMap" */
+   84 #include "CanNm_MemMap.h"  /* PRQA S 5087 */ /* NSCA_QAC_Common_MemMap */
+   85 /* polyspace +1 VARIABLE:* [Justified:Unset] "NSCA_Polyspace_CanNm_GlobalVariables" */
+   86 VAR(Nm_StateType, CANNM_VAR_INIT) CanNm_NmState[CANNM_NUMBER_OF_CANNM_CHANNELS] =
+   87 {
+   89 	NM_STATE_UNINIT,
+   91 	NM_STATE_UNINIT,
+   93 };
+   95 #define CANNM_STOP_SEC_VAR_INIT
+   96 /* PolySpace +1 MISRA-C3:20.1 [Justified:Unset] "NSCA_Polyspace_Common_MemMap" */
+   97 #include "CanNm_MemMap.h"  /* PRQA S 5087 */ /* NSCA_QAC_Common_MemMap */
+   99 #define CANNM_START_SEC_VAR_NO_INIT
+  100 /* PolySpace +1 MISRA-C3:20.1 [Justified:Unset] "NSCA_Polyspace_Common_MemMap" */
+  101 #include "CanNm_MemMap.h"  /* PRQA S 5087 */ /* NSCA_QAC_Common_MemMap */
+  103 /* polyspace-begin VARIABLE:* [Justified:Unset] "NSCA_Polyspace_CanNm_GlobalVariables" */
+  104 VAR(uint8, CANNM_VAR_NO_INIT) CanNm_CommState[CANNM_NUMBER_OF_CANNM_CHANNELS];
+  105 VAR(uint8, CANNM_VAR_NO_INIT) CanNm_CoordReadyToSleepState[CANNM_NUMBER_OF_CANNM_CHANNELS];
+  106 VAR(uint8, CANNM_VAR_NO_INIT) CanNm_ImmediateNmMsgCount[CANNM_NUMBER_OF_CANNM_CHANNELS];
+  107 VAR(boolean, CANNM_VAR_NO_INIT) CanNm_MsgConfirmationFlag[CANNM_NUMBER_OF_CANNM_CHANNELS];
+  108 VAR(boolean, CANNM_VAR_NO_INIT) CanNm_MsgIndicationFlag[CANNM_NUMBER_OF_CANNM_CHANNELS];
+  109 VAR(uint8, CANNM_VAR_NO_INIT) CanNm_MsgRequest[CANNM_NUMBER_OF_CANNM_CHANNELS];
+  110 VAR(uint16, CANNM_VAR_NO_INIT) CanNm_MsgTimeoutTimer[CANNM_NUMBER_OF_CANNM_CHANNELS];
+  111 VAR(uint16, CANNM_VAR_NO_INIT) CanNm_MsgTimer[CANNM_NUMBER_OF_CANNM_CHANNELS];
+  112 VAR(uint8, CANNM_VAR_NO_INIT) CanNm_NetworkRestartFlag[CANNM_NUMBER_OF_CANNM_CHANNELS];
+  113 VAR(uint8, CANNM_VAR_NO_INIT) CanNm_PnClusterReq[CANNM_PN_INFO_LENGTH + 1U];
+  114 VAR(uint8, CANNM_VAR_NO_INIT) CanNm_PnClusterReqNew[CANNM_PN_INFO_LENGTH + 1U];
+  115 VAR(CanNm_PnClusterResetTimerType, CANNM_VAR_NO_INIT) CanNm_PnClusterResetTimer[CANNM_PN_INFO_LENGTH + 1U];
+  116 VAR(boolean, CANNM_VAR_NO_INIT) CanNm_PnMessageFilterEnabled[CANNM_NUMBER_OF_CANNM_CHANNELS];
+  117 VAR(boolean, CANNM_VAR_NO_INIT) CanNm_PnMessageFilterDeactived[CANNM_NUMBER_OF_CANNM_CHANNELS];
+  118 VAR(boolean, CANNM_VAR_NO_INIT) CanNm_RepeatMsgBitIndFlag[CANNM_NUMBER_OF_CANNM_CHANNELS];
+  119 VAR(boolean, CANNM_VAR_NO_INIT) CanNm_RepeatMsgReqFlag[CANNM_NUMBER_OF_CANNM_CHANNELS];
+  120 VAR(uint16, CANNM_VAR_NO_INIT) CanNm_RepeatMsgTimer[CANNM_NUMBER_OF_CANNM_CHANNELS];

@@ -1,0 +1,15 @@
+
+Name: generate_PC/include/EcuM_Cfg.h
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424222969358252354535406998092217556464614168153383
+ 9320158099910483639355956340525957109803323664259867
+
+Name: config/EcuM.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423263697204228249750551271690988443233370169026198
+ 1661367928155694055397570629669876151212035128027110
+

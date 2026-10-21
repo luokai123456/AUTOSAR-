@@ -1,0 +1,466 @@
+[
+ {
+  "rs": "RS_Nm_00043",
+  "desc": "NM shall not prohibit bus traffic with NM not being initialized",
+  "sws": [
+   "SWS_CanNm_NA_00008"
+  ]
+ },
+ {
+  "rs": "RS_Nm_00044",
+  "desc": "The NM shall be applicable to different types of communication systems which are in the scope of Autosar and support a bus sleep mode.",
+  "sws": [
+   "SWS_CanNm_NA_00008"
+  ]
+ },
+ {
+  "rs": "RS_Nm_00045",
+  "desc": "NM shall provide services to coordinate shutdown of NM-clusters independently of each other",
+  "sws": [
+   "SWS_CanNm_00104",
+   "SWS_CanNm_00105"
+  ]
+ },
+ {
+  "rs": "RS_Nm_00046",
+  "desc": "It shall be possible to trigger the startup of all Nodes at any Point in Time",
+  "sws": [
+   "SWS_CanNm_00129"
+  ]
+ },
+ {
+  "rs": "RS_Nm_00047",
+  "desc": "NM shall provide a service to request to keep the bus awake and a service to cancel this request.",
+  "sws": [
+   "SWS_CanNm_00103",
+   "SWS_CanNm_00104",
+   "SWS_CanNm_00105",
+   "SWS_CanNm_00106",
+   "SWS_CanNm_00110",
+   "SWS_CanNm_00118"
+  ]
+ },
+ {
+  "rs": "RS_Nm_00048",
+  "desc": "NM shall put the communication controller into sleep mode if there is no bus communication",
+  "sws": [
+   "SWS_CanNm_NA_00008"
+  ]
+ },
+ {
+  "rs": "RS_Nm_00050",
+  "desc": "The NM shall provide the current state of NM",
+  "sws": [
+   "SWS_CanNm_00091"
+  ]
+ },
+ {
+  "rs": "RS_Nm_00051",
+  "desc": "NM shall inform application when NM state changes occur.",
+  "sws": [
+   "SWS_CanNm_00097",
+   "SWS_CanNm_00114",
+   "SWS_CanNm_00115",
+   "SWS_CanNm_00126",
+   "SWS_CanNm_00166"
+  ]
+ },
+ {
+  "rs": "RS_Nm_00052",
+  "desc": "The NM interface shall signal to the application that all other ECUs are ready to sleep.",
+  "sws": [
+   "SWS_CanNm_00150",
+   "SWS_CanNm_00153"
+  ]
+ },
+ {
+  "rs": "RS_Nm_00054",
+  "desc": "There shall be a deterministic time from the point where all nodes agree to go to bus sleep to the point where bus is switched off.",
+  "sws": [
+   "SWS_CanNm_00088"
+  ]
+ },
+ {
+  "rs": "RS_Nm_00137",
+  "desc": "NM shall perform communication system error handling for errors that have impact on the NM behavior.",
+  "sws": [
+   "SWS_CanNm_00064",
+   "SWS_CanNm_00065",
+   "SWS_CanNm_00066",
+   "SWS_CanNm_00193",
+   "SWS_CanNm_00194",
+   "SWS_CanNm_00446"
+  ]
+ },
+ {
+  "rs": "RS_Nm_00142",
+  "desc": "NM shall provide a mechanism to limit its bus load.",
+  "sws": [
+   "SWS_CanNm_00052",
+   "SWS_CanNm_00069",
+   "SWS_CanNm_00071",
+   "SWS_CanNm_00156",
+   "SWS_CanNm_00157"
+  ]
+ },
+ {
+  "rs": "RS_Nm_00145",
+  "desc": "On a properly configured SWS_CanNm_NA_00008 16 of 117 Document ID 13: AUTOSAR_SWS_CANNetworkManagement node, NM shall tolerate a loss of a predefined number of NM messages",
+  "sws": []
+ },
+ {
+  "rs": "RS_Nm_00146",
+  "desc": "The NM shall tolerate a time jitter of NM messages in one or more ECUs",
+  "sws": [
+   "SWS_CanNm_NA_00008"
+  ]
+ },
+ {
+  "rs": "RS_Nm_00149",
+  "desc": "The timing of NM shall be configurable.",
+  "sws": [
+   "SWS_CanNm_00088"
+  ]
+ },
+ {
+  "rs": "RS_Nm_00150",
+  "desc": "Specific features of the Network Management shall be configurable",
+  "sws": [
+   "SWS_CanNm_NA_00008"
+  ]
+ },
+ {
+  "rs": "RS_Nm_00151",
+  "desc": "The Network Management algorithm shall allow any node to integrate into an already running NM cluster",
+  "sws": [
+   "SWS_CanNm_00099",
+   "SWS_CanNm_00124",
+   "SWS_CanNm_00127"
+  ]
+ },
+ {
+  "rs": "RS_Nm_00153",
+  "desc": "The Network Management shall optionally provide a possibility to detect present nodes",
+  "sws": [
+   "SWS_CanNm_00014",
+   "SWS_CanNm_00111",
+   "SWS_CanNm_00112",
+   "SWS_CanNm_00113",
+   "SWS_CanNm_00119",
+   "SWS_CanNm_00120",
+   "SWS_CanNm_00121"
+  ]
+ },
+ {
+  "rs": "RS_Nm_00154",
+  "desc": "The Network Management API shall be independent from the communication bus",
+  "sws": [
+   "SWS_CanNm_NA_00008"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02503",
+  "desc": "The NM API shall optionally give the possibility to send user data",
+  "sws": [
+   "SWS_CanNm_00013",
+   "SWS_CanNm_00159",
+   "SWS_CanNm_00328",
+   "SWS_CanNm_00350",
+   "SWS_CanNm_00351",
+   "SWS_CanNm_00510"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02504",
+  "desc": "The NM API shall optionally give the possibility to get user data",
+  "sws": [
+   "SWS_CanNm_00160"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02505",
+  "desc": "The NM shall optionally set the local node identifier to the NM-message",
+  "sws": [
+   "SWS_CanNm_00074"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02506",
+  "desc": "The NM API shall give the possibility to read the source node identifier of the sender",
+  "sws": [
+   "SWS_CanNm_00132"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02508",
+  "desc": "Every node shall have a node identifier associated with it that is unique in the NM-cluster.",
+  "sws": [
+   "SWS_CanNm_00133"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02509",
+  "desc": "The NM interface shall signal to the application that at least one ECU is not ready to sleep anymore.",
+  "sws": [
+   "SWS_CanNm_00151",
+   "SWS_CanNm_00152",
+   "SWS_CanNm_00153"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02511",
+  "desc": "It shall be possible to configure the Network Management of a node so that it does not contribute to the cluster shutdown decision.",
+  "sws": [
+   "SWS_CanNm_00072",
+   "SWS_CanNm_00161"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02512",
+  "desc": "The NM shall give the possibility to enable or 17 of 117 Document ID 13: AUTOSAR_SWS_CANNetworkManagement disable the network management related communication configured for an active NM node",
+  "sws": [
+   "SWS_CanNm_00170",
+   "SWS_CanNm_00173",
+   "SWS_CanNm_00176",
+   "SWS_CanNm_00178"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02513",
+  "desc": "NM shall provide functionality which enables upper layers to control the sleep mode.",
+  "sws": [
+   "SWS_CanNm_00104",
+   "SWS_CanNm_00105"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02514",
+  "desc": "It shall be possible to group networks into NM Coordination Clusters",
+  "sws": [
+   "SWS_CanNm_NA_00008"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02515",
+  "desc": "NM shall offer a generic possibility to run other NMs than the AUTOSAR-NMs",
+  "sws": [
+   "SWS_CanNm_NA_00008"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02516",
+  "desc": "All AUTOSAR NM instances shall support the NM Coordinator functionality including Bus synchronization on demand",
+  "sws": [
+   "SWS_CanNm_00130",
+   "SWS_CanNm_00187",
+   "SWS_CanNm_00226",
+   "SWS_CanNm_00280"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02517",
+  "desc": "CanNm shall support Partial Networking on CAN",
+  "sws": [
+   "SWS_CanNm_00403",
+   "SWS_CanNm_00404",
+   "SWS_CanNm_00409",
+   "SWS_CanNm_00410",
+   "SWS_CanNm_00411",
+   "SWS_CanNm_00412",
+   "SWS_CanNm_00413",
+   "SWS_CanNm_00414",
+   "SWS_CanNm_00415",
+   "SWS_CanNm_00416",
+   "SWS_CanNm_00417",
+   "SWS_CanNm_00419",
+   "SWS_CanNm_00420",
+   "SWS_CanNm_00421",
+   "SWS_CanNm_00424",
+   "SWS_CanNm_00426",
+   "SWS_CanNm_00427",
+   "SWS_CanNm_00428",
+   "SWS_CanNm_00429",
+   "SWS_CanNm_00431",
+   "SWS_CanNm_00432",
+   "SWS_CanNm_00435",
+   "SWS_CanNm_00437",
+   "SWS_CanNm_00438",
+   "SWS_CanNm_00439",
+   "SWS_CanNm_00442",
+   "SWS_CanNm_00443",
+   "SWS_CanNm_00444",
+   "SWS_CanNm_00445",
+   "SWS_CanNm_00502",
+   "SWS_CanNm_00503",
+   "SWS_CanNm_00505",
+   "SWS_CanNm_00508"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02519",
+  "desc": "The NM Control Bit Vector shall contain a PNI (Partial Network Information) bit.",
+  "sws": [
+   "SWS_CanNm_00045",
+   "SWS_CanNm_00413",
+   "SWS_CanNm_00414",
+   "SWS_CanNm_00505",
+   "SWS_CanNm_00508"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02527",
+  "desc": "Nm shall implement a filter algorithm dropping all NM messages that are not relevant for the ECU",
+  "sws": [
+   "SWS_CanNm_00333",
+   "SWS_CanNm_00403",
+   "SWS_CanNm_00404",
+   "SWS_CanNm_00410",
+   "SWS_CanNm_00411",
+   "SWS_CanNm_00412",
+   "SWS_CanNm_00415",
+   "SWS_CanNm_00417",
+   "SWS_CanNm_00419",
+   "SWS_CanNm_00420",
+   "SWS_CanNm_00421",
+   "SWS_CanNm_00502",
+   "SWS_CanNm_00503"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02528",
+  "desc": "Nm shall provide a service which allows for instantaneous sending of NM messages.",
+  "sws": [
+   "SWS_CanNm_00444"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02535",
+  "desc": "The NM coordination shall support the coordination of nested sub-buses",
+  "sws": [
+   "SWS_CanNm_NA_00008"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02536",
+  "desc": "NM shall provide functionality to start-up 18 of 117 Document ID 13: AUTOSAR_SWS_CANNetworkManagement without requesting the network.",
+  "sws": [
+   "SWS_CanNm_00128"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02537",
+  "desc": "The NM Coordinator shall be able to abort the coordinated shutdown",
+  "sws": [
+   "SWS_CanNm_NA_00008"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02540",
+  "desc": "The NM Control Bit Vector shall contain a PN shutdown request bit.",
+  "sws": [
+   "SWS_CanNm_00045",
+   "SWS_CanNm_00463",
+   "SWS_CanNm_00506"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02542",
+  "desc": "The NM of the top-level PNC coordinator shall set the PN shutdown request bit if a least one PNC is released",
+  "sws": [
+   "SWS_CanNm_00463"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02543",
+  "desc": "NM shall forward requests for synchronized PNC shutdown",
+  "sws": [
+   "SWS_CanNm_00466",
+   "SWS_CanNm_00467"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02545",
+  "desc": "NM shall handle requests for synchronized PNC shutdown",
+  "sws": [
+   "SWS_CanNm_00460",
+   "SWS_CanNm_00462",
+   "SWS_CanNm_00463",
+   "SWS_CanNm_00464",
+   "SWS_CanNm_00465",
+   "SWS_CanNm_00468",
+   "SWS_CanNm_00469",
+   "SWS_CanNm_00470",
+   "SWS_CanNm_00471",
+   "SWS_CanNm_00472",
+   "SWS_CanNm_00506",
+   "SWS_CanNm_00509",
+   "SWS_CanNm_91003"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02547",
+  "desc": "Nm shall be able to propagate and evaluate the need for Partial Networking Learning (optional)",
+  "sws": [
+   "SWS_CanNm_00045"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02548",
+  "desc": "Nm shall be able to propagate and evaluate the need for synchronized PNC shutdown in the role of a top-level PNC coordinator or intermediate PNC coordinator (optional)",
+  "sws": [
+   "SWS_CanNm_00045",
+   "SWS_CanNm_00461"
+  ]
+ },
+ {
+  "rs": "RS_Nm_02549",
+  "desc": "Nm shall offer interfaces to Request and indicate Repeat Message Request (optional) SRS_BSW_00005 Modules of the ÂµC Abstraction Layer (MCAL) may not have hard coded horizontal interfaces SRS_BSW_00010 The memory consumption of all Basic SW Modules shall be documented for a defined configuration for all supported platforms. SRS_BSW_00160 Configuration files of AUTOSAR Basic SW module shall be readable for human beings SRS_BSW_00161 The AUTOSAR Basic Software shall provide a 19 of 117 Document ID 13: AUTOSAR_SWS_CANNetworkManagement microcontroller abstraction layer which provides a standardized interface to higher software layers SRS_BSW_00162 The AUTOSAR Basic Software shall provide a hardware abstraction layer SRS_BSW_00164 The Implementation of interrupt service routines shall be done by the Operating System, complex drivers or modules SRS_BSW_00168 SW components shall be tested by a function defined in a common API in the Basis-SW SRS_BSW_00170 The AUTOSAR SW Components shall provide information about their dependency from faults, signal qualities, driver demands SRS_BSW_00172 The scheduling strategy that is built inside the Basic Software Modules shall be compatible with the strategy used in the system SRS_BSW_00301 All AUTOSAR Basic Software Modules shall only import the necessary information SRS_BSW_00314 All internal driver modules shall separate the interrupt frame definition from the service routine SRS_BSW_00323 All AUTOSAR Basic Software Modules shall check passed API parameters for validity SRS_BSW_00325 The runtime of interrupt service routines and functions that are running in interrupt context shall be kept short SRS_BSW_00334 All Basic Software Modules shall provide an XML file that contains the meta data SRS_BSW_00336 Basic SW module shall be able to shutdown SRS_BSW_00341 Module documentation shall contains all needed informations 20 of 117 Document ID 13: AUTOSAR_SWS_CANNetworkManagement different instances of BSW drivers shall be in place SRS_BSW_00348 All AUTOSAR standard types and constants shall be placed and organized in a standard type header file SRS_BSW_00353 All integer type definitions of target and compiler specific scope shall be placed and organized in a single type header SRS_BSW_00361 All mappings of not standardized keywords of compiler specific scope shall be placed and organized in a compiler specific type and keyword header SRS_BSW_00369 All AUTOSAR Basic Software Modules shall not return specific development error codes via the API SRS_BSW_00375 Basic Software Modules shall report wake-up reasons SRS_BSW_00413 An index-based accessing of the instances of BSW modules shall be done SRS_BSW_00416 The sequence of modules to be initialized shall be configurable SRS_BSW_00417 Software which is not part of the SW-C shall report error events only after the DEM is fully operational. SRS_BSW_00423 BSW modules with AUTOSAR interfaces shall be describable with the means of the SW-C Template SRS_BSW_00424 BSW module main processing functions shall not be allowed to enter a wait state SRS_BSW_00425 The BSW module description template shall provide means to model the defined trigger conditions of schedulable objects SRS_BSW_00426 BSW Modules shall ensure data consistency of data which is shared between BSW modules 21 of 117 Document ID 13: AUTOSAR_SWS_CANNetworkManagement SRS_BSW_00427 ISR functions shall be defined and documented in the BSW module description template SRS_BSW_00432 Modules should have separate main processing functions for read/receive and write/transmit data path Details about the SRS Requirements can be found in AUTOSAR General Requirements on Basic Software Modules [1] and AUTOSAR Requirements on Basic Software, Module NM [3]. 22 of 117 Document ID 13: AUTOSAR_SWS_CANNetworkManagement",
+  "sws": [
+   "SWS_CanNm_00045",
+   "SWS_CanNm_00111",
+   "SWS_CanNm_00112",
+   "SWS_CanNm_00113",
+   "SWS_CanNm_00119",
+   "SWS_CanNm_00120",
+   "SWS_CanNm_00121",
+   "SWS_CanNm_NA_00001",
+   "SWS_CanNm_NA_00008",
+   "SWS_CanNm_NA_00008",
+   "SWS_CanNm_NA_00001",
+   "SWS_CanNm_NA_00001",
+   "SWS_CanNm_NA_00001",
+   "SWS_CanNm_NA_00000",
+   "SWS_CanNm_NA_00000",
+   "SWS_CanNm_NA_00008",
+   "SWS_CanNm_00305",
+   "SWS_CanNm_00307",
+   "SWS_CanNm_00308",
+   "SWS_CanNm_00309",
+   "SWS_CanNm_00312",
+   "SWS_CanNm_00326",
+   "SWS_CanNm_NA_00001",
+   "SWS_CanNm_00244",
+   "SWS_CanNm_NA_00001",
+   "SWS_CanNm_NA_00008",
+   "SWS_CanNm_91002",
+   "SWS_CanNm_NA_00006",
+   "SWS_CanNm_NA_00008",
+   "SWS_CanNm_NA_00001",
+   "SWS_CanNm_00305",
+   "SWS_CanNm_00305",
+   "SWS_CanNm_00305",
+   "SWS_CanNm_00352",
+   "SWS_CanNm_NA_00001",
+   "SWS_CanNm_NA_00001",
+   "SWS_CanNm_NA_00002",
+   "SWS_CanNm_NA_00007",
+   "SWS_CanNm_NA_00000",
+   "SWS_CanNm_NA_00001",
+   "SWS_CanNm_NA_00003",
+   "SWS_CanNm_NA_00004",
+   "SWS_CanNm_NA_00003",
+   "SWS_CanNm_NA_00001",
+   "SWS_CanNm_NA_00005"
+  ]
+ }
+]

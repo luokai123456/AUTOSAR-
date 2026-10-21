@@ -1,0 +1,85 @@
+
+Name: config/Mcu8.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421812558074267067361698921407480884383277199842049
+ 5660075441890461685494905753433993717924400835101375
+
+Name: config/Mcu10.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420476566044849612250490597154553156174659929666710
+ 7225179840903414784292819870068540994856503449075588
+
+Name: config/Mcu7.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420280819348934686216392742077862924250414767801231
+ 0707861481025762343831425149810805941386593484436311
+
+Name: config/Mcu4.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773971813317223349000679340394846495747993457034686
+ 005075043412981295954841496713902349568891047369488447
+
+Name: config/Mcu1.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426933802736836259566584027240019975483160230876148
+ 2244251639341091141363692280685175143356854670727233
+
+Name: config/Mcu11.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426177605373977577960350708338718353110930143645853
+ 7924676804385130660319637977372083730889364483974117
+
+Name: config/Mcu2.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421461736531366337818267956391882300446020280212263
+ 8110777762353926499408711750451259145789548045230161
+
+Name: config/Mcu3.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421376101283728627439198806307835977241968453657145
+ 3632777203563674059488871607532464522848913290480113
+
+Name: generate/source/Mcu_Cfg.c
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424787037497070507248016261877599335614836889275666
+ 3414528792152729973266939267793121225310261955191930
+
+Name: config/Mcu5.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594750387497189441462043695120129675825143132099486466
+ 941636539692022623472735355053805220018301374404002268
+
+Name: generate/include/Mcu_Cfg.h
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422470477564671914466670196439168115589286544437979
+ 7203083134025357563034822224607613014453817802272491
+
+Name: config/Mcu6.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422832484072487888131469774680512733610189796235963
+ 5574289970761472321755931420358209725800977860076993
+

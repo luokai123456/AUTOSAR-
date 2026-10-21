@@ -1,0 +1,666 @@
+<?xml version='1.0'?>
+<datamodel version="7.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:ce="http://www.tresos.de/_projects/DataModel2/18/childenable.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="eDmaConfig" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="eDma" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.4.0</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC" 
+                   value="EN: This container holds the configuration of a single eDma Driver."/>
+              <a:a name="LOWER-MULTIPLICITY" value="1"/>
+              <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+              <a:a name="RELEASE" value="asc:4.4.0"/>
+              <a:a name="UPPER-MULTIPLICITY" value="*"/>
+              <a:a name="UUID" value="3db3850a-dd22-4180-a582-ab48f9cd3f0c"/>
+              <v:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN">
+                <a:a name="DESC" 
+                     value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Post Build Variant Used"/>
+                <a:a name="ORIGIN" value="EB"/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="UUID" value="d542189e-cd06-474d-891d-c1e7987132a0"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="false"/>
+                <a:da name="READONLY" value="FALSE"/>
+                <a:da name="TOOLTIP" 
+                      value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+              </v:var>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:a name="UUID" value="cc2ff55c-7bd3-44b3-9425-c344af4abdf6"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="VariantPostBuild"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuild</a:v>
+                  <a:v>VariantPreCompile</a:v>
+                </a:da>
+              </v:var>
+              <v:ctr name="eDmaConfigSet" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: This container contains the configuration parameters and sub containers of the AUTOSAR edma module."/>
+                <a:a name="UUID" value="04ba7a28-3744-4d70-b6a6-e46d960cd9d3"/>
+                <v:lst name="eDmaController" type="MAP">
+                  <a:da name="MIN" value="2"/>
+                  <a:da name="MAX" value="2"/>
+                  <a:da name="INVALID" type="XPath">
+                      <a:tst expr="num:i(count(node:current()/*)) &gt; ecu:get('eDma.ControllerNumMax')" 
+                          true="Maximum edma Controllers available for the selected derivative was exceeded."/>
+                  </a:da>
+                  <v:ctr name="eDmaController" type="IDENTIFIABLE">
+                    <a:a name="DESC" 
+                         value="EN: This container contains the configuration parameters of the eDma controller(s)."/>
+                    <a:a name="UUID" 
+                         value="563bc564-a3f3-4fc8-ac4d-f042718cc65a"/>
+                    <v:var name="eDmaInstanceId" type="INTEGER">
+                      <a:a name="DESC" 
+                           value="EN: eDMA0 or eDMA1."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="ECU"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                      <a:a name="UUID" 
+                           value="263be517-2994-4b70-b359-4ee3546081e6"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index,'0')"/>
+                      <a:da name="INVALID" type="XPath">
+                            <a:tst expr="num:i(node:current()/../@index) = num:i(.)" false="Plase enter a valid eDmaInstanceId"/>
+                      </a:da>
+                    </v:var>
+                    <v:var name="ChnArbitMode" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN: eDMA channel arbitration"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a65392481"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="EDMA_ARBITRATION_MODE_FIXED_PRIORITY"/>
+                      <a:da name="RANGE">
+                        <a:v>EDMA_ARBITRATION_MODE_FIXED_PRIORITY</a:v>
+                        <a:v>EDMA_ARBITRATION_MODE_ROUND_ROBIN</a:v>
+                      </a:da>
+                    </v:var>
+                    <v:var name="groupArbitration" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN: eDMA group arbitration."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a65392482"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="EDMA_ARBITRATION_MODE_FIXED_PRIORITY"/>
+                      <a:da name="RANGE">
+                        <a:v>EDMA_ARBITRATION_MODE_FIXED_PRIORITY</a:v>
+                        <a:v>EDMA_ARBITRATION_MODE_ROUND_ROBIN</a:v>
+                      </a:da>
+                    </v:var>
+                    <v:var name="prioGroup0" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN:eDMA group 0 priority."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a65392483"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="EDMA_GRP_PRIORITY0"/>
+                      <a:da name="INVALID" type="XPath">
+                          <a:tst expr="../prioGroup1 = ." true="Different groups cannot have the same priority"> </a:tst>
+                          <a:tst expr="../prioGroup2 = ." true="Different groups cannot have the same priority"> </a:tst>
+                          <a:tst expr="../prioGroup3 = ." true="Different groups cannot have the same priority"> </a:tst>
+                      </a:da>
+                      <a:da name="RANGE">
+                        <a:v>EDMA_GRP_PRIORITY0</a:v>
+                        <a:v>EDMA_GRP_PRIORITY1</a:v>
+                        <a:v>EDMA_GRP_PRIORITY2</a:v>
+                        <a:v>EDMA_GRP_PRIORITY3</a:v>
+                      </a:da>
+                    </v:var>
+                    <v:var name="prioGroup1" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN:eDMA group 1 priority."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a65392484"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="EDMA_GRP_PRIORITY1"/>
+                      <a:da name="INVALID" type="XPath">
+                          <a:tst expr="../prioGroup0 = ." true="Different groups cannot have the same priority"> </a:tst>
+                          <a:tst expr="../prioGroup2 = ." true="Different groups cannot have the same priority"> </a:tst>
+                          <a:tst expr="../prioGroup3 = ." true="Different groups cannot have the same priority"> </a:tst>
+                      </a:da>
+                      <a:da name="RANGE">
+                        <a:v>EDMA_GRP_PRIORITY0</a:v>
+                        <a:v>EDMA_GRP_PRIORITY1</a:v>
+                        <a:v>EDMA_GRP_PRIORITY2</a:v>
+                        <a:v>EDMA_GRP_PRIORITY3</a:v>
+                      </a:da>
+                    </v:var>
+                    <v:var name="prioGroup2" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN:eDMA group 2 priority."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a65392485"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="EDMA_GRP_PRIORITY2"/>
+                      <a:da name="INVALID" type="XPath">
+                          <a:tst expr="../prioGroup0 = ." true="Different groups cannot have the same priority"> </a:tst>
+                          <a:tst expr="../prioGroup1 = ." true="Different groups cannot have the same priority"> </a:tst>
+                          <a:tst expr="../prioGroup3 = ." true="Different groups cannot have the same priority"> </a:tst>
+                      </a:da>
+                      <a:da name="RANGE">
+                        <a:v>EDMA_GRP_PRIORITY0</a:v>
+                        <a:v>EDMA_GRP_PRIORITY1</a:v>
+                        <a:v>EDMA_GRP_PRIORITY2</a:v>
+                        <a:v>EDMA_GRP_PRIORITY3</a:v>
+                      </a:da>
+                    </v:var>
+                    <v:var name="prioGroup3" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN:eDMA group 3 priority."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a65392486"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="EDMA_GRP_PRIORITY3"/>
+                      <a:da name="INVALID" type="XPath">
+                          <a:tst expr="../prioGroup0 = ." true="Different groups cannot have the same priority"> </a:tst>
+                          <a:tst expr="../prioGroup1 = ." true="Different groups cannot have the same priority"> </a:tst>
+                          <a:tst expr="../prioGroup2 = ." true="Different groups cannot have the same priority"> </a:tst>
+                      </a:da>
+                      <a:da name="RANGE">
+                        <a:v>EDMA_GRP_PRIORITY0</a:v>
+                        <a:v>EDMA_GRP_PRIORITY1</a:v>
+                        <a:v>EDMA_GRP_PRIORITY2</a:v>
+                        <a:v>EDMA_GRP_PRIORITY3</a:v>
+                      </a:da>
+                    </v:var>
+                    <v:var name="haltOnError" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN:Whether to configure the HOE bit,Any error causes the HALT bit to set. Subsequently, 
+                                  all service requests are ignored until the HALT bit is cleared."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="87eae519-05f6-4ec4-82f6-bea47cb71773"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                  </v:ctr>
+                </v:lst>
+                <v:lst name="eDmaChannelConfig" type="MAP">
+                  <a:da name="MIN" value="1"/>
+                  <a:da name="MAX" value="128"/>
+                  <v:ctr name="eDmaChannelConfig" type="IDENTIFIABLE">
+                    <a:a name="DESC" 
+                         value="EN: eDma channel configuration"/>
+                    <a:a name="UUID" 
+                         value="fe8ae464-0e86-4261-9f6b-23286470fbb1"/>
+                    <v:var name="eDmaChannelPriority" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN:eDMA channel priority - only used when channel arbitration mode is 'Fixed priority'."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a65392487"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="EDMA_CHN_PRIORITY0"/>
+                      <a:da name="RANGE">
+                        <a:v>EDMA_CHN_PRIORITY0</a:v>
+                        <a:v>EDMA_CHN_PRIORITY1</a:v>
+                        <a:v>EDMA_CHN_PRIORITY2</a:v>
+                        <a:v>EDMA_CHN_PRIORITY3</a:v>
+                        <a:v>EDMA_CHN_PRIORITY4</a:v>
+                        <a:v>EDMA_CHN_PRIORITY5</a:v>
+                        <a:v>EDMA_CHN_PRIORITY6</a:v>
+                        <a:v>EDMA_CHN_PRIORITY7</a:v>
+                        <a:v>EDMA_CHN_PRIORITY8</a:v>
+                        <a:v>EDMA_CHN_PRIORITY9</a:v>
+                        <a:v>EDMA_CHN_PRIORITY10</a:v>
+                        <a:v>EDMA_CHN_PRIORITY11</a:v>
+                        <a:v>EDMA_CHN_PRIORITY12</a:v>
+                        <a:v>EDMA_CHN_PRIORITY13</a:v>
+                        <a:v>EDMA_CHN_PRIORITY14</a:v>
+                        <a:v>EDMA_CHN_PRIORITY15</a:v>
+                      </a:da>
+                    </v:var>
+                    <v:var name="eDmaChannelId" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN:eDMA virtual channel number."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a65392488"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="EDMA_CHN0_NUMBER"/>
+                      <a:da name="RANGE" type="XPath" expr="ecu:list('eDma.ChannelList')"/>
+                    </v:var>
+                    <v:var name="eDmaInstance" type="INTEGER">
+                      <a:a name="DESC" 
+                           value="EN: DMA instance 0 or 1."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="55be3f86-93df-4c02-8459-99a32648c590"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" type="XPath" expr="num:i(num:i(substring-before(substring-after(node:value(../eDmaChannelId),'EDMA_CHN'),'_')) div 64)"/>
+                      <a:da name="INVALID" type="XPath">
+                          <a:tst expr="num:i(num:i(substring-before(substring-after(node:value(../eDmaChannelId),'EDMA_CHN'),'_')) div 64) = num:i(.)" false="Re-compute eDmaInstance"> </a:tst>
+                      </a:da>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=1"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                    </v:var>
+                    <v:var name="eDmaGroupId" type="INTEGER">
+                      <a:a name="DESC" 
+                           value="EN: Groupid 0 - 3."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="55be3f86-93df-4c02-8459-99a32648c591"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" type="XPath" expr="num:i((num:i(num:i(substring-before(substring-after(node:value(../eDmaChannelId),'EDMA_CHN'),'_')) - num:i(num:i(../eDmaInstance) * 64)) div (num:i(16))))"/>
+                      <a:da name="INVALID" type="XPath">
+                          <a:tst expr="num:i((num:i(num:i(substring-before(substring-after(node:value(../eDmaChannelId),'EDMA_CHN'),'_')) - num:i(num:i(../eDmaInstance) * 64)) div (num:i(16)))) = num:i(.)" false="Re-compute eDmaGroupId"> </a:tst>
+                      </a:da>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=3"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                    </v:var>
+                    <v:var name="eDmaChannelReqSource" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN:Selects the source of the DMA request for this channel."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a6539248e"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="DMAMUX0_RESERVED_0_A"/>
+                      <a:da name="RANGE" type="XPath" expr="ecu:list(string(ecu:get(concat('eDma.',string(node:fallback(../eDmaChannelId,'')),'.Source'))))"/>
+                    </v:var>
+                    <v:var name="ContinuouTriggerEnble" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN:Enables the periodic trigger capability for the DMA channel."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="87eae519-05f6-4ec4-82f6-bea47cb71774"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <v:var name="eDmaChCallbaceFunction" 
+                          type="FUNCTION-NAME">
+                      <a:a name="LABEL" value="eDmaChCallbackFunction"/>
+                      <a:a name="DESC" 
+                           value="EN:Callback function pointer for the eDMA channel. It will
+                                              be called at the eDMA channel complete and eDMA channel error."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="26f5fb02-3862-48fa-84bd-935e88fe6cdb"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="NULL_PTR"/>
+                      <a:da name="INVALID" type="XPath">
+                      <a:tst expr="(
+                                        (normalize-space(node:fallback(., '')) = 'NULL') or
+                                        (normalize-space(node:fallback(., '')) = 'Null') or
+                                        (normalize-space(node:fallback(., '')) = 'false') or
+                                        (normalize-space(node:fallback(., '')) = 'FALSE') or
+                                        (normalize-space(node:fallback(., '')) = 'null') or
+                                        (normalize-space(node:fallback(., '')) = 'null_ptr') or
+                                        (normalize-space(node:fallback(., '')) = 'Null_Ptr')
+                                        )"
+                            true="Invalid name of the, it must be a valid C function name."/>
+                        <a:tst expr="(normalize-space(node:fallback(., '')) = '&quot;NULL_PTR&quot;') or
+                                        (normalize-space(node:fallback(., '')) = '&quot;NULL&quot;') or
+                                        (normalize-space(node:fallback(., '')) = 'NULL') or
+                                        (text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$'))"
+                            false="Invalid name, it must be a valid C function name"/>
+                      </a:da>
+                    </v:var>
+                    <v:var name="eDmaChCallbaceParam" 
+                          type="FUNCTION-NAME">
+                      <a:a name="LABEL" value="eDmaChCallbackParam"/>
+                      <a:a name="DESC" 
+                           value="EN:Parameter passed to the channel callback."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="26f5fb02-3862-48fa-84bd-935e88fe6cd1"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="NULL_PTR"/>
+                    </v:var>
+                    <v:var name="eDmaChErrCallbackFunction" 
+                          type="FUNCTION-NAME">
+                      <a:a name="LABEL" value="eDmaChErrCallbackFunction"/>
+                      <a:a name="DESC" 
+                           value="EN:Callback function pointer for the eDMA channel. It will
+                                              be eDMA channel error."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="26f5fb02-3862-48fa-84bd-935e88fe6cd1"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="NULL_PTR"/>
+                      <a:da name="INVALID" type="XPath">
+                      <a:tst expr="(
+                                        (normalize-space(node:fallback(., '')) = 'NULL') or
+                                        (normalize-space(node:fallback(., '')) = 'Null') or
+                                        (normalize-space(node:fallback(., '')) = 'false') or
+                                        (normalize-space(node:fallback(., '')) = 'FALSE') or
+                                        (normalize-space(node:fallback(., '')) = 'null') or
+                                        (normalize-space(node:fallback(., '')) = 'null_ptr') or
+                                        (normalize-space(node:fallback(., '')) = 'Null_Ptr')
+                                        )"
+                            true="Invalid name of the, it must be a valid C function name."/>
+                        <a:tst expr="(normalize-space(node:fallback(., '')) = '&quot;NULL_PTR&quot;') or
+                                        (normalize-space(node:fallback(., '')) = '&quot;NULL&quot;') or
+                                        (normalize-space(node:fallback(., '')) = 'NULL') or
+                                        (text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$'))"
+                            false="Invalid name, it must be a valid C function name"/>
+                      </a:da>
+                    </v:var>
+                    <v:var name="eDmaChErrCallbackParam" 
+                          type="FUNCTION-NAME">
+                      <a:a name="LABEL" value="eDmaChErrCallbackParam"/>
+                      <a:a name="DESC" 
+                           value="EN:Parameter passed to the channel error callback."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="26f5fb02-3862-48fa-84bd-935e88fe6cdc"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="NULL_PTR"/>
+                    </v:var>
+                    <v:var name="eDmaChErrIntEn" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN:enable/disable eDMA error channel interrupt."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="87eae519-05f6-4ec4-82f6-bea47cb71775"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <v:var name="eDmaChTriggerEn" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN:Enables the periodic trigger capability for the DMA channel."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="87eae519-05f6-4ec4-82f6-bea47cb71776"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <v:var name="eDmaPreemptionEn" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN:Channel n can be temporarily suspended by the service request of a higher priority channel."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="87eae519-05f6-4ec4-82f6-bea47cb71777"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <v:var name="eDmaPreemptAbilityDisable" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN:Channel n cannot suspend any channel, regardless of channel priority."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="87eae519-05f6-4ec4-82f6-bea47cb71778"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <v:var name="eDmaMasterIdReplicationEn" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN:Master ID replication is enabled."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="87eae519-05f6-4ec4-82f6-bea47cb71779"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                  </v:ctr>
+                </v:lst>
+              </v:ctr>  
+              <v:ctr name="eDmaGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: This container contains the parameters related each CAN Driver Unit."/>
+                <a:a name="UUID" value="f72b1d09-01fa-4c63-9e70-e9908d6b7cf1"/>
+                <v:var name="eDmaDevErrorDetect" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Switches the development error detection and notification on or off."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="07d5850d-23ed-42c3-880f-5310b8f9916f"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="eDmaVersionInfoApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Switches the EDma_GetVersionInfo() API ON or OFF."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="b7e04f7d-e0f3-4e29-9d35-508096407c52"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="eDmaInlineSupport" type="BOOLEAN">
+                  <a:a name="LABEL" value="eDmaInlineSupport"/>
+                  <a:a name="DESC"
+                       value="EN: Whether on or off INLINE eDma be configured."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:eeb4675d-4f4c-32ea-48f3-b143cba9238a"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+              </v:ctr>
+
+            </v:ctr>
+          </d:chc>
+          <d:chc name="myEcuParameterDefinition" type="AR-ELEMENT" 
+                 value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="DEF" 
+                   value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+              <d:lst name="MODULE_REF">
+                <d:ref type="MODULE_REF" value="ASPath:/eDmaConfig/eDma"/>
+              </d:lst>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

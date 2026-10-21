@@ -1,0 +1,10 @@
+﻿docs 21 links 217 anchors 21 bad 3
+ BAD ('CanNm', 'AUTOSAR', 'file')
+ BAD ('CanNm', 'AUTOSAR#2. ģ���ͼ', 'file')
+ BAD ('CanNm', 'AUTOSAR', 'file')
+stale CanNm_ChannelConfigType -> []
+stale CanNm_Lcfg.c -> []
+stale CanNm_PBcfg.c -> []
+stale CANNM_NUM_CHANNELS -> []
+stale CanNm_ChannelState[ -> []
+unbalanced: []

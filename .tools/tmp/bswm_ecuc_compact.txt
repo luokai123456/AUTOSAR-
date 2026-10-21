@@ -1,0 +1,91 @@
+ECUC_BswM_01063 |  |  | 
+ECUC_BswM_00895 | BswMPartitionRef | BswM | This container contains the configuration parameters and sub containers of the AUTOSAR BswM module. This conta
+ECUC_BswM_00801 |  | BswMConfig | 
+ECUC_BswM_00808 | BswMLogicalOperator | BswMArbitration | This parameter specifies the logical operator to be used in the logical expression. If the logical operator is
+ECUC_BswM_00807 | BswMConditionMode | BswMArbitration | This container describes the BswM mode conditions that can be used either by itself to form a rule or as a par
+ECUC_BswM_00816 |  | BswMModeCondition | 
+ECUC_BswM_00869 | BswMBswRequestedMode | BswMConditionValue | This container defines the value of a mode in the BSW. Configuration Parameters Name BswMBswRequestedMode [ECU
+ECUC_BswM_00868 | BswMModeValueRef | BswMConditionValue | This is a foreign reference to the Mode Declaration used for the mode requests corresponding to this condition
+ECUC_BswM_01052 | BswMEventRequestProcessing | BswMArbitration | Each instance of this container defines an event which can be sent to the BswM. Basic Software Modules may sen
+ECUC_BswM_00805 | BswMRequestProcessing | BswMArbitration | This parameter defines if the processing of the mode arbitration shall be done immediately when a mode request
+ECUC_BswM_00928 | BswMBswModeInitValue | BswMModeRequestPort | This parameter defines the initial mode value that is used by BswM for the corresponding mode request after in
+ECUC_BswM_01039 | BswMCompuMethodRef | BswMCompuScaleModeValue | This container contains parameters used to define a mode value. Configuration Parameters 81 of 159 Document ID
+ECUC_BswM_01053 |  | BswMEventRequestPort | This choice container specifies the source of the event request. The sender of the event can be another BSW Mo
+ECUC_BswM_00856 |  | BswMModeRequestPort | 
+ECUC_BswM_00926 | BswMBswModeDeclarationGroupPrototypeRef | BswMModeRequestSource | This is a mode request source emanating from another BSW Module. Configuration Parameters Name BswMBswModeDecl
+ECUC_BswM_00857 | BswMCanSMChannelRef | BswMModeRequestSource | This is an indication of the current state of the CAN State Manager. Configuration Parameters Name BswMCanSMCh
+ECUC_BswM_00880 | BswMComMChannelRef | BswMModeRequestSource | This is an indication of the current communication mode of a channel in the Communication Manager. Configurati
+ECUC_BswM_01014 |  | BswMEventRequestSource | 
+ECUC_BswM_00922 | BswMComMPncRef | BswMModeRequestSource | This is a request of the current communication mode of a Partial Network Cluster in the Communication Manager.
+ECUC_BswM_00925 |  | BswMEventRequestSource | 
+ECUC_BswM_00863 | BswMDcmComMChannelRef | BswMModeRequestSource | The source of the mode request is the Diagnostic Communication Manager. Configuration Parameters Name BswMDcmC
+ECUC_BswM_01085 |  | BswMModeRequestSource | This is a notification of the current operation mode of the ECU State Manager. This container does not contain
+ECUC_BswM_01086 | BswMEcuMRUNRequestProtocolPort | BswMModeRequestSource | This is an indication of the current State of the RUN Request Protocol. Configuration Parameters Name BswMEcuM
+ECUC_BswM_00904 | BswMEcuMWakeupSrcRef | BswMModeRequestSource | This is a notification of the current state of an ECU State Manager wakeup source. Configuration Parameters 89
+ECUC_BswM_01066 | BswMEthIfSwitchPortGroupRef | BswMModeRequestSource | This is an indication from the EthIf if the link state of a Ethernet interface switch port group has changed. 
+ECUC_BswM_00860 | BswMEthSMChannelRef | BswMModeRequestSource | This is an indication of the current state of the Ethernet State Manager. Configuration Parameters Name BswMEt
+ECUC_BswM_00858 | BswMFrSMChannelRef | BswMModeRequestSource | This is an indication of the current state of the FlexRay State Manager. Configuration Parameters Name BswMFrS
+ECUC_BswM_00861 | BswMModeRequesterId | BswMModeRequestSource | This mode request originates from a requester that is not among the list of standardized mode requesters (i.e.
+ECUC_BswM_00985 | BswMJ1939DcmChannelRef | BswMModeRequestSource | This is a notification of the desired broadcast status per network, triggered via DM13. Configuration Paramete
+ECUC_BswM_00966 | BswMJ1939NmChannelRef | BswMModeRequestSource | This is an indication of the current state of the J1939 network management module. Configuration Parameters Na
+ECUC_BswM_00859 | BswMLinSMChannelRef | BswMModeRequestSource | This is an indication of the current state of the LIN State Manager. Configuration Parameters Name BswMLinSMCh
+ECUC_BswM_00885 | BswMLinScheduleRef | BswMModeRequestSource | This is an indication of the currently active LIN Schedule T able for a specific LIN Interface. Configuration 
+ECUC_BswM_00914 | BswMLinTpChannelRef | BswMModeRequestSource | This is a LinTp mode request from the LinIf. This port corresponds to a call of the BswM_LinTp_RequestMode API
+ECUC_BswM_00990 | BswMRteSwitchPortRef | BswMEventRequestSource | This is a reference to the BswMSwitchPort.
+ECUC_BswM_01075 | BswMNmChannelRef | BswMEventRequestSource | This is an indication of a CarWakeup from the Nm. Configuration Parameters Name BswMNmChannelRef [ECUC_BswM_01
+ECUC_BswM_01081 | BswMNmChannelRef | BswMModeRequestSource | This is a notification from the Nm module that its state has changed. Configuration Parameters 97 of 159 Docum
+ECUC_BswM_00956 | BswMNvmService | BswMModeRequestSource | Indicates the current status of the multiblock job. The job is identified via BswMNvmService. Possible values 
+ECUC_BswM_00890 | BswMNvMBlockRef | BswMModeRequestSource | This is a reference to the NvM Block Descriptor that the request corresponds to.
+ECUC_BswM_00989 |  | BswMEventRequestSource | 
+ECUC_BswM_01011 | BswMSdClientMethodsRef | BswMModeRequestSource | Used by Service Discovery module to indicate current state of the Client Service (available/down). Configurati
+ECUC_BswM_01012 | BswMSdConsumedEventGroupRef | BswMModeRequestSource | Used by Service Discovery to indicate current status of the EventHandler (requested/released). Configuration P
+ECUC_BswM_01013 | BswMSdEventHandlerRef | BswMModeRequestSource | Used by Service Discovery to indicate current status of the EventHandler (requested/released). Configuration P
+ECUC_BswM_01091 | BswMSoAdSocketIdRef | BswMModeRequestSource | This is an indication of the current state of the SoAd. Post-Build Variant
+ECUC_BswM_00892 | BswMSwcModeNotificationModeDeclarationGroupPrototypeRef | BswMModeRequestSource | This is a mode switch notification associated with a RTE switch interface. Configuration Parameters Name BswMS
+ECUC_BswM_00862 | BswMSwcModeRequestVariableDataPrototypeRef | BswMModeRequestSource | The source of the mode request is a SW Component. Configuration Parameters Name BswMSwcModeRequestVariableData
+ECUC_BswM_01083 | BswMSwitchPortRef | BswMEventRequestSource | This is a notification that a mode transition has been completed. Configuration Parameters 103 of 159 Document
+ECUC_BswM_01058 |  | BswMModeRequestSource | 
+ECUC_BswM_00916 | BswMWdgMRequestPartitionResetRef | BswMEventRequestSource | This is a Partition Reset request from from the WdgM. This port corresponds to a call of the BswM_WdgM_Request
+ECUC_BswM_00806 | BswMNestedExecutionOnly | BswMArbitration | Each instance of this container describes a BswM arbitration rule. The rule either consists of a simple mode c
+ECUC_BswM_00936 |  | BswMConfig | Collection of references to DataT ypeMappingSet. Configuration Parameters Name BswMDataT ypeMappingSetRef [ECU
+ECUC_BswM_00802 |  | BswMConfig | 
+ECUC_BswM_00810 |  | BswMModeControl | Each container of this type defines an action. These actions can be part of one or several action lists. Post-
+ECUC_BswM_00826 |  | BswMAction | 
+ECUC_BswM_01054 | BswMClearEventRequestPortRef | BswMAvailableActions | This container contains a reference to a BswMEventRequestPort which will be cleared (i.e. set to CLEAR state) 
+ECUC_BswM_00909 | BswMComAllowed | BswMAvailableActions | The parameter BswMComMAllowChannelRef refers to a channel which will allow or block communication using the fu
+ECUC_BswM_00908 | BswMComMLimitMode | BswMAvailableActions | The function ComM_LimitChannelT oNoComMode() takes in this boolean parameter to limit the channel’s com mode t
+ECUC_BswM_00831 | BswMComMRequestedMode | BswMAvailableActions | This parameter specifies if the requested communication mode. This parameter corresponds to the parameter "Com
+ECUC_BswM_00970 | BswMCoreHaltActivationState | BswMAvailableActions | Different possibilities are offered depending on the OS implementation and the CPU HW. The HAL T modes address
+ECUC_BswM_00830 | BswMDisabledDMPduGroupRef | BswMAvailableActions | This is a reference to a PDU Group for which the Deadline Monitoring should be disabled. This reference corres
+ECUC_BswM_01064 | BswMEcuMDriverInitListBswMRef | BswMAvailableActions | This container defines the action to trigger an EcuM driver initialization list. Configuration Parameters Name
+ECUC_BswM_00963 | BswMEcuMUserIdRef | BswMAvailableActions | This container defines the action to trigger the EcuM_GoDownHaltPoll from BswM. Configuration Parameters 119 o
+ECUC_BswM_00961 | BswMEcuMResetModeRef | BswMAvailableActions | This container defines the shutdown target. Configuration Parameters Name BswMEcuMShutdownT arget [ECUC_BswM_0
+ECUC_BswM_01045 | BswMEcuMState | BswMAvailableActions | This container defines the action to switch a State of the ECU State Manager. Configuration Parameters Name Bs
+ECUC_BswM_01088 |  | BswMAvailableActions | This container defines the action to call EthIf_StartAllPorts from BswM and thus to start all affected EthSwtP
+ECUC_BswM_01068 | BswMEthIfSwitchPortGroupRef | BswMAvailableActions | This container includes all parameters related to requesting a mode for the EthIfSwtPortGroup. The EthIf_Switc
+ECUC_BswM_01037 | BswMFrSMAllSlotsNetworkHandleRef | BswMAvailableActions | This references the FlexRay cluster. The reference corresponds to the parameter "NetworkHandle" of the functio
+ECUC_BswM_01032 | BswMJ1939DcmRequestedState | BswMAvailableActions | This container includes all parameters related to a switch of the J1939 Diagnostic Communication Managers netw
+ECUC_BswM_00998 | BswMJ1939RmRequestedState | BswMAvailableActions | This parameter describes the communication state of the J1939 Request Manager and corresponds to the parameter
+ECUC_BswM_00827 | BswMLinScheduleRef | BswMAvailableActions | This is a reference to the LIN schedule table that the LIN SM shall change to. This reference corresponds to t
+ECUC_BswM_00837 | BswMNMAction | BswMAvailableActions | This parameter specifies if the communication of the corresponding NM channel should be enabled or disabled.
+ECUC_BswM_00828 | BswMPduGroupSwitchReinit | BswMAvailableActions | This container includes references to the PDU groups that shall be enabled and disabled. Configuration Paramet
+ECUC_BswM_00853 | BswMPduRouterAction | BswMAvailableActions | This container includes all parameters related to enabling and disabling of routing of Routing Path Groups in 
+ECUC_BswM_01021 | BswMRequestedModeRef | BswMAvailableActions | This container defines a mode request that the BswM may send to a SW-C which is acting as a mode-manager. RTE_
+ECUC_BswM_01073 |  | BswMAvailableActions | 
+ECUC_BswM_01074 |  | BswMAvailableActions | This container defines the action to stop the Rte from BswM Configuration Parameters No Included Containers [S
+ECUC_BswM_00803 | BswMRteSwitchPortRef | BswMAvailableActions | This container defines a mode switch indication that the BswM provides to the SW-C that need to be notified ab
+ECUC_BswM_00899 | BswMSchMSwitchedMode | BswMAvailableActions | This parameter contains the integer value that corresponds to a certain mode in a Mode Declaration Group.
+ECUC_BswM_00974 | BswMSdClientServiceState | BswMAvailableActions | This container includes all parameters related to the selection of an client service of Sd. Sd_ClientServiceSe
+ECUC_BswM_01004 | BswMSdConsumedEventGroupState | BswMAvailableActions | This container includes all parameters related to the selection of a consumed EventGroup of Sd. Sd_ConsumedEve
+ECUC_BswM_01005 | BswMSdServerServiceState | BswMAvailableActions | This container includes all parameters related to the selection of a server service of Sd. Sd_ServerServiceSet
+ECUC_BswM_01077 | BswMDisabledSdServiceGroupRef | BswMAvailableActions | This container includes references to the SdServiceGroups that shall be enabled and disabled. Configuration Pa
+ECUC_BswM_00958 | BswMSwitchIPduModeValue | BswMAvailableActions | This parameter defines which transmission mode shall be selected during this call. This parameter corresponds 
+ECUC_BswM_01059 | BswMTimerAction | BswMAvailableActions | This container includes all parameters for the action to start or to stop a timer. Configuration Parameters Na
+ECUC_BswM_00906 |  | BswMAvailableActions | This container includes all parameters related to the triggering of an I-PDU to be sent by COM. Com_T riggerIP
+ECUC_BswM_00834 | BswMUserCalloutFunction | BswMAvailableActions | This parameter specifies the complete function call including all parameters. The parameters are specified dur
+ECUC_BswM_00809 | BswMActionListExecution | BswMModeControl | Each instance of this container defines an action list that is invoked based on the BswM Rules. An action list
+ECUC_BswM_00823 | BswMAbortOnFail | BswMActionList | This container defines an item in an action list. Post-Build Variant
+ECUC_BswM_01022 | BswMRteModeRequestPortInterfaceRef | BswMModeControl | This container defines a mode request port which the BswM may utilize to send a mode request to a SW-C which i
+ECUC_BswM_00950 | BswMModeSwitchInterfaceRef | BswMModeControl | T emplate SWS and EXP ModemanagementGuide).. Post-Build Variant
+ECUC_BswM_00800 | BswMCanSMEnabled | BswM | General configuration parameters of the Basic SW Mode Manager. Configuration Parameters 150 of 159 Document ID
+ECUC_BswM_00954 | BswMUserIncludeFile | BswMGeneral | Collection of header file names which shall be included by the BswM. Configuration Parameters Name BswMUserInc

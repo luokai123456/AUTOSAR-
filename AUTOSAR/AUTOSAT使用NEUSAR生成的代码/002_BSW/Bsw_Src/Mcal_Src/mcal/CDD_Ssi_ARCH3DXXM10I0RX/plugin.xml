@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+  <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="CDD_Ssi_Module"
+             name="CDD_Ssi_Module">
+
+    <module id="CDD_Ssi_CCFC3007PT"
+            label="CDD_Ssi"
+            mandatory="false"
+            allowMultiple="false"
+            description="CDD_Ssi BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="CDD_Ssi"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3007PT"/>
+    </module>
+
+    <module id="CDD_Ssi_CCFC3007BC"
+              label="CDD_Ssi"
+              mandatory="false"
+              allowMultiple="false"
+              description="CDD_Ssi BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="CDD_Ssi"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3007BC"/>
+    </module>
+
+    <module id="CDD_Ssi_CCFC3012PT"
+              label="CDD_Ssi"
+              mandatory="false"
+              allowMultiple="false"
+              description="CDD_Ssi BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="CDD_Ssi"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3012PT"/>
+    </module>
+
+    <module id="CDD_Ssi_CCFC3010PT"
+              label="CDD_Ssi"
+              mandatory="false"
+              allowMultiple="false"
+              description="CDD_Ssi BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="CDD_Ssi"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3010PT"/>
+    </module>
+
+    <module id="CDD_Ssi_CCFC3011PT"
+              label="CDD_Ssi"
+              mandatory="false"
+              allowMultiple="false"
+              description="CDD_Ssi BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="CDD_Ssi"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3011PT"/>
+    </module>
+
+    <module id="CDD_Ssi_CCFC3010PTD"
+              label="CDD_Ssi"
+              mandatory="false"
+              allowMultiple="false"
+              description="CDD_Ssi BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="CDD_Ssi"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3010PTD"/>
+    </module>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="CDD_Ssi_Configuration"
+             name="CDD_Ssi_Configuration">
+
+    <configuration moduleId="CDD_Ssi_CCFC3007PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/CDD_Ssi.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/SsiConfig/CDD_Ssi"/>
+      </data>
+
+      <editor id="CDD_Ssi_Editor_01"
+              label="Default"
+              tooltip="CDD_Ssi BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/SsiConfig/CDD_Ssi"/>
+              <parameter name="title" value="CDD_Ssi"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="CDD_Ssi_CCFC3007BC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/CDD_Ssi.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/SsiConfig/CDD_Ssi"/>
+      </data>
+
+      <editor id="CDD_Ssi_Editor_02"
+              label="Default"
+              tooltip="CDD_Ssi BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/SsiConfig/CDD_Ssi"/>
+              <parameter name="title" value="CDD_Ssi"/>
+          </class>
+      </editor>
+    </configuration>
+    
+    <configuration moduleId="CDD_Ssi_CCFC3012PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/CDD_Ssi.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/SsiConfig/CDD_Ssi"/>
+      </data>
+
+      <editor id="CDD_Ssi_Editor_03"
+              label="Default"
+              tooltip="CDD_Ssi BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/SsiConfig/CDD_Ssi"/>
+              <parameter name="title" value="CDD_Ssi"/>
+          </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="CDD_Ssi_CCFC3010PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/CDD_Ssi.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/SsiConfig/CDD_Ssi"/>
+      </data>
+
+      <editor id="CDD_Ssi_Editor_04"
+              label="Default"
+              tooltip="CDD_Ssi BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/SsiConfig/CDD_Ssi"/>
+              <parameter name="title" value="CDD_Ssi"/>
+          </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="CDD_Ssi_CCFC3011PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/CDD_Ssi.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/SsiConfig/CDD_Ssi"/>
+      </data>
+
+      <editor id="CDD_Ssi_Editor_05"
+              label="Default"
+              tooltip="CDD_Ssi BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/SsiConfig/CDD_Ssi"/>
+              <parameter name="title" value="CDD_Ssi"/>
+          </class>
+      </editor>
+    </configuration>
+
+    <configuration moduleId="CDD_Ssi_CCFC3010PTD">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/CDD_Ssi1.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/SsiConfig/CDD_Ssi"/>
+      </data>
+
+      <editor id="CDD_Ssi_Editor_06"
+              label="Default"
+              tooltip="CDD_Ssi BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/SsiConfig/CDD_Ssi"/>
+              <parameter name="title" value="CDD_Ssi"/>
+          </class>
+      </editor>
+    </configuration>
+
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="EPCGenerator"
+              name="EPC Generator">
+      <generator id="CDD_Ssi_EPC_Generate_01"
+                  moduleId="CDD_Ssi_CCFC3007PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="CDD_Ssi_EPC_Generate_02"
+                  moduleId="CDD_Ssi_CCFC3007BC"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="CDD_Ssi_EPC_Generate_03"
+                  moduleId="CDD_Ssi_CCFC3012PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="CDD_Ssi_EPC_Generate_04"
+                  moduleId="CDD_Ssi_CCFC3010PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="CDD_Ssi_EPC_Generate_05"
+                  moduleId="CDD_Ssi_CCFC3011PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="CDD_Ssi_EPC_Generate_06"
+                  moduleId="CDD_Ssi_CCFC3010PTD"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="CDD_Ssi_Generator"
+              name="CDD_Ssi_Generator">
+      <generator id="CDD_Ssi_Generate_01"
+                  moduleId="CDD_Ssi_CCFC3007PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="CDD_Ssi_Generate_02"
+                  moduleId="CDD_Ssi_CCFC3007BC"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="CDD_Ssi_Generate_03"
+                  moduleId="CDD_Ssi_CCFC3012PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="CDD_Ssi_Generate_04"
+                  moduleId="CDD_Ssi_CCFC3010PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="CDD_Ssi_Generate_05"
+                  moduleId="CDD_Ssi_CCFC3011PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="CDD_Ssi_Generate_06"
+                  moduleId="CDD_Ssi_CCFC3010PTD"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+  </extension>
+</plugin>

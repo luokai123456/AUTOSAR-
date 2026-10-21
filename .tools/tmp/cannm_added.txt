@@ -1,0 +1,59 @@
+SWS_CanNm_00014 | 7.13 | If CanNmRepeatMsgIndEnabled is set to TRUE and the Repeat Message Request bit is received CanNm module shall call the call out function Nm_RepeatMessageIndication only th
+SWS_CanNm_00032 | 7.7.1 | If transmission of Network Management PDU s has been st arted, the CanNm Message Cycle Timer expires and when CanNmSynchronizedPncShutdownEnabled is set to either FALSE o
+SWS_CanNm_00045 | 7.6 | The Control Bit Vector shall consist of Bit 0: Repeat Message Request Bit 0: Repeat Message State not requested 1: Repeat Message State requested Bit 1: PN Shutdown Reque
+SWS_CanNm_00307 | 5.1.2 | Nm.h shall be included for CanNm callbacks to the Generic Network Management Interface.
+SWS_CanNm_00350 | 8.4.4 | If CanNmComUserDataSupport is enabled CanNm shall collect the NM User Data from the referenced NM I-PDU by calling PduR_CanNmTriggerTransmit and combine the user data wit
+SWS_CanNm_00380 | 7.2.1 | If function CanNm_PnLearningRequest is called on a channel where CanNmDynamicPncToChannelMappingEnabled is set to TRUE and CanNm is in the Network Mode the CanNm module s
+SWS_CanNm_00381 | 7.2.1 | If the bits Partial Network Learning and Repeat Message Request both are received with value 1 on a channel where CanNmDynamicPncToChannelMappingEnabled is set to TRUE an
+SWS_CanNm_00382 | 7.2.1.1 | If CanNmDynamicPncToChannelMappingEnabled is set to TRUE CanNm shall clear the Partial Network Learning Bit when leaving the Repeat Message State.
+SWS_CanNm_00384 | 8.3.20 | If the function CanNm_PnLearningRequest is called in Prepare Bus-Sleep Mode or Bus Sleep Mode no functionality shall be executed and E_NOT_OK shall be returned.
+SWS_CanNm_00385 | 8.3.20 | The function CanNm_PnLearningRequest shall only be available if CanNmDynamicPncToChannelMappingSupport is set to TRUE.
+SWS_CanNm_00403 | 7.11.4 | During initialization CanNm shall disable the NM-PDU filter algorithm on all networks where CanNmPnEnabled is TRUE.
+SWS_CanNm_00404 | 7.11.4 | If the CanSm calls CanNm_ConfirmPnAvailability the NM -PDU filter algorithm shall be enabled on the indicated channel.
+SWS_CanNm_00412 | 7.11.1 | If CanNmPnEnabled is TRUE and the PNI bit in the received NM -PDU is 1, CanNm module shall process the Partial Networking Information of the NM-PDU as described in chapte
+SWS_CanNm_00415 | 7.11.4 | ⌈The NM-PDU filter algorithm shall evaluate the bytes of the received NM-PDU defined by CanNmPnInfoOffset (in bytes) starting from byte 0 and CanNmPnInfoLength (in bytes)
+SWS_CanNm_00416 | 7.11.4 | ⌈Every bit of the PN Info Range represents one Partial Network. If the bit is set to 1 the Partial Network is requested. If the bit is set to 0 there is no request for th
+SWS_CanNm_00417 | 1 | ⌈The filter algorithm shall compare (bitwise AND) the received PN information with the PN filter ma sk to detect if a relevant PN is requested or not. Each bit of the PN 
+SWS_CanNm_00419 | 1 | If at least one relevant PN is requested in the received NM -PDU the PDU shall not be dropped from further Rx Indication handling.
+SWS_CanNm_00420 | 1 | ⌈If no relevant PN is requested in the received NM -PDU and CanNmAllNmMessagesKeepAwake is FALSE the PDU shall be dropped from further processing.
+SWS_CanNm_00421 | 1 | ⌈If no relevant PN is requested in the received NM -PDU and CanNmAllNmMessagesKeepAwake is TRUE the PDU shall not be dropped from further Rx Indication handling.
+SWS_CanNm_00424 | 7.11.5 | If CanNmPnEiraCalcEnabled is TRUE CanNm shall provide the possibility to store external and internal requested PNs combined over all relevant channels (all CanNm channels
+SWS_CanNm_00426 | 7.11.5 | If  CanNmPnEiraCalcEnabled is TRUE  and a NM-PDU is received  and PNs are requested within this message (bits set to 1)  and the requested PNs are set to 1 within the
+SWS_CanNm_00427 | 7.11.5 | If  CanNmPnEiraCalcEnabled is TRUE  and NM-PDU is beeing requested to send by CanNm  and PNs are requested within this message (bits set to 1)  and the requested PNs 
+SWS_CanNm_00428 | 7.11.5 | If CanNmPnEiraCalcEnabled is TRUE CanNm shall provide a possib ility to monitor for each PN if this PN is still externally or internally requested on at least one of the 
+SWS_CanNm_00429 | 7.11.5 | If CanNmPnEiraCalcEnabled is TRUE and a PN is requested by message reception or sending (see SWS_CanNm_00426 and SWS_CanNm_00427) the monitoring for this PN shall be rest
+SWS_CanNm_00431 | 7.11.5 | If CanNmPnEiraCalcEnabled is TRUE and a PN is not requested again within CanNmPnResetTime the corresponding stored value for this PN shall be set to not requested (value 
+SWS_CanNm_00432 | 7.11.5 | If CanNmPnEiraCalcEnabled is TRUE and the stored value for a PN is set to requested or back to not requested (see SWS_CanNm_00426, SWS_CanNm_00427 and SWS_CanNm_00429) Ca
+SWS_CanNm_00435 | 7.11.6 | If CanNmPnEraCalcEnabled is TRUE CanNm shall provide the possibility to store external requested PNs on each relevant channel. At initialization the values of all PNs sha
+SWS_CanNm_00437 | 7.11.6 | If  CanNmPnEraCalcEnabled is TRUE  and a NM-PDU is received  and PNSR bit is 0  and PNs are requested within this message (bits set to 1)  and the requested PNs are 
+SWS_CanNm_00438 | 7.11.6 | If CanNmPnEraCalcEnabled is TRUE CanNm shall provide a possibility to monitor on each relevant channel and for each PN if this PN is still externally requested.
+SWS_CanNm_00439 | 7.11.6 | If CanNmPnEraCalcEnabled is TRUE and a PN is requested by message reception (see SWS_CanNm_00437) the monitoring for this PN shall be restarted with respect to the CanNmP
+SWS_CanNm_00442 | 7.11.6 | If CanNmPnEraCalcEnabled is TRUE and a PN is not requested again within CanNmPnResetTime the corresponding stored value for this PN shall be set to not requested (value 0
+SWS_CanNm_00443 | 7.11.6 | If CanNmPnEraCalcEnabled is TRUE an d the stored value for a PN changes to requested or back to not requested (see SWS_CanNm_00437 and SWS_CanNm_00442) CanNm shall inform
+SWS_CanNm_00445 | 7.11.6 | If CanNmPnEiraCalcEnabled is TRUE and CanNmPnEraCalcEnabled is TRUE , the PN status information has to be stored separately for both, the EIRA and ERA information (compar
+SWS_CanNm_00460 | 7.7.1 | If transmission of NM PDUs has been started, the CanNm Message Cycle Timer expires and when CanNmSynchronizedPncShutdownEnabled is set to TRUE and requests for synchroniz
+SWS_CanNm_00461 | 7.11.1 | If CanNmSynchronizedPncShutdownEnabled is set to TRUE, when a NM PDU is received where PNI bit and PNSR bit are 1 and the corresponding ComMChannel configured via CanNmCo
+SWS_CanNm_00462 | 7.11.2 | If CanNmSynchronizedPncShutdownEnabled is set to TRUE and the service CanNm_RequestSynchronizedPncShutdown is called the CanNm module shall store the given PNC ( pncId) p
+SWS_CanNm_00463 | 7.11.2 | If CanNmSynchronizedPncShutdownEnabled is set to TRUE, requests for synchronized PNC shutdown are pending and no transmission confirmation (indicated via CanNm_TxConfirma
+SWS_CanNm_00464 | 7.11.2 | If CanNmSynchronizedPncShutdownEnabled is set to TRUE, the CanNm module has requested a transmission due to synchronized PNC shutdown (see [SWS_CanNm_00463]) and CanNm_Tx
+SWS_CanNm_00465 | 7.11.2 | If CanNmSynchronizedPncShutdownEnabled is set to TRUE, CanNmPnShutdownMessageRetransmissionDuration is configured, the CanNm module has requested a transmission due to sy
+SWS_CanNm_00466 | 7.11.6 | If CanNmSynchronizedPncShutdownEnabled is TRUE and the PNSR bit is set to 1 of the received NM PDU, the CanNm module shall set the bits in the ERA PDU to 0 of the corresp
+SWS_CanNm_00467 | 8.3.21 | If CanNmSynchronizedPncShutdownEnabled is set to TRUE the CanNm implementation shall provide the API CanNm_RequestSynchronizedPncShutdown.
+SWS_CanNm_00468 | 7.11.2 | If CanNmPnShutdownMessageRetransmissionDuration is configured and transmission of a PN shutdown message is requested (refer to [SWS_CanNm_00506]) for the first time, then
+SWS_CanNm_00469 | 8.4.4 | If CanNmSynchronizedPncShutdownEnabled is set to TRUE and requests for synchronized PNC shutdown are pending, then the CanNm module shall set for this message additionall
+SWS_CanNm_00470 | 7.11.2 | If CanNmSynchronizedPncShutdownEnabled is set to TRUE and the CanNm module has stored PNC IDs as pending request for a synchronized PNC shutdown, then the CanNm shall rem
+SWS_CanNm_00471 | 7.11.2 | If CanNmSynchronizedPncShutdownEnabled is set to TRUE, CanNmPnShutdownMessageRetransmissionDuration is not configured, the CanNm module has requested a transmission due t
+SWS_CanNm_00472 | 7.11.2 | If CanNmSynchronizedPncShutdownEnabled is set to TRUE and a retransmission timer for a PN shutdown message (see ECUC_CanNm_00098 : ) expires, then CanNm shall remove the 
+SWS_CanNm_00500 | 7.4 | During initialization and if CanNmPnEnabled is TRUE, the CanNm module shall set each byte of the PNC bit vector to 0x00.
+SWS_CanNm_00501 | 7.6 | The re maining bytes not assigned to Nm System Bytes or PNC bit vector shall be available for User Data.
+SWS_CanNm_00502 | 7.11.1 | If CanNmPnEnabled is set to TRUE, the PNI bit in the received NM -PDU is set to 1 and the PNSR bit is set to 0 , CanNm module shall extract the PNC bit vector from the re
+SWS_CanNm_00503 | 7.11.1 | If CanNmPnEnabled is set to TRUE and Nm_PncBitVectorRxIndication was called, a received NM PDU shall only be considered for further processing under the following conditi
+SWS_CanNm_00504 | 7.11.1 | If CanNmSynchronizedPncShutdownEnabled is TRUE, the PNI bit in the received NM -PDU is set to 1 and the PNSR bit is set to 1 , CanNm module shall extract the PNC bit vect
+SWS_CanNm_00505 | 7.11.2 | If CanNmPnEnabled is TRUE, the NM-PDU is not configured for triggered transmission in CanIf ( CanIfTxPduTriggerTransmit set to FALSE), no requests for synchronized PNC sh
+SWS_CanNm_00506 | 7.11.2 | If CanNmSynchronizedPncShutdownEnabled is set to TRUE, requests for synchronized PNC shutdown are pending and no transmission confirmation (indicated via CanNm_TxConfirma
+SWS_CanNm_00507 | 8 | When a Null pointer has been passed to a CanNm service, the called function shall not be executed and it shall return E_NOT_OK to the calling function if applicable. If d
+SWS_CanNm_00508 | 8.4.4 | If CanNmPnEnabled is TRUE, and either CanNmSynchronizedPncShutdownEnabled is set to TRUE and no requests for synchronized PNC shutdown are pending or CanNmSynchronizedPnc
+SWS_CanNm_00509 | 8.4.4 | If CanNmSynchronizedPncShutdownEnabled is set to TRUE and requests for synchronized PNC shutdown are pending, then the CanNm module shall set for this message additionall
+SWS_CanNm_00510 | 8.4.4 | If CanNm_TriggerTransmit is called and CanNmComUserDataSupport is enabled, CanNm shall collect the NM User Data from the referenced NM I-PDU by calling PduR_CanNmTriggerT
+SWS_CanNm_91003 | 8.3.21 | Service Name CanNm_RequestSynchronizedPncShutdown (draft) Syntax Std_ReturnType CanNm_RequestSynchronizedPncShutdown ( NetworkHandleType nmChannelHandle, PNCHandleType pn
+SWS_CanNm_91004 | 8.3.20 | Service Name CanNm_PnLearningRequest (draft) Syntax Std_ReturnType CanNm_PnLearningRequest ( NetworkHandleType nmChannelHandle ) Service ID [hex] 0xf2 Sync/Async Asynchro

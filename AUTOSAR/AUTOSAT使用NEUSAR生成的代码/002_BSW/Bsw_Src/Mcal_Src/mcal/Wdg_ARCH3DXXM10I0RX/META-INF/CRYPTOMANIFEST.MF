@@ -1,0 +1,57 @@
+
+Name: config/Wdg1.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423363647266231378175159094247124317137389531608707
+ 0159516696843318973544560959824619018453703073921069
+
+Name: config/Wdg7.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424155420850292026764322948523051559338321252913964
+ 9546746268366964757919864717086915052401305787673764
+
+Name: config/Wdg4.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420871295819631397184094310427330565767472014000269
+ 3892827786784226641979746935434635982084297800739293
+
+Name: config/Wdg5.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423137255091497820604798211632641679552028798646661
+ 0237568339419401238120290432109907171443133372884142
+
+Name: config/Wdg6.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773969652473728059739497177257112238235175939785430
+ 307174185304513820250183192646223458201843657723043662
+
+Name: config/Wdg3.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377427054856168094802274451234271399995131520129881064
+ 1323789551196840618860965105332045424401313960378743
+
+Name: config/Wdg8.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421937517464113558084720885913290280819569764195950
+ 0710695360544216882679929221685927526933457301186496
+
+Name: config/Wdg2.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426627358932115005409595880052165721715719006381078
+ 9065238332581662051182822840987636073209420538946302
+

@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+
+<plugin>
+  <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="EcuC_Module"
+             name="EcuC_Module">
+
+    <module id="EcuC_CCFC3007PT"
+            label="EcuC"
+            mandatory="false"
+            allowMultiple="false"
+            description="EcuC BSW module"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="4"
+            specVersionPatch="0"
+            specVersionSuffix=""
+            relVersionPrefix="AUTOSAR"
+            relVersionMajor="4"
+            relVersionMinor="4"
+            relVersionPatch="0"
+            relVersionSuffix=""
+            categoryType="EcuC"
+            categoryLayer="MCAL"
+            categoryCategory="EB"
+            categoryComponent="ECUC">
+        <ecuType target="PA" derivate="CCFC3007PT"/>
+    </module>
+
+    <module id="EcuC_CCFC3007BC"
+              label="EcuC"
+              mandatory="false"
+              allowMultiple="false"
+              description="EcuC BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="EcuC"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3007BC"/>
+    </module>
+
+    <module id="EcuC_CCFC3008PT"
+              label="EcuC"
+              mandatory="false"
+              allowMultiple="false"
+              description="EcuC BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="EcuC"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3008PT"/>
+    </module>
+
+    <module id="EcuC_CCFC3008PC"
+              label="EcuC"
+              mandatory="false"
+              allowMultiple="false"
+              description="EcuC BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="EcuC"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3008PC"/>
+    </module>
+
+    <module id="EcuC_CCFC3012PT"
+              label="EcuC"
+              mandatory="false"
+              allowMultiple="false"
+              description="EcuC BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="EcuC"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3012PT"/>
+    </module>
+
+    <module id="EcuC_CCFC3008PCSN"
+              label="EcuC"
+              mandatory="false"
+              allowMultiple="false"
+              description="EcuC BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="EcuC"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3008PCSN"/>
+    </module>
+    <module id="EcuC_CCFC3010PT"
+              label="EcuC"
+              mandatory="false"
+              allowMultiple="false"
+              description="EcuC BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="EcuC"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3010PT"/>
+    </module>
+    <module id="EcuC_CCFC3011PT"
+              label="EcuC"
+              mandatory="false"
+              allowMultiple="false"
+              description="EcuC BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="EcuC"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3011PT"/>
+    </module>
+    <!--
+    <module id="EcuC_CCFC3009PT"
+              label="EcuC"
+              mandatory="false"
+              allowMultiple="false"
+              description="EcuC BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="EcuC"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3009PT"/>
+    </module>
+    -->
+    <module id="EcuC_CCFC3008PCSA"
+              label="EcuC"
+              mandatory="false"
+              allowMultiple="false"
+              description="EcuC BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="EcuC"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3008PCSA"/>
+    </module>
+    <module id="EcuC_CCFC3010PTD"
+              label="EcuC"
+              mandatory="false"
+              allowMultiple="false"
+              description="EcuC BSW module"
+              swVersionMajor="3"
+              swVersionMinor="0"
+              swVersionPatch="0"
+              swVersionSuffix=""
+              specVersionMajor="4"
+              specVersionMinor="4"
+              specVersionPatch="0"
+              specVersionSuffix=""
+              relVersionPrefix="AUTOSAR"
+              relVersionMajor="4"
+              relVersionMinor="4"
+              relVersionPatch="0"
+              relVersionSuffix=""
+              categoryType="EcuC"
+              categoryLayer="MCAL"
+              categoryCategory="EB"
+              categoryComponent="ECUC">
+          <ecuType target="PA" derivate="CCFC3010PTD"/>
+    </module>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="EcuC_Configuration"
+             name="EcuC_Configuration">
+
+    <configuration moduleId="EcuC_CCFC3007PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/EcuC.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/EcuCConfig/EcuC"/>
+      </data>
+
+      <editor id="EcuC_Editor_01"
+              label="Default"
+              tooltip="EcuC BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/EcuCConfig/EcuC"/>
+              <parameter name="title" value="EcuC"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="EcuC_CCFC3007BC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/EcuC.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/EcuCConfig/EcuC"/>
+      </data>
+
+      <editor id="EcuC_Editor_02"
+              label="Default"
+              tooltip="EcuC BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/EcuCConfig/EcuC"/>
+              <parameter name="title" value="EcuC"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="EcuC_CCFC3008PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/EcuC.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/EcuCConfig/EcuC"/>
+      </data>
+
+      <editor id="EcuC_Editor_03"
+              label="Default"
+              tooltip="EcuC BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/EcuCConfig/EcuC"/>
+              <parameter name="title" value="EcuC"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="EcuC_CCFC3008PC">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/EcuC.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/EcuCConfig/EcuC"/>
+      </data>
+
+      <editor id="EcuC_Editor_04"
+              label="Default"
+              tooltip="EcuC BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/EcuCConfig/EcuC"/>
+              <parameter name="title" value="EcuC"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="EcuC_CCFC3012PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/EcuC.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/EcuCConfig/EcuC"/>
+      </data>
+
+      <editor id="EcuC_Editor_05"
+              label="Default"
+              tooltip="EcuC BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/EcuCConfig/EcuC"/>
+              <parameter name="title" value="EcuC"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="EcuC_CCFC3008PCSN">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/EcuC.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/EcuCConfig/EcuC"/>
+      </data>
+
+      <editor id="EcuC_Editor_06"
+              label="Default"
+              tooltip="EcuC BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/EcuCConfig/EcuC"/>
+              <parameter name="title" value="EcuC"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="EcuC_CCFC3010PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/EcuC.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/EcuCConfig/EcuC"/>
+      </data>
+
+      <editor id="EcuC_Editor_07"
+              label="Default"
+              tooltip="EcuC BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/EcuCConfig/EcuC"/>
+              <parameter name="title" value="EcuC"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="EcuC_CCFC3011PT">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/EcuC.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/EcuCConfig/EcuC"/>
+      </data>
+
+      <editor id="EcuC_Editor_08"
+              label="Default"
+              tooltip="EcuC BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/EcuCConfig/EcuC"/>
+              <parameter name="title" value="EcuC"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="EcuC_CCFC3008PCSA">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/EcuC.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/EcuCConfig/EcuC"/>
+      </data>
+
+      <editor id="EcuC_Editor_09"
+              label="Default"
+              tooltip="EcuC BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/EcuCConfig/EcuC"/>
+              <parameter name="title" value="EcuC"/>
+          </class>
+      </editor>
+    </configuration>
+    <configuration moduleId="EcuC_CCFC3010PTD">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/EcuC.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/EcuCConfig/EcuC"/>
+      </data>
+
+      <editor id="EcuC_Editor_10"
+              label="Default"
+              tooltip="EcuC BSW module">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+              <parameter name="schema" value="ASPath:/EcuCConfig/EcuC"/>
+              <parameter name="title" value="EcuC"/>
+          </class>
+      </editor>
+    </configuration>
+  </extension>
+
+  <extension
+      point="dreisoft.tresos.autosar2.api.plugin.postbuildSetup"
+      id="autosar2.api.test.postbuildSetup.basic">
+    <configuration
+         activeLoadableRef="ASPath:/EcuCConfig/EcuC/EcucSelectedLoadableVariant/EcucSelectedLoadableRef"
+         activeSelectableRef="ASPath:/EcuCConfig/EcuC/EcucPostBuildVariants/EcucSelectedPostBuildVariantRef"
+         selectableRefs="ASPath:/EcuCConfig/EcuC/EcucPostBuildVariants/EcucPostBuildVariantRef">
+     </configuration>
+  </extension>
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="EPCGenerator"
+              name="EPC Generator">
+      <generator id="EcuC_EPC_Generate_01"
+                  moduleId="EcuC_CCFC3007PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="variantAware" value="true"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_EPC_Generate_02"
+                  moduleId="EcuC_CCFC3007BC"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="variantAware" value="true"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_EPC_Generate_03"
+                  moduleId="EcuC_CCFC3008PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="variantAware" value="true"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_EPC_Generate_04"
+                  moduleId="EcuC_CCFC3008PC"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="variantAware" value="true"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_EPC_Generate_05"
+                  moduleId="EcuC_CCFC3012PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="variantAware" value="true"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_EPC_Generate_06"
+                  moduleId="EcuC_CCFC3008PCSN"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="variantAware" value="true"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_EPC_Generate_07"
+                  moduleId="EcuC_CCFC3010PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="variantAware" value="true"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_EPC_Generate_08"
+                  moduleId="EcuC_CCFC3011PT"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="variantAware" value="true"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_EPC_Generate_09"
+                  moduleId="EcuC_CCFC3008PCSA"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_EPC_Generate_10"
+                  moduleId="EcuC_CCFC3010PTD"
+                  class="dreisoft.tresos.autosar2.generator.EPCFileGenerator">
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="generateAllModules" value="false"/>
+          <parameter name="generateIntoOneFile" value="false"/>
+          <parameter name="variantAware" value="true"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="EcuC_Generator"
+              name="EcuC_Generator">
+      <generator id="EcuC_Generate_01"
+                  moduleId="EcuC_CCFC3007PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_Generate_02"
+                  moduleId="EcuC_CCFC3007BC"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_Generate_03"
+                  moduleId="EcuC_CCFC3008PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_Generate_04"
+                  moduleId="EcuC_CCFC3008PC"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_Generate_05"
+                  moduleId="EcuC_CCFC3012PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_Generate_06"
+                  moduleId="EcuC_CCFC3008PCSN"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_Generate_07"
+                  moduleId="EcuC_CCFC3010PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_Generate_08"
+                  moduleId="EcuC_CCFC3011PT"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_Generate_09"
+                  moduleId="EcuC_CCFC3008PCSA"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+      <generator id="EcuC_Generate_10"
+                  moduleId="EcuC_CCFC3010PTD"
+                  class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+          <parameter name="templates" mode="generate" value="generate"/>
+          <parameter name="cfgFilePath" value="output"/>
+          <parameter name="contentType" value="asc:4.4.0"/>
+      </generator>
+  </extension>
+</plugin>

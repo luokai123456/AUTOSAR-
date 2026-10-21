@@ -1,0 +1,514 @@
+<?xml version='1.0'?>
+<datamodel version="7.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:ce="http://www.tresos.de/_projects/DataModel2/18/childenable.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="CrcConfig" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="Crc" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.4.0</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC" 
+                   value="EN: Configuration of the Crc (Crc routines) module."/>
+              <a:a name="LOWER-MULTIPLICITY" value="1"/>
+              <a:a name="POSTBUILDVARIANTSUPPORT" value="false"/>
+              <a:a name="RELEASE" value="asc:4.4.0"/>
+              <a:a name="UPPER-MULTIPLICITY" value="1"/>
+              <a:a name="UUID" value="1a136432-43d2-42c2-bfca-3cc091c26867"/>
+              <v:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN">
+                <a:a name="DESC" 
+                     value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+                <a:a name="LABEL" value="Post Build Variant Used"/>
+                <a:a name="ORIGIN" value="EB"/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="UUID" value="a3d53b70-74e4-49b3-80bf-051b1ef417a0"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="false"/>
+                <a:da name="READONLY" value="TRUE"/>
+                <a:da name="TOOLTIP" 
+                      value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+              </v:var>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:a name="UUID" value="2419443c-c093-4d3f-a906-f765487cbd80"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="VariantPreCompile"/>
+                <a:da name="RANGE" value="VariantPreCompile"/>
+              </v:var>
+              <v:ctr name="CrcGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC" value="EN: General configuration of CRC module"/>
+                <a:a name="UUID" value="3ee3910e-2629-4f34-89d2-ef2705a80243"/>
+                  <v:var name="CrcController" type="ENUMERATION">
+                      <a:a name="DESC">
+                          <a:v>
+                              <![CDATA[EN:<html>
+                                 Vendor specific: Select which crc instance.
+                              </html>]]>
+                          </a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="UUID" value="ECUC:40b85d0b-6a49-4678-96e8-58bdab831bc4"/>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:da name="DEFAULT" value="CRC0"/>   
+                      <a:da name="RANGE">
+                          <a:v>CRC0</a:v>
+                          <a:v>CRC1</a:v>
+                      </a:da>
+                  </v:var>
+                  <v:var name="CrcControllerExt" type="ENUMERATION">
+                      <a:a name="DESC">
+                          <a:v>
+                              <![CDATA[EN:<html>
+                                 Vendor specific: Select which crc instance.
+                              </html>]]>
+                          </a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="UUID" value="ECUC:40b85d0b-6a49-4678-96e8-58bdab831bc1"/>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:da name="DEFAULT" value="CRC1"/>   
+                      <a:da name="RANGE">
+                          <a:v>CRC0</a:v>
+                          <a:v>CRC1</a:v>
+                      </a:da>
+                  </v:var>
+
+                  <a:a name="UUID" value="ECUC:180295f4-4b5f-4f9c-845f-459b72622572"/>
+<v:var name="Crc16ARCMode" type="ENUMERATION">
+                    <a:a name="DESC" 
+                         value="EN: Switch to select one of the available CRC-16/ARC (polynomial 8005) calculation methods"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                         value="a4a0dedf-1748-4688-9306-a7f2d54afb84"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="DEFAULT" value="CRC_16_ARC_TABLE"/>
+                    <a:da name="RANGE">
+                      <a:v>CRC_16_ARC_RUNTIME</a:v>
+                      <a:v>CRC_16_ARC_TABLE</a:v>
+                    </a:da>
+                  </v:var>
+                  <v:var name="Crc16Mode" type="ENUMERATION">
+                    <a:a name="DESC" 
+                         value="EN: Switch to select one of the available CRC 16-bit (CCITT) calculation methods"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                         value="70cf06d8-3e91-461e-9a1e-ce79856432a0"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="DEFAULT" value="CRC_16_TABLE"/>
+                    <a:da name="RANGE">
+                      <a:v>CRC_16_HARDWARE</a:v>
+                      <a:v>CRC_16_RUNTIME</a:v>
+                      <a:v>CRC_16_TABLE</a:v>
+                    </a:da>
+                  </v:var>
+                  <v:var name="Crc32Mode" type="ENUMERATION">
+                    <a:a name="DESC" 
+                         value="EN: Switch to select one of the available CRC 32-bit (IEEE-802.3 CRC32 Ethernet Standard) calculation methods"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                         value="66e89ecf-0223-4a83-8fb8-f19ffg4c1348"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="DEFAULT" value="CRC_32_TABLE"/>
+                    <a:da name="RANGE">
+                      <a:v>CRC_32_HARDWARE</a:v>
+                      <a:v>CRC_32_RUNTIME</a:v>
+                      <a:v>CRC_32_TABLE</a:v>
+                    </a:da>
+                  </v:var>
+                  <v:var name="Crc32P4Mode" type="ENUMERATION">
+                    <a:a name="DESC" 
+                         value="EN: Switch to select one of the available CRC 32-bit E2E Profile 4 calculation methods."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                         value="b623dab9-6c19-4cf5-b479-13886949a421"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="DEFAULT" value="CRC_32P4_TABLE"/>
+                    <a:da name="RANGE">
+                      <a:v>CRC_32P4_RUNTIME</a:v>
+                      <a:v>CRC_32P4_TABLE</a:v>
+                    </a:da>
+                  </v:var>
+                  <v:var name="Crc64Mode" type="ENUMERATION">
+                    <a:a name="DESC" 
+                         value="EN: Switch to select one of the available CRC 64-bit calculation methods."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                         value="31d5c9fc-9103-4d94-891c-32e9785a13e"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="DEFAULT" value="CRC_64_TABLE"/>
+                    <a:da name="RANGE">
+                      <a:v>CRC_64_RUNTIME</a:v>
+                      <a:v>CRC_64_TABLE</a:v>
+                    </a:da>
+                  </v:var>
+                  <v:var name="Crc8H2FMode" type="ENUMERATION">
+                    <a:a name="DESC" 
+                         value="EN: Switch to select one of the available CRC 8-bit (2Fh polynomial) calculation methods"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                         value="f7bafd5b-ad29-4da6-9e26-60875369b81a"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="DEFAULT" value="CRC_8H2F_TABLE"/>
+                    <a:da name="RANGE">
+                      <a:v>CRC_8H2F_RUNTIME</a:v>
+                      <a:v>CRC_8H2F_TABLE</a:v>
+                    </a:da>
+                  </v:var>
+                  <v:var name="Crc8Mode" type="ENUMERATION">
+                    <a:a name="DESC" 
+                         value="EN: Switch to select one of the available CRC 8-bit (SAE J1850) calculation methods"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                         value="5b4ee82c-0f41-47fc-8b0b-32540b156d5"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="DEFAULT" value="CRC_8_TABLE"/>
+                    <a:da name="RANGE">
+                      <a:v>CRC_8_HARDWARE</a:v>
+                      <a:v>CRC_8_RUNTIME</a:v>
+                      <a:v>CRC_8_TABLE</a:v>
+                    </a:da>
+                  </v:var>
+
+<a:a name="UUID" value="ECUC:180295f4-4b5f-4f9c-845f-459b7262257a"/>
+                <v:var name="Crc16ARCModeExt" type="ENUMERATION">
+                    <a:a name="DESC" 
+                         value="EN: Switch to select one of the available CRC-16/ARC (polynomial 8005) calculation methods"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                         value="a4a0dedf-1748-4688-9306-a7f2ddfafb84"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="DEFAULT" value="CRC_16_ARC_TABLE"/>
+                    <a:da name="RANGE">
+                      <a:v>CRC_16_ARC_RUNTIME</a:v>
+                      <a:v>CRC_16_ARC_TABLE</a:v>
+                    </a:da>
+                  </v:var>
+                  <v:var name="Crc16ModeExt" type="ENUMERATION">
+                    <a:a name="DESC" 
+                         value="EN: Switch to select one of the available CRC 16-bit (CCITT) calculation methods"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                         value="70cf06d8-3e91-461e-9a1e-ce72476432a0"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="DEFAULT" value="CRC_16_TABLE"/>
+                    <a:da name="RANGE">
+                      <a:v>CRC_16_HARDWARE</a:v>
+                      <a:v>CRC_16_RUNTIME</a:v>
+                      <a:v>CRC_16_TABLE</a:v>
+                    </a:da>
+                  </v:var>
+                  <v:var name="Crc32ModeExt" type="ENUMERATION">
+                    <a:a name="DESC" 
+                         value="EN: Switch to select one of the available CRC 32-bit (IEEE-802.3 CRC32 Ethernet Standard) calculation methods"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                         value="66e89ecf-0223-4a83-8fb8-f19bcf3c1348"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="DEFAULT" value="CRC_32_TABLE"/>
+                    <a:da name="RANGE">
+                      <a:v>CRC_32_HARDWARE</a:v>
+                      <a:v>CRC_32_RUNTIME</a:v>
+                      <a:v>CRC_32_TABLE</a:v>
+                    </a:da>
+                  </v:var>
+                  <v:var name="Crc32P4ModeExt" type="ENUMERATION">
+                    <a:a name="DESC" 
+                         value="EN: Switch to select one of the available CRC 32-bit E2E Profile 4 calculation methods."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                         value="b623dab9-6c19-4cf5-b479-13886549a421"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="DEFAULT" value="CRC_32P4_TABLE"/>
+                    <a:da name="RANGE">
+                      <a:v>CRC_32P4_RUNTIME</a:v>
+                      <a:v>CRC_32P4_TABLE</a:v>
+                    </a:da>
+                  </v:var>
+                  <v:var name="Crc64ModeExt" type="ENUMERATION">
+                    <a:a name="DESC" 
+                         value="EN: Switch to select one of the available CRC 64-bit calculation methods."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                         value="31d5c9fc-9103-4d94-891c-32e97253a13e"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="DEFAULT" value="CRC_64_TABLE"/>
+                    <a:da name="RANGE">
+                      <a:v>CRC_64_RUNTIME</a:v>
+                      <a:v>CRC_64_TABLE</a:v>
+                    </a:da>
+                  </v:var>
+                  <v:var name="Crc8H2FModeExt" type="ENUMERATION">
+                    <a:a name="DESC" 
+                         value="EN: Switch to select one of the available CRC 8-bit (2Fh polynomial) calculation methods"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                         value="f7bafd5b-ad29-4da6-9e26-60875368b811"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="DEFAULT" value="CRC_8H2F_TABLE"/>
+                    <a:da name="RANGE">
+                      <a:v>CRC_8H2F_RUNTIME</a:v>
+                      <a:v>CRC_8H2F_TABLE</a:v>
+                    </a:da>
+                  </v:var>
+                  <v:var name="Crc8ModeExt" type="ENUMERATION">
+                    <a:a name="DESC" 
+                         value="EN: Switch to select one of the available CRC 8-bit (SAE J1850) calculation methods"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                         value="5b4ee82c-0f41-47fc-8b0b-32540b1006d5"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="DEFAULT" value="CRC_8_TABLE"/>
+                    <a:da name="RANGE">
+                      <a:v>CRC_8_HARDWARE</a:v>
+                      <a:v>CRC_8_RUNTIME</a:v>
+                      <a:v>CRC_8_TABLE</a:v>
+                    </a:da>
+                  </v:var>
+
+              </v:ctr>
+
+              <v:lst name="CrcSettingsConfig" type="MAP">
+                <a:da name="MIN" value="0" />
+                <v:ctr name="CrcSettingsConfig" type="IDENTIFIABLE">
+                  <a:a name="DESC"
+                    value="EN: CRC asynchronous control list configuration." />
+                  <a:a name="UUID" value="d5360c68-8a3c-46aa-8bad-7e3361b583cb" />
+                  <v:var name="CRCPolyomial" type="ENUMERATION">
+                    <a:a name="DESC"
+                      value="
+                      EN: CRC polynomial configuration
+                      CRC_POLYNOMIAL_8 Representative polynomial X^8+X^4+X^3+X^2+1 
+                      CRC_POLYNOMIAL_16 Representative polynomial X^16+X^12+X^5+1 
+                      CRC_POLYNOMIAL_32 Representative polynomial X^32+X^26+X^23+X^22+X^16+X^12+X^11+X^10+X^8+X^7+X^5+X^4+X^2+X+1." />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="7c65dbf1-97e1-45f4-a7a2-0cecf768c732" />
+                    <a:da name="DEFAULT" value="CRC_POLYNOMIAL_16" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="RANGE">
+                      <a:v>CRC_POLYNOMIAL_8</a:v>
+                      <a:v>CRC_POLYNOMIAL_16</a:v>
+                      <a:v>CRC_POLYNOMIAL_32</a:v>
+                    </a:da>
+                  </v:var>
+                  <v:var name="crcID" type="ENUMERATION">
+                    <a:a name="DESC">
+                      <a:v>EN: Vendor specific:
+                        Crc Default Mode
+                        Default mode for watchdog driver initialization.</a:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="84b8d6e8-b59d-432c-9e27-4157e45b2cb9" />
+                    <a:a name="__ORIGIN" value="Elektrobit" />
+                    <a:da name="DEFAULT" value="CRC0" />
+                    <a:da name="RANGE">
+                      <a:v>CRC0</a:v>
+                      <a:v>CRC1</a:v>
+                    </a:da>
+                  </v:var>
+                  <v:ref name="DMAernalTriggerCounterRef" type="CHOICE-REFERENCE">
+                    <a:a name="DESC">
+                      <a:v>
+                          <![CDATA[EN:
+                          <html>
+                          Vendor specific:
+                          <h1>Crc External Trigger Counter</h1><p>
+                          Reference to the GptChannel configuration .
+                          </p></html>
+                          ]]>
+                      </a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC" />
+                    <a:a name="SCOPE" value="LOCAL" />
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true" />
+                    <a:a name="UUID" value="ECUC:9a8cd5a4-e355-d6fa-53fe-19af47067c63" />
+                    <a:da name="REF">
+                      <a:v>
+                        ASPathDataOfSchema:/AUTOSAR/EcucDefs/eDma/eDmaConfigSet/eDmaChannelConfig</a:v>
+                    </a:da>
+                  </v:ref>
+                   <v:var name="CrcNotification" type="FUNCTION-NAME">
+                    <a:da name="TOOLTIP" value="Function pointer to callback function. The field is editable only if the switch GptEnableDisableNotificationApi is true."/>
+                      <a:a name="DESC">
+                          <a:v><![CDATA[EN:
+                          <html>
+                            Function pointer to callback function(for non-wakeup notification). The field is editable only if the switch GptEnableDisableNotificationApi is true.
+                          </html>
+                          ]]></a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="ECUC:2ee9c8f7-be50-43e6-ba2d-52a93e6d1439"/>
+                      <a:da name="DEFAULT" value="NULL_PTR"/>
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="((.='NULL') or (.='Null') or (.='false') or (.='FALSE') or (.='null') or
+                                      (.='null_ptr') or (.='Null_Ptr'))"
+                                      true="Invalid name of the CrcNotification. Must be valid C function name, NULL_PTR.
+                        "/>
+                        <a:tst expr="normalize-space(.) = '&quot;NULL_PTR&quot;' or normalize-space(.) = 'NULL_PTR' or
+                                      normalize-space(.) = '&quot;NULL&quot;' or normalize-space(.) = 'NULL' or
+                                      text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$')"
+                                false="Invalid name of the CrcNotification. Must be valid C function name, NULL_PTR,
+                        ."/>
+                      </a:da>
+                    </v:var>
+                </v:ctr>
+              </v:lst>
+              <d:ref type="REFINED_MODULE_DEF" 
+                     value="ASPath:/AUTOSAR/EcucDefs/Crc"/>
+            </v:ctr>
+          </d:chc>
+          <d:chc name="myEcuParameterDefinition" type="AR-ELEMENT" 
+                 value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="DEF" 
+                   value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+              <d:lst name="MODULE_REF">
+                <d:ref type="MODULE_REF" value="ASPath:/CrcConfig/Crc"/>
+              </d:lst>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

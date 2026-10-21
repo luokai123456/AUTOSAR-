@@ -1,0 +1,22 @@
+
+Name: config/Crc.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426474176674009950982129488432205129407870001094494
+ 4202582584895012570510950215384829223016653251974761
+
+Name: generate/source/Crc_Cfg.c
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426167627009461891630596468715239869629726592906149
+ 5124326689088291439810482693292369965547635008101207
+
+Name: generate/include/Crc_Cfg.h
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594752942365156817018118537742629486127782179196007231
+ 865363897855318514130642229407720691951929750159901964
+

@@ -1,0 +1,2252 @@
+<?xml version='1.0'?>
+<datamodel version="7.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+<!--
+*   @file    Adc.xdm
+*   @version 
+*
+*   @brief   AUTOSAR Adc - Tresos Studio plugin schema file
+*   @details This file contains the schema configuration for and Adc Tresos Studio
+*            plugin.
+-->
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AdcConfig" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <!--  /** @implements Adc */ -->
+          <d:chc name="Adc" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.4.0</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC" 
+                   value="EN: Configuration of the Adc (Analog Digital Conversion) module."/>
+              <a:a name="LOWER-MULTIPLICITY" value="1"/>
+              <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+              <a:a name="RELEASE" value="asc:4.4.0"/>
+              <a:a name="UPPER-MULTIPLICITY" value="1"/>
+              <a:a name="UUID" value="dcec3f6a-0d96-40a4-87db-bf285419c755"/>
+
+              <!--  /** @implements  ConfigVariant */ -->
+              <v:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN">
+                <a:a name="DESC" 
+                     value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Post Build Variant Used"/>
+                <a:a name="ORIGIN" value="EB"/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="UUID" value="9a08292b-b817-4e0e-b6f7-deec8cc5e80e"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="false"/>
+                <a:da name="READONLY" value="FALSE"/>
+                <a:da name="TOOLTIP" 
+                      value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+              </v:var>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:a name="UUID" value="2a9c7afb-e93b-42cd-a178-9078d2bb15f8"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="VariantPostBuild"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuild</a:v>
+                  <a:v>VariantPreCompile</a:v>
+                </a:da>
+              </v:var>
+
+              <!--  @implements AdcConfigSet  -->
+              <v:ctr name="AdcConfigSet" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: This container contains the configuration parameters and sub containers of the AUTOSAR Adc module."/>
+                <a:a name="UUID" value="2c9b79ae-bb23-4257-8cf8-bc32dd1b8f16"/>
+
+                <!--  @implements AdcHwUnit  -->
+                <v:lst name="AdcHwUnit" type="MAP">
+                  <a:da name="MIN" value="1"/>
+                  <a:da name="MAX" value="2"/>
+
+                  <!-- AdcHwUnit Big container -->
+                  <v:ctr name="AdcHwUnit" type="IDENTIFIABLE">
+                    <a:a name="DESC" 
+                         value="EN: This container contains the Driver configuration (parameters) depending on grouping of channels"/>
+                    <a:a name="UUID" 
+                         value="0bb45f4e-c9ec-4fbc-9e8c-ad6389cb095b"/>
+
+                    <!-- AdcClockSource -->
+                    <v:var name="AdcClockSource" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN: The ADC module specific clock input for the conversion unit can statically be configured to select different clock sources if provided by hardware. Enumeration literals are defined vendor specific."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="44749b8c-b3bd-420e-8526-e415ca17ffd8"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="EQADC_CLK_SEL_PS_DIV"/>
+                      <a:da name="RANGE">
+                            <a:v>EQADC_CLK_SEL_PS_DIV</a:v>
+                      </a:da>
+                    </v:var>
+
+                    <!-- ADCHwUnitId -->
+                    <v:var name="AdcHwUnitId" type="ENUMERATION">
+                      <a:a name="DESC"> 
+                          <a:v><![CDATA[EN:<html><p>
+                              Specifies the used ADC Hardware Unit. This symbolic name allows accessing Hw Unit data.
+                              <br><li>ADC0 and ADC1 are corresponding ADC number 0 and ADC number 1 of EQADC_01.</li></br>
+                              </p></html>]]></a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="d67c9731-c389-4cea-92b4-5fb8046989e5"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="INVALID" type="XPath">
+                          <a:tst expr="text:uniq(node:fallback( ../../*/AdcHwUnitId, 0), node:fallback( ., 1))" false="Duplicate ADC Hardware ID"> </a:tst>
+                      </a:da>
+                      <a:da name="RANGE">
+                      <a:v>ADC0</a:v>
+                      <a:v>ADC1</a:v>
+                      </a:da>
+                      <a:da name="DEFAULT" value="ADC0"/>
+                    </v:var>
+
+                    <!-- AdcPrescale -->
+                    <v:var name="AdcPrescale" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN: Optional ADC module specific clock prescale factor, if supported by hardware."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="450a00d8-d670-4fdc-a446-bd952d4505f8"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="CLK_SEL_PS_DIV_2"/>
+                      <a:da name="RANGE">
+                            <a:v>CLK_SEL_PS_DIV_2</a:v>
+                            <a:v>CLK_SEL_PS_DIV_4</a:v>
+                            <a:v>CLK_SEL_PS_DIV_6</a:v>
+                            <a:v>CLK_SEL_PS_DIV_8</a:v>
+                            <a:v>CLK_SEL_PS_DIV_10</a:v>
+                            <a:v>CLK_SEL_PS_DIV_12</a:v>
+                            <a:v>CLK_SEL_PS_DIV_14</a:v>
+                            <a:v>CLK_SEL_PS_DIV_16</a:v>
+                            <a:v>CLK_SEL_PS_DIV_18</a:v>
+                            <a:v>CLK_SEL_PS_DIV_20</a:v>
+                            <a:v>CLK_SEL_PS_DIV_22</a:v>
+                            <a:v>CLK_SEL_PS_DIV_24</a:v>
+                            <a:v>CLK_SEL_PS_DIV_26</a:v>
+                            <a:v>CLK_SEL_PS_DIV_28</a:v>
+                            <a:v>CLK_SEL_PS_DIV_30</a:v>
+                            <a:v>CLK_SEL_PS_DIV_32</a:v>
+                            <a:v>CLK_SEL_PS_DIV_34</a:v>
+                            <a:v>CLK_SEL_PS_DIV_36</a:v>
+                            <a:v>CLK_SEL_PS_DIV_38</a:v>
+                            <a:v>CLK_SEL_PS_DIV_40</a:v>
+                            <a:v>CLK_SEL_PS_DIV_42</a:v>
+                            <a:v>CLK_SEL_PS_DIV_44</a:v>
+                            <a:v>CLK_SEL_PS_DIV_46</a:v>
+                            <a:v>CLK_SEL_PS_DIV_48</a:v>
+                            <a:v>CLK_SEL_PS_DIV_50</a:v>
+                            <a:v>CLK_SEL_PS_DIV_52</a:v>
+                            <a:v>CLK_SEL_PS_DIV_54</a:v>
+                            <a:v>CLK_SEL_PS_DIV_56</a:v>
+                            <a:v>CLK_SEL_PS_DIV_58</a:v>
+                            <a:v>CLK_SEL_PS_DIV_60</a:v>
+                            <a:v>CLK_SEL_PS_DIV_62</a:v>
+                            <a:v>CLK_SEL_PS_DIV_64</a:v>
+                      </a:da>
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="num:i(node:ref(../../../../AdcGeneral/AdcClockRef)/McuClockReferencePointFrequency) 
+                                div num:i(substring-after(string(.),'CLK_SEL_PS_DIV_')) > num:i(25000000)"
+                                true="ADC module clock frequency should be less than or equal to 25MHz"/>
+                      </a:da>
+                    </v:var>
+
+                    <!-- AdcExternalMux -->
+                    <v:var name="AdcExternalMux" type="BOOLEAN">
+                      <a:a name="DESC"> 
+                            <a:v><![CDATA[EN:<html><p>Enables external multiplexing (ADCn_EMUX bit in ADCn_CR register). The ADC units of one EQADC (0-1) cannot have external multiplexing enabled at the same time. Note: This is an Implementation Specific Parameter.</p></html>]]></a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                            value="cd1c125f-21e4-4c23-2574-6dd6a122164ede"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="false"/>
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="node:exists(../../*[AdcHwUnitId = 'ADC0']/AdcExternalMux) and (../../*[AdcHwUnitId = 'ADC0']/AdcExternalMux = 'true') and node:exists(../../*[AdcHwUnitId = 'ADC1']/AdcExternalMux) and (../../*[AdcHwUnitId = 'ADC1']/AdcExternalMux = 'true')"
+                               true="This parameter can not be enabled for both ADC0 and ADC1"/>
+                      </a:da>
+                    </v:var>
+
+                    <!-- AdcResolution -->
+                    <v:var name="Resolution" type="ENUMERATION">
+                      <a:a name="DESC">
+                          <a:v><![CDATA[EN:<html><p>Used to set the ADC resolution mode.
+                              <ul>
+                              <li>ADC_RESOLUTION_BIT8    -- 8-bit conversion.</li>
+                              <li>ADC_RESOLUTION_BIT10   -- 10-bit conversion.</li>
+                              <li>ADC_RESOLUTION_BIT12   -- 12-bit conversion.</li>
+                              </ul>.</p></html>]]></a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                            value="cd1c565f-85e4-4c23-2574-6dd6a6364ede"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="ADC_RESOLUTION_BIT12"/>
+                      <a:da name="RANGE">
+                            <a:v>ADC_RESOLUTION_BIT8</a:v>
+                            <a:v>ADC_RESOLUTION_BIT10</a:v>
+                            <a:v>ADC_RESOLUTION_BIT12</a:v>
+                      </a:da>
+                    </v:var>
+
+                    <!-- AlternateConfig -->
+                    <v:lst name="AlternateConfig" type="MAP">
+                      <a:da name="MAX" value="1"/>
+                      <a:da name="INVALID" type="XPath">
+                      <a:tst
+                          expr="../Resolution != 'ADC_RESOLUTION_BIT12' and num:i(count(./*)) = 0"
+                          true="Please configure AlternateConfig containers."/>
+                      </a:da>
+                      <v:ctr name="AlternateConfig" type="IDENTIFIABLE">
+                        <a:a name="DESC" value = "EN: Set alternative configuration."/>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="UUID" 
+                              value="3cacb124-d0108-480e-9ae9-ad701abac080"/>
+                        <a:a name="__ORIGIN" value="Elektrobit"/>
+                        <a:a name="READONLY" value="FALSE"/>
+
+                        <v:var name="AltSelect" type="ENUMERATION">
+                          <a:a name="DESC"
+                            value="EN: Select the Alternate Configuration x."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                              value="3cacb124-d0108-480e-9ae9-ad701abac081"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="EQADC_ALT_CONFIG_DISABLE"/>
+                          <a:da name="RANGE">
+                            <a:v>EQADC_ALT_CONFIG_DISABLE</a:v>
+                            <a:v>EQADC_ALT_CONFIG_SEL_1</a:v>
+                            <a:v>EQADC_ALT_CONFIG_SEL_2</a:v>
+                            <a:v>EQADC_ALT_CONFIG_SEL_3</a:v>
+                            <a:v>EQADC_ALT_CONFIG_SEL_4</a:v>
+                            <a:v>EQADC_ALT_CONFIG_SEL_5</a:v>
+                            <a:v>EQADC_ALT_CONFIG_SEL_6</a:v>
+                            <a:v>EQADC_ALT_CONFIG_SEL_7</a:v>
+                            <a:v>EQADC_ALT_CONFIG_SEL_8</a:v>
+                          </a:da>
+                          <a:da name="INVALID" type="XPath">
+                          <a:tst
+                              expr="(../../../Resolution != 'ADC_RESOLUTION_BIT12') and (. = 'EQADC_ALT_CONFIG_DISABLE')"
+                              true="Please select another configuration."/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="ResultTransInhibit" type="BOOLEAN">
+                          <a:a name="DESC" 
+                              value="EN: Result Transfer Inhibit / Decimation Filter Pre-Fill."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="3cacb124-d0108-480e-9ae9-ad701abac082"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="false"/>
+                        </v:var>
+                        <v:var name="DestSelect" type="ENUMERATION">
+                          <a:a name="DESC"
+                            value="EN: Conversion Result Destination Selection."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                              value="3cacb124-d0108-480e-9ae9-ad701abac083"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="EQADC_ALT_DEST_RFIFO"/>
+                          <a:da name="RANGE">
+                            <a:v>EQADC_ALT_DEST_RFIFO</a:v>
+                            <a:v>EQADC_ALT_DEST_DECFILT_A</a:v>
+                            <a:v>EQADC_ALT_DEST_DECFILT_B</a:v>
+                            <a:v>EQADC_ALT_DEST_DECFILT_C</a:v>
+                            <a:v>EQADC_ALT_DEST_DECFILT_D</a:v>
+                            <a:v>EQADC_ALT_DEST_DECFILT_E</a:v>
+                            <a:v>EQADC_ALT_DEST_DECFILT_F</a:v>
+                            <a:v>EQADC_ALT_DEST_DECFILT_G</a:v>
+                            <a:v>EQADC_ALT_DEST_DECFILT_A_E</a:v>
+                            <a:v>EQADC_ALT_DEST_DECFILT_B_E</a:v>
+                            <a:v>EQADC_ALT_DEST_DECFILT_C_E</a:v>
+                            <a:v>EQADC_ALT_DEST_DECFILT_D_E</a:v>
+                            <a:v>EQADC_ALT_DEST_DECFILT_A_G</a:v>
+                            <a:v>EQADC_ALT_DEST_DECFILT_B_G</a:v>
+                            <a:v>EQADC_ALT_DEST_DECFILT_C_G</a:v>
+                            <a:v>EQADC_ALT_DEST_DECFILT_D_G</a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="FMTA_SignEn" type="BOOLEAN">
+                          <a:a name="DESC" 
+                              value="EN: TRUR:Right justified signed. FALSE:Right justified unsigned."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="3cacb124-d0109-480e-9ae9-ad701abac090"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="false"/>
+                        </v:var>
+                        <v:var name="PreGain" type="ENUMERATION">
+                          <a:a name="DESC"
+                            value="EN: ADC Pre-gain control."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                              value="3cacb124-d0109-480e-9ae9-ad701abac091"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="EQADC_PRE_GAIN_X1"/>
+                          <a:da name="RANGE">
+                            <a:v>EQADC_PRE_GAIN_X1</a:v>
+                            <a:v>EQADC_PRE_GAIN_X2</a:v>
+                            <a:v>EQADC_PRE_GAIN_X4</a:v>
+                          </a:da>
+                        </v:var>
+                      </v:ctr>  
+                    </v:lst>
+
+                    <!-- AdcChannel -->
+                    <v:lst name="AdcChannel" type="MAP">
+                      <a:da name="MIN" value="1"/>
+                      <v:ctr name="AdcChannel" type="IDENTIFIABLE">
+                        <a:a name="DESC" 
+                             value="EN: This container contains the channel configuration (parameters) depending on the hardware capability."/>
+                        <a:a name="UUID" 
+                             value="b57a6f27-6d58-4279-bbff-2e56030f96d2"/>
+                        <a:da name="INVALID" type="XPath">
+                          <a:tst
+                          expr="not(contains(substring-before(concat(',', concat(text:join(../../../../../*/AdcHwUnit/*/AdcChannel/*/@name, ','), ',')), concat(',', concat(name(.), ','))), concat(',', concat(name(.), ',')))
+                            or contains(substring-after(concat(',', concat(text:join(../../../../../*/AdcHwUnit/*/AdcChannel/*/@name, ','), ',')), concat(',', concat(name(.), ','))), concat(',', concat(name(.), ','))))"
+                          false="The channel name should be unique, please change it!"/>
+                        </a:da>
+                        <v:var name="AdcChannelConvTime" type="INTEGER">
+                          <a:a name="DESC" 
+                               value="EN: Configuration of conversion time, i.e. the time during which the analogue value is converted into digital representation, (in clock cycles) for each channel, if supported by hardware."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="74548422-c84c-4b60-8385-246811e0e588"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="READONLY" value="TRUE"/>
+                          <a:da name="DEFAULT" value="1000"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=9223372036854775807"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="AdcChannelHighLimit" type="INTEGER">
+                          <a:a name="DESC" 
+                               value="EN: High limit - used for limit checking."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="c1056c7b-402b-4409-b75b-2b85cb212894"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="READONLY" value="false"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=16380"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da>
+                          <a:da name="RANGE" type="XPath">
+                              <a:tst expr="(. &gt;= ../AdcChannelLowLimit)" false="Adc Channel High Limit value should be greater or equal than Adc Channel Low Limit value."/>
+                          </a:da>
+                          <a:da name="EDITABLE" type="XPath" expr="../AdcChannelLimitCheck = 'true' and ../../../../../../AdcGeneral/AdcEnableLimitCheck = 'true'"/>
+                        </v:var>
+                        <v:var name="AdcChannelId" type="INTEGER">
+                          <a:a name="DESC" 
+                               value="EN: This parameter provides the controller ID which is unique in a given ADC Channel. The value for this parameter starts with 0 and continue without any gaps."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="SCOPE" value="ECU"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="263be517-2994-4b70-b359-4ea3546381e5"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index,'0')"/>
+                          <a:da name="INVALID" type="XPath">
+                                <a:tst expr="num:i(node:current()/../@index) = num:i(.)" false="Plase enter a valid AdcChannelId"/>
+                          </a:da>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=1024"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="AdcHwChannelId" type="ENUMERATION">
+                          <a:a name="DESC" 
+                               value="EN: This parameter defines the assignment of the channel to the physical ADC  hardware channel."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="3d58d9e8-1047-455e-87cd-50e695cc1737"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="EQADC_CH1"/>
+                          <a:da name="RANGE">
+                          <a:v>EQADC_CH1</a:v>
+                          <a:v>EQADC_CH2</a:v>
+                          <a:v>EQADC_CH3</a:v>
+                          <a:v>EQADC_CH4</a:v>
+                          <a:v>EQADC_CH5</a:v>
+                          <a:v>EQADC_CH6</a:v>
+                          <a:v>EQADC_CH7</a:v>
+                          <a:v>EQADC_CH9</a:v>
+                          <a:v>EQADC_CH10</a:v>
+                          <a:v>EQADC_CH11</a:v>
+                          <a:v>EQADC_CH12</a:v>
+                          <a:v>EQADC_CH13</a:v>
+                          <a:v>EQADC_CH14</a:v>
+                          <a:v>EQADC_CH15</a:v>
+                          <a:v>EQADC_EXT_CH0</a:v>
+                          <a:v>EQADC_EXT_CH8</a:v>
+                          <a:v>EQADC_EXT_CH16</a:v>
+                          <a:v>EQADC_EXT_CH24</a:v>
+                          <a:v>EQADC_EXT_CH32</a:v>
+                          <a:v>EQADC_EXT_CH40</a:v>
+                          <a:v>EQADC_EXT_CH48</a:v>
+                          <a:v>EQADC_EXT_CH56</a:v>
+                          <a:v>EQADC_EXT_CH64</a:v>
+                          <a:v>EQADC_EXT_CH72</a:v>
+                          <a:v>EQADC_EXT_CH80</a:v>
+                          <a:v>EQADC_EXT_CH88</a:v>
+                          <a:v>EQADC_EXT_CH96</a:v>
+                          <a:v>EQADC_EXT_CH104</a:v>
+                          <a:v>EQADC_EXT_CH112</a:v>
+                          <a:v>EQADC_EXT_CH120</a:v>
+                          <a:v>EQADC_EXT_CH240</a:v>
+                          <a:v>EQADC_EXT_CH241</a:v>
+                          <a:v>EQADC_EXT_CH242</a:v>
+                          <a:v>EQADC_EXT_CH243</a:v>
+                          <a:v>EQADC_EXT0_CH192</a:v>
+                          <a:v>EQADC_EXT0_CH193</a:v>
+                          <a:v>EQADC_EXT0_CH194</a:v>
+                          <a:v>EQADC_EXT0_CH195</a:v>
+                          <a:v>EQADC_EXT0_CH196</a:v>
+                          <a:v>EQADC_EXT0_CH197</a:v>
+                          <a:v>EQADC_EXT0_CH198</a:v>
+                          <a:v>EQADC_EXT0_CH199</a:v>
+                          <a:v>EQADC_EXT1_CH200</a:v>
+                          <a:v>EQADC_EXT1_CH201</a:v>
+                          <a:v>EQADC_EXT1_CH202</a:v>
+                          <a:v>EQADC_EXT1_CH203</a:v>
+                          <a:v>EQADC_EXT1_CH204</a:v>
+                          <a:v>EQADC_EXT1_CH205</a:v>
+                          <a:v>EQADC_EXT1_CH206</a:v>
+                          <a:v>EQADC_EXT1_CH207</a:v>
+                          <a:v>EQADC_EXT2_CH208</a:v>
+                          <a:v>EQADC_EXT2_CH209</a:v>
+                          <a:v>EQADC_EXT2_CH210</a:v>
+                          <a:v>EQADC_EXT2_CH211</a:v>
+                          <a:v>EQADC_EXT2_CH212</a:v>
+                          <a:v>EQADC_EXT2_CH213</a:v>
+                          <a:v>EQADC_EXT2_CH214</a:v>
+                          <a:v>EQADC_EXT2_CH215</a:v>
+                          <a:v>EQADC_EXT3_CH216</a:v>
+                          <a:v>EQADC_EXT3_CH217</a:v>
+                          <a:v>EQADC_EXT3_CH218</a:v>
+                          <a:v>EQADC_EXT3_CH219</a:v>
+                          <a:v>EQADC_EXT3_CH220</a:v>
+                          <a:v>EQADC_EXT3_CH221</a:v>
+                          <a:v>EQADC_EXT3_CH222</a:v>
+                          <a:v>EQADC_EXT3_CH223</a:v>
+                          <a:v>EQADC_EXT4_CH224</a:v>
+                          <a:v>EQADC_EXT4_CH225</a:v>
+                          <a:v>EQADC_EXT4_CH226</a:v>
+                          <a:v>EQADC_EXT4_CH227</a:v>
+                          <a:v>EQADC_EXT4_CH228</a:v>
+                          <a:v>EQADC_EXT4_CH229</a:v>
+                          <a:v>EQADC_EXT4_CH230</a:v>
+                          <a:v>EQADC_EXT4_CH231</a:v>
+                          <a:v>EQADC_EXT5_CH232</a:v>
+                          <a:v>EQADC_EXT5_CH233</a:v>
+                          <a:v>EQADC_EXT5_CH234</a:v>
+                          <a:v>EQADC_EXT5_CH235</a:v>
+                          <a:v>EQADC_EXT5_CH236</a:v>
+                          <a:v>EQADC_EXT5_CH237</a:v>
+                          <a:v>EQADC_EXT5_CH238</a:v>
+                          <a:v>EQADC_EXT5_CH239</a:v>
+                          <a:v>EQADC_DAN_CH128</a:v>
+                          <a:v>EQADC_DAN_CH129</a:v>
+                          <a:v>EQADC_DAN_CH130</a:v>
+                          <a:v>EQADC_DAN_CH132</a:v>
+                          <a:v>EQADC_DAN_CH133</a:v>
+                          <a:v>EQADC_DAN_CH134</a:v>
+                          <a:v>EQADC_DAN_CH135</a:v>
+                          <a:v>EQADC_CH_VDD_REG_PMU</a:v>
+                          <a:v>EQADC_CH_VDD_HV_PMC</a:v>
+                          <a:v>EQADC_CH_VDD_HV_OSC</a:v>
+                          <a:v>EQADC_CH_VDD_HV_FLA</a:v>
+                          <a:v>EQADC_CH_VDD_HV_IO_FLEX</a:v>
+                          <a:v>EQADC_CH_VDD_HV_IO_5V</a:v>
+                          <a:v>EQADC_CH_VDD_HV_IO_MAIN</a:v>
+                          <a:v>EQADC_CH_VDD_LV</a:v>
+                          <a:v>EQADC_CH_TEMP_SENSOR</a:v>
+                          <a:v>EQADC_CH_VDD_PCT75_VREF</a:v>
+                          <a:v>EQADC_CH_VDD_PCT50_VREF</a:v>
+                          <a:v>EQADC_CH_VDD_PCT25_VREF</a:v>
+                          </a:da>
+                        </v:var>
+                        <v:var name="AdcChannelLimitCheck" type="BOOLEAN">
+                          <a:a name="DESC" 
+                               value="EN: Enables or disables limit checking for an ADC channel."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="3da5a438-847d-42cc-9c2d-9d6592ab828a"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="READONLY" value="false"/>
+                          <a:da name="DEFAULT" value="false"/>
+                          <a:da name="EDITABLE" type="XPath" expr="../../../../../../AdcGeneral/AdcEnableLimitCheck = 'true'"/>
+                          <a:a name="INVALID" type="XPath">
+                              <a:tst expr="(../../../../../../AdcGeneral/AdcEnableLimitCheck = 'false' and .='true')" true ="AdcChannelLimitCheck must be disabled when AdcEnableLimitCheck is false."/>
+                          </a:a>
+                        </v:var>
+                        <v:var name="AdcChannelLowLimit" type="INTEGER">
+                          <a:a name="DESC" 
+                               value="EN: Low limit - used for limit checking."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="4b9aa4a2-d9fa-4e0c-a0df-ad4180f0598d"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="READONLY" value="false"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=16380"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da>
+                          <a:da name="RANGE" type="XPath">
+                              <a:tst expr="(. &lt;= ../AdcChannelHighLimit)" false="Adc Channel Low Limit value should be less or equal than Adc Channel High Limit value."/>
+                          </a:da>
+                          <a:da name="EDITABLE" type="XPath" expr="../AdcChannelLimitCheck = 'true' and ../../../../../../AdcGeneral/AdcEnableLimitCheck = 'true'"/>
+                        </v:var>
+                        <v:var name="AdcChannelRangeSelect" type="ENUMERATION">
+                          <a:a name="DESC" 
+                               value="EN: In case of active limit checking: defines which conversion values are taken into account related to the boarders defined with AdcChannelLowLimit and AdcChannelHighLimit."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="2a8b7101-d47d-4493-875a-c0652bf8b2f6"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="READONLY" value="false"/>
+                          <a:da name="DEFAULT" value="ADC_RANGE_ALWAYS"/>
+                          <a:da name="RANGE">
+                            <a:v>ADC_RANGE_ALWAYS</a:v>
+                            <a:v>ADC_RANGE_BETWEEN</a:v>
+                            <a:v>ADC_RANGE_NOT_BETWEEN</a:v>
+                            <a:v>ADC_RANGE_NOT_OVER_HIGH</a:v>
+                            <a:v>ADC_RANGE_NOT_UNDER_LOW</a:v>
+                            <a:v>ADC_RANGE_OVER_HIGH</a:v>
+                            <a:v>ADC_RANGE_UNDER_LOW</a:v>
+                          </a:da>
+                          <a:da name="ENABLE" type="XPath" expr="../AdcChannelLimitCheck = 'true' and ../../../../../../AdcGeneral/AdcEnableLimitCheck = 'true'"/>
+                        </v:var>
+                        <v:var name="AdcChannelRefVoltsrcHigh" 
+                               type="INTEGER">
+                          <a:a name="DESC" 
+                               value="EN: Upper reference voltage source for each channel."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="69a1d84d-4adc-4d04-9ac1-04e6f895bf76"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="5"/>
+                          <a:a name="READONLY" value="true"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=5"/>
+                            <a:tst expr="&gt;=5"/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="AdcChannelRefVoltsrcLow" 
+                               type="INTEGER">
+                          <a:a name="DESC" 
+                               value="EN: Lower reference voltage source for each channel."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="0e6f9120-9b70-45a6-bd42-d4d17bd804e7"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:a name="READONLY" value="true"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=0"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="AdcChannelResolution" type="INTEGER">
+                          <a:a name="DESC" 
+                               value="EN: Channel resolution in bits."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="5c3d5f3d-f2ad-4ff1-bbe0-8c512611ffd5"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="12"/>
+                          <a:a name="READONLY" value="true"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=63"/>
+                            <a:tst expr="&gt;=1"/>
+                          </a:da>
+                        </v:var>
+                        <v:var name="AdcChannelSampTime" type="ENUMERATION">
+                          <a:a name="DESC" 
+                               value="EN: Configuration of sampling time, i.e. the time during which the value is sampled, (in clock cycles) for each channel, if supported by hardware."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="009809f0-a488-4189-8435-3e22756d4437"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="SAMPLING_CYCLES_2"/>
+                          <a:da name="RANGE">
+                            <a:v>SAMPLING_CYCLES_2</a:v>
+                            <a:v>SAMPLING_CYCLES_8</a:v>
+                            <a:v>SAMPLING_CYCLES_64</a:v>
+                            <a:v>SAMPLING_CYCLES_128</a:v>
+                          </a:da>
+                        </v:var>
+                      </v:ctr>
+                    </v:lst>
+
+                    <!-- AdcGroup Big container -->
+                    <v:lst name="AdcGroup" type="MAP">
+                      <a:da name="MIN" value="1"/>
+                      <!-- AdcGroup -->
+                      <v:ctr name="AdcGroup" type="IDENTIFIABLE">
+                        <a:a name="DESC" 
+                             value="EN: This container contains the Group configuration (parameters)."/>
+                        <a:a name="UUID" 
+                             value="73342e45-829b-4a90-acc8-df4766f973d5"/>
+                        <a:da name="INVALID" type="XPath">
+                          <a:tst
+                            expr="not(contains(substring-before(concat(text:join(../../../../../*/AdcHwUnit/*/AdcGroup/*/@name, ','), ','), concat(name(.), ',')), concat(name(.), ','))
+                              or contains(substring-after(concat(text:join(../../../../../*/AdcHwUnit/*/AdcGroup/*/@name, ','), ','), concat(name(.), ',')), concat(name(.), ',')))"
+                            false="The group name should be unique, please change it!"/>
+                        </a:da>
+
+                        <!-- AdcGroupAccessMode -->
+                        <v:var name="AdcGroupAccessMode" type="ENUMERATION">
+                          <a:a name="DESC" 
+                               value="EN: Type of access mode to group conversion results."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="e25dc6a5-89f0-4930-90e1-ce045b0062b7"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="ADC_ACCESS_MODE_SINGLE"/>
+                          <a:da name="RANGE">
+                            <a:v>ADC_ACCESS_MODE_SINGLE</a:v>
+                            <a:v>ADC_ACCESS_MODE_STREAMING</a:v>
+                          </a:da>
+                        </v:var>
+
+                        <!-- AdcGroupConversionMode -->
+                        <v:var name="AdcGroupConversionMode" type="ENUMERATION">
+                          <a:a name="DESC" 
+                               value="EN: Type of conversion mode supported by the driver."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="d4601047-54b7-45b7-9872-9cdf587f12ce"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="ADC_CONV_MODE_ONESHOT"/>
+                          <a:da name="RANGE">
+                            <a:v>ADC_CONV_MODE_CONTINUOUS</a:v>
+                            <a:v>ADC_CONV_MODE_ONESHOT</a:v>
+                          </a:da>
+                        </v:var>
+
+                        <!-- AdcGroupId -->
+                        <v:var name="AdcGroupId" type="INTEGER">
+                          <a:a name="DESC" 
+                               value="EN: Numeric ID of the group. This parameter is the symbolic name to be used on the API. This symbolic name allows accessing Channel Group data. This value will be assigned to the symbolic name derived of the AdcGroup container shortName."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                          <a:a name="UUID" 
+                               value="23d65469-ab1b-41e2-802d-05c6bc540061"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index,'0')"/>
+                          <a:da name="RANGE" type="XPath">
+                            <a:tst expr="(node:fallback(.,0) &gt;= 0) and (node:fallback(.,0) &lt; num:i(count(node:fallback(../../../../*/AdcGroup/*,1))))"
+                            false="Value out of range: 0-N-1 (N is the number of configured groups) Use the Calc button to calculate the correct default value"/>
+                            <a:tst expr="text:uniq(node:fallback(../../../../*/AdcGroup/*/AdcGroupId,text:split('0') ),node:fallback(.,1))"
+                            false="Repeated AdcGroupId, the group id must be unique."/>
+                          </a:da>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=1023"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da>
+                        </v:var>
+
+                        <!-- AdcGroupPriority -->
+                        <v:var name="AdcGroupPriority" type="INTEGER">
+                          <a:a name="DESC" 
+                               value="EN: Priority level of the AdcGroup."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="3381c831-7d65-41c0-b787-851b5d25a863"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="READONLY" value="false"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:a name="EDITABLE" type="XPath">
+                              <a:tst expr="../../../../../../AdcGeneral/AdcPriorityImplementation != 'ADC_PRIORITY_NONE' and ../AdcGroupTriggSrc = 'ADC_TRIGG_SRC_SW'"/>
+                          </a:a>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=255"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da>
+                        </v:var>
+
+                        <!-- AdcGroupReplacement -->
+                        <v:var name="AdcGroupReplacement" type="ENUMERATION">
+                          <a:a name="DESC" 
+                               value="EN: Replacement mechanism, which is used on ADC group level, if a group conversion is interrupted by a group which has a higher priority."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="c52a2010-ecdd-4cf8-b846-cbe687ef0fb3"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="READONLY" value="true"/>
+                          <a:da name="DEFAULT" value="ADC_GROUP_REPL_ABORT_RESTART"/>
+                          <a:da name="RANGE">
+                            <a:v>ADC_GROUP_REPL_ABORT_RESTART</a:v>
+                            <a:v>ADC_GROUP_REPL_SUSPEND_RESUME</a:v>
+                          </a:da>
+                        </v:var>
+
+                        <!-- AdcGroupTriggSrc -->
+                        <v:var name="AdcGroupTriggSrc" type="ENUMERATION">
+                          <a:a name="DESC" 
+                               value="EN: Type of source event that starts a group conversion."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="aa194cd3-0674-4dfe-b266-0f151b1d1a90"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="ADC_TRIGG_SRC_SW"/>
+                          <a:a name="INVALID" type="XPath">
+                              <a:tst expr="((../../../../../../AdcGeneral/AdcHwTriggerApi = 'false') and (. = 'ADC_TRIGG_SRC_HW'))"
+                                     true="Check AdcHwTriggerApi under the general container!"/>
+                              <a:tst expr="((../../../../../../AdcGeneral/AdcEnableStartStopGroupApi = 'false') and (. = 'ADC_TRIGG_SRC_SW'))"
+                                     true="Check AdcEnableStartStopGroupApi under the general container!"/>     
+                          </a:a>
+                          <a:da name="RANGE">
+                            <a:v>ADC_TRIGG_SRC_HW</a:v>
+                            <a:v>ADC_TRIGG_SRC_SW</a:v>
+                          </a:da>
+                        </v:var>
+
+                        <!-- AdcHwTrigSignal -->
+                        <v:var name="AdcHwTrigSignal" type="ENUMERATION">
+                          <a:a name="DESC">
+                            <a:v><![CDATA[EN:<html><p>Configures on which edge of the hardware trigger signal the driver should react, i.e. start the conversion (only if supported by the ADC hardware).<bc>
+                            1.Open 'AdcHwTriggerApi';<br>
+                            2.AdcGroupTriggSrc = 'ADC_TRIGG_SRC_HW';
+                            </p></html>]]></a:v>
+                          </a:a>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="79c2589c-df80-4fbc-b9fc-7f8fd3ea6b87"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="ADC_HW_TRIG_RISING_EDGE"/>
+                          <a:a name="EDITABLE" type="XPath">
+                              <a:tst expr="(../../../../../../AdcGeneral/AdcHwTriggerApi = 'true') and (../AdcGroupTriggSrc = 'ADC_TRIGG_SRC_HW')"/>
+                          </a:a>
+                          <a:da name="RANGE">
+                            <a:v>ADC_HW_TRIG_BOTH_EDGES</a:v>
+                            <a:v>ADC_HW_TRIG_FALLING_EDGE</a:v>
+                            <a:v>ADC_HW_TRIG_RISING_EDGE</a:v>
+                          </a:da>
+                        </v:var>
+
+                        <!-- AdcHwTrigTimer -->
+                        <v:var name="AdcHwTrigTimer" type="INTEGER">
+                          <a:a name="DESC" 
+                               value="EN: Reload value of the ADC module embedded timer (only if supported by ADC hardware)."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="998ad00b-3e16-4f17-849e-edfe76958d4c"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="READONLY" value="TRUE"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=9223372036854775807"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da>
+                        </v:var>
+
+                        <!-- AdcNotification -->
+                        <v:var name="AdcNotification" type="FUNCTION-NAME">
+                          <a:a name="DESC" 
+                               value="EN: Callback function for each group"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="7ef2a73c-2a14-43e3-8502-b64810d0e365"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="NULL_PTR"/>
+                          <a:a name="EDITABLE" type="XPath">
+                              <a:tst expr="../../../../../../AdcGeneral/AdcGrpNotifCapability = 'true'"/>
+                          </a:a>
+                        </v:var>
+
+                        <!-- Overflow_Notification -->
+                        <v:var name="Overflow_Notification" type="FUNCTION-NAME">
+                          <a:a name="DESC" 
+                               value="EN: Overflow Callback function for each group.
+                                      Note:It can be configured when the AdcGeneral/EnableIntRFOF or AdcGeneral/EnableIntTORF configuration options are checked."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="dde62024-fdc0-4af6-a0ae-0417c01e9c00"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="NULL_PTR"/>
+                          <a:a name="EDITABLE" type="XPath">
+                            <a:tst expr="../../../../../../AdcGeneral/EnableIntRFOF = 'true' or ../../../../../../AdcGeneral/EnableIntTORF = 'true'"/>
+                          </a:a>
+                        </v:var>
+
+                        <!-- AdcStreamingBufferMode -->
+                        <v:var name="AdcStreamingBufferMode" type="ENUMERATION">
+                          <a:a name="DESC" 
+                               value="EN: Configure streaming buffer as &quot;linear buffer&quot; (i.e. the ADC Driver stops the conversion as soon as the stream buffer is full) or as &quot;ring buffer&quot; (wraps around if the end of the stream buffer is reached)."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="50d08bec-4cdc-424b-9030-7b71bd18197d"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="ADC_STREAM_BUFFER_LINEAR"/>
+                          <a:da name="RANGE">
+                            <a:v>ADC_STREAM_BUFFER_CIRCULAR</a:v>
+                            <a:v>ADC_STREAM_BUFFER_LINEAR</a:v>
+                          </a:da>
+                        </v:var>
+
+                        <!-- AdcStreamingNumSamples -->
+                        <v:var name="AdcStreamingNumSamples" type="INTEGER">
+                          <a:a name="DESC" 
+                               value="EN: Number of ADC values to be acquired per channel in streaming access mode.
+                                      Note:If GroupSelIntOrDma selects dma, then AdcStreamingNumSamples can be configured only if DmaSampleNum is not equal to 1."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="f39c006f-78e4-4c92-8782-6dd6a6006e42"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="1"/>
+                          <a:a name="INVALID" type="XPath">
+                              <a:tst expr="((../GroupSelIntOrDma = 'DMA') and (../DmaSampleNum != '1') and (. != '1'))"
+                                     true="If GroupSelIntOrDma selects dma, then AdcStreamingNumSamples can be configured only if DmaSampleNum is not equal to 1."/>
+                          </a:a>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=255"/>
+                            <a:tst expr="&gt;=1"/>
+                          </a:da>
+                        </v:var>
+
+                        <!-- AdcGroupCFifo -->
+                        <v:var name="AdcGroupCFifo" type="ENUMERATION">
+                          <a:a name="DESC">
+                            <a:v><![CDATA[EN:<html><p>Select Command FIFO.<br>
+                            Each EQADC instance has 2 ADC units and 6 CFIFOs, which means:<br><br>
+                            <li>ADC0 and ADC1 share (instance0)EQADC_FIFO_0 to EQADC_FIFO_5.</li><br>
+                            ...
+                            </p></html>]]></a:v>
+                          </a:a>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="d70e352d-1c65-4913-b110-ada0a58fa896"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="EQADC_FIFO_0"/>
+                          <a:da name="RANGE">
+                            <a:v>EQADC_FIFO_0</a:v>
+                            <a:v>EQADC_FIFO_1</a:v>
+                            <a:v>EQADC_FIFO_2</a:v>
+                            <a:v>EQADC_FIFO_3</a:v>
+                            <a:v>EQADC_FIFO_4</a:v>
+                            <a:v>EQADC_FIFO_5</a:v>
+                          </a:da>
+                        </v:var>
+
+                        <!-- DMACompleteClearERQ -->
+                        <v:var name="DMACompleteClearERQ" type="BOOLEAN">
+                          <a:a name="DESC" 
+                              value="EN: The ERQ clearing switch is sent through the DMA channel."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="3a24d01d-184b-0171-bc18-011872c70d00"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="false"/>
+                          <a:a name="EDITABLE" type="XPath">
+                              <a:tst expr="../GroupSelIntOrDma = 'DMA'"/>
+                          </a:a>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="(.= 'false') and (../GroupSelIntOrDma = 'DMA') and (../AdcGroupTriggSrc = 'ADC_TRIGG_SRC_SW') and (../AdcGroupConversionMode = 'ADC_CONV_MODE_ONESHOT')"
+                                     true="When the triggering method is software triggered, the conversion method is DMA conversion, and the conversion mode is oneshot, the ERQ clear switch needs to be turned on"/>
+                          </a:da>
+                        </v:var>
+
+                        <!-- AdcGroupRFifo -->
+                        <v:var name="AdcGroupRFifo" type="ENUMERATION">
+                          <a:a name="DESC">
+                            <a:v><![CDATA[EN:<html><p>Select Result FIFO.<br>
+                            Each EQADC instance has 2 ADC units and 6 RFIFOs, which means:<br><br>
+                            <li>ADC0 and ADC1 share (instance0)EQADC_FIFO_0 to EQADC_FIFO_5.</li><br>
+                            ...
+                            </p></html>]]></a:v>
+                          </a:a>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="dg0e386d-1c65-5412-b165-ada0a58ha557"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="EQADC_FIFO_0"/>
+                          <a:da name="RANGE">
+                            <a:v>EQADC_FIFO_0</a:v>
+                            <a:v>EQADC_FIFO_1</a:v>
+                            <a:v>EQADC_FIFO_2</a:v>
+                            <a:v>EQADC_FIFO_3</a:v>
+                            <a:v>EQADC_FIFO_4</a:v>
+                            <a:v>EQADC_FIFO_5</a:v>
+                          </a:da>
+                        </v:var>
+
+                        <!-- GroupSelIntOrDma -->
+                        <v:var name="GroupSelIntOrDma" type="ENUMERATION">
+                          <a:a name="DESC"
+                            value="EN: Select the conversion method."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="bc0e123d-1c85-7642-b165-ada0a58ha963"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="INTERRUPT"/>
+                          <a:da name="RANGE">
+                            <a:v>INTERRUPT</a:v>
+                            <a:v>DMA</a:v>
+                            <a:v>WITHOUT_INTERRUPT</a:v>
+                          </a:da>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="(.= 'WITHOUT_INTERRUPT') and (../AdcGroupTriggSrc = 'ADC_TRIGG_SRC_HW')"
+                                     true="Hardware trigger group does not support no interrupt."/>
+                          </a:da>
+                        </v:var>
+
+                        <!-- DmaSampleNum -->
+                        <v:var name="DmaSampleNum" type="INTEGER">
+                          <a:a name="DESC" 
+                               value="EN: Used to set the number of dma multiple sampling times, when all the sampling is finished, the interrupt callback is generated.
+                                          Note: GroupSelIntOrDma = DMA and AdcStreamingNumSamples = 1"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="dde62024-fdc0-4af6-a0ae-0411c01e9c00"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="1"/>
+                          <a:a name="EDITABLE" type="XPath">
+                              <a:tst expr="../GroupSelIntOrDma = 'DMA' and ../AdcStreamingNumSamples = '1'"/>
+                          </a:a>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=100"/>
+                            <a:tst expr="&gt;=1"/>
+                          </a:da>
+                        </v:var>
+
+                        <!-- AdcCfifoDmaChannelRef -->
+                        <v:ref name="AdcCfifoDmaChannelRef" type="REFERENCE">
+                          <a:a name="DESC" 
+                               value="EN: Reference to the CFIFO dma channel of the edma module."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="f39c116f-78e4-4c92-8782-6dd6a6116e11"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="REF" 
+                            value="ASPathDataOfSchema:/eDmaConfig/eDma/eDmaConfigSet/eDmaChannelConfig"/>
+                          <a:a name="EDITABLE" type="XPath">
+                              <a:tst expr="../GroupSelIntOrDma = 'DMA'"/>
+                          </a:a>
+                        </v:ref>
+
+                        <!-- AdcRfifoDmaChannelRef -->
+                        <v:ref name="AdcRfifoDmaChannelRef" type="REFERENCE">
+                          <a:a name="DESC" 
+                               value="EN: Reference to the RFIFO dma channel of the edma module."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="f33c956f-78e4-4c92-8952-6da6a6336e42"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="REF" 
+                            value="ASPathDataOfSchema:/eDmaConfig/eDma/eDmaConfigSet/eDmaChannelConfig"/>
+                          <a:a name="EDITABLE" type="XPath">
+                              <a:tst expr="../GroupSelIntOrDma = 'DMA'"/>
+                          </a:a>
+                        </v:ref>
+
+                        <!-- AdcHwTrigSrc -->
+                        <v:var name="AdcHwTrigSrc" type="ENUMERATION">
+                          <a:a name="DESC"
+                            value="EN: Selects the source for the eQADC trigger inputs (bits TSEL4_5 in SIU_ISEL register).
+                                    SIU_ISEL select registers [4:5] are used to select a trigger source for command FIFOs 2/3/4/5
+                                    SIU_ISEL select registers [6:7] are used to select a trigger source for command FIFOs 0/1."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="acd194cf-69d7-4f1d-9db8-e6b85e021d56"/>
+                          <a:a name="__ORIGIN" value="Elektrobit"/>
+                          <a:da name="DEFAULT" value="EQADC_HW_TRIG_RTI"/>
+                          <a:da name="RANGE">
+                          <a:v>EQADC_HW_TRIG_RTI</a:v>
+                          <a:v>EQADC_HW_TRIG_PIT0_CH0</a:v>
+                          <a:v>EQADC_HW_TRIG_PIT0_CH1</a:v>
+                          <a:v>EQADC_HW_TRIG_PIT1_CH0</a:v>
+                          <a:v>EQADC_HW_TRIG_PIT1_CH1</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO0_ETRIG0</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO0_ETRIG1</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO1_ETRIG0</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO1_ETRIG1</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO2_ETRIG0</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO2_ETRIG1</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO3_ETRIG0</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO3_ETRIG1</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO4_ETRIG0</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO4_ETRIG1</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO5_ETRIG0</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO5_ETRIG1</a:v>
+                          <a:v>EQADC_HW_TRIG_ETPUA28</a:v>
+                          <a:v>EQADC_HW_TRIG_ETPUA29</a:v>
+                          <a:v>EQADC_HW_TRIG_ETPUA30</a:v>
+                          <a:v>EQADC_HW_TRIG_ETPUA31</a:v>
+                          <a:v>EQADC_HW_TRIG_ETPUB28</a:v>
+                          <a:v>EQADC_HW_TRIG_ETPUB29</a:v>
+                          <a:v>EQADC_HW_TRIG_ETPUB30</a:v>
+                          <a:v>EQADC_HW_TRIG_ETPUB31</a:v>
+                          <a:v>EQADC_HW_TRIG_ETPUC28</a:v>
+                          <a:v>EQADC_HW_TRIG_ETPUC29</a:v>
+                          <a:v>EQADC_HW_TRIG_ETPUC30</a:v>
+                          <a:v>EQADC_HW_TRIG_ETPUC31</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO0_ETPUA7</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO1_ETPUA7</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO2_ETPUA14</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO3_ETPUA22</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO4_ETPUA27</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO5_ETPUA26</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO0_EMIOS0_CH0</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO1_EMIOS0_CH0</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO2_EMIOS0_CH0</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO3_EMIOS0_CH0</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO4_EMIOS0_CH0</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO5_EMIOS0_CH0</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH1</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH2</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH3</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH4</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH5</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH6</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH7</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH8</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH9</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH10</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH11</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH12</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH13</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH14</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH15</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH16</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH17</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH18</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH19</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH20</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH21</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH22</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH23</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH24</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH26</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH27</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH28</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH29</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH30</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS0_CH31</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH0</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH1</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO0_EMIOS1_CH2</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO0_EMIOS1_CH3</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO0_EMIOS1_CH4</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO0_EMIOS1_CH5</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO0_EMIOS1_CH6</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO0_EMIOS1_CH7</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO1_EMIOS1_CH2</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO1_EMIOS1_CH3</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO1_EMIOS1_CH4</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO1_EMIOS1_CH5</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO1_EMIOS1_CH6</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO1_EMIOS1_CH7</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO2_EMIOS1_CH2</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO2_EMIOS1_CH3</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO2_EMIOS1_CH4</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO2_EMIOS1_CH5</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO2_EMIOS1_CH6</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO2_EMIOS1_CH7</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO3_EMIOS1_CH2</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO3_EMIOS1_CH3</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO3_EMIOS1_CH4</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO3_EMIOS1_CH5</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO3_EMIOS1_CH6</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO3_EMIOS1_CH7</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO4_EMIOS1_CH2</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO4_EMIOS1_CH3</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO4_EMIOS1_CH4</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO4_EMIOS1_CH5</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO4_EMIOS1_CH6</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO4_EMIOS1_CH7</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO5_EMIOS1_CH2</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO5_EMIOS1_CH3</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO5_EMIOS1_CH4</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO5_EMIOS1_CH5</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO5_EMIOS1_CH6</a:v>
+                          <a:v>EQADC_HW_TRIG_CFIFO5_EMIOS1_CH7</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH8</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH9</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH10</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH11</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH12</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH13</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH14</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH15</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH16</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH17</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH18</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH19</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH20</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH21</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH22</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH23</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH24</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH25</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH26</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH27</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH28</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH29</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH30</a:v>
+                          <a:v>EQADC_HW_TRIG_EMIOS1_CH31</a:v>
+                          </a:da>
+                          <a:a name="EDITABLE" type="XPath">
+                              <a:tst expr="../../../../../../AdcGeneral/AdcHwTriggerApi = 'true' and ../AdcGroupTriggSrc = 'ADC_TRIGG_SRC_HW'"/>
+                          </a:a>
+                        </v:var>
+
+                        <!-- AdcGroupDefinition -->
+                        <v:lst name="AdcGroupDefinition">
+                          <a:da name="MIN" value="1"/>
+                          <a:da name="INVALID" type="XPath">
+                              <a:tst expr="num:i(count(node:refs(./*)/AdcChannelLimitCheck[.='true'])) &gt; 1"
+                              true="An ADC channel with limit checking enabled must be assigned to an ADC group, which consists of exactly one ADC channel with limit checking enabled."/>
+                              <a:tst expr="(../../../../../../AdcGeneral/AdcEnableLimitCheck = 'true') and (num:i(count(node:current()/*)) &gt; 1) and (num:i(count(node:refs(./*)/AdcChannelLimitCheck[.='true'])) = 1)"
+                              true="If the global limit checking feature is enabled and there is a channel with a specific limit checking in the group, the ADC channel group must contain only one ADC channel."/>
+                          </a:da>
+                          <v:ref name="AdcGroupDefinition" type="REFERENCE">
+                            <a:a name="DESC" 
+                                 value="EN: Assignment of AdcChannels to a AdcGroups."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" 
+                                 value="true"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" 
+                                 value="08bb7049-b2c1-47bb-9ab1-79676e9c4e18"/>
+                            <a:a name="__ORIGIN" value="Elektrobit"/>
+                            <a:da name="REF" 
+                                  value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Adc/AdcConfigSet/AdcHwUnit/AdcChannel"/>
+                            <a:da name="INVALID" type="XPath">
+                                <a:tst expr=".=''" true="Select an ADC channel for the configured group."/>
+                                <a:tst expr="contains(., ../../../../@name)" false="The ADC channels must be mapped on the same group of hardware units."/>
+                                <a:tst expr="count(text:grep(../../../../AdcChannel/*/@name, substring-after(substring-after(substring-after(substring-after(substring-after(string(.), '/'), '/'),'/'),'/'), '/')))>0"
+                                   false="The ADC channels must be defined on groups of Hw unit."/>
+                            </a:da>
+                          </v:ref>
+                        </v:lst>
+                        <v:lst name="AdcGroupEcucPartitionRef">
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="(node:value(../../../../../../AdcGeneral/AdcMulticoreSupport) = 'true') and (num:i(count(node:current()/*))='0')"
+                                    true="AdcMulticoreSupport is enabled, please allocate one EcucPartition for this group" />                            
+                          </a:da>
+                          <v:ref name="AdcGroupEcucPartitionRef" 
+                                 type="REFERENCE">
+                            <a:a name="DESC">
+                              <a:v>EN: Maps an ADC channel group to zero or multiple ECUC partitions to limit the access to this channel group. The ECUC partitions referenced are a subset of the ECUC partitions where the ADC driver is mapped to.</a:v>
+                              <a:v>EN: Tags: atp.Status=draft</a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                              <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" 
+                                 value="true"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="ECU"/>
+                            <a:a name="UUID" 
+                                 value="3cacb128-d443-480e-9ae9-ad792abac079"/>
+                            <a:a name="__ORIGIN" value="Elektrobit"/>
+                            <a:a name="READONLY" value="false"/>
+                            <a:da name="REF" 
+                                  value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition"/>
+                            <a:da name="INVALID" type="XPath">
+                              <a:tst expr="node:containsValue(../../../../../../../AdcGeneral/AdcEcucPartitionRef/*, node:value(.))"
+                                      false="The ECUC partition referenced by AdcGroupEcucPartitionRef shall be a subset of the ECUC partitions referenced by AdcEcucPartitionRef."/> 
+                            </a:da>
+                          </v:ref>
+                        </v:lst>
+                      </v:ctr>
+                    </v:lst>
+                  </v:ctr>
+                </v:lst>
+              </v:ctr>
+              <v:ctr name="AdcGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: General configuration (parameters) of the ADC Driver software module."/>
+                <a:a name="UUID" value="449761b7-5ceb-4a95-91db-0eacf57cb51d"/>
+                <v:var name="AdcDeInitApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes the service Adc_DeInit() from the code."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="e7d53b4d-95d3-454e-90dc-d61eaeaf7f55"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="AdcDevErrorDetect" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Switches the development error detection and notification on or off."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="bdc681e0-bf87-499a-9fdb-e90eb6a4ee38"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="AdcEnableLimitCheck" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Enables or disables limit checking feature in the ADC driver."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ca06abe4-a336-46ad-a09f-bc6a5acbbb0b"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="READONLY" value="false"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="AdcEnableQueuing" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Determines, if the queuing mechanism is active in case of priority mechanism disabled.If priority is enabled, the queuing mechanism is always active, the AdcEnableQueuing configuration option is disabled, and the macro ADC_ENABLE_QUEUING is always STD_ON."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="6d26e24e-6114-417d-b42e-8f9f9e2ddad6"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:a name="READONLY" value="false"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:a name="EDITABLE" type="XPath">
+                    <a:tst expr="../AdcPriorityImplementation = 'ADC_PRIORITY_NONE'"/>
+                  </a:a>
+                </v:var>
+                <v:var name="AdcEnableStartStopGroupApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes the services Adc_StartGroupConversion() and Adc_StopGroupConversion() from the code."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="2098da2d-b65f-4103-9ea9-5ea953e81bcd"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="AdcGrpNotifCapability" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Determines, if the group notification mechanism (the functions to enable and disable the notifications) is available at runtime."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ff9c8584-196b-4687-96d4-f2735d945acf"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="AdcHwTriggerApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes the services Adc_EnableHardwareTrigger() and Adc_DisableHardwareTrigger() from the code."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="d1da238c-8920-4d3e-953c-deabb91a7aa4"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="AdcLowPowerStatesSupport" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes all power state management related APIs (ADC_SetPowerState, ADC_GetCurrentPowerState, ADC_GetTargetPowerState, ADC_PreparePowerState, ADC_Main_PowerTransitionManager), indicating if the HW offers low power state management."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="61f0b320-52c1-44a9-9174-782abf423f16"/>
+                  <a:a name="READONLY" value="false"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="AdcPowerStateAsynchTransitionMode" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Enables / disables support of the ADCDriver to the asynchronous power state transition."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="READONLY" value="true"/>f
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="8269383a-a996-41b2-934a-529605d81ca5"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="AdcMulticoreSupport" type="BOOLEAN">
+                  <a:a name="DESC"
+                      value="EN:Enables/Disables Multicore Support."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:dde62024-fdc0-4af6-a0ae-0122c01e9c00"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="INVALID" type="XPath">
+                      <a:tst expr="(num:i(count(../AdcEcucPartitionRef/*)) &gt;0) and
+                                   node:current()='false' "
+                             true="AdcMulticoreSupport should be enabled." />
+                  </a:da>
+                </v:var>
+                <v:var name="AdcDemReportErrorEnable" type="BOOLEAN">
+                  <a:a name="DESC"
+                      value="EN:Enable dem module when adc is timeout to report error."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:dde62024-fdc0-4af6-a0ae-0409c01e9c00"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="EnableIntRFOF" type="BOOLEAN">
+                  <a:a name="DESC"
+                      value="EN:Enable the RFIFO Overflow interrupt."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:dde62024-fdc0-4af6-a0ae-0417c01e9c00"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="AdcInlineSupport" type="BOOLEAN">
+                  <a:a name="DESC"
+                      value="EN:Inline switch, configured to generate Local-INLINE when turned on and static when turned off."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:dde62024-fdc0-4af6-a0ae-0417c01e9c01"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="EnableIntTORF" type="BOOLEAN">
+                  <a:a name="DESC"
+                      value="EN:Enable Trigger Overrun for CFIFO to interrupt."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:dde62024-fdc0-4af6-a0ae-0417c01e9c02"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="AdcPriorityImplementation" type="ENUMERATION">
+                  <a:a name="DESC" 
+                       value="EN: Determines whether a priority mechanism is available for prioritization of the conversion requests and if available, the type of prioritization mechanism. The selection applies for groups with trigger source software and trigger source hardware. Two"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="768dddf1-1c4c-43f6-a43b-b2141875c495"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:a name="READONLY" value="false"/>
+                  <a:da name="DEFAULT" value="ADC_PRIORITY_NONE"/>
+                  <a:da name="RANGE">
+                    <a:v>ADC_PRIORITY_HW</a:v>
+                    <a:v>ADC_PRIORITY_HW_SW</a:v>
+                    <a:v>ADC_PRIORITY_NONE</a:v>
+                  </a:da>
+                  <a:da name="INVALID" type="XPath">
+                    <a:tst expr=".='ADC_PRIORITY_HW'"
+                    true="ADC PRIORITY HW is not supported.Please amend AdcGeneral/AdcPriorityImplementation path value!"/>
+                  </a:da>
+                </v:var>
+                <v:var name="AdcReadGroupApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes the service Adc_ReadGroup() and from the code."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="843f05b0-e7a4-49ee-a430-6a31d45d81c0"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="AdcResultAlignment" type="ENUMERATION">
+                  <a:a name="DESC" 
+                       value="EN: Alignment of ADC raw results in ADC result buffer (left/right alignment)."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="860a6e4d-e24c-4e3c-810d-8561795932fc"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="ADC_ALIGN_RIGHT"/>
+                  <a:da name="READONLY" value="TRUE"/>
+                  <a:da name="RANGE">
+                    <a:v>ADC_ALIGN_LEFT</a:v>
+                    <a:v>ADC_ALIGN_RIGHT</a:v>
+                  </a:da>
+                </v:var>
+                <v:var name="AdcVersionInfoApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes the service Adc_GetVersionInfo() from the code."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="3a25d52d-984b-4871-bc26-206272c70d06"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="Timeout" type="INTEGER">
+                  <a:a name="DESC" 
+                        value="EN: Timeout."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                        value="d39c005f-89e4-4c12-4562-6dd6a6896e42"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="65535"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=1000"/>
+                  </a:da>
+                </v:var>
+                <v:var name="QueueMaxDepth" type="INTEGER">
+                  <a:a name="DESC" 
+                        value="EN: QueueMaxDepth."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                        value="d8dc115f-89e4-4c15-2562-6dd6a6896e36"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:a name="READONLY" value="false"/>
+                  <a:da name="DEFAULT" value="1"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=1024"/>
+                    <a:tst expr="&gt;=1"/>
+                  </a:da>
+                  <a:da name="RANGE" type="XPath">
+                      <a:tst expr="../AdcPriorityImplementation = 'ADC_PRIORITY_NONE' and ../AdcEnableQueuing = 'false' and . !=1" true="The QueueMaxDepth must be 1"/>
+                  </a:da>
+                </v:var>
+                <v:ref name="AdcClockRef" type="REFERENCE">
+                    <a:a name="DESC" 
+                          value="EN: Reference to the CPU clock configuration, which is set in the MCU driver configuration."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                          type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SCOPE" value="LOCAL"/>
+                    <a:a name="UUID" 
+                          value="3f931221-12bf-4b21-b712-21dee8ac378a"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="REF" 
+                          value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint"/>
+                  </v:ref>
+                <v:lst name="AdcEcucPartitionRef">
+                  <v:ref name="AdcEcucPartitionRef" type="REFERENCE">
+                    <a:a name="DESC">
+                      <a:v>EN: Maps the ADC driver to zero or multiple ECUC partitions to make the driver API available in the according partition.</a:v>
+                      <a:v>EN: Tags: atp.Status=draft</a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                    <a:a name="SCOPE" value="ECU"/>
+                    <a:a name="UUID" 
+                         value="3dc30f7a-eb9a-4789-810e-13da3167412e"/>
+                    <a:a name="__ORIGIN" value="Elektrobit"/>
+                    <a:da name="REF" 
+                          value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition"/>
+                  </v:ref>
+                </v:lst>
+                <v:ref name="AdcKernelEcucPartitionRef" type="REFERENCE">
+                  <a:a name="DESC">
+                    <a:v>EN: Maps the ADC kernel to zero or one ECUC partitions to assign the driver kernel to a certain core. The ECUC partition referenced is a subset of the ECUC partitions where the ADC driver is mapped to.</a:v>
+                    <a:v>EN: Tags: atp.Status=draft</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                  <a:a name="SCOPE" value="ECU"/>
+                  <a:a name="UUID" value="b971b912-c108-42e0-8235-73f36d2a5910"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="READONLY" value="TRUE"/>
+                  <a:da name="REF" 
+                        value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition"/>
+                </v:ref>
+                <v:var name="AdcVrefPowerSupply" type="ENUMERATION">
+                  <a:a name="DESC" 
+                       value="EN: Adc VREF Power Supply."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="860a6e4d-e24c-4e3c-810d-8561795932fd"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="ADC_VREF_5V"/>
+                  <a:da name="READONLY" value="false"/>
+                  <a:da name="RANGE">
+                    <a:v>ADC_VREF_5V</a:v>
+                    <a:v>ADC_VREF_3V3</a:v>
+                  </a:da>
+                </v:var>
+                <v:lst name="AdcPowerStateConfig" type="MAP">
+                  <a:da name="MIN" value="0"/>
+                  <a:da name="MAX" value="1"/>
+                  <v:ctr name="AdcPowerStateConfig" type="IDENTIFIABLE">
+                    <a:a name="DESC" 
+                         value="EN: Each instance of this parameter defines a power state and the callback to be called when this power state is reached."/>
+                    <a:a name="UUID" 
+                         value="883f7cd2-417c-4ca1-a2e5-1f97c1d55559"/>
+                    <v:var name="AdcPowerState" type="INTEGER">
+                      <a:a name="DESC" 
+                           value="EN: Each instance of this parameter describes a different power state supported by the ADC HW. It should be defined by the HW supplier and used by the ADCDriver to reference specific HW configurations which set the  ADC HW module in the referenced power state."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                      <a:a name="UUID" 
+                           value="24cdf606-04a0-47e8-9dab-95673ea4d126"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="READONLY" value="TRUE"/>
+                      <a:da name="DEFAULT" value="0"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=9223372036854775807"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                    </v:var>
+                    <v:var name="AdcPowerStateReadyCbkRef" type="FUNCTION-NAME">
+                      <a:a name="DESC" 
+                           value="EN: Each instance of this parameter contains a reference to a power mode callback defined in a CDD or IoHwAbs component."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="65ec21a3-1572-4638-8b1b-b5faf6bfdf8d"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="NULL_PTR"/>
+                      <a:da name="READONLY" value="TRUE"/>
+                    </v:var>
+                  </v:ctr>
+                </v:lst>
+              </v:ctr>
+              <v:ctr name="ExtTrigDigitalFilterLen" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                      value="EN: The EQADC External Trigger Digital Filter Register (EQADC_ETDFR) is used to set the minimum time a signal must be held in a logic state on the CFIFO triggers inputs to be 
+                                recognized as an edge or level gated trigger. The Digital Filter Length field specifies the minimum number of system clocks that must be counted by the digital filter counter to 
+                                recognize a logic state change. However, there is a control signal that can be used to bypass the digital filter when this is not needed.
+                                DFL  --------- Minimum number of system clocks
+                                0    ---------      2.
+                                1    ---------      3.
+                                2    ---------      5.
+                                3    ---------      9.
+                                4    ---------     17.
+                                5    ---------     33.
+                                6    ---------     65.
+                                7    ---------    129.
+                                8    ---------    257.
+                                9    ---------    513.
+                                10   ---------   1025.
+                                11   ---------   2049.
+                                12   ---------   4097.
+                                13   ---------   8193.
+                                14   ---------  16385.
+                                15   ---------  32769.
+                            "/>
+                <a:a name="UUID" 
+                      value="0eb48cce-8ae6-4ce3-964e-cf952d3525f8"/>
+                <v:var name="EQADC01_DigitalFilterLength" type="INTEGER">
+                <a:a name="DESC"
+                      value="EN: The DFL bit is set for EQADC01."/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="CCFC"/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                <a:a name="SCOPE" value="LOCAL"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" 
+                      value="0eb48cce-8ae6-4ce3-985e-cf952d3525f8"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="0"/>
+                <a:da name="INVALID" type="Range">
+                  <a:tst expr="&lt;=15"/>
+                  <a:tst expr="&gt;=0"/>
+                </a:da>
+                </v:var>
+              </v:ctr>
+              <v:ctr name="AdcPublishedInformation" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: Additional published parameters not covered by &quot;Common&quot; Published Information. Note that these parameters have &quot;PUBLISHED-INFORMATION&quot; configuration class setting, since they are published information."/>
+                <a:a name="UUID" value="ebb17fe9-0445-4198-9678-554be2c1c105"/>
+                <v:var name="AdcChannelValueSigned" type="BOOLEAN_LABEL">
+                  <a:a name="DESC" 
+                       value="EN: Information whether the result value of the ADC driver has sign information (true) or not (false). If the result shall be interpreted as signed value it shall apply to C-language rules."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="1e111b79-c140-49f3-9d68-21bc3ad0e41c"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="AdcGroupFirstChannelFixed" type="BOOLEAN_LABEL">
+                  <a:a name="DESC" 
+                       value="EN: Information whether the first channel of an ADC Channel group can be configured (false) or is fixed (true) to a value determined by the ADC HW Unit."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="5939e998-464a-4135-aa76-5a02643686c0"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="AdcMaxChannelResolution" type="INTEGER_LABEL">
+                  <a:a name="DESC" 
+                       value="EN: Maximum Channel resolution in bits (does not specify accuracy)."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="c715fd20-015c-4bbc-ae20-44571098cf3c"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=63"/>
+                    <a:tst expr="&gt;=1"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="12"/>
+                </v:var>
+              </v:ctr>
+              <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: Common container, aggregated by all modules. It contains published information about vendor and versions."/>
+                <a:a name="UUID" value="a24a01ba-10af-4aeb-b433-3a010e10bca0"/>
+                <v:var name="ArReleaseMajorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" 
+                       value="EN: Major version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="a24a01ba-10af-4aeb-b433-3a010e10bca1"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="4"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4"/>
+                    <a:tst expr="&gt;=4"/>
+                  </a:da>
+                </v:var>
+                <v:var name="ArReleaseMinorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" 
+                       value="EN: Minor version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="a24a01ba-10af-4aeb-b433-3a010e10bca2"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="4"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4"/>
+                    <a:tst expr="&gt;=4"/>
+                  </a:da>
+                </v:var>
+                <v:var name="ArReleaseRevisionVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" 
+                       value="EN: Revision version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="a24a01ba-10af-4aeb-b433-3a010e10bca3"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=0"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="ModuleId" type="INTEGER_LABEL">
+                  <a:a name="DESC" 
+                       value="EN: Module ID of this module from Module List."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="a24a01ba-10af-4aeb-b433-3a010e10bca4"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="123"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=123"/>
+                    <a:tst expr="&gt;=123"/>
+                  </a:da>
+                </v:var>
+                <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" 
+                       value="EN: Major version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="a24a01ba-10af-4aeb-b433-3a010e10bca5"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="3"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=3"/>
+                    <a:tst expr="&gt;=3"/>
+                  </a:da>
+                </v:var>
+                <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" 
+                       value="EN: Minor version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="a24a01ba-10af-4aeb-b433-3a010e10bca6"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=0"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" 
+                       value="EN: Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="a24a01ba-10af-4aeb-b433-3a010e10bca7"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=0"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="VendorId" type="INTEGER_LABEL">
+                  <a:a name="DESC" 
+                       value="EN: Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="a24a01ba-10af-4aeb-b433-3a010e10bca9"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="176"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=176"/>
+                    <a:tst expr="&gt;=176"/>
+                  </a:da>
+                </v:var>
+              </v:ctr>
+              <d:ref type="REFINED_MODULE_DEF" 
+                     value="ASPath:/AUTOSAR/EcucDefs/Adc"/>
+            </v:ctr>
+          </d:chc>
+          <d:chc name="myEcuParameterDefinition" type="AR-ELEMENT" 
+                 value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="DEF" 
+                   value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+              <d:lst name="MODULE_REF">
+                <d:ref type="MODULE_REF" value="ASPath:/AdcConfig/Adc"/>
+              </d:lst>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

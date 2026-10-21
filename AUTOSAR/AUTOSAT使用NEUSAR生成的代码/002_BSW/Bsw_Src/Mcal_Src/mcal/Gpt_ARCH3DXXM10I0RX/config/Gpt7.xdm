@@ -1,0 +1,2730 @@
+<?xml version='1.0'?>
+<datamodel version="7.0"
+           xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd"
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd"
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd"
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar"
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd"
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd"
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="GptConfig" type="AR-PACKAGE">
+        <a:a name="UUID" value="ECUC:aff2dccf-8224-4af8-a2ad-e9de743ca197"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="Gpt" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="RELEASE" value="asc:4.4"/>
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                  <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.4.0</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                      <ad:DATE>2022-12-03</ad:DATE>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                  </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC">
+              <a:v><![CDATA[EN:
+                  <html>
+                  Configuration of the Gpt (General Purpose Timer) module.
+                  </html>
+                  ]]></a:v>
+              </a:a>
+              <a:a name="UUID" value="ECUC:afacd106-6e01-4c36-86dd-06f3ae864687"/>
+
+              <!-- /** @implements IMPLEMENTATION_CONFIG_VARIANT_Object */ -->
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:a name="UUID" value="ECUC:7bd8b1cd-4dab-4cd6-8075-75f64a87112c"/>
+                <a:da name="DEFAULT" value="VariantPostBuild"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuild</a:v>
+                  <a:v>VariantPreCompile</a:v>
+                </a:da>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                </a:a>
+              </v:var>
+
+              <v:ctr name="GptGeneral" type="IDENTIFIABLE">
+                <a:a name="UUID" value="3e17e834-f1ed-4b12-82cb-01e7f81f02a8"/>
+                  <v:var name="EnableGTM_CMU" type="BOOLEAN">
+                    <a:a name="DESC">
+                      <a:v><![CDATA[EN:<html> Vendor specific: <p>Activates/Deactivates GTMCFG configuration. GTMCFG configuration must be configured here.</p></html>]]></a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="LABEL" value="GTM CMU Supported"/>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:72d28c1d-9311-41a5-ba65-40021a249a65"/>
+                    <a:da name="DEFAULT" value="false"/>
+                    <a:a name="READONLY" value="true" />
+                  </v:var>
+                  <v:var name="GPTSupportGtm" type="BOOLEAN">
+                    <a:a name="DESC">
+                      <a:v><![CDATA[EN:<html> Vendor specific: 3007BC The GTM module is disabled by default.</p></html>]]></a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="LABEL" value="GPTSupportGtm"/>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:72d28c1d-9311-41a5-ba35-40061a249a65"/>
+                    <a:da name="DEFAULT" value="false"/>
+                    <a:a name="READONLY" value="true" />
+                  </v:var>
+                  <v:var name="GPTInlineSupport" type="BOOLEAN">
+                    <a:a name="DESC">
+                      <a:v><![CDATA[EN:<html> Enables or disables the declaration and definition of inline functions.</p></html>]]></a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:72d28c1d-9311-41a5-ba35-40021a249a65"/>
+                    <a:da name="DEFAULT" value="true"/>
+                  </v:var>
+              </v:ctr>
+
+              <!-- /** @implements GptChannelConfigSet_Object */ -->
+              <v:ctr name="GptChannelConfigSet" type="MULTIPLE-CONFIGURATION-CONTAINER">
+                <a:a name="DESC">
+                <a:v><![CDATA[EN:
+                    <html>
+                      This container is the base of an Configuration Set which contains the configured GPT channels. This way, different configuration sets can be defined for post-build process.
+                    </html>
+                    ]]></a:v>
+                </a:a>
+                <a:a name="UUID" value="ECUC:ff596000-48f1-4e07-8a31-496d7a4c95cc"/>
+                <v:lst name="GptChannelConfiguration" type="MAP">
+                <a:da name="MIN" value="1"/>
+                  <!-- /** @implements GptChannelConfiguration_Object */ -->
+                  <v:ctr name="GptChannelConfiguration" type="IDENTIFIABLE">
+                    <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                        <html>
+                          This container contains the channel-wide configuration (parameters) of the GPT Driver
+                        </html>
+                        ]]></a:v>
+                    </a:a>
+                    <a:a name="UUID" value="ECUC:d8c6651d-9722-4806-bc0d-4f537051ef84"/>
+
+                    <v:lst name="GptChannelEcucPartitionRef">
+                      <a:da name="INVALID" type="XPath">
+                          <a:tst expr="(num:i(count(../../../../GptDriverConfiguration/GptEcucPartitionRef/*)) &gt;0) and
+                                        (node:value(../../../../GptDriverConfiguration/GptMulticoreSupport) = 'true') and
+                                        (num:i(count(node:current()/*))='0')"
+                                  true="GptMulticoreSupport is enabled, please allocate one EcucPartition for this channel" />                            
+                      </a:da>
+                      <v:ref name="GptChannelEcucPartitionRef" type="REFERENCE">
+                      <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                          <html>
+                          Maps a GPT channel to zero or one ECUC partition to limit the access to this channel group. The ECUC partitions referenced are a subset of the ECUC partitions where the GPT driver is mapped to.
+                          </html>
+                          ]]></a:v>
+                      </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                          <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="SCOPE" value="ECU"/>
+                        <a:a name="UUID" 
+                            value="ECUC:14cc6e73-619e-4029-a793-3533390384ad"/>
+                        <a:da name="REF" 
+                            value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition"/>
+                        <a:da name="INVALID" type="XPath">
+                          <a:tst expr="node:containsValue(../../../../../GptDriverConfiguration/GptEcucPartitionRef/*, node:value(.))"
+                                  false="The ECUC partition referenced by GptChannelEcucPartitionRef shall be a subset of the ECUC partitions referenced by GptEcucPartitionRef."/> 
+                        </a:da>
+                      </v:ref>
+                    </v:lst>
+
+                    <!-- /** @implements GptChannelId_Object */ -->
+                    <v:var name="GptChannelId" type="INTEGER">
+                      <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                        <html>
+                          Channel Id of the GPT channel. This value will be assigned to the symbolic name derived of the GptChannelConfiguration container short name.
+                        </html>
+                        ]]></a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                      <a:a name="UUID" value="ECUC:4062fd1c-20c4-41b8-ac5c-ee5dc7443c13"/>
+                      <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index, '0')"/>
+                      <a:da name="INVALID" type="Range">
+                          <!-- Max allowed GptChannelId = (2^32)-1-->
+                          <a:tst expr="&lt;=4294967295"/>
+                          <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="RANGE" type="XPath">
+                          <a:tst expr="text:uniq(node:fallback(../../*/GptChannelId, text:split('1 2 3')), node:fallback(., 0))" false="Channel id is duplicated in this configuration"/>
+                          <a:tst expr="node:fallback(., 0) &lt; count(node:fallback(../../*, text:split('1 2 3')))" false="It can't be assigned an id higher than the number of defined channels"/>
+                      </a:da>
+                    </v:var>
+                    <v:var name="GptHwChannel" type="ENUMERATION">
+                      <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                        <html>
+                        Vendor specific: Selects the physical GPT Channel.
+                        </html>
+                        ]]></a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="ECUC:6cc67099-825e-4e20-947a-022bfa282766"/>
+                      <a:da name="DEFAULT" type="XPath" expr="(ecu:list('Gpt.GptChannelConfigSet.GptChannelConfiguration.GptHwChannel'))[position()-1=node:fallback(node:current()/../@index, '0')]">
+                      </a:da>
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="text:uniq(../../*/GptHwChannel, .)" false="GptChannelConfiguration Duplicate physical GPT channel"/>
+                        <a:tst expr="not(node:exists(../GptStmPrescaler)) and contains(node:fallback(.,'STM'),'STM')"
+                          true="GptStmPrescaler parameter must be enabled as mandatory for STM HW channel type."/>
+                        <a:tst expr="not(node:exists(../GptGTMConfiguration/GptGtmChannelClkSrc)) and contains(node:fallback(.,'GTM'),'GTM')"
+                          true="GptGtmChannelClkSrc parameter must be enabled as mandatory for GTM HW channel type."/>
+                        <a:tst expr="(../../../../GptGeneral/EnableGTM_CMU ='false') and contains(node:fallback(.,'GTM'),'GTM')"
+                          true="EnableGTM_CMU parameter must be enabled as mandatory for GTM HW channel type."/>
+                        <a:tst expr="(text:contains(../../*/GptHwChannel, 'RTC_0_CH_0') and text:contains(../../*/GptHwChannel, 'API_0_CH_0'))"
+                          true="RTC and API cannot exist at the same time"/>
+
+                      </a:da>
+                      <a:da name="RANGE" type="XPath" expr="ecu:list('Gpt.GptChannelConfigSet.GptChannelConfiguration.GptHwChannel')"/>
+                    </v:var>
+
+                    <!-- /** @implements GptChannelMode_Object */ -->
+                    <v:var name="GptChannelMode" type="ENUMERATION">
+                      <a:da name="TOOLTIP" value="Select desired channel mode"/>
+                      <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                        <html>
+                          Specifies the behaviour of the timerchannel after the timeout has expired
+                        </html>
+                        ]]></a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="ECUC:5438daf9-f097-44c2-b2b6-d6dae356e288"/>
+                      <a:da name="DEFAULT" value="GPT_CH_MODE_ONESHOT"/>
+                      <a:da name="RANGE">
+                        <a:v>GPT_CH_MODE_CONTINUOUS</a:v>
+                        <a:v>GPT_CH_MODE_ONESHOT</a:v>
+                      </a:da>
+                    </v:var>
+
+                    <!-- /** @implements GptChannelTickFrequency_Object */ -->
+                    <v:var name="GptChannelTickFrequency" type="FLOAT">
+                      <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                        <html>
+                        EN: Specifies the tick frequency of the timer channel in Hz, is calculated
+                        automatically by divide MCU configured frequency with GptChannelPrescaler
+                        </html>
+                        ]]></a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="ECUC:4b464158-1b73-41b9-886f-491e9a56ab23"/>
+                        <a:da name="DEFAULT" type="XPath">
+                          <a:tst expr="
+                                    (
+                                      num:i(contains(node:fallback(../GptHwChannel,'PIT'),'PIT') = true()) *
+                                      (node:value(node:ref(node:ref(../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                                    )
+                                    +
+                                    (
+                                      num:i(contains(node:fallback(../GptHwChannel,'STM'),'STM') = true()) *
+                                      ((node:value(node:ref(node:ref(../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                                      div (num:i(not(contains(node:fallback(../GptHwChannel,'STM'),'STM'))) + node:fallback(../GptStmPrescaler,1)))
+                                    )
+                                    +
+                                    (
+                                      num:i(contains(node:fallback(../GptHwChannel,'GTM'),'GTM') = true()) * 
+                                      node:fallback(../GptGTMConfiguration/GptGtmChannelTickFrequency,1)
+                                    )
+                                    +
+                                    (
+                                      num:i(contains(node:fallback(../GptHwChannel,'RTC'),'RTC') = true()) * 
+                                      node:fallback(../GptRTCConfiguration/RTCTickFrequency,1)
+                                    )
+                                    +
+                                    (
+                                      num:i(contains(node:fallback(../GptHwChannel,'API'),'API') = true()) * 
+                                      node:fallback(../GptRTCConfiguration/RTCTickFrequency,1)
+                                    )
+                          "/>
+                      </a:da>
+                      <a:a name="RANGE" type="XPath">
+                        <a:tst expr="
+                                    (
+                                      num:i(contains(node:fallback(../GptHwChannel,'PIT'),'PIT') = true()) *
+                                      (node:value(node:ref(node:ref(../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                                    )
+                                    +
+                                    (
+                                      num:i(contains(node:fallback(../GptHwChannel,'STM'),'STM') = true())   *
+                                      ((node:value(node:ref(node:ref(../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                                      div (num:i(not(contains(node:fallback(../GptHwChannel,'STM'),'STM'))) + node:fallback(../GptStmPrescaler,1)))
+                                    )
+                                    +
+                                    (
+                                      num:i(contains(node:fallback(../GptHwChannel,'GTM'),'GTM') = true()) * 
+                                      node:fallback(../GptGTMConfiguration/GptGtmChannelTickFrequency,1)
+                                    )
+                                    +
+                                    (
+                                      num:i(contains(node:fallback(../GptHwChannel,'RTC'),'RTC') = true()) * 
+                                      node:fallback(../GptRTCConfiguration/RTCTickFrequency,1)
+                                    )
+                                    +
+                                    (
+                                      num:i(contains(node:fallback(../GptHwChannel,'API'),'API') = true()) * 
+                                      node:fallback(../GptRTCConfiguration/RTCTickFrequency,1)
+                                    )
+                        "/>
+                      </a:a>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&gt;=0.0" false="This frequency is too low."/>
+                        <a:tst expr="&lt;=160000000.0" false="This frequency is too high."/>
+                      </a:da>
+                      </v:var>
+                    <!-- /** @implements GptChannelTickValueMax_Object */ -->
+                    <v:var name="GptChannelTickValueMax" type="INTEGER">
+                      <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                      <html> Maximum value in ticks, the timer channel is able to count. With the next tick, the timer rolls over to zero.
+                      There is mandatory to set 4294967295 for the PIT, RTI and STM channels, 65535 for GTM channels (coresponding to the 32 bits counter resolution),4095 for RTC and API channels
+                      </html> ]]>
+                        </a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:da name="DEFAULT" type="XPath">
+                          <a:tst expr="num:i(
+                            num:i(number(contains(node:fallback(../GptHwChannel,'STM'),'STM') or contains(node:fallback(../GptHwChannel,'STM'),'PIT'))) * num:i(4294967295) + 
+                            num:i(number(contains(node:fallback(../GptHwChannel,'STM'),'GTM'))) * num:i(65535) + 
+                            num:i(number(contains(node:fallback(../GptHwChannel,'STM'),'RTC') or contains(node:fallback(../GptHwChannel,'STM'),'API'))) * num:i(4095)
+                                              )"/>
+                      </a:da>
+                      <a:a name="INVALID" type="Multi">
+                        <mt:range> <mt:tst expr="&lt;=4294967295"/> <mt:tst expr="&gt;=0"/> </mt:range>
+                        <mt:xpath expr="((. != '4294967295') and (contains(../GptHwChannel, 'PIT_') or contains(../GptHwChannel, 'STM_')))"
+                                true="The proper value for the PIT, RTI or STM channels is 4294967295. "/>
+                        <mt:xpath expr="((. != '65535') and contains(../GptHwChannel, 'GTM_'))"
+                                true="The proper value for the GTM channels is 65535. "/>
+                        <mt:xpath expr="((. != '4095') and contains(../GptHwChannel, 'RTC_'))"
+                        true="The proper value for the RTC channels is 4095. "/>
+                        <mt:xpath expr="((. != '4095') and contains(../GptHwChannel, 'API_'))"
+                        true="The proper value for the API channels is 4095. "/>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="ECUC:8adc19fc-deda-4713-b8d9-27b5ea1f585d"/>
+                    </v:var>
+                    <v:var name="GptFreezeEnable" type="BOOLEAN">
+                      <a:a name="DESC">
+                          <a:v><![CDATA[EN:
+                          <html>
+                            Vendor specific: Select to set Freeze enable for the hw resources.
+                          </html>
+                          ]]></a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="ECUC:4fb30f56-c174-4e49-a479-bd7b28561689"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+
+                    <!-- /** @implements GptEnableWakeup_Object */ -->
+                    <v:var name="GptEnableWakeup" type="BOOLEAN">
+                      <a:da name="TOOLTIP" value="Check to enable wakeup feature"/>
+                      <a:a name="DESC">
+                          <a:v><![CDATA[EN:
+                          <html>
+                            Enables wakeup capability of CPU for a channel.
+                          </html>
+                          ]]></a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="ECUC:535f8171-b87b-4719-9984-4f09e73e4df5"/>
+                      <a:da name="DEFAULT" value="false"/>
+                      <!-- 
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="contains(node:fallback(../GptHwChannel,'PIT'),'PIT') = true()"/>
+                      </a:da>
+                    -->
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="(. = 'true') and (../../../../GptConfigurationOfOptApiServices/GptWakeupFunctionalityApi = 'false')"
+                                      true="The switch GptWakeupFunctionalityApi is false, set it to true. "/>
+                      </a:da>
+                    </v:var>
+
+                    <!-- /** @implements GptNotification_Object */ -->
+                    <v:var name="GptNotification" type="FUNCTION-NAME">
+                    <a:da name="TOOLTIP" value="Function pointer to callback function. The field is editable only if the switch GptEnableDisableNotificationApi is true."/>
+                      <a:a name="DESC">
+                          <a:v><![CDATA[EN:
+                          <html>
+                            Function pointer to callback function(for non-wakeup notification). The field is editable only if the switch GptEnableDisableNotificationApi is true.
+                          </html>
+                          ]]></a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="OPTIONAL" value="true"/>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="ECUC:2ee9c8f7-be50-43e6-ba2d-52a93e6d1439"/>
+                      <a:da name="DEFAULT" value="NULL_PTR"/>
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="((.='NULL') or (.='Null') or (.='false') or (.='FALSE') or (.='null') or
+                                      (.='null_ptr') or (.='Null_Ptr'))"
+                                      true="Invalid name of the GptNotification. Must be valid C function name, NULL_PTR.
+                        "/>
+                        <a:tst expr="normalize-space(.) = '&quot;NULL_PTR&quot;' or normalize-space(.) = 'NULL_PTR' or
+                                      normalize-space(.) = '&quot;NULL&quot;' or normalize-space(.) = 'NULL' or
+                                      text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$')"
+                                false="Invalid name of the GptNotification. Must be valid C function name, NULL_PTR,
+                        ."/>
+                      </a:da>
+                      <a:da name="EDITABLE" type="Bound">
+                        <a:tst expr="../../../../GptConfigurationOfOptApiServices/GptEnableDisableNotificationApi"/>
+                      </a:da>
+                    </v:var>
+
+                    <!-- /** @implements GptChannelClkSrcRef_Object */ -->
+                    <v:ref name="GptChannelClkSrcRef" type="REFERENCE">
+                      <a:a name="DESC">
+                        <a:v><![CDATA[EN:<html>
+                        Reference to the GptClockReferencePoint from which the channel clock is derived.
+                              </html>]]>
+                        </a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="UUID" value="ECUC:de3ad9f3-5690-46c6-b76e-f1ebb90532c6"/>
+                      <a:da name="REF"
+                            value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Gpt/GptDriverConfiguration/GptClockReferencePoint"/>
+                    </v:ref>
+                    <v:var name="GptStmPrescaler"  type="INTEGER">
+                      <a:a name="DESC"><a:v><![CDATA[EN:
+                      <html> Vendor specific: The GPT module specific clock prescaler value. <p></p>
+                      </html> ]]></a:v></a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="ECUC:a8c603d0-5173-46fb-a71c-6aa1ae7e45ba"/>
+                      <a:da name="DEFAULT" value="1"/>
+                      <a:a name="OPTIONAL" value="true"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&gt;0"/>
+                        <a:tst expr="&lt;=256"/>
+                      </a:da>
+                    </v:var>
+                    <v:ctr name="GptRTCConfiguration" type="IDENTIFIABLE">
+                      <a:a name="DESC" value="EN: RTC configuration set."/>
+                      <a:a name="UUID" value="72871dbe-a1ce-068f-5302-7c4eb8a751d7"/>
+                      <a:a name="OPTIONAL" value="true"/>
+                      <v:var name="GptRtcClkSrc" type="ENUMERATION">
+                        <a:da name="TOOLTIP" value="Select the desired clock source for the RTC channel "/>
+                         <a:a name="DESC">
+                          <a:v><![CDATA[EN:
+                          <html>
+                          EN: Select the desired clock source for the RTC channel 
+                          </html>
+                          ]]></a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                          <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:da name="DEFAULT" value="RTC_SIRC_CLK"/>
+                        <a:da name="RANGE">
+                          <a:v>RTC_SIRC_CLK</a:v>
+                          <a:v>RTC_FIRC_CLK</a:v>
+                        </a:da>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:47af91d3-39af-41f9-a8b0-fe447e82b431"/>
+                      </v:var>
+                      <v:var name="GptRtcClkDiv" type="ENUMERATION">
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                         <a:a name="DESC">
+                          <a:v><![CDATA[EN:
+                          <html>
+                          EN: Selectable clock division factor
+                          </html>
+                          ]]></a:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                              value="d77b6ac7-4307-049b-03ed-cb967a7caf06"/>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:da name="DEFAULT" value="RTC_DIV32"/>
+                        <a:da name="RANGE">
+                          <a:v>RTC_DIV32</a:v>
+                          <a:v>RTC_DIV512</a:v>
+                          <a:v>RTC_DIV32_512</a:v>
+                          <a:v>RTC_DIV0</a:v>
+                        </a:da>
+                      </v:var>
+                      <v:var name="RTCTickFrequency" type="FLOAT">                      
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="DESC">
+                          <a:v><![CDATA[EN:
+                          <html>
+                          EN: Specifies RTC the tick frequency of the timer channel in Hz, is calculated
+                          automatically by divide MCU configured frequency with GptChannelPrescaler
+                          </html>
+                          ]]></a:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="dcb74210-06a9-0163-b98c-4ab98c3b1bf3"/>
+                        <a:da name="DEFAULT" type="XPath">
+                          <a:tst expr="
+                            (num:i(contains(node:fallback(../GptRtcClkSrc,'RTC_SIRC_CLK'),'RTC_SIRC_CLK')) * 
+                            (num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV32')='RTC_DIV32')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 32 +
+                            (num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV512')='RTC_DIV512')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 512) +
+                            (num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV32_512')='RTC_DIV32_512')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 16384) +
+                            (num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV0')='RTC_DIV0')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 1)))
+                            +
+                            num:i(contains(node:fallback(../GptRtcClkSrc,'RTC_SIRC_CLK'),'RTC_FIRC_CLK')) * 
+                            ((num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV32')='RTC_DIV32')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 32) +
+                            (num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV512')='RTC_DIV512')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 512) +
+                            (num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV32_512')='RTC_DIV32_512')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 16384) +
+                            (num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV0')='RTC_DIV0')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 1))
+                          "/>
+                        </a:da>
+                        <a:a name="RANGE" type="XPath">
+                          <a:tst expr="
+                            (num:i(contains(node:fallback(../GptRtcClkSrc,'RTC_SIRC_CLK'),'RTC_SIRC_CLK')) * 
+                            (num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV32')='RTC_DIV32')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 32 +
+                            (num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV512')='RTC_DIV512')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 512) +
+                            (num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV32_512')='RTC_DIV32_512')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 16384) +
+                            (num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV512')='RTC_DIV512')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 512) +
+                            (num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV32_512')='RTC_DIV32_512')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 16384) +
+                            (num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV0')='RTC_DIV0')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 1)))
+                            +
+                            num:i(contains(node:fallback(../GptRtcClkSrc,'RTC_SIRC_CLK'),'RTC_FIRC_CLK')) * 
+                            ((num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV32')='RTC_DIV32')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 32) +
+                            (num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV512')='RTC_DIV512')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 512) +
+                            (num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV32_512')='RTC_DIV32_512')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 16384) +
+                            (num:i((node:fallback(../GptRtcClkDiv,'RTC_DIV0')='RTC_DIV0')) *
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency))
+                            div 1))
+                          "/>
+                        </a:a>
+                      </v:var>
+                    </v:ctr>
+                    <v:ctr name="GptGTMConfiguration" type="IDENTIFIABLE">
+                      <a:a name="DESC" value="EN: GTM configuration set."/>
+                      <a:a name="UUID" value="72871dbe-a1ce-068f-5302-7c4eb4a751d7"/>
+                      <a:a name="OPTIONAL" value="true"/>
+                      <v:var name="GptGtmChannelClkSrc" type="ENUMERATION">
+                        <a:da name="TOOLTIP" value="Select the desired clock source for the GTM channel "/>
+                        <a:a name="DESC"><a:v><![CDATA[EN:
+                        <html> The GTM module specific clock input for the timer unit can statically be configured and allows to select one of the 5 fixed clocks per channel.<br>
+                            Select the clock source for the GTM channel for this platform. <br>
+                            0 - CMU_FXCLK0 System clock divide by 1<br>
+                            1 - CMU_FXCLK1 System clock divide by 16<br>
+                            2 - CMU_FXCLK2 System clock divide by 256<br>
+                            3 - CMU_FXCLK3 System clock divide by 4096<br>
+                            4 - CMU_FXCLK4 System clock divide by 65536<br>
+                          <h1>Note</h1>This is an Implementation Specific Parameter.<br>
+                        </html> ]]></a:v></a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                          <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="READONLY" value="true" />
+                        <a:da name="DEFAULT" value="CLK_SOURCE_CMU_FXCLK0"/>
+                        <a:da name="RANGE">
+                          <a:v>CLK_SOURCE_CMU_FXCLK0</a:v>
+                          <a:v>CLK_SOURCE_CMU_FXCLK1</a:v>
+                          <a:v>CLK_SOURCE_CMU_FXCLK2</a:v>
+                          <a:v>CLK_SOURCE_CMU_FXCLK3</a:v>
+                          <a:v>CLK_SOURCE_CMU_FXCLK4</a:v>
+                        </a:da>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:47af91d3-39af-4df9-a8b0-fe447e82b431"/>
+                      </v:var>
+                      <!-- /** @implements GptGtmChannelTickFrequency_Object */ -->
+                      <v:var name="GptGtmChannelTickFrequency" type="FLOAT">
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                          <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="DESC">
+                          <a:v><![CDATA[EN:
+                          <html>
+                          EN: Specifies Gtm the tick frequency of the timer channel in Hz, is calculated
+                          automatically by divide MCU configured frequency with GptChannelPrescaler
+                          </html>
+                          ]]></a:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="ECUC:4b464158-1b73-41b9-886f-491e9a96ab23"/>
+                        <a:a name="READONLY" value="true" />
+                        <a:da name="DEFAULT" type="XPath">
+                          <a:tst expr="
+                            (
+                              num:i(contains(node:fallback(../../GptHwChannel,'GTM'),'GTM') = true()) * 
+                              (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency)) *
+                              (node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/Global_Clock_Control_Denominator)) div
+                              num:i(
+                                (node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/Global_Clock_Control_Numerator))
+                                +
+                                num:i( contains(node:fallback(../../GptHwChannel,'PIT'),'PIT') = true()) * num:i(1)
+                                +
+                                num:i( contains(node:fallback(../../GptHwChannel,'STM'),'STM') = true()) * num:i(1)
+                              )
+                              div (
+                                  num:i(not(contains(node:fallback(../../GptHwChannel,'GTM'),'GTM') = true())) +
+                                  ((num:i(node:fallback(../GptGtmChannelClkSrc,'CLK_SOURCE_CMU_FXCLK0') = 'CLK_SOURCE_CMU_FXCLK0')) * num:i(1))
+                                  +
+                                  ((num:i(node:fallback(../GptGtmChannelClkSrc,'CLK_SOURCE_CMU_FXCLK1') = 'CLK_SOURCE_CMU_FXCLK1')) * num:i(16))
+                                  +
+                                  ((num:i(node:fallback(../GptGtmChannelClkSrc,'CLK_SOURCE_CMU_FXCLK2') = 'CLK_SOURCE_CMU_FXCLK2')) * num:i(256))
+                                  +
+                                  ((num:i(node:fallback(../GptGtmChannelClkSrc,'CLK_SOURCE_CMU_FXCLK3') = 'CLK_SOURCE_CMU_FXCLK3')) * num:i(4096))
+                                  +
+                                  ((num:i(node:fallback(../GptGtmChannelClkSrc,'CLK_SOURCE_CMU_FXCLK4') = 'CLK_SOURCE_CMU_FXCLK4')) * num:i(65536))
+                                )
+                                div (
+                                    (
+                                      num:i(node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/FXCLK_Selection) = (node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[1]/CMUClockId))) *
+                                      ((node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[1]/ClockDivider)) - 1)
+                                    )  
+                                    +
+                                    (
+                                      num:i(node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/FXCLK_Selection) = (node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[2]/CMUClockId))) *
+                                      ((node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[2]/ClockDivider)) - 1)
+                                    ) 
+                                    +
+                                    (
+                                      num:i(node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/FXCLK_Selection) = (node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[3]/CMUClockId))) *
+                                      ((node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[3]/ClockDivider)) - 1)
+                                    ) 
+                                    +
+                                    (
+                                      num:i(node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/FXCLK_Selection) = (node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[4]/CMUClockId))) *
+                                      ((node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[4]/ClockDivider)) - 1)
+                                    ) 
+                                    +
+                                    (
+                                      num:i(node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/FXCLK_Selection) = (node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[5]/CMUClockId))) *
+                                      ((node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[5]/ClockDivider)) - 1)
+                                    ) 
+                                    +
+                                    (
+                                      num:i(node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/FXCLK_Selection) = (node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[6]/CMUClockId))) *
+                                      ((node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[6]/ClockDivider)) - 1)
+                                    ) 
+                                    +
+                                    (
+                                      num:i(node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/FXCLK_Selection) = (node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[7]/CMUClockId))) *
+                                      ((node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[7]/ClockDivider)) - 1)
+                                    )
+                                    +
+                                    (
+                                      num:i(node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/FXCLK_Selection) = (node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[8]/CMUClockId))) *
+                                      ((node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[8]/ClockDivider)) - 1)
+                                    ) + 1
+                                )
+                            )
+                          "/>
+                          </a:da>
+                        <a:a name="RANGE" type="XPath">
+                        <a:tst expr="
+                          (
+                            num:i(contains(node:fallback(../../GptHwChannel,'GTM'),'GTM') = true()) * 
+                            (node:value(node:ref(node:ref(../../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency)) *
+                            (node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/Global_Clock_Control_Denominator)) div
+                            num:i(
+                              (node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/Global_Clock_Control_Numerator))
+                              +
+                              num:i( contains(node:fallback(../../GptHwChannel,'PIT'),'PIT') = true()) * num:i(1)
+                              +
+                              num:i( contains(node:fallback(../../GptHwChannel,'STM'),'STM') = true()) * num:i(1)
+                            )
+                            div (
+                                num:i(not(contains(node:fallback(../../GptHwChannel,'GTM'),'GTM') = true())) +
+                                ((num:i(node:fallback(../GptGtmChannelClkSrc,'CLK_SOURCE_CMU_FXCLK0') = 'CLK_SOURCE_CMU_FXCLK0')) * num:i(1))
+                                +
+                                ((num:i(node:fallback(../GptGtmChannelClkSrc,'CLK_SOURCE_CMU_FXCLK1') = 'CLK_SOURCE_CMU_FXCLK1')) * num:i(16))
+                                +
+                                ((num:i(node:fallback(../GptGtmChannelClkSrc,'CLK_SOURCE_CMU_FXCLK2') = 'CLK_SOURCE_CMU_FXCLK2')) * num:i(256))
+                                +
+                                ((num:i(node:fallback(../GptGtmChannelClkSrc,'CLK_SOURCE_CMU_FXCLK3') = 'CLK_SOURCE_CMU_FXCLK3')) * num:i(4096))
+                                +
+                                ((num:i(node:fallback(../GptGtmChannelClkSrc,'CLK_SOURCE_CMU_FXCLK4') = 'CLK_SOURCE_CMU_FXCLK4')) * num:i(65536))
+                              )
+                              div (
+                                  (
+                                    num:i(node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/FXCLK_Selection) = (node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[1]/CMUClockId))) *
+                                    ((node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[1]/ClockDivider)) - 1)
+                                  )  
+                                  +
+                                  (
+                                    num:i(node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/FXCLK_Selection) = (node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[2]/CMUClockId))) *
+                                    ((node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[2]/ClockDivider)) - 1)
+                                  ) 
+                                  +
+                                  (
+                                    num:i(node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/FXCLK_Selection) = (node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[3]/CMUClockId))) *
+                                    ((node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[3]/ClockDivider)) - 1)
+                                  ) 
+                                  +
+                                  (
+                                    num:i(node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/FXCLK_Selection) = (node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[4]/CMUClockId))) *
+                                    ((node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[4]/ClockDivider)) - 1)
+                                  ) 
+                                  +
+                                  (
+                                    num:i(node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/FXCLK_Selection) = (node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[5]/CMUClockId))) *
+                                    ((node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[5]/ClockDivider)) - 1)
+                                  ) 
+                                  +
+                                  (
+                                    num:i(node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/FXCLK_Selection) = (node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[6]/CMUClockId))) *
+                                    ((node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[6]/ClockDivider)) - 1)
+                                  ) 
+                                  +
+                                  (
+                                    num:i(node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/FXCLK_Selection) = (node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[7]/CMUClockId))) *
+                                    ((node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[7]/ClockDivider)) - 1)
+                                  )
+                                  +
+                                  (
+                                    num:i(node:value(node:ref(../GptGtmCMUScrRef)/ClockManagementUnit/FXCLK_Selection) = (node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[8]/CMUClockId))) *
+                                    ((node:value(node:ref(../GptGtmCMUScrRef)/CMUClockControl/*[8]/ClockDivider)) - 1)
+                                  ) + 1
+                              )
+                          )
+                        "/>
+                        </a:a>
+                        <a:da name="INVALID" type="Range">
+                          <a:tst expr="&gt;=0.0" false="This frequency is too low."/>
+                        <a:tst expr="&lt;=160000000.0" false="This frequency is too high."/>
+                        </a:da>
+                      </v:var>
+                      <v:ref name="GptGtmCMUScrRef" type="REFERENCE">
+                        <a:a name="DESC"
+                              value="EN: Reference to a container of the type GptCMUReferencePoint, to select"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                          <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC"/>
+                        <a:a name="UUID" value="ECUC:7261f3d6-b182-4355-b4af-ea6e1df86661"/>
+                        <a:a name="READONLY" value="true" />
+                        <a:da name="REF" value="ASPathDataOfSchema:/GptConfig/Gpt/GtmCmuConfigSet"/>
+                      </v:ref>
+                    </v:ctr>
+
+                    <!-- /** @implements GptWakeupConfiguration_Object */ -->
+                    <v:ctr name="GptWakeupConfiguration" type="IDENTIFIABLE">
+                      <a:a name="DESC">
+                          <a:v><![CDATA[EN:
+                          <html>
+                            This container defines the wakeup source codes reported to Ecu State Manager.
+                          </html>
+                          ]]></a:v>
+                      </a:a>
+                      <a:a name="OPTIONAL" value="true"/>
+                      <a:a name="UUID" value="ECUC:14dfea19-f589-426c-9047-ddc89e4d38ed"/>
+                      <a:da name="ENABLE" value="false"/>
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="(../../../../../GptDriverConfiguration/GptReportWakeupSource = 'false' and num:i(num:i(count(../GptWakeupConfiguration/*))) != '0') "
+                                true="The switch GptReportWakeupSource is false,set it to true. "/>
+                        <a:tst expr="(../GptEnableWakeup  = 'false' and num:i(num:i(count(../GptWakeupConfiguration/*))) != '0') "
+                                true="The switch GptEnableWakeup is false,set it to true. "/>
+                        <a:tst expr="(contains(node:fallback(../GptHwChannel,'STM'),'STM') = 'true') "
+                                true="The STM channels have no wakeup capability."/>
+                        <a:tst expr="(contains(node:fallback(../GptHwChannel,'GTM'),'GTM') = 'true') "
+                                true="The GTM channels have no wakeup capability."/>
+                      </a:da>
+
+                      <!-- /** @implements GptWakeupSourceRef_Object */ -->
+                      <v:ref name="GptWakeupSourceRef" type="SYMBOLIC-NAME-REFERENCE">
+                        <a:a name="DESC">
+                          <a:v><![CDATA[EN:
+                          <html>
+                            In case the wakeup-capability is true this value is transmitted to the Ecu State Manager. Implementation Type: reference to EcuM_WakeupSourceType
+                          </html>
+                          ]]></a:v>
+                        </a:a>
+                        <a:da name="INVALID" type="XPath">
+                          <a:tst expr="(../GptWakeupSourceRef  = '')" true="No EcuMWakeup Source is selected. "/>
+                        </a:da>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                          <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="UUID" value="ECUC:a8ccf330-6f80-42f1-9658-27dd6998766d"/>
+                        <a:da name="REF"
+                              value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource"/>
+                      </v:ref>
+                    </v:ctr>
+                    <!-- 
+                    <v:var name="GptGtmChannelOutputPinEnable" type="BOOLEAN">
+                          <a:a name="DESC"><a:v><![CDATA[EN:
+                          <html>
+                            Vendor specific:Select to set output enable on pins for the hw resources.
+                          </html>
+                          ]]></a:v></a:a>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="Freescale"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:278cd683-d42b-400c-ad58-352c57b15a20"/>                        
+                          <a:da name="DEFAULT" value="false"/>
+                          <a:da name="EDITABLE" type="XPath" expr="contains(node:fallback(../GptHwChannel,'GTM'),'GTM') = true()"/>
+                    </v:var>
+                    -->
+                  </v:ctr>
+                </v:lst>
+              </v:ctr>
+
+              <v:lst name="GtmCmuConfigSet" type="MAP">
+                <a:da name="MIN" value="0"/>
+                <a:da name="MAX" value="1"/>
+                <a:a name="EDITABLE" type="XPath">
+                   <a:tst expr="../GptGeneral/EnableGTM_CMU ='true'"/>
+                </a:a>
+                <a:da name="INVALID" type="XPath">
+                     <a:tst expr="(num:i(count(./*))=0) and (../GptGeneral/EnableGTM_CMU ='true')" true="If parameter GTMCMU Supported is enabled, then a GTM config set must be defined"/>
+                </a:da>
+
+               <v:ctr name="GtmCmuConfigSet" type="IDENTIFIABLE">
+                  <a:a name="DESC">
+                  <a:v>
+                      <![CDATA[EN:<html> Vendor specific:
+                      This container is the base of an Configuration Set which contains the configured GTM common parts
+                      This way, different configuration sets can be defined for post-build process.
+                      </html>]]>
+                  </a:v>
+                  </a:a>
+                  <a:da name="INVALID" type="XPath">
+                  <a:tst expr="text:uniq(text:split(../../../*/GtmCmuConfigSet/*/@name), ./@name)"
+                      false="Duplicate GtmCmuConfigSetNames, GtmCmuConfigSet Symbolic names must be unique across Config Sets" />
+                  </a:da>
+                  <a:a name="UUID" value="ECUC:12c11dc0-09f7-4887-af3c-69ed9f650e0d"/>
+
+                  <!-- CMU configuration -->
+                  <v:ctr name="ClockManagementUnit" type="IDENTIFIABLE">
+                      <a:a name="TAB" value="ClockManagementUnit"/>
+                      <a:a name="DESC" value="EN: Vendor specific: ClockManagementUnit (CMU) configuration ."/>
+                      <a:a name="UUID" value="ECUC:3f60b078-8acc-4ccf-802d-218279214f34"/>
+                      <!-- CMU Numerator -->
+                      <v:var name="Global_Clock_Control_Numerator" type="INTEGER">
+                          <a:a name="DESC" value="EN: Vendor specific: Numerator for global clock divider. Defines numerator of the fractional divider - between 1 and 2^24-1=16,777,215."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID" value="ECUC:8b928f65-e237-49fc-812b-a7c20f522436" />
+                          <a:da name="DEFAULT" value="1"/>
+                          <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;16777216"/>
+                              <a:tst expr="&gt;=1"/>
+                          </a:da>
+                      </v:var>
+                      <!-- CMU Denominator -->
+                      <v:var name="Global_Clock_Control_Denominator" type="INTEGER">
+                          <a:a name="DESC" value="EN: Vendor specific: Denominator for global clock divider. Defines denominator of the fractional divider - between 1 and 2^24-1=16,777,215."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                          <a:a name="UUID" value="ECUC:7751f050-5770-4922-9294-971f9c360313" />
+                          <a:da name="DEFAULT" value="1"/>
+                          <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;16777216"/>
+                              <a:tst expr="&gt;=1"/>
+                          </a:da>
+                      </v:var>
+                      <!-- CMU FXClock control -->
+                      <v:var name="CMU_FXCLK" type="BOOLEAN">
+                          <a:a name="DESC" value="EN: Vendor specific: Enable all CMU_FXCLK."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:75504faa-104a-4aee-9d5e-6043ed6941fb"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+                      <!-- CMU EClock0 control -->
+                      <v:var name="CMU_ECLK0" type="BOOLEAN">
+                          <a:a name="DESC" value="EN: Vendor specific: Enable ECLK 0 generation subunit."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:9b7ae4ce-c1cf-481b-81ab-95684242e8ab"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+                      <!-- CMU EClock1 control -->
+                      <v:var name="CMU_ECLK1" type="BOOLEAN">
+                          <a:a name="DESC" value="EN: Vendor specific: Enable ECLK 1 generation subunit."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:43aaa1ec-a366-45a7-8e1d-25f7d519f482"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+                      <!-- CMU EClock2 control -->
+                      <v:var name="CMU_ECLK2" type="BOOLEAN">
+                          <a:a name="DESC" value="EN: Vendor specific: Enable ECLK 2 generation subunit."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:15ab5c16-5cfa-4b3f-beaa-cc46f3973c01"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+                      <!-- CMU Clock0 control -->
+                      <v:var name="CMU_CLK0" type="BOOLEAN">
+                          <a:a name="DESC" value="EN: Vendor specific: Enable clock source 0 - CMU_CLK0."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:eeda9a51-b0e2-479e-bb78-713f06e458e5"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+                      <!-- CMU Clock1 control -->
+                      <v:var name="CMU_CLK1" type="BOOLEAN">
+                          <a:a name="DESC" value="EN: Vendor specific: Enable clock source 1 - CMU_CLK1."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:22366c25-8123-4190-9cc2-c32fd7652b50"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+                      <!-- CMU Clock2 control -->
+                      <v:var name="CMU_CLK2" type="BOOLEAN">
+                          <a:a name="DESC" value="EN: Vendor specific: Enable clock source 2 - CMU_CLK2."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:e81acc21-b1ca-4d58-a857-d7fc5bd2d8be"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+                      <!-- CMU Clock3 control -->
+                      <v:var name="CMU_CLK3" type="BOOLEAN">
+                          <a:a name="DESC" value="EN: Vendor specific: Enable clock source 3 - CMU_CLK3."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:2202a071-5056-4662-bfa7-d2d3e9882285"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+                      <!-- CMU Clock4 control -->
+                      <v:var name="CMU_CLK4" type="BOOLEAN">
+                          <a:a name="DESC" value="EN: Vendor specific: Enable clock source 4 - CMU_CLK4."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:5846994a-98eb-4361-850a-c1cab39e7beb"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+                      <!-- CMU Clock5 control -->
+                      <v:var name="CMU_CLK5" type="BOOLEAN">
+                          <a:a name="DESC" value="EN: Vendor specific: Enable clock source 5 - CMU_CLK5."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:d0aa7039-0cc0-404f-ac5c-45c8ccca0f01"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+                      <!-- CMU Clock6 control -->
+                      <v:var name="CMU_CLK6" type="BOOLEAN">
+                          <a:a name="DESC" value="EN: Vendor specific: Enable clock source 6 - CMU_CLK6."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:2ae15525-94c2-4202-b260-60087adedca0"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+                      <!-- CMU Clock7 control -->
+                      <v:var name="CMU_CLK7" type="BOOLEAN">
+                          <a:a name="DESC" value="EN: Vendor specific: Enable clock source 7 - CMU_CLK7."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:24608d66-d370-4228-84d8-3bb46befdef0"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+
+                      <!-- FXCLK Selection -->
+                      <v:var name="FXCLK_Selection" type="ENUMERATION">
+                          <a:a name="DESC" value="EN: Vendor specific: Input clock selection for EN_FXCLK line."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:050bba82-b529-42f0-89ce-1cefc7d192d0"/>
+                          <a:da name="DEFAULT" value="CMU_GCLK_EN"/>
+                          <a:da name="RANGE">
+                              <a:v>CMU_GCLK_EN</a:v>
+                              <a:v>CMU_CLK0</a:v>
+                              <a:v>CMU_CLK1</a:v>
+                              <a:v>CMU_CLK2</a:v>
+                              <a:v>CMU_CLK3</a:v>
+                              <a:v>CMU_CLK4</a:v>
+                              <a:v>CMU_CLK5</a:v>
+                              <a:v>CMU_CLK6</a:v>
+                              <a:v>CMU_CLK7</a:v>
+                          </a:da>
+                      </v:var>
+                  </v:ctr>
+
+                  <!-- CMU clocks -->
+                  <v:lst name="CMUClockControl" type="MAP">
+                      <a:da name="MIN" value="1"/>
+                      <a:da name="MAX" value="8"/>
+                          <v:ctr name="CMUClockControl" type="IDENTIFIABLE">
+                              <a:a name="DESC" value="EN: Vendor specific: This container contains the CMU clock configuration parameters"/>
+                              <a:a name="UUID" value="ECUC:ffa489ef-d390-4c28-b565-00a92ef24e48"/>
+                              <!-- CMU HW clock ID -->
+                              <v:var name="CMUClockId" type="ENUMERATION">
+                                  <a:a name="DESC" value="EN: Vendor specific: Id of the CMU clock to be configured."/>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                      <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                      <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="ORIGIN" value="CCFC"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                  <a:a name="UUID" value="ECUC:c11947b3-8471-441a-94a6-cd504946c21e"/>
+                                  <a:da name="DEFAULT" value="CMU_CLK0"/>
+                                  <a:da name="RANGE">
+                                      <a:v>CMU_CLK0</a:v>
+                                      <a:v>CMU_CLK1</a:v>
+                                      <a:v>CMU_CLK2</a:v>
+                                      <a:v>CMU_CLK3</a:v>
+                                      <a:v>CMU_CLK4</a:v>
+                                      <a:v>CMU_CLK5</a:v>
+                                      <a:v>CMU_CLK6</a:v>
+                                      <a:v>CMU_CLK7</a:v>
+                                  </a:da>
+                                  <a:da name="INVALID" type="XPath">
+                                      <a:tst expr="text:uniq(node:fallback(../../*/CMUClockId, text:split('1 2 3')), node:fallback(., 0))" false="Clock id is duplicated in this configuration"/>
+                                  </a:da>
+                              </v:var>
+                              <!-- CMU clock divider -->
+                              <v:var name="ClockDivider" type="INTEGER">
+                                  <a:a name="DESC" value="EN: Vendor specific: Defines count value for the clock divider of clock source. Value between 0 and  and 2^24-1=16,777,215."/>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                      <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                      <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="ORIGIN" value="CCFC"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                  <a:a name="UUID" value="ECUC:c917ab42-2aa8-40c0-bc9e-5540214b389e"/>
+                                  <a:da name="DEFAULT" value="1"/>
+                                  <a:da name="INVALID" type="Range">
+                                      <a:tst expr="&lt;16777216"/>
+                                      <a:tst expr="&gt;=1"/>
+                                  </a:da>
+                              </v:var>
+                              <!-- CLK6_SEL for CMU_CLK_6 -->
+                              <v:var name="CLK6_Sel" type="BOOLEAN">
+                                  <a:a name="LABEL" value="CLK6_Sel - only for CMU_CLK_6"/>
+                                  <a:a name="DESC">
+                                      <a:v><![CDATA[EN:<html> Vendor specific:
+                                              Clock source selection for CMU_CLK_6.
+                                              <ul>
+                                                  <li>Unchecked - use Clock Source 6 divider. </li>
+                                                  <li>Checked - use signal SUB_INC2 of submodule DPLL. </li>
+                                              </ul>
+                                              <b>Valid only for CMU_CLK_6.</b>
+                                              </html>]]>
+                                      </a:v>
+                                  </a:a>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                      <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                      <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="ORIGIN" value="CCFC"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                  <a:a name="UUID" value="ECUC:0142b995-6a94-4171-af91-544ea37ae62e"/>
+                                  <a:da name="DEFAULT" value="false"/>
+                                  <a:da name="EDITABLE" type="XPath" expr="contains(node:fallback(../CMUClockId,'CMU_CLK6'),'CMU_CLK6') = true()"/>
+                              </v:var>
+                              <!-- CLK7_SEL for CMU_CLK_7 -->
+                              <v:var name="CLK7_Sel" type="BOOLEAN">
+                                  <a:a name="LABEL" value="CLK7_Sel - only for CMU_CLK_7"/>
+                                  <a:a name="DESC">
+                                      <a:v><![CDATA[EN:<html> Vendor specific:
+                                              Clock source selection for CMU_CLK_7.
+                                              <ul>
+                                                  <li>Unchecked - use Clock Source 7 divider. </li>
+                                                  <li>Checked - use signal SUB_INC1 of submodule DPLL. </li>
+                                              </ul>
+                                              <b>Valid only for CMU_CLK_7.</b>
+                                              </html>]]>
+                                      </a:v>
+                                  </a:a>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                      <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                                      <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="ORIGIN" value="CCFC"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                  <a:a name="UUID" value="ECUC:a3f55f1d-4c9b-4f04-b623-02e835351a5a"/>
+                                  <a:da name="DEFAULT" value="false"/>
+                                  <a:da name="EDITABLE" type="XPath" expr="contains(node:fallback(../CMUClockId,'CMU_CLK7'),'CMU_CLK7') = true()"/>
+                              </v:var>
+                      </v:ctr>
+                  </v:lst>
+
+
+                  <!-- TBU Channel 0 -->
+                  <v:ctr name="TimeBaseUnit_CH0" type="IDENTIFIABLE">
+                      <a:a name="TAB" value="TimeBaseUnit"/>
+                      <a:a name="DESC" value="EN: Vendor specific: Configuration of TimeBaseUnit TBU channel 0."/>
+                      <a:a name="UUID" value="ECUC:9fa9c4f6-9697-4a64-a3df-9dbf721b4290"/>
+
+                      <!-- TBU Channel 0 enable -->
+                      <v:var name="TBU_CH0_Enable" type="BOOLEAN">
+                          <a:a name="DESC" value="EN: Vendor specific: TBU channel 0 enable/disable"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:d4fe66e2-8880-4b17-add4-c7f772ea3e42"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+
+                      <!-- TBU Channel 0 Low Resolution -->
+                      <v:var name="TBU_CH0_LowRes" type="BOOLEAN">
+                          <a:a name="DESC">
+                              <a:v><![CDATA[EN:<html> Vendor specific:
+                                      TBU channel 0 low resolution enable/disable control.
+                                      <ul>
+                                          <li>Unchecked - TBU channel uses lower counter bits (bit 0 to 23). </li>
+                                          <li>Checked -  TBU channel uses upper counter bits (bit 3 to 26). </li>
+                                      </ul>
+                                      The two resolutions for TBU channel 0 can be used in the TIM channel 0 and the DPLL submodules.
+                                      </html>]]>
+                              </a:v>
+                          </a:a>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:0eca43aa-7f75-4cbe-a7a2-33cdb8ab900c"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+
+                      <!-- TBU Channel 0 CMU Clock select -->
+                      <v:ref name="TBU_CH0_CMU_Channel_Select" type="REFERENCE">
+                          <a:a name="DESC" value="EN: Vendor specific: Clock source for TBU channel 0 time base counter."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="UUID" value="ECUC:395dd794-b8d2-41e9-942b-c7d71672e9c7"/>
+                          <a:da name="REF" value="ASPathDataOfSchema:/GptConfig/Gpt/GtmCmuConfigSet/CMUClockControl"/>
+                      </v:ref>
+                  </v:ctr>
+
+                  <!-- TBU Channel 1 -->
+                  <v:ctr name="TimeBaseUnit_CH1" type="IDENTIFIABLE">
+                      <a:a name="TAB" value="TimeBaseUnit"/>
+                      <a:a name="DESC" value="EN: Vendor specific: Configuration of TimeBaseUnit TBU channel 1."/>
+                      <a:a name="UUID" value="ECUC:975474f3-97d0-4e77-a24f-891ef220b5b6"/>
+                      <!-- TBU Channel 1 enable -->
+                      <v:var name="TBU_CH1_Enable" type="BOOLEAN">
+                          <a:a name="DESC" value="EN: Vendor specific: TBU channel 1 enable/disable"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:3d2febec-8469-4ab3-a21c-4fa4ac0f19a8"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+                      <!-- TBU Channel 1 Channel Mode -->
+                      <v:var name="TBU_CH1_Channel_mode" type="BOOLEAN">
+                          <a:a name="DESC">
+                              <a:v><![CDATA[EN:<html> Vendor specific:
+                                      Channel mode.
+                                      <ul>
+                                          <li>Unchecked - Free running counter mode. </li>
+                                          <li>Checked -  Forward/backward counter mode. </li>
+                                      </ul>
+                                      In free running counter mode the CMU clock source specified by TBU_CH1_CMU_Channel_Select is used for the counter.
+                                      In Forward/Backward counter mode the SUB_INC[1]c clock signal in combination with the DIR[1] input signal is used to determine the counter direction and clock frequency.
+                                      </html>]]>
+                              </a:v>
+                          </a:a>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:6089d953-ea61-43de-b572-191de95bd804"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+                      <!-- TBU Channel 1 CMU Clock select -->
+                      <v:ref name="TBU_CH1_CMU_Channel_Select" type="REFERENCE">
+                          <a:a name="DESC" value="EN: Vendor specific: Clock source for TBU channel 1."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="UUID" value="ECUC:25b3a860-f350-498c-90ab-ead304ef0f52"/>
+                          <a:da name="REF" value="ASPathDataOfSchema:/GptConfig/Gpt/GtmCmuConfigSet/CMUClockControl"/>
+                      </v:ref>
+                  </v:ctr>
+
+                  <!-- TBU Channel 2 -->
+                  <v:ctr name="TimeBaseUnit_CH2" type="IDENTIFIABLE">
+                      <a:a name="TAB" value="TimeBaseUnit"/>
+                      <a:a name="DESC" value="EN: Vendor specific: Configuration of TimeBaseUnit TBU channel 2."/>
+                      <a:a name="UUID" value="ECUC:0f81f491-2c17-460d-8b20-83b6a6e7c938"/>
+                      <!-- TBU Channel 2 enable -->
+                      <v:var name="TBU_CH2_Enable" type="BOOLEAN">
+                          <a:a name="DESC" value="EN: Vendor specific: TBU channel 2 enable/disable"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:7ec70bf5-4386-4a10-8905-f32480769769"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+                      <!-- TBU Channel 2 Channel Mode -->
+                      <v:var name="TBU_CH2_Channel_mode" type="BOOLEAN">
+                          <a:a name="DESC">
+                              <a:v><![CDATA[EN:<html> Vendor specific:
+                                      Channel mode.
+                                      <ul>
+                                          <li>Unchecked - Free running counter mode. </li>
+                                          <li>Checked -  Forward/backward counter mode. </li>
+                                      </ul>
+                                      In free running counter mode the CMU clock source specified by TBU_CH2_CMU_Channel_Select is used for the counter.
+                                      In Forward/Backward counter mode the SUB_INC[2]c clock signal in combination with the DIR[2] input signal is used to determine the counter direction and clock frequency.
+                                      </html>]]>
+                              </a:v>
+                          </a:a>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="ECUC:e9f48cc5-93e9-42fb-aef4-5010450de6a7"/>
+                          <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+                      <!-- TBU Channel 2 CMU Clock select -->
+                      <v:ref name="TBU_CH2_CMU_Channel_Select" type="REFERENCE">
+                          <a:a name="DESC" value="EN: Vendor specific: Clock source for TBU channel 2."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">`
+                              <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="CCFC"/>
+                          <a:a name="UUID" value="ECUC:f41167c2-bcf2-41bd-a4f1-9e91b7298794"/>
+                          <a:da name="REF" value="ASPathDataOfSchema:/GptConfig/Gpt/GtmCmuConfigSet/CMUClockControl"/>
+                      </v:ref>
+                  </v:ctr>
+                </v:ctr>
+              </v:lst>
+              <!-- /** @implements GptConfigurationOfOptApiServices_Object */ -->
+              <v:ctr name="GptConfigurationOfOptApiServices" type="IDENTIFIABLE">
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                    <html>
+                      This container contains all configuration switches for configuring optional API services of the GPT driver.
+                    </html>
+                    ]]></a:v>
+                  </a:a>
+                <a:a name="UUID" value="ECUC:180295f4-4b5f-4f9c-845f-459b7262257a"/>
+
+                <!-- /** @implements GptDeinitApi_Object */ -->
+                <v:var name="GptDeinitApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                    <html>
+                      Adds / removes the service Gpt_DeInit() from the code.
+                    </html>
+                    ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:0fb0b618-eb64-4561-bfd1-4d20a3b2ebc2"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+
+                <!-- /** @implements GptEnableDisableNotificationApi_Object */ -->
+                <v:var name="GptEnableDisableNotificationApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                    <html>
+                      Adds / removes the services Gpt_EnableNotification() and Gpt_DisableNotification from the code.
+                    </html>
+                    ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:5490b287-7a1e-423e-b46a-c3bdfc5426f4"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+
+                <!-- /** @implements GptTimeElapsedApi_Object */ -->
+                <v:var name="GptTimeElapsedApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                    <html>
+                      Adds / removes the service Gpt_GetTimeElapsed() from the code.
+                    </html>
+                    ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:310e7947-5fae-4de5-ab30-8494cbfd7470"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+
+                <!-- /** @implements GptTimeRemainingApi_Object */ -->
+                <v:var name="GptTimeRemainingApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                    <html>
+                      Adds / removes the service Gpt_GetTimeRemaining() from the code.
+                    </html>
+                    ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:4b0bfc03-6ba1-41fa-821e-2162dc10630e"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+
+                <!-- /** @implements GptVersionInfoApi_Object */ -->
+                <v:var name="GptVersionInfoApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                    <html>
+                      Adds / removes the service Gpt_GetVersionInfo() from the code.
+                    </html>
+                    ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:2badaa1c-1e56-4561-b27b-75e8df566e88"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+
+                <!-- /** @implements GptWakeupFunctionalityApi_Object */ -->
+                <v:var name="GptWakeupFunctionalityApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                    <html>
+                      Adds / removes the services Gpt_SetMode(), Gpt_EnableWakeup() Gpt_DisableWakeup() and Gpt_Cbk_CheckWakeup() from the code.
+                    </html>
+                    ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:ec83e7d1-df20-4399-8f1c-c5ced1ca7de8"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+				
+				<!-- /** @implements GptPredefTimerFunctionalityApi_Object */ -->
+                <v:var name="GptPredefTimerFunctionalityApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                    <html>
+                      Adds / removes the services Gpt_GetPredefTimerValue from the code.
+                    </html>
+                    ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:ec83e7d1-df20-5620-891c-c5ced1cac964"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+
+                <v:var name="GptTimeout" type="INTEGER">
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:<html><p>This is a timeout value which is used to wait till
+                            - PIT_RTI_LDVAL is synchronized into the RTI clock domain
+                            If the Status is not updated then after this timeout the GPT_E_TIMEOUT
+                            production error will be reported and the rest of the functionality will be skipped.
+                            This parameter is used for PitRti only</p></html>]]>
+                    </a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="LABEL" value="Gpt Timeout:"/>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ECUC:9396fef6-fec8-4120-a0cd-3833f32b0ee7" />
+                  <a:da name="DEFAULT" value="10" />
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295" />
+                    <a:tst expr="&gt;=0" />
+                  </a:da>
+                </v:var>
+               <v:ctr name="GTM_ClsDivStatusChoose" type="IDENTIFIABLE">
+                  <a:a name="DESC">
+                  <a:v>
+                      <![CDATA[EN:<html> Vendor specific:
+                      This container is the base of an Configuration Set which contains the configured GTM common parts
+                      This way, different configuration sets can be defined for post-build process.
+                      </html>]]>
+                  </a:v>
+                  </a:a>
+                  <v:var name="GPTcls0DivChooseStatus" type="ENUMERATION">
+                  <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                      <html>
+                          cls clock configuration
+                      </html>
+                      ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SCOPE" value="ECU" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ECUC:bb0d4be5-b45b-4d8a-a7da-6780e46e1c8c" />
+                  <a:a name="READONLY" value="true" />
+                  <a:da name="DEFAULT" value="ClsDisable" />
+                  <a:da name="RANGE">
+                      <a:v>ClsDisable</a:v>
+                      <a:v>ClsEnableWithoutDiv</a:v>
+                      <a:v>ClsEnableWithDiv2</a:v>
+                  </a:da>
+                </v:var>
+                <v:var name="GPTcls1DivChooseStatus" type="ENUMERATION">
+                  <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                      <html>
+                          cls clock configuration
+                      </html>
+                      ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SCOPE" value="ECU" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ECUC:bb0d4be5-b45b-4d8a-a7da-6280e46e0c8c" />
+                  <a:a name="READONLY" value="true" />
+                  <a:da name="DEFAULT" value="ClsDisable" />
+                  <a:da name="RANGE">
+                      <a:v>ClsDisable</a:v>
+                      <a:v>ClsEnableWithoutDiv</a:v>
+                      <a:v>ClsEnableWithDiv2</a:v>
+                  </a:da>
+                </v:var>
+                <v:var name="GPTcls2DivChooseStatus" type="ENUMERATION">
+                  <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                      <html>
+                          cls clock configuration
+                      </html>
+                      ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SCOPE" value="ECU" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ECUC:bb0d4be5-b45b-4d8a-a7da-6780e36e0c8c" />
+                  <a:a name="READONLY" value="true" />
+                  <a:da name="DEFAULT" value="ClsDisable" />
+                  <a:da name="RANGE">
+                      <a:v>ClsDisable</a:v>
+                      <a:v>ClsEnableWithoutDiv</a:v>
+                      <a:v>ClsEnableWithDiv2</a:v>
+                  </a:da>
+                </v:var>
+                <v:var name="GPTcls3DivChooseStatus" type="ENUMERATION">
+                  <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                      <html>
+                          cls clock configuration
+                      </html>
+                      ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SCOPE" value="ECU" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ECUC:bb0d4be5-b45b-4d4a-a7da-6780e46e0c8c" />
+                  <a:a name="READONLY" value="true" />
+                  <a:da name="DEFAULT" value="ClsDisable" />
+                  <a:da name="RANGE">
+                      <a:v>ClsDisable</a:v>
+                      <a:v>ClsEnableWithoutDiv</a:v>
+                      <a:v>ClsEnableWithDiv2</a:v>
+                  </a:da>
+                </v:var>
+                <v:var name="GPTcls4DivChooseStatus" type="ENUMERATION">
+                  <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                      <html>
+                          cls clock configuration
+                      </html>
+                      ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SCOPE" value="ECU" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ECUC:bb0d4be5-b45b-4d8a-a7d5-6780e46e0c8c" />
+                  <a:a name="READONLY" value="true" />
+                  <a:da name="DEFAULT" value="ClsDisable" />
+                  <a:da name="RANGE">
+                      <a:v>ClsDisable</a:v>
+                      <a:v>ClsEnableWithoutDiv</a:v>
+                      <a:v>ClsEnableWithDiv2</a:v>
+                  </a:da>
+                </v:var>
+                <v:var name="GPTcls5DivChooseStatus" type="ENUMERATION">
+                  <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                      <html>
+                          cls clock configuration
+                      </html>
+                      ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SCOPE" value="ECU" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ECUC:bb0d4be5-b45b-4d8a-a7da-6680e46e0c8c" />
+                  <a:a name="READONLY" value="true" />
+                  <a:da name="DEFAULT" value="ClsDisable" />
+                  <a:da name="RANGE">
+                      <a:v>ClsDisable</a:v>
+                      <a:v>ClsEnableWithoutDiv</a:v>
+                      <a:v>ClsEnableWithDiv2</a:v>
+                  </a:da>
+                </v:var>
+                <v:var name="GPTcls6DivChooseStatus" type="ENUMERATION">
+                  <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                      <html>
+                          cls clock configuration
+                      </html>
+                      ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SCOPE" value="ECU" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ECUC:bb0d4be5-b45b-4d8a-a7da-6787e46e0c8c" />
+                  <a:a name="READONLY" value="true" />
+                  <a:da name="DEFAULT" value="ClsDisable" />
+                  <a:da name="RANGE">
+                      <a:v>ClsDisable</a:v>
+                      <a:v>ClsEnableWithoutDiv</a:v>
+                      <a:v>ClsEnableWithDiv2</a:v>
+                  </a:da>
+                </v:var>
+                <v:var name="GPTcls7DivChooseStatus" type="ENUMERATION">
+                  <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                      <html>
+                          cls clock configuration
+                      </html>
+                      ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC" />
+                  <a:a name="SCOPE" value="ECU" />
+                  <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                  <a:a name="UUID" value="ECUC:bb0d4be5-b45b-4d8a-a7da-6780e46e0c9c" />
+                  <a:a name="READONLY" value="true" />
+                  <a:da name="DEFAULT" value="ClsDisable" />
+                  <a:da name="RANGE">
+                      <a:v>ClsDisable</a:v>
+                      <a:v>ClsEnableWithoutDiv</a:v>
+                      <a:v>ClsEnableWithDiv2</a:v>
+                  </a:da>
+                </v:var>
+                </v:ctr>
+                
+              </v:ctr>
+
+              <!-- /** @implements GptDriverConfiguration_Object */ -->
+              <v:ctr name="GptDriverConfiguration" type="IDENTIFIABLE">
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                    <html>
+                      This container contains the module-wide configuration (parameters) of the GPT Driver.
+                    </html>
+                    ]]></a:v>
+                  </a:a>
+                <a:a name="UUID" value="ECUC:2acccf50-e344-4244-9700-b1a5ca8aa24e"/>
+
+                <!-- /** @implements GptDevErrorDetect_Object */ -->
+                <v:var name="GptDevErrorDetect" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                    <html>
+                      Enables/Disables development error detection.
+                    </html>
+                    ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:bdc07c41-1fd1-461a-8683-3cef78bff5e0"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+
+                <!-- /** @implements GptPredefTimer100us32bitEnable_Object */ -->
+                <v:var name="GptPredefTimer100us32bitEnable" type="BOOLEAN">
+                    <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                        <html>
+                            Enables/Disables the feature 100us/ tick
+                        </html>
+                        ]]></a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                    <a:a name="SCOPE" value="ECU" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="ECUC:769c2cd9-7582-4935-9012-f5ead6167283" />
+                    <a:da name="DEFAULT" value="false" />
+                    <a:da name="INVALID" type="XPath">
+                        <a:tst expr="((. = 'true') and 
+                                       not(node:exists(../../GptPredefTimerConfiguration/GptPredefTimer_100us_32Bit))) or (not(. = 'true') and 
+                                      (node:exists(../../GptPredefTimerConfiguration/GptPredefTimer_100us_32Bit)))" 
+                               true="Please enable GptPredefTimerConfiguration/GptPredefTimer_100us_32Bit" />
+                    </a:da>
+                </v:var>
+
+                <v:var name="GptMulticoreSupport" type="BOOLEAN">
+                    <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                        <html>
+                            Enables/Disables Multicore Support.
+                        </html>
+                        ]]></a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:dde63254-fdc0-4af6-a0ae-3963c88e9c98"/>
+                    <a:da name="DEFAULT" value="false"/>
+                    <a:da name="INVALID" type="XPath">
+                        <a:tst expr="(num:i(count(../GptEcucPartitionRef/*)) &gt;0) and
+                                     node:current()='false' "
+                               true="GptMulticoreSupport should be enabled." />
+                    </a:da>
+                </v:var>
+                
+                <!-- /** @implements GptPredefTimer1usEnablingGrade_Object */ -->
+                <v:var name="GptPredefTimer1usEnablingGrade" type="ENUMERATION">
+                    <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                        <html>
+                            Specifies the grade of enabling the GPT Predef Timers with 1us tick duration.
+                        </html>
+                        ]]></a:v>
+                    </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC" />
+                    <a:a name="SCOPE" value="ECU" />
+                    <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                    <a:a name="UUID" value="ECUC:bb0d4be5-b45b-4d8a-a7da-6780e46e0c8c" />
+                    <a:da name="DEFAULT" value="GPT_PREDEF_TIMER_1US_16BIT_ENABLED" />
+                    <a:da name="RANGE">
+                        <a:v>GPT_PREDEF_TIMER_1US_16BIT_ENABLED</a:v>
+                        <a:v>GPT_PREDEF_TIMER_1US_16_24BIT_ENABLED</a:v>
+                        <a:v>GPT_PREDEF_TIMER_1US_16_24_32BIT_ENABLED</a:v>
+                        <a:v>GPT_PREDEF_TIMER_1US_DISABLED</a:v>
+                    </a:da>
+                    <a:da name="INVALID" type="XPath">
+                        <a:tst expr="(. = 'GPT_PREDEF_TIMER_1US_16BIT_ENABLED') and 
+                                      not(node:exists(../../GptPredefTimerConfiguration/GptPredefTimer_1us_16Bit))" 
+                               true="Please enable GptPredefTimerConfiguration/GptPredefTimer_1us_16Bit" />
+                        <a:tst expr="(. = 'GPT_PREDEF_TIMER_1US_16_24BIT_ENABLED') and 
+                                     (not(node:exists(../../GptPredefTimerConfiguration/GptPredefTimer_1us_16Bit)) or 
+                                      not(node:exists(../../GptPredefTimerConfiguration/GptPredefTimer_1us_24Bit)))"
+                               true="Please enable GptPredefTimerConfiguration/GptPredefTimer_1us_16Bit and GptPredefTimer_1us_24Bit" />
+                        <a:tst expr="(. = 'GPT_PREDEF_TIMER_1US_16_24_32BIT_ENABLED') and 
+                                     (not(node:exists(../../GptPredefTimerConfiguration/GptPredefTimer_1us_16Bit)) or 
+                                      not(node:exists(../../GptPredefTimerConfiguration/GptPredefTimer_1us_24Bit)) or 
+                                      not(node:exists(../../GptPredefTimerConfiguration/GptPredefTimer_1us_32Bit)))"
+                               true="Please enable GptPredefTimerConfiguration/GptPredefTimer_1us_16Bit and GptPredefTimer_1us_24Bit and GptPredefTimer_1us_32Bit" />
+                    </a:da>
+                </v:var>
+
+                <!-- /** @implements GptReportWakeupSource_Object */ -->
+                <v:var name="GptReportWakeupSource" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                    <html>
+                      Enables/Disables wakeup source reporting.
+                    </html>
+                    ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="UUID" value="ECUC:9c261103-0559-401f-a6bc-69804a03546f"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+
+                <v:lst name="GptEcucPartitionRef">
+                <!-- 
+                    <a:da name="INVALID" type="XPath">
+                        <a:tst expr="(num:i(count(node:current()/*)) = '0') and
+                                      (node:value(../GptMulticoreSupport) = 'true')" 
+                                true="GptMulticoreSupport is enabled. GptEcucPartitionRef should contain at least one Ecuc Partition"/>
+                    </a:da>                 
+                -->
+                  <v:ref name="GptEcucPartitionRef" type="REFERENCE">
+                      <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                            <html>
+                            Maps the GPT driver to zero or multiple ECUC partitions to make the driver API available in the according partition. Depending on the addressed timer resource the interfaces operate as follows:<p></p>
+                            In case of partition local timer resources (n:1 mapping) the API operates as an independent instance in the according ECUC partition.<p></p>
+                            In case of global timer resources (1:m mapping) the API operates on the global timer resource either by protected access to the resource or by implementing an according kernel.
+                            </html>
+                            ]]></a:v>
+                      </a:a>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                          type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                    <a:a name="SCOPE" value="ECU"/>
+                    <a:a name="UUID" 
+                          value="ECUC:f86d720b-a1e5-4f3f-a656-0f49601c2563"/>
+                    <a:da name="REF" 
+                          value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition"/>
+                    <a:da name="INVALID" type="XPath">
+                        <a:tst expr="text:uniq(../*, .)" 
+                                false="Duplicated ECUC Partition" />
+                    </a:da>
+                  </v:ref>
+                </v:lst>              
+            
+                <v:ref name="GptKernelEcucPartitionRef" type="REFERENCE">
+                  <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                            <html>
+                            Maps the GPT kernel to zero or one ECUC partitions to assign the driver kernel to a certain core. The ECUC partition referenced is a subset of the ECUC partitions where the GPT driver is mapped to.<p></p>
+                            </html>
+                            ]]></a:v>
+                  </a:a>   
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="true"/>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                  <a:a name="SCOPE" value="ECU"/>
+                  <a:a name="UUID" 
+                        value="ECUC:2253ea54-1810-4b76-84b2-e12934518b57"/>
+                  <a:da name="REF" 
+                        value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuC/EcucPartitionCollection/EcucPartition"/>
+                  <a:a name="OPTIONAL" value="true"/>
+                  <a:da name="READONLY" value="true"/>
+                </v:ref>
+            
+                <!-- /** @implements GptClockReferencePoint_Object */ -->
+                <v:lst name="GptClockReferencePoint" type="MAP">
+                  <a:da name="MIN" value="1"/>
+                  <v:ctr name="GptClockReferencePoint" type="IDENTIFIABLE">
+                    <a:a name="DESC">
+                      <a:v><![CDATA[EN:<html>
+                         value="EN: This container contains a parameter, which represents a reference to a container of the type McuClockReferencePoint (defined in module MCU)."/>
+                        </html>]]>
+                      </a:v>
+                    </a:a>
+                    <a:a name="UUID" value="ECUC:c77853e0-f54e-41b4-92a4-3c278646a352"/>
+
+                    <!-- /** @implements GptClockReference_Object */ -->
+                    <v:ref name="GptClockReference" type="REFERENCE">
+                      <a:a name="DESC"
+                           value="EN: Reference to a container of the type McuClockReferencePoint, to select an input clock."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="UUID" value="ECUC:a7b0b278-00ea-4b40-9000-4d79aba07c0f"/>
+                      <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint"/>
+                    </v:ref>
+                  </v:ctr>
+                </v:lst>
+              </v:ctr>
+
+              <!-- /** @implements PREDEF TIMER HERE */ -->
+            <v:ctr name="GptPredefTimerConfiguration" type="IDENTIFIABLE">
+                <a:a name="DESC">
+                    <a:v><![CDATA[EN:
+                    <html>
+                    Container for configuring the Predefined Timer functionality.
+                    </html> ]]>
+                    </a:v>
+                </a:a>
+                <a:a name="UUID" value="ECUC:de21gbaf-35ef-fp13-89de-65665795e1b9"/>
+
+                <!-- /** GptPredefTimer_1us_16Bit */ -->
+                <v:ctr name="GptPredefTimer_1us_16Bit" type="IDENTIFIABLE">
+                    <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                        <html>
+                        This container contains the 1U_16BIT predef timer configuration (parameters) of the GPT Driver
+                        </html>
+                        ]]></a:v>
+                    </a:a>
+                    <a:a name="UUID" value="ECUC:3215fa18-6acc-4b74-9b26-cf7ac8ef3aad" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" >
+                        <icc:v class="PreCompile" >VariantPreCompile</icc:v>
+                        <icc:v class="PreCompile" >VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:da name="OPTIONAL" value="true"/>
+                    <!--/** GptHwChannel */-->
+                    <v:var name="GptHwChannel" type="ENUMERATION">
+                      <a:a name="DESC">
+                        <a:v><![CDATA[EN: <html> Vendor specific: Selects the physical GPT Channel. PIT not use for this feature  </html> ]]></a:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="ECUC:f6c4bc62-1cb7-47a5-969c-3592bfaf73b7"/>
+                      <a:da name="DEFAULT" type="XPath" 
+                            expr="(text:grep(ecu:list('Gpt.GptChannelConfigSet.GptChannelConfiguration.GptHwChannel'),'(STM_[0-2]_CH_[0-3]+)'))[position()-1=node:fallback(node:current()/../@index, '0')]">
+                        </a:da>
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="(count(../../../GptChannelConfigSet/GptChannelConfiguration/*[contains(GptHwChannel, node:current())])&gt;0)"
+                                true="Duplicated physical GPT channel in GptChannelConfiguration and GptPredefTimerConfiguration!" />
+                        <a:tst expr="text:uniq(../../*/GptHwChannel, .)" false="Duplicate physical GPT channel"/>
+                      </a:da>
+                      <a:da name="RANGE" type="XPath" >
+                          <a:tst expr="text:grep(ecu:list('Gpt.GptChannelConfigSet.GptChannelConfiguration.GptHwChannel'),'(STM_[0-2]_CH_[0-3]+)')" />
+                      </a:da>
+                      <a:da name="EDITABLE" type="XPath">
+                          <a:tst expr="(contains(node:fallback(../../../GptDriverConfiguration/GptPredefTimer1usEnablingGrade,'GPT_PREDEF_TIMER_1US_DISABLED'),'16') and
+                                       (../../../GptConfigurationOfOptApiServices/GptPredefTimerFunctionalityApi))" />
+                      </a:da>
+                    </v:var>
+    
+                    <!-- /** GptChannelClkSrcRef */ -->
+                    <v:ref name="GptChannelClkSrcRef" type="REFERENCE">
+                        <a:a name="DESC">
+                            <a:v><![CDATA[EN:<html> Reference to the GptClockReferencePoint from which the channel clock is derived.   </html>]]></a:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="UUID" value="ECUC:835f71df-3c76-4bc6-a0ba-822fff255b9f" />
+                        <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Gpt/GptDriverConfiguration/GptClockReferencePoint" /> 
+                        <a:da name="INVALID" type="XPath">
+                            <a:tst expr="(
+                                            not(node:refvalid(.))
+                                        )"
+                                   true="Invalid or empty reference."/>
+                        </a:da>
+                    </v:ref>
+                    
+                    <!--/** GptChannelPrescaler */-->
+                    <v:var name="GptChannelPrescaler" type="INTEGER">
+                        <a:a name="DESC">
+                            <a:v><![CDATA[EN:
+                                <html> Vendor specific: The GPT module specific clock prescaler value. <p></p>
+                                Note with STM: <p></p>
+                                - STM prescaler should be between 1-256. <p></p>
+                                </html> ]]></a:v></a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                        <a:a name="UUID" value="ECUC:b79d1912-8f35-466c-a55d-a19c6dbb8527" />
+                        <a:da name="DEFAULT" type="XPath">
+                              <a:tst expr="num:i(num:i((node:value(node:ref(node:ref(../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency)) div 1000000))" />
+                        </a:da>
+                        <a:da name="INVALID" type="XPath">
+                          <a:tst expr="(contains(node:fallback(../GptHwChannel,'STM'),'STM') = 'true') and((. &lt; 1) or (. &gt;= 256))"
+                                true="STM prescaler should be between 1-256"/>
+                          <a:tst expr="num:i(.) != num:i(num:i((node:value(node:ref(node:ref(../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency)) div 1000000))"
+                                true="Cannot generate the 1MHz frequency clock with the selected clock source and clock divider. Please select other clock source or prescaler." />                                   
+                        </a:da>
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;0" />
+                            <a:tst expr="&lt;=256" />
+                        </a:da>
+                    </v:var>
+                    
+                    <!--/** GptFreezeEnable */-->
+                    <v:var name="GptFreezeEnable" type="BOOLEAN">
+                        <a:a name="DESC">
+                            <a:v><![CDATA[EN:  <html> Vendor specific: Select to set Freeze enable for the hw resources. </html> ]]></a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                        <a:a name="UUID" value="ECUC:30afbbf6-2c2a-4ae2-b8f1-658c55b422da" />
+                        <a:da name="DEFAULT" value="true" />
+                    </v:var>
+                </v:ctr>
+
+                <!-- GptPredefTimer_1us_24Bit -->
+                <v:ctr name="GptPredefTimer_1us_24Bit" type="IDENTIFIABLE">
+                    <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                        <html>
+                            This container contains the 1U_24BIT predef timer configuration (parameters) of the GPT Driver
+                        </html>
+                        ]]></a:v>
+                    </a:a>
+                    <a:a name="UUID" value="ECUC:2003cbc8-e4ae-4e5d-96ae-ca32210801eb" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" >
+                        <icc:v class="PreCompile" >VariantPreCompile</icc:v>
+                        <icc:v class="PreCompile" >VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:da name="OPTIONAL" value="true"/>
+                    <!--/** GptHwChannel */-->
+                    <v:var name="GptHwChannel" type="ENUMERATION">
+                        <a:a name="DESC">
+                            <a:v><![CDATA[EN: <html> Vendor specific: Selects the physical GPT Channel. </html> ]]></a:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                        <a:a name="UUID" value="ECUC:0d417622-d56b-4486-bbde-433e761024cc" />
+                        <a:da name="DEFAULT" type="XPath" >
+                            <a:tst expr="(text:grep(ecu:list('Gpt.GptChannelConfigSet.GptChannelConfiguration.GptHwChannel'),'(STM_[0-2]_CH_[0-3]+)'))[position()-1=node:fallback(node:current()/../@index, '0')]"/>
+                        </a:da>                       
+                        <a:da name="INVALID" type="XPath">
+                          <a:tst expr="(count(../../../GptChannelConfigSet/GptChannelConfiguration/*[contains(GptHwChannel, node:current())])&gt;0)" 
+                                 true="Duplicated physical GPT channel in GptChannelConfiguration and GptPredefTimerConfiguration!" />
+                          <a:tst expr="text:uniq(../../*/GptHwChannel, .)" false="Duplicate physical GPT channel"/>
+                        </a:da>
+                        <a:da name="RANGE" type="XPath" >
+                            <a:tst expr="text:grep(ecu:list('Gpt.GptChannelConfigSet.GptChannelConfiguration.GptHwChannel'),'(STM_[0-2]_CH_[0-3]+)')" />
+                        </a:da>
+                        <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(contains(node:fallback(../../../GptDriverConfiguration/GptPredefTimer1usEnablingGrade,'GPT_PREDEF_TIMER_1US_DISABLED'),'24') and
+                                         (../../../GptConfigurationOfOptApiServices/GptPredefTimerFunctionalityApi))" />
+                        </a:da> 
+                    </v:var>
+
+                    <!-- /** @implements GptChannelClkSrcRef_Object */ -->
+                    <v:ref name="GptChannelClkSrcRef" type="REFERENCE">
+                        <a:a name="DESC">
+                            <a:v><![CDATA[EN:<html> Reference to the GptClockReferencePoint from which the channel clock is derived.   </html>]]></a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="UUID" value="ECUC:39c5d524-627b-43c7-bc17-9ab961ed1c96" />
+                        <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Gpt/GptDriverConfiguration/GptClockReferencePoint" />
+                        <a:da name="INVALID" type="XPath">
+                            <a:tst expr="not(node:refvalid(.))" true="Invalid or empty reference."/>
+                        </a:da>
+                    </v:ref>
+
+                    <!--/** GptChannelPrescaler */-->
+                    <v:var name="GptChannelPrescaler" type="INTEGER">
+                        <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                                <html> Vendor specific: The GPT module specific clock prescaler value. <p></p>
+                                    Note with STM: <p></p>
+                                    - STM prescaler should be between 1-256. <p></p>
+                                </html> ]]></a:v></a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                        <a:a name="UUID" value="ECUC:d8765e1d-4beb-46d1-a490-f32f2acef30d" />
+                        <a:da name="DEFAULT" type="XPath">
+                          <a:tst expr="num:i(num:i((node:value(node:ref(node:ref(../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency)) div 1000000))" />
+                      </a:da>
+                        <a:da name="INVALID" type="XPath">
+                            <a:tst expr="contains(node:fallback(../GptHwChannel,'STM'),'STM') = 'true' and ((. &lt; 1) or (. &gt;= 256))"
+                                   true="The prescaler value must be in range 1-256 for STM channels" />
+                                   <a:tst expr="num:i(.) != num:i(num:i((node:value(node:ref(node:ref(../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency)) div 1000000))"
+                                   true="Cannot generate the 1MHz frequency clock with the selected clock source and clock divider. Please select other clock source or prescaler." />
+                        </a:da>        
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;0" />
+                            <a:tst expr="&lt;=256" />
+                        </a:da>
+                    </v:var>
+                  
+                    <!--/** GptFreezeEnable */-->
+                    <v:var name="GptFreezeEnable" type="BOOLEAN">
+                        <a:a name="DESC">
+                            <a:v><![CDATA[EN:  <html> Vendor specific: Select to set Freeze enable for the hw resources. </html> ]]></a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                        <a:a name="UUID" value="ECUC:7a1b3fc8-23b5-4d19-9748-b2df413e1fbf" />
+                        <a:da name="DEFAULT" value="true" />
+                    </v:var>
+                </v:ctr>
+
+                <!--/** GptPredefTimer_1us_32Bit */-->
+                <v:ctr name="GptPredefTimer_1us_32Bit" type="IDENTIFIABLE">
+                    <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                        <html>
+                        This container contains the predef timer configuration (parameters) of the GPT Driver
+                        </html>
+                        ]]></a:v>
+                    </a:a>
+                    <a:a name="UUID" value="ECUC:44099f60-650a-4d06-8558-8ab6cda0837c" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" >
+                        <icc:v class="PreCompile" >VariantPreCompile</icc:v>
+                        <icc:v class="PreCompile" >VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:da name="OPTIONAL" value="true"/>
+                    <!--/** GptHwChannel */-->
+                    <v:var name="GptHwChannel" type="ENUMERATION">
+                        <a:a name="DESC">
+                            <a:v><![CDATA[EN: <html> Vendor specific: Selects the physical GPT Channel.</html> ]]></a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                        <a:a name="UUID" value="ECUC:45dd89b6-23c8-46f0-bf6d-d3327a580792" />
+                        <a:da name="DEFAULT" type="XPath" 
+                            expr="(text:grep(ecu:list('Gpt.GptChannelConfigSet.GptChannelConfiguration.GptHwChannel'),'(STM_[0-2]_CH_[0-3])+'))[position()-1=node:fallback(node:current()/../@index, '0')]">
+                        </a:da>
+                        <a:da name="INVALID" type="XPath">
+                            <a:tst expr="(count(../../../GptChannelConfigSet/GptChannelConfiguration/*[contains(GptHwChannel, node:current())])&gt;0)" 
+                                   true="Duplicated physical GPT channel in GptChannelConfiguration and GptPredefTimerConfiguration!" />
+                            <a:tst expr="text:uniq(../../*/GptHwChannel, .)" false="Duplicate physical GPT channel"/>
+                        </a:da>
+                        <a:da name="RANGE" type="XPath" >
+                            <a:tst expr="text:grep(ecu:list('Gpt.GptChannelConfigSet.GptChannelConfiguration.GptHwChannel'),'(STM_[0-2]_CH_[0-3])+')" />
+                        </a:da>
+                        <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(contains(node:fallback(../../../GptDriverConfiguration/GptPredefTimer1usEnablingGrade,'GPT_PREDEF_TIMER_1US_DISABLED'),'32') and
+                                         (../../../GptConfigurationOfOptApiServices/GptPredefTimerFunctionalityApi))" />
+                        </a:da>
+                    </v:var>
+
+                    <!-- /** @implements GptChannelClkSrcRef_Object */ -->
+                    <v:ref name="GptChannelClkSrcRef" type="REFERENCE">
+                        <a:a name="DESC">
+                            <a:v><![CDATA[EN:<html> Reference to the GptClockReferencePoint from which the channel clock is derived.   </html>]]></a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="UUID" value="ECUC:d86e6636-a8b8-4b72-bd03-d5c16f7054ad" />
+                        <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Gpt/GptDriverConfiguration/GptClockReferencePoint" />
+                        <a:da name="INVALID" type="XPath">
+                            <a:tst expr="not(node:refvalid(.))" true="Invalid or empty reference."/>
+                        </a:da>
+                    </v:ref>
+
+                    <!--/** GptChannelPrescaler */-->
+                    <v:var name="GptChannelPrescaler" type="INTEGER">
+                        <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                                <html> Vendor specific: The GPT module specific clock prescaler value. <p></p>
+                                    Note with STM: <p></p>
+                                    - STM prescaler should be between 1-256. <p></p>
+                                </html> ]]></a:v></a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                        <a:a name="UUID" value="ECUC:d8765e1d-4beb-46d1-a490-f32f3acef30d" />
+                        <a:da name="DEFAULT" type="XPath">
+                          <a:tst expr="num:i(num:i((node:value(node:ref(node:ref(../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency)) div 1000000))" />
+                      </a:da>
+                        <a:da name="INVALID" type="XPath">
+                            <a:tst expr="contains(node:fallback(../GptHwChannel,'STM'),'STM') = 'true' and ((. &lt; 1) or (. &gt;= 256))"
+                                   true="The prescaler value must be in range 1-256 for STM channels" />
+                                   <a:tst expr="num:i(.) != num:i(num:i((node:value(node:ref(node:ref(../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency)) div 1000000))"
+                                   true="Cannot generate the 1MHz frequency clock with the selected clock source and clock divider. Please select other clock source or prescaler." />
+                        </a:da>        
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;0" />
+                            <a:tst expr="&lt;=256" />
+                        </a:da>
+                    </v:var>
+                  
+                    <!--/** GptFreezeEnable */-->
+                    <v:var name="GptFreezeEnable" type="BOOLEAN">
+                        <a:a name="DESC">
+                            <a:v><![CDATA[EN:  <html> Vendor specific: Select to set Freeze enable for the hw resources. </html> ]]></a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                        <a:a name="UUID" value="ECUC:cd9ffabf-8ea6-473f-9537-c0e7218c30d0" />
+                        <a:da name="DEFAULT" value="true" />
+                    </v:var>
+                </v:ctr>
+
+                <!--/** GptPredefTimer_100us_32Bit */-->
+                <v:ctr name="GptPredefTimer_100us_32Bit" type="IDENTIFIABLE">
+                    <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                            <html>
+                            This container contains the channel-wide configuration (parameters) of the GPT Driver
+                            </html>
+                            ]]></a:v>
+                    </a:a>
+                    <a:a name="UUID" value="ECUC:ea27cdd7-9b60-4497-ad50-9e703cde9949" />
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS" >
+                        <icc:v class="PreCompile" >VariantPreCompile</icc:v>
+                        <icc:v class="PreCompile" >VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:da name="OPTIONAL" value="true"/>
+                    <!--/** GptHwChannel */-->
+                    <v:var name="GptHwChannel" type="ENUMERATION">
+                        <a:a name="DESC">
+                            <a:v><![CDATA[EN: <html> Vendor specific: Selects the physical GPT Channel. PIT not use for this feature  </html> ]]></a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                        <a:a name="UUID" value="ECUC:e2585adb-1fb4-425a-9cbc-17601243136a" />
+                        <a:da name="DEFAULT" type="XPath" 
+                            expr="(text:grep(ecu:list('Gpt.GptChannelConfigSet.GptChannelConfiguration.GptHwChannel'),'(STM_[0-2]_CH_[0-3])+'))[position()-1=node:fallback(node:current()/../@index, '0')]">
+                        </a:da>
+                        <a:da name="INVALID" type="XPath">
+                            <a:tst expr="(text:uniq(../../*/GptHwChannel, .))" 
+                                   false="Duplicated physical GPT channel in GptPredefTimerConfiguration" />
+                            <a:tst expr="(count(../../../GptChannelConfigSet/GptChannelConfiguration/*[contains(GptHwChannel, node:current())])&gt;0)"
+                                   true="Duplicated physical GPT channel in GptChannelConfiguration and GptPredefTimerConfiguration!" />
+                        </a:da>
+                        <a:da name="RANGE" type="XPath" > 
+                            <a:tst expr="text:grep(ecu:list('Gpt.GptChannelConfigSet.GptChannelConfiguration.GptHwChannel'),'(STM_[0-2]_CH_[0-3])+')" />
+                        </a:da>
+                        <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(text:tolower(../../../GptDriverConfiguration/GptPredefTimer100us32bitEnable) = 'true' and 
+                                          text:tolower(../../../GptConfigurationOfOptApiServices/GptPredefTimerFunctionalityApi) = 'true')" />
+                        </a:da>
+                    </v:var>
+
+                    <!-- /** @implements GptChannelClkSrcRef_Object */ -->
+                    <v:ref name="GptChannelClkSrcRef" type="REFERENCE">
+                        <a:a name="DESC">
+                            <a:v><![CDATA[EN:<html> Reference to the GptClockReferencePoint from which the channel clock is derived.   </html>]]></a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="UUID" value="ECUC:f776f5b0-74e5-407a-991a-448a2c04d691" />
+                        <a:da name="REF" value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Gpt/GptDriverConfiguration/GptClockReferencePoint" />
+                        <a:da name="INVALID" type="XPath">
+                            <a:tst expr="not(node:refvalid(.))" true="Invalid or empty reference."/>
+                        </a:da>
+                    </v:ref>
+
+                    <!--/** GptChannelPrescaler */-->
+                    <v:var name="GptChannelPrescaler" type="INTEGER">
+                        <a:a name="DESC">
+                        <a:v><![CDATA[EN:
+                                <html> Vendor specific: The GPT module specific clock prescaler value. <p></p>
+                                    Note with STM: <p></p>
+                                    - STM prescaler should be between 1-256. <p></p>
+                                </html> ]]></a:v></a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                        <a:a name="UUID" value="ECUC:d8765e1d-4beb-46d1-a490-f32f0acef30d" />
+                        <a:da name="DEFAULT" type="XPath">
+                          <a:tst expr="num:i(num:i((node:value(node:ref(node:ref(../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency)) div 10000))" />
+                      </a:da>
+                        <a:da name="INVALID" type="XPath">
+                            <a:tst expr="contains(node:fallback(../GptHwChannel,'STM'),'STM') = 'true' and ((. &lt; 1) or (. &gt;= 256))"
+                                   true="The prescaler value must be in range 1-256 for STM channels" />
+                                   <a:tst expr="num:i(.) != num:i(num:i((node:value(node:ref(node:ref(../GptChannelClkSrcRef)/GptClockReference)/McuClockReferencePointFrequency)) div 10000))"
+                                   true="Cannot generate the 10kHz frequency clock with the selected clock source and clock divider. Please select other clock source or prescaler." />
+                        </a:da>        
+                        <a:da name="INVALID" type="Range">
+                            <a:tst expr="&gt;0" />
+                            <a:tst expr="&lt;=256" />
+                        </a:da>
+                    </v:var>
+                  
+                    <!--/** GptFreezeEnable */-->
+                    <v:var name="GptFreezeEnable" type="BOOLEAN">
+                        <a:a name="DESC">
+                            <a:v><![CDATA[EN:  <html> Vendor specific: Select to set Freeze enable for the hw resources. </html> ]]></a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="ORIGIN" value="CCFC" />
+                        <a:a name="SYMBOLICNAMEVALUE" value="false" />
+                        <a:a name="UUID" value="ECUC:ed0bc8c8-9f2e-4d9b-b5c3-da1eddc9ce99" />
+                        <a:da name="DEFAULT" value="true" />
+                    </v:var>
+                </v:ctr>
+            </v:ctr>
+
+              <!-- /** @implements CommonPublishedInformation_Object */ -->
+              <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                          <html>
+                           Common container, aggregated by all modules. It contains published information about vendor and versions.
+                          </html>
+                      ]]></a:v>
+                </a:a>
+                <a:a name="UUID" value="ECUC:73025a5f-800d-4230-b429-39f5ec7e4881"/>
+
+                <!-- /** @implements ArReleaseMajorVersion_Object */ -->
+                <v:var name="ArReleaseMajorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                          <html>
+                           Major version number of AUTOSAR specification on which the appropriate implementation is based on.
+                          </html>
+                      ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:c6a494c8-a276-463c-9e85-2023c457db73"/>
+                  <a:da name="DEFAULT" value="4"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&gt;=4"/>
+                    <a:tst expr="&lt;=4"/>
+                  </a:da>
+                </v:var>
+
+                <!-- /** @implements ArReleaseMinorVersion_Object */ -->
+                <v:var name="ArReleaseMinorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                          <html>
+                           Minor version number of AUTOSAR specification on which the appropriate implementation is based on.
+                          </html>
+                      ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>"/>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:8b5392d0-d2cb-45b4-90ec-ccf64806df75"/>
+                  <a:da name="DEFAULT" value="4"/>
+                  <a:da name="INVALID" type="Range">
+                      <a:tst expr="&gt;=4"/>
+                      <a:tst expr="&lt;=4"/>
+                  </a:da>
+                </v:var>
+
+                <!-- /** @implements ArReleaseRevisionVersion_Object */ -->
+                <v:var name="ArReleaseRevisionVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                          <html>
+                           Revision version number of AUTOSAR specification on which the appropriate implementation is based on.
+                          </html>
+                      ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:8955728e-af67-4164-af9b-4d524f24f3a3"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                      <a:tst expr="&gt;=0"/>
+                      <a:tst expr="&lt;=0"/>
+                  </a:da>
+                </v:var>
+
+                <!-- /** @implements ModuleId_Object */ -->
+                <v:var name="ModuleId" type="INTEGER_LABEL">
+                  <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                          <html>
+                           Module ID of this module from Module List.
+                          </html>
+                      ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:57bbb567-5f5a-4a28-9e75-64c1c293db22"/>
+                  <a:da name="DEFAULT" value="100"/>
+                  <a:da name="INVALID" type="Range">
+                      <a:tst expr="&gt;=100"/>
+                      <a:tst expr="&lt;=100"/>
+                  </a:da>
+                </v:var>
+
+                <!-- /** @implements SwMajorVersion_Object */ -->
+                <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                          <html>
+                           Major version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                          </html>
+                      ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:98a81d4c-60e7-4918-a5b4-46cb1ab7eb3c"/>
+                  <a:da name="DEFAULT" value="3"/>
+                  <a:da name="INVALID" type="Range">
+                      <a:tst expr="&gt;=3"/>
+                      <a:tst expr="&lt;=3"/>
+                  </a:da>
+                </v:var>
+
+                <!-- /** @implements SwMinorVersion_Object */ -->
+                <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                          <html>
+                           Minor version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                          </html>
+                      ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:19152b39-c638-4ca0-a69c-af2384169107"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&gt;=0"/>
+                    <a:tst expr="&lt;=0"/>
+                  </a:da>
+                </v:var>
+
+                <!-- /** @implements SwPatchVersion_Object */ -->
+                <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                          <html>
+                           Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific.
+                          </html>
+                      ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:7575309c-f493-46ff-a2db-a67e93cc5b52"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&gt;=0"/>
+                    <a:tst expr="&lt;=0"/>
+                  </a:da>
+                </v:var>
+
+                <!-- /** @implements VendorApiInfix_Object */ -->
+                <v:var name="VendorApiInfix" type="STRING_LABEL">
+                  <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                      <html>
+                      In driver modules which can be instantiated several times on a single ECU, BSW00347 requires that the name of APIs is extended by the VendorId and a vendor specific name.
+                      This parameter is used to specify the vendor specific name. In total, the implementation specific name is generated as follows:
+                      &lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;&lt;Api name from SWS&gt;.
+                      E.g.  assuming that the VendorId of the implementor is 123 and the implementer chose a VendorApiInfix of &quot;v11r456&quot; a api name Can_Write defined in the SWS will translate to Can_123_v11r456Write.
+                      This parameter is mandatory for all modules with upper multiplicity &gt; 1. It shall not be used for modules with upper multiplicity =1.
+                      </html>
+                      ]]></a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:7c09b55d-9996-40a0-b986-3c1ef640e780"/>
+                  <a:da name="DEFAULT" value=""/>
+                  <a:a name="OPTIONAL" value="true"/>
+                  <a:da name="READONLY" value="true"/>
+                </v:var>
+
+                <!-- /** @implements VendorId_Object */ -->
+                <v:var name="VendorId" type="INTEGER_LABEL">
+                    <a:a name="DESC">
+                      <a:v><![CDATA[EN:
+                          <html>
+                           Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list.
+                          </html>
+                      ]]></a:v>
+                    </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                    <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                    <a:a name="ORIGIN" value="CCFC"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="ECUC:047b3f1a-d0bf-40c5-8253-61e1f41eafd2"/>
+                    <a:da name="DEFAULT" value="176"/>
+                    <a:da name="INVALID" type="Range">
+                        <a:tst expr="&gt;=176"/>
+                        <a:tst expr="&lt;=176"/>
+                    </a:da>
+                </v:var>
+              </v:ctr>
+              <d:ref type="REFINED_MODULE_DEF" value="ASPath:/AUTOSAR/EcucDefs/Gpt"/>
+            </v:ctr>
+          </d:chc>
+          <d:chc name="Gpt_EcuParameterDefinition"
+                 type="AR-ELEMENT" value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="UUID" value="ECUC:04cb3a65-5aa3-44d5-b0ce-e33256fac89a"/>
+              <a:a name="DEF"
+                   value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+              <d:lst name="MODULE_REF">
+                <d:ref type="MODULE_REF" value="ASPath:/GptConfig/Gpt"/>
+              </d:lst>
+            </d:ctr>
+          </d:chc>
+          <d:chc name="Gpt_ModuleDescription"
+                 type="AR-ELEMENT" value="BSW_MODULE_DESCRIPTION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="UUID" value="ECUC:06a8d2ab-6d71-48b5-9979-165ec1b389f1"/>
+              <a:a name="DEF"
+                   value="ASPath:/AR_PACKAGE_SCHEMA/BSW_MODULE_DESCRIPTION"/>
+              <d:var name="MODULE_ID" type="INTEGER" >
+                <a:a name="ENABLE" value="false"/>
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:var>
+              <d:ref type="RECOMMENDED_CONFIGURATION" >
+                <a:a name="ENABLE" value="false"/>
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:ref>
+              <d:ref type="PRE_CONFIGURED_CONF" >
+                <a:a name="ENABLE" value="false"/>
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:ref>
+              <d:ref type="VENDOR_SPECIFIC_MODULE_DEF"
+                     value="ASPath:/GptConfig/Gpt"/>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

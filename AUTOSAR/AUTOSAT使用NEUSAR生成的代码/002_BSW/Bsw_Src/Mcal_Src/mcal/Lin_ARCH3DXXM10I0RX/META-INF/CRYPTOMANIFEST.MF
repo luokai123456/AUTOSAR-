@@ -1,0 +1,29 @@
+
+Name: generate/Lin_BaudRate_Comp.m
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 74155374890368711055500408606873813214260375920001064417367
+ 46294346061240554001103171671470598498581297313415127112
+
+Name: generate/source/Lin_cfg.c
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594750595742316913406561026112863333829877922857435725
+ 242701076320073628627374550939188878689263291306644818
+
+Name: config/Lin.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422365191842541757331436077943002114849752849001394
+ 5766162689010349827495754991441723414175402278775624
+
+Name: generate/include/Lin_Cfg.h
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594739605827275860567524323566364663218737626693766256
+ 766578437562601167462225606998197982126124780122704983
+

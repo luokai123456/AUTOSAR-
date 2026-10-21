@@ -1,0 +1,4 @@
+### CanNmBusLoadReductionEnabled
+desc: feature is required for gateway nodes only. Use case: Setting of NMUserData via SWC.  true: detection and notification is enabled. handling. False: Dynamic PNC-to-channel-mapping is disabled True: Dynamic PNC-to-channel-mapping is enabled Tags: atp.Status=draft PDU upon bus-communication request in Prepare-Bus-Sleep mode. external requests. (EIRA) true: PN request are calculated false: PN request are not calculated Tags: atp.Status=obsolete for the reset of PN requests in the EIRA and in the ERA. The value shall be the same for every channel. Thus it is a global config parameter. Tags: atp.St
+range: Default value  0
+default: Post-Build Variant Value  true

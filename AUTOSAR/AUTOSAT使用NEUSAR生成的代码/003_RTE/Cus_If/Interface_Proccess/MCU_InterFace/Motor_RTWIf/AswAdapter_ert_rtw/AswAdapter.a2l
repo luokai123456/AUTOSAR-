@@ -1,0 +1,641 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     AswAdapter.a2l
+ *
+ * 
+ *
+ * Code generation for model "AswAdapter".
+ *
+ * Model version              : 1.328
+ * Simulink Coder version : 10.6 R2022b
+ * C source code generated on : Fri Jul 10 10:59:25 2026
+ *
+ * Target selection: ert.tlc
+ * Embedded hardware selection: Infineon->TriCore
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+ASAP2_VERSION  1 31     /* Version 1.31 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+
+  /begin HEADER "Header Comments go here"
+  /end HEADER
+
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+    /end MOD_PAR
+
+    /begin MOD_COMMON  "Mod Common Comment Here"
+      BYTE_ORDER     MSB_LAST
+
+      ALIGNMENT_BYTE 1
+      ALIGNMENT_WORD 2
+      ALIGNMENT_LONG 4
+      ALIGNMENT_FLOAT32_IEEE 4
+      ALIGNMENT_FLOAT64_IEEE 4
+    /end MOD_COMMON
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_OperatingModeSource_C
+    /* Long Identifier        */      "Operating mode source selection: 0=parameter, 1=CAN"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_OperatingModeSource_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AswAdapter_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_OperatingModeSp_C
+    /* Long Identifier        */      "Operating mode selection parameter"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_OperatingModeSp_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AswAdapter_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_SpeedSpSource_C
+    /* Long Identifier        */      "Speed setpoint source: 0=external, 1=parameter"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_SpeedSpSource_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AswAdapter_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_SpeedSp_C
+    /* Long Identifier        */      "Speed setpoint parameter"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_SpeedSp_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AswAdapter_CM_single_rpm
+    /* Lower Limit            */      -30000.000000
+    /* Upper Limit            */      30000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_TorqueSpSource_C
+    /* Long Identifier        */      "Torque setpoint source: 0=external, 1=parameter"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_TorqueSpSource_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AswAdapter_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_TorqueSp_C
+    /* Long Identifier        */      "Torque setpoint parameter"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_TorqueSp_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AswAdapter_CM_single_Nm
+    /* Lower Limit            */      -20000.000000
+    /* Upper Limit            */      20000.000000
+  /end CHARACTERISTIC 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_PWMControlState
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AswAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_PWMControlState@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_DriveHBridg_Error
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AswAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_DriveHBridg_Error@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_DriveLBridg_Error
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AswAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_DriveLBridg_Error@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_ASC_Enable
+    /* Long identifier        */      "can signal"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AswAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_ASC_Enable@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_ClearFlt_Roty_En
+    /* Long identifier        */      "can signal"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AswAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_ClearFlt_Roty_En@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_ClearFlt_Volt_Curr_En
+    /* Long identifier        */      "can signal"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AswAdapter_CM_boolean
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_ClearFlt_Volt_Curr_En@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_CutOffDelayEn_flg
+    /* Long identifier        */      "can signal"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AswAdapter_CM_boolean
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_CutOffDelayEn_flg@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_PWM_Enable
+    /* Long identifier        */      "can signal"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AswAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_PWM_Enable@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_ElecSpeed
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AswAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_ElecSpeed@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_ElecSpeedAbsolute
+    /* Long identifier        */      "can signal"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AswAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      20000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_ElecSpeedAbsolute@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_FOC_f32_Uduty_Null
+    /* Long identifier        */      "can signal"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AswAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_FOC_f32_Uduty_Null@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_FOC_f32_Vduty_Null
+    /* Long identifier        */      "can signal"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AswAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_FOC_f32_Vduty_Null@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_FOC_f32_Wduty_Null
+    /* Long identifier        */      "can signal"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AswAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_FOC_f32_Wduty_Null@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_MechSpeed
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AswAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_MechSpeed@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_MechSpeedAbsolute
+    /* Long identifier        */      "can signal"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AswAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      20000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_MechSpeedAbsolute@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_kFOC_f32_PWMFreq_Hz
+    /* Long identifier        */      "can signal"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AswAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      10000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_kFOC_f32_PWMFreq_Hz@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_BswInit
+    /* Long identifier        */      "can signal"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AswAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_BswInit@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_HwHsIntBSt
+    /* Long identifier        */      "can signal"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AswAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_HwHsIntBSt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_HwLsIntBSt
+    /* Long identifier        */      "can signal"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AswAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_HwLsIntBSt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_ModeRequest
+    /* Long identifier        */      "can signal"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AswAdapter_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_ModeRequest@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_SpeedCommand
+    /* Long identifier        */      "can signal"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AswAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -20000.000000
+    /* Upper limit            */      20000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_SpeedCommand@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_TorqueCommand
+    /* Long identifier        */      "can signal"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AswAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -1000.000000
+    /* Upper limit            */      1000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_TorqueCommand@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseADuty
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AswAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseADuty@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseBDuty
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AswAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseBDuty@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseCDuty
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AswAdapter_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseCDuty@ */
+  /end MEASUREMENT 
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AswAdapter_CM_boolean
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%1.0"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AswAdapter_CM_logical
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%1.0"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AswAdapter_CM_single
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AswAdapter_CM_single_Nm
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "Nm"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AswAdapter_CM_single_rpm
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rpm"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AswAdapter_CM_uint8
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%3.0"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AswAdapter_CM_uint8_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%3.0"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin  RECORD_LAYOUT Record_BOOLEAN
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_FLOAT32_IEEE
+    FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_UBYTE
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin GROUP
+    /* Name                   */      AswAdapter
+    /* Long identifier        */      "AswAdapter"
+    /* Root                   */      ROOT
+    /begin SUB_GROUP
+      AswAdapter_ASWA_Write_100us_sys
+      AswAdapter_SGPP_ReadTempVolt_1ms_sys
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTSO_PWMControlState
+      SGPP_BSW_f32_DriveHBridg_Error
+      SGPP_BSW_f32_DriveLBridg_Error
+      SGPP_ElecSpeed
+      SGPP_MechSpeed
+      TFPM_PhaseADuty
+      TFPM_PhaseBDuty
+      TFPM_PhaseCDuty
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      AswAdapter_ASWA_Write_100us_sys
+    /* Long identifier        */      "AswAdapter/ASWA_Write_100us_sys"
+    /begin REF_MEASUREMENT
+      AswAdapter_ConstB.Constant1
+      AswAdapter_ConstB.Constant2
+      AswAdapter_ConstB.Constant3
+      AswAdapter_ConstB.Constant4
+      CTSO_PWMControlState
+      TFPM_PhaseADuty
+      TFPM_PhaseBDuty
+      TFPM_PhaseCDuty
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      AswAdapter_SGPP_ReadTempVolt_1ms_sys
+    /* Long identifier        */      "AswAdapter/SGPP_ReadTempVolt_1ms_sys"
+    /begin SUB_GROUP
+      AswAdapter_SGPP_ReadTempVolt_1ms_sys_CAN_Signals
+      AswAdapter_SGPP_ReadTempVolt_1ms_sys_SpeedAbsCalc
+      AswAdapter_SGPP_ReadTempVolt_1ms_sys_Variant_Subsystem1
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGSA_HwLsIntBSt
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      AswAdapter_SGPP_ReadTempVolt_1ms_sys_CAN_Signals
+    /* Long identifier        */      "AswAdapter/SGPP_ReadTempVolt_1ms_sys/CAN Signals"
+    /begin SUB_GROUP
+      AswAdapter_SGPP_ReadTempVolt_1ms_sys_CAN_Signals_Parameter1
+      AswAdapter_SGPP_ReadTempVolt_1ms_sys_CAN_Signals_Parameter10
+      AswAdapter_SGPP_ReadTempVolt_1ms_sys_CAN_Signals_Parameter2
+      AswAdapter_SGPP_ReadTempVolt_1ms_sys_CAN_Signals_Parameter3
+      AswAdapter_SGPP_ReadTempVolt_1ms_sys_CAN_Signals_Parameter4
+      AswAdapter_SGPP_ReadTempVolt_1ms_sys_CAN_Signals_Parameter5
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      AswAdapter_ConstB.DataTypeConversion
+      AswAdapter_ConstB.DataTypeConversion1
+      AswAdapter_ConstB.DataTypeConversion2
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      AswAdapter_SGPP_ReadTempVolt_1ms_sys_CAN_Signals_Parameter1
+    /* Long identifier        */      "AswAdapter/SGPP_ReadTempVolt_1ms_sys/CAN Signals/Parameter1"
+    /begin REF_CHARACTERISTIC
+      SGSA_OperatingModeSp_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      AswAdapter_SGPP_ReadTempVolt_1ms_sys_CAN_Signals_Parameter10
+    /* Long identifier        */      "AswAdapter/SGPP_ReadTempVolt_1ms_sys/CAN Signals/Parameter10"
+    /begin REF_CHARACTERISTIC
+      SGSA_OperatingModeSource_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      AswAdapter_SGPP_ReadTempVolt_1ms_sys_CAN_Signals_Parameter2
+    /* Long identifier        */      "AswAdapter/SGPP_ReadTempVolt_1ms_sys/CAN Signals/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGSA_TorqueSpSource_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      AswAdapter_SGPP_ReadTempVolt_1ms_sys_CAN_Signals_Parameter3
+    /* Long identifier        */      "AswAdapter/SGPP_ReadTempVolt_1ms_sys/CAN Signals/Parameter3"
+    /begin REF_CHARACTERISTIC
+      SGSA_TorqueSp_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      AswAdapter_SGPP_ReadTempVolt_1ms_sys_CAN_Signals_Parameter4
+    /* Long identifier        */      "AswAdapter/SGPP_ReadTempVolt_1ms_sys/CAN Signals/Parameter4"
+    /begin REF_CHARACTERISTIC
+      SGSA_SpeedSpSource_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      AswAdapter_SGPP_ReadTempVolt_1ms_sys_CAN_Signals_Parameter5
+    /* Long identifier        */      "AswAdapter/SGPP_ReadTempVolt_1ms_sys/CAN Signals/Parameter5"
+    /begin REF_CHARACTERISTIC
+      SGSA_SpeedSp_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      AswAdapter_SGPP_ReadTempVolt_1ms_sys_SpeedAbsCalc
+    /* Long identifier        */      "AswAdapter/SGPP_ReadTempVolt_1ms_sys/SpeedAbsCalc"
+    /begin REF_MEASUREMENT
+      SGPP_ElecSpeed
+      SGPP_MechSpeed
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      AswAdapter_SGPP_ReadTempVolt_1ms_sys_Variant_Subsystem1
+    /* Long identifier        */      "AswAdapter/SGPP_ReadTempVolt_1ms_sys/Variant Subsystem1"
+    /begin SUB_GROUP
+      AswAdapter_SGPP_ReadTempVolt_1ms_sys_Variant_Subsystem1_XCU_Code
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      AswAdapter_SGPP_ReadTempVolt_1ms_sys_Variant_Subsystem1_XCU_Code
+    /* Long identifier        */      "AswAdapter/SGPP_ReadTempVolt_1ms_sys/Variant Subsystem1/XCU_Code"
+    /begin REF_MEASUREMENT
+      AswAdapter_ConstB.Constant
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /end MODULE
+
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF AswAdapter.a2l*/

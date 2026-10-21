@@ -1,0 +1,8 @@
+
+Name: config/EcuC.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773970029532355884991723522395456984556643896047606
+ 272132282567926020753596137912717286687747798955978805
+

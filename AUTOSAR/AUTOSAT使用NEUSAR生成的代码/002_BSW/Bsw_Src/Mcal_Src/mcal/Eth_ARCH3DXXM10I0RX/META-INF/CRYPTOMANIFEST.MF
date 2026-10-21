@@ -1,0 +1,22 @@
+
+Name: generate/source/Eth_Cfg.c
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594739627568904373784966238431066897559095413084044351
+ 554042866456424739357884261271736535485572524334523332
+
+Name: generate/include/Eth_Cfg.h
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773966673129438450548854217702638896732424658129584
+ 717383011274693138304758608738019111720156704152308391
+
+Name: config/Eth.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377427063218312655210537948031233383425611643538017634
+ 4486673521777467297650719263750487898600351687203381
+

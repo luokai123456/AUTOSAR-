@@ -1,0 +1,1587 @@
+<?xml version='1.0'?>
+<datamodel version="7.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/16/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/16/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:ce="http://www.tresos.de/_projects/DataModel2/18/childenable.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:f="http://www.tresos.de/_projects/DataModel2/14/formulaexpr.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="eDmaConfig" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="eDma" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.4.0</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC" 
+                   value="EN: This container holds the configuration of a single eDma Driver."/>
+              <a:a name="LOWER-MULTIPLICITY" value="1"/>
+              <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+              <a:a name="RELEASE" value="asc:4.4.0"/>
+              <a:a name="UPPER-MULTIPLICITY" value="*"/>
+              <a:a name="UUID" value="3db3850a-dd22-4180-a582-ab48f9cd3f0c"/>
+              <v:var name="POST_BUILD_VARIANT_USED" type="BOOLEAN">
+                <a:a name="DESC" 
+                     value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Post Build Variant Used"/>
+                <a:a name="ORIGIN" value="EB"/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="UUID" value="d542189e-cd06-474d-891d-c1e7987132a0"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="false"/>
+                <a:da name="READONLY" value="FALSE"/>
+                <a:da name="TOOLTIP" 
+                      value="Indicates whether a module implementation has or plans to have (i.e., introduced at link or post-build time) new post-build variation points."/>
+              </v:var>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:a name="UUID" value="cc2ff55c-7bd3-44b3-9425-c344af4abdf6"/>
+                <a:a name="__ORIGIN" value="Elektrobit"/>
+                <a:da name="DEFAULT" value="VariantPostBuild"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuild</a:v>
+                  <a:v>VariantPreCompile</a:v>
+                </a:da>
+              </v:var>
+              <v:ctr name="eDmaConfigSet" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: This container contains the configuration parameters and sub containers of the AUTOSAR edma module."/>
+                <a:a name="UUID" value="04ba7a28-3744-4d70-b6a6-e46d960cd9d3"/>
+                <v:lst name="eDmaController" type="MAP">
+                  <a:da name="MIN" value="2"/>
+                  <a:da name="MAX" value="2"/>
+                  <a:da name="INVALID" type="XPath">
+                      <a:tst expr="num:i(count(node:current()/*)) &gt; ecu:get('eDma.ControllerNumMax')" 
+                          true="Maximum edma Controllers available for the selected derivative was exceeded."/>
+                  </a:da>
+                  <v:ctr name="eDmaController" type="IDENTIFIABLE">
+                    <a:a name="DESC" 
+                         value="EN: This container contains the configuration parameters of the eDma controller(s)."/>
+                    <a:a name="UUID" 
+                         value="563bc564-a3f3-4fc8-ac4d-f042718cc65a"/>
+                    <v:var name="eDmaInstanceId" type="INTEGER">
+                      <a:a name="DESC" 
+                           value="EN: eDMA0 or eDMA1."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="ECU"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                      <a:a name="UUID" 
+                           value="263be517-2994-4b70-b359-4ee3546081e6"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index,'0')"/>
+                      <a:da name="INVALID" type="XPath">
+                            <a:tst expr="num:i(node:current()/../@index) = num:i(.)" false="Plase enter a valid eDmaInstanceId"/>
+                      </a:da>
+                    </v:var>
+                    <v:var name="ChnArbitMode" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN: eDMA channel arbitration"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a65392481"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="EDMA_ARBITRATION_MODE_FIXED_PRIORITY"/>
+                      <a:da name="RANGE">
+                        <a:v>EDMA_ARBITRATION_MODE_FIXED_PRIORITY</a:v>
+                        <a:v>EDMA_ARBITRATION_MODE_ROUND_ROBIN</a:v>
+                      </a:da>
+                    </v:var>
+                    <v:var name="groupArbitration" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN: eDMA group arbitration."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a65392482"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="EDMA_ARBITRATION_MODE_FIXED_PRIORITY"/>
+                      <a:da name="RANGE">
+                        <a:v>EDMA_ARBITRATION_MODE_FIXED_PRIORITY</a:v>
+                        <a:v>EDMA_ARBITRATION_MODE_ROUND_ROBIN</a:v>
+                      </a:da>
+                    </v:var>
+                    <v:var name="prioGroup0" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN:eDMA group 0 priority."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a65392483"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="EDMA_GRP_PRIORITY0"/>
+                      <a:da name="INVALID" type="XPath">
+                          <a:tst expr="../prioGroup1 = ." true="Different groups cannot have the same priority"> </a:tst>
+                          <a:tst expr="../prioGroup2 = ." true="Different groups cannot have the same priority"> </a:tst>
+                          <a:tst expr="../prioGroup3 = ." true="Different groups cannot have the same priority"> </a:tst>
+                      </a:da>
+                      <a:da name="RANGE">
+                        <a:v>EDMA_GRP_PRIORITY0</a:v>
+                        <a:v>EDMA_GRP_PRIORITY1</a:v>
+                        <a:v>EDMA_GRP_PRIORITY2</a:v>
+                        <a:v>EDMA_GRP_PRIORITY3</a:v>
+                      </a:da>
+                    </v:var>
+                    <v:var name="prioGroup1" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN:eDMA group 1 priority."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a65392484"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="EDMA_GRP_PRIORITY1"/>
+                      <a:da name="INVALID" type="XPath">
+                          <a:tst expr="../prioGroup0 = ." true="Different groups cannot have the same priority"> </a:tst>
+                          <a:tst expr="../prioGroup2 = ." true="Different groups cannot have the same priority"> </a:tst>
+                          <a:tst expr="../prioGroup3 = ." true="Different groups cannot have the same priority"> </a:tst>
+                      </a:da>
+                      <a:da name="RANGE">
+                        <a:v>EDMA_GRP_PRIORITY0</a:v>
+                        <a:v>EDMA_GRP_PRIORITY1</a:v>
+                        <a:v>EDMA_GRP_PRIORITY2</a:v>
+                        <a:v>EDMA_GRP_PRIORITY3</a:v>
+                      </a:da>
+                    </v:var>
+                    <v:var name="prioGroup2" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN:eDMA group 2 priority."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a65392485"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="EDMA_GRP_PRIORITY2"/>
+                      <a:da name="INVALID" type="XPath">
+                          <a:tst expr="../prioGroup0 = ." true="Different groups cannot have the same priority"> </a:tst>
+                          <a:tst expr="../prioGroup1 = ." true="Different groups cannot have the same priority"> </a:tst>
+                          <a:tst expr="../prioGroup3 = ." true="Different groups cannot have the same priority"> </a:tst>
+                      </a:da>
+                      <a:da name="RANGE">
+                        <a:v>EDMA_GRP_PRIORITY0</a:v>
+                        <a:v>EDMA_GRP_PRIORITY1</a:v>
+                        <a:v>EDMA_GRP_PRIORITY2</a:v>
+                        <a:v>EDMA_GRP_PRIORITY3</a:v>
+                      </a:da>
+                    </v:var>
+                    <v:var name="prioGroup3" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN:eDMA group 3 priority."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a65392486"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="EDMA_GRP_PRIORITY3"/>
+                      <a:da name="INVALID" type="XPath">
+                          <a:tst expr="../prioGroup0 = ." true="Different groups cannot have the same priority"> </a:tst>
+                          <a:tst expr="../prioGroup1 = ." true="Different groups cannot have the same priority"> </a:tst>
+                          <a:tst expr="../prioGroup2 = ." true="Different groups cannot have the same priority"> </a:tst>
+                      </a:da>
+                      <a:da name="RANGE">
+                        <a:v>EDMA_GRP_PRIORITY0</a:v>
+                        <a:v>EDMA_GRP_PRIORITY1</a:v>
+                        <a:v>EDMA_GRP_PRIORITY2</a:v>
+                        <a:v>EDMA_GRP_PRIORITY3</a:v>
+                      </a:da>
+                    </v:var>
+                    <v:var name="haltOnError" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN:Whether to configure the HOE bit,Any error causes the HALT bit to set. Subsequently, 
+                                  all service requests are ignored until the HALT bit is cleared."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="87eae519-05f6-4ec4-82f6-bea47cb71773"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                  </v:ctr>
+                </v:lst>
+                <v:lst name="eDmaChannelConfig" type="MAP">
+                  <a:da name="MIN" value="1"/>
+                  <a:da name="MAX" value="128"/>
+                  <v:ctr name="eDmaChannelConfig" type="IDENTIFIABLE">
+                    <a:a name="DESC" 
+                         value="EN: eDma channel configuration"/>
+                    <a:a name="UUID" 
+                         value="fe8ae464-0e86-4261-9f6b-23286470fbb1"/>
+                    <v:var name="eDmaChannelPriority" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN:eDMA channel priority - only used when channel arbitration mode is 'Fixed priority'."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a65392487"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="EDMA_CHN_PRIORITY0"/>
+                      <a:da name="RANGE">
+                        <a:v>EDMA_CHN_PRIORITY0</a:v>
+                        <a:v>EDMA_CHN_PRIORITY1</a:v>
+                        <a:v>EDMA_CHN_PRIORITY2</a:v>
+                        <a:v>EDMA_CHN_PRIORITY3</a:v>
+                        <a:v>EDMA_CHN_PRIORITY4</a:v>
+                        <a:v>EDMA_CHN_PRIORITY5</a:v>
+                        <a:v>EDMA_CHN_PRIORITY6</a:v>
+                        <a:v>EDMA_CHN_PRIORITY7</a:v>
+                        <a:v>EDMA_CHN_PRIORITY8</a:v>
+                        <a:v>EDMA_CHN_PRIORITY9</a:v>
+                        <a:v>EDMA_CHN_PRIORITY10</a:v>
+                        <a:v>EDMA_CHN_PRIORITY11</a:v>
+                        <a:v>EDMA_CHN_PRIORITY12</a:v>
+                        <a:v>EDMA_CHN_PRIORITY13</a:v>
+                        <a:v>EDMA_CHN_PRIORITY14</a:v>
+                        <a:v>EDMA_CHN_PRIORITY15</a:v>
+                      </a:da>
+                    </v:var>
+                    <v:var name="eDmaChannelId" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN:eDMA virtual channel number."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a65392488"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="EDMA_CHN0_NUMBER"/>
+                      <a:da name="RANGE" type="XPath" expr="ecu:list('eDma.ChannelList')"/>
+                      <a:da name="RANGE">
+                    <a:v>EDMA_CHN0_NUMBER</a:v>
+                    <a:v>EDMA_CHN1_NUMBER</a:v>
+                    <a:v>EDMA_CHN2_NUMBER</a:v>
+                    <a:v>EDMA_CHN3_NUMBER</a:v>
+                    <a:v>EDMA_CHN4_NUMBER</a:v>
+                    <a:v>EDMA_CHN5_NUMBER</a:v>
+                    <a:v>EDMA_CHN6_NUMBER</a:v>
+                    <a:v>EDMA_CHN7_NUMBER</a:v>
+                    <a:v>EDMA_CHN8_NUMBER</a:v>
+                    <a:v>EDMA_CHN9_NUMBER</a:v>
+                    <a:v>EDMA_CHN10_NUMBER</a:v>
+                    <a:v>EDMA_CHN11_NUMBER</a:v>
+                    <a:v>EDMA_CHN12_NUMBER</a:v>
+                    <a:v>EDMA_CHN13_NUMBER</a:v>
+                    <a:v>EDMA_CHN14_NUMBER</a:v>
+                    <a:v>EDMA_CHN15_NUMBER</a:v>
+                    <a:v>EDMA_CHN16_NUMBER</a:v>
+                    <a:v>EDMA_CHN17_NUMBER</a:v>
+                    <a:v>EDMA_CHN18_NUMBER</a:v>
+                    <a:v>EDMA_CHN19_NUMBER</a:v>
+                    <a:v>EDMA_CHN20_NUMBER</a:v>
+                    <a:v>EDMA_CHN21_NUMBER</a:v>
+                    <a:v>EDMA_CHN22_NUMBER</a:v>
+                    <a:v>EDMA_CHN23_NUMBER</a:v>
+                    <a:v>EDMA_CHN24_NUMBER</a:v>
+                    <a:v>EDMA_CHN25_NUMBER</a:v>
+                    <a:v>EDMA_CHN26_NUMBER</a:v>
+                    <a:v>EDMA_CHN27_NUMBER</a:v>
+                    <a:v>EDMA_CHN28_NUMBER</a:v>
+                    <a:v>EDMA_CHN29_NUMBER</a:v>
+                    <a:v>EDMA_CHN30_NUMBER</a:v>
+                    <a:v>EDMA_CHN31_NUMBER</a:v>
+                    <a:v>EDMA_CHN32_NUMBER</a:v>
+                    <a:v>EDMA_CHN33_NUMBER</a:v>
+                    <a:v>EDMA_CHN34_NUMBER</a:v>
+                    <a:v>EDMA_CHN35_NUMBER</a:v>
+                    <a:v>EDMA_CHN36_NUMBER</a:v>
+                    <a:v>EDMA_CHN37_NUMBER</a:v>
+                    <a:v>EDMA_CHN38_NUMBER</a:v>
+                    <a:v>EDMA_CHN39_NUMBER</a:v>
+                    <a:v>EDMA_CHN40_NUMBER</a:v>
+                    <a:v>EDMA_CHN41_NUMBER</a:v>
+                    <a:v>EDMA_CHN42_NUMBER</a:v>
+                    <a:v>EDMA_CHN43_NUMBER</a:v>
+                    <a:v>EDMA_CHN44_NUMBER</a:v>
+                    <a:v>EDMA_CHN45_NUMBER</a:v>
+                    <a:v>EDMA_CHN46_NUMBER</a:v>
+                    <a:v>EDMA_CHN47_NUMBER</a:v>
+                    <a:v>EDMA_CHN48_NUMBER</a:v>
+                    <a:v>EDMA_CHN49_NUMBER</a:v>
+                    <a:v>EDMA_CHN50_NUMBER</a:v>
+                    <a:v>EDMA_CHN51_NUMBER</a:v>
+                    <a:v>EDMA_CHN52_NUMBER</a:v>
+                    <a:v>EDMA_CHN53_NUMBER</a:v>
+                    <a:v>EDMA_CHN54_NUMBER</a:v>
+                    <a:v>EDMA_CHN55_NUMBER</a:v>
+                    <a:v>EDMA_CHN56_NUMBER</a:v>
+                    <a:v>EDMA_CHN57_NUMBER</a:v>
+                    <a:v>EDMA_CHN58_NUMBER</a:v>
+                    <a:v>EDMA_CHN59_NUMBER</a:v>
+                    <a:v>EDMA_CHN60_NUMBER</a:v>
+                    <a:v>EDMA_CHN61_NUMBER</a:v>
+                    <a:v>EDMA_CHN62_NUMBER</a:v>
+                    <a:v>EDMA_CHN63_NUMBER</a:v>
+                    <a:v>EDMA_CHN64_NUMBER</a:v>
+                    <a:v>EDMA_CHN65_NUMBER</a:v>
+                    <a:v>EDMA_CHN66_NUMBER</a:v>
+                    <a:v>EDMA_CHN67_NUMBER</a:v>
+                    <a:v>EDMA_CHN68_NUMBER</a:v>
+                    <a:v>EDMA_CHN69_NUMBER</a:v>
+                    <a:v>EDMA_CHN70_NUMBER</a:v>
+                    <a:v>EDMA_CHN71_NUMBER</a:v>
+                    <a:v>EDMA_CHN72_NUMBER</a:v>
+                    <a:v>EDMA_CHN73_NUMBER</a:v>
+                    <a:v>EDMA_CHN74_NUMBER</a:v>
+                    <a:v>EDMA_CHN75_NUMBER</a:v>
+                    <a:v>EDMA_CHN76_NUMBER</a:v>
+                    <a:v>EDMA_CHN77_NUMBER</a:v>
+                    <a:v>EDMA_CHN78_NUMBER</a:v>
+                    <a:v>EDMA_CHN79_NUMBER</a:v>
+                    <a:v>EDMA_CHN80_NUMBER</a:v>
+                    <a:v>EDMA_CHN81_NUMBER</a:v>
+                    <a:v>EDMA_CHN82_NUMBER</a:v>
+                    <a:v>EDMA_CHN83_NUMBER</a:v>
+                    <a:v>EDMA_CHN84_NUMBER</a:v>
+                    <a:v>EDMA_CHN85_NUMBER</a:v>
+                    <a:v>EDMA_CHN86_NUMBER</a:v>
+                    <a:v>EDMA_CHN87_NUMBER</a:v>
+                    <a:v>EDMA_CHN88_NUMBER</a:v>
+                    <a:v>EDMA_CHN89_NUMBER</a:v>
+                    <a:v>EDMA_CHN90_NUMBER</a:v>
+                    <a:v>EDMA_CHN91_NUMBER</a:v>
+                    <a:v>EDMA_CHN92_NUMBER</a:v>
+                    <a:v>EDMA_CHN93_NUMBER</a:v>
+                    <a:v>EDMA_CHN94_NUMBER</a:v>
+                    <a:v>EDMA_CHN95_NUMBER</a:v>
+                    <a:v>EDMA_CHN96_NUMBER</a:v>
+                    <a:v>EDMA_CHN97_NUMBER</a:v>
+                    <a:v>EDMA_CHN98_NUMBER</a:v>
+                    <a:v>EDMA_CHN99_NUMBER</a:v>
+                    <a:v>EDMA_CHN100_NUMBER</a:v>
+                    <a:v>EDMA_CHN101_NUMBER</a:v>
+                    <a:v>EDMA_CHN102_NUMBER</a:v>
+                    <a:v>EDMA_CHN103_NUMBER</a:v>
+                    <a:v>EDMA_CHN104_NUMBER</a:v>
+                    <a:v>EDMA_CHN105_NUMBER</a:v>
+                    <a:v>EDMA_CHN106_NUMBER</a:v>
+                    <a:v>EDMA_CHN107_NUMBER</a:v>
+                    <a:v>EDMA_CHN108_NUMBER</a:v>
+                    <a:v>EDMA_CHN109_NUMBER</a:v>
+                    <a:v>EDMA_CHN110_NUMBER</a:v>
+                    <a:v>EDMA_CHN111_NUMBER</a:v>
+                    <a:v>EDMA_CHN112_NUMBER</a:v>
+                    <a:v>EDMA_CHN113_NUMBER</a:v>
+                    <a:v>EDMA_CHN114_NUMBER</a:v>
+                    <a:v>EDMA_CHN115_NUMBER</a:v>
+                    <a:v>EDMA_CHN116_NUMBER</a:v>
+                    <a:v>EDMA_CHN117_NUMBER</a:v>
+                    <a:v>EDMA_CHN118_NUMBER</a:v>
+                    <a:v>EDMA_CHN119_NUMBER</a:v>
+                    <a:v>EDMA_CHN120_NUMBER</a:v>
+                    <a:v>EDMA_CHN121_NUMBER</a:v>
+                    <a:v>EDMA_CHN122_NUMBER</a:v>
+                    <a:v>EDMA_CHN123_NUMBER</a:v>
+                    <a:v>EDMA_CHN124_NUMBER</a:v>
+                    <a:v>EDMA_CHN125_NUMBER</a:v>
+                    <a:v>EDMA_CHN126_NUMBER</a:v>
+                    <a:v>EDMA_CHN127_NUMBER</a:v>
+                    </a:da>
+                    </v:var>
+                    <v:var name="eDmaInstance" type="INTEGER">
+                      <a:a name="DESC" 
+                           value="EN: DMA instance 0 or 1."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="55be3f86-93df-4c02-8459-99a32648c590"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="0" />
+                      <a:da name="INVALID" type="XPath">
+                          <a:tst expr="num:i(num:i(substring-before(substring-after(node:value(../eDmaChannelId),'EDMA_CHN'),'_')) div 64) = num:i(.)" false="Re-compute eDmaInstance"> </a:tst>
+                      </a:da>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=1"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                    </v:var>
+                    <v:var name="eDmaGroupId" type="INTEGER">
+                      <a:a name="DESC" 
+                           value="EN: Groupid 0 - 3."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="55be3f86-93df-4c02-8459-99a32648c591"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="0" />
+                      <a:da name="INVALID" type="XPath">
+                          <a:tst expr="num:i((num:i(num:i(substring-before(substring-after(node:value(../eDmaChannelId),'EDMA_CHN'),'_')) - num:i(num:i(../eDmaInstance) * 64)) div (num:i(16)))) = num:i(.)" false="Re-compute eDmaGroupId"> </a:tst>
+                      </a:da>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=3"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                    </v:var>
+                    <v:var name="eDmaChannelReqSource" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN:Selects the source of the DMA request for this channel."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="0e421a63-99af-4a72-bf0a-994a6539248e"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="DMAMUX0_RESERVED_0_A"/>
+                      <a:da name="RANGE">
+                          <a:v>DMAMUX0_RESERVED_0_A</a:v>
+                          <a:v>DMAMUX0_ADC_SAR_0_EOC</a:v>
+                          <a:v>DMAMUX0_ADC_SAR_1_EOC</a:v>
+                          <a:v>DMAMUX0_DSPI_0_RX</a:v>
+                          <a:v>DMAMUX0_DSPI_0_TX</a:v>
+                          <a:v>DMAMUX0_DSPI_4_RX</a:v>
+                          <a:v>DMAMUX0_DSPI_4_TX</a:v>
+                          <a:v>DMAMUX0_MCAN_1</a:v>
+                          <a:v>DMAMUX0_MCAN_2</a:v>
+                          <a:v>DMAMUX0_SENT_0_RX_FAST</a:v>
+                          <a:v>DMAMUX0_SENT_0_RX_SLOW</a:v>
+                          <a:v>DMAMUX0_LINFLEXD_0_RX</a:v>
+                          <a:v>DMAMUX0_LINFLEXD_0_TX</a:v>
+                          <a:v>DMAMUX0_LINFLEXD_14_RX</a:v>
+                          <a:v>DMAMUX0_DSPI_0_CMD</a:v>
+                          <a:v>DMAMUX0_DSPI_4_CMD</a:v>
+                          <a:v>DMAMUX0_MCAN_3</a:v>
+                          <a:v>DMAMUX0_MCAN_4</a:v>
+                          <a:v>DMAMUX0_MCAN_5</a:v>
+                          <a:v>DMAMUX0_MCAN_6</a:v>
+                          <a:v>DMAMUX0_MCAN_7</a:v>
+                          <a:v>DMAMUX0_MCAN_8</a:v>
+                          <a:v>DMAMUX0_ETPU_0</a:v>
+                          <a:v>DMAMUX0_ETPU_1</a:v>
+                          <a:v>DMAMUX0_ETPU_2</a:v>
+                          <a:v>DMAMUX0_ETPU_12</a:v>
+                          <a:v>DMAMUX0_ETPU_13</a:v>
+                          <a:v>DMAMUX0_ETPU_14</a:v>
+                          <a:v>DMAMUX0_ETPU_15</a:v>
+                          <a:v>DMAMUX0_ETPU_28</a:v>
+                          <a:v>DMAMUX0_ETPU_29</a:v>
+                          <a:v>DMAMUX0_ETPUB_0</a:v>
+                          <a:v>DMAMUX0_ETPUB_1</a:v>
+                          <a:v>DMAMUX0_ETPUB_2</a:v>
+                          <a:v>DMAMUX0_ETPUB_3</a:v>
+                          <a:v>DMAMUX0_ETPUB_12</a:v>
+                          <a:v>DMAMUX0_ETPUB_13</a:v>
+                          <a:v>DMAMUX0_ETPUB_14</a:v>
+                          <a:v>DMAMUX0_ETPUB_15</a:v>
+                          <a:v>DMAMUX0_ETPUB_28</a:v>
+                          <a:v>DMAMUX0_ETPUB_29</a:v>
+                          <a:v>DMAMUX0_ETPUB_30</a:v>
+                          <a:v>DMAMUX0_ETPUB_31</a:v>
+                          <a:v>DMAMUX0_EQADC0_ADC01_RFIFO0</a:v>
+                          <a:v>DMAMUX0_EQADC0_ADC01_RFIFO1</a:v>
+                          <a:v>DMAMUX0_EQADC0_ADC01_RFIFO2</a:v>
+                          <a:v>DMAMUX0_EQADC0_ADC01_RFIFO3</a:v>
+                          <a:v>DMAMUX0_EQADC0_ADC01_RFIFO4</a:v>
+                          <a:v>DMAMUX0_EQADC0_ADC01_RFIFO5</a:v>
+                          <a:v>DMAMUX0_EQADC0_ADC01_CFIFO0</a:v>
+                          <a:v>DMAMUX0_EQADC0_ADC01_CFIFO1</a:v>
+                          <a:v>DMAMUX0_EQADC0_ADC01_CFIFO2</a:v>
+                          <a:v>DMAMUX0_EQADC0_ADC01_CFIFO3</a:v>
+                          <a:v>DMAMUX0_EQADC0_ADC01_CFIFO4</a:v>
+                          <a:v>DMAMUX0_EQADC0_ADC01_CFIFO5</a:v>
+                          <a:v>DMAMUX0_ALWAYS_ON_0</a:v>
+                          <a:v>DMAMUX1_DSPI_12_RX</a:v>
+                          <a:v>DMAMUX1_DSPI_12_TX</a:v>
+                          <a:v>DMAMUX1_LINFLEXD_0_RX</a:v>
+                          <a:v>DMAMUX1_LINFLEXD_0_TX</a:v>
+                          <a:v>DMAMUX1_LINFLEXD_1_RX</a:v>
+                          <a:v>DMAMUX1_LINFLEXD_1_TX</a:v>
+                          <a:v>DMAMUX1_LINFLEXD_14_RX</a:v>
+                          <a:v>DMAMUX1_LINFLEXD_14_TX</a:v>
+                          <a:v>DMAMUX1_SENT_0_RX_FAST</a:v>
+                          <a:v>DMAMUX1_SENT_0_RX_SLOW</a:v>
+                          <a:v>DMAMUX1_SIUL2_REQ0</a:v>
+                          <a:v>DMAMUX1_SIUL2_REQ1</a:v>
+                          <a:v>DMAMUX1_LINFLEXD_15_RX</a:v>
+                          <a:v>DMAMUX1_LINFLEXD_15_TX</a:v>
+                          <a:v>DMAMUX1_DSPI_5_RX</a:v>
+                          <a:v>DMAMUX1_DSPI_5_TX</a:v>
+                          <a:v>DMAMUX1_DSPI_5_CMD</a:v>
+                          <a:v>DMAMUX1_DSPI_12_CMD</a:v>
+                          <a:v>DMAMUX1_DSPI_0_RX</a:v>
+                          <a:v>DMAMUX1_DSPI_0_TX</a:v>
+                          <a:v>DMAMUX1_ADC_SAR_0_EOC</a:v>
+                          <a:v>DMAMUX1_ALWAYS_ON_0</a:v>
+                          <a:v>DMAMUX1_ALWAYS_ON_1</a:v>
+                          <a:v>DMAMUX1_ALWAYS_ON_2</a:v>
+                          <a:v>DMAMUX1_ALWAYS_ON_3</a:v>
+                          <a:v>DMAMUX1_ALWAYS_ON_4</a:v>
+                          <a:v>DMAMUX2_DSPI_1_RX</a:v>
+                          <a:v>DMAMUX2_DSPI_1_TX</a:v>
+                          <a:v>DMAMUX2_SENT_1_RX_FAST</a:v>
+                          <a:v>DMAMUX2_SENT_1_RX_SLOW</a:v>
+                          <a:v>DMAMUX2_PSI5_0_CH0_RX_PSI5</a:v>
+                          <a:v>DMAMUX2_PSI5_0_CH0_RX_SENT</a:v>
+                          <a:v>DMAMUX2_SIUL2_REQ2</a:v>
+                          <a:v>DMAMUX2_SIUL2_REQ4</a:v>
+                          <a:v>DMAMUX2_DSPI_1_CMD</a:v>
+                          <a:v>DMAMUX2_DSPI_2_RX</a:v>
+                          <a:v>DMAMUX2_DSPI_2_TX</a:v>
+                          <a:v>DMAMUX2_LINFLEXD_2_RX</a:v>
+                          <a:v>DMAMUX2_LINFLEXD_2_TX</a:v>
+                          <a:v>DMAMUX2_PSI5_SPS</a:v>
+                          <a:v>DMAMUX2_PSI5_SRX</a:v>
+                          <a:v>DMAMUX2_ALWAYS_ON_0</a:v>
+                          <a:v>DMAMUX3_DSPI_2_RX</a:v>
+                          <a:v>DMAMUX3_DSPI_2_TX</a:v>
+                          <a:v>DMAMUX3_LINFLEXD_2_RX</a:v>
+                          <a:v>DMAMUX3_LINFLEXD_2_TX</a:v>
+                          <a:v>DMAMUX3_I2C_0_RX</a:v>
+                          <a:v>DMAMUX3_I2C_0_TX</a:v>
+                          <a:v>DMAMUX3_PSI5_1_CH0_RX_PSI5</a:v>
+                          <a:v>DMAMUX3_PSI5_1_CH0_RX_SENT</a:v>
+                          <a:v>DMAMUX3_SIUL2_REQ5</a:v>
+                          <a:v>DMAMUX3_SIUL2_REQ8</a:v>
+                          <a:v>DMAMUX3_SIUL2_REQ3</a:v>
+                          <a:v>DMAMUX3_DSPI_2_CMD</a:v>
+                          <a:v>DMAMUX3_DSPI_1_RX</a:v>
+                          <a:v>DMAMUX3_DSPI_1_TX</a:v>
+                          <a:v>DMAMUX3_PSI5_STX</a:v>
+                          <a:v>DMAMUX3_ALWAYS_ON_0</a:v>
+                          <a:v>DMAMUX4_DSPI_3_RX</a:v>
+                          <a:v>DMAMUX4_DSPI_3_TX</a:v>
+                          <a:v>DMAMUX4_LINFLEXD_0_RX</a:v>
+                          <a:v>DMAMUX4_LINFLEXD_0_TX</a:v>
+                          <a:v>DMAMUX4_LINFLEXD_14_RX</a:v>
+                          <a:v>DMAMUX4_LINFLEXD_14_TX</a:v>
+                          <a:v>DMAMUX4_PSI5_0_CH1_RX_PSI5</a:v>
+                          <a:v>DMAMUX4_PSI5_0_CH1_RX_SENT</a:v>
+                          <a:v>DMAMUX4_SIUL2_REQ9</a:v>
+                          <a:v>DMAMUX4_DSPI_3_CMD</a:v>
+                          <a:v>DMAMUX4_ADC_SAR_0_EOC</a:v>
+                          <a:v>DMAMUX4_DSPI_0_CMD</a:v>
+                          <a:v>DMAMUX4_DSPI_0_RX</a:v>
+                          <a:v>DMAMUX4_DSPI_0_TX</a:v>
+                          <a:v>DMAMUX4_AMU_0</a:v>
+                          <a:v>DMAMUX4_MCAN_5</a:v>
+                          <a:v>DMAMUX4_MCAN_6</a:v>
+                          <a:v>DMAMUX4_SIUL2_REQ6</a:v>
+                          <a:v>DMAMUX4_SIUL2_REQ7</a:v>
+                          <a:v>DMAMUX4_SIUL2_REQ12</a:v>
+                          <a:v>DMAMUX4_SIUL2_REQ13</a:v>
+                          <a:v>DMAMUX4_SIUL2_REQ14</a:v>
+                          <a:v>DMAMUX4_SIUL2_REQ15</a:v>
+                          <a:v>DMAMUX4_ALWAYS_ON_0</a:v>
+                          <a:v>DMAMUX5_DSPI_5_RX</a:v>
+                          <a:v>DMAMUX5_DSPI_5_TX</a:v>
+                          <a:v>DMAMUX5_LINFLEXD_1_RX</a:v>
+                          <a:v>DMAMUX5_LINFLEXD_1_TX</a:v>
+                          <a:v>DMAMUX5_LINFLEXD_15_RX</a:v>
+                          <a:v>DMAMUX5_LINFLEXD_15_TX</a:v>
+                          <a:v>DMAMUX5_SENT_0_RX_FAST</a:v>
+                          <a:v>DMAMUX5_SENT_0_RX_SLOW</a:v>
+                          <a:v>DMAMUX5_SIUL2_REQ10</a:v>
+                          <a:v>DMAMUX5_DSPI_5_CMD</a:v>
+                          <a:v>DMAMUX5_MCAN_1</a:v>
+                          <a:v>DMAMUX5_MCAN_2</a:v>
+                          <a:v>DMAMUX5_DSPI_3_RX</a:v>
+                          <a:v>DMAMUX5_DSPI_3_TX</a:v>
+                          <a:v>DMAMUX5_LINFLEXD_2_RX</a:v>
+                          <a:v>DMAMUX5_LINFLEXD_2_TX</a:v>
+                          <a:v>DMAMUX5_AMU_1</a:v>
+                          <a:v>DMAMUX5_MCAN_7</a:v>
+                          <a:v>DMAMUX5_MCAN_8</a:v>
+                          <a:v>DMAMUX5_MCAN_9</a:v>
+                          <a:v>DMAMUX5_MCAN_10</a:v>
+                          <a:v>DMAMUX5_MCAN_11</a:v>
+                          <a:v>DMAMUX5_MCAN_12</a:v>
+                          <a:v>DMAMUX5_ALWAYS_ON_0</a:v>
+                          <a:v>DMAMUX6_PSI5_0_CH2_RX_PSI5</a:v>
+                          <a:v>DMAMUX6_PSI5_0_CH2_RX_SENT</a:v>
+                          <a:v>DMAMUX6_PSI5_1_CH1_RX_PSI5</a:v>
+                          <a:v>DMAMUX6_PSI5_1_CH1_RX_SENT</a:v>
+                          <a:v>DMAMUX6_DSPI_6_RX</a:v>
+                          <a:v>DMAMUX6_DSPI_6_TX</a:v>
+                          <a:v>DMAMUX6_DSPI_6_CMD</a:v>
+                          <a:v>DMAMUX6_LINFLEXD_16_RX</a:v>
+                          <a:v>DMAMUX6_LINFLEXD_16_TX</a:v>
+                          <a:v>DMAMUX6_I2C_1_RX</a:v>
+                          <a:v>DMAMUX6_I2C_1_TX</a:v>
+                          <a:v>DMAMUX6_DSPI_1_CMD</a:v>
+                          <a:v>DMAMUX6_DSPI_1_RX</a:v>
+                          <a:v>DMAMUX6_DSPI_1_TX</a:v>
+                          <a:v>DMAMUX6_DSPI_12_CMD</a:v>
+                          <a:v>DMAMUX6_DSPI_12_RX</a:v>
+                          <a:v>DMAMUX6_DSPI_12_TX</a:v>
+                          <a:v>DMAMUX6_SENT_1_RX_FAST</a:v>
+                          <a:v>DMAMUX6_SENT_1_RX_SLOW</a:v>
+                          <a:v>DMAMUX6_MCAN_3</a:v>
+                          <a:v>DMAMUX6_ETPUC_0</a:v>
+                          <a:v>DMAMUX6_ETPUC_1</a:v>
+                          <a:v>DMAMUX6_ETPUC_2</a:v>
+                          <a:v>DMAMUX6_ETPUC_3</a:v>
+                          <a:v>DMAMUX6_ETPUC_4</a:v>
+                          <a:v>DMAMUX6_ETPUC_5</a:v>
+                          <a:v>DMAMUX6_ETPUC_6</a:v>
+                          <a:v>DMAMUX6_ETPUC_7</a:v>
+                          <a:v>DMAMUX6_ALWAYS_ON_0</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH9</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH10</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH11</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH12</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH13</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH14</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH15</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH16</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH17</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH18</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH19</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH20</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH21</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH22</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH23</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH24</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH25</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH26</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH27</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH28</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH29</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH30</a:v>
+                          <a:v>DMAMUX7_EMIOS_1_CH31</a:v>
+                          <a:v>DMAMUX7_PSI5_0_CH0_RX_PSI5</a:v>
+                          <a:v>DMAMUX7_PSI5_0_CH0_RX_SENT</a:v>
+                          <a:v>DMAMUX7_PSI5_0_CH1_RX_PSI5</a:v>
+                          <a:v>DMAMUX7_PSI5_0_CH1_RX_SENT</a:v>
+                          <a:v>DMAMUX7_PSI5_0_CH2_RX_PSI5</a:v>
+                          <a:v>DMAMUX7_PSI5_0_CH2_RX_SENT</a:v>
+                          <a:v>DMAMUX7_DSPI_3_CMD</a:v>
+                          <a:v>DMAMUX7_DSPI_3_RX</a:v>
+                          <a:v>DMAMUX7_DSPI_3_TX</a:v>
+                          <a:v>DMAMUX7_DSPI_5_CMD</a:v>
+                          <a:v>DMAMUX7_DSPI_5_RX</a:v>
+                          <a:v>DMAMUX7_DSPI_5_TX</a:v>
+                          <a:v>DMAMUX7_MCAN_4</a:v>
+                          <a:v>DMAMUX7_SSI_0_TX</a:v>
+                          <a:v>DMAMUX7_SSI_0_RX</a:v>
+                          <a:v>DMAMUX7_ALWAYS_ON_0</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH8</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH9</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH10</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH11</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH12</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH13</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH14</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH15</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH20</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH21</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH22</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH23</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH24</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH25</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH26</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH27</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH28</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH29</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH30</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH31</a:v>
+                          <a:v>DMAMUX8_EMIOS_1_CH4</a:v>
+                          <a:v>DMAMUX8_EMIOS_1_CH5</a:v>
+                          <a:v>DMAMUX8_EMIOS_1_CH6</a:v>
+                          <a:v>DMAMUX8_EMIOS_1_CH7</a:v>
+                          <a:v>DMAMUX8_EMIOS_1_CH8</a:v>
+                          <a:v>DMAMUX8_PSI5_1_CH0_RX_PSI5</a:v>
+                          <a:v>DMAMUX8_PSI5_1_CH0_RX_SENT</a:v>
+                          <a:v>DMAMUX8_PSI5_1_CH1_RX_PSI5</a:v>
+                          <a:v>DMAMUX8_PSI5_1_CH1_RX_SENT</a:v>
+                          <a:v>DMAMUX8_ADC_SAR_0_EOC</a:v>
+                          <a:v>DMAMUX8_ADC_SAR_1_EOC</a:v>
+                          <a:v>DMAMUX8_EMIOS_0_CH5</a:v>
+                          <a:v>DMAMUX8_DSPI_4_CMD</a:v>
+                          <a:v>DMAMUX8_DSPI_4_RX</a:v>
+                          <a:v>DMAMUX8_DSPI_4_TX</a:v>
+                          <a:v>DMAMUX8_LINFLEXD_3_TX</a:v>
+                          <a:v>DMAMUX8_LINFLEXD_3_RX</a:v>
+                          <a:v>DMAMUX8_LINFLEXD_4_TX</a:v>
+                          <a:v>DMAMUX8_LINFLEXD_4_RX</a:v>
+                          <a:v>DMAMUX8_LINFLEXD_5_TX</a:v>
+                          <a:v>DMAMUX8_LINFLEXD_5_RX</a:v>
+                          <a:v>DMAMUX8_LINFLEXD_6_TX</a:v>
+                          <a:v>DMAMUX8_LINFLEXD_6_RX</a:v>
+                          <a:v>DMAMUX8_LINFLEXD_7_TX</a:v>
+                          <a:v>DMAMUX8_LINFLEXD_7_RX</a:v>
+                          <a:v>DMAMUX8_LINFLEXD_8_TX</a:v>
+                          <a:v>DMAMUX8_LINFLEXD_8_RX</a:v>
+                          <a:v>DMAMUX8_LINFLEXD_9_TX</a:v>
+                          <a:v>DMAMUX8_LINFLEXD_9_RX</a:v>
+                          <a:v>DMAMUX8_LINFLEXD_10_TX</a:v>
+                          <a:v>DMAMUX8_LINFLEXD_10_RX</a:v>
+                          <a:v>DMAMUX8_LINFLEXD_11_TX</a:v>
+                          <a:v>DMAMUX8_ALWAYS_ON_0</a:v>
+                          <a:v>DMAMUX9_I2C_0_RX</a:v>
+                          <a:v>DMAMUX9_I2C_0_TX</a:v>
+                          <a:v>DMAMUX9_MCAN_1</a:v>
+                          <a:v>DMAMUX9_MCAN_2</a:v>
+                          <a:v>DMAMUX9_DSPI_2_CMD</a:v>
+                          <a:v>DMAMUX9_DSPI_2_RX</a:v>
+                          <a:v>DMAMUX9_DSPI_2_TX</a:v>
+                          <a:v>DMAMUX9_SIUL2_REQ11</a:v>
+                          <a:v>DMAMUX9_EMIOS_0_CH0</a:v>
+                          <a:v>DMAMUX9_EMIOS_0_CH1</a:v>
+                          <a:v>DMAMUX9_EMIOS_0_CH2</a:v>
+                          <a:v>DMAMUX9_EMIOS_0_CH3</a:v>
+                          <a:v>DMAMUX9_EMIOS_0_CH4</a:v>
+                          <a:v>DMAMUX9_EMIOS_0_CH6</a:v>
+                          <a:v>DMAMUX9_EMIOS_0_CH7</a:v>
+                          <a:v>DMAMUX9_EMIOS_0_CH16</a:v>
+                          <a:v>DMAMUX9_EMIOS_0_CH17</a:v>
+                          <a:v>DMAMUX9_EMIOS_0_CH18</a:v>
+                          <a:v>DMAMUX9_EMIOS_0_CH19</a:v>
+                          <a:v>DMAMUX9_EMIOS_1_CH0</a:v>
+                          <a:v>DMAMUX9_EMIOS_1_CH1</a:v>
+                          <a:v>DMAMUX9_EMIOS_1_CH2</a:v>
+                          <a:v>DMAMUX9_EMIOS_1_CH3</a:v>
+                          <a:v>DMAMUX9_LINFLEXD_11_RX</a:v>
+                          <a:v>DMAMUX9_LINFLEXD_12_TX</a:v>
+                          <a:v>DMAMUX9_LINFLEXD_12_RX</a:v>
+                          <a:v>DMAMUX9_ALWAYS_ON_0</a:v>
+                          <a:v>DMAMUX0_ADC_SAR_B_EOC</a:v>
+                          <a:v>DMAMUX0_ADC_SD_0_EOC</a:v>
+                          <a:v>DMAMUX0_ADC_SAR_4_EOC</a:v>
+                          <a:v>DMAMUX0_ADC_SD_3_EOC</a:v>
+                          <a:v>DMAMUX1_SIPI_CH0</a:v>
+                          <a:v>DMAMUX1_SIPI_CH1</a:v>
+                          <a:v>DMAMUX1_SIPI_CH2</a:v>
+                          <a:v>DMAMUX1_SIPI_CH3</a:v>
+                          <a:v>DMAMUX1_GTM_TIM0_IRQ0</a:v>
+                          <a:v>DMAMUX1_GTM_TIM0_IRQ1</a:v>
+                          <a:v>DMAMUX1_GTM_TIM0_IRQ2</a:v>
+                          <a:v>DMAMUX1_GTM_TIM0_IRQ3</a:v>
+                          <a:v>DMAMUX1_GTM_TIM0_IRQ4</a:v>
+                          <a:v>DMAMUX1_GTM_TIM0_IRQ5</a:v>
+                          <a:v>DMAMUX1_GTM_TIM0_IRQ6</a:v>
+                          <a:v>DMAMUX1_GTM_TIM0_IRQ7</a:v>
+                          <a:v>DMAMUX1_GTM_TOM0_IRQ0</a:v>
+                          <a:v>DMAMUX1_GTM_TOM0_IRQ1</a:v>
+                          <a:v>DMAMUX1_GTM_TOM0_IRQ2</a:v>
+                          <a:v>DMAMUX1_GTM_TOM0_IRQ3</a:v>
+                          <a:v>DMAMUX1_GTM_TOM0_IRQ4</a:v>
+                          <a:v>DMAMUX1_GTM_TOM0_IRQ5</a:v>
+                          <a:v>DMAMUX1_GTM_TOM0_IRQ6</a:v>
+                          <a:v>DMAMUX1_GTM_TOM0_IRQ7</a:v>
+                          <a:v>DMAMUX1_GTM_ATOM0_IRQ0</a:v>
+                          <a:v>DMAMUX1_GTM_ATOM0_IRQ1</a:v>
+                          <a:v>DMAMUX1_GTM_ATOM0_IRQ2</a:v>
+                          <a:v>DMAMUX1_GTM_ATOM0_IRQ3</a:v>
+                          <a:v>DMAMUX1_GTM_MCS0_IRQ0</a:v>
+                          <a:v>DMAMUX1_GTM_MCS0_IRQ1</a:v>
+                          <a:v>DMAMUX1_GTM_MCS0_IRQ2</a:v>
+                          <a:v>DMAMUX1_GTM_MCS0_IRQ3</a:v>
+                          <a:v>DMAMUX1_GTM_MCS0_IRQ4</a:v>
+                          <a:v>DMAMUX1_GTM_MCS0_IRQ5</a:v>
+                          <a:v>DMAMUX1_GTM_MCS0_IRQ6</a:v>
+                          <a:v>DMAMUX1_GTM_MCS0_IRQ7</a:v>
+                          <a:v>DMAMUX1_ADC_SAR_4_EOC</a:v>
+                          <a:v>DMAMUX1_ADC_SD_3_EOC</a:v>
+                          <a:v>DMAMUX2_ADC_SAR_2_EOC</a:v>
+                          <a:v>DMAMUX2_ADC_SD_1_EOC</a:v>
+                          <a:v>DMAMUX2_GTM_PSM0_IRQ0</a:v>
+                          <a:v>DMAMUX2_GTM_PSM0_IRQ1</a:v>
+                          <a:v>DMAMUX2_GTM_PSM0_IRQ2</a:v>
+                          <a:v>DMAMUX2_GTM_PSM0_IRQ3</a:v>
+                          <a:v>DMAMUX2_GTM_TIM1_IRQ0</a:v>
+                          <a:v>DMAMUX2_GTM_TIM1_IRQ1</a:v>
+                          <a:v>DMAMUX2_GTM_TIM1_IRQ2</a:v>
+                          <a:v>DMAMUX2_GTM_TIM1_IRQ3</a:v>
+                          <a:v>DMAMUX2_GTM_TOM1_IRQ0</a:v>
+                          <a:v>DMAMUX2_GTM_TOM1_IRQ1</a:v>
+                          <a:v>DMAMUX2_GTM_TOM1_IRQ2</a:v>
+                          <a:v>DMAMUX2_GTM_TOM1_IRQ3</a:v>
+                          <a:v>DMAMUX2_GTM_ATOM1_IRQ0</a:v>
+                          <a:v>DMAMUX2_GTM_ATOM1_IRQ1</a:v>
+                          <a:v>DMAMUX2_GTM_MCS1_IRQ0</a:v>
+                          <a:v>DMAMUX2_GTM_MCS1_IRQ1</a:v>
+                          <a:v>DMAMUX2_GTM_MCS1_IRQ2</a:v>
+                          <a:v>DMAMUX2_GTM_MCS1_IRQ3</a:v>
+                          <a:v>DMAMUX2_GTM_TIM2_IRQ0</a:v>
+                          <a:v>DMAMUX2_GTM_TIM2_IRQ1</a:v>
+                          <a:v>DMAMUX2_GTM_TIM2_IRQ2</a:v>
+                          <a:v>DMAMUX2_GTM_TIM2_IRQ3</a:v>
+                          <a:v>DMAMUX2_GTM_ATOM2_IRQ0</a:v>
+                          <a:v>DMAMUX2_GTM_ATOM2_IRQ1</a:v>
+                          <a:v>DMAMUX2_GTM_MCS2_IRQ0</a:v>
+                          <a:v>DMAMUX2_GTM_MCS2_IRQ1</a:v>
+                          <a:v>DMAMUX2_GTM_MCS2_IRQ2</a:v>
+                          <a:v>DMAMUX2_GTM_MCS2_IRQ3</a:v>
+                          <a:v>DMAMUX2_GTM_ATOM3_IRQ0</a:v>
+                          <a:v>DMAMUX2_GTM_ATOM3_IRQ1</a:v>
+                          <a:v>DMAMUX2_ADC_SD_2_EOC</a:v>
+                          <a:v>DMAMUX2_GTM_SPE0</a:v>
+                          <a:v>DMAMUX2_GTM_SPE1</a:v>
+                          <a:v>DMAMUX2_EQADC1_ADC23_RFIFO0</a:v>
+                          <a:v>DMAMUX2_EQADC1_ADC23_RFIFO1</a:v>
+                          <a:v>DMAMUX2_EQADC1_ADC23_RFIFO2</a:v>
+                          <a:v>DMAMUX2_EQADC1_ADC23_RFIFO3</a:v>
+                          <a:v>DMAMUX2_EQADC1_ADC23_RFIFO4</a:v>
+                          <a:v>DMAMUX2_EQADC1_ADC23_RFIFO5</a:v>
+                          <a:v>DMAMUX2_EQADC1_ADC23_CFIFO0</a:v>
+                          <a:v>DMAMUX2_EQADC1_ADC23_CFIFO1</a:v>
+                          <a:v>DMAMUX2_EQADC1_ADC23_CFIFO2</a:v>
+                          <a:v>DMAMUX2_EQADC1_ADC23_CFIFO3</a:v>
+                          <a:v>DMAMUX2_EQADC1_ADC23_CFIFO4</a:v>
+                          <a:v>DMAMUX2_EQADC1_ADC23_CFIFO5</a:v>
+                          <a:v>DMAMUX3_ADC_SAR_3_EOC</a:v>
+                          <a:v>DMAMUX3_GTM_PSM0_IRQ4</a:v>
+                          <a:v>DMAMUX3_GTM_PSM0_IRQ5</a:v>
+                          <a:v>DMAMUX3_GTM_PSM0_IRQ6</a:v>
+                          <a:v>DMAMUX3_GTM_PSM0_IRQ7</a:v>
+                          <a:v>DMAMUX3_GTM_TIM1_IRQ4</a:v>
+                          <a:v>DMAMUX3_GTM_TIM1_IRQ5</a:v>
+                          <a:v>DMAMUX3_GTM_TIM1_IRQ6</a:v>
+                          <a:v>DMAMUX3_GTM_TIM1_IRQ7</a:v>
+                          <a:v>DMAMUX3_GTM_TOM1_IRQ4</a:v>
+                          <a:v>DMAMUX3_GTM_TOM1_IRQ5</a:v>
+                          <a:v>DMAMUX3_GTM_TOM1_IRQ6</a:v>
+                          <a:v>DMAMUX3_GTM_TOM1_IRQ7</a:v>
+                          <a:v>DMAMUX3_GTM_ATOM1_IRQ2</a:v>
+                          <a:v>DMAMUX3_GTM_ATOM1_IRQ3</a:v>
+                          <a:v>DMAMUX3_GTM_MCS1_IRQ4</a:v>
+                          <a:v>DMAMUX3_GTM_MCS1_IRQ5</a:v>
+                          <a:v>DMAMUX3_GTM_MCS1_IRQ6</a:v>
+                          <a:v>DMAMUX3_GTM_MCS1_IRQ7</a:v>
+                          <a:v>DMAMUX3_GTM_TIM2_IRQ4</a:v>
+                          <a:v>DMAMUX3_GTM_TIM2_IRQ5</a:v>
+                          <a:v>DMAMUX3_GTM_TIM2_IRQ6</a:v>
+                          <a:v>DMAMUX3_GTM_TIM2_IRQ7</a:v>
+                          <a:v>DMAMUX3_GTM_ATOM2_IRQ2</a:v>
+                          <a:v>DMAMUX3_GTM_ATOM2_IRQ3</a:v>
+                          <a:v>DMAMUX3_GTM_MCS2_IRQ4</a:v>
+                          <a:v>DMAMUX3_GTM_MCS2_IRQ5</a:v>
+                          <a:v>DMAMUX3_GTM_MCS2_IRQ6</a:v>
+                          <a:v>DMAMUX3_GTM_MCS2_IRQ7</a:v>
+                          <a:v>DMAMUX3_GTM_ATOM3_IRQ2</a:v>
+                          <a:v>DMAMUX3_GTM_ATOM3_IRQ3</a:v>
+                          <a:v>DMAMUX3_ADC_SD_3_EOC</a:v>
+                          <a:v>DMAMUX3_ADC_SAR_6_EOC</a:v>
+                          <a:v>DMAMUX3_ADC_SAR_2_EOC</a:v>
+                          <a:v>DMAMUX3_ADC_SD_2_EOC</a:v>
+                          <a:v>DMAMUX3_EQADC2_ADC45_RFIFO0</a:v>
+                          <a:v>DMAMUX3_EQADC2_ADC45_RFIFO1</a:v>
+                          <a:v>DMAMUX3_EQADC2_ADC45_RFIFO2</a:v>
+                          <a:v>DMAMUX3_EQADC2_ADC45_RFIFO3</a:v>
+                          <a:v>DMAMUX3_EQADC2_ADC45_RFIFO4</a:v>
+                          <a:v>DMAMUX3_EQADC2_ADC45_RFIFO5</a:v>
+                          <a:v>DMAMUX3_EQADC2_ADC45_CFIFO0</a:v>
+                          <a:v>DMAMUX3_EQADC2_ADC45_CFIFO1</a:v>
+                          <a:v>DMAMUX3_EQADC2_ADC45_CFIFO2</a:v>
+                          <a:v>DMAMUX3_EQADC2_ADC45_CFIFO3</a:v>
+                          <a:v>DMAMUX3_EQADC2_ADC45_CFIFO4</a:v>
+                          <a:v>DMAMUX3_EQADC2_ADC45_CFIFO5</a:v>
+                          <a:v>DMAMUX4_ADC_SAR_4_EOC</a:v>
+                          <a:v>DMAMUX4_ADC_SAR_6_EOC</a:v>
+                          <a:v>DMAMUX4_ADC_SD_2_EOC</a:v>
+                          <a:v>DMAMUX4_ADC_SD_3_EOC</a:v>
+                          <a:v>DMAMUX4_SIPI_CH0</a:v>
+                          <a:v>DMAMUX4_SIPI_CH1</a:v>
+                          <a:v>DMAMUX4_GTM_TIM0_IRQ0</a:v>
+                          <a:v>DMAMUX4_GTM_TIM0_IRQ1</a:v>
+                          <a:v>DMAMUX4_GTM_TOM0_IRQ0</a:v>
+                          <a:v>DMAMUX4_GTM_TOM0_IRQ1</a:v>
+                          <a:v>DMAMUX4_GTM_PSM0_IRQ0</a:v>
+                          <a:v>DMAMUX4_GTM_PSM0_IRQ1</a:v>
+                          <a:v>DMAMUX4_GTM_PSM0_IRQ2</a:v>
+                          <a:v>DMAMUX4_GTM_PSM0_IRQ3</a:v>
+                          <a:v>DMAMUX4_GTM_TOM1_IRQ0</a:v>
+                          <a:v>DMAMUX4_GTM_TOM1_IRQ1</a:v>
+                          <a:v>DMAMUX4_GTM_TIM3_IRQ0</a:v>
+                          <a:v>DMAMUX4_GTM_TIM3_IRQ1</a:v>
+                          <a:v>DMAMUX4_GTM_TIM3_IRQ2</a:v>
+                          <a:v>DMAMUX4_GTM_TIM3_IRQ3</a:v>
+                          <a:v>DMAMUX4_GTM_MCS3_IRQ0</a:v>
+                          <a:v>DMAMUX4_GTM_MCS3_IRQ1</a:v>
+                          <a:v>DMAMUX4_GTM_MCS3_IRQ2</a:v>
+                          <a:v>DMAMUX4_GTM_MCS3_IRQ3</a:v>
+                          <a:v>DMAMUX4_ADC_SD_1_EOC</a:v>
+                          <a:v>DMAMUX4_ADC_SD_4_EOC</a:v>
+                          <a:v>DMAMUX4_ADC_SD_5_EOC</a:v>
+                          <a:v>DMAMUX4_EQADC3_ADC67_RFIFO0</a:v>
+                          <a:v>DMAMUX4_EQADC3_ADC67_RFIFO1</a:v>
+                          <a:v>DMAMUX4_EQADC3_ADC67_RFIFO2</a:v>
+                          <a:v>DMAMUX4_EQADC3_ADC67_RFIFO3</a:v>
+                          <a:v>DMAMUX4_EQADC3_ADC67_RFIFO4</a:v>
+                          <a:v>DMAMUX4_EQADC3_ADC67_RFIFO5</a:v>
+                          <a:v>DMAMUX4_EQADC3_ADC67_CFIFO0</a:v>
+                          <a:v>DMAMUX4_EQADC3_ADC67_CFIFO1</a:v>
+                          <a:v>DMAMUX4_EQADC3_ADC67_CFIFO2</a:v>
+                          <a:v>DMAMUX4_EQADC3_ADC67_CFIFO3</a:v>
+                          <a:v>DMAMUX4_EQADC3_ADC67_CFIFO4</a:v>
+                          <a:v>DMAMUX4_EQADC3_ADC67_CFIFO5</a:v>
+                          <a:v>DMAMUX5_ADC_SAR_7_EOC</a:v>
+                          <a:v>DMAMUX5_ADC_SD_4_EOC</a:v>
+                          <a:v>DMAMUX5_ADC_SD_5_EOC</a:v>
+                          <a:v>DMAMUX5_SIPI_CH2</a:v>
+                          <a:v>DMAMUX5_SIPI_CH3</a:v>
+                          <a:v>DMAMUX5_GTM_TIM0_IRQ2</a:v>
+                          <a:v>DMAMUX5_GTM_TIM0_IRQ3</a:v>
+                          <a:v>DMAMUX5_GTM_TOM0_IRQ4</a:v>
+                          <a:v>DMAMUX5_GTM_TOM0_IRQ5</a:v>
+                          <a:v>DMAMUX5_GTM_PSM0_IRQ4</a:v>
+                          <a:v>DMAMUX5_GTM_PSM0_IRQ5</a:v>
+                          <a:v>DMAMUX5_GTM_PSM0_IRQ6</a:v>
+                          <a:v>DMAMUX5_GTM_PSM0_IRQ7</a:v>
+                          <a:v>DMAMUX5_GTM_TOM1_IRQ4</a:v>
+                          <a:v>DMAMUX5_GTM_TOM1_IRQ5</a:v>
+                          <a:v>DMAMUX5_GTM_TIM3_IRQ4</a:v>
+                          <a:v>DMAMUX5_GTM_TIM3_IRQ5</a:v>
+                          <a:v>DMAMUX5_GTM_TIM3_IRQ6</a:v>
+                          <a:v>DMAMUX5_GTM_TIM3_IRQ7</a:v>
+                          <a:v>DMAMUX5_GTM_MCS3_IRQ4</a:v>
+                          <a:v>DMAMUX5_GTM_MCS3_IRQ5</a:v>
+                          <a:v>DMAMUX5_GTM_MCS3_IRQ6</a:v>
+                          <a:v>DMAMUX5_GTM_MCS3_IRQ7</a:v>
+                          <a:v>DMAMUX5_ADC_SAR_3_EOC</a:v>
+                          <a:v>DMAMUX5_ADC_SAR_1_EOC</a:v>
+                          <a:v>DMAMUX5_EQADC4_ADC89_RFIFO0</a:v>
+                          <a:v>DMAMUX5_EQADC4_ADC89_RFIFO1</a:v>
+                          <a:v>DMAMUX5_EQADC4_ADC89_RFIFO2</a:v>
+                          <a:v>DMAMUX5_EQADC4_ADC89_RFIFO3</a:v>
+                          <a:v>DMAMUX5_EQADC4_ADC89_RFIFO4</a:v>
+                          <a:v>DMAMUX5_EQADC4_ADC89_RFIFO5</a:v>
+                          <a:v>DMAMUX5_EQADC4_ADC89_CFIFO0</a:v>
+                          <a:v>DMAMUX5_EQADC4_ADC89_CFIFO1</a:v>
+                          <a:v>DMAMUX5_EQADC4_ADC89_CFIFO2</a:v>
+                          <a:v>DMAMUX5_EQADC4_ADC89_CFIFO3</a:v>
+                          <a:v>DMAMUX5_EQADC4_ADC89_CFIFO4</a:v>
+                          <a:v>DMAMUX5_EQADC4_ADC89_CFIFO5</a:v>
+                          <a:v>DMAMUX6_ADC_SAR_8_EOC</a:v>
+                          <a:v>DMAMUX6_ADC_SAR_9_EOC</a:v>
+                          <a:v>DMAMUX6_ADC_SAR_10_EOC</a:v>
+                          <a:v>DMAMUX6_ADC_SAR_5_EOC</a:v>
+                          <a:v>DMAMUX6_ADC_SD_6_EOC</a:v>
+                          <a:v>DMAMUX6_ADC_SD_7_EOC</a:v>
+                          <a:v>DMAMUX6_ADC_SD_8_EOC</a:v>
+                          <a:v>DMAMUX6_ADC_SD_9_EOC</a:v>
+                          <a:v>DMAMUX6_GTM_PSM1_IRQ0</a:v>
+                          <a:v>DMAMUX6_GTM_PSM1_IRQ1</a:v>
+                          <a:v>DMAMUX6_GTM_PSM1_IRQ2</a:v>
+                          <a:v>DMAMUX6_GTM_PSM1_IRQ3</a:v>
+                          <a:v>DMAMUX6_GTM_TOM1_IRQ0</a:v>
+                          <a:v>DMAMUX6_GTM_TOM1_IRQ1</a:v>
+                          <a:v>DMAMUX6_GTM_TOM1_IRQ2</a:v>
+                          <a:v>DMAMUX6_GTM_TOM1_IRQ3</a:v>
+                          <a:v>DMAMUX6_GTM_TOM1_IRQ4</a:v>
+                          <a:v>DMAMUX6_GTM_TOM1_IRQ5</a:v>
+                          <a:v>DMAMUX6_GTM_TOM1_IRQ6</a:v>
+                          <a:v>DMAMUX6_GTM_TOM1_IRQ7</a:v>
+                          <a:v>DMAMUX6_GTM_TOM2_IRQ0</a:v>
+                          <a:v>DMAMUX6_GTM_TOM2_IRQ1</a:v>
+                          <a:v>DMAMUX6_GTM_TOM2_IRQ2</a:v>
+                          <a:v>DMAMUX6_GTM_TOM2_IRQ3</a:v>
+                          <a:v>DMAMUX6_GTM_TOM2_IRQ4</a:v>
+                          <a:v>DMAMUX6_GTM_TOM2_IRQ5</a:v>
+                          <a:v>DMAMUX6_GTM_TOM2_IRQ6</a:v>
+                          <a:v>DMAMUX6_GTM_TOM2_IRQ7</a:v>
+                          <a:v>DMAMUX6_I2S_0_TX</a:v>
+                          <a:v>DMAMUX6_I2S_0_RX</a:v>
+                          <a:v>DMAMUX6_I2S_1_TX</a:v>
+                          <a:v>DMAMUX6_I2S_1_RX</a:v>
+                          <a:v>DMAMUX7_GTM_MCS4_IRQ0</a:v>
+                          <a:v>DMAMUX7_GTM_MCS4_IRQ1</a:v>
+                          <a:v>DMAMUX7_GTM_MCS4_IRQ2</a:v>
+                          <a:v>DMAMUX7_GTM_MCS4_IRQ3</a:v>
+                          <a:v>DMAMUX7_GTM_MCS4_IRQ4</a:v>
+                          <a:v>DMAMUX7_GTM_MCS4_IRQ5</a:v>
+                          <a:v>DMAMUX7_GTM_MCS4_IRQ6</a:v>
+                          <a:v>DMAMUX7_GTM_MCS4_IRQ7</a:v>
+                          <a:v>DMAMUX7_GTM_MCS5_IRQ0</a:v>
+                          <a:v>DMAMUX7_GTM_MCS5_IRQ1</a:v>
+                          <a:v>DMAMUX7_GTM_MCS5_IRQ2</a:v>
+                          <a:v>DMAMUX7_GTM_MCS5_IRQ3</a:v>
+                          <a:v>DMAMUX7_GTM_MCS5_IRQ4</a:v>
+                          <a:v>DMAMUX7_GTM_MCS5_IRQ5</a:v>
+                          <a:v>DMAMUX7_GTM_MCS5_IRQ6</a:v>
+                          <a:v>DMAMUX7_GTM_MCS5_IRQ7</a:v>
+                          <a:v>DMAMUX7_GTM_ATOM5_IRQ0</a:v>
+                          <a:v>DMAMUX7_GTM_ATOM5_IRQ1</a:v>
+                          <a:v>DMAMUX7_GTM_ATOM5_IRQ2</a:v>
+                          <a:v>DMAMUX7_GTM_ATOM5_IRQ3</a:v>
+                          <a:v>DMAMUX7_GTM_ATOM6_IRQ0</a:v>
+                          <a:v>DMAMUX7_GTM_ATOM6_IRQ1</a:v>
+                          <a:v>DMAMUX7_GTM_ATOM6_IRQ2</a:v>
+                          <a:v>DMAMUX7_GTM_ATOM6_IRQ3</a:v>
+                          <a:v>DMAMUX7_GTM_TOM3_IRQ0</a:v>
+                          <a:v>DMAMUX7_GTM_TOM3_IRQ1</a:v>
+                          <a:v>DMAMUX7_GTM_TOM3_IRQ2</a:v>
+                          <a:v>DMAMUX7_GTM_TOM3_IRQ3</a:v>
+                          <a:v>DMAMUX7_GTM_TOM3_IRQ4</a:v>
+                          <a:v>DMAMUX7_GTM_TOM3_IRQ5</a:v>
+                          <a:v>DMAMUX7_GTM_TOM3_IRQ6</a:v>
+                          <a:v>DMAMUX7_GTM_TOM3_IRQ7</a:v>
+                          <a:v>DMAMUX7_ADC_SD_6_EOC</a:v>
+                          <a:v>DMAMUX7_ADC_SD_7_EOC</a:v>
+                          <a:v>DMAMUX7_ADC_SD_0_EOC</a:v>
+                          <a:v>DMAMUX7_ADC_SD_1_EOC</a:v>
+                          <a:v>DMAMUX7_ADC_SD_2_EOC</a:v>
+                          <a:v>DMAMUX7_ADC_SD_3_EOC</a:v>
+                          <a:v>DMAMUX7_SSI_1_TX</a:v>
+                          <a:v>DMAMUX7_SSI_1_RX</a:v>
+                          <a:v>DMAMUX8_GTM_TIM4_IRQ0</a:v>
+                          <a:v>DMAMUX8_GTM_TIM4_IRQ1</a:v>
+                          <a:v>DMAMUX8_GTM_TIM4_IRQ2</a:v>
+                          <a:v>DMAMUX8_GTM_TIM4_IRQ3</a:v>
+                          <a:v>DMAMUX8_GTM_TIM4_IRQ4</a:v>
+                          <a:v>DMAMUX8_GTM_TIM4_IRQ5</a:v>
+                          <a:v>DMAMUX8_GTM_TIM4_IRQ6</a:v>
+                          <a:v>DMAMUX8_GTM_TIM4_IRQ7</a:v>
+                          <a:v>DMAMUX8_GTM_TIM5_IRQ0</a:v>
+                          <a:v>DMAMUX8_GTM_TIM5_IRQ1</a:v>
+                          <a:v>DMAMUX8_GTM_TIM5_IRQ2</a:v>
+                          <a:v>DMAMUX8_GTM_TIM5_IRQ3</a:v>
+                          <a:v>DMAMUX8_GTM_TIM5_IRQ4</a:v>
+                          <a:v>DMAMUX8_GTM_TIM5_IRQ5</a:v>
+                          <a:v>DMAMUX8_GTM_TIM5_IRQ6</a:v>
+                          <a:v>DMAMUX8_GTM_TIM5_IRQ7</a:v>
+                          <a:v>DMAMUX8_GTM_ATOM7_IRQ0</a:v>
+                          <a:v>DMAMUX8_GTM_ATOM7_IRQ1</a:v>
+                          <a:v>DMAMUX8_GTM_ATOM7_IRQ2</a:v>
+                          <a:v>DMAMUX8_GTM_ATOM7_IRQ3</a:v>
+                          <a:v>DMAMUX8_GTM_ATOM8_IRQ0</a:v>
+                          <a:v>DMAMUX8_GTM_ATOM8_IRQ1</a:v>
+                          <a:v>DMAMUX8_GTM_ATOM8_IRQ2</a:v>
+                          <a:v>DMAMUX8_GTM_ATOM8_IRQ3</a:v>
+                          <a:v>DMAMUX8_GTM_TOM4_IRQ0</a:v>
+                          <a:v>DMAMUX8_GTM_TOM4_IRQ1</a:v>
+                          <a:v>DMAMUX8_GTM_TOM4_IRQ2</a:v>
+                          <a:v>DMAMUX8_GTM_TOM4_IRQ3</a:v>
+                          <a:v>DMAMUX8_GTM_TOM4_IRQ4</a:v>
+                          <a:v>DMAMUX8_GTM_TOM4_IRQ5</a:v>
+                          <a:v>DMAMUX8_GTM_TOM4_IRQ6</a:v>
+                          <a:v>DMAMUX8_GTM_TOM4_IRQ7</a:v>
+                          <a:v>DMAMUX8_ADC_SD_8_EOC</a:v>
+                          <a:v>DMAMUX8_ADC_SAR_2_EOC</a:v>
+                          <a:v>DMAMUX8_ADC_SAR_B_EOC</a:v>
+                          <a:v>DMAMUX8_ADC_SD_4_EOC</a:v>
+                          <a:v>DMAMUX9_GTM_PSM1_IRQ0</a:v>
+                          <a:v>DMAMUX9_GTM_PSM1_IRQ1</a:v>
+                          <a:v>DMAMUX9_GTM_PSM1_IRQ2</a:v>
+                          <a:v>DMAMUX9_GTM_PSM1_IRQ3</a:v>
+                          <a:v>DMAMUX9_GTM_PSM1_IRQ4</a:v>
+                          <a:v>DMAMUX9_GTM_PSM1_IRQ5</a:v>
+                          <a:v>DMAMUX9_GTM_PSM1_IRQ6</a:v>
+                          <a:v>DMAMUX9_GTM_PSM1_IRQ7</a:v>
+                          <a:v>DMAMUX9_GTM_SPE2</a:v>
+                          <a:v>DMAMUX9_GTM_SPE3</a:v>
+                          <a:v>DMAMUX9_GTM_ATOM5_IRQ0</a:v>
+                          <a:v>DMAMUX9_GTM_ATOM5_IRQ1</a:v>
+                          <a:v>DMAMUX9_GTM_ATOM7_IRQ0</a:v>
+                          <a:v>DMAMUX9_GTM_ATOM7_IRQ1</a:v>
+                          <a:v>DMAMUX9_GTM_TOM3_IRQ0</a:v>
+                          <a:v>DMAMUX9_GTM_TOM3_IRQ1</a:v>
+                          <a:v>DMAMUX9_GTM_TOM3_IRQ2</a:v>
+                          <a:v>DMAMUX9_GTM_TOM3_IRQ3</a:v>
+                          <a:v>DMAMUX9_GTM_TOM3_IRQ4</a:v>
+                          <a:v>DMAMUX9_GTM_TOM3_IRQ5</a:v>
+                          <a:v>DMAMUX9_GTM_TOM3_IRQ6</a:v>
+                          <a:v>DMAMUX9_GTM_TOM3_IRQ7</a:v>
+                          <a:v>DMAMUX9_GTM_TOM4_IRQ0</a:v>
+                          <a:v>DMAMUX9_GTM_TOM4_IRQ1</a:v>
+                          <a:v>DMAMUX9_GTM_TOM4_IRQ2</a:v>
+                          <a:v>DMAMUX9_GTM_TOM4_IRQ3</a:v>
+                          <a:v>DMAMUX9_GTM_TOM4_IRQ4</a:v>
+                          <a:v>DMAMUX9_GTM_TOM4_IRQ5</a:v>
+                          <a:v>DMAMUX9_GTM_TOM4_IRQ6</a:v>
+                          <a:v>DMAMUX9_GTM_TOM4_IRQ7</a:v>
+                          <a:v>DMAMUX9_ADC_SD_9_EOC</a:v>
+                          <a:v>DMAMUX9_ADC_SAR_3_EOC</a:v>
+                          <a:v>DMAMUX9_ADC_SAR_4_EOC</a:v>
+                          <a:v>DMAMUX9_ADC_SAR_6_EOC</a:v>
+                          <a:v>DMAMUX9_ADC_SAR_7_EOC</a:v>
+                          <a:v>DMAMUX9_ADC_SD_5_EOC</a:v>
+                          <a:v>DMAMUX1_ADC01_DECFILT_IN</a:v>
+                          <a:v>DMAMUX2_ADC23_DECFILT_IN</a:v>
+                          <a:v>DMAMUX3_ADC23_DECFILT_OUT</a:v>
+                          <a:v>DMAMUX3_ADC23_DECFILT_IN</a:v>
+                          <a:v>DMAMUX4_ADC23_DECFILT_OUT</a:v>
+                          <a:v>DMAMUX5_ADC23_DECFILT_OUT</a:v>
+                          <a:v>DMAMUX5_ADC01_DECFILT_OUT</a:v>
+                          <a:v>DMAMUX8_ADC_01_DECFIN</a:v>
+                          <a:v>DMAMUX8_ADC01_DECFILT_OUT</a:v>
+                          <a:v>DMAMUX8_ADC23_DECFILT_IN</a:v>
+                          <a:v>DMAMUX9_ADC23_DECFILT_OUT</a:v>
+                          <a:v>DMAMUX0_LINFLEXD_16_TX</a:v>
+                          <a:v>DMAMUX0_LINFLEXD_16_RX</a:v>
+                          <a:v>DMAMUX0_DSPI_15_TX</a:v>
+                          <a:v>DMAMUX0_DSPI_15_RX</a:v>
+                          <a:v>DMAMUX0_DSPI_15_CMD</a:v>
+                          <a:v>DMAMUX0_DSPI_14_TX</a:v>
+                          <a:v>DMAMUX0_DSPI_14_RX</a:v>
+                          <a:v>DMAMUX0_DSPI_14_CMD</a:v>
+                          <a:v>DMAMUX0_DSPI_13_TX</a:v>
+                          <a:v>DMAMUX0_DSPI_13_RX</a:v>
+                          <a:v>DMAMUX0_DSPI_13_CMD</a:v>
+                          <a:v>DMAMUX0_DSPI_11_TX</a:v>
+                          <a:v>DMAMUX0_DSPI_11_RX</a:v>
+                          <a:v>DMAMUX0_DSPI_11_CMD</a:v>
+                          <a:v>DMAMUX0_DSPI_10_TX</a:v>
+                          <a:v>DMAMUX0_DSPI_10_RX</a:v>
+                          <a:v>DMAMUX0_DSPI_10_CMD</a:v>
+                          <a:v>DMAMUX0_DSPI_9_TX</a:v>
+                          <a:v>DMAMUX0_DSPI_9_RX</a:v>
+                          <a:v>DMAMUX0_DSPI_9_CMD</a:v>
+                          <a:v>DMAMUX0_DSPI_8_TX</a:v>
+                          <a:v>DMAMUX0_DSPI_8_RX</a:v>
+                          <a:v>DMAMUX0_DSPI_8_CMD</a:v>
+                          <a:v>DMAMUX0_DSPI_7_TX</a:v>
+                          <a:v>DMAMUX0_DSPI_7_RX</a:v>
+                          <a:v>DMAMUX0_DSPI_7_CMD</a:v>
+                          <a:v>DMAMUX1_DSPI_17_TX</a:v>
+                          <a:v>DMAMUX1_DSPI_17_RX</a:v>
+                          <a:v>DMAMUX1_DSPI_17_CMD</a:v>
+                          <a:v>DMAMUX1_DSPI_16_TX</a:v>
+                          <a:v>DMAMUX1_DSPI_16_RX</a:v>
+                          <a:v>DMAMUX1_DSPI_16_CMD</a:v>
+                          <a:v>DMAMUX4_LINFLEXD_15_TX</a:v>
+                          <a:v>DMAMUX5_DSPI_18_TX</a:v>
+                          <a:v>DMAMUX5_DSPI_18_RX</a:v>
+                          <a:v>DMAMUX5_DSPI_18_CMD</a:v>
+                          <a:v>DMAMUX6_DSPI_19_RX</a:v>
+                          <a:v>DMAMUX6_DSPI_19_CMD</a:v>
+                          <a:v>DMAMUX6_SPORT_A</a:v>
+                          <a:v>DMAMUX6_SPORT_B</a:v>
+                          <a:v>DMAMUX6_DSPI_19_TX</a:v>
+                          <a:v>DMAMUX7_DSPI_21_TX</a:v>
+                          <a:v>DMAMUX7_DSPI_21_RX</a:v>
+                          <a:v>DMAMUX7_DSPI_21_CMD</a:v>
+                          <a:v>DMAMUX7_DSPI_20_TX</a:v>
+                          <a:v>DMAMUX7_DSPI_20_RX</a:v>
+                          <a:v>DMAMUX7_DSPI_20_CMD</a:v>
+                          <a:v>DMAMUX7_GTM_PSM2_IRQ0</a:v>
+                          <a:v>DMAMUX8_GTM_PSM2_IRQ2</a:v>
+                          <a:v>DMAMUX8_GTM_PSM2_IRQ3</a:v>
+                          <a:v>DMAMUX8_GTM_PSM2_IRQ4</a:v>
+                          <a:v>DMAMUX8_GTM_PSM2_IRQ5</a:v>
+                          <a:v>DMAMUX8_PSM2_IRQ1</a:v>
+                          <a:v>DMAMUX10_EQADC5_ADC1011_CFIFO0</a:v>
+                          <a:v>DMAMUX10_EQADC5_ADC1011_CFIFO1</a:v>
+                          <a:v>DMAMUX10_EQADC5_ADC1011_CFIFO2</a:v>
+                          <a:v>DMAMUX10_EQADC5_ADC1011_CFIFO3</a:v>
+                          <a:v>DMAMUX10_EQADC5_ADC1011_CFIFO4</a:v>
+                          <a:v>DMAMUX10_EQADC5_ADC1011_CFIFO5</a:v>
+                          <a:v>DMAMUX10_EQADC5_ADC1011_RFIFO0</a:v>
+                          <a:v>DMAMUX10_EQADC5_ADC1011_RFIFO1</a:v>
+                          <a:v>DMAMUX10_EQADC5_ADC1011_RFIFO2</a:v>
+                          <a:v>DMAMUX10_EQADC5_ADC1011_RFIFO3</a:v>
+                          <a:v>DMAMUX10_EQADC5_ADC1011_RFIFO4</a:v>
+                          <a:v>DMAMUX10_EQADC5_ADC1011_RFIFO5</a:v>
+                          <a:v>DMAMUX10_EQADC6_ADC1213_CFIFO0</a:v>
+                          <a:v>DMAMUX10_EQADC6_ADC1213_CFIFO1</a:v>
+                          <a:v>DMAMUX10_EQADC6_ADC1213_CFIFO2</a:v>
+                          <a:v>DMAMUX10_EQADC6_ADC1213_CFIFO3</a:v>
+                          <a:v>DMAMUX10_EQADC6_ADC1213_CFIFO4</a:v>
+                          <a:v>DMAMUX10_EQADC6_ADC1213_CFIFO5</a:v>
+                          <a:v>DMAMUX10_EQADC6_ADC1213_RFIFO0</a:v>
+                          <a:v>DMAMUX10_EQADC6_ADC1213_RFIFO1</a:v>
+                          <a:v>DMAMUX10_EQADC6_ADC1213_RFIFO2</a:v>
+                          <a:v>DMAMUX10_EQADC6_ADC1213_RFIFO3</a:v>
+                          <a:v>DMAMUX10_EQADC6_ADC1213_RFIFO4</a:v>
+                          <a:v>DMAMUX10_EQADC6_ADC1213_RFIFO5</a:v>
+                          <a:v>DMAMUX10_ADC_SD_10_EOC</a:v>
+                          <a:v>DMAMUX10_ADC_SD_11_EOC</a:v>
+                          <a:v>DMAMUX10_ADC_SD_12_EOC</a:v>
+                          <a:v>DMAMUX10_ADC_SD_13_EOC</a:v>
+                          <a:v>DMAMUX10_DAC_0</a:v>
+                          <a:v>DMAMUX10_DAC_1</a:v>
+                          <a:v>DMAMUX10_ADC_1011_DECFOUT</a:v>
+                          <a:v>DMAMUX10_ADC_1011_DECFIN</a:v>
+                          <a:v>DMAMUX10_ADC_1213_DECFOUT</a:v>
+                          <a:v>DMAMUX10_ADC_1213_DECFIN</a:v>
+                          <a:v>DMAMUX10_GTM_PSM2_IRQ6</a:v>
+                          <a:v>DMAMUX10_GTM_PSM2_IRQ7</a:v>
+                          <a:v>DMAMUX10_GTM_TOM5_IRQ0</a:v>
+                          <a:v>DMAMUX10_GTM_TOM5_IRQ1</a:v>
+                          <a:v>DMAMUX10_GTM_TOM5_IRQ2</a:v>
+                          <a:v>DMAMUX10_GTM_TOM5_IRQ3</a:v>
+                          <a:v>DMAMUX10_GTM_TOM5_IRQ4</a:v>
+                          <a:v>DMAMUX10_GTM_TOM5_IRQ5</a:v>
+                          <a:v>DMAMUX10_GTM_TOM5_IRQ6</a:v>
+                          <a:v>DMAMUX10_GTM_TOM5_IRQ7</a:v>
+                          <a:v>DMAMUX10_GTM_SPE4</a:v>
+                          <a:v>DMAMUX10_GTM_SPE5</a:v>
+                          <a:v>DMAMUX10_GTM_TIM6_IRQ0</a:v>
+                          <a:v>DMAMUX10_GTM_TIM6_IRQ1</a:v>
+                          <a:v>DMAMUX10_GTM_TIM6_IRQ2</a:v>
+                          <a:v>DMAMUX10_GTM_TIM6_IRQ3</a:v>
+                          <a:v>DMAMUX10_GTM_TIM6_IRQ4</a:v>
+                          <a:v>DMAMUX10_GTM_TIM6_IRQ5</a:v>
+                          <a:v>DMAMUX10_GTM_TIM6_IRQ6</a:v>
+                          <a:v>DMAMUX10_GTM_TIM6_IRQ7</a:v>
+                          <a:v>DMAMUX10_GTM_TIM7_IRQ0</a:v>
+                          <a:v>DMAMUX10_GTM_TIM7_IRQ1</a:v>
+                          <a:v>DMAMUX10_GTM_TIM7_IRQ2</a:v>
+                          <a:v>DMAMUX10_GTM_TIM7_IRQ3</a:v>
+                          <a:v>DMAMUX10_GTM_TIM7_IRQ4</a:v>
+                          <a:v>DMAMUX10_GTM_TIM7_IRQ5</a:v>
+                          <a:v>DMAMUX10_GTM_TIM7_IRQ6</a:v>
+                          <a:v>DMAMUX10_GTM_TIM7_IRQ7</a:v>
+                          <a:v>DMAMUX10_ALWAYS_ON_0</a:v>
+
+                    </a:da>
+                    </v:var>
+                    <v:var name="ContinuouTriggerEnble" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN:Enables the periodic trigger capability for the DMA channel."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="87eae519-05f6-4ec4-82f6-bea47cb71774"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <v:var name="eDmaChCallbaceFunction" 
+                          type="FUNCTION-NAME">
+                      <a:a name="LABEL" value="eDmaChCallbackFunction"/>
+                      <a:a name="DESC" 
+                           value="EN:Callback function pointer for the eDMA channel. It will
+                                              be called at the eDMA channel complete and eDMA channel error."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="26f5fb02-3862-48fa-84bd-935e88fe6cdb"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="NULL_PTR"/>
+                      <a:da name="INVALID" type="XPath">
+                      <a:tst expr="(
+                                        (normalize-space(node:fallback(., '')) = 'NULL') or
+                                        (normalize-space(node:fallback(., '')) = 'Null') or
+                                        (normalize-space(node:fallback(., '')) = 'false') or
+                                        (normalize-space(node:fallback(., '')) = 'FALSE') or
+                                        (normalize-space(node:fallback(., '')) = 'null') or
+                                        (normalize-space(node:fallback(., '')) = 'null_ptr') or
+                                        (normalize-space(node:fallback(., '')) = 'Null_Ptr')
+                                        )"
+                            true="Invalid name of the, it must be a valid C function name."/>
+                        <a:tst expr="(normalize-space(node:fallback(., '')) = '&quot;NULL_PTR&quot;') or
+                                        (normalize-space(node:fallback(., '')) = '&quot;NULL&quot;') or
+                                        (normalize-space(node:fallback(., '')) = 'NULL') or
+                                        (text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$'))"
+                            false="Invalid name, it must be a valid C function name"/>
+                      </a:da>
+                    </v:var>
+                    <v:var name="eDmaChCallbaceParam" 
+                          type="FUNCTION-NAME">
+                      <a:a name="LABEL" value="eDmaChCallbackParam"/>
+                      <a:a name="DESC" 
+                           value="EN:Parameter passed to the channel callback."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="26f5fb02-3862-48fa-84bd-935e88fe6cd1"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="NULL_PTR"/>
+                    </v:var>
+                    <v:var name="eDmaChErrCallbackFunction" 
+                          type="FUNCTION-NAME">
+                      <a:a name="LABEL" value="eDmaChErrCallbackFunction"/>
+                      <a:a name="DESC" 
+                           value="EN:Callback function pointer for the eDMA channel. It will
+                                              be eDMA channel error."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="26f5fb02-3862-48fa-84bd-935e88fe6cd1"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="NULL_PTR"/>
+                      <a:da name="INVALID" type="XPath">
+                      <a:tst expr="(
+                                        (normalize-space(node:fallback(., '')) = 'NULL') or
+                                        (normalize-space(node:fallback(., '')) = 'Null') or
+                                        (normalize-space(node:fallback(., '')) = 'false') or
+                                        (normalize-space(node:fallback(., '')) = 'FALSE') or
+                                        (normalize-space(node:fallback(., '')) = 'null') or
+                                        (normalize-space(node:fallback(., '')) = 'null_ptr') or
+                                        (normalize-space(node:fallback(., '')) = 'Null_Ptr')
+                                        )"
+                            true="Invalid name of the, it must be a valid C function name."/>
+                        <a:tst expr="(normalize-space(node:fallback(., '')) = '&quot;NULL_PTR&quot;') or
+                                        (normalize-space(node:fallback(., '')) = '&quot;NULL&quot;') or
+                                        (normalize-space(node:fallback(., '')) = 'NULL') or
+                                        (text:match(normalize-space(.),'^[_a-zA-Z]+[_0-9a-zA-Z]*$'))"
+                            false="Invalid name, it must be a valid C function name"/>
+                      </a:da>
+                    </v:var>
+                    <v:var name="eDmaChErrCallbackParam" 
+                          type="FUNCTION-NAME">
+                      <a:a name="LABEL" value="eDmaChErrCallbackParam"/>
+                      <a:a name="DESC" 
+                           value="EN:Parameter passed to the channel error callback."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="26f5fb02-3862-48fa-84bd-935e88fe6cdc"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="NULL_PTR"/>
+                    </v:var>
+                    <v:var name="eDmaChErrIntEn" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN:enable/disable eDMA error channel interrupt."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="87eae519-05f6-4ec4-82f6-bea47cb71775"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <v:var name="eDmaChTriggerEn" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN:Enables the periodic trigger capability for the DMA channel."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="87eae519-05f6-4ec4-82f6-bea47cb71776"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <v:var name="eDmaPreemptionEn" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN:Channel n can be temporarily suspended by the service request of a higher priority channel."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="87eae519-05f6-4ec4-82f6-bea47cb71777"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <v:var name="eDmaPreemptAbilityDisable" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN:Channel n cannot suspend any channel, regardless of channel priority."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="87eae519-05f6-4ec4-82f6-bea47cb71778"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <v:var name="eDmaMasterIdReplicationEn" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN:Master ID replication is enabled."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="CCFC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="87eae519-05f6-4ec4-82f6-bea47cb71779"/>
+                      <a:a name="__ORIGIN" value="Elektrobit"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                  </v:ctr>
+                </v:lst>
+              </v:ctr>  
+              <v:ctr name="eDmaGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: This container contains the parameters related each CAN Driver Unit."/>
+                <a:a name="UUID" value="f72b1d09-01fa-4c63-9e70-e9908d6b7cf1"/>
+                <v:var name="eDmaDevErrorDetect" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Switches the development error detection and notification on or off."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="07d5850d-23ed-42c3-880f-5310b8f9916f"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="eDmaVersionInfoApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Switches the EDma_GetVersionInfo() API ON or OFF."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="b7e04f7d-e0f3-4e29-9d35-508096407c52"/>
+                  <a:a name="__ORIGIN" value="Elektrobit"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <v:var name="eDmaInlineSupport" type="BOOLEAN">
+                  <a:a name="LABEL" value="eDmaInlineSupport"/>
+                  <a:a name="DESC"
+                       value="EN: Whether on or off INLINE eDma be configured."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="CCFC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ECUC:eeb4675d-4f4c-32ea-48f3-b143cba9238a"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+              </v:ctr>
+
+            </v:ctr>
+          </d:chc>
+          <d:chc name="myEcuParameterDefinition" type="AR-ELEMENT" 
+                 value="ECU_PARAMETER_DEFINITION">
+            <d:ctr type="AR-ELEMENT">
+              <a:a name="DEF" 
+                   value="ASPath:/AR_PACKAGE_SCHEMA/ECU_PARAMETER_DEFINITION"/>
+              <d:lst name="MODULE_REF">
+                <d:ref type="MODULE_REF" value="ASPath:/eDmaConfig/eDma"/>
+              </d:lst>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

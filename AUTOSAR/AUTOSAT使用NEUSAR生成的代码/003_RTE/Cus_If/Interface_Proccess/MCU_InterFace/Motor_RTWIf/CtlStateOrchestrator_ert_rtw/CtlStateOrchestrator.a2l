@@ -1,0 +1,1310 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     CtlStateOrchestrator.a2l
+ *
+ * 
+ *
+ * Code generation for model "CtlStateOrchestrator".
+ *
+ * Model version              : 1.14
+ * Simulink Coder version : 10.6 R2022b
+ * C source code generated on : Thu May 28 16:42:52 2026
+ *
+ * Target selection: ert.tlc
+ * Embedded hardware selection: Infineon->TriCore
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+ASAP2_VERSION  1 31     /* Version 1.31 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+
+  /begin HEADER "Header Comments go here"
+  /end HEADER
+
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+    /end MOD_PAR
+
+    /begin MOD_COMMON  "Mod Common Comment Here"
+      BYTE_ORDER     MSB_LAST
+
+      ALIGNMENT_BYTE 1
+      ALIGNMENT_WORD 2
+      ALIGNMENT_LONG 4
+      ALIGNMENT_FLOAT32_IEEE 4
+      ALIGNMENT_FLOAT64_IEEE 4
+    /end MOD_COMMON
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTSO_DischargeFaultReset_C
+    /* Long Identifier        */      "Reset flag for discharge fault condition"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTSO_DischargeFaultReset_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlStateOrchestrator_CM_uint8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTSO_FaultRecoveryEnable_C
+    /* Long Identifier        */      "Enable falut mode recovery"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTSO_FaultRecoveryEnable_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlStateOrchestrator_CM_uint8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTSO_IGBTOffVoltThreshold_C
+    /* Long Identifier        */      "The threshold below the dc-link voltage up to which the error reaction IgbtsOff is admissible"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTSO_IGBTOffVoltThreshold_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlStateOrchestrator_CM_single_V
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTSO_InitWaitTime_C
+    /* Long Identifier        */      "time of waiting gate driver initialization"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTSO_InitWaitTime_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlStateOrchestrator_CM_single_s
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTSO_LowVoltStandbyEnable_C
+    /* Long Identifier        */      "Enable transition to standby mode on low DC voltage"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTSO_LowVoltStandbyEnable_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlStateOrchestrator_CM_uint8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTSO_MinVoltControl_C
+    /* Long Identifier        */      "Minimum DC link voltage for motor control enable"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTSO_MinVoltControl_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlStateOrchestrator_CM_single_V
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTSO_OpModeCondition_C
+    /* Long Identifier        */      "Input condition for suitable operating state 0 - as given by customer, 1 - to include additional states not  required by customer"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTSO_OpModeCondition_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlStateOrchestrator_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTSO_OpModeSelection_C
+    /* Long Identifier        */      "Operating mode selection parameter"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTSO_OpModeSelection_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlStateOrchestrator_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTSO_PowerdownVoltLimit_C
+    /* Long Identifier        */      "Voltage threshold for system power-down sequence"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTSO_PowerdownVoltLimit_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlStateOrchestrator_CM_single_V
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTSO_ServiceModeEnable_C
+    /* Long Identifier        */      "Enable Service controlmodes, openloopvoltage etc."
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTSO_ServiceModeEnable_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlStateOrchestrator_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTSO_SpeedLimit_C
+    /* Long Identifier        */      "Speed limit"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTSO_SpeedLimit_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlStateOrchestrator_CM_single_rpm
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTSO_VoltASCThreshold_C
+    /* Long Identifier        */      "DC voltage threshold for active short circuit mode selection"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTSO_VoltASCThreshold_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlStateOrchestrator_CM_single
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTSO_VoltDischargeHighThr_C
+    /* Long Identifier        */      "Upper voltage threshold for discharge activation trigger"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTSO_VoltDischargeHighThr_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlStateOrchestrator_CM_single_V
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTSO_VoltDischargeLowThr_C
+    /* Long Identifier        */      "Lower voltage threshold for discharge completion detection"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTSO_VoltDischargeLowThr_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlStateOrchestrator_CM_single_V
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTSO_VoltPerSpeedRatio_C
+    /* Long Identifier        */      "DC link voltage per motor speed constant ratio"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTSO_VoltPerSpeedRatio_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlStateOrchestrator_CM_single_dash_
+    /* Lower Limit            */      -100.000000
+    /* Upper Limit            */      100.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      CTSO_WindingDischargeMaxTime_C
+    /* Long Identifier        */      "Maximum time for motor winding discharge"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@CTSO_WindingDischargeMaxTime_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CtlStateOrchestrator_CM_single_s
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_CurrentIntegralDisable
+    /* Long identifier        */      "Disable flag for current controller integral term"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_CurrentIntegralDisable@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_CurrentIntegralReset
+    /* Long identifier        */      "Reset flag for current controller integral term"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_CurrentIntegralReset@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_DischargeFaultFlag
+    /* Long identifier        */      "Active discharge fault status flag"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_DischargeFaultFlag@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_FaultModeRequest_IRV
+    /* Long identifier        */      "Fault mode operation request signal"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_FaultModeRequest_IRV@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_IGBTOffAllowed
+    /* Long identifier        */      "IGBT off operation permission flag"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_IGBTOffAllowed@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_ModeSetpoint
+    /* Long identifier        */      "Target operating mode setpoint selection"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_ModeSetpoint@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_OperationMode
+    /* Long identifier        */      "System operation mode state"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_OperationMode@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_PWMControlState
+    /* Long identifier        */      "PWM unit control state"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_PWMControlState@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_PWMRequest_IRV
+    /* Long identifier        */      "PWM control state request signal"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_PWMRequest_IRV@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_SpeedCalcReset
+    /* Long identifier        */      "Reset signal for speed calculation low-pass filter"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_SpeedCalcReset@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_SpeedIntegralDisable
+    /* Long identifier        */      "signal for disabling of integrlpart of speed control"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_SpeedIntegralDisable@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_SpeedIntegralReset
+    /* Long identifier        */      "Reset flag for speed controller integral term"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_SpeedIntegralReset@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlStateOrchestrator_B.CTSO_StPwm
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_EnumCtlPwmState
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      4
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlStateOrchestrator_B.CTSO_StPwm@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlStateOrchestrator_DW.CTSO_StInin
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlStateOrchestrator_DW.CTSO_StInin@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlStateOrchestrator_DW.Delay_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlStateOrchestrator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlStateOrchestrator_DW.Delay_DSTATE@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlStateOrchestrator_DW.Delay_DSTATE_f
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlStateOrchestrator_DW.Delay_DSTATE_f@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlStateOrchestrator_DW.TiInin
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlStateOrchestrator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlStateOrchestrator_DW.TiInin@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlStateOrchestrator_DW.UnitDelay_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlStateOrchestrator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlStateOrchestrator_DW.UnitDelay_DSTATE@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlStateOrchestrator_DW.UnitDelay_DSTATE_c
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlStateOrchestrator_DW.UnitDelay_DSTATE_c@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlStateOrchestrator_DW.is_MainControl
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlStateOrchestrator_DW.is_MainControl@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlStateOrchestrator_DW.is_active_c1_CtlStateOrchestrator
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlStateOrchestrator_DW.is_active_c1_CtlStateOrchestrator@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlStateOrchestrator_DW.is_c1_CtlStateOrchestrator
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlStateOrchestrator_DW.is_c1_CtlStateOrchestrator@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CtlStateOrchestrator_DW.is_c3_CtlStateOrchestrator
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CtlStateOrchestrator_DW.is_c3_CtlStateOrchestrator@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_ActiveShortHsReq
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_ActiveShortHsReq@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_HwHsShortErr
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_HwHsShortErr@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_HwLsShortErr
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_HwLsShortErr@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_PowerSwitchOffReq
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_PowerSwitchOffReq@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_ResolverError
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_ResolverError@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      FLDG_ShutdownReq
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@FLDG_ShutdownReq@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_DcLinkVoltMeas
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlStateOrchestrator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_DcLinkVoltMeas@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_IgnitionStatus
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_IgnitionStatus@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_MechSpeedAbsolute
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlStateOrchestrator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_MechSpeedAbsolute@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SampleTime1
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlStateOrchestrator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SampleTime1@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0000
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SampleTime2
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CtlStateOrchestrator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SampleTime2@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_BswInit
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_BswInit@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_ModeRequest
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CtlStateOrchestrator_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_ModeRequest@ */
+    /begin IF_DATA XCP
+      /begin DAQ_EVENT VARIABLE
+          /begin DEFAULT_EVENT_LIST
+            EVENT  0x0002
+          /end DEFAULT_EVENT_LIST
+      /end DAQ_EVENT
+    /end IF_DATA
+  /end MEASUREMENT 
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlStateOrchestrator_CM_EnumCtlPwmState
+    /* Long identifier        */      "Enumerated data type: EnumCtlPwmState"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.6"
+    /* Units                  */      ""
+    /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_CtlStateOrchestrator_CM_EnumCtlPwmState
+  /end COMPU_METHOD
+
+  /begin COMPU_VTAB
+    /* Name of Table          */      VTAB_FOR_CtlStateOrchestrator_CM_EnumCtlPwmState
+    /* Long identifier        */      "Enumerated data type: EnumCtlPwmState"
+    /* Conversion Type        */      TAB_VERB
+    /* Number of Elements     */      5
+    /* Table Element          */      0 "Unused"
+    /* Table Element          */      1 "Run"
+    /* Table Element          */      2 "AscLow"
+    /* Table Element          */      3 "Off"
+    /* Table Element          */      4 "AscHigh"
+  /end COMPU_VTAB
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlStateOrchestrator_CM_logical
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%1.0"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlStateOrchestrator_CM_single
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlStateOrchestrator_CM_single_V
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlStateOrchestrator_CM_single_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlStateOrchestrator_CM_single_rpm
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rpm"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlStateOrchestrator_CM_single_s
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "s"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlStateOrchestrator_CM_uint8
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%3.0"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CtlStateOrchestrator_CM_uint8_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%3.0"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin  RECORD_LAYOUT Record_BOOLEAN
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_FLOAT32_IEEE
+    FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_UBYTE
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator
+    /* Long identifier        */      "CtlStateOrchestrator"
+    /* Root                   */      ROOT
+    /begin SUB_GROUP
+      CtlStateOrchestrator_CTSO_ControlPwmState_100us_sys
+      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      FLDG_ActiveShortHsReq
+      FLDG_HwHsShortErr
+      FLDG_HwLsShortErr
+      FLDG_PowerSwitchOffReq
+      FLDG_ResolverError
+      FLDG_ShutdownReq
+      SGPP_DcLinkVoltMeas
+      SGPP_IgnitionStatus
+      SGPP_MechSpeedAbsolute
+      SGPP_SampleTime1
+      SGPP_SampleTime2
+      SGSA_BswInit
+      SGSA_ModeRequest
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ControlPwmState_100us_sys
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ControlPwmState_100us_sys"
+    /begin SUB_GROUP
+      CtlStateOrchestrator_CTSO_ControlPwmState_100us_sys_SwitchOffCondition
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTSO_FaultModeRequest_IRV
+      CTSO_PWMRequest_IRV
+      CtlStateOrchestrator_B.CTSO_StPwm
+      CtlStateOrchestrator_DW.is_active_c1_CtlStateOrchestrator
+      CtlStateOrchestrator_DW.is_c1_CtlStateOrchestrator
+      FLDG_ActiveShortHsReq
+      FLDG_HwHsShortErr
+      FLDG_HwLsShortErr
+      FLDG_PowerSwitchOffReq
+      FLDG_ShutdownReq
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ControlPwmState_100us_sys_SwitchOffCondition
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ControlPwmState_100us_sys/SwitchOffCondition"
+    /begin SUB_GROUP
+      CtlStateOrchestrator_CTSO_ControlPwmState_100us_sys_SwitchOffCondition_Local_Variable_Storage1
+      CtlStateOrchestrator_CTSO_ControlPwmState_100us_sys_SwitchOffCondition_Parameter1
+      CtlStateOrchestrator_CTSO_ControlPwmState_100us_sys_SwitchOffCondition_Parameter2
+      CtlStateOrchestrator_CTSO_ControlPwmState_100us_sys_SwitchOffCondition_Parameter3
+      CtlStateOrchestrator_CTSO_ControlPwmState_100us_sys_SwitchOffCondition_Parameter4
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CtlStateOrchestrator_DW.UnitDelay_DSTATE_c
+      FLDG_ResolverError
+      SGPP_DcLinkVoltMeas
+      SGPP_MechSpeedAbsolute
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ControlPwmState_100us_sys_SwitchOffCondition_Local_Variable_Storage1
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ControlPwmState_100us_sys/SwitchOffCondition/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      CTSO_IGBTOffAllowed
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ControlPwmState_100us_sys_SwitchOffCondition_Parameter1
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ControlPwmState_100us_sys/SwitchOffCondition/Parameter1"
+    /begin REF_CHARACTERISTIC
+      CTSO_IGBTOffVoltThreshold_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ControlPwmState_100us_sys_SwitchOffCondition_Parameter2
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ControlPwmState_100us_sys/SwitchOffCondition/Parameter2"
+    /begin REF_CHARACTERISTIC
+      CTSO_IGBTOffVoltThreshold_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ControlPwmState_100us_sys_SwitchOffCondition_Parameter3
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ControlPwmState_100us_sys/SwitchOffCondition/Parameter3"
+    /begin REF_CHARACTERISTIC
+      CTSO_VoltPerSpeedRatio_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ControlPwmState_100us_sys_SwitchOffCondition_Parameter4
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ControlPwmState_100us_sys/SwitchOffCondition/Parameter4"
+    /begin REF_CHARACTERISTIC
+      CTSO_VoltASCThreshold_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ManageStateMode_1ms_sys"
+    /begin SUB_GROUP
+      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_DischargeTransitionLogic
+      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_ModeCmdPreprocess
+      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_StandbyTransitionLogic
+    /end SUB_GROUP
+    /begin REF_CHARACTERISTIC
+      CTSO_FaultRecoveryEnable_C
+      CTSO_InitWaitTime_C
+      CTSO_MinVoltControl_C
+      CTSO_PowerdownVoltLimit_C
+      CTSO_ServiceModeEnable_C
+      CTSO_SpeedLimit_C
+      CTSO_VoltDischargeLowThr_C
+    /end REF_CHARACTERISTIC
+    /begin REF_MEASUREMENT
+      CTSO_FaultModeRequest_IRV
+      CTSO_PWMRequest_IRV
+      CtlStateOrchestrator_DW.CTSO_StInin
+      CtlStateOrchestrator_DW.TiInin
+      CtlStateOrchestrator_DW.is_MainControl
+      CtlStateOrchestrator_DW.is_c3_CtlStateOrchestrator
+      SGPP_DcLinkVoltMeas
+      SGPP_IgnitionStatus
+      SGPP_MechSpeedAbsolute
+      SGPP_SampleTime2
+      SGSA_BswInit
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_DischargeTransitionLogic
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ManageStateMode_1ms_sys/DischargeTransitionLogic"
+    /begin SUB_GROUP
+      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_DischargeTransitionLogic_AcvDchaDiag
+      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_DischargeTransitionLogic_Parameter1
+      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_DischargeTransitionLogic_Parameter4
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_DcLinkVoltMeas
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_DischargeTransitionLogic_AcvDchaDiag
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ManageStateMode_1ms_sys/DischargeTransitionLogic/AcvDchaDiag"
+    /begin SUB_GROUP
+      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_DischargeTransitionLogic_AcvDchaDiag_HoldLatch
+      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_DischargeTransitionLogic_AcvDchaDiag_Parameter2
+      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_DischargeTransitionLogic_AcvDchaDiag_Parameter3
+      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_DischargeTransitionLogic_AcvDchaDiag_TimeMeter
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CtlStateOrchestrator_DW.Delay_DSTATE_f
+      SGPP_IgnitionStatus
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_DischargeTransitionLogic_AcvDchaDiag_HoldLatch
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ManageStateMode_1ms_sys/DischargeTransitionLogic/AcvDchaDiag/HoldLatch"
+    /begin REF_MEASUREMENT
+      CtlStateOrchestrator_DW.UnitDelay_DSTATE
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_DischargeTransitionLogic_AcvDchaDiag_Parameter2
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ManageStateMode_1ms_sys/DischargeTransitionLogic/AcvDchaDiag/Parameter2"
+    /begin REF_CHARACTERISTIC
+      CTSO_WindingDischargeMaxTime_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_DischargeTransitionLogic_AcvDchaDiag_Parameter3
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ManageStateMode_1ms_sys/DischargeTransitionLogic/AcvDchaDiag/Parameter3"
+    /begin REF_CHARACTERISTIC
+      CTSO_DischargeFaultReset_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_DischargeTransitionLogic_AcvDchaDiag_TimeMeter
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ManageStateMode_1ms_sys/DischargeTransitionLogic/AcvDchaDiag/TimeMeter"
+    /begin REF_MEASUREMENT
+      CtlStateOrchestrator_DW.Delay_DSTATE
+      SGPP_SampleTime2
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_DischargeTransitionLogic_Parameter1
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ManageStateMode_1ms_sys/DischargeTransitionLogic/Parameter1"
+    /begin REF_CHARACTERISTIC
+      CTSO_VoltDischargeLowThr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_DischargeTransitionLogic_Parameter4
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ManageStateMode_1ms_sys/DischargeTransitionLogic/Parameter4"
+    /begin REF_CHARACTERISTIC
+      CTSO_VoltDischargeHighThr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_ModeCmdPreprocess
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ManageStateMode_1ms_sys/ModeCmdPreprocess"
+    /begin SUB_GROUP
+      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_ModeCmdPreprocess_Local_Variable_Storage1
+      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_ModeCmdPreprocess_Parameter1
+      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_ModeCmdPreprocess_Parameter4
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGSA_ModeRequest
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_ModeCmdPreprocess_Local_Variable_Storage1
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ManageStateMode_1ms_sys/ModeCmdPreprocess/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      CTSO_ModeSetpoint
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_ModeCmdPreprocess_Parameter1
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ManageStateMode_1ms_sys/ModeCmdPreprocess/Parameter1"
+    /begin REF_CHARACTERISTIC
+      CTSO_OpModeCondition_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_ModeCmdPreprocess_Parameter4
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ManageStateMode_1ms_sys/ModeCmdPreprocess/Parameter4"
+    /begin REF_CHARACTERISTIC
+      CTSO_OpModeSelection_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_StandbyTransitionLogic
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ManageStateMode_1ms_sys/StandbyTransitionLogic"
+    /begin SUB_GROUP
+      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_StandbyTransitionLogic_Parameter1
+      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_StandbyTransitionLogic_Parameter4
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_DcLinkVoltMeas
+      SGPP_IgnitionStatus
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_StandbyTransitionLogic_Parameter1
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ManageStateMode_1ms_sys/StandbyTransitionLogic/Parameter1"
+    /begin REF_CHARACTERISTIC
+      CTSO_LowVoltStandbyEnable_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      CtlStateOrchestrator_CTSO_ManageStateMode_1ms_sys_StandbyTransitionLogic_Parameter4
+    /* Long identifier        */      "CtlStateOrchestrator/CTSO_ManageStateMode_1ms_sys/StandbyTransitionLogic/Parameter4"
+    /begin REF_CHARACTERISTIC
+      CTSO_PowerdownVoltLimit_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /end MODULE
+
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF CtlStateOrchestrator.a2l*/

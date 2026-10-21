@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {"id": "n_hub", "type": "file", "file": "模块/BswM/03_调用逻辑/BswM_调用逻辑总览.md", "x": 0, "y": 0, "width": 420, "height": 150, "color": "4"},
+    {"id": "n_d1", "type": "file", "file": "模块/BswM/03_调用逻辑/BswM_D1_初始化与启动调用逻辑.md", "x": -640, "y": 250, "width": 380, "height": 130},
+    {"id": "n_d2", "type": "file", "file": "模块/BswM/03_调用逻辑/BswM_D2_模式请求与事件输入调用逻辑.md", "x": -220, "y": 250, "width": 400, "height": 130},
+    {"id": "n_d3", "type": "file", "file": "模块/BswM/03_调用逻辑/BswM_D3_规则仲裁调用逻辑.md", "x": 220, "y": 250, "width": 380, "height": 130, "color": "6"},
+    {"id": "n_d4", "type": "file", "file": "模块/BswM/03_调用逻辑/BswM_D4_动作列表与动作执行调用逻辑.md", "x": 220, "y": 500, "width": 400, "height": 130, "color": "6"},
+    {"id": "n_d5", "type": "file", "file": "模块/BswM/03_调用逻辑/BswM_D5_状态转换表.md", "x": 680, "y": 250, "width": 360, "height": 130, "color": "6"},
+    {"id": "n_d6", "type": "file", "file": "模块/BswM/03_调用逻辑/BswM_D6_定时器与延迟动作调用逻辑.md", "x": -640, "y": 500, "width": 380, "height": 130},
+    {"id": "n_d7", "type": "file", "file": "模块/BswM/03_调用逻辑/BswM_D7_输出动作与BSW交互.md", "x": 680, "y": 500, "width": 380, "height": 130},
+    {"id": "n_lv", "type": "file", "file": "模块/BswM/03_调用逻辑/BswM_函数调用层级.md", "x": -640, "y": 760, "width": 380, "height": 120},
+    {"id": "n_gv", "type": "file", "file": "模块/BswM/03_调用逻辑/BswM_全局变量说明.md", "x": -220, "y": 760, "width": 380, "height": 120},
+    {"id": "n_mf", "type": "file", "file": "模块/BswM/04_MainFunction流程/BswM_MainFunction调用逻辑.md", "x": 220, "y": 760, "width": 400, "height": 130}
+  ],
+  "edges": [
+    {"id": "e1", "fromNode": "n_d1", "fromSide": "bottom", "toNode": "n_d3", "toSide": "top"},
+    {"id": "e2", "fromNode": "n_d2", "fromSide": "bottom", "toNode": "n_d3", "toSide": "top"},
+    {"id": "e3", "fromNode": "n_d3", "fromSide": "bottom", "toNode": "n_d4", "toSide": "top"},
+    {"id": "e4", "fromNode": "n_d3", "fromSide": "right", "toNode": "n_d5", "toSide": "left"},
+    {"id": "e5", "fromNode": "n_d6", "fromSide": "right", "toNode": "n_d3", "toSide": "left"},
+    {"id": "e6", "fromNode": "n_d4", "fromSide": "right", "toNode": "n_d7", "toSide": "left"},
+    {"id": "e7", "fromNode": "n_hub", "fromSide": "bottom", "toNode": "n_d1", "toSide": "top"},
+    {"id": "e8", "fromNode": "n_hub", "fromSide": "bottom", "toNode": "n_d2", "toSide": "top"},
+    {"id": "e9", "fromNode": "n_lv", "fromSide": "top", "toNode": "n_hub", "toSide": "bottom"},
+    {"id": "e10", "fromNode": "n_gv", "fromSide": "top", "toNode": "n_hub", "toSide": "bottom"},
+    {"id": "e11", "fromNode": "n_mf", "fromSide": "top", "toNode": "n_d4", "toSide": "bottom"}
+  ]
+}

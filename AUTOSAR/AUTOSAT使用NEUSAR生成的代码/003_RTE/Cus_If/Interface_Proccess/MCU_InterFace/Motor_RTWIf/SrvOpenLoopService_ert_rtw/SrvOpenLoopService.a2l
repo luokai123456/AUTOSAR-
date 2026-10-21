@@ -1,0 +1,595 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     SrvOpenLoopService.a2l
+ *
+ * 
+ *
+ * Code generation for model "SrvOpenLoopService".
+ *
+ * Model version              : 1.30
+ * Simulink Coder version : 10.6 R2022b
+ * C source code generated on : Thu May 28 16:32:35 2026
+ *
+ * Target selection: ert.tlc
+ * Embedded hardware selection: Infineon->TriCore
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+ASAP2_VERSION  1 31     /* Version 1.31 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+
+  /begin HEADER "Header Comments go here"
+  /end HEADER
+
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+    /end MOD_PAR
+
+    /begin MOD_COMMON  "Mod Common Comment Here"
+      BYTE_ORDER     MSB_LAST
+
+      ALIGNMENT_BYTE 1
+      ALIGNMENT_WORD 2
+      ALIGNMENT_LONG 4
+      ALIGNMENT_FLOAT32_IEEE 4
+      ALIGNMENT_FLOAT64_IEEE 4
+    /end MOD_COMMON
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SVOL_DirectionVoltAmp_C
+    /* Long Identifier        */      "Voltage amplitude for direction control mode"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SVOL_DirectionVoltAmp_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SrvOpenLoopService_CM_single_V
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SVOL_OpenLoopVoltGain_C
+    /* Long Identifier        */      "Voltage-to-speed gain for open-loop control (V/rpm)"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SVOL_OpenLoopVoltGain_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SrvOpenLoopService_CM_single_V
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SVOL_OpenLoopVoltOffset_C
+    /* Long Identifier        */      "Base voltage offset for open-loop control"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SVOL_OpenLoopVoltOffset_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SrvOpenLoopService_CM_single_V
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SVOL_ZeroCalStartFlag_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SVOL_ZeroCalStartFlag_C@ */
+    /* Record Layout          */      Record_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SrvOpenLoopService_CM_logical
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SVOL_ZeroDiff_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SVOL_ZeroDiff_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SrvOpenLoopService_CM_single
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SVOL_ZeroRadCalTimeTick_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SVOL_ZeroRadCalTimeTick_C@ */
+    /* Record Layout          */      Record_SLONG
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SrvOpenLoopService_CM_int32
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      2147483647
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SVOL_ZeroRadCalVs_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SVOL_ZeroRadCalVs_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SrvOpenLoopService_CM_single_V
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      8.000000
+  /end CHARACTERISTIC 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_OperationMode
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SrvOpenLoopService_CM_EnumCtlMode
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      14
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_OperationMode@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_ElecAngle
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SrvOpenLoopService_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_ElecAngle@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PolePairs
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SrvOpenLoopService_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PolePairs@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SampleTime1
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SrvOpenLoopService_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SampleTime1@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SpeedSp
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SrvOpenLoopService_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SpeedSp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SVOL_MtrZeroPoint
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SrvOpenLoopService_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SVOL_MtrZeroPoint@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SVOL_OpenLoopAlphaVolt
+    /* Long identifier        */      "Alpha-axis voltage setpoint for open-loop control"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SrvOpenLoopService_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -5000.000000
+    /* Upper limit            */      5000.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SVOL_OpenLoopAlphaVolt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SVOL_OpenLoopBetaVolt
+    /* Long identifier        */      "Beta-axis voltage setpoint for open-loop control"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SrvOpenLoopService_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -5000.000000
+    /* Upper limit            */      5000.000000
+    /* Array Size             */      
+    ARRAY_SIZE                        1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SVOL_OpenLoopBetaVolt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SVOL_ZeroCalResult
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SrvOpenLoopService_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SVOL_ZeroCalResult@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SrvOpenLoopService_B.FocVal_Ualpha
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SrvOpenLoopService_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SrvOpenLoopService_B.FocVal_Ualpha@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SrvOpenLoopService_B.FocVal_Ubeta
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SrvOpenLoopService_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SrvOpenLoopService_B.FocVal_Ubeta@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SrvOpenLoopService_DW.UnitDelay_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SrvOpenLoopService_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SrvOpenLoopService_DW.UnitDelay_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SrvOpenLoopService_DW.rad_temp_0
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SrvOpenLoopService_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SrvOpenLoopService_DW.rad_temp_0@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SrvOpenLoopService_DW.rad_temp_90
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SrvOpenLoopService_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SrvOpenLoopService_DW.rad_temp_90@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SrvOpenLoopService_DW.run_delay_cnt
+    /* Long identifier        */      ""
+    /* Data type              */      SLONG
+    /* Conversion method      */      SrvOpenLoopService_CM_int32
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2147483648
+    /* Upper limit            */      2147483647
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SrvOpenLoopService_DW.run_delay_cnt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SrvOpenLoopService_DW.u8_zero_cal_fail
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SrvOpenLoopService_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SrvOpenLoopService_DW.u8_zero_cal_fail@ */
+  /end MEASUREMENT 
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SrvOpenLoopService_CM_EnumCtlMode
+    /* Long identifier        */      "Enumerated data type: EnumCtlMode"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.6"
+    /* Units                  */      ""
+    /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_SrvOpenLoopService_CM_EnumCtlMode
+  /end COMPU_METHOD
+
+  /begin COMPU_VTAB
+    /* Name of Table          */      VTAB_FOR_SrvOpenLoopService_CM_EnumCtlMode
+    /* Long identifier        */      "Enumerated data type: EnumCtlMode"
+    /* Conversion Type        */      TAB_VERB
+    /* Number of Elements     */      15
+    /* Table Element          */      0 "Init"
+    /* Table Element          */      1 "LowVoltReady"
+    /* Table Element          */      2 "HighVoltStandby"
+    /* Table Element          */      3 "Ready"
+    /* Table Element          */      4 "HighVoltDischarge"
+    /* Table Element          */      5 "LowVoltDischarge"
+    /* Table Element          */      6 "Discharge"
+    /* Table Element          */      7 "PowerDown"
+    /* Table Element          */      8 "Fault"
+    /* Table Element          */      9 "OpenLoopCtrl"
+    /* Table Element          */      10 "VoltDirectCtrl"
+    /* Table Element          */      11 "CurrCtrl"
+    /* Table Element          */      12 "TorqueCtrl"
+    /* Table Element          */      13 "SpeedCtrl"
+    /* Table Element          */      14 "ZeroPointCal"
+  /end COMPU_VTAB
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SrvOpenLoopService_CM_int32
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%10.0"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SrvOpenLoopService_CM_logical
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%1.0"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SrvOpenLoopService_CM_single
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SrvOpenLoopService_CM_single_V
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SrvOpenLoopService_CM_uint8
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%3.0"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin  RECORD_LAYOUT Record_BOOLEAN
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_FLOAT32_IEEE
+    FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_SLONG
+    FNC_VALUES 1 SLONG COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_UBYTE
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin GROUP
+    /* Name                   */      SrvOpenLoopService
+    /* Long identifier        */      "SrvOpenLoopService"
+    /* Root                   */      ROOT
+    /begin SUB_GROUP
+      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTSO_OperationMode
+      SGPP_ElecAngle
+      SGPP_PolePairs
+      SGPP_SampleTime1
+      SGPP_SpeedSp
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys
+    /* Long identifier        */      "SrvOpenLoopService/SVOL_CalcAlphaBetaVolt_100us_sys"
+    /begin SUB_GROUP
+      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_DirAmp
+      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_OpenLoop
+      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_ZeroCal
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTSO_OperationMode
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_DirAmp
+    /* Long identifier        */      "SrvOpenLoopService/SVOL_CalcAlphaBetaVolt_100us_sys/DirAmp"
+    /begin SUB_GROUP
+      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_DirAmp_Parameter1
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_ElecAngle
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_DirAmp_Parameter1
+    /* Long identifier        */      "SrvOpenLoopService/SVOL_CalcAlphaBetaVolt_100us_sys/DirAmp/Parameter1"
+    /begin REF_CHARACTERISTIC
+      SVOL_DirectionVoltAmp_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_OpenLoop
+    /* Long identifier        */      "SrvOpenLoopService/SVOL_CalcAlphaBetaVolt_100us_sys/OpenLoop"
+    /begin SUB_GROUP
+      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_OpenLoop_AlphaBetaCalc
+      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_OpenLoop_SimThetaCalc
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_OpenLoop_AlphaBetaCalc
+    /* Long identifier        */      "SrvOpenLoopService/SVOL_CalcAlphaBetaVolt_100us_sys/OpenLoop/AlphaBetaCalc"
+    /begin SUB_GROUP
+      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_OpenLoop_AlphaBetaCalc_Parameter1
+      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_OpenLoop_AlphaBetaCalc_Parameter2
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_SpeedSp
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_OpenLoop_AlphaBetaCalc_Parameter1
+    /* Long identifier        */      "SrvOpenLoopService/SVOL_CalcAlphaBetaVolt_100us_sys/OpenLoop/AlphaBetaCalc/Parameter1"
+    /begin REF_CHARACTERISTIC
+      SVOL_OpenLoopVoltGain_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_OpenLoop_AlphaBetaCalc_Parameter2
+    /* Long identifier        */      "SrvOpenLoopService/SVOL_CalcAlphaBetaVolt_100us_sys/OpenLoop/AlphaBetaCalc/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SVOL_OpenLoopVoltOffset_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_OpenLoop_SimThetaCalc
+    /* Long identifier        */      "SrvOpenLoopService/SVOL_CalcAlphaBetaVolt_100us_sys/OpenLoop/SimThetaCalc"
+    /begin SUB_GROUP
+      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_OpenLoop_SimThetaCalc_Subsystem
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_PolePairs
+      SGPP_SpeedSp
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_OpenLoop_SimThetaCalc_Subsystem
+    /* Long identifier        */      "SrvOpenLoopService/SVOL_CalcAlphaBetaVolt_100us_sys/OpenLoop/SimThetaCalc/Subsystem"
+    /begin REF_MEASUREMENT
+      SGPP_SampleTime1
+      SrvOpenLoopService_DW.UnitDelay_DSTATE
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_ZeroCal
+    /* Long identifier        */      "SrvOpenLoopService/SVOL_CalcAlphaBetaVolt_100us_sys/ZeroCal"
+    /begin SUB_GROUP
+      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_ZeroCal_Local_Variable_Storage1
+      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_ZeroCal_Local_Variable_Storage2
+      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_ZeroCal_Parameter1
+      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_ZeroCal_Parameter2
+      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_ZeroCal_Parameter3
+      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_ZeroCal_Parameter4
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_ElecAngle
+      SrvOpenLoopService_B.FocVal_Ualpha
+      SrvOpenLoopService_B.FocVal_Ubeta
+      SrvOpenLoopService_DW.rad_temp_0
+      SrvOpenLoopService_DW.rad_temp_90
+      SrvOpenLoopService_DW.run_delay_cnt
+      SrvOpenLoopService_DW.u8_zero_cal_fail
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_ZeroCal_Local_Variable_Storage1
+    /* Long identifier        */      "SrvOpenLoopService/SVOL_CalcAlphaBetaVolt_100us_sys/ZeroCal/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      SVOL_MtrZeroPoint
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_ZeroCal_Local_Variable_Storage2
+    /* Long identifier        */      "SrvOpenLoopService/SVOL_CalcAlphaBetaVolt_100us_sys/ZeroCal/Local Variable Storage2"
+    /begin REF_MEASUREMENT
+      SVOL_ZeroCalResult
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_ZeroCal_Parameter1
+    /* Long identifier        */      "SrvOpenLoopService/SVOL_CalcAlphaBetaVolt_100us_sys/ZeroCal/Parameter1"
+    /begin REF_CHARACTERISTIC
+      SVOL_ZeroRadCalVs_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_ZeroCal_Parameter2
+    /* Long identifier        */      "SrvOpenLoopService/SVOL_CalcAlphaBetaVolt_100us_sys/ZeroCal/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SVOL_ZeroRadCalTimeTick_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_ZeroCal_Parameter3
+    /* Long identifier        */      "SrvOpenLoopService/SVOL_CalcAlphaBetaVolt_100us_sys/ZeroCal/Parameter3"
+    /begin REF_CHARACTERISTIC
+      SVOL_ZeroDiff_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SrvOpenLoopService_SVOL_CalcAlphaBetaVolt_100us_sys_ZeroCal_Parameter4
+    /* Long identifier        */      "SrvOpenLoopService/SVOL_CalcAlphaBetaVolt_100us_sys/ZeroCal/Parameter4"
+    /begin REF_CHARACTERISTIC
+      SVOL_ZeroCalStartFlag_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /end MODULE
+
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF SrvOpenLoopService.a2l*/

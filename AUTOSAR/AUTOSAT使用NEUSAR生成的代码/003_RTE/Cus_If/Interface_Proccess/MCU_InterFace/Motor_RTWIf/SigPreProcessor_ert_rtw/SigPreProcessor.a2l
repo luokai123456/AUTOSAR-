@@ -1,0 +1,2673 @@
+﻿/******************************************************************************
+ *
+ *  ASAP2 file:     SigPreProcessor.a2l
+ *
+ * 
+ *
+ * Code generation for model "SigPreProcessor".
+ *
+ * Model version              : 1.363
+ * Simulink Coder version : 10.6 R2022b
+ * C source code generated on : Fri Sep 18 14:20:37 2026
+ *
+ * Target selection: ert.tlc
+ * Embedded hardware selection: Infineon->TriCore
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+ASAP2_VERSION  1 71     /* Version 1.71 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+
+  /begin HEADER "Header Comments go here"
+  /end HEADER
+
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+    /end MOD_PAR
+
+    /begin MOD_COMMON  "Mod Common Comment Here"
+      BYTE_ORDER     MSB_LAST
+
+      ALIGNMENT_BYTE 1
+      ALIGNMENT_WORD 2
+      ALIGNMENT_LONG 4
+      ALIGNMENT_FLOAT32_IEEE 4
+      ALIGNMENT_FLOAT64_IEEE 8
+      ALIGNMENT_INT64 8
+    /end MOD_COMMON
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGPP_AngleSourceSelect_C
+    /* Long Identifier        */      "Angle source selection for control mode"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGPP_AngleSourceSelect_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigPreProcessor_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGPP_IgnitionStatusSource_C
+    /* Long Identifier        */      "Ignition status source: 0=communication, 1=parameter"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGPP_IgnitionStatusSource_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigPreProcessor_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGPP_IgnitionStatus_C
+    /* Long Identifier        */      "Ignition status parameter value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGPP_IgnitionStatus_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigPreProcessor_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      1.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGPP_IgnitionVoltThrHigh_C
+    /* Long Identifier        */      "Ignition voltage high threshold for debouncing"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGPP_IgnitionVoltThrHigh_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigPreProcessor_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGPP_IgnitionVoltThreshold_C
+    /* Long Identifier        */      "Ignition signal debounce threshold"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGPP_IgnitionVoltThreshold_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigPreProcessor_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGPP_MechSpeedFilterFreq_C
+    /* Long Identifier        */      "Mechanical speed filter cutoff frequency"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGPP_MechSpeedFilterFreq_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigPreProcessor_CM_single_rad_per_s
+    /* Lower Limit            */      -3.4E+38
+    /* Upper Limit            */      3.4E+38
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGPP_PhaseMappingConfig_C
+    /* Long Identifier        */      "Phase sequence remapping configuration (0-5)"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGPP_PhaseMappingConfig_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigPreProcessor_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      5.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGPP_PolePairs_C
+    /* Long Identifier        */      "Motor pole pair configuration value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGPP_PolePairs_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigPreProcessor_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      100.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGPP_ResolverFaultClrEnable_C
+    /* Long Identifier        */      "Angle source selection for control mode"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGPP_ResolverFaultClrEnable_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigPreProcessor_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGPP_ResolverPolePairs_C
+    /* Long Identifier        */      "Resolver pole pair configuration value"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGPP_ResolverPolePairs_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigPreProcessor_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      100.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGPP_SetSpeed_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGPP_SetSpeed_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigPreProcessor_CM_single_dash_
+    /* Lower Limit            */      -20000.000000
+    /* Upper Limit            */      20000.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      SGSA_ResolverFaultClr_C
+    /* Long Identifier        */      ""
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@SGSA_ResolverFaultClr_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      SigPreProcessor_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_OperationMode
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_EnumCtlMode
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      14
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_OperationMode@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_SpeedCalcReset
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_SpeedCalcReset@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_ChrgWakeup_State
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_ChrgWakeup_State@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_DriveHBridg_Error
+    /* Long identifier        */      "Ignition power supply status"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_DriveHBridg_Error@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_DriveLBridg_Error
+    /* Long identifier        */      "Ignition power supply status"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_DriveLBridg_Error@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_Drive_Error
+    /* Long identifier        */      "Ignition power supply status"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_Drive_Error@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_KL15_State
+    /* Long identifier        */      "Ignition power supply status"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_KL15_State@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_RDC_CosEvlp
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_RDC_CosEvlp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_RDC_CosN
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_RDC_CosN@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_RDC_CosP
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_RDC_CosP@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_RDC_ExctN
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_RDC_ExctN@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_RDC_ExctP
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_RDC_ExctP@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_RDC_GroupDelay
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_RDC_GroupDelay@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_RDC_SinEvlp
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_RDC_SinEvlp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_RDC_SinN
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_RDC_SinN@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_RDC_SinP
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_RDC_SinP@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_RDC_TimeStamp
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_RDC_TimeStamp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_eAngle_rad
+    /* Long identifier        */      "Electrical angle for coordinate transformation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_rad
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      6.283185
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_eAngle_rad@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_iSmpPhaU_A
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_iSmpPhaU_A@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_iSmpPhaV_A
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_iSmpPhaV_A@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_iSmpPhaW_A
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_iSmpPhaW_A@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_nRotateSpd_rpm
+    /* Long identifier        */      "Mechanical rotor speed"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_rpm
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -100000.000000
+    /* Upper limit            */      100000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_nRotateSpd_rpm@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_tIGBTTempU_C
+    /* Long identifier        */      "Phase A power switch temperature"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -50.000000
+    /* Upper limit            */      500.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_tIGBTTempU_C@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_tIGBTTempV_C
+    /* Long identifier        */      "Phase B power switch temperature"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -50.000000
+    /* Upper limit            */      500.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_tIGBTTempV_C@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_tIGBTTempW_C
+    /* Long identifier        */      "Phase C power switch temperature"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -50.000000
+    /* Upper limit            */      500.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_tIGBTTempW_C@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_tMotTemp_C
+    /* Long identifier        */      "Motor temperature sensor 1 reading"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -50.000000
+    /* Upper limit            */      250.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_tMotTemp_C@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_u12V_V
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_u12V_V@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_u5V_V
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_u5V_V@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_uCurrSnsrRefSmp_V
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_uCurrSnsrRefSmp_V@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_uCurrSnsrUSmp_V
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_uCurrSnsrUSmp_V@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_uCurrSnsrVSmp_V
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_uCurrSnsrVSmp_V@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_uCurrSnsrWSmp_V
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_uCurrSnsrWSmp_V@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_uDCActSmp_V
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_uDCActSmp_V@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_uDcHVSmp_V
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_uDcHVSmp_V@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_uDcHV_V
+    /* Long identifier        */      "DC-link voltage measurement"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_uDcHV_V@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_uIGBTTempUSmp_V
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_uIGBTTempUSmp_V@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_uIGBTTempVSmp_V
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_uIGBTTempVSmp_V@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_uIGBTTempWSmp_V
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_uIGBTTempWSmp_V@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_uMotTempSmp_V
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      4096.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_uMotTempSmp_V@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_f32_uSmpRpl_V
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_f32_uSmpRpl_V@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_ASC_Enable
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_ASC_Enable@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_ClearFlt_Roty_En
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_ClearFlt_Roty_En@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_ClearFlt_Volt_Curr_En
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_ClearFlt_Volt_Curr_En@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_CutOffDelayEn_flg
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_CutOffDelayEn_flg@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_DriFault_UH
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_DriFault_UH@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_DriFault_UL
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_DriFault_UL@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_DriFault_VH
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_DriFault_VH@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_DriFault_VL
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_DriFault_VL@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_DriFault_WH
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_DriFault_WH@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_DriFault_WL
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_DriFault_WL@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_HWOCFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_HWOCFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_HWOVFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_HWOVFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_PWM_Enable
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_PWM_Enable@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bERCNVFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bERCNVFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bERDCNVFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bERDCNVFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bERDEXCFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bERDEXCFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bERDP2Flt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bERDP2Flt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bERDSBCFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bERDSBCFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bERDSBSFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bERDSBSFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bERDSQFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bERDSQFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bEREXCFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bEREXCFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bERHDFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bERHDFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bERP2Flt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bERP2Flt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bERRFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bERRFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bERSBCFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bERSBCFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bERSBSFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bERSBSFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bERSQFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bERSQFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bMcuStorgUnitFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bMcuStorgUnitFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bRotyTrfrDosFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bRotyTrfrDosFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bRotyTrfrFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bRotyTrfrFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bRotyTrfrLosFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bRotyTrfrLosFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_bRotyTrfrLotFlt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_bRotyTrfrLotFlt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_BSW_u8_stPWM
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_BSW_u8_stPWM@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_ClrHWFault
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_boolean
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_ClrHWFault@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_ClrResolverFault
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_ClrResolverFault@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_DcLinkVoltMeas
+    /* Long identifier        */      "DC-link voltage measurement"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_DcLinkVoltMeas@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_DcLinkVoltReciprocal
+    /* Long identifier        */      "Reciprocal of DC-link voltage"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      1.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_DcLinkVoltReciprocal@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_ElecAngle
+    /* Long identifier        */      "Electrical angle for coordinate transformation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_rad
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      6.283185
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_ElecAngle@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_ElecSpeed
+    /* Long identifier        */      "Electrical rotor speed"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_rad_per_s
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -100000.000000
+    /* Upper limit            */      100000.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_ElecSpeed@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_ElecSpeedAfterFilter
+    /* Long identifier        */      "Filtered electrical speed output"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_rad_per_s
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_ElecSpeedAfterFilter@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_ElecSpeedBeforeFilter
+    /* Long identifier        */      "Raw electrical speed before filtering"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_rad_per_s
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_ElecSpeedBeforeFilter@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_FOC_f32_Uduty_Null
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_FOC_f32_Uduty_Null@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_FOC_f32_Vduty_Null
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_FOC_f32_Vduty_Null@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_FOC_f32_Wduty_Null
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_FOC_f32_Wduty_Null@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_IgnitionStatus
+    /* Long identifier        */      "Ignition power supply status"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_IgnitionStatus@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_MechSpeed
+    /* Long identifier        */      "Speed setpoint from communication"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_rpm
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -100000.000000
+    /* Upper limit            */      100000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_MechSpeed@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_MotorTemp1
+    /* Long identifier        */      "Motor temperature sensor 1 reading"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -50.000000
+    /* Upper limit            */      250.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_MotorTemp1@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseACurrent
+    /* Long identifier        */      "Phase A measured current for control"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2000.000000
+    /* Upper limit            */      2000.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseACurrent@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseADuty
+    /* Long identifier        */      "Phase A PWM duty cycle"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_percent_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      100.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseADuty@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseASwitchTemp
+    /* Long identifier        */      "Maximum power switch temperature"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -50.000000
+    /* Upper limit            */      500.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseASwitchTemp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseBCurrent
+    /* Long identifier        */      "Phase B calculated current for control"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2000.000000
+    /* Upper limit            */      2000.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseBCurrent@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseBDuty
+    /* Long identifier        */      "Phase B PWM duty cycle"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_percent_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      100.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseBDuty@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseBSwitchTemp
+    /* Long identifier        */      "Maximum power switch temperature"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -50.000000
+    /* Upper limit            */      500.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseBSwitchTemp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseCCurrent
+    /* Long identifier        */      "Phase C measured current for control"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_A
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2000.000000
+    /* Upper limit            */      2000.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseCCurrent@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseCDuty
+    /* Long identifier        */      "Phase C PWM duty cycle"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_percent_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      100.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseCDuty@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PhaseCSwitchTemp
+    /* Long identifier        */      "Maximum power switch temperature"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -50.000000
+    /* Upper limit            */      500.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PhaseCSwitchTemp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PolePairRatio
+    /* Long identifier        */      "Motor to resolver pole pair ratio"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      100.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PolePairRatio@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PolePairs
+    /* Long identifier        */      "Motor pole pair count"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      100.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PolePairs@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PolePairsReciprocal
+    /* Long identifier        */      "Reciprocal of motor pole pair number"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      100.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PolePairsReciprocal@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PolePairsReciprocal_IRV
+    /* Long identifier        */      "Pole pair reciprocal for internal routing"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PolePairsReciprocal_IRV@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_PolePairs_IRV
+    /* Long identifier        */      "Motor pole pairs for internal routing"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_PolePairs_IRV@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_ResolverPolePairs
+    /* Long identifier        */      "Resolver pole pair count"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      255.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_ResolverPolePairs@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SampleTime1
+    /* Long identifier        */      "Primary control loop sampling time"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_s
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      10.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SampleTime1@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SampleTime1Reciprocal
+    /* Long identifier        */      "Reciprocal of primary sampling time"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_1_per_s
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      100000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SampleTime1Reciprocal@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SampleTime2
+    /* Long identifier        */      "Secondary control loop sampling time"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_s
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      100000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SampleTime2@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SampleTime2_IRV
+    /* Long identifier        */      "Secondary sampling time for internal routing"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_s
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SampleTime2_IRV@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SampleTime4
+    /* Long identifier        */      "Quaternary control loop sampling time"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_s
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      100000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SampleTime4@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SampleTime4_IRV
+    /* Long identifier        */      "Quaternary sampling time for internal routing"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_s
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SampleTime4_IRV@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SetDriverSts
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SetDriverSts@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SetFreq
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      30000.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SetFreq@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SetHighASCFlg
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SetHighASCFlg@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SetPwrOffDlyFlg
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_boolean
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SetPwrOffDlyFlg@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SimElecAngle
+    /* Long identifier        */      "Electrical angle for coordinate transformation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_rad
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      6.283185
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SimElecAngle@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SpeedSp
+    /* Long identifier        */      "Speed setpoint from communication"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_rpm
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -100000.000000
+    /* Upper limit            */      100000.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SpeedSp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SwitchTempMax
+    /* Long identifier        */      "Maximum power switch temperature"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -50.000000
+    /* Upper limit            */      500.000000
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SwitchTempMax@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_kFOC_f32_PWMFreq_Hz
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_kFOC_f32_PWMFreq_Hz@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_CosEnvelope
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_CosEnvelope@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_EstTheta
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_rad
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_EstTheta@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_PwmFreq
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_1_per_s
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_PwmFreq@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_PwmTs
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_s
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_PwmTs@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGRD_SinEnvelope
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGRD_SinEnvelope@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_BatteryVolt
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_BatteryVolt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_DcLinkVoltMeas
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_DcLinkVoltMeas@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_DcLinkVoltMeasAD
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_DcLinkVoltMeasAD@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_DriveErr
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_DriveErr@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_ElecAngle
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single_rad
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_ElecAngle@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_HDriFault
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_HDriFault@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_HwOvercurSt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_HwOvercurSt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_HwOvervoltSt
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_HwOvervoltSt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_IgnitionVolt
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_IgnitionVolt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_LDriFault
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_LDriFault@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_MotorTemp1
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_MotorTemp1@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_MotorTemp1AD
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_MotorTemp1AD@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PWMSts
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PWMSts@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseACurrent
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseACurrent@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseACurrentAD
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseACurrentAD@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseASwitchTemp
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseASwitchTemp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseASwitchTempAD
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseASwitchTempAD@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseBSwitchTemp
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseBSwitchTemp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseBSwitchTempAD
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseBSwitchTempAD@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseCCurrent
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseCCurrent@ */
+    DISPLAY_IDENTIFIER SGSA_PhaseCCurrent
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseCCurrentAD
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseCCurrentAD@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseCSwitchTemp
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseCSwitchTemp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PhaseCSwitchTempAD
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PhaseCSwitchTempAD@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_PwrChipVolt
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_PwrChipVolt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_ResolverError
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    MATRIX_DIM                        1 1 
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_ResolverError@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGSA_SpeedCommand
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGSA_SpeedCommand@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigPreProcessor_DW.BareUnitDelay_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigPreProcessor_DW.BareUnitDelay_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigPreProcessor_DW.Delay_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigPreProcessor_DW.Delay_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigPreProcessor_DW.Memory_PreviousInput
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_logical
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      1
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigPreProcessor_DW.Memory_PreviousInput@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigPreProcessor_DW.UnitDelay_DSTATE
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigPreProcessor_DW.UnitDelay_DSTATE@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigPreProcessor_DW.UnitDelay_DSTATE_b
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      SigPreProcessor_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigPreProcessor_DW.UnitDelay_DSTATE_b@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SigPreProcessor_DW.UnitDelay_DSTATE_i
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      SigPreProcessor_CM_uint8
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      255
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SigPreProcessor_DW.UnitDelay_DSTATE_i@ */
+  /end MEASUREMENT 
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigPreProcessor_CM_EnumCtlMode
+    /* Long identifier        */      "Enumerated data type: EnumCtlMode"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.6"
+    /* Units                  */      ""
+    /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_SigPreProcessor_CM_EnumCtlMode
+  /end COMPU_METHOD
+
+  /begin COMPU_VTAB
+    /* Name of Table          */      VTAB_FOR_SigPreProcessor_CM_EnumCtlMode
+    /* Long identifier        */      "Enumerated data type: EnumCtlMode"
+    /* Conversion Type        */      TAB_VERB
+    /* Number of Elements     */      15
+    /* Table Element          */      0 "Init"
+    /* Table Element          */      1 "LowVoltReady"
+    /* Table Element          */      2 "HighVoltStandby"
+    /* Table Element          */      3 "Ready"
+    /* Table Element          */      4 "HighVoltDischarge"
+    /* Table Element          */      5 "LowVoltDischarge"
+    /* Table Element          */      6 "Discharge"
+    /* Table Element          */      7 "PowerDown"
+    /* Table Element          */      8 "Fault"
+    /* Table Element          */      9 "OpenLoopCtrl"
+    /* Table Element          */      10 "VoltDirectCtrl"
+    /* Table Element          */      11 "CurrCtrl"
+    /* Table Element          */      12 "TorqueCtrl"
+    /* Table Element          */      13 "SpeedCtrl"
+    /* Table Element          */      14 "ZeroPointCal"
+  /end COMPU_VTAB
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigPreProcessor_CM_boolean
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%1.0"
+    /* Units                  */      ""
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigPreProcessor_CM_logical
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%1.0"
+    /* Units                  */      ""
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigPreProcessor_CM_single
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      ""
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigPreProcessor_CM_single_1_per_s
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "1/s"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigPreProcessor_CM_single_A
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "A"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigPreProcessor_CM_single_V
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigPreProcessor_CM_single_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "-"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigPreProcessor_CM_single_percent_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "%"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigPreProcessor_CM_single_rad
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rad"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigPreProcessor_CM_single_rad_per_s
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rad/s"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigPreProcessor_CM_single_rpm
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "rpm"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigPreProcessor_CM_single_s
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%8.6"
+    /* Units                  */      "s"
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigPreProcessor_CM_uint8
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%3.0"
+    /* Units                  */      ""
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      SigPreProcessor_CM_uint8_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      IDENTICAL
+    /* Format                 */      "%3.0"
+    /* Units                  */      "-"
+  /end COMPU_METHOD
+
+  /begin  RECORD_LAYOUT Record_BOOLEAN
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_FLOAT32_IEEE
+    FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_UBYTE
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor
+    /* Long identifier        */      "SigPreProcessor"
+    /* Root                   */      ROOT
+    /begin SUB_GROUP
+      SigPreProcessor_SGPP_InitSystemParam_Init_sys
+      SigPreProcessor_SGPP_ReadCmd_100us_sys
+      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys
+      SigPreProcessor_SGPP_Read_100us_sys
+      SigPreProcessor_SGPP_SpeedClc_96us_sys
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTSO_OperationMode
+      CTSO_SpeedCalcReset
+      SGPP_BSW_u8_ASC_Enable
+      SGPP_BSW_u8_ClearFlt_Roty_En
+      SGPP_BSW_u8_ClearFlt_Volt_Curr_En
+      SGPP_BSW_u8_CutOffDelayEn_flg
+      SGPP_BSW_u8_PWM_Enable
+      SGPP_FOC_f32_Uduty_Null
+      SGPP_FOC_f32_Vduty_Null
+      SGPP_FOC_f32_Wduty_Null
+      SGPP_kFOC_f32_PWMFreq_Hz
+      SGRD_CosEnvelope
+      SGRD_EstTheta
+      SGRD_PwmFreq
+      SGRD_PwmTs
+      SGRD_SinEnvelope
+      SGSA_BatteryVolt
+      SGSA_DcLinkVoltMeas
+      SGSA_DcLinkVoltMeasAD
+      SGSA_DriveErr
+      SGSA_ElecAngle
+      SGSA_HDriFault
+      SGSA_HwOvercurSt
+      SGSA_HwOvervoltSt
+      SGSA_IgnitionVolt
+      SGSA_LDriFault
+      SGSA_MotorTemp1
+      SGSA_MotorTemp1AD
+      SGSA_PWMSts
+      SGSA_PhaseACurrent
+      SGSA_PhaseACurrentAD
+      SGSA_PhaseASwitchTemp
+      SGSA_PhaseASwitchTempAD
+      SGSA_PhaseBSwitchTemp
+      SGSA_PhaseBSwitchTempAD
+      SGSA_PhaseCCurrent
+      SGSA_PhaseCCurrentAD
+      SGSA_PhaseCSwitchTemp
+      SGSA_PhaseCSwitchTempAD
+      SGSA_PwrChipVolt
+      SGSA_ResolverError
+      SGSA_SpeedCommand
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_InitSystemParam_Init_sys
+    /* Long identifier        */      "SigPreProcessor/SGPP_InitSystemParam_Init_sys"
+    /begin SUB_GROUP
+      SigPreProcessor_SGPP_InitSystemParam_Init_sys_Parameter1
+      SigPreProcessor_SGPP_InitSystemParam_Init_sys_Parameter4
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SigPreProcessor_ConstB.Constant1
+      SigPreProcessor_ConstB.Constant10
+      SigPreProcessor_ConstB.Constant11
+      SigPreProcessor_ConstB.Constant12
+      SigPreProcessor_ConstB.Constant13
+      SigPreProcessor_ConstB.Constant14
+      SigPreProcessor_ConstB.Constant15
+      SigPreProcessor_ConstB.Constant16
+      SigPreProcessor_ConstB.Constant19
+      SigPreProcessor_ConstB.Constant2
+      SigPreProcessor_ConstB.Constant20
+      SigPreProcessor_ConstB.Constant22
+      SigPreProcessor_ConstB.Constant23
+      SigPreProcessor_ConstB.Constant24
+      SigPreProcessor_ConstB.Constant25
+      SigPreProcessor_ConstB.Constant26
+      SigPreProcessor_ConstB.Constant27
+      SigPreProcessor_ConstB.Constant28
+      SigPreProcessor_ConstB.Constant29
+      SigPreProcessor_ConstB.Constant3
+      SigPreProcessor_ConstB.Constant30
+      SigPreProcessor_ConstB.Constant31
+      SigPreProcessor_ConstB.Constant32
+      SigPreProcessor_ConstB.Constant33
+      SigPreProcessor_ConstB.Constant34
+      SigPreProcessor_ConstB.Constant35
+      SigPreProcessor_ConstB.Constant36
+      SigPreProcessor_ConstB.Constant37
+      SigPreProcessor_ConstB.Constant38
+      SigPreProcessor_ConstB.Constant39
+      SigPreProcessor_ConstB.Constant4
+      SigPreProcessor_ConstB.Constant5
+      SigPreProcessor_ConstB.Constant6
+      SigPreProcessor_ConstB.Constant7
+      SigPreProcessor_ConstB.Constant8
+      SigPreProcessor_ConstB.Constant9
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_InitSystemParam_Init_sys_Parameter1
+    /* Long identifier        */      "SigPreProcessor/SGPP_InitSystemParam_Init_sys/Parameter1"
+    /begin REF_CHARACTERISTIC
+      SGPP_ResolverPolePairs_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_InitSystemParam_Init_sys_Parameter4
+    /* Long identifier        */      "SigPreProcessor/SGPP_InitSystemParam_Init_sys/Parameter4"
+    /begin REF_CHARACTERISTIC
+      SGPP_PolePairs_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_ReadCmd_100us_sys
+    /* Long identifier        */      "SigPreProcessor/SGPP_ReadCmd_100us_sys"
+    /begin SUB_GROUP
+      SigPreProcessor_SGPP_ReadCmd_100us_sys_Parameter2
+      SigPreProcessor_SGPP_ReadCmd_100us_sys_Parameter3
+      SigPreProcessor_SGPP_ReadCmd_100us_sys_Parameter4
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_BSW_u8_ClearFlt_Roty_En
+      SGPP_FOC_f32_Uduty_Null
+      SGPP_FOC_f32_Vduty_Null
+      SGPP_FOC_f32_Wduty_Null
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_ReadCmd_100us_sys_Parameter2
+    /* Long identifier        */      "SigPreProcessor/SGPP_ReadCmd_100us_sys/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGSA_ResolverFaultClr_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_ReadCmd_100us_sys_Parameter3
+    /* Long identifier        */      "SigPreProcessor/SGPP_ReadCmd_100us_sys/Parameter3"
+    /begin REF_CHARACTERISTIC
+      SGPP_ResolverFaultClrEnable_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_ReadCmd_100us_sys_Parameter4
+    /* Long identifier        */      "SigPreProcessor/SGPP_ReadCmd_100us_sys/Parameter4"
+    /begin REF_CHARACTERISTIC
+      SGPP_PhaseMappingConfig_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys
+    /* Long identifier        */      "SigPreProcessor/SGPP_ReadTempVolt_1ms_sys"
+    /begin SUB_GROUP
+      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGSA_PhaseASwitchTemp
+      SGSA_PhaseBSwitchTemp
+      SGSA_PhaseCSwitchTemp
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc
+    /* Long identifier        */      "SigPreProcessor/SGPP_ReadTempVolt_1ms_sys/KL15StatusPrc"
+    /begin SUB_GROUP
+      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Debounce
+      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Parameter1
+      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Parameter4
+      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Parameter9
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGSA_IgnitionVolt
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Debounce
+    /* Long identifier        */      "SigPreProcessor/SGPP_ReadTempVolt_1ms_sys/KL15StatusPrc/Debounce"
+    /begin SUB_GROUP
+      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Debounce_Debounce
+      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Debounce_InitRest
+      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Debounce_Parameter6
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Debounce_Debounce
+    /* Long identifier        */      "SigPreProcessor/SGPP_ReadTempVolt_1ms_sys/KL15StatusPrc/Debounce/Debounce"
+    /begin SUB_GROUP
+      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Debounce_Debounce_Subsystem
+      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Debounce_Debounce_UnitDelay
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Debounce_Debounce_Subsystem
+    /* Long identifier        */      "SigPreProcessor/SGPP_ReadTempVolt_1ms_sys/KL15StatusPrc/Debounce/Debounce/Subsystem"
+    /begin REF_MEASUREMENT
+      SigPreProcessor_DW.Memory_PreviousInput
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Debounce_Debounce_UnitDelay
+    /* Long identifier        */      "SigPreProcessor/SGPP_ReadTempVolt_1ms_sys/KL15StatusPrc/Debounce/Debounce/UnitDelay"
+    /begin REF_MEASUREMENT
+      SigPreProcessor_DW.BareUnitDelay_DSTATE
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Debounce_InitRest
+    /* Long identifier        */      "SigPreProcessor/SGPP_ReadTempVolt_1ms_sys/KL15StatusPrc/Debounce/InitRest"
+    /begin REF_MEASUREMENT
+      SigPreProcessor_DW.UnitDelay_DSTATE_i
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Debounce_Parameter6
+    /* Long identifier        */      "SigPreProcessor/SGPP_ReadTempVolt_1ms_sys/KL15StatusPrc/Debounce/Parameter6"
+    /begin REF_CHARACTERISTIC
+      SGPP_IgnitionVoltThrHigh_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Parameter1
+    /* Long identifier        */      "SigPreProcessor/SGPP_ReadTempVolt_1ms_sys/KL15StatusPrc/Parameter1"
+    /begin REF_CHARACTERISTIC
+      SGPP_IgnitionStatus_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Parameter4
+    /* Long identifier        */      "SigPreProcessor/SGPP_ReadTempVolt_1ms_sys/KL15StatusPrc/Parameter4"
+    /begin REF_CHARACTERISTIC
+      SGPP_IgnitionStatusSource_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_ReadTempVolt_1ms_sys_KL15StatusPrc_Parameter9
+    /* Long identifier        */      "SigPreProcessor/SGPP_ReadTempVolt_1ms_sys/KL15StatusPrc/Parameter9"
+    /begin REF_CHARACTERISTIC
+      SGPP_IgnitionVoltThreshold_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_Read_100us_sys
+    /* Long identifier        */      "SigPreProcessor/SGPP_Read_100us_sys"
+    /begin SUB_GROUP
+      SigPreProcessor_SGPP_Read_100us_sys_AngleClc
+      SigPreProcessor_SGPP_Read_100us_sys_CurrentMapAndFilter
+      SigPreProcessor_SGPP_Read_100us_sys_ResolverFault
+      SigPreProcessor_SGPP_Read_100us_sys_TsSignals
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_Read_100us_sys_AngleClc
+    /* Long identifier        */      "SigPreProcessor/SGPP_Read_100us_sys/AngleClc"
+    /begin SUB_GROUP
+      SigPreProcessor_SGPP_Read_100us_sys_AngleClc_Parameter4
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_Read_100us_sys_AngleClc_Parameter4
+    /* Long identifier        */      "SigPreProcessor/SGPP_Read_100us_sys/AngleClc/Parameter4"
+    /begin REF_CHARACTERISTIC
+      SGPP_AngleSourceSelect_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_Read_100us_sys_CurrentMapAndFilter
+    /* Long identifier        */      "SigPreProcessor/SGPP_Read_100us_sys/CurrentMapAndFilter"
+    /begin SUB_GROUP
+      SigPreProcessor_SGPP_Read_100us_sys_CurrentMapAndFilter_Parameter4
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGSA_PhaseACurrent
+      SGSA_PhaseCCurrent
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_Read_100us_sys_CurrentMapAndFilter_Parameter4
+    /* Long identifier        */      "SigPreProcessor/SGPP_Read_100us_sys/CurrentMapAndFilter/Parameter4"
+    /begin REF_CHARACTERISTIC
+      SGPP_PhaseMappingConfig_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_Read_100us_sys_ResolverFault
+    /* Long identifier        */      "SigPreProcessor/SGPP_Read_100us_sys/ResolverFault"
+    /begin REF_MEASUREMENT
+      SGSA_ResolverError
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_Read_100us_sys_TsSignals
+    /* Long identifier        */      "SigPreProcessor/SGPP_Read_100us_sys/TsSignals"
+    /begin REF_MEASUREMENT
+      SGRD_PwmFreq
+      SGRD_PwmTs
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_SpeedClc_96us_sys
+    /* Long identifier        */      "SigPreProcessor/SGPP_SpeedClc_96us_sys"
+    /begin SUB_GROUP
+      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter
+    /* Long identifier        */      "SigPreProcessor/SGPP_SpeedClc_96us_sys/SpeedEstimationAndCmdFilter"
+    /begin SUB_GROUP
+      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem
+    /* Long identifier        */      "SigPreProcessor/SGPP_SpeedClc_96us_sys/SpeedEstimationAndCmdFilter/Variant Subsystem"
+    /begin SUB_GROUP
+      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code
+    /* Long identifier        */      "SigPreProcessor/SGPP_SpeedClc_96us_sys/SpeedEstimationAndCmdFilter/Variant Subsystem/XCU_Code"
+    /begin SUB_GROUP
+      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code_Local_Variable_Storage
+      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code_Local_Variable_Storage1
+      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code_LowPassFilter
+      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code_Parameter1
+      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code_Parameter2
+      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code_Parameter4
+      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code_ResolverSignalEmulation
+      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code_ThetaSensor
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_PolePairsReciprocal_IRV
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code_Local_Variable_Storage
+    /* Long identifier        */      "SigPreProcessor/SGPP_SpeedClc_96us_sys/SpeedEstimationAndCmdFilter/Variant Subsystem/XCU_Code/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      SGPP_ElecSpeedBeforeFilter
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code_Local_Variable_Storage1
+    /* Long identifier        */      "SigPreProcessor/SGPP_SpeedClc_96us_sys/SpeedEstimationAndCmdFilter/Variant Subsystem/XCU_Code/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      SGPP_ElecSpeedAfterFilter
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code_LowPassFilter
+    /* Long identifier        */      "SigPreProcessor/SGPP_SpeedClc_96us_sys/SpeedEstimationAndCmdFilter/Variant Subsystem/XCU_Code/LowPassFilter"
+    /begin REF_MEASUREMENT
+      SigPreProcessor_DW.Delay_DSTATE
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code_Parameter1
+    /* Long identifier        */      "SigPreProcessor/SGPP_SpeedClc_96us_sys/SpeedEstimationAndCmdFilter/Variant Subsystem/XCU_Code/Parameter1"
+    /begin REF_CHARACTERISTIC
+      SGPP_MechSpeedFilterFreq_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code_Parameter2
+    /* Long identifier        */      "SigPreProcessor/SGPP_SpeedClc_96us_sys/SpeedEstimationAndCmdFilter/Variant Subsystem/XCU_Code/Parameter2"
+    /begin REF_CHARACTERISTIC
+      SGPP_SetSpeed_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code_Parameter4
+    /* Long identifier        */      "SigPreProcessor/SGPP_SpeedClc_96us_sys/SpeedEstimationAndCmdFilter/Variant Subsystem/XCU_Code/Parameter4"
+    /begin REF_CHARACTERISTIC
+      SGPP_AngleSourceSelect_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code_ResolverSignalEmulation
+    /* Long identifier        */      "SigPreProcessor/SGPP_SpeedClc_96us_sys/SpeedEstimationAndCmdFilter/Variant Subsystem/XCU_Code/ResolverSignalEmulation"
+    /begin REF_MEASUREMENT
+      SGPP_PolePairs_IRV
+      SigPreProcessor_DW.UnitDelay_DSTATE
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      SigPreProcessor_SGPP_SpeedClc_96us_sys_SpeedEstimationAndCmdFilter_Variant_Subsystem_XCU_Code_ThetaSensor
+    /* Long identifier        */      "SigPreProcessor/SGPP_SpeedClc_96us_sys/SpeedEstimationAndCmdFilter/Variant Subsystem/XCU_Code/ThetaSensor"
+    /begin REF_MEASUREMENT
+      SigPreProcessor_DW.UnitDelay_DSTATE_b
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /end MODULE
+
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF SigPreProcessor.a2l*/

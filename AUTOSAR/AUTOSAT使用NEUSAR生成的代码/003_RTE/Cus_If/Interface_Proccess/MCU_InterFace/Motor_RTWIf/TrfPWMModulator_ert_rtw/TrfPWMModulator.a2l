@@ -1,0 +1,870 @@
+/******************************************************************************
+ *
+ *  ASAP2 file:     TrfPWMModulator.a2l
+ *
+ * 
+ *
+ * Code generation for model "TrfPWMModulator".
+ *
+ * Model version              : 1.17
+ * Simulink Coder version : 10.6 R2022b
+ * C source code generated on : Thu May 28 16:27:24 2026
+ *
+ * Target selection: ert.tlc
+ * Embedded hardware selection: Infineon->TriCore
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+ASAP2_VERSION  1 31     /* Version 1.31 */
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+
+  /begin HEADER "Header Comments go here"
+  /end HEADER
+
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+    /end MOD_PAR
+
+    /begin MOD_COMMON  "Mod Common Comment Here"
+      BYTE_ORDER     MSB_LAST
+
+      ALIGNMENT_BYTE 1
+      ALIGNMENT_WORD 2
+      ALIGNMENT_LONG 4
+      ALIGNMENT_FLOAT32_IEEE 4
+      ALIGNMENT_FLOAT64_IEEE 4
+    /end MOD_COMMON
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      TFPM_DutyLowerLimit_C
+    /* Long Identifier        */      "Lower limit for duty cycle saturation"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@TFPM_DutyLowerLimit_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TrfPWMModulator_CM_single_dash_
+    /* Lower Limit            */      -100.000000
+    /* Upper Limit            */      100.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      TFPM_DutyUpperLimit_C
+    /* Long Identifier        */      "Upper limit for duty cycle saturation"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@TFPM_DutyUpperLimit_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TrfPWMModulator_CM_single_dash_
+    /* Lower Limit            */      -100.000000
+    /* Upper Limit            */      100.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      TFPM_HighSideSwitchSel_C
+    /* Long Identifier        */      "Switch side selection: 1=high-side, 0=low-side"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@TFPM_HighSideSwitchSel_C@ */
+    /* Record Layout          */      Record_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TrfPWMModulator_CM_uint8_dash_
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      255.000000
+  /end CHARACTERISTIC 
+
+  /begin CHARACTERISTIC 
+    /* Name                   */      TFPM_MinSwitchTime_C
+    /* Long Identifier        */      "Minimum switching time constraint"
+    /* Type                   */      VALUE
+    /* ECU Address            */      0x0000 /* @ECU_Address@TFPM_MinSwitchTime_C@ */
+    /* Record Layout          */      Record_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TrfPWMModulator_CM_single_ns
+    /* Lower Limit            */      0.000000
+    /* Upper Limit            */      50000.000000
+  /end CHARACTERISTIC 
+
+  /begin MEASUREMENT 
+    /* Name                   */      CTSO_OperationMode
+    /* Long identifier        */      ""
+    /* Data type              */      UBYTE
+    /* Conversion method      */      TrfPWMModulator_CM_EnumCtlMode
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0
+    /* Upper limit            */      14
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@CTSO_OperationMode@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_DcLinkVoltReciprocal
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_DcLinkVoltReciprocal@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SGPP_SampleTime1Reciprocal
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SGPP_SampleTime1Reciprocal@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SVOL_OpenLoopAlphaVolt
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SVOL_OpenLoopAlphaVolt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      SVOL_OpenLoopBetaVolt
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@SVOL_OpenLoopBetaVolt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFDA_AlphaVoltSp
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFDA_AlphaVoltSp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFDA_BetaVoltSp
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFDA_BetaVoltSp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFEC_PhaseACompVolt
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFEC_PhaseACompVolt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFEC_PhaseBCompVolt
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFEC_PhaseBCompVolt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFEC_PhaseCCompVolt
+    /* Long identifier        */      ""
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFEC_PhaseCCompVolt@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_AlphaVoltNorm
+    /* Long identifier        */      "Normalized alpha-axis voltage relative to DC-link"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2.000000
+    /* Upper limit            */      2.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_AlphaVoltNorm@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_AlphaVoltSp
+    /* Long identifier        */      "Alpha-axis voltage setpoint"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -5000.000000
+    /* Upper limit            */      5000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_AlphaVoltSp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_BetaVoltNorm
+    /* Long identifier        */      "Normalized beta-axis voltage relative to DC-link"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2.000000
+    /* Upper limit            */      2.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_BetaVoltNorm@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_BetaVoltSp
+    /* Long identifier        */      "Beta-axis voltage setpoint"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_V
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -5000.000000
+    /* Upper limit            */      5000.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_BetaVoltSp@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_MinSwitchTimeRel
+    /* Long identifier        */      "Relative minimum switching time value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_MinSwitchTimeRel@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseACompDutyLim
+    /* Long identifier        */      "Phase A compensated duty cycle with limiting"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseACompDutyLim@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseADuty
+    /* Long identifier        */      "Phase A PWM duty cycle output"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_percent_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      100.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseADuty@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseADutyRel
+    /* Long identifier        */      "Phase A relative duty cycle value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseADutyRel@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseASvmDuty
+    /* Long identifier        */      "Phase A space vector modulation duty cycle"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseASvmDuty@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseAVoltNorm
+    /* Long identifier        */      "Phase A normalized voltage after modulation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2.000000
+    /* Upper limit            */      2.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseAVoltNorm@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseBCompDutyLim
+    /* Long identifier        */      "Phase B compensated duty cycle with limiting"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseBCompDutyLim@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseBDuty
+    /* Long identifier        */      "Phase B PWM duty cycle output"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_percent_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      100.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseBDuty@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseBDutyRel
+    /* Long identifier        */      "Phase B relative duty cycle value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseBDutyRel@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseBSvmDuty
+    /* Long identifier        */      "Phase B space vector modulation duty cycle"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseBSvmDuty@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseBVoltNorm
+    /* Long identifier        */      "Phase B normalized voltage after modulation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2.000000
+    /* Upper limit            */      2.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseBVoltNorm@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseCCompDutyLim
+    /* Long identifier        */      "Phase C compensated duty cycle with limiting"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseCCompDutyLim@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseCDuty
+    /* Long identifier        */      "Phase C PWM duty cycle output"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_percent_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      0.000000
+    /* Upper limit            */      100.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseCDuty@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseCDutyRel
+    /* Long identifier        */      "Phase C relative duty cycle value"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseCDutyRel@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseCLvmDuty
+    /* Long identifier        */      "Phase C space vector modulation duty cycle"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -3.4E+38
+    /* Upper limit            */      3.4E+38
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseCLvmDuty@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_PhaseCVoltNorm
+    /* Long identifier        */      "Phase C normalized voltage after modulation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -2.000000
+    /* Upper limit            */      2.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_PhaseCVoltNorm@ */
+  /end MEASUREMENT 
+
+  /begin MEASUREMENT 
+    /* Name                   */      TFPM_ThreePhaseVoltMid
+    /* Long identifier        */      "Mid-point normalized voltage among three phases"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      TrfPWMModulator_CM_single_dash_
+    /* Resolution (Not used)  */      0      
+    /* Accuracy (Not used)    */      0      
+    /* Lower limit            */      -20.000000
+    /* Upper limit            */      20.000000
+    ECU_ADDRESS                       0x0000 /* @ECU_Address@TFPM_ThreePhaseVoltMid@ */
+  /end MEASUREMENT 
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TrfPWMModulator_CM_EnumCtlMode
+    /* Long identifier        */      "Enumerated data type: EnumCtlMode"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.6"
+    /* Units                  */      ""
+    /* Conversion Table       */      COMPU_TAB_REF VTAB_FOR_TrfPWMModulator_CM_EnumCtlMode
+  /end COMPU_METHOD
+
+  /begin COMPU_VTAB
+    /* Name of Table          */      VTAB_FOR_TrfPWMModulator_CM_EnumCtlMode
+    /* Long identifier        */      "Enumerated data type: EnumCtlMode"
+    /* Conversion Type        */      TAB_VERB
+    /* Number of Elements     */      15
+    /* Table Element          */      0 "Init"
+    /* Table Element          */      1 "LowVoltReady"
+    /* Table Element          */      2 "HighVoltStandby"
+    /* Table Element          */      3 "Ready"
+    /* Table Element          */      4 "HighVoltDischarge"
+    /* Table Element          */      5 "LowVoltDischarge"
+    /* Table Element          */      6 "Discharge"
+    /* Table Element          */      7 "PowerDown"
+    /* Table Element          */      8 "Fault"
+    /* Table Element          */      9 "OpenLoopCtrl"
+    /* Table Element          */      10 "VoltDirectCtrl"
+    /* Table Element          */      11 "CurrCtrl"
+    /* Table Element          */      12 "TorqueCtrl"
+    /* Table Element          */      13 "SpeedCtrl"
+    /* Table Element          */      14 "ZeroPointCal"
+  /end COMPU_VTAB
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TrfPWMModulator_CM_single
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TrfPWMModulator_CM_single_V
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "V"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TrfPWMModulator_CM_single_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TrfPWMModulator_CM_single_ns
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "ns"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TrfPWMModulator_CM_single_percent_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%8.6"
+    /* Units                  */      "%"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TrfPWMModulator_CM_uint8_dash_
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%3.0"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+
+  /begin  RECORD_LAYOUT Record_FLOAT32_IEEE
+    FNC_VALUES 1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin  RECORD_LAYOUT Record_UBYTE
+    FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+  /end  RECORD_LAYOUT 
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator
+    /* Long identifier        */      "TrfPWMModulator"
+    /* Root                   */      ROOT
+    /begin SUB_GROUP
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTSO_OperationMode
+      SGPP_DcLinkVoltReciprocal
+      SGPP_SampleTime1Reciprocal
+      SVOL_OpenLoopAlphaVolt
+      SVOL_OpenLoopBetaVolt
+      TFDA_AlphaVoltSp
+      TFDA_BetaVoltSp
+      TFEC_PhaseACompVolt
+      TFEC_PhaseBCompVolt
+      TFEC_PhaseCCompVolt
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys"
+    /begin SUB_GROUP
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/AlphaBetaToPhaseRefAndNormalize"
+    /begin SUB_GROUP
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_AlphaBetaModeSelect
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_AlphaBetaToPhaseRef
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_Normalize
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_AlphaBetaModeSelect
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/AlphaBetaToPhaseRefAndNormalize/AlphaBetaModeSelect"
+    /begin SUB_GROUP
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_AlphaBetaModeSelect_Local_Variable_Storage
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_AlphaBetaModeSelect_Local_Variable_Storage1
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      CTSO_OperationMode
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_AlphaBetaModeSelect_Local_Variable_Storage
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/AlphaBetaToPhaseRefAndNormalize/AlphaBetaModeSelect/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      TFPM_AlphaVoltSp
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_AlphaBetaModeSelect_Local_Variable_Storage1
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/AlphaBetaToPhaseRefAndNormalize/AlphaBetaModeSelect/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      TFPM_BetaVoltSp
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_AlphaBetaToPhaseRef
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/AlphaBetaToPhaseRefAndNormalize/AlphaBetaToPhaseRef"
+    /begin SUB_GROUP
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_AlphaBetaToPhaseRef_Local_Variable_Storage
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_AlphaBetaToPhaseRef_Local_Variable_Storage1
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_AlphaBetaToPhaseRef_Local_Variable_Storage2
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_AlphaBetaToPhaseRef_Local_Variable_Storage
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/AlphaBetaToPhaseRefAndNormalize/AlphaBetaToPhaseRef/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      TFPM_PhaseCVoltNorm
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_AlphaBetaToPhaseRef_Local_Variable_Storage1
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/AlphaBetaToPhaseRefAndNormalize/AlphaBetaToPhaseRef/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      TFPM_PhaseBVoltNorm
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_AlphaBetaToPhaseRef_Local_Variable_Storage2
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/AlphaBetaToPhaseRefAndNormalize/AlphaBetaToPhaseRef/Local Variable Storage2"
+    /begin REF_MEASUREMENT
+      TFPM_PhaseAVoltNorm
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_Normalize
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/AlphaBetaToPhaseRefAndNormalize/Normalize"
+    /begin SUB_GROUP
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_Normalize_Local_Variable_Storage
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_Normalize_Local_Variable_Storage1
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_Normalize_Local_Variable_Storage2
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_Normalize_Local_Variable_Storage3
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_Normalize_Local_Variable_Storage4
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_DcLinkVoltReciprocal
+      TFEC_PhaseACompVolt
+      TFEC_PhaseBCompVolt
+      TFEC_PhaseCCompVolt
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_Normalize_Local_Variable_Storage
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/AlphaBetaToPhaseRefAndNormalize/Normalize/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      TFPM_AlphaVoltNorm
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_Normalize_Local_Variable_Storage1
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/AlphaBetaToPhaseRefAndNormalize/Normalize/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      TFPM_BetaVoltNorm
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_Normalize_Local_Variable_Storage2
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/AlphaBetaToPhaseRefAndNormalize/Normalize/Local Variable Storage2"
+    /begin REF_MEASUREMENT
+      TFPM_PhaseACompDutyLim
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_Normalize_Local_Variable_Storage3
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/AlphaBetaToPhaseRefAndNormalize/Normalize/Local Variable Storage3"
+    /begin REF_MEASUREMENT
+      TFPM_PhaseBCompDutyLim
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_AlphaBetaToPhaseRefAndNormalize_Normalize_Local_Variable_Storage4
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/AlphaBetaToPhaseRefAndNormalize/Normalize/Local Variable Storage4"
+    /begin REF_MEASUREMENT
+      TFPM_PhaseCCompDutyLim
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/DutySynthesis"
+    /begin SUB_GROUP
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_DutyLimiter
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_MinPulseCalc
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_NarrowPulseSuppress
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_ZeroSeqInjection
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_DutyLimiter
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/DutySynthesis/DutyLimiter"
+    /begin SUB_GROUP
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_DutyLimiter_Parameter
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_DutyLimiter_Parameter1
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_DutyLimiter_Parameter2
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_DutyLimiter_Parameter
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/DutySynthesis/DutyLimiter/Parameter"
+    /begin REF_CHARACTERISTIC
+      TFPM_HighSideSwitchSel_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_DutyLimiter_Parameter1
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/DutySynthesis/DutyLimiter/Parameter1"
+    /begin REF_CHARACTERISTIC
+      TFPM_DutyUpperLimit_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_DutyLimiter_Parameter2
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/DutySynthesis/DutyLimiter/Parameter2"
+    /begin REF_CHARACTERISTIC
+      TFPM_DutyLowerLimit_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_MinPulseCalc
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/DutySynthesis/MinPulseCalc"
+    /begin SUB_GROUP
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_MinPulseCalc_Local_Variable_Storage
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_MinPulseCalc_Parameter
+    /end SUB_GROUP
+    /begin REF_MEASUREMENT
+      SGPP_SampleTime1Reciprocal
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_MinPulseCalc_Local_Variable_Storage
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/DutySynthesis/MinPulseCalc/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      TFPM_MinSwitchTimeRel
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_MinPulseCalc_Parameter
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/DutySynthesis/MinPulseCalc/Parameter"
+    /begin REF_CHARACTERISTIC
+      TFPM_MinSwitchTime_C
+    /end REF_CHARACTERISTIC
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_NarrowPulseSuppress
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/DutySynthesis/NarrowPulseSuppress"
+    /begin SUB_GROUP
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_NarrowPulseSuppress_Local_Variable_Storage
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_NarrowPulseSuppress_Local_Variable_Storage1
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_NarrowPulseSuppress_Local_Variable_Storage2
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_NarrowPulseSuppress_Local_Variable_Storage
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/DutySynthesis/NarrowPulseSuppress/Local Variable Storage"
+    /begin REF_MEASUREMENT
+      TFPM_PhaseADutyRel
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_NarrowPulseSuppress_Local_Variable_Storage1
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/DutySynthesis/NarrowPulseSuppress/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      TFPM_PhaseBDutyRel
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_NarrowPulseSuppress_Local_Variable_Storage2
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/DutySynthesis/NarrowPulseSuppress/Local Variable Storage2"
+    /begin REF_MEASUREMENT
+      TFPM_PhaseCDutyRel
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_ZeroSeqInjection
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/DutySynthesis/ZeroSeqInjection"
+    /begin SUB_GROUP
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_ZeroSeqInjection_Local_Variable_Storage1
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_ZeroSeqInjection_Local_Variable_Storage2
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_ZeroSeqInjection_Local_Variable_Storage3
+      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_ZeroSeqInjection_Local_Variable_Storage4
+    /end SUB_GROUP
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_ZeroSeqInjection_Local_Variable_Storage1
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/DutySynthesis/ZeroSeqInjection/Local Variable Storage1"
+    /begin REF_MEASUREMENT
+      TFPM_PhaseASvmDuty
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_ZeroSeqInjection_Local_Variable_Storage2
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/DutySynthesis/ZeroSeqInjection/Local Variable Storage2"
+    /begin REF_MEASUREMENT
+      TFPM_ThreePhaseVoltMid
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_ZeroSeqInjection_Local_Variable_Storage3
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/DutySynthesis/ZeroSeqInjection/Local Variable Storage3"
+    /begin REF_MEASUREMENT
+      TFPM_PhaseBSvmDuty
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /begin GROUP
+    /* Name                   */      TrfPWMModulator_TFPM_ModulatePwm_100us_sys_DutySynthesis_ZeroSeqInjection_Local_Variable_Storage4
+    /* Long identifier        */      "TrfPWMModulator/TFPM_ModulatePwm_100us_sys/DutySynthesis/ZeroSeqInjection/Local Variable Storage4"
+    /begin REF_MEASUREMENT
+      TFPM_PhaseCLvmDuty
+    /end REF_MEASUREMENT
+  /end GROUP
+
+  /end MODULE
+
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF TrfPWMModulator.a2l*/

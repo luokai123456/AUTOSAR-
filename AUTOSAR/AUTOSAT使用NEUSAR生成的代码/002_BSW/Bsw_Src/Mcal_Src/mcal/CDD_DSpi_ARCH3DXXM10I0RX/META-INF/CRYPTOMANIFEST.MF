@@ -1,0 +1,29 @@
+
+Name: generate/source/CDD_DSpi_Cfg.c
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421527802049258334356803075114177635424852606485721
+ 8057152169656690069208945841759301000370262854222942
+
+Name: config/CDD_DSpi1.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773972174936014838963983157871559330483201764579850
+ 360093052414297258890444186658938650337978977387016853
+
+Name: generate/include/CDD_DSpi_Cfg.h
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594755789618226136202412702308110630729392536399720339
+ 675769658059313593400847029188248319631210794270261231
+
+Name: config/CDD_DSpi2.xdm
+SignatureKeyID: Chinacore
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773972195786129237809091553315818216256840517289025
+ 259201554985107876534187231070909298226038774312569434
+
