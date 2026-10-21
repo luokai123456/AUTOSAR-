@@ -13,7 +13,7 @@ aliases: [CanNm模块总览, CAN NM]
 CanNm（CAN Network Management）位于 **Nm 通用网络管理接口** 与 **CanIf** 之间，用周期 NM 报文协调 CAN 网络的唤醒与睡眠，并支持节点检测、降载、用户数据、被动模式、部分网络（PNC）、Car Wakeup 等功能。
 
 - 适用版本：AUTOSAR CP R21-11（SWS_CanNm，Document ID 13）
-- **实现基线**：本项目生成代码为 NeuSAR CanNm **3.14.0 / AUTOSAR 4.2.2**（`AUTOSAT使用NEUSAR生成的代码/src_CanNm`），2 个 NM 通道；变量与函数以代码为准，见 [[CanNm_全局变量说明]]、[[CanNm_函数调用层级]]
+- **实现基线**：本项目生成代码为 NeuSAR CanNm **3.14.0 / AUTOSAR 4.2.2**（`AUTOSAT使用NEUSAR生成的代码/src_CanNm`），2 个 NM 通道；变量与函数以代码为准，见 CanNm_全局变量说明、CanNm_函数调用层级
 - 模块边界：唯一上层 Nm，唯一通信下层 CanIf；不做 ECU 电源决策，不直接操作控制器。
 
 ## 2. 快速入口（5 个主题）
@@ -53,10 +53,10 @@ flowchart TB
     HUB --> MF
 ```
 
-- 入口两条：[[CanNm_D1_主动唤醒调用逻辑]] / [[CanNm_D2_被动唤醒调用逻辑]]
-- 状态机中枢：[[CanNm_D3_主状态转移逻辑]] ↔ [[CanNm_D4_状态转换表]]
-- 运行服务：[[CanNm_D5_周期发送与降载调用逻辑]]、[[CanNm_D6_通信控制调用逻辑]]、[[CanNm_D7_扩展特性调用逻辑]]
-- 支撑：[[CanNm_函数调用层级]]、[[CanNm_全局变量说明]]
+- 入口两条：CanNm_D1_主动唤醒调用逻辑 / CanNm_D2_被动唤醒调用逻辑
+- 状态机中枢：CanNm_D3_主状态转移逻辑 ↔ CanNm_D4_状态转换表
+- 运行服务：CanNm_D5_周期发送与降载调用逻辑、CanNm_D6_通信控制调用逻辑、CanNm_D7_扩展特性调用逻辑
+- 支撑：CanNm_函数调用层级、CanNm_全局变量说明
 
 ## 4. 交付物状态
 

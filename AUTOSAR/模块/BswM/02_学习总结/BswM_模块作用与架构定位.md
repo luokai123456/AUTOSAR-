@@ -5,7 +5,7 @@ tags: [AUTOSAR, BswM, 学习总结]
 # BswM 模块作用与架构定位
 
 > [!info] 导航
-> 上级：[[BswM]] ｜ 依赖：[[BswM_D3_规则仲裁调用逻辑]]、[[BswM_D4_动作列表与动作执行调用逻辑]] ｜ 依据：[[BswM_AUTOSAR标准需求表_R21-11#SWS_BswM_000xx|需求表]]
+> 上级：[[BswM]] ｜ 依赖：BswM_D3_规则仲裁调用逻辑、BswM_D4_动作列表与动作执行调用逻辑 ｜ 依据：需求表
 
 > 适用版本：AUTOSAR CP R21-11　依据文档：AUTOSAR_SWS_BSWModeManager（Document ID 313）、AUTOSAR_EXP_ModeManagementGuide（Document ID 440）
 > 最后更新：2026-10-17
@@ -189,3 +189,14 @@ flowchart TB
 | 时序图 | SWS 第 9 章 |
 | 配置参数 | SWS 第 10 章 |
 | 配置流程与示例 | EXP_ModeManagementGuide 第 3 章、第 4 章 |
+
+## 代码实现基线（本项目）
+
+| 项目 | 内容 |
+|---|---|
+| 实现 | NeuSAR（东软睿驰）BswM 3.14.0，AUTOSAR 4.2.2 |
+| 代码 | `AUTOSAR/AUTOSAT使用NEUSAR生成的代码/002_BSW/Bsw_Src/Autosar_Src/src_BswM/Source/`（BswM.c / BswM_Lcfg.c / BswM_Cfg.h） |
+| 规模 | 单分区；27 动作列表、26 规则、45 规则索引、20 延迟规则、4 立即请求、2 定时器；ComM/Dcm 各 7 通道 |
+| 实现特征 | 规则/动作均为**生成函数**（`BswM_Rules[].FctPtrOfRules`、`BswM_ActionLists[].FctPtrOfActionLists`），不是通用解释器 |
+| 与文档差异 | 文档基准 R21-11，代码为 4.2.2；`BswM_ConfigType` 为空、无 `BswM_PBcfg.c`、CanSM/EthSM/NvM/EcuM/Sd 等端口 size=0 未生成 |
+| 详见 | `BswM_全局变量说明`、`BswM_函数调用层级`、`BswM_MainFunction调用逻辑`（均在同模块目录，从 BswM 入口进入） |

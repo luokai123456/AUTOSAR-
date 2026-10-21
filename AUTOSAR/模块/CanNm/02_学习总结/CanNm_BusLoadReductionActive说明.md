@@ -5,7 +5,7 @@ tags: [AUTOSAR, CanNm, 学习总结]
 # CanNm_ChannelConfig[channel].BusLoadReductionActive 作用说明
 
 > [!info] 导航
-> 上级：[[CanNm]] ｜ 依赖：[[CanNm_D5_周期发送与降载调用逻辑]]、[[CanNm_D3_主状态转移逻辑]] ｜ 依据：[[CanNm_AUTOSAR标准需求表_R21-11#SWS_CanNm_000xx|需求表]]
+> 上级：[[CanNm]] ｜ 依赖：CanNm_D5_周期发送与降载调用逻辑、CanNm_D3_主状态转移逻辑 ｜ 依据：需求表
 
 > 适用版本：AUTOSAR CP R21-11　依据：AUTOSAR_SWS_CANNetworkManagement（Document ID 13）7.8、7.9.2、10.2（ECUC_CanNm_00042 / ECUC_CanNm_00040）、11.1
 > 最后更新：2026-10-20

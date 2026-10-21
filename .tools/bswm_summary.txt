@@ -1,0 +1,239 @@
+==== BswM.c 函数 (37) ====
+  423 static BswM_ProcessQueuedRequests
+  428 extern BswM_ReleaseQueue
+  433 extern BswM_ExecuteActionLists
+  439 extern BswM_ExecuteDeferredRules
+  443 extern BswM_DecreaseTimer
+  447 static BswM_GetPartitionIdByAppl
+  453 static BswM_GetPartitionIdByCoreId
+  506 extern BswM_ReleaseQueue
+  555 static BswM_ProcessQueuedRequests
+  644 extern BswM_ImmediateModeRequest
+  723 extern BswM_DecreaseTimer
+  762 extern BswM_ExecuteActionLists
+  802 extern BswM_ExecuteDeferredRules
+  850 static BswM_GetPartitionIdByAppl
+  912 static BswM_GetPartitionIdByCoreId
+  965 extern BswM_MemCmp
+ 1001 extern BswM_MemCpy
+ 1026 extern BswM_MemSet
+ 1051 extern BswM_Init
+ 1478 extern BswM_Deinit
+ 1523 extern BswM_RequestMode
+ 1708 extern BswM_ComM_CurrentMode
+ 1790 extern BswM_EthSM_CurrentState
+ 1961 extern BswM_Dcm_ApplicationUpdated
+ 2074 extern BswM_CanSM_CurrentIcomConfiguration
+ 2436 extern BswM_GetVersionInfo
+ 2487 extern BswM_Sd_ClientServiceCurrentState
+ 2571 extern BswM_Sd_ConsumedEventGroupCurrentState
+ 2657 extern BswM_Sd_EventHandlerCurrentState
+ 2744 extern BswM_EcuM_CurrentState
+ 2906 extern BswM_FrSM_CurrentState
+ 2986 extern BswM_LinSM_CurrentSchedule
+ 3061 extern BswM_LinSM_CurrentState
+ 3143 extern BswM_LinTp_RequestMode
+ 3230 extern BswM_J1939DcmBroadcastStatus
+ 3300 extern BswM_J1939Nm_StateChangeNotification
+ 3374 extern BswM_MainFunction
+
+==== BswM.c 全局/静态变量 (VAR/CONST) ====
+  474 VAR(uint8, BSWM_VAR_NO_INIT)BswM_QueueSemaphore[BSWM_BSWMCONFIG_SIZE];  /* PRQA S 1504 */ /* NSCA_QAC_Common_Rule8.7 */
+  476 VAR(boolean, BSWM_VAR_NO_INIT)BswM_QueueWritten[BSWM_BSWMCONFIG_SIZE];  /* PRQA S 1504 */ /* NSCA_QAC_Common_Rule8.7 */
+  480 VAR(BswM_ProcessingState_st, BSWM_VAR_NO_INIT)BswM_ProcessingState[BSWM_BSWMCONFIG_SIZE];  /* PRQA S 1504 */ /* NSCA_QAC_Common_Rule8.7 */
+
+==== BswM.h 结构体 (280-330) ====
+  280 /* Neusar Service IDs. */
+  281 
+  282 /*
+  283 ********************************************************************************
+  284 *    Global Types
+  285 ********************************************************************************
+  286 */
+  287 /* PolySpace +1 MISRA-C3:2.4 [Justified:Unset] "NSCA_Polyspace_BswM_2.4" */
+  288 typedef struct sBswM_ProcessingState_st
+  289 {
+  290     /* To mark if current partition's BswM is in init mode or in normal mode. */
+  291     uint8 ProcessingState;
+  292 
+  293     /* To store the BswM's own partition id. */
+  294     uint8 PartitionId;
+  295 
+  296     /* To store from which partition the BswM instance is initialized. */
+  297     uint8 RootPartitionId;
+  298 
+  299     /* To store from which application the BswM instance is initialized. */
+  300     uint8 RootApplicationId;
+  301 } BswM_ProcessingState_st;
+  302 /*
+  303 ********************************************************************************
+  304 *    Global Variables
+  305 ********************************************************************************
+  306 */
+  307 #define BSWM_START_SEC_GLOBAL_VAR_NO_INIT
+  308 /* PolySpace +1 MISRA-C3:20.1 [Justified:Unset] "NSCA_Polyspace_Common_MemMap" */
+  309 #include "BswM_MemMap.h"
+  310 extern VAR(uint8, BSWM_VAR_NO_INIT)BswM_QueueSemaphore[BSWM_BSWMCONFIG_SIZE];
+  311 extern VAR(boolean, BSWM_VAR_NO_INIT)BswM_QueueWritten[BSWM_BSWMCONFIG_SIZE];
+  312 
+  313 #if( BSWM_MULTIPARTITION == STD_ON )
+  314 extern VAR(BswM_ProcessingState_st, BSWM_VAR_NO_INIT)BswM_ProcessingState[BSWM_BSWMCONFIG_SIZE];
+  315 #endif
+  316 #define BSWM_STOP_SEC_GLOBAL_VAR_NO_INIT
+  317 /* PolySpace +1 MISRA-C3:20.1 [Justified:Unset] "NSCA_Polyspace_Common_MemMap" */
+  318 #include "BswM_MemMap.h"
+  319 
+  320 /*
+  321 ********************************************************************************
+  322 *    Global Constants
+  323 ********************************************************************************
+  324 */
+  325 /*
+  326 ********************************************************************************
+  327 *    Global Functions
+  328 ********************************************************************************
+  329 */
+  330 #define BSWM_START_SEC_CODE
+  331 /* PolySpace +1 MISRA-C3:20.1 [Justified:Unset] "NSCA_Polyspace_Common_MemMap" */
+  332 #include "BswM_MemMap.h"
+  333 extern FUNC(void, BSWM_CODE) BswM_Init
+  334 (
+  335     P2CONST(BswM_ConfigType, AUTOMATIC, BSWM_APPL_CONST)ConfigPtr
+
+==== BswM_Cfg.h 结构体 (200-335) ====
+  200 /* PolySpace +1 MISRA-C3:2.3 [Justified:Unset] "NSCA_Polyspace_BswM_2.3" */
+  201 typedef void (*BswM_InitActionFuncType)(void);
+  202 typedef uint8 (*BswM_RuleTableFctPtrType)(void);
+  203 typedef Std_ReturnType (*BswM_ActionListFuncType)(void);
+  204 
+  205 /* type used in BswM_ActionLists. */
+  206 /* PolySpace +1 MISRA-C3:2.4 [Justified:Unset] "NSCA_Polyspace_BswM_2.4" */
+  207 typedef struct sBswM_ActionListsType
+  208 {
+  209   BswM_ActionListFuncType FctPtrOfActionLists; /* Pointer to the array list function. */
+  210 } BswM_ActionListsType;
+  211 
+  212 typedef struct
+  213 {
+  214     uint32 ExternalId;              /* External id of BswMCanSMIndication. */
+  215     uint8 ImmediateUserEndIdx;      /* the end index of the 0:n relation pointing to BswM_ImmediateUser */
+  216     uint8 ImmediateUserStartIdx;    /* the start index of the 0:n relation pointing to BswM_ImmediateUser */
+  217     uint8 PartitionId;              /* This references the partition the BswM shall run inside. */
+  218     uint8 InitValue;
+  219 } BswM_ChannelMappingType;
+  220 
+  221 /* type used in BswM_CanSMIcomChannelMapping. */
+  222 typedef struct
+  223 {
+  224     uint32 ExternalId;              /* External id of BswMCanSMIndication. */
+  225     uint8 ErrorType;
+  226     uint8 ImmediateUserEndIdx;      /* the end index of the 0:n relation pointing to BswM_ImmediateUser */
+  227     uint8 ImmediateUserStartIdx;    /* the start index of the 0:n relation pointing to BswM_ImmediateUser */
+  228     uint8 PartitionId;
+  229     uint8 InitValue;
+  230 /* PolySpace +1 MISRA-C3:2.3 [Justified:Unset] "NSCA_Polyspace_BswM_2.3" */
+  231 } BswM_CanSMIcomChannelMappingType;
+  232 
+  233 /* type used in BswM_CanSMIcomChannelMapping. */
+  234 typedef struct
+  235 {
+  236     uint32 ExternalId;              /* External id of J1939NmNetwork. */
+  237     uint8 NodeId;
+  238     uint8 ImmediateUserEndIdx;      /* the end index of the 0:n relation pointing to BswM_ImmediateUser */
+  239     uint8 ImmediateUserStartIdx;    /* the start index of the 0:n relation pointing to BswM_ImmediateUser */
+  240     uint8 PartitionId;
+  241     uint8 InitValue;
+  242 /* PolySpace +1 MISRA-C3:2.3 [Justified:Unset] "NSCA_Polyspace_BswM_2.3" */
+  243 } BswM_J1939NmStateChangeMappingType;
+  244 /* type used in BswM_DeferredRules. */
+  245 typedef struct
+  246 {
+  247     uint8 PartitionId;
+  248     uint8 RulesIdxOfDeferredRules;    /* the index of the 1:1 relation pointing to BswM_Rules. */
+  249 } BswM_DeferredRulesType;
+  250 
+  251 /* type used in BswM_GenericMapping */
+  252 typedef struct
+  253 {
+  254     uint32 ExternalId;              /* External id of BswMGenericRequest. */
+  255     uint8 ImmediateUserEndIdx;      /* the end index of the 0:n relation pointing to BswM_ImmediateUser */
+  256     uint8 ImmediateUserStartIdx;    /* the start index of the 0:n relation pointing to BswM_ImmediateUser */
+  257     uint8 PartitionId;              /* the partition id */
+  258     uint8 PartitionIdx;             /* the partition configured index */
+  259     uint16 InitValue;               /* Initialization value of port. */
+  260 } BswM_GenericMappingType;
+  261 
+  262 /* type used in BswM_ImmediateUser */
+  263 typedef struct
+  264 {
+  265     uint8 MaskedBits;          /* contains bitcoded the boolean data of BswM_OnInitOfImmediateUser, BswM_RulesIndUsedOfImmediateUser */
+  266     uint8 RulesIndEndIdx;      /* the end index of the 0:n relation pointing to BswM_RulesInd */
+  267     uint8 RulesIndStartIdx;    /* the start index of the 0:n relation pointing to BswM_RulesInd */
+  268 } BswM_ImmediateUserType;
+  269 
+  270 /* type used in BswM_Rules */
+  271 typedef struct
+  272 {
+  273     BswM_RuleTableFctPtrType FctPtrOfRules; /* Pointer to the rule function which does the arbitration. */
+  274 } BswM_RulesType;
+  275 
+  276 /* type to access BswM_ActionListQueue in an index and symbol based style. */
+  277 /* PolySpace +1 MISRA-C3:19.2 [Justified:Unset] "NSCA_Polyspace_BswM_19.2" */
+  278 typedef union 
+  279 {
+  280     uint8 raw[BSWM_SIZE_ACTIONLIST];
+  281 /* PolySpace +1 MISRA-C3:2.3 [Justified:Unset] "NSCA_Polyspace_BswM_2.3" */
+  282 } uBswM_ActionListQueueType;
+  283 
+  284 /* These type definitions are used for value representations in root arrays. */
+  285 /* PolySpace +2 MISRA-C3:2.4 [Justified:Unset] "NSCA_Polyspace_BswM_2.4" */
+  286 /* PolySpace +1 MISRA-C3:D4.8 [Justified:Unset] "NSCA_Polyspace_BswM_Dir4.8" */
+  287 typedef struct sBswM_PCConfigType
+  288 {
+  289   uint8 BswM_PCConfigNeverUsed;
+  290 } BswM_PCConfigType;
+  291 typedef BswM_PCConfigType BswM_ConfigType;
+  292 
+  293 typedef struct
+  294 {
+  295     uint8 PartitionId;
+  296     boolean Initialized;
+  297 }BswM_InitState_st;
+  298 
+  299 typedef struct
+  300 {
+  301     uint8 PartitionId;
+  302     uint8 ActionListState;
+  303 }BswM_ActionListState_st;
+  304 
+  305 typedef struct
+  306 {
+  307 	uint8 PartitionId;
+  308     uint8 Timestate;
+  309 	uint32 Timevalue;
+  310 } BswM_TimerValue_st;
+  311 
+  312 typedef struct
+  313 {
+  314 	uint8 PartitionId;
+  315     uint8 RequestMode;
+  316 } BswM_ModeRequest_st;
+  317 
+  318 typedef struct
+  319 {
+  320     uint8 PartitionId;
+  321     CoreIdType CoreId;
+  322 }BswM_CoreIdMapping_st;
+  323 
+  324 typedef struct
+  325 {
+  326     uint8 PartitionId; 
+  327     uint8 ApplNum;
+  328     const uint8 *ApplId;
+  329 }BswM_ApplMapping_st;
+  330 
+  331 /*
+  332 ********************************************************************************
+  333 *    Global Variables
+  334 ********************************************************************************
+  335 */

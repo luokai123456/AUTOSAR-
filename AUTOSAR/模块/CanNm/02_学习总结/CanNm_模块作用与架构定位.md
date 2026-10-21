@@ -5,7 +5,7 @@ tags: [AUTOSAR, CanNm, 学习总结]
 # CanNm 模块作用与架构定位
 
 > [!info] 导航
-> 上级：[[CanNm]] ｜ 依赖：[[CanNm_D3_主状态转移逻辑]]、[[CanNm_D4_状态转换表]] ｜ 依据：[[CanNm_AUTOSAR标准需求表_R21-11#SWS_CanNm_000xx|需求表]]
+> 上级：[[CanNm]] ｜ 依赖：CanNm_D3_主状态转移逻辑、CanNm_D4_状态转换表 ｜ 依据：需求表
 
 > 适用版本：AUTOSAR CP R21-11　依据：AUTOSAR_SWS_CANNetworkManagement（Document ID 13）、AUTOSAR_SWS_NetworkManagementInterface、AUTOSAR_SWS_CanIf/CanSM/ComM
 > 最后更新：2026-10-20
@@ -229,12 +229,12 @@ SNI = `CanNmNodeId`（节点地址），是诊断/节点检测/PN 过滤的基�
 | 实现 | NeuSAR（东软睿驰）CanNm 3.14.0，AUTOSAR 4.2.2 |
 | 代码 | `AUTOSAR/AUTOSAT使用NEUSAR生成的代码/002_BSW/Bsw_Src/Autosar_Src/src_CanNm/Source/` |
 | 通道 | 2 个 NM 通道（ChannelId 6/2，NodeId 39/35） |
-| 与文档差异 | 文档基准 R21-11；实现为 4.2.2，PN/同步 PNC/SoAd 等 R21-11 新特性不可用；变量为“按通道数组 + 访问宏”，详见 [[CanNm_全局变量说明]] |
-| 关键函数 | 见 [[CanNm_函数调用层级]]；主函数执行顺序见 [[CanNm_MainFunction调用逻辑]] |
+| 与文档差异 | 文档基准 R21-11；实现为 4.2.2，PN/同步 PNC/SoAd 等 R21-11 新特性不可用；变量为“按通道数组 + 访问宏”，详见 CanNm_全局变量说明 |
+| 关键函数 | 见 CanNm_函数调用层级；主函数执行顺序见 CanNm_MainFunction调用逻辑 |
 
 ## 14. 关联文档
 
-- 调用主线：[[CanNm_调用逻辑总览]]
-- 变量/宏：[[CanNm_全局变量说明]]、[[CanNm_函数调用层级]]
-- 需求：[[CanNm_AUTOSAR标准需求表_R21-11]]
-- 代码问题：[[CanNm_问题排查记录]]
+- 调用主线：CanNm_调用逻辑总览
+- 变量/宏：CanNm_全局变量说明、CanNm_函数调用层级
+- 需求：CanNm_AUTOSAR标准需求表_R21-11
+- 代码问题：CanNm_问题排查记录

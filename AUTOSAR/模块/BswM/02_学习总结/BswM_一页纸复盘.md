@@ -5,7 +5,7 @@ tags: [AUTOSAR, BswM, 学习总结]
 # BswM 一页纸复盘（面试/工作可复述版）
 
 > [!info] 导航
-> 上级：[[BswM]] ｜ 依赖：[[BswM_调用逻辑总览]]、[[BswM_D5_状态转换表]] ｜ 依据：[[BswM_AUTOSAR标准需求表_R21-11]]
+> 上级：[[BswM]] ｜ 依赖：BswM_调用逻辑总览、BswM_D5_状态转换表 ｜ 依据：BswM_AUTOSAR标准需求表_R21-11
 
 > 用途：3 分钟讲清 BswM；10 分钟讲清配置与运行时序。依据 R21-11 SWS。
 

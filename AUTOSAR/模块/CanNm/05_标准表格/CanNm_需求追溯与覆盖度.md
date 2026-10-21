@@ -5,10 +5,10 @@ tags: [AUTOSAR, CanNm, 标准表格]
 # CanNm 需求追溯与覆盖度
 
 > [!info] 导航
-> 上级：[[CanNm]] ｜ 依赖：[[CanNm_AUTOSAR标准需求表_R21-11]] ｜ 依据：SWS 第 6 章（Requirements Traceability）与第 12 章
+> 上级：[[CanNm]] ｜ 依赖：CanNm_AUTOSAR标准需求表_R21-11 ｜ 依据：SWS 第 6 章（Requirements Traceability）与第 12 章
 
 > 适用版本：AUTOSAR CP R21-11　依据：SWS_CanNm 第 6 章 Requirements Traceability、第 12 章 Not applicable requirements
-> 最后更新：2026-10-21　关联：[[CanNm_AUTOSAR标准需求表_R21-11]]、[[CanNm_配置参数表_R21-11]]
+> 最后更新：2026-10-21　关联：CanNm_AUTOSAR标准需求表_R21-11、CanNm_配置参数表_R21-11
 
 ## 1. 说明
 
@@ -75,8 +75,8 @@ tags: [AUTOSAR, CanNm, 标准表格]
 | 由 CanNm 满足的条目 | 37 | 有对应 SWS_CanNm 需求 |
 | 不适用条目（NA_00008） | 8 | 由其他模块/系统层满足（见第 12 章） |
 | 追溯覆盖率 | 214 条正文需求中，被 RS 追溯的约 60 条 | 其余条目为实现/接口/配置类需求 |
-| 需求总表覆盖 | 273 / 273 | 见 [[CanNm_AUTOSAR标准需求表_R21-11]] |
-| 配置参数覆盖 | 72 / 72 | 见 [[CanNm_配置参数表_R21-11]] |
+| 需求总表覆盖 | 273 / 273 | 见 CanNm_AUTOSAR标准需求表_R21-11 |
+| 配置参数覆盖 | 72 / 72 | 见 CanNm_配置参数表_R21-11 |
 
 > 说明：追溯表中出现的少数 `SWS_CanNm_00333/00403/00404/00461/00505` 等 ID 属草案/PN 扩展区，正文需求块见需求表第 4 节。
 
@@ -84,7 +84,7 @@ tags: [AUTOSAR, CanNm, 标准表格]
 
 1. **不适用需求**：8 条 NA 条目说明 CanNm 不负责"未初始化时的总线保护""通信控制器睡眠""多网络协调器"等，排查时不要往 CanNm 上找。
 2. **可选特性**：PN/同步关闭/动态映射/协调器同步大量需求带 DRAFT/OBSOLETE，项目启用前要确认供应商实现与 SWS 版本一致。
-3. **配置决定行为**：RS_Nm_00142（限制总线负载）、RS_Nm_02511（被动/发送能力）、RS_Nm_02512（通信控制）都由配置开关裁剪，需与 [[CanNm_配置参数表_R21-11]] 对照。
+3. **配置决定行为**：RS_Nm_00142（限制总线负载）、RS_Nm_02511（被动/发送能力）、RS_Nm_02512（通信控制）都由配置开关裁剪，需与 CanNm_配置参数表_R21-11 对照。
 
 ## 5. 版本差异提醒
 

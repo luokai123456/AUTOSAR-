@@ -11,35 +11,13 @@
             "id": "88fd4a0eb0ff57c1",
             "type": "leaf",
             "state": {
-              "type": "canvas",
-              "state": {
-                "file": "未命名 1.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
-              },
-              "icon": "lucide-layout-dashboard",
-              "title": "未命名 1"
-            }
-          },
-          {
-            "id": "f092ac227c81b233",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "模块/CanNm/03_调用逻辑/CanNm_D2_被动唤醒调用逻辑.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "CanNm_D2_被动唤醒调用逻辑"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -123,7 +101,7 @@
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
               "title": "反向链接"
@@ -185,12 +163,12 @@
               "title": "大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -203,20 +181,35 @@
       "bases:新建数据库": false
     }
   },
-  "active": "f092ac227c81b233",
+  "active": "88fd4a0eb0ff57c1",
   "lastOpenFiles": [
-    "模块/CanNm/03_调用逻辑/CanNm_D1_主动唤醒调用逻辑.md",
-    "模块/CanNm/03_调用逻辑/CanNm_函数调用层级.md",
+    "模块/CanNm/04_MainFunction流程/CanNm_MainFunction调用逻辑.md",
+    "模块/CanNm/05_标准表格/CanNm_配置参数表_R21-11.md",
     "模块/CanNm/03_调用逻辑/CanNm_全局变量说明.md",
+    "模块/CanNm/03_调用逻辑/CanNm_函数调用层级.md",
+    "模块/CanNm/03_调用逻辑/CanNm_调用逻辑总览.md",
+    "README.md",
+    "模块/_模块模板/模块总览模板.md",
+    "00_总览/AUTOSAR.md",
+    "模块/CanNm/CanNm.md",
+    "模块/CanNm/03_调用逻辑/CanNm_D5_周期发送与降载调用逻辑.md",
+    "模块/CanNm/03_调用逻辑/CanNm_D6_通信控制调用逻辑.md",
+    "模块/CanNm/03_调用逻辑/CanNm_D7_扩展特性调用逻辑.md",
+    "模块/CanNm/03_调用逻辑/CanNm_D1_主动唤醒调用逻辑.md",
+    "00_总览/AUTOSAR_架构地图.canvas",
+    "未命名.canvas",
+    "未命名 2.canvas",
+    "未命名 1.canvas",
+    "模块/CanNm/03_调用逻辑/CanNm_调用逻辑地图.canvas",
+    "模块/CanNm/CanNm_问题排查记录.md",
+    "模块/CanNm/05_标准表格/CanNm_AUTOSAR标准需求表_R21-11.md",
+    "模块/CanNm/03_调用逻辑/CanNm_D2_被动唤醒调用逻辑.md",
     "模块/CanNm/03_调用逻辑/CanNm_D3_主状态转移逻辑.md",
     "模块/CanNm/03_调用逻辑/CanNm_D4_状态转换表.md",
-    "模块/CanNm/03_调用逻辑/CanNm_D2_被动唤醒调用逻辑.md",
-    "模块/CanNm/03_调用逻辑/CanNm_调用逻辑总览.md",
     "模块/CanNm/02_学习总结/CanNm_模块作用与架构定位.md",
     "_技能/autosar-module-workflow/SKILL.md",
     "_技能/autosar-module-workflow/references/workbook-schema.md",
     "_技能/autosar-module-workflow/references/instantiation-guide.md",
-    "模块/CanNm/04_MainFunction流程/CanNm_MainFunction调用逻辑.md",
     "_技能/autosar-module-workflow/scripts/__pycache__/refresh_gantt.cpython-312.pyc.2465291461968",
     "_技能/autosar-module-workflow/scripts/__pycache__/refresh_gantt.cpython-312.pyc",
     "_技能/autosar-module-workflow/scripts/__pycache__/refresh_gantt.cpython-312.pyc.1978058351952",
@@ -230,22 +223,7 @@
     "00_学习路线/AUTOSAR_Classic_模块学习路线.md",
     "_技能/cannm-workflow-xlsx/references/workbook-schema.md",
     "_技能/cannm-workflow-xlsx/SKILL.md",
-    "模块/CanNm/03_调用逻辑/CanNm_调用逻辑地图.canvas",
-    "模块/CanNm/05_标准表格/CanNm_AUTOSAR标准需求表_R21-11.md",
-    "未命名.canvas",
-    "未命名 2.canvas",
-    "未命名 1.canvas",
     "模块/BswM/03_调用逻辑/BswM_D1_初始化与启动调用逻辑.md",
-    "00_总览/AUTOSAR_架构地图.canvas",
-    "00_总览/AUTOSAR.md",
-    "模块/BswM/05_标准表格/BswM_AUTOSAR标准需求表_R21-11.md",
-    "模块/BswM/03_调用逻辑/BswM_调用逻辑地图.canvas",
-    "模块/BswM/BswM_问题排查记录.md",
-    "模块/BswM/05_标准表格/BswM_需求追溯与覆盖度.md",
-    "模块/BswM/05_标准表格/BswM_配置参数表_R21-11.md",
-    "模块/CanNm/02_学习总结/CanNm_一页纸复盘.md",
-    "模块/BswM/04_MainFunction流程/BswM_MainFunction调用逻辑.md",
-    "模块/BswM/03_调用逻辑/BswM_全局变量说明.md",
-    "模块/BswM/03_调用逻辑/BswM_函数调用层级.md"
+    "模块/BswM/03_调用逻辑/BswM_调用逻辑地图.canvas"
   ]
 }

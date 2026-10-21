@@ -4,7 +4,7 @@ tags: [AUTOSAR, BswM, 调用逻辑]
 # BswM D4：动作列表与动作执行调用逻辑
 
 > [!info] 导航
-> 上级：[[BswM_调用逻辑总览]] ｜ 依赖：[[BswM_D3_规则仲裁调用逻辑]]、[[BswM_D7_输出动作与BSW交互]] ｜ 依据：[[BswM_AUTOSAR标准需求表_R21-11#SWS_BswM_000xx|需求表]]
+> 上级：[[BswM_调用逻辑总览]] ｜ 依赖：BswM_D3_规则仲裁调用逻辑、BswM_D7_输出动作与BSW交互 ｜ 依据：需求表
 
 > 适用版本：AUTOSAR CP R21-11　依据：SWS_BswM 7.2、7.3、7.5.2
 > 最后更新：2026-10-21
@@ -51,7 +51,7 @@ D3 输出待执行动作列表（可能多个）
 | 任意 BSW 函数 | 标准允许调用 BswM 未预定义的 BSW 函数 | 00039 |
 | 用户函数 | `BswMUserCallout`，参数在配置期固定 | 00040、00054 |
 
-> 动作清单与目标 API 对照见 [[BswM_D7_输出动作与BSW交互]]。
+> 动作清单与目标 API 对照见 BswM_D7_输出动作与BSW交互。
 
 ## 5. 时序
 
@@ -108,3 +108,10 @@ SWS_BswM_00015~00019、00037、00038、00039、00040、00054、00055、00062、0
 3. 级联过深：检查是否超过 7 层；
 4. 动作失败被静默：确认 `BswMAbortOnFail` / `BswMReportFailRuntimeErrorId` 配置；
 5. 嵌套规则结果不符合预期：注意它在父列表执行时求值，且先执行命中结果再继续父列表。
+
+## 实现对应（代码）
+
+- 动作列表状态：`BswM_ActionListQueue[27].ActionListState`（IDLE/PENDING/BLOCKED）；
+- 执行入口：`BswM_ExecuteActionLists`（L762）→ `BswM_ActionLists[i].FctPtrOfActionLists()`；
+- 实际列表函数：`BswM_ActionList_AL_*`（`BswM_Lcfg.c`），如 `AL_InitToRun`、`AL_RunToPostRun`、`AL_CANSM_IpduStart_*`；
+- 项目定制动作：`BswM_Callout_Stubs.c`（`BswM_InitToRun_Action`、`BswM_RunToPostRun_Action`、`BswM_CANDriver_ON/OFF` 等）。

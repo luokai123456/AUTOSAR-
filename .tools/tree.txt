@@ -1,0 +1,13 @@
+﻿03 sibling cross-links: []
+hub links: ['CanNm', 'CanNm_D1_�������ѵ����߼�', 'CanNm_D2_�������ѵ����߼�', 'CanNm_D3_��״̬ת���߼�', 'CanNm_D4_״̬ת����', 'CanNm_D5_���ڷ����뽵�ص����߼�', 'CanNm_D6_ͨ�ſ��Ƶ����߼�', 'CanNm_D7_��չ���Ե����߼�', 'CanNm_ȫ�ֱ���˵��', 'CanNm_�������ò㼶']
+CanNm links: ['AUTOSAR', 'CanNm_AUTOSAR��׼�����_R21-11', 'CanNm_BusLoadReductionActive˵��', 'CanNm_DaVinci������', 'CanNm_MainFunction�����߼�', 'CanNm_һҳֽ����', 'CanNm_��Դ�嵥', 'CanNm_ģ��������ܹ���λ', 'CanNm_�����߼�����', 'CanNm_���ò�����_R21-11', 'CanNm_�����Ų��¼', 'CanNm_����׷���븲�Ƕ�']
+CanNm_D1_�������ѵ����߼� links: 1
+CanNm_D2_�������ѵ����߼� links: 1
+CanNm_D3_��״̬ת���߼� links: 1
+CanNm_D4_״̬ת���� links: 1
+CanNm_D5_���ڷ����뽵�ص����߼� links: 1
+CanNm_D6_ͨ�ſ��Ƶ����߼� links: 1
+CanNm_D7_��չ���Ե����߼� links: 1
+CanNm_DaVinci������ links: 1
+CanNm_ȫ�ֱ���˵�� links: 1
+CanNm_�������ò㼶 links: 1

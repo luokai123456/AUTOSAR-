@@ -4,7 +4,7 @@ tags: [AUTOSAR, CanNm, 调用逻辑, 代码实现]
 # CanNm 函数调用层级（基于本项目生成代码）
 
 > [!info] 导航
-> 上级：[[CanNm_调用逻辑总览]] ｜ 依赖：[[CanNm_MainFunction调用逻辑]]、[[CanNm_全局变量说明]] ｜ 依据：[[CanNm_AUTOSAR标准需求表_R21-11#SWS_CanNm_002xx|需求表]]
+> 上级：[[CanNm_调用逻辑总览]] ｜ 依赖：CanNm_MainFunction调用逻辑、CanNm_全局变量说明 ｜ 依据：需求表
 
 > 适用文档：AUTOSAR CP R21-11　**实现基线**：AUTOSAR 4.2.2 / NeuSAR CanNm 3.14.0
 > 代码：`AUTOSAR/AUTOSAT使用NEUSAR生成的代码/002_BSW/Bsw_Src/Autosar_Src/src_CanNm/Source/CanNm.c`
@@ -16,7 +16,7 @@ tags: [AUTOSAR, CanNm, 调用逻辑, 代码实现]
 
 | 函数（实际名）                                                                           | 行号   | 上下文             | 说明                                                                  |
 | --------------------------------------------------------------------------------- | ---- | --------------- | ------------------------------------------------------------------- |
-| `CanNm_MainFunction(void)`                                                        | 3618 | SchM/OS 周期任务    | 主状态机、定时器、收发处理（见 [[CanNm_MainFunction调用逻辑]]）                         |
+| `CanNm_MainFunction(void)`                                                        | 3618 | SchM/OS 周期任务    | 主状态机、定时器、收发处理（见 CanNm_MainFunction调用逻辑）                         |
 | `CanNm_Init(const CanNm_ConfigType*)`                                             | 2025 | 初始化（CanIf 之后）   | 调 `CanNm_LocalInit(ch)` 初始化两通道，置 `CanNm_ModuleInitState=CANNM_INIT` |
 | `CanNm_PassiveStartUp(nmChannelHandle)`                                           | 2078 | Nm              | 被动启动，置重启请求 → 主函数迁移                                                  |
 | `CanNm_NetworkRequest(nmChannelHandle)`                                           | 2146 | Nm              | 通信请求，`CanNm_CommState=COMM_NORMAL_OPERATION`                        |
@@ -115,10 +115,10 @@ for (channel = 0; channel < CanNm_GetSizeOfChannelConfig(); channel++)   // 2 �
 | “`CanNm_BuildPdu`” | 实际 `CanNm_TriggerTransmission`（组包 + PduR 用户数据 + CanIf 发送） |
 | “`CanNm_RxHandling`” | 实际 `CanNm_MainRxTxConfHandling` + `CanNm_CopyRxMessageData` + `CanNm_PnFilterHandling` |
 | “配置指针 `CanNm_ConfigPtr`” | 本实现 `CanNm_Init` 实际 **忽略** 配置指针（`CANNM_DUMMY_STATEMENT`），配置由 `CanNm_ChannelConfig[]` 常量表直接引用 |
-| “`CanNm_ChannelState` 结构体” | 不存在；状态用多个按通道数组（见 [[CanNm_全局变量说明]]） |
+| “`CanNm_ChannelState` 结构体” | 不存在；状态用多个按通道数组（见 CanNm_全局变量说明） |
 
 ## 6. 关联
 
-- 变量清单与读写宏：[[CanNm_全局变量说明]]
-- 主函数伪代码与配置值：[[CanNm_MainFunction调用逻辑]]
-- 实现路径与需求：[[CanNm_D1_主动唤醒调用逻辑]]、[[CanNm_D3_主状态转移逻辑]]、[[CanNm_D5_周期发送与降载调用逻辑]]
+- 变量清单与读写宏：CanNm_全局变量说明
+- 主函数伪代码与配置值：CanNm_MainFunction调用逻辑
+- 实现路径与需求：CanNm_D1_主动唤醒调用逻辑、CanNm_D3_主状态转移逻辑、CanNm_D5_周期发送与降载调用逻辑

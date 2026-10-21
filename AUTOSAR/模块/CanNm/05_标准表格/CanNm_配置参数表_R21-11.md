@@ -5,10 +5,10 @@ tags: [AUTOSAR, CanNm, 标准表格]
 # CanNm 配置参数表（ECUC，R21-11）
 
 > [!info] 导航
-> 上级：[[CanNm]] ｜ 依赖：[[CanNm_DaVinci配置项]] ｜ 依据：[[CanNm_AUTOSAR标准需求表_R21-11]]
+> 上级：[[CanNm]] ｜ 依赖：CanNm_DaVinci配置项 ｜ 依据：CanNm_AUTOSAR标准需求表_R21-11
 
 > 适用版本：AUTOSAR CP R21-11　依据：SWS_CanNm 10.2（ECUC_CanNm_xxxxx）
-> 最后更新：2026-10-21　关联：[[CanNm_DaVinci配置项]]、[[CanNm_AUTOSAR标准需求表_R21-11]]
+> 最后更新：2026-10-21　关联：CanNm_DaVinci配置项、CanNm_AUTOSAR标准需求表_R21-11
 
 ## 1. 说明
 
@@ -126,7 +126,7 @@ tags: [AUTOSAR, CanNm, 标准表格]
 | `CANNM_PN_FEATURE_ENABLED` | STD_OFF | — | PN 关闭 |
 | `CANNM_BUS_LOAD_REDUCTION_ENABLED` | STD_ON | — | 降载支持打开，但通道未启用 |
 
-> 详细变量与读写宏见 [[CanNm_全局变量说明]]。
+> 详细变量与读写宏见 CanNm_全局变量说明。
 
 ## 7. 统计
 
@@ -139,4 +139,4 @@ tags: [AUTOSAR, CanNm, 标准表格]
 | 通道参数 | 40（含引用） |
 | PDU/PN 容器与参数 | 15 |
 
-> 参数作用与配置流程见 [[CanNm_DaVinci配置项]]；约束来源为 SWS 10.2 各参数的 Scope/Dependency 字段。
+> 参数作用与配置流程见 CanNm_DaVinci配置项；约束来源为 SWS 10.2 各参数的 Scope/Dependency 字段。

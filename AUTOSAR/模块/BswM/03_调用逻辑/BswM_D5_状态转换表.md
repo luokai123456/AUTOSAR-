@@ -4,7 +4,7 @@ tags: [AUTOSAR, BswM, 调用逻辑]
 # BswM D5：状态转换表
 
 > [!info] 导航
-> 上级：[[BswM_调用逻辑总览]] ｜ 依赖：[[BswM_D3_规则仲裁调用逻辑]]、[[BswM_D2_模式请求与事件输入调用逻辑]] ｜ 依据：[[BswM_AUTOSAR标准需求表_R21-11#SWS_BswM_000xx|需求表]]
+> 上级：[[BswM_调用逻辑总览]] ｜ 依赖：BswM_D3_规则仲裁调用逻辑、BswM_D2_模式请求与事件输入调用逻辑 ｜ 依据：需求表
 
 > 适用版本：AUTOSAR CP R21-11　依据：SWS_BswM 7.1.4、7.2.5、7.3、8.3
 > 最后更新：2026-10-21
@@ -118,3 +118,11 @@ stateDiagram-v2
 ## 6. 需求依据
 
 SWS_BswM_00043~00045、00064、00066、00118~00120、00203、00241、00251、00254、00255、00261~00265。
+
+## 实现对应（代码）
+
+- 初始化状态：`BswM_Initialized[0]`（`BswM_InitState_st.Initialized`）；
+- 请求状态：`BswM_ModeRequestQueue[i].RequestMode`（IDLE/QUEUED/PROCESSED/PENDING/RELEASE）；
+- 动作列表状态：`BswM_ActionListQueue[i].ActionListState`（IDLE/PENDING/BLOCKED）；
+- 定时器状态：`BswM_TimerState[i].Timestate`（STOPPED/STARTED/EXPIRED）；
+- 单分区：`BswM_ProcessingState` 不编译，分区索引恒 0。

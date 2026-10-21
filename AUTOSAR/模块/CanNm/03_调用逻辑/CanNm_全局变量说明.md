@@ -4,7 +4,7 @@ tags: [AUTOSAR, CanNm, 调用逻辑, 代码实现]
 # CanNm 全局变量说明（基于本项目生成代码）
 
 > [!info] 导航
-> 上级：[[CanNm_调用逻辑总览]] ｜ 依赖：[[CanNm_函数调用层级]]、[[CanNm_MainFunction调用逻辑]] ｜ 依据：[[CanNm_配置参数表_R21-11]]
+> 上级：[[CanNm_调用逻辑总览]] ｜ 依赖：CanNm_函数调用层级、CanNm_MainFunction调用逻辑 ｜ 依据：CanNm_配置参数表_R21-11
 
 > 适用文档：AUTOSAR CP R21-11　**实现基线**：AUTOSAR 4.2.2 / NeuSAR CanNm 3.14.0（Neusoft Reach）
 > 代码位置：`AUTOSAR/AUTOSAT使用NEUSAR生成的代码/002_BSW/Bsw_Src/Autosar_Src/src_CanNm/Source/`
@@ -236,7 +236,7 @@ flowchart LR
 
 ## 9. 关联
 
-- 函数层级（实际函数名/行号）：[[CanNm_函数调用层级]]
-- 主函数执行顺序：[[CanNm_MainFunction调用逻辑]]
-- 配置参数：[[CanNm_配置参数表_R21-11]]
-- 需求对照：[[CanNm_AUTOSAR标准需求表_R21-11]]
+- 函数层级（实际函数名/行号）：CanNm_函数调用层级
+- 主函数执行顺序：CanNm_MainFunction调用逻辑
+- 配置参数：CanNm_配置参数表_R21-11
+- 需求对照：CanNm_AUTOSAR标准需求表_R21-11

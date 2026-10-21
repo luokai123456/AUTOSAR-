@@ -4,7 +4,7 @@ tags: [AUTOSAR, BswM, 调用逻辑]
 # BswM D6：定时器与延迟动作调用逻辑
 
 > [!info] 导航
-> 上级：[[BswM_调用逻辑总览]] ｜ 依赖：[[BswM_D3_规则仲裁调用逻辑]]、[[BswM_D5_状态转换表#定时器状态]] ｜ 依据：[[BswM_AUTOSAR标准需求表_R21-11#SWS_BswM_000xx|需求表]]
+> 上级：[[BswM_调用逻辑总览]] ｜ 依赖：BswM_D3_规则仲裁调用逻辑、BswM_D5_状态转换表 定时器状态 ｜ 依据：需求表
 
 > 适用版本：AUTOSAR CP R21-11　依据：SWS_BswM 7.3
 > 最后更新：2026-10-21
@@ -96,3 +96,10 @@ SWS_BswM_00220、00261、00262、00263、00264、00265、7.3。
 2. 定时器一直 EXPIRED 不恢复：没配迁出动作（7.3 Note）；
 3. 定时器没启动：检查 `BswMTimerControl` 是否在动作列表中被执行到；
 4. 定时器被停：`BswMTimerAction = STOP` 被提前执行。
+
+## 实现对应（代码）
+
+- 递减：主函数调用 `BswM_DecreaseTimer`（L723），遍历 `BswM_TimerState[2]`，STARTED 且值 >0 时递减，到 0 置 EXPIRED；
+- 启停：动作列表调用 `BswM_TimerStart/Stop`（`BswM_Lcfg.c`）；
+- 延迟规则：`BswM_ExecuteDeferredRules`（L802）遍历 `BswM_DeferredRules[20]`，规则命中后排队动作列表；
+- 注意：定时器不会自动重装/自动停止，EXPIRED 需动作迁出。

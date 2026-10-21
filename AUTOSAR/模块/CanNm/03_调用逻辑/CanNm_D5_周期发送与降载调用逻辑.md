@@ -5,10 +5,10 @@ tags: [AUTOSAR, CanNm, 调用逻辑]
 # CanNm D5：周期发送与降载调用逻辑
 
 > [!info] 导航
-> 上级：[[CanNm_调用逻辑总览]] ｜ 依赖：[[CanNm_D4_状态转换表]]、[[CanNm_BusLoadReductionActive说明]] ｜ 依据：[[CanNm_AUTOSAR标准需求表_R21-11#SWS_CanNm_000xx|需求表]]
+> 上级：[[CanNm_调用逻辑总览]] ｜ 依赖：CanNm_D4_状态转换表、CanNm_BusLoadReductionActive说明 ｜ 依据：需求表
 
 > 适用版本：AUTOSAR CP R21-11　依据：SWS_CanNm 7.6、7.7、7.8、7.9.2、7.12
-> 最后更新：2026-10-21　关联：[[CanNm_调用逻辑总览]]、[[CanNm_D1_主动唤醒调用逻辑]]、[[CanNm_D4_状态转换表]]
+> 最后更新：2026-10-21　关联：[[CanNm_调用逻辑总览]]、CanNm_D1_主动唤醒调用逻辑、CanNm_D4_状态转换表
 
 ## 1. 范围
 
@@ -51,7 +51,7 @@ CanNm_MainFunction()
 
 ## 4. 总线负载降低（Bus Load Reduction）
 
-前提：`CanNmBusLoadReductionEnabled=TRUE` 且 `CanNmBusLoadReductionActive=TRUE`（详见 [[CanNm_BusLoadReductionActive说明]]）。
+前提：`CanNmBusLoadReductionEnabled=TRUE` 且 `CanNmBusLoadReductionActive=TRUE`（详见 CanNm_BusLoadReductionActive说明）。
 
 | 事件 | Message Cycle Timer 重装值 |
 |---|---|
@@ -100,7 +100,7 @@ SWS_CanNm_00005、00006、00013、00035、00040、00051、00052、00064~00066、
 1. 抓总线看 NM 帧间隔：正常 = `MsgCycleTime`；降载 = 两帧靠得近 + 静默交替；Repeat Message 前几帧可能是立即发送；
 2. 若"一直不发"：查状态是否 Network Mode、发送能力是否被禁、passive 是否打开；
 3. 若"发了但确认超时"：查 CanIf 的 Tx PDU/确认 ID 配置、总线错误；
-4. 若"负载降低没效果"：确认全局 Enabled + 通道 Active 都打开（[[CanNm_BusLoadReductionActive说明]]）。
+4. 若"负载降低没效果"：确认全局 Enabled + 通道 Active 都打开（CanNm_BusLoadReductionActive说明）。
 
 ## 实现对应（代码）
 

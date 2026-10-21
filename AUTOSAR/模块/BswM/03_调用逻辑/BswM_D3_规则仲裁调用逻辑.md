@@ -4,7 +4,7 @@ tags: [AUTOSAR, BswM, 调用逻辑]
 # BswM D3：规则仲裁调用逻辑
 
 > [!info] 导航
-> 上级：[[BswM_调用逻辑总览]] ｜ 依赖：[[BswM_D2_模式请求与事件输入调用逻辑]]、[[BswM_D4_动作列表与动作执行调用逻辑]]、[[BswM_D5_状态转换表#规则求值状态]] ｜ 依据：[[BswM_AUTOSAR标准需求表_R21-11#SWS_BswM_000xx|需求表]]
+> 上级：[[BswM_调用逻辑总览]] ｜ 依赖：BswM_D2_模式请求与事件输入调用逻辑、BswM_D4_动作列表与动作执行调用逻辑、BswM_D5_状态转换表 规则求值状态 ｜ 依据：需求表
 
 > 适用版本：AUTOSAR CP R21-11　依据：SWS_BswM 7.1、7.2.2、7.2.5
 > 最后更新：2026-10-21
@@ -109,3 +109,10 @@ SWS_BswM_00009、00010、00011、00012、00015、00023、00035、00059、00060�
 2. 规则频繁触发：条件抖动，考虑 TRIGGER + 定时器去抖（D6）；
 3. 首次行为不符预期：检查 `BswMRuleInitState` 与 `BswMActionListExecution` 组合（表 7.1）；
 4. 逻辑结果不对：注意 NAND/NOT 参数个数约束、求值顺序不定义。
+
+## 实现对应（代码）
+
+- 规则被编译为函数：`BswM_Rules[i].FctPtrOfRules()`（`BswM_Lcfg.c`），返回动作列表 ID（`uint8`，`<27` 有效）；
+- 立即请求路径：`BswM_ProcessQueuedRequests`（L555）用 `BswM_ImmediateUser[].RulesIndStartIdx/EndIdx` + `BswM_RulesInd[45]` 遍历规则；
+- 延迟规则路径：`BswM_ExecuteDeferredRules`（L802）按 `BswM_DeferredRules[20]` 调规则函数；
+- 不存在通用的“条件/表达式解释器”，条件比较全部在生成规则函数内部。

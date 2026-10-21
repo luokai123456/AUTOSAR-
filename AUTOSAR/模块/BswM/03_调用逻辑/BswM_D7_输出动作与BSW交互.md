@@ -4,7 +4,7 @@ tags: [AUTOSAR, BswM, 调用逻辑]
 # BswM D7：输出动作与 BSW 交互
 
 > [!info] 导航
-> 上级：[[BswM_调用逻辑总览]] ｜ 依赖：[[BswM_D4_动作列表与动作执行调用逻辑]] ｜ 依据：[[BswM_AUTOSAR标准需求表_R21-11#SWS_BswM_000xx|需求表]]
+> 上级：[[BswM_调用逻辑总览]] ｜ 依赖：BswM_D4_动作列表与动作执行调用逻辑 ｜ 依据：需求表
 
 > 适用版本：AUTOSAR CP R21-11　依据：SWS_BswM 7.2.4、10.2（各 Action 容器）
 > 最后更新：2026-10-21
@@ -78,7 +78,7 @@ BswM_ExecuteActionList()（D4）
 | `BswMUserCallout` | 任意用户函数 | `NvM_ReadAll/WriteAll`、自定义动作（00269 之外） |
 | `BswMCoreHaltMode` | OS Core Halt | 多核 HALT |
 
-> 动作名在前，具体 API 以"动作容器 → 目标函数"为准；完整容器参数见 [[BswM_配置参数表_R21-11]] 的 Actions 部分。
+> 动作名在前，具体 API 以"动作容器 → 目标函数"为准；完整容器参数见 BswM_配置参数表_R21-11 的 Actions 部分。
 
 ## 4. 典型输出时序
 
@@ -106,8 +106,15 @@ sequenceDiagram
 - 动作只能在动作列表中被调用（00147）；
 - 标准允许调用任意 BSW 函数（00039）与用户函数（00040、00054）；
 - BswM 不保存动作返回值，仅按失败配置处理（D4）；
-- 各动作在 DaVinci 中的参数见 [[BswM_DaVinci配置项]]。
+- 各动作在 DaVinci 中的参数见 BswM_DaVinci配置项。
 
 ## 6. 需求依据
 
 SWS_BswM_00038、00039、00040、00054、00147、00269、00271、00272、00273、00274、00280、00286、91005（SoAd）。
+
+## 实现对应（代码）
+
+- 输出动作在生成的 `BswM_ActionList_AL_*()`（`BswM_Lcfg.c`）内直接调用 BSW API（ComM/Com/CanSM/EcuM/NvM/RTE 等）；
+- IPDU 组控制：主函数末尾 `BswM_ExecuteIpduGroupControl()`（`BSWM_IPDU_GROUP_CONTROL=ON`）；
+- 项目定制输出：`BswM_Callout_Stubs.c`（复位、上下电、CAN 驱动、SWC 延时下电等）；
+- 回调链：`BswM_<Module>.h` 中的薄封装 → `BswM_RequestMode`/`BswM_ImmediateModeRequest`。

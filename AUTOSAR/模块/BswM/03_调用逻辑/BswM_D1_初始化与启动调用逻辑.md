@@ -4,7 +4,7 @@ tags: [AUTOSAR, BswM, 调用逻辑]
 # BswM D1：初始化与启动调用逻辑
 
 > [!info] 导航
-> 上级：[[BswM_调用逻辑总览]] ｜ 依赖：[[BswM_D3_规则仲裁调用逻辑]]、[[BswM_D5_状态转换表#初始化阶段]] ｜ 依据：[[BswM_AUTOSAR标准需求表_R21-11#SWS_BswM_000xx|需求表]]
+> 上级：[[BswM_调用逻辑总览]] ｜ 依赖：BswM_D3_规则仲裁调用逻辑、BswM_D5_状态转换表 初始化阶段 ｜ 依据：需求表
 
 > 适用版本：AUTOSAR CP R21-11　依据：SWS_BswM 7.1.4、8.3.16、SWS_EcuM 7.9
 > 最后更新：2026-10-21
@@ -99,3 +99,10 @@ SWS_BswM_00002、00043、00044、00045、00064、00066、00118、00120、00203�
 2. 启动后规则不生效：先查端口是否"未定义"（没配初值且还没收到指示）；
 3. 启动阶段动作顺序：由动作列表 ItemIndex 决定，开通信前应先启动发送链路；
 4. 若 `BswM_Deinit` 已调用，后续所有模式处理停止（00120）。
+
+## 实现对应（代码）
+
+- `BswM_Init`（L1051）：锁信号量 → 初始化 `BswM_ActionListQueue[27]`/端口值/`BswM_TimerState[2]` → 处理初始化阶段的立即请求（`BswM_ProcessQueuedRequests`）→ 解锁；
+- 初始化动作列表：`AL_InitToRun`（`BswM_ActionList_AL_InitToRun`）；
+- 关键变量：`BswM_Initialized[0]`、`BswM_QueueSemaphore[0]`、`BswM_QueueWritten[0]`；
+- 说明：`BswM_Init` 的 `ConfigPtr` 未使用（`BswM_ConfigType` 为空结构）。

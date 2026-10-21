@@ -4,7 +4,7 @@ tags: [AUTOSAR, CanNm, 调用逻辑]
 # CanNm D4：状态转换表
 
 > [!info] 导航
-> 上级：[[CanNm_调用逻辑总览]] ｜ 依赖：[[CanNm_D3_主状态转移逻辑]] ｜ 依据：[[CanNm_AUTOSAR标准需求表_R21-11#SWS_CanNm_001xx|需求表]]
+> 上级：[[CanNm_调用逻辑总览]] ｜ 依赖：CanNm_D3_主状态转移逻辑 ｜ 依据：需求表
 
 > 适用版本：AUTOSAR CP R21-11　依据：SWS_CanNm 7.2、7.3
 > 最后更新：2026-10-21
@@ -110,13 +110,13 @@ stateDiagram-v2
 - **RMR 位只在节点检测开启时生效**（`CanNmNodeDetectionEnabled=TRUE`）。
 - **任何状态都可以被 0x28 禁用发送**，但状态机不迁移（只有发送与超时监控被停）。
 - **Prepare Bus-Sleep 中不应有总线活动**（除极短的重启路径）。
-- **异常路径**：超时/发送失败会触发 DET 或 `Nm_TxTimeoutException`，见 [[CanNm_D7_扩展特性调用逻辑]]。
+- **异常路径**：超时/发送失败会触发 DET 或 `Nm_TxTimeoutException`，见 CanNm_D7_扩展特性调用逻辑。
 
 ## 6. 关联
 
-- 状态机叙述：[[CanNm_D3_主状态转移逻辑]]
-- 发送行为：[[CanNm_D5_周期发送与降载调用逻辑]]
-- 主函数执行：[[CanNm_MainFunction调用逻辑]]
+- 状态机叙述：CanNm_D3_主状态转移逻辑
+- 发送行为：CanNm_D5_周期发送与降载调用逻辑
+- 主函数执行：CanNm_MainFunction调用逻辑
 
 ## 实现对应（代码）
 

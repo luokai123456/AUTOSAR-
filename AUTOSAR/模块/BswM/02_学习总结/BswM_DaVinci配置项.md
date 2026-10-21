@@ -5,7 +5,7 @@ tags: [AUTOSAR, BswM, 学习总结]
 # BswM 在 DaVinci Configurator 中的配置项详解
 
 > [!info] 导航
-> 上级：[[BswM]] ｜ 依赖：[[BswM_配置参数表_R21-11]]、[[BswM_D4_动作列表与动作执行调用逻辑]] ｜ 依据：[[BswM_AUTOSAR标准需求表_R21-11]]
+> 上级：[[BswM]] ｜ 依赖：BswM_配置参数表_R21-11、BswM_D4_动作列表与动作执行调用逻辑 ｜ 依据：BswM_AUTOSAR标准需求表_R21-11
 
 > 适用版本：AUTOSAR CP R21-11　依据：AUTOSAR_SWS_BSWModeManager 第 10 章（ECUC 配置规范）
 > 工具：Vector DaVinci Configurator Classic（不同版本界面措辞略有差异，但列出的容器/参数名与 AUTOSAR 配置规范一致）

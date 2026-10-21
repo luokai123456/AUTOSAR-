@@ -4,7 +4,7 @@ tags: [AUTOSAR, BswM, 标准表格]
 # BswM AUTOSAR 标准需求表（R21-11）
 
 > [!info] 导航
-> 上级：[[BswM]] ｜ 依赖：[[BswM_配置参数表_R21-11]]、[[BswM_需求追溯与覆盖度]] ｜ 依据：AUTOSAR_SWS_BSWModeManager.pdf（Document ID 313，159 页）
+> 上级：[[BswM]] ｜ 依赖：BswM_配置参数表_R21-11、BswM_需求追溯与覆盖度 ｜ 依据：AUTOSAR_SWS_BSWModeManager.pdf（Document ID 313，159 页）
 
 > 适用版本：AUTOSAR CP R21-11　最后更新：2026-10-21
 > 说明：把 SWS 正文需求块整理为中文，**需求号保留官方原文**；按需求号分组（组标题即 Obsidian 锚点），组内按需求号升序。
@@ -12,8 +12,8 @@ tags: [AUTOSAR, BswM, 标准表格]
 ## 1. 使用说明
 
 - 需求号：`SWS_BswM_xxxxx`（功能/接口）、`SWS_BswM_CONSTR_xxxxx`（配置约束）。
-- 引用：`[[BswM_AUTOSAR标准需求表_R21-11#SWS_BswM_000xx|SWS_BswM_00009]]`。
-- 实现路径：[[BswM_调用逻辑总览]] D1~D7；配置：[[BswM_配置参数表_R21-11]]；追溯：[[BswM_需求追溯与覆盖度]]。
+- 引用：`SWS_BswM_00009`。
+- 实现路径：BswM_调用逻辑总览 D1~D7；配置：BswM_配置参数表_R21-11；追溯：BswM_需求追溯与覆盖度。
 
 ## 2. 分组索引
 

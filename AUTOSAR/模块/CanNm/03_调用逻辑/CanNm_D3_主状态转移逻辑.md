@@ -5,10 +5,10 @@ tags: [AUTOSAR, CanNm, 调用逻辑]
 # CanNm D3：主状态转移逻辑
 
 > [!info] 导航
-> 上级：[[CanNm_调用逻辑总览]] ｜ 依赖：[[CanNm_D4_状态转换表]] ｜ 依据：[[CanNm_AUTOSAR标准需求表_R21-11#SWS_CanNm_000xx|需求表]]
+> 上级：[[CanNm_调用逻辑总览]] ｜ 依赖：CanNm_D4_状态转换表 ｜ 依据：需求表
 
 > 适用版本：AUTOSAR CP R21-11　依据：SWS_CanNm 7.2、7.3、7.4、7.9.6、7.15
-> 最后更新：2026-10-21　关联：[[CanNm_调用逻辑总览]]、[[CanNm_D4_状态转换表]]、[[CanNm_MainFunction调用逻辑]]
+> 最后更新：2026-10-21　关联：[[CanNm_调用逻辑总览]]、CanNm_D4_状态转换表、CanNm_MainFunction调用逻辑
 
 ## 1. 状态模型
 
@@ -91,14 +91,14 @@ SWS_CanNm_00087~00094、00096~00129、00141~00144、00156、00157、00166、0019
 
 ## 7. 与其他方向的关系
 
-- 进入 Network Mode 的两条路径：[[CanNm_D1_主动唤醒调用逻辑]]、[[CanNm_D2_被动唤醒调用逻辑]]；
-- 状态内的周期发送：[[CanNm_D5_周期发送与降载调用逻辑]]；
-- 通信控制对状态机的影响：[[CanNm_D6_通信控制调用逻辑]]；
-- 查表版本：[[CanNm_D4_状态转换表]]。
+- 进入 Network Mode 的两条路径：CanNm_D1_主动唤醒调用逻辑、CanNm_D2_被动唤醒调用逻辑；
+- 状态内的周期发送：CanNm_D5_周期发送与降载调用逻辑；
+- 通信控制对状态机的影响：CanNm_D6_通信控制调用逻辑；
+- 查表版本：CanNm_D4_状态转换表。
 
 ## 实现对应（代码）
 
 - 唯一迁移入口：`CanNm_StateTransition`（L1838），按目标状态执行进入动作（BusSleep/Prepare/Ready/Normal/Repeat）；
 - 迁移触发：`BusCommunicationHandling`（L940）、6 个 timer handler（Timeout/Repeat/WaitBusSleep/Msg/MsgTimeout/RemoteSleep）；
 - 状态存放：`CanNm_NmState[ch]`（`CanNm_GetNmState`），通信请求状态：`CanNm_CommState[ch]`；
-- 相关文档：[[CanNm_函数调用层级]]。
+- 相关文档：CanNm_函数调用层级。

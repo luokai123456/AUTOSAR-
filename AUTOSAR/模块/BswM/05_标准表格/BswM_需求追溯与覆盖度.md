@@ -4,7 +4,7 @@ tags: [AUTOSAR, BswM, 标准表格]
 # BswM 需求追溯与覆盖度
 
 > [!info] 导航
-> 上级：[[BswM]] ｜ 依赖：[[BswM_AUTOSAR标准需求表_R21-11]] ｜ 依据：SWS_BswM 第 6 章（Requirements Tracing）、第 12 章
+> 上级：[[BswM]] ｜ 依赖：BswM_AUTOSAR标准需求表_R21-11 ｜ 依据：SWS_BswM 第 6 章（Requirements Tracing）、第 12 章
 
 > 适用版本：AUTOSAR CP R21-11　最后更新：2026-10-21
 
@@ -51,8 +51,8 @@ tags: [AUTOSAR, BswM, 标准表格]
 | 追溯条目 | 25 | SWS 第 6 章 |
 | 由 BswM 满足的条目 | 21 | 有对应 SWS_BswM 需求 |
 | 不适用条目 | 4 | 09999（第 12 章） |
-| SWS 需求总表 | 181 / 181 | 见 [[BswM_AUTOSAR标准需求表_R21-11]] |
-| 配置参数表 | 91（整理约 70） | 见 [[BswM_配置参数表_R21-11]] |
+| SWS 需求总表 | 181 / 181 | 见 BswM_AUTOSAR标准需求表_R21-11 |
+| 配置参数表 | 91（整理约 70） | 见 BswM_配置参数表_R21-11 |
 
 ## 4. 裁剪/评审提示
 

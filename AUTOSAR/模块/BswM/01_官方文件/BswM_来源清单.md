@@ -48,3 +48,13 @@ tags: [AUTOSAR, BswM, 官方文件]
 
 为便于检索，已用 pypdf 将 PDF 提取为文本（仅本地检索用，未放入交付目录）：
 `C:\Users\11401\Desktop\学习\.tools\tmp\*.txt`。
+
+## 本地实现代码（非官方文档）
+
+| 项目 | 路径/版本 |
+|---|---|
+| 生成代码根目录 | `AUTOSAR/AUTOSAT使用NEUSAR生成的代码/` |
+| BswM 源码 | `002_BSW/Bsw_Src/Autosar_Src/src_BswM/Source/`：`BswM.c`、`BswM.h`、`BswM_Cfg.h`、`BswM_Lcfg.c`、`BswM_Callout_Stubs.c`、各 `BswM_<Module>.h` |
+| 调度/类型 | `src_Rte/Source/SchM_BswM.h`、`Rte_BswM_Type.h`；`src_MemMap/Source/BswM_MemMap.h` |
+| 版本 | BswM 3.14.0 / AUTOSAR 4.2.2（NeuSAR） |
+| 说明 | 变量/函数以代码为准，见 `BswM_全局变量说明`、`BswM_函数调用层级` |

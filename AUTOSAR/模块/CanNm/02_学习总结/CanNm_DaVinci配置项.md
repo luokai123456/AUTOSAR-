@@ -5,7 +5,7 @@ tags: [AUTOSAR, CanNm, 学习总结]
 # CanNm 在 DaVinci Configurator 中的配置项详解
 
 > [!info] 导航
-> 上级：[[CanNm]] ｜ 依赖：[[CanNm_配置参数表_R21-11]]、[[CanNm_D4_状态转换表]] ｜ 依据：[[CanNm_AUTOSAR标准需求表_R21-11]]
+> 上级：[[CanNm]] ｜ 依赖：CanNm_配置参数表_R21-11、CanNm_D4_状态转换表 ｜ 依据：CanNm_AUTOSAR标准需求表_R21-11
 
 > 适用版本：AUTOSAR CP R21-11　依据：SWS_CanNm 第 10 章（ECUC 配置规范）、第 7 章功能约束
 > 工具：Vector DaVinci Configurator Classic（界面措辞随版本略有差异，容器/参数名与 ECUC 规范一致）

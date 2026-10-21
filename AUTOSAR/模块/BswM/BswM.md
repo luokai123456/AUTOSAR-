@@ -13,6 +13,7 @@ aliases: [BswM模块总览, BSW Mode Manager]
 BswM（BSW Mode Manager）是 BSW 中的**模式仲裁 + 模式控制**框架：把来自 EcuM/ComM/Dcm/总线状态管理器/SWC 的模式请求与指示，用布尔规则仲裁成"当前应处于什么模式"，再通过动作列表调用其他 BSW 模块的 API（开关通信、切 PDU 组、NvM 读写、RTE 切换、下电等）。行为完全由配置决定。
 
 - 适用版本：AUTOSAR CP R21-11（SWS_BSWModeManager，Document ID 313）
+- **实现基线**：NeuSAR BswM 3.14.0 / AUTOSAR 4.2.2（`AUTOSAT使用NEUSAR生成的代码/src_BswM`），单分区、27 动作列表/26 规则；变量与函数以代码为准
 - 模块边界：Services 层；不做 EcuM 的启动/唤醒源管理，不直接操作硬件；动作委托给 Com/ComM/PduR/NvM/EcuM/RTE 等。
 
 ## 2. 快速入口（5 个主题）
@@ -52,11 +53,11 @@ flowchart TB
     HUB --> MF
 ```
 
-- 入口：[[BswM_D1_初始化与启动调用逻辑]]、[[BswM_D2_模式请求与事件输入调用逻辑]]
-- 核心：[[BswM_D3_规则仲裁调用逻辑]]（条件→表达式→规则）
-- 执行：[[BswM_D4_动作列表与动作执行调用逻辑]]、[[BswM_D7_输出动作与BSW交互]]
-- 辅助：[[BswM_D5_状态转换表]]、[[BswM_D6_定时器与延迟动作调用逻辑]]
-- 支撑：[[BswM_函数调用层级]]、[[BswM_全局变量说明]]
+- 入口：BswM_D1_初始化与启动调用逻辑、BswM_D2_模式请求与事件输入调用逻辑
+- 核心：BswM_D3_规则仲裁调用逻辑（条件→表达式→规则）
+- 执行：BswM_D4_动作列表与动作执行调用逻辑、BswM_D7_输出动作与BSW交互
+- 辅助：BswM_D5_状态转换表、BswM_D6_定时器与延迟动作调用逻辑
+- 支撑：BswM_函数调用层级、BswM_全局变量说明
 
 ## 4. 交付物状态
 

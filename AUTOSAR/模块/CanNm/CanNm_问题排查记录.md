@@ -5,10 +5,10 @@ tags: [AUTOSAR, CanNm, 问题排查]
 # CanNm 问题排查记录
 
 > [!info] 导航
-> 上级：[[CanNm]] ｜ 依赖：[[CanNm_DaVinci配置项]]、[[CanNm_调用逻辑总览]]
+> 上级：[[CanNm]] ｜ 依赖：CanNm_DaVinci配置项、CanNm_调用逻辑总览
 
 > 记录**非 AUTOSAR 标准问题**（DaVinci/工具链、BSWMD 版本、编译器/链接、ECU 硬件、项目定制、供应商实现差异等）。
-> 标准行为问题请写进 [[CanNm_模块作用与架构定位]] / [[CanNm_调用逻辑总览]] / [[CanNm_AUTOSAR标准需求表_R21-11]]。
+> 标准行为问题请写进 CanNm_模块作用与架构定位 / CanNm_调用逻辑总览 / CanNm_AUTOSAR标准需求表_R21-11。
 > 最后更新：2026-10-21
 
 ## 使用说明
@@ -42,7 +42,7 @@ tags: [AUTOSAR, CanNm, 问题排查]
 - **解决方案**：重新生成并确认生成日志无 error。
 - **规避/临时措施**：把"修改 CanNm 配置后必须重新生成"写进项目检查单。
 - **回归验证**：抓总线确认降载行为符合预期。
-- **关联文档**：[[CanNm_BusLoadReductionActive说明]]、[[CanNm_DaVinci配置项]]
+- **关联文档**：CanNm_BusLoadReductionActive说明、CanNm_DaVinci配置项
 
 ---
 

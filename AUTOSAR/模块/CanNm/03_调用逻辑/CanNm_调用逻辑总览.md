@@ -27,9 +27,9 @@ tags: [AUTOSAR, CanNm, 调用逻辑]
 
 - 函数层级：[[CanNm_函数调用层级]]
 - 全局变量：[[CanNm_全局变量说明]]
-- 主函数调用逻辑：[[CanNm_MainFunction调用逻辑]]
-- 标准需求：[[CanNm_AUTOSAR标准需求表_R21-11]]
-- 配置项：[[CanNm_DaVinci配置项]]
+- 主函数调用逻辑：CanNm_MainFunction调用逻辑
+- 标准需求：CanNm_AUTOSAR标准需求表_R21-11
+- 配置项：CanNm_DaVinci配置项
 
 ## 2. 调用逻辑层级（L2）
 
@@ -101,13 +101,16 @@ flowchart LR
 3. [[CanNm_D3_主状态转移逻辑]] + [[CanNm_D4_状态转换表]]（状态机）
 4. [[CanNm_D5_周期发送与降载调用逻辑]]、[[CanNm_D6_通信控制调用逻辑]]、[[CanNm_D7_扩展特性调用逻辑]]
 5. [[CanNm_函数调用层级]]、[[CanNm_全局变量说明]]
-6. [[CanNm_MainFunction调用逻辑]]（按方向映射到主函数）
+6. CanNm_MainFunction调用逻辑（按方向映射到主函数）
 
 ## 5. 本文档的结构约定
 
 - 每条主线：**触发 → 调用链（从上到下）→ 状态/数据变化 → 输出 → 依据需求号**；
 - 函数名：SWS 规定的 API 用标准名；模块内部处理函数用"逻辑名 +（实现相关）"标注；
-- 需求号：形如 `SWS_CanNm_xxxxx`，与 [[CanNm_AUTOSAR标准需求表_R21-11]] 对应；
+- 需求号：形如 `SWS_CanNm_xxxxx`，对应标准需求表（见 CanNm 入口）；
+
+> **图谱约定**：双链只保留“上级 ↔ 下级”（本页 ↔ D1~D7/函数层级/全局变量）。同级文档之间不再互链，改用纯文本或 Mermaid，避免 Obsidian 图谱交叉。
+
 ## 6. 实现代码导航（NeuSAR 3.14 / AR 4.2.2）
 
 | 文件 | 内容 |
@@ -121,4 +124,4 @@ flowchart LR
 
 - 变量对照：[[CanNm_全局变量说明]]
 - 函数与行号：[[CanNm_函数调用层级]]
-- 主函数顺序：[[CanNm_MainFunction调用逻辑]]
+- 主函数顺序：见 CanNm_MainFunction调用逻辑（从 CanNm 入口进入）

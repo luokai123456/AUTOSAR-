@@ -5,7 +5,7 @@ tags: [AUTOSAR, CanNm, 学习总结]
 # CanNm 一页纸复盘（面试/工作可复述版）
 
 > [!info] 导航
-> 上级：[[CanNm]] ｜ 依赖：[[CanNm_调用逻辑总览]]、[[CanNm_D4_状态转换表]] ｜ 依据：[[CanNm_AUTOSAR标准需求表_R21-11]]
+> 上级：[[CanNm]] ｜ 依赖：CanNm_调用逻辑总览、CanNm_D4_状态转换表 ｜ 依据：CanNm_AUTOSAR标准需求表_R21-11
 
 > 用途：3 分钟讲清 CanNm；10 分钟讲清状态机与配置。依据 R21-11 SWS。
 

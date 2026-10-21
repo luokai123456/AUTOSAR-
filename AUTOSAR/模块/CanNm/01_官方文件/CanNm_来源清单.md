@@ -54,4 +54,4 @@ tags: [AUTOSAR, CanNm, 官方文件]
 | CanNm 源码 | `002_BSW/Bsw_Src/Autosar_Src/src_CanNm/Source/`：`CanNm.c`、`CanNm.h`、`CanNm_Cbk.h`、`CanNm_Cfg.c`、`CanNm_Cfg.h` |
 | 调度/类型 | `002_BSW/Bsw_Src/Autosar_Src/src_Rte/Source/SchM_CanNm.h`、`Rte_CanNm_Type.h`；`src_Nm/Source/NmStack_Types.h` |
 | 版本 | CanNm 3.14.0 / AUTOSAR 4.2.2（NeuSAR，Neusoft Reach） |
-| 说明 | 与 R21-11 文档存在版本差异；变量/函数以代码为准，见 [[CanNm_全局变量说明]]、[[CanNm_函数调用层级]] |
+| 说明 | 与 R21-11 文档存在版本差异；变量/函数以代码为准，见 CanNm_全局变量说明、CanNm_函数调用层级 |

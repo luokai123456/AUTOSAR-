@@ -4,7 +4,7 @@ tags: [AUTOSAR, BswM, 标准表格]
 # BswM 配置参数表（ECUC，R21-11）
 
 > [!info] 导航
-> 上级：[[BswM]] ｜ 依赖：[[BswM_DaVinci配置项]] ｜ 依据：[[BswM_AUTOSAR标准需求表_R21-11]]
+> 上级：[[BswM]] ｜ 依赖：BswM_DaVinci配置项 ｜ 依据：BswM_AUTOSAR标准需求表_R21-11
 
 > 适用版本：AUTOSAR CP R21-11　依据：SWS_BswM 第 10 章（ECUC_BswM_xxxxx）
 > 最后更新：2026-10-21
@@ -157,4 +157,26 @@ tags: [AUTOSAR, BswM, 标准表格]
 | 本表整理（关键参数/容器/动作） | 约 70 |
 | 配置约束 CONSTR | 6 |
 
-> 参数作用与 DaVinci 配置流程见 [[BswM_DaVinci配置项]]；约束来源为 SWS 10.2 的 Scope/Dependency 字段。
+> 参数作用与 DaVinci 配置流程见 BswM_DaVinci配置项；约束来源为 SWS 10.2 的 Scope/Dependency 字段。
+
+## 本项目实例值（NeuSAR 3.14 / AR 4.2.2 生成代码）
+
+> 来源：`BswM_Cfg.h` L154~184、`BswM_Lcfg.c`；代码中配置不以 ECUC 名出现，而是规模宏 + 生成常量表。
+
+| 配置项 | 值 | 说明 |
+|---|---|---|
+| `BSWM_MULTIPARTITION` | STD_OFF | 单分区 |
+| `BSWM_BSWMCONFIG_SIZE` | 1 | 配置集数量 |
+| `BSWM_SIZE_ACTIONLIST` | 27 | 动作列表（AL_InitToRun、AL_RunToPostRun、AL_CANSM_IpduStart_* 等） |
+| `BSWM_SIZE_RULE` / `BSWM_SIZE_RULEIND` | 26 / 45 | 规则数 / 规则索引 |
+| `BSWM_SIZE_DEFERRED_RULE` | 20 | 延迟规则 |
+| `BSWM_SIZE_IMMEDIATE_USER` | 4 | 立即请求队列 |
+| `BSWM_SIZE_TIMER` | 2 | 定时器 |
+| `BSWM_SIZE_COMM_CHANNEL` / `BSWM_SIZE_DCM_CHANNEL` | 7 / 7 | ComM / Dcm 通道 |
+| `BSWM_SIZE_GENERIC` | 5 | 通用请求端口 |
+| `BSWM_SIZE_LINSMSCHEDULE` / `LINSM_CHANNEL` | 1 / 1 | LinSM |
+| 其余通道类 | 0 | CanSM/EthSM/PNC/NvM/EcuM/Sd/FrSM/LinTp/J1939 未生成 |
+| `BSWM_IPDU_GROUP_CONTROL` | STD_ON | 主函数末尾执行 IPDU 组控制 |
+| `BSWM_SWCMODEREQUESTUPDATE_FUNC` / `MODENOTIFICATION_FUNC` | OFF / OFF | 不编译 |
+
+> 详细变量/函数见 `BswM_全局变量说明`、`BswM_函数调用层级`。

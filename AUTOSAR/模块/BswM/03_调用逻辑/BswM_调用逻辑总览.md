@@ -25,9 +25,9 @@ tags: [AUTOSAR, BswM, 调用逻辑]
 
 - 函数层级：[[BswM_函数调用层级]]
 - 全局变量：[[BswM_全局变量说明]]
-- 主函数调用逻辑：[[BswM_MainFunction调用逻辑]]
-- 标准需求：[[BswM_AUTOSAR标准需求表_R21-11]]
-- 配置项：[[BswM_DaVinci配置项]]
+- 主函数调用逻辑：BswM_MainFunction调用逻辑
+- 标准需求：BswM_AUTOSAR标准需求表_R21-11
+- 配置项：BswM_DaVinci配置项
 
 ## 2. 调用逻辑层级（L2）
 
@@ -109,10 +109,24 @@ flowchart LR
 4. [[BswM_D5_状态转换表]]、[[BswM_D6_定时器与延迟动作调用逻辑]]
 5. [[BswM_D7_输出动作与BSW交互]]
 6. [[BswM_函数调用层级]]、[[BswM_全局变量说明]]
-7. [[BswM_MainFunction调用逻辑]]
+7. BswM_MainFunction调用逻辑
 
 ## 5. 本文档的结构约定
 
 - 每条主线：**触发 → 调用链（从上到下）→ 状态/数据变化 → 输出 → 依据需求号**；
 - 内部函数用"逻辑名 +（实现相关）"标注；
-- 需求号形如 `SWS_BswM_xxxxx`，与 [[BswM_AUTOSAR标准需求表_R21-11]] 对应。
+- 需求号形如 `SWS_BswM_xxxxx`，与 BswM_AUTOSAR标准需求表_R21-11 对应。
+
+## 7. 实现代码导航（NeuSAR 3.14 / AR 4.2.2）
+
+| 文件 | 内容 |
+|---|---|
+| `src_BswM/Source/BswM.c` | 主函数、API、回调、队列/仲裁/执行核心（3434 行） |
+| `src_BswM/Source/BswM_Lcfg.c` | 配置常量：动作列表函数、规则函数、映射表（1684 行） |
+| `src_BswM/Source/BswM_Cfg.h` | 规模宏、状态结构体、全局变量 extern（625 行） |
+| `src_BswM/Source/BswM_Callout_Stubs.c` | 项目定制动作（复位/上下电/CAN 驱动等） |
+| `src_BswM/Source/BswM_<Module>.h` | 各模块回调薄封装（ComM/CanSM/EcuM/Dcm/NvM/Sd/Lin…） |
+
+- 变量对照：`BswM_全局变量说明`
+- 函数与行号：`BswM_函数调用层级`
+- 主函数顺序：`BswM_MainFunction调用逻辑`

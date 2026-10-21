@@ -5,10 +5,10 @@ tags: [AUTOSAR, CanNm, 调用逻辑]
 # CanNm D2：被动唤醒调用逻辑
 
 > [!info] 导航
-> 上级：[[CanNm_调用逻辑总览]] ｜ 依赖：[[CanNm_D3_主状态转移逻辑]]、[[CanNm_D4_状态转换表#从 Bus-Sleep 出发]] ｜ 依据：[[CanNm_AUTOSAR标准需求表_R21-11#SWS_CanNm_001xx|需求表]]
+> 上级：[[CanNm_调用逻辑总览]] ｜ 依赖：CanNm_D3_主状态转移逻辑、CanNm_D4_状态转换表 从 Bus-Sleep 出发 ｜ 依据：需求表
 
 > 适用版本：AUTOSAR CP R21-11　依据：SWS_CanNm 7.2.3、7.3、7.7.2、7.9.3、7.10、8.3.3、8.4.2
-> 最后更新：2026-10-21　关联：[[CanNm_调用逻辑总览]]、[[CanNm_D1_主动唤醒调用逻辑]]、[[CanNm_D3_主状态转移逻辑]]
+> 最后更新：2026-10-21　关联：[[CanNm_调用逻辑总览]]、CanNm_D1_主动唤醒调用逻辑、CanNm_D3_主状态转移逻辑
 
 ## 1. 场景
 
@@ -31,7 +31,7 @@ CAN 控制器 → CanIf_RxIndication
         ├─ 重启 NM-Timeout Timer（若处于 Network Mode 且发送能力使能）
         ├─ CBV 位处理：
         │    ├─ RMR 位 → 节点检测（进入/重启 Repeat Message）
-        │    ├─ PNI 位 → PNC 请求处理（见 [[CanNm_D7_扩展特性调用逻辑]]）
+        │    ├─ PNI 位 → PNC 请求处理（见 CanNm_D7_扩展特性调用逻辑）
         │    ├─ CWU 位 → Nm_CarWakeUpIndication（可过滤源节点）
         │    └─ Active Wakeup 位 → 记录唤醒类型
         ├─ 负载降低：Normal Operation 下重装 Message Cycle Timer = CanNmMsgReducedTime
@@ -44,7 +44,7 @@ CAN 控制器 → CanIf_RxIndication
 Nm_NetworkStartIndication → Nm 通知 ComM → ComM 判断是否有用户请求/唤醒源 →
 EcuM 唤醒校验（wakeup source validated）→
     ├─ 被动启动：Nm → CanNm_PassiveStartUp(ch)
-    └─ 或主动请求：Nm → CanNm_NetworkRequest(ch)（走 [[CanNm_D1_主动唤醒调用逻辑]]）
+    └─ 或主动请求：Nm → CanNm_NetworkRequest(ch)（走 CanNm_D1_主动唤醒调用逻辑）
 
 【状态迁移（主函数）】
 CanNm_PassiveStartUp → 置"启动请求"标志

@@ -4,7 +4,7 @@ tags: [AUTOSAR, BswM, 调用逻辑]
 # BswM D2：模式请求与事件输入调用逻辑
 
 > [!info] 导航
-> 上级：[[BswM_调用逻辑总览]] ｜ 依赖：[[BswM_D3_规则仲裁调用逻辑]]、[[BswM_D5_状态转换表#规则求值状态]] ｜ 依据：[[BswM_AUTOSAR标准需求表_R21-11#SWS_BswM_000xx|需求表]]
+> 上级：[[BswM_调用逻辑总览]] ｜ 依赖：BswM_D3_规则仲裁调用逻辑、BswM_D5_状态转换表 规则求值状态 ｜ 依据：需求表
 
 > 适用版本：AUTOSAR CP R21-11　依据：SWS_BswM 7.1.2、7.1.3、7.6
 > 最后更新：2026-10-21
@@ -103,3 +103,10 @@ SWS_BswM_00009、00013、00014、00035、00059、00060、00061、00068、00069�
 2. 上电初期规则被跳过：端口未定义（00064/00241）；
 3. 事件端口一直 SET：检查是否执行了 `BswMClearEventRequest`；
 4. 中断上下文调用：IMMEDIATE 动作在调用者上下文执行，避免重动作。
+
+## 实现对应（代码）
+
+- 通用请求：`BswM_RequestMode`（L1523）；
+- 立即请求：`BswM_ImmediateModeRequest`（L644）→ 置 `BswM_ModeRequestQueue[i].RequestMode=QUEUED`、`BswM_QueueWritten[0]=TRUE`；
+- 各模块回调（`BswM_ComM_CurrentMode` L1708、`BswM_EcuM_CurrentState` L2744、`BswM_Dcm_ApplicationUpdated` L1961 等）先写端口值数组，再调立即请求；
+- 事件类输入在本实现中通过立即请求/回调表达，无独立事件数组。

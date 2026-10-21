@@ -5,10 +5,10 @@ tags: [AUTOSAR, CanNm, 调用逻辑]
 # CanNm D1：主动唤醒调用逻辑
 
 > [!info] 导航
-> 上级：[[CanNm_调用逻辑总览]] ｜ 依赖：[[CanNm_D3_主状态转移逻辑]]、[[CanNm_D4_状态转换表#从 Bus-Sleep 出发]] ｜ 依据：[[CanNm_AUTOSAR标准需求表_R21-11#SWS_CanNm_001xx|需求表]]
+> 上级：[[CanNm_调用逻辑总览]] ｜ 依赖：CanNm_D3_主状态转移逻辑、CanNm_D4_状态转换表 从 Bus-Sleep 出发 ｜ 依据：需求表
 
 > 适用版本：AUTOSAR CP R21-11　依据：SWS_CanNm 7.2.1、7.2.3、7.3、7.7.1、8.3.4
-> 最后更新：2026-10-21　关联：[[CanNm_调用逻辑总览]]、[[CanNm_D3_主状态转移逻辑]]、[[CanNm_D5_周期发送与降载调用逻辑]]
+> 最后更新：2026-10-21　关联：[[CanNm_调用逻辑总览]]、CanNm_D3_主状态转移逻辑、CanNm_D5_周期发送与降载调用逻辑
 
 ## 1. 场景
 
@@ -86,7 +86,7 @@ sequenceDiagram
 
 - `CanIf_Transmit` 发送 NM PDU（首帧立即或偏移后周期）；
 - `Nm_NetworkMode` 通知 Nm → ComM 进入 FULL COMMUNICATION；
-- 后续由周期发送维持唤醒（见 [[CanNm_D5_周期发送与降载调用逻辑]]）。
+- 后续由周期发送维持唤醒（见 CanNm_D5_周期发送与降载调用逻辑）。
 
 ## 6. 需求依据
 
@@ -98,11 +98,11 @@ SWS_CanNm_00087（需要通信就发帧）、00096、00097、00100、00102、001
 2. 读 `CanNm_GetState`：是否进入 Network Mode / Repeat Message；
 3. 抓总线：首帧是否出现、间隔是否符合 `MsgCycleOffset` / `ImmediateNmCycleTime`；
 4. 跟踪 `Nm_NetworkMode` 是否回调（ComM 是否进入 FULL COMMUNICATION）；
-5. 若"请求了但一直不发帧"：先查 passive 模式、通信是否被 0x28 禁用（见 [[CanNm_D6_通信控制调用逻辑]]）。
+5. 若"请求了但一直不发帧"：先查 passive 模式、通信是否被 0x28 禁用（见 CanNm_D6_通信控制调用逻辑）。
 
 ## 实现对应（代码）
 
 - `CanNm_NetworkRequest`（`CanNm.c` L2146）→ `CanNm_CommState = COMM_NORMAL_OPERATION`、置 `NetworkRestartFlag`；
 - 主函数检测 `NetworkRestartFlag != CANNM_NO_RESTART` → `CanNm_StateTransition(ch, NM_STATE_REPEAT_MESSAGE)`（L3664~3667）；
 - 首帧/周期帧：`CanNm_MessageTimerHandling`（L1137）→ `CanNm_TriggerTransmission`（L1611）→ `CanIf_Transmit`；
-- 关键变量：`CanNm_CommState`、`CanNm_NetworkRestartFlag`、`CanNm_MsgTimer`、`CanNm_TxMessageData`（见 [[CanNm_全局变量说明]]）。
+- 关键变量：`CanNm_CommState`、`CanNm_NetworkRestartFlag`、`CanNm_MsgTimer`、`CanNm_TxMessageData`（见 CanNm_全局变量说明）。
