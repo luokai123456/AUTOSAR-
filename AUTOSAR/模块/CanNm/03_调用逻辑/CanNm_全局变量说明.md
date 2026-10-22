@@ -33,30 +33,33 @@ tags: [AUTOSAR, CanNm, 调用逻辑, 代码实现]
 
 ## 1. 配置数据（ROM，`CanNm_Cfg.c` 定义）
 
+> **时间单位**：下表中的时间值都是**主函数周期数（tick）**，不是 ms；实际时间 = tick × `CanNmMainFunctionPeriod`（集成侧配置，生成代码中无此宏）。代码重装常写 `X + CANNM_ONE`，实际约 `(X+1)` 个主函数周期。
+> 注意：`CanNm_Cfg.h` 结构体注释仍标 `[ms]`，那是原 ECUC 参数说明；生成代码已把它换算成 tick，运行期按主函数周期递减，以 tick 为准。
+
 ### 1.1 `CanNm_ChannelConfig[2]`（类型 `CanNm_ConfigType`，`CanNm_Cfg.h` L351~384）
 
 | 成员 | 本项目值（ch0 / ch1） | 作用 |
 |---|---|---|
-| `TimeoutTime` | 380 / 380 | NM-Timeout（ms） |
-| `WaitBusSleepTime` | 401 / 401 | Prepare Bus-Sleep 静默期（ms） |
+| `TimeoutTime` | 380 / 380 | NM-Timeout（tick） |
+| `WaitBusSleepTime` | 401 / 401 | Prepare Bus-Sleep 静默期（tick） |
 | `NodeDetectionEnabled` | TRUE / TRUE | 节点检测开关 |
 | `NodeIdEnabled` | TRUE / TRUE | SNI 开关 |
 | `PnCallTxTimeoutException` | TRUE / TRUE | 发送超时是否调 `CanSM_TxTimeoutException` |
 | `ChannelId` | 6 / 2 | 对应 ComM 通道 |
-| `ImmediateNmCycleTime` | 4 / 4 | 立即发送周期（ms） |
+| `ImmediateNmCycleTime` | 4 / 4 | 立即发送周期（tick） |
 | `ImmediateNmTransmissions` | 10 / 10 | 唤醒立即发送帧数 |
-| `MsgCycleTime` | 100 / 100 | NM 报文周期（ms） |
-| `MsgTimeoutTime` | 16 / 16 | 发送超时（ms） |
+| `MsgCycleTime` | 100 / 100 | NM 报文周期（tick） |
+| `MsgTimeoutTime` | 16 / 16 | 发送超时（tick） |
 | `PduCbvPosition` | BYTE_1 / BYTE_1 | CBV 位置 |
 | `PduNidPosition` | BYTE_0 / BYTE_0 | SNI 位置 |
-| `RemoteSleepIndTime` | 380 / 380 | 远程睡眠判定 |
-| `RepeatMessageTime` | 320 / 320 | Repeat Message 停留 |
+| `RemoteSleepIndTime` | 380 / 380 | 远程睡眠判定（tick） |
+| `RepeatMessageTime` | 320 / 320 | Repeat Message 停留（tick） |
 | `PnEraCalcEnabled` | FALSE / FALSE | PN ERA 计算 |
 | `PnEraRxPduId` | 0xFFFF / 0xFFFF | PN ERA 接收 PDU |
 | `ActiveWakeupBitEnabled` | TRUE / TRUE | CBV Active Wakeup 位 |
 | `AllMessagesKeepAwakeEnabled` | FALSE / FALSE | PN 下保留所有帧 |
 | `BusLoadReductionActive` | **FALSE / FALSE** | 本通道是否启用降载 |
-| `MsgReducedTime` | 56 / 56 | 降载缩短周期（ms） |
+| `MsgReducedTime` | 56 / 56 | 降载缩短周期（tick） |
 | `CarWakeUpBitMask/BytePosition/FilterNodeId` | 0 / 255 / 0 | CWU 位信息（功能关闭） |
 | `CarWakeUpRxEnabled/FilterEnabled` | FALSE / FALSE | CWU 接收/过滤 |
 | `RetryFirstMessageRequestEnabled` | TRUE / TRUE | 首帧失败重试 |

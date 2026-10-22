@@ -106,5 +106,5 @@ SWS_CanNm_00005、00006、00013、00035、00040、00051、00052、00064~00066、
 
 - 发送周期：`CanNm_MessageTimerHandling`（L1137）递减 `CanNm_MsgTimer`，到期调 `CanNm_TriggerTransmission`（L1611）；
 - 发送：`CanIf_Transmit(CanNm_GetTxPduRef(ch))`（L1685），缓冲 `CanNm_TxMessageData[ch][8]`；
-- 立即发送：`CanNm_ImmediateNmMsgCount` 递减、`ImmediateNmCycleTime` 重装（本项目 4ms × 10 帧）；
+- 立即发送：`CanNm_ImmediateNmMsgCount` 递减、`ImmediateNmCycleTime` 重装（本项目 4 tick × 10 帧，tick 为主函数周期数）；
 - 降载：`CanNm_BusLoadReductionActive[ch]` + `CanNm_GetMsgReduceTime()`；本项目配置 `BusLoadReductionActive=FALSE`，降载未启用。

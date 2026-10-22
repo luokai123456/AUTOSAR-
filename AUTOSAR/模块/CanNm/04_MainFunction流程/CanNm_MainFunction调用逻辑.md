@@ -395,7 +395,7 @@ static FUNC(void, CANNM_CODE) CanNm_MessageTimerHandling(NetworkHandleType chann
             if (CANNM_ZERO != CanNm_GetImmediateNmMsgCount(channel)) {  /* 判断：主动唤醒快发阶段 */
                 if (E_OK == success) {
                     CanNm_DecImmediateNmMsgCount(channel);
-                    CanNm_SetMsgTimer(channel, ImmediateNmCycleTime);   /* 快发 4ms */
+                    CanNm_SetMsgTimer(channel, ImmediateNmCycleTime);   /* 快发：4 个主函数周期（tick） */
                 } else {
                     CanNm_SetMsgTimer(channel, CANNM_ONE);              /* 失败：下周期重试 */
                 }
@@ -406,7 +406,7 @@ static FUNC(void, CANNM_CODE) CanNm_MessageTimerHandling(NetworkHandleType chann
                         if (TRUE == CanNm_IsImmediateRestartFailed(channel)) {
                             CanNm_SetMsgTimer(channel, MsgCycleOffset);     /* 重启失败过 → 回到原偏移 */
                         } else {
-                            CanNm_SetMsgTimer(channel, MsgCycleTime);       /* 正常 100ms */
+                            CanNm_SetMsgTimer(channel, MsgCycleTime);       /* 正常：100 个主函数周期（tick） */
                         }
                     } else {
                         CanNm_SetMsgTimer(channel, CANNM_ONE);              /* 失败：下周期重试 */
@@ -553,15 +553,17 @@ static FUNC(Std_ReturnType, CANNM_CODE) CanNm_TriggerTransmission(NetworkHandleT
 
 ## 6. 本项目配置值对主函数行为的影响
 
-| 配置 | 值 | 主函数中的表现 |
+> 下表的时间值都是 **主函数周期数（tick）**，不是 ms/秒。实际时间 = 计数值 × `CanNmMainFunctionPeriod`；`CanNm_MainFunction` 每调用一次，这些计数器减 1。`CanNmMainFunctionPeriod` 不在生成代码里，由集成侧 SchM/OS 任务周期决定（需在集成配置确认）。 代码重装定时器常写 `X + CANNM_ONE`，因为设置后到下一周期才第一次递减，实际约 `(X+1)` 个主函数周期。
+
+| 配置 | 值（tick） | 主函数中的表现 |
 |---|---|---|
-| `MsgCycleTime` | 100 ms | 正常周期帧间隔 |
-| `ImmediateNmCycleTime` / `ImmediateNmTransmissions` | 4 ms / 10 帧 | 主动唤醒后先发 10 帧（4ms 间隔） |
-| `RepeatMessageTime` | 320 ms | Repeat Message 约 3 个 100ms 周期 |
-| `TimeoutTime` | 380 ms | Ready Sleep 静默约 3.8 个周期后进 Prepare |
-| `WaitBusSleepTime` | 401 ms | Prepare 停留约 4 个周期后 Bus-Sleep |
-| `MsgTimeoutTime` | 16 ms | 发送确认超时监控 |
-| `BusLoadReductionActive` | FALSE（配置） | 主函数不启用降载重装，始终按 100ms |
+| `MsgCycleTime` | 100 | 正常周期帧间隔（100 个主函数周期） |
+| `ImmediateNmCycleTime` / `ImmediateNmTransmissions` | 4 / 10 帧 | 主动唤醒后先发 10 帧，每 4 个周期一帧 |
+| `RepeatMessageTime` | 320 | Repeat Message 约 3.2 个 `MsgCycleTime` |
+| `TimeoutTime` | 380 | Ready Sleep 静默约 3.8 个 `MsgCycleTime` 后进 Prepare |
+| `WaitBusSleepTime` | 401 | Prepare 停留约 4 个 `MsgCycleTime` 后 Bus-Sleep |
+| `MsgTimeoutTime` | 16 | 发送确认超时监控（16 个主函数周期） |
+| `BusLoadReductionActive` | FALSE（配置） | 主函数不启用降载重装，始终按 100 tick |
 | `NodeDetectionEnabled` / `RepeatMsgIndEnabled` | TRUE / ON | 主函数每周期处理 RMR |
 | `ComControlEnabled` | ON | 主函数每周期处理 0x28 状态 |
 | `RemoteSleepIndEnabled` | OFF | 不处理远程睡眠 |
