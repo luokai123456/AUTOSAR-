@@ -1,0 +1,2403 @@
+
+===== PAGE 1 =====
+ 
+  
+SURFACE 
+VEHICLE 
+RECOMMENDED 
+PRACTICE 
+J1939-21 DEC2010 
+Issued 1994-07 
+Revised 2010-12 
+   
+Superseding J1939-21 DEC2006 
+ 
+Data Link Layer 
+ 
+ RATIONALE 
+(R) 
+This SAE Recommended Practice revision incorporates changes  to the abort reasons for transport protocol sessions. 
+Appendix C, Figure C7, updated to correct formatting and in ri ght side of figure change TP.DT. 2 to TP.DT.3.  Added the 
+request response guidance in section 5.4.2, 5.4.6 and 5. 10.3.2. Change SPN 2554 name to Controller Application 
+Identity.  
+FOREWORD 
+This series of SAE Recommended Practices have been devel oped by the Truck and Bus Control and Communications 
+Network Committee of the Truck and Bus Electrical and Elec tronics Steering Committee. The objectives of the committee 
+are to develop information reports, recommended practices, and standards concerned with the requirements, design, and 
+usage of devices that transmit electronic signals and control information among vehicle components.  The usage of these 
+Recommended Practices is not limited to truck and bus app lications; other applications may be accommodated with 
+immediate support being provided for construction and agricultural equipment, and stationary power systems. 
+These SAE Recommended Practices are intended as a guide towa rd standard practice and are subject to change so as 
+to keep pace with experience and technical advances. 
+__________________________________________________________________________________________________________________________________________ 
+SAE Technical Standards Board Rules provide that: “This report is  published by SAE to advance the state of technical and engine ering sciences.  The use of this report is 
+entirely voluntary, and its applicability and suitability for any particular use, including any patent infringement arising therefrom, is the sole responsibility of the user.” 
+SAE reviews each technical report at least every five years at which time it may be reaffirmed, revised, or cancelled.  SAE invites your written comments and suggestions. 
+Copyright © 2010 SAE International 
+All rights reserved. No part of this publication may be reproduced,  stored in a retrieval system or  transmitted, in any form or  by any means, electronic, mechanical, 
+photocopying, recording, or otherwise, without the prior written permission of SAE. 
+TO PLACE A DOCUMENT ORDER: Tel:        877-606-7323 (inside USA and Canada) 
+ Tel:        +1 724-776-4970 (outside USA) 
+ Fax:       724-776-0790 
+ Email:   CustomerService@sae.org 
+SAE WEB ADDRESS: http://www.sae.org  
+SAE values your input. To provide feedback
+ on this Technical Report, please visit 
+ http://www.sae.org/technical/standards/J1939/21_201012 
+This data link layer is used for all SAE J1939 applications . It is the characteristic that is common across all SAE J1939 
+applications. 
+===== PAGE 2 =====
+SAE  J1939-21  Revised DEC2010   Page 2 of 49 
+ 
+   
+TABLE OF CONTENTS 
+1.  Scope ............................................................................................................................................................ 4 
+2.  References .................................................................................................................................................... 4 
+2.1  Applicable Publications ................................................................................................................................. 4 
+2.1.1  SAE Publications ........................................................................................................................................... 4 
+2.2  Related Publications ..................................................................................................................................... 4 
+2.2.1  ISO Publications ............................................................................................................................................ 4 
+3.  Definitions ..................................................................................................................................................... 4 
+4.  Abbreviations ................................................................................................................................................ 4 
+5.  Technical Requirements ............................................................................................................................... 5 
+5.1  Message/Frame Format ................................................................................................................................ 5 
+5.1.1  SAE J1939 Message Frame Format (“CAN 2.0B” Extended Frame Format)  
+5.1.2  Parameter Group Number (PGN) ................................................................................................................. 6 
+5.1.3  SAE J1939 Support of “CAN 2.0B” Standard Frame Format Messages .................................................... 10 
+5.2  Protocol Data Unit (PDU) ............................................................................................................................ 11 
+5.2.1  Priority (P) ................................................................................................................................................... 11 
+5.2.2  Extended Data Page (EDP) ........................................................................................................................ 11 
+5.2.3  Data Page (DP) ........................................................................................................................................... 11 
+5.2.4  PDU Format (PF) ........................................................................................................................................ 14 
+5.2.5  PDU Specific (PS) ....................................................................................................................................... 14 
+5.2.5.1  Destination Address (DA) ........................................................................................................................... 14 
+5.2.5.2  Group Extension (GE) ................................................................................................................................. 14 
+5.2.6  Source Address (SA) .................................................................................................................................. 14 
+5.2.7  Data Field .................................................................................................................................................... 15 
+5.2.7.1  Data from 0 to 8 Bytes ................................................................................................................................ 15 
+5.2.7.2  Data from 9 Up to 1785 Bytes ..................................................................................................................... 15 
+5.3  Protocol Data Unit (PDU) Formats ............................................................................................................. 15 
+5.3.1  PDU1 Format .............................................................................................................................................. 16 
+5.3.2  PDU2 Format .............................................................................................................................................. 17 
+5.4  Message Types ........................................................................................................................................... 18 
+5.4.1  Command .................................................................................................................................................... 18 
+5.4.2  Request  .............................. 18 
+5.4.3  Broadcast/Response ................................................................................................................................... 21 
+5.4.4  Acknowledgment ......................................................................................................................................... 21 
+5.4.5  Group Function ........................................................................................................................................... 22 
+5.4.6  Request2  ............................. 24 
+5.4.7  Transfer ....................................................................................................................................................... 25 
+5.5  Message Priority ......................................................................................................................................... 26 
+5.6  Bus Access ................................................................................................................................................. 27 
+5.7  Contention-Based Arbitration ...................................................................................................................... 27 
+5.8  Error Detection ............................................................................................................................................ 27 
+5.9  Assignment Process for Source Addresses and Parameter Group Numbers ........................................... 27 
+5.9.1  Address Assignment Criteria ...................................................................................................................... 27 
+5.9.2  Parameter Group Assignment Criteria ........................................................................................................ 28 
+5.9.3  Data Field Definition .................................................................................................................................... 29 
+5.10  Transport Protocol Functions ...................................................................................................................... 29 
+5.10.1  Packetization and Reassembly ................................................................................................................... 29 
+5.10.1.1  Message Packets ........................................................................................................................................ 29 
+5.10.1.2  Sequence Numbers .................................................................................................................................... 29 
+5.10.1.3  Packetization ............................................................................................................................................... 29 
+5.10.1.4  Reassembly ................................................................................................................................................ 30 
+5.10.2  Connection Management ............................................................................................................................ 30 
+5.10.2.1  Multipacket Broadcast ................................................................................................................................. 30 
+5.10.2.2  Connection Initiation ................................................................................................................................... 30 
+5.10.2.3  Data Transfer .............................................................................................................................................. 30 
+5.10.2.4  Connection Closure .................................................................................................................................... 31 
+5.10.3  Transport Protocol—Connection Management Messages ......................................................................... 32 
+5.10.3.1  Connection Mode Request to Send (TP.CM_RTS) .................................................................................... 33 
+5.10.3.2 Connection Mode Clear to Send (TP.CM_CTS)  . ....................................................................................... 34
+............................................. 6
+........................................................................................................................
+.......................................................................................................................
+===== PAGE 3 =====
+Page 3 of 49 
+ 
+   
+   
+5.10.3.3  End of Message Acknowledgment (TP.CM_EndOfMsgACK) .................................................................... 34 
+5.10.3.4  Connection Abort (TP.Conn_Abort)  ........................................................................................................... 34 
+5.10.3.5  Broadcast Announce Message (BAM) ........................................................................................................ 35 
+5.10.4  Transport Protocol—Data Transfer Message (TP.DT) ............................................................................... 35 
+5.10.5  Connection Constraints  .............................................................................................................................. 36 
+5.10.5.1  Number and Type of Connections a Node Must Support ........................................................................... 36 
+5.10.5.2  Intended Transport Protocol Use ................................................................................................................ 36 
+5.10.5.3  Concurrent PGN Reception ........................................................................................................................ 36 
+5.11  PDU Processing Requirements .................................................................................................................. 36 
+5.12  Application Notes ........................................................................................................................................ 37 
+5.12.1  High Data Rates .......................................................................................................................................... 37 
+5.12.2  Request Scheduling .................................................................................................................................... 37 
+5.12.3  Device Response Time and Timeout Defaults ........................................................................................... 37 
+5.12.4  Required Responses .................................................................................................................................. 37 
+5.12.5  Transmission of PGNs to Specific or Global Destinations .......................................................................... 37 
+5.12.6  CTS Number of Packet Recommendation .................................................................................................. 38 
+6.  Notes ........................................................................................................................................................... 38 
+6.1  Marginal Indicia ........................................................................................................................................... 38 
+APPENDIX A  SAE J1939 PDU ProcessingTypical Receive Routine .............................................................................. 39 
+APPENDIX B  Communication Message Types ................................................................................................................... 40 
+APPENDIX C  Transport Protocol Transfer Sequences ....................................................................................................... 41 
+APPENDIX D  Assignments of SPNs for J1939-21 .............................................................................................................. 48 
+ 
+LIST OF FIGURES 
+Figure 1  CAN Data Frames ................................................................................................................................................... 7 
+Figure 2  Application of OSI Model by SAE J1939 ................................................................................................................. 8 
+Figure 3  Protocol Data Unit .................................................................................................................................................. 11 
+Figure 4  SAE J1939 Parameter Group Number Template .................................................................................................. 13 
+Figure 5  Available PDU Formats ......................................................................................................................................... 16 
+Figure 6  PDU1 Format ......................................................................................................................................................... 17 
+Figure 7  PDU2 Format ......................................................................................................................................................... 18 
+Figure 8  Request PGN Definition ......................................................................................................................................... 19 
+Figure 9  Acknowledgment PGN Definition .......................................................................................................................... 22 
+Figure 10  Proprietary A PGN Definition ............................................................................................................................... 23 
+Figure 11  Proprietary A2 PGN definition .............................................................................................................................. 24 
+Figure 12  Proprietary B PGN Definition ............................................................................................................................... 24 
+Figure 13  Request2 PGN Format ........................................................................................................................................ 25 
+Figure 14  Transfer PGN Format  ......................................................................................................................................... 26 
+Figure 15  Format of Messages for Transport Protocol   ...................................................................................................... 32 
+Figure 16  Transport Protocol—Data Transfer Message (TP.DT) ........................................................................................ 35 
+Figure A1  Typical Receive Routine ...................................................................................................................................... 39 
+Figure B1  Example of Communication Message Types  . .................................................................................................... 40 
+Figure C1  Data Transfer without Errors ............................................................................................................................... 41 
+Figure C2  Data Transfer with Errors .................................................................................................................................... 42 
+Figure C3  Broadcast Data Transfer ..................................................................................................................................... 43 
+Figure C4  Data Transfer Utilizing RTS Maximum Number of Packets Capability ............................................................... 44 
+Figure C5  Data Transfer Not Able to Utilize RTS Maximum Number of Packets Capability ............................................... 45 
+Figure C6  Responder sending cts after a time out to prevent session abort ...................................................................... 46 
+Figure C7  Examples of originator reaction to a retransmit CTS .......................................................................................... 47 
+ 
+LIST OF TABLES 
+Table 1  Mapping of SAE J1939 into CAN’s Arbitration and Control Fields ........................................................................... 9 
+Table 2  Parameter Group Number Examples  (SAE use EDP=0) ...................................................................................... 10 
+Table 3  Definition of Extended Data Page and Data Page Use .......................................................................................... 12 
+Table 4  PDU Specific ........................................................................................................................................................... 14 
+Table 5  PDU1 and PDU2 Transmit, Request and Response Requirements ...................................................................... 19 
+Table 6  Use of the Specified Fields in SAE J1939 PDU1 Format ....................................................................................... 20 
+SAE  J1939-21  Revised DEC2010
+Table 7  Connection Abort Reason  . ..................................................................................................................................... 35 
+Table D1  J1939-21 SPN Usage  ......................................................................................................................................... 48 
+ 
+===== PAGE 4 =====
+Page 4 of 49 
+ 
+   
+1. SCOPE   
+The SAE J1939 documents are intended for light, medium, and heavy-duty vehicles used on or off road as well as 
+appropriate stationary applications which use vehicle derived components (e.g. generator sets). Vehicles of interest 
+include, but are not limited to, on- and off-highway trucks and their trailers, construc tion equipment, and agricultural 
+equipment and implements. 
+The purpose of these documents is to provide an open interconnect system for electronic system s. It is the intention of 
+these documents to allow Electronic Control Units to communicate with each other by providing a standard architecture.  
+This particular document, SAE J1939-21, describes the data link la yer using the CAN protocol with 29-bit Identifiers.  For 
+SAE J1939 no alternative data link layers are permitted. 
+2. REFERENCES  
+2.1 Applicable Documents 
+General information regarding this series of recommended pr actices is found in SAE J1939.  The latest issue of SAE 
+publications shall apply.  
+2.1.1 SAE Publications 
+SAE J1939 Recommended Practice for a Serial Control and Communications Vehicle Network is the parent 
+document and should be referenced in general.  
+SAE J1939-71 Vehicle Application Layer 
+SAE J1939-81 Network Management 
+2.2 Related Publications 
+2.2.1 ISO Publications 
+ISO 11898 (Amended) Road Vehicles—Interchange of digital in formation—Controller area network (CAN) for high-speed 
+communications AMENDMENT 1 
+ISO 15765-3 Road Vehicles—Diagnostics on Controller Area Ne twork (CAN)—Part 3; Implementation of Unified 
+Diagnostic Services (UDS on CAN), October 23, 2003 
+3. DEFINITIONS  
+Terms and definitions are defined in SAE J1939. 
+4. ABBREVIATIONS  
+ACK Acknowledgment 
+BAM Broadcast Announce Message 
+CAN Controller Area Network 
+CRC Cyclic Redundancy Check 
+CTS Clear-to-Send 
+SAE  J1939-21  Revised DEC2010
+Available from SAE International, 400 Commonwealth Drive, Warrendale, PA 15096-0001, Tel: 877-606-7323 (inside USA 
+and Canada) or 724-776-4970 (outside USA), www.sae.org.  
+The following publications are provided for information purposes only and ar e not a required part of this SAE Technical 
+Report. 
+ 
+Available from American National Standards Institute, 25 West 43rd Street, New York, NY 10036-8002, Tel: 212-642-
+4900, www.ansi.org.  
+===== PAGE 5 =====
+Page 5 of 49 
+ 
+   
+DA Destination Address 
+DLC Data Length Code 
+DP Data Page 
+DT Data Transfer 
+EDP Extended Data Page  
+EOF End of Frame 
+GE Group Extension 
+ID Identifier 
+IDE Identifier Extension Bit 
+LLC Logical Link Control 
+LSB Least Significant Byte or Least Significant Bit 
+MAC Medium Access Control 
+MF Manufacturer 
+MSB Most Significant Byte or Most Significant Bit 
+NA Not Allowed 
+NACK Negative-Acknowledgment 
+P Priority 
+PDU Protocol Data Unit 
+PF PDU Format 
+PGN Parameter Group Number 
+PS PDU Specific 
+RTR Remote Transmission Request 
+RTS Request-to-Send 
+SA Source Address 
+SOF Start of Frame 
+SPN Suspect Parameter Number  
+SRR Substitute Remote Request 
+TP Transport Protocol 
+Th Hold Time 
+Tr Response Time 
+un Undefined 
+5. TECHNICAL REQUIREMENTS  
+The data link layer provides for the reliable transfer of data across the physical link.  This  consists of sending the CAN 
+Data Frame with the necessary synchroniza tion, sequence control, error control, and flow control.  The flow control is 
+accomplished by a consistent message/frame format. 
+5.1 Message/Frame Format 
+Message format conforms to the CAN requirements.  The CAN specification referenced throughout this document is CAN 
+Specification 2.0 Part B , September 1991.  It should be noted that w hen there are differences between the CAN 
+specification and SAE J1939, then SAE J1939 is the guiding document. 
+The CAN document specifies, in an inform ation routing related discussion, that node addresses are not used.  While this 
+is true for some applications of CAN, it is not true for SAE J1939.  The definition of t he SAE J1939 network requires that 
+node addressing be used to prevent multiple nodes from usi ng the same CAN Identifier field (see SAE J1939).  Many 
+additional requirements exist in SAE J1939 that are not specified by CAN. 
+CAN 2.0B contains specification of two message formats, standard frame and extended frame.   
+SAE  J1939-21  Revised DEC2010
+===== PAGE 6 =====
+Page 6 of 49 
+ 
+   
+CAN 2.0B compatibility implies that me ssages of both formats can potentially be present on a single network by using 
+certain bit codings that allow for the recognition of t he different formats.  To this point, SAE J1939 also has 
+accommodations for both CAN data frame formats.  Bu t SAE J1939 only defines a full strategy for standardized 
+communications using the extended frame format.  All standard frame format messages are for proprietary use following 
+the rules defined in this document. 
+Therefore, SAE J1939 devices MUST use the extended frame format.  Standard frame format messages can reside on 
+the network, but only as described in this document. 
+NoteStandard frame devices do not respond to network management messages and are not able to support the 
+strategy for standardized communications. 
+Referencing Figure 1, the CAN data frame is parsed into diffe rent bit fields.  The number and parsing of the bits in the 
+arbitration and control fields differ between the CA N standard and extended frame messages.  CAN standard frame 
+messages, shown in “A,” contains 11 I dentifier bits in the arbitration fiel d and CAN extended frame messages, shown in 
+“B,” contain 29 identifier bits in the arbitration field.  SAE J1939 has further defined the identifier bits in the arbitration field 
+of the CAN Data Frame formats.  These definitions can be seen in Table 1. 
+5.1.1 SAE J1939 Message Frame Format (“C AN 2.0B” Extended Frame Format) 
+The CAN extended frame message, as shown in Figure 1, enc ompasses a single Protocol Data Unit (PDU).  PDUs 
+consist of seven predefined fields.  These fields are assimilated from information provided by the application layer.  They 
+are priority, extended data page, data page,  PDU format, PDU specific (which  can be a destination address, group 
+extension, or proprietary), source address and data fields. They are then packaged into one or more CAN Data Frames 
+and sent over the physical media to ot her network devices. The layers of t he Open Systems Interconnect (OSI) model 
+that SAE J1939 supports are shown in Figur e 2.  It should be recognized that some Parameter Group definitions require 
+more than one CAN Data Frame to send their information. 
+Table 1 shows the arbitration and control fields of the follo wing:  29-bit identifier for CA N; 29-bit identifier for SAE J1939;  
+11-bit identifier for CAN; and the 11-bit i dentifier for SAE J1939.  A complete definition for each of the SAE J1939 bit field 
+assignments can be found in the sections that define the SAE J1939 Protocol Data  Unit (see Section 5.2).  Throughout 
+this document the CAN Data Frame data field is discussed as bytes 1 through 8.  Byte 1’s most significant bit (bit 8) is the 
+first bit sent closest to the DLC field.  Byte 8’s least signific ant bit (bit 1) is last of t he data bits to be sent and is clo sest to 
+the CRC Field. 
+When the Extended Data Page (EDP) is equal to 1 and the Data Page (DP) is equal to 1, this identifies the CAN frame as 
+an ISO 15765-3 formatted frame.  Therefore,  the processing of the CAN frame will not follow the definitions provided by 
+J1939 specifications.  The user should consult the ISO 15765-3 specifications for further guidance. 
+For the case where the Extended Data Page is equal to 1 and the Data Page is equal to 0, the SAE J1939 committee has 
+not specified that the CAN ident ifier will be utilized the way it is specified in  the remaining sections of this document.  
+Therefore, those CAN frames may require unique handling.  Th is will be specified in future versions of the J1939-21 
+document. 
+5.1.2 Parameter Group Number (PGN)   
+Whenever it is necessary to identify a Parameter Group in t he data field of a CAN data fram e, it will be expressed in 24 
+bits.  The 24-bit value is sent least signi ficant byte first (see Table 2 where it is  stated the MSB is sent third, middle byte  
+second and least significant byte first).  The Parameter Group Number is a 24-bit value that has the following constituent 
+components:  6 bits set to zero, Extended Data Page bit,  Da ta Page bit, PDU Format Field (8 bits), and Group Extension 
+Field (8 bits).  The procedure for the bit fields to be conver ted to a Parameter Group Number is as follows.  The six most 
+significant bits of the PGN are set to zero.  Then the Extended Data Page Bit, Data Page bit and PDU Format field are 
+copied into the next 10 bits. Lastly if the PF value is less than 240 (F0 16), then the least significant byte of the PGN is set 
+to zero.  Otherwise it is set to the value of the Group Ex tension Field.  Reference Table 2 for an illustration of the 
+constituent component bit fields and their corres ponding PGN decimal number.  Note that not all 2 17 (or 131072) 
+combinations are available for assignment  using the conventions specified in th is document.  The conventions specified 
+yield 8672 PGs (calculated as:  2 pages * [240 + (16*256)] = 8672 PGs).  The Cumulative Number of PGs column in 
+Table 2 identifies the number of PGNs possible.  See SAE J1939, Appendix A to see the assigned PGNs. 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 7 =====
+Page 7 of 49 
+ 
+   
+I
+D
+E
+S
+O
+F
+1
+Identifier
+11
+R
+T
+R
+11
+DLC
+4
+Data Field
+0 - 64
+ACK
+Field
+2Bits
+CRC
+Delimiter
+1
+r
+0
+1
+CRC
+15 7
+EOF
+Bit Stuffing No Bit Stuffing
+CAN Data Frame
+Maximum frame length with bit stuffing = 127 bits
+Data FieldControl Field6 BitsArbitration Field12 Bits
+A. CAN Standard Frame Format
+ 
+ 
+ 
+FIGURE 1  - CAN DATA FRAMES 
+ 
+ 
+B.  CAN Extended Frame Format
+S 
+O 
+F 
+1 
+Identifier 
+11 
+S 
+R 
+R 
+1 
+I 
+D 
+E 
+1 
+DLC
+4
+Data Field
+0 - 64
+ACK 
+Field 
+2 Bits 
+CRC 
+Delimiter 
+1 
+Arbitration Field 
+32 Bits 
+r
+0
+1
+Control
+Field
+6 Bits
+Data
+Field
+CRC 
+15 7
+E
+O
+F
+Bit Stuffing
+CAN Extended Data Frame
+Maximum frame length with bit stuffing = 150 bits
+r
+1
+1
+Identifier
+Ext.
+R
+T
+R
+118
+No Bit 
+Stuffing 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 8 =====
+Page 8 of 49 
+ 
+   
+ 
+FIGURE 2 - APPLICATION OF OSI MODEL BY SAE J1939 
+Node Node 
+Definitions:  EDP is Extended Data Page, DP is Data Page, PF is PDU Format, PS is PDU Specific, and SA is Source Address
+Application
+Data Link
+Logical Link Control (LLC)
+Network
+Physical
+Medium Access Control 
+Application
+Data Link
+Logical Link Control (LLC)
+Network
+Physical
+Medium Access Control 
+(Priority,EDP,DP,PF,PS,SA,Data)
+1 or more 
+1 or 
+CAN data frames
+(Priority,EDP,DP,PF,PS,SA,Data)
+1 or more 
+1 or 
+CAN data frames
+SAE  J1939-21  Revised DEC2010
+===== PAGE 9 =====
+Page 9 of 49 
+ 
+   
+TABLE 1 - MAPPING OF SAE J1939 INTO CAN’S ARBITRATION AND CONTROL FIELDS 
+29-Bit Identifiers 29-Bit Identifiers  11-Bit Identifiers 11-Bit Identifiers 
+CAN SAE J1939 Frame Bit Position CAN SAE J19391 
+SOF SOF*   1 SOF SOF* 
+ID 28 P 3   2 ID 11 P 3 
+ID 27 P 2   3 ID 10 P 2 
+ID 26 P 1   4 ID 9 P 1 
+ID 25 EDP   5 ID 8 SA 8 
+ID 24 DP   6 ID 7 SA 7 
+ID 23 PF 8   7 ID 6 SA 6 
+ID 22 PF 7   8 ID 5 SA 5 
+ID 21 PF 6   9 ID 4 SA 4 
+ID 20 PF 5 10 ID 3 SA 3 
+ID 19 PF 4 11 ID 2 SA 2 
+ID 18 PF 3 12 ID 1 SA 1 
+SRR (r) SRR* 13 RTR (x) RTR* (d) 
+IDE (r) IDE* 14 IDE (d) IDE* 
+ID 17 PF 2 15 r 0 r 0* 
+ID 16 PF 1 16 DLC 4 DLC 4 
+ID 15 PS 8 17 DLC 3 DLC 3 
+ID 14 PS 7 18 DLC 2 DLC 2 
+ID 13 PS 6 19 DLC 1 DLC 1 
+ID 12 PS 5 20   
+ID 11 PS 4 21   
+ID 10 PS 3 22   
+ID 9 PS 2 23   
+ID 8 PS 1 24   
+ID 7 SA 8 25   
+ID 6 SA 7 26   
+ID 5 SA 6 27   
+ID 4 SA 5 28   
+ID 3 SA 4 29   
+ID 2 SA 3 30   
+ID 1 SA 2 31   
+ID 0 SA 1 32   
+RTR (x) RTR* (d) 33   
+r 1 r 1* 34   
+r 0 r 0* 35   
+DLC 4 DLC 4 36   
+DLC 3 DLC 3 37   
+DLC 2 DLC 2 38   
+DLC 1 DLC 1 39   
+NOTES 
+SOF - Start of Frame Bit P# - SAE J1939 Priority Bit #n 
+ID## - Identifier Bit #n EDP - SAE J1939 Extended Data Page 
+SRR - Substitute Remote Request SA# - SAE J1939 Source Address Bit #n 
+RTR - Remote Transmission Request Bit DP - SAE J1939 Data Page 
+IDE - Identifier Extension Bit PF# - SAE J1939 PDU Format Bit #n 
+r# - CAN Reserved Bit #n PS# - SAE J1939 PDU Specific Bit #n 
+DLC# - Data Length Code Bit #n 1 Required format of proprietary 11-bit identifiers 
+(d) - dominant bit *CAN Defined Bit, Unchanged in SAE J1939 
+(r) - recessive bit (x) - bit state dependent on message 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 10 =====
+Page 10 of 49 
+ 
+   
+TABLE 2 - PARAMETER GROUP NUMBER EXAMPLES  
+(SAE USE EDP=0) 
+PGN 
+Constituent 
+Components 
+PGN 
+Constituent 
+Components 
+PGN 
+Constituent 
+Components 
+PGN 
+Constituent 
+Components 
+PGN 
+Constituent 
+Components 
+     
+     
+     
+PGN (MSB) PGN (MSB) PGN (MSB) PGN PGN (LSB)      
+Byte 1 Byte 1 Byte 1 Byte 2 Byte 3      
+Sent third in 
+CAN Data 
+Frame 
+  
+Sent second 
+in CAN Data 
+Frame 
+Sent first in 
+CAN Data 
+Frame 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+EDP 
+ 
+ 
+DP 
+ 
+ 
+PF 
+ 
+ 
+PS 
+ 
+ 
+PGN 
+ 
+ 
+PGN 
+Number of 
+Assignable 
+PGs 
+Cumulative 
+Number of 
+PGs 
+SAE or 
+Manufacturer 
+Assigned 
+Bits 8-3 Bit 2 Bit 1 Bi ts 8-1 Bits 8-1 Dec 10 Hex 16    
+0 0 0 0     0           0 000000 16   SAE 
+         239   239  
+0 0 0 238     0   60928 00EE00 16    
+0 0 0 239     0   61184 00EF00 16       1   240 MF 
+0 0 0 240     0   61440 00F000 16   SAE 
+       3840   
+0 0 0 254 255   65279 00FEFF 16  4080  
+0 0 0 255     0   65280 00FF00 16    
+         256  MF 
+0 0 0 255 255   65535 00FFFF 16  4336  
+0 0 1 0     0   65536 010000 16    
+         239 4575 SAE 
+0 0 1 238     0 126464 01EE00 16    
+0 0 1 239     0 126720 01EF00 16 1 4576 MF 
+0 0 1 240     0 126976 01F000 16    
+       4096  SAE 
+0 0 1 255 255 131071 01FFFF 16  8672  
+TOTALS       8672 8672  
+ 
+5.1.3 SAE J1939 Support of “CAN 2.0B ” Standard Frame Format Messages 
+It is recognized that controllers on the SAE J1939 network  may support the CAN standard frame (11-bit identifier) 
+message format.  Though these are not compatible with  the SAE J1939 message structure, to accommodate the 
+coexistence of the two formats, a minimum level of definition is given.  This mi nimum definition allows devices that use 
+this format to not interfere with other devices.  CAN standard frame format messages are defined to be proprietary.  
+Referencing Table 1, the 11-bit identifier field is parsed as follo ws:  the three most significant bits are used as priority bits; 
+the eight least significant bits identify t he source address of the PDU.  Priority bi ts are described in Section 5.2.1.  The 
+source address is defined in the Source Address Table (see SAE J1939). 
+NOTEIncorrect bus arbitration could occur when two me ssages, one standard frame and one extended frame, attempt 
+to access the bus at the same time.  The source address (SA) has a higher relative priority in the standard frame 
+messages than in the extended frame messages.  The message wi th the 11-bit identifier (standard frame) could have an 
+SA indicating a higher priority than the extended data page bit, data page bit and PF of the 29-bit identifier (extended 
+frame) message.  The three priority bits should be used to achieve the correct bus arbitration. 
+SAE J1939 only defines a full strategy for standardized comm unications using the extended frame format. Hardware 
+conforming to CAN 2.0A specification MUST NOT be used on t he network since these versions of hardware do not allow 
+the extended frame messages to be communicated. 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 11 =====
+Page 11 of 49 
+ 
+   
+5.2 Protocol Data Unit (PDU) 
+The applications and/or network layer provi de a string of information that is assi milated into a protocol data unit.  The 
+protocol data unit provides a framework for organizing the inform ation that is key to each CAN Data Frame that is sent.  
+The SAE J1939 protocol data unit consists of seven fiel ds.  They are priority, extended data page, data page, PDU 
+format, PDU specific (which can be a destination address, group extension, or proprieta ry), source address, and data 
+fields.  They are then packaged into one or more CAN data fr ames and sent over the physi cal media to other network 
+devices.  There is only one PDU per CAN data frame.  It should be recognized that some Parameter Group Number 
+definitions require more than one CAN Data Frame to send the corresponding data. 
+Some of the CAN Data Frame fields have been left out of t he PDU definition because they ar e controlled entirely by the 
+CAN specification and are invisible to all of the OSI layers above the data link layer.  They  include the SOF, SRR, IDE, 
+RTR, parts of the control field, CRC fiel d, ACK field, and the EOF field. These fields are defined by the CAN protocol 
+definition and are not modified by SAE J1939.  The seven PDU fields are illustrated in Fi gure 3.  Each of the fields within 
+the PDU is defined in the subsequent sections. 
+FIGURE 3 - PROTOCOL DATA UNIT 
+5.2.1 Priority (P) 
+These three bits are used to optimiz e message latency for transmission onto t he bus only.  They should be globally 
+masked off by the receiver (ignored).  The priori ty of any message can be set from highest, 0 (000 2), to lowest, 7 (111 2).  
+The default for all control oriented messages is 3 (011 2).  The default for all other informational, proprietary, request, and 
+ACK messages is 6 (1102).  This permits the priority to be raised or lowered in the future as new PGNs are assigned and 
+bus traffic changes.  A recommended priority is assigned to each PGN when it is added to the application layer document. 
+ However, the priority field should be reprogrammable to allow for network tuning by the OEM should the need arise. 
+5.2.2  Extended Data Page (EDP) 
+The Extended Data Page bit is used in conjunction with the Data  Page bit to determine the structure of the CAN identifier 
+of the CAN data frame.  All J1939 mess ages should set the Extended Data Page bit to ZERO on transmit. See Table 3, 
+Definition of Extended Data Page and Data Page Use, to fi nd the defined uses of the EDP and DP fields. Future 
+definitions might possibly be expanding t he PDU Format field, defining new P DU formats, or increasing the address 
+space.   
+5.2.3  Data Page (DP) 
+The Data Page Bit is used in conjunction with the Extended Data  Page bit to determine the structure of the CAN identifier 
+of the CAN data frame.  With the EDP set to 0 the data page bit selects between page 0 and page 1 of Parameter Group 
+Number (PGN) descriptions.  See Table 3.  Also see Figure 4 to see the SAE J1939 Parameter Group Number template. 
+ 
+Definitions: P is Priority, EDP is Extended Data Page, DP is Data Page, PF is PDU Format,
+PS is PDU Specific, and SA is Source Address
+J1939 PDU
+P PS SAPF
+ E 
+ D 
+ P 
+D
+P Data Field
+3 1 8 88 0 - 64 1
+. . . . .
+Bits
+SAE  J1939-21  Revised DEC2010
+===== PAGE 12 =====
+Page 12 of 49 
+ 
+   
+TABLE 3 - DEFINITION OF EXTENDED DATA PAGE AND DATA PAGE USE 
+Extended Data Page bit 25 
+CAN ID bit 25 
+Data Page bit 24 
+CAN ID bit 24 Description 
+0 0 SAE J1939 page 0 PGNs 
+0 1 SAE J1939 page 1 PGNs 
+1 0 SAE J1939 reserved 
+1 1 ISO 15765-3 defined 
+ 
+Table 3 Note:  The EDP (Extended Data Page) and DP (Data Page) of the CAN 29 bit identifier being set to “11” identifies 
+it as an ISO 15765-3 message.  This means that the rest of the CAN identifier is NOT set up the same as J1939 specifies. 
+ CAN frames following this format are not described in the J1939 series of SAE recommended practices. 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 13 =====
+Page 13 of 49 
+ 
+   
+ 
+EDP DP PF PS Parameter Group Definition Multipacket PGN 
+0 0 DA PDU1 Format - 100 mS or less NA 000 
+0 1 DA 256 
+. 
+Boundary x 
+0 238 DA PDU1 Format - Greater than 100 mS Allowed 60928 
+0 DA PDU1 Format - Proprietary A Allowed 61184 
+0 240 0 PDU2 Format - 100 mS or less NA 61440 
+0 240 1 61441 
+. 
+Boundary y 
+. 
+0 254 254 65278 
+0 254 255  PDU2 Format - Greater than 100 mS Allowed 65279 
+0 255 un PDU2 Format - Proprietary B Allowed 65280-65535
+1 0 DA PDU1 format - 100 mS or less NA 65536 
+1 1 DA 65792 
+. 
+Boundary x1 
+. 
+1 238 DA PDU1 Format - Greater than 100 mS 126464 
+1 DA PDU1 Format - Proprietary A2 Allowed 126720 
+1 240 0  PDU2 format - 100 mS or less NA 126976 
+1 240 1 126977 
+. 
+Boundary y1 
+. 
+1 255 253 
+1 255 254 PDU2 Format - Greater than 100 mS Allowed 131070 
+1 255 255 PDU2 Format - Greater than 100 mS Allowed 131071 
+Legend : 
+Allowed 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+0 
+239 
+239 
+DP = Data Page (1 bit) GE = Group Extension (8 bits)
+PS = PDU Specific Field (8 bits) NA = Not Allowed
+DA = Destination Address (8 bits) Un = Undefined
+PGN = Parameter Group Number (3 bytes)
+EDP = Extended Data Page (1 bit)
+PF = PDU Format (8 bits) P = Priority (1 bit) 
+ 
+FIGURE 4 - SAE J1939 PARAMETER GROUP NUMBER TEMPLATE 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 14 =====
+Page 14 of 49 
+ 
+   
+5.2.4 PDU Format (PF) 
+The PDU Format is an 8-bit field that determines the PDU format and is one of the fields used to determine the Parameter 
+Group Number assigned to the data field.  Parameter Group Numbers are used to identify or label commands, data, some 
+requests, acknowledgments, and negative-a cknowledgments.  Parameter Group Num bers identify or label information 
+that may require one or more CAN Data Frames to communicate the information.  If there is more information than fits in 
+8 data bytes, then a multipacket message needs to be sent (see Section 5.10).  If there are 8 or less data bytes, then a 
+single CAN data Frame is used.  A Parameter Group Number can represent one or more parameters, where a parameter 
+is a piece of data such as engine rpm.  Even though a Para meter Group Number label can be used for one parameter, it 
+is recommended that multiple parameters be grouped so that all 8 bytes of the data field are used. 
+The definition of proprietary Parameter Group Numbers has been established allowing both PDU1 and PDU2 formats to 
+be used.  The interpretation of the proprietary information varies by manufacturer. For example even though two different 
+engines may use the same source address, manufacturer “A’s” proprietary communications is more likely to be different 
+from manufacturer “B’s.” 
+5.2.5 PDU Specific (PS) 
+This is an 8-bit field and its definition depends on the PDU fo rmat.  Depending on the PDU form at it can be a Destination 
+Address or a Group Extension.  If the va lue of the PDU Format field is below 240, then the PDU specific field is a 
+destination address.  If the value of the PF field is 240 to 255, then the PDU specific fiel d contains a Group Extension 
+value.  See Table 4.  Refer to Figure 4 for the range of Parameter Group Numbers.  
+TABLE 4 - PDU SPECIFIC  
+ PDU Format Field PDU Specific Field 
+PDU1 Format  0-239  Destination Address 
+PDU2 Format  240-255  Group Extension 
+5.2.5.1 Destination Address (DA) 
+This field defines the specific address to which the message is  being sent.  Note that any other device should ignore this 
+message.  The global destination address (255) requires a ll devices to listen and respond accordingly as message 
+recipients. 
+5.2.5.2 Group Extension (GE) 
+The Group Extension field, in conjunction with the four least si gnificant bits of the PDU Form at field (note that when the 
+four most significant bits of the PDU Fo rmat field are set, it indicates that the PS field is a Group Extension), provides for 
+4096 Parameter Groups per data page.  These 4096 Parameter Gr oups are only available using the PDU2 format.  In 
+addition, 240 Parameter Groups are provided in each data page for use only in the PDU1 format.  In total, 8672 
+Parameter Groups are available to be defined using the two data pages currently available. 
+The total number of Parameter Groups available can be calculated as follows in Equation 1: 
+ (240 + (16 x 256)) x 2 = 8672 (Eq.1) 
+where: 
+ 240 = Number of PDU Format field values ava ilable per data page (i.e. PDU1 Format, PS Field equals 
+Destination Address) 
+ 16 = PDU Format values per Group Ex tension value (i.e. PDU2 Format) 
+ 256 = Number of possible Group Ext ension values (i.e. PDU2 Format) 
+ 2 = Number of Data Page states (both PDU Formats) 
+5.2.6 Source Address (SA) 
+The Source Address field is 8 bits long.  There shall onl y be one device on the network with a given source address.  
+Therefore, the source address field assures that the CAN identifier is unique, as required by CAN.  Address management 
+SAE  J1939-21  Revised DEC2010
+and allocation is detailed in SAE J1939-81.  Procedures are defined in SAE J1939-81 to prevent duplication of source 
+addresses.  Reference SAE J1939 Appendix B, Tables B2 through B9, for source address assignments.  
+===== PAGE 15 =====
+Page 15 of 49 
+ 
+   
+5.2.7 Data Field 
+5.2.7.1 Data from 0 to 8 Bytes 
+When 8 bytes or less of data are required for expressing a gi ven Parameter Group, then all 8 data bytes of the CAN data 
+frame can be used.  It is generally recommended that 8 data bytes be allocated or reserved for all Parameter Group 
+Number assignments which are likely to expand in the future.  This provides a means to easily add parameters and not be 
+incompatible with previous revisions that only defined part of  the data field.  Once the number of data bytes associated 
+with a Parameter Group Number is specified, the number  of data bytes cannot be c hanged (cannot become multipacket 
+either unless originally defined as multipacket).  The CAN Data Length Code (DLC) is set to the defined Parameter Group 
+“Data Length” value when it is 8 bytes or less; otherwise when the PG Data Length is  9 or greater, the CAN DLC is set to 
+8.  For example the REQUEST PGN, 59904, has  the PG Data Length as 3 so the CAN DLC is set to 3.  It is important to 
+note that an individual group function Parameter Group (see Sect ion 5.4.5) must use the sa me length data field because 
+the CAN identifier will be identical while  the CAN data field will be used to c onvey the specific group subfunctions, 
+therefore requiring many different interpretations based on the CAN data field.  
+5.2.7.2 Data from 9 Up to 1785 Bytes 
+When 9 up to 1785 data bytes are needed to express a given Parameter Group, the communication of this data is done in 
+multiple CAN Data Frames.  Thus, the term multipacket is  used to describe this type of Parameter Group Number.  A 
+Parameter Group defined as multipacket capable, having fewer t han 9 data bytes to transfer in a specific instance, shall 
+be sent in a single CAN Data Frame with the DLC set to 8.  When a particular Parameter Group has 9 or more data bytes 
+to transfer, the “Transport Protocol  Function” is used.  The Transport Protocol Function’s Connection Management 
+capability is used to set up and close out the communicati on of the multipacket Parameter Groups.  The Transport 
+Protocol Data Transfer capability is used to communicate the data itself in a series of CAN Data Frames (packets) 
+containing the packetized data.  Addi tionally, the Transport Protocol Functi on provides flow control and handshaking 
+capabilities for destination specific transfers.  See Section 5.10. 
+All CAN Data Frames associated with a particular multipa cket response are required to have a DLC of 8. All unused data 
+bytes are set to “not available” (see SAE J1939-71).  T he number of bytes per packet is fixed; however, SAE J1939 
+defines multipacket messages that have a variable and/or a fixed number of packets.  The Parameter Group Number for 
+active diagnostic codes is an example of a multipacket mess age that has a “variable” number of packets.  Parameter 
+Groups that are defined as multipacket only use the transpor t protocol when the number of  data bytes to send exceeds 
+eight. 
+5.3 Protocol Data Unit (PDU) Formats 
+The available PDU formats are illustrated in Figure 5.  Two PDU formats are def ined: PDU1 Format (PS = Destination 
+Address) and PDU2 Format (PS = Group Extension).  PDU1 Fo rmat allows for direction of the CAN Data Frame to a 
+specific destination address (device).  The PDU2 Format  can only communicate CAN Data Frames that are not 
+destination specific.  The creation of two separate PDU fo rmats was established in order to provide more possible 
+Parameter Group Number combinations while still providi ng for destination specific communications.  Proprietary 
+Parameter Group definitions have been assigned so that both P DU formats are available for proprietary communications. 
+ A standardized method was established for proprietary communications to prevent possible conflicts in identifier usage. 
+The definition of proprietary Parameter Group Numbers has  been established allowing both PDU1 and PDU2 Formats to 
+be used.  The interpretation of the proprietary information varies by manufacturer. For example engine manufacturer “A’s” 
+proprietary communications are likely to be different than engine manufacturer “B’s” even though they both use the same 
+source address. 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 16 =====
+Page 16 of 49 
+ 
+   
+FIGURE 5 - AVAILABLE PDU FORMATS 
+5.3.1 PDU1 Format 
+This format allows applicable Parameter Groups to be sent to either a specific or global destination. The PDU Specific 
+field contains a destination address.  PDU1 Format messages can be requested or sent as unsolicited messages. 
+PDU1 Format messages are determined by the PDU Format field.  When the PDU Format field value is 0 to 239, the 
+message is a PDU1 Format.  The format of the PDU1 mess age is illustrated in Figure 5.  Also see Figure 6, PDU1 
+Format. 
+Parameter Groups, requiring a destination (PDU1) and minimal latenc y, start at PF = 0 and increment toward x (or x1).  
+Reference Figure 4. 
+Parameter Groups, requiring a destination where latency is not cr itical, start at PF = 238 and decrement toward x (or x1). 
+Reference Figure 4. 
+A PF equal to 239, extended data page bit = 0, and data page bit = 0 or  1, is assigned for proprietary use. In this case the 
+PDU Specific field is a destination addr ess (see Section 5.4.5).  The Proprietary A PGN is 61184 and the Proprietary A2 
+PGN is 126720. 
+Definitions: P is Priority, EDP is Ex tended Data Page, DP is Data Page, PF is PDU Format, PS is PDU Specific,
+DA is Destination Address, GE is Group Extension, and SA is Source Address
+PDU1
+P PS (DA) SAPF
+E 
+D 
+P 
+ 
+D
+P Data Field
+3 1 8 8 8 0 - 641
+. . . . .
+Bits
+PDU2
+P SAPF
+E 
+D 
+P 
+ 
+D 
+P Data Field
+3 1 88 0 - 641
+. . . . .
+Bits
+PS (GE)
+8
+SAE  J1939-21  Revised DEC2010
+===== PAGE 17 =====
+Page 17 of 49 
+ 
+   
+ 
+FIGURE 6 - PDU1 FORMAT 
+5.3.2 PDU2 Format 
+This format can only be used to communicate Parameter Groups as global messages.  PDU2 Format messages can be 
+requested or sent as unsolicited messages.  Selection of PDU2 Format, at the time a PGN is assigned, prevents that 
+PGN from ever being able to be directed to a specific destination.  The PDU Specific contains a Group Extension. 
+PDU2 Format messages are defined to be those where the P DU Format value is equal to 240 to 255 (see Figure 4).  The 
+format of the PDU2 message is illustrated in Figure 5.  Also see Figure 7, PDU2 Format.  
+The Parameter Group Number of messages that are sent at fast update rates (generally less than 100 ms) start at PF = 
+240 and increment toward y (or y1).  Reference Figure 4. 
+The Parameter Group Number of messages that are only r equested, sent on change, or sent at slow update rates 
+(generally greater than every 100 ms) start at PF = 254 and decrement toward y (or y1).  Reference Figure 4. 
+A PF equal to 255 (Extended Data Page = 0 and Data Page bit = 0) is assigned for proprietary use.  In this case the PDU 
+Specific field is left to be defined and used by each manufacture r (see Section 5.4.5).  The PGN for Proprietary B covers 
+the range 65280 to 65535. 
+CAN 29-Bit Identifier 
+P 
+EDP    
+PS (DA)  SA 
+PF   
+Parameter Group  
+Available for PDU1 Format 
+Currently:  2 X 240 = 480
+DP 
+ 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 18 =====
+Page 18 of 49 
+ 
+   
+ 
+FIGURE 7 - PDU2 FORMAT 
+5.4 Message Types 
+There are five message types currently supported.  These types are the following:  Commands, Requests, 
+Broadcasts/Responses, Acknow ledgment, and Group Functions.  The specif ic message type is recognized by its 
+assigned Parameter Group Number.  Refer to Appendix A of SAE J1939 for examples of PGN assignments.  The RTR bit 
+(defined in the CAN protocol for remote frames) is not to be used in the recessive state (logical 1).  Therefore, Remote 
+Transmission Requests (RTR = 1) are not available for use in SAE J1939. 
+For multibyte parameters that appear in t he data field of a CAN Data Frame they shall be placed least significant byte 
+first.  Exceptions are noted where applicabl e (i.e. ASCII data).  So if a 2-byte parameter were to be placed in bytes 7 and 
+8 of the CAN DATA Frame, the LSB would be placed in byte 7 and the most significant byte in byte 8. 
+5.4.1 Command 
+This message type categorizes those Parameter Groups that convey a command to a specific or global destination from a 
+source.  The destination is then supposed to take specific actions based on the reception of this command message type. 
+ Both PDU1 (PS = Destination Address) and PDU2 Fo rmat (PS = Group Extension) messages can be used for 
+commands.  Example command type messages may include “T ransmission Control,” “Address Request,” “Torque/Speed 
+Control,” etc.  
+5.4.2 Request 
+This message type, identified by the PGN,  provides the capability to request info rmation globally or from a specific 
+destination.  Requests specific to one des tination are known as destination specific requests.  The information in Figure 8 
+shows the PGN definition for the “Request PGN” Parameter Group.  The information is in the same format as Parameter 
+     
+P      
+  
+  
+  
+CAN 29 Bit Identifie r
+Parameter Group Numbers
+Available for PDU2 Format
+Currently:  2 X 16 X 256 = 8,192
+   PF EDP DP 
+PS (GE) SA 
+SAE  J1939-21  Revised DEC2010
+Group definitions in SAE J1939-71. Table D1 in Appendix D has  the Suspect Parameter Number (SPN) assignments to 
+parameters in this message.   
+===== PAGE 19 =====
+Page 19 of 49 
+ 
+   
+Parameter Group Name: Request  
+Definition: Used to request a Parameter Group from a network device or devices. 
+Transmission repetition rate: Per user requirements,  generally recommended that requests occur no more 
+than 2 or 3 times per second.  
+Data length: 3 bytes (The CAN frame for this PG shall set the DLC to 3.) 
+Extended Data Page: 0 
+Data page: 0 
+PDU Format: 234 
+PDU specific field: Destinati on Address (global or specific) 
+Default priority: 6 
+Parameter Group Number: 59904 (00EA00 16) 
+Byte: 1,2,3 Parameter Group Number being requested  
+(see Section 5.1.2 for field definition and byte order)   
+FIGURE 8 - REQUEST PGN DEFINITION 
+Table 5 iterates the request/response possibilities for PDU1 and P DU2 Format PGNs.  It clarifies that the transmitter of a 
+message determines whether the destinati on is specific or global based on whet her the request was to a specific 
+destination address or to a global destination address.  
+Table 5 also shows that for unsolicited messages the transmitte r has the choice of transmitti ng to a specific destination 
+address or to a global destination address for PDU1 PGNs and PDU2 PGNs with more than 8 bytes.  For PDU2 PGNs 
+with 8 bytes or less, the transmitter can only send the data globally. See Table 5. 
+TABLE 5 - PDU1 AND PDU2 TRANSMIT, REQUEST AND RESPONSE REQUIREMENTS 
+PDU Format 
+of Requested 
+PGN 
+Data Length 
+of Requested 
+PGN 
+Request 
+PGN 59904 Response TP Used 
+1 <  8 bytes DA Specific DA Specific NA 
+1 <  8 bytes DA Global DA Global NA 
+1 <  8 bytes none DA Global  NA 
+   DA Specific NA 
+1 > 8 bytes DA Specific  DA Specific RTS/CTS 
+1 > 8 bytes DA Global DA Global BAM 
+1 > 8 bytes none DA Global BAM 
+   DA Specific RTS/CTS 
+2 < 8 bytes DA Specific DA Global NA 
+2 <  8 bytes DA Global DA Global NA 
+2 <  8 bytes none DA Global NA 
+2 > 8 bytes DA Specific  DA Specific RTS/CTS 
+2 > 8 bytes DA Global DA Global BAM 
+2 > 8 bytes none DA Global BAM 
+   DA Specific RTS/CTS 
+ 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 20 =====
+Page 20 of 49 
+ 
+   
+Notes to Table 5 — General rules of operation for determining whether to send a PGN to a global or specific 
+destination: 
+1. If the Request is sent to a global address, then the response is sent to a global address. 
+a) NOTE: A NACK is not permitted as a response to a global request. 
+2. If the Request is sent to a specific address, then the response is sent to a specific address. 
+a) NOTE: A NACK is required if the PGN is not supported. 
+b) If the data length is more than 8 bytes, the Transport Protocol RTS/CTS must be used for the response 
+to a specific address. 
+c) Exceptions: 
+i) PDU2 format PGNs with 8 bytes or less can onl y be sent to a global destination because there is no 
+destination address field in the PDU2 Format. 
+ii) The Address Claim PGN is sent to the gl obal destination address even though the request for it 
+may have been to a specific destination address (see J1939-81). 
+iii) The Acknowledgment PGN res ponse uses a global destination address even though the PGN that 
+causes Acknowledgment was sent to a specific destination address. 
+3. For periodic broadcasts or unsolicited messages 
+a) PDU1 Format PGNs or PDU2 Format PGNs can be sent to a global or specific destination address. 
+i) Exception: PDU2 Format PGNs with 8 bytes or less can only be sent to a global destination 
+because there is no destination address field in the PDU2 Format. 
+4. Exceptions to these rules do exis t and are specifically noted when this is the case.  These exceptions are 
+noted in the applicable document and section where the PGN is defined.  Two different types of exceptions 
+are included:  
+a) When the response destination addr ess does not specify the source address of the request.  Some 
+examples have been noted above (e.g. Address Claim PGN and Acknowledgment PGN).  
+b) When the PGN does not support all forms of the available addressing.  That is, some PGNs may not be 
+designed to support the address capability that is available for PDU1 or PDU2 Format messages. 
+ 
+Table 6 contains two examples showing how the Request PGN is used. 
+TABLE 6 - USE OF THE SPECIFIED FIELDS IN SAE J1939 PDU1 FORMAT 
+Message Type PGN PS (DA) SA Data 1 Data 2 Data 3 
+Global Request 59904 255 Responders SA1 Requester PGN 
+LSB1 PGN PGN MSB 1 
+Specific 
+Request 
+59904 SA2 Responder SA1 Requester PGN 
+LSB1 PGN PGN MSB 1 
+1 The Parameter Group Number in the data field is used to identify the information being requested. 
+A response is always required from the s pecified destination (not global) even if it is a NACK indicating that the particular 
+PGN value is not supported.  Note that some PGNs are mult ipacket, so several CAN Data Frames can occur as a result 
+of a single request. 
+A global request shall not be responded to with a NACK when a particular PGN is not supported by a node. 
+The Request PGN can be directed to a specific destination addre ss to find out if a specific Parameter Group is supported 
+(i.e. does the requested destination address transmit the specific PG?) The res ponse to the request determines whether 
+the PGN is supported.  If it is suppor ted, then the responding device shall s end the requested information.  If the 
+Acknowledgment PGN is appropriate, then the control byte sha ll be set to 0 or 2 or 3.  If it is not supported, the 
+responding device sends the Acknowledgment PGN with the control byte set to one, for Negative Acknowledgment.  The 
+remaining portions of the SAE J1939 PDU format and Paramete r Group must be filled in appropriately (reference Section 
+5.4.4).  Note that per the definitions in  this paragraph the phrase “not supported” m eans that the PG is not transmitted.  It 
+is not possible to determine whether a device will act upon (when received) the PG by using this method. 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 21 =====
+Page 21 of 49 
+ 
+   
+5.4.3 Broadcast/Response 
+This Message Type can be an unsolicited broadcast of information from a device or it can be the response to a Command 
+or a Request. 
+5.4.4 Acknowledgment            
+There are two forms of acknowledgment available.  The first fo rm is provided for by the CAN protocol.  It consists of an 
+“in-frame” acknowledgment which confirms that a me ssage has been received by at least one node.  In addition 
+messages are further acknowledged by the absence of CAN e rror frames.  Their absence acknowledges that all other 
+powered and connected devices received the message correctly. 
+The second form of acknowledgment is the response of a “nor mal broadcast” or “ACK” or “NACK” to a specific command 
+or request as provided for by an application layer.  The definition of the Acknowledgment Parameter Group is contained in 
+Figure 9.  Table D1 in Appendix D has the Suspect Paramete r Number assignments to parameters in this message.  The 
+type of acknowledgment required for some Parameter Groups is defined in the applications layer.  
+For Group Function PGs (see Section 5.4.5) the Group Function Va lue parameter allows a device to identify the specific 
+group function that is being acknowledged.  The Group Func tion Values are unique to each Group Function PG.  It is 
+desirable that the Group Function Values only use the range 0 to 250. 
+Each form of Acknowledgment includes an address acknowledge by te that contains the source  address of the originator 
+of the request that the Acknowledgment is  directed towards. Since the Acknowl edgment PGN is always directed to the 
+Global Address, these parameters allo w the receiver to know the target  being acknowledged. In Figure 9 these 
+parameters, in byte 5, are Addre ss Acknowledged, Address N egative Acknowledgment, A ddress Access Denied, and 
+Address Busy.   
+SAE  J1939-21  Revised DEC2010
+If a device fails to get a response (either the PGN or NACK ) to a Request within the Response timeout, then the device 
+may resend or retry the same Request. The number of retries for a specific Request should be limited to two (2) retries, 
+i.e. the Request is issued a total of three (3) times. If the dev ice fails to get a response (either the PGN or NACK) to the 
+Request after the third retry, then the device should abandon further request attempts for the same information or the 
+device may wait for an extended period of time (minutes ra ther than seconds) before attempting to request the same 
+information. 
+===== PAGE 22 =====
+Page 22 of 49 
+ 
+   
+Parameter Group Name: Acknowledgment 
+Definition: The Acknowledgment PG is us ed to provide a handshake mechanism between 
+transmitting and receiving devices. 
+Transmission repetition rate: Upon reception of a Parameter Group Number that requires this form of acknowledgment. 
+Data length: 8 bytes 
+Extended Data Page: 0 
+Data Page: 0 
+PDU Format: 232 
+PDU Specific: Destination address 1 = Global (255) 
+Default priority: 6 
+Parameter Group Number: 59392 (00E800 16)  
+Data ranges for parameters used by this Message Type: 
+Control byte: 0 to 3 See definitions below  
+ 4 to 255 Reserved for assignment by SAE 
+Group Function Value 0-250 Definition is specif ic to the individual PGN, when applicable. 
+Most often it is located as the first byte in the data field of the applicable Group Function 
+PG.  
+ 251 to 255 Follows conventions defined in J1939-71 
+Positive Acknowledgment:  Control byte = 0 
+ Byte: 1 Control byte = 0, Positive Acknowledgment (ACK) 
+ 2 Group Function Value (If applicable) 
+ 3-4 Reserved for assignment by SAE, these bytes should be filled with FF16  
+ 5 Address Acknowledged  
+ 6 Parameter Group Number of requested info rmation (8 LSB of parameter group number, bit 
+8 most significant)   
+ 7 Parameter Group Number of requested information (2 nd byte of parameter group number, 
+bit 8 most significant)   
+ 8 Parameter Group Number of requested info rmation (8 MSBs of parameter group number, 
+bit 8 most significant)   
+Negative Acknowledgment:  Control byte = 1 
+ Byte: 1 Control byte = 1, Negative Acknowledgment (NACK) 
+ 2 Group Function Value (if applicable) 
+ 3-4 Reserved for assignment by SAE, these bytes should be filled with FF16  
+ 5 Address Negative Acknowledgement  
+ 6-8 Parameter Group Number of requested information (see above)   
+Access Denied:  Control byte = 2 
+ Byte: 1 Control byte = 2, Access Denied (PGN supported but security denied access) 
+ 2 Group Function Value (if applicable) 
+ 3-4 Reserved for assignment by SAE, these bytes should be filled with FF16  
+ 5 Address Access Denied  
+ 6-8 Parameter Group Number of requested information (see above)   
+Cannot Respond:  Control byte = 3   
+ Byte 1 Control byte = 3, Cannot Respond (P GN supported but ECU is busy and cannot respond 
+now.  Re-request the data at a later time.) 
+ 2 Group Function Value (if applicable) 
+ 3-4 Reserved for assignment by SAE, these bytes should be filled with FF16  
+ 5 Address Busy  
+ 6-8 Parameter Group Number of  requested information (see above) 
+FIGURE 9 - ACKNOWLEDGMENT PGN DEFINITION 
+5.4.5 Group Function 
+This Message Type is used for groups of special functions (e.g. proprietary functions, network management functions, 
+multipacket transport functions, etc.).  Each group function is recognized by its assigned PG N.  See Figure 10, Figure 11 
+ 
+ 
+                                            
+1 The global destination address makes it possible to filter on one CAN Identifier for all Acknowledgment messages. 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 23 =====
+Page 23 of 49 
+ 
+   
+and Figure 12.  Table D1 in Appendix D has the Suspect Parameter Number assignments to parameters in these 
+messages.  The function itself is defined with in the data structure (typically the firs t byte of the data field).  More detaile d 
+explanation of the group functions proprie tary and transport protocol will be given in the sections to follow.  The 
+proprietary group function provides a means  to transmit proprietary messages in a way that eliminates CAN Identifier 
+usage conflicts between different manufactu rers.  It also provides a means for receiving and distinguishing proprietary 
+messages for use when desired.  Group Functions may need to provide their own request, ACK, and/or NACK 
+mechanisms if the messages defined in J1939-21 are not sufficient. 
+A request using PGN 59904 (reference Section 5.4.2) can be us ed to find out if a specific Parameter Group of the 
+message type, Group Function, is supported.  If it is s upported, then the responding devic e sends the Acknowledgment 
+PGN with the control byte equal to zero, for Positive Ack nowledgment, or equal to two, Access Denied or equal to three, 
+Cannot Respond.  If it is not supported,  the responding device sends the Acknowl edgment PGN with the control byte set 
+to one, for Negative Acknowledgment.  The remaining portions of the SAE J1939 PDU format and Parameter Group must 
+be filled in appropriately (reference Section 5.4.4).  Note that per the definitions in this paragraph the phrase “not 
+supported” means that the PG is not transmitted. It is not possible to det ermine whether a device will act upon (when 
+received) the PG by using this method. 
+Parameter Group Name: Proprietary A 
+Definition: This proprietary PG uses t he destination specific PDU format allowing 
+manufacturers to direct their proprietary communications to a specific destination 
+node.  How the data field of this message is used is up to each manufacturer.  
+Use of proprietary messages is at the manufacturer’s discretion with the 
+constraint that significant percentages (2 percent or more) of vehicle network 
+utilization must be avoided. 
+Transmission repetition rate: Per user requirements 
+Data length: 0 to 1785 bytes (multipacket supported) 
+Extended Data Page: 0 
+Data Page: 0 
+PDU Format: 239 
+PDU Specific: Destination Address 
+Default priority: 6 
+Parameter Group Number: 61184 (00EF00 16) 
+Byte: 1-8 Manufacturer specific use  
+Data ranges for parameters used by this Group Function: 
+ None defined by SAE 
+FIGURE 10 - PROPRIETARY A PGN DEFINITION 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 24 =====
+Page 24 of 49 
+ 
+   
+ Parameter Group Name: Proprietary A2 
+Definition: This proprietary PG uses t he destination specific PDU format allowing 
+manufacturers to direct their proprietary communications to a specific destination 
+node.  How the data field of this message is used is up to each manufacturer.  
+Use of proprietary messages is at the manufacturer’s discretion with the 
+constraint that significant percentages (2 percent or more) of vehicle network 
+utilization must be avoided. 
+Transmission repetition rate: Per user requirements 
+Data length: 0 to 1785 bytes (multipacket supported) 
+Extended Data Page: 0 
+Data Page: 1 
+PDU Format: 239 
+PDU Specific: Destination Address 
+Default priority: 6 
+Parameter Group Number: 126720 (01EF00 16) 
+Byte: 1-8 Manufacturer specific use  
+Data ranges for parameters used by this Group Function: 
+ None defined by SAE 
+FIGURE 11 - PROPRIETARY A2 PGN DEFINITION 
+ 
+Parameter Group Name: Proprietary B 
+Definition:  This proprietary PG uses the PDU2 Format message allowing manufacturers to 
+define the PS (GE) field content as they desire. However, significant percentages 
+(2 percent or more) of vehicle network  utilization must be avoided.  How the PS 
+(GE) and data fields of this message are used is up to each manufacturer.  The 
+data length of these messages has been left up to each manufacturer.  
+Therefore, two manufacturers, say of transmissions, may use the same GE value 
+and it may very well have a different Da ta Length Code.  Receivers of this 
+information would need to differentiate between the two manufacturers. 
+Transmission repetition rate: Per user requirements 
+Data length: 0 to 1785 bytes (multipacket supported) 
+Extended Data Page: 0 
+Data Page: 0 
+PDU Format: 255 
+PDU Specific: Group Extens ion (manufacturer assigned) 
+Default priority: 6 
+Parameter Group Number: 65280 to 65535 (00FF00 16 to 00FFFF16) 
+Byte: 1-8 Manufacturer defined usage 
+Data ranges for parameters used by this Group Function: 
+ Manufacturer defined usage allows the Data Length C ode being different per component supplier and source 
+address.  Caution should be used when using the Proprietary B Parameter Group (PGN = 65280) because multiple 
+source addresses can use the same Proprietary B PGN value for different purposes. 
+FIGURE 12 - PROPRIETARY B PGN DEFINITION 
+5.4.6 Request2  
+The Request2 PG provides the capability for the requestor to specify whether the responder should use the Transfer PGN 
+51712.  By identifying that the responder s hould use the Transfer PGN, it provides  the ability for the responder to report 
+the data set for all devices it is tasked with reporting (s ee Section 0). All devices include what the responding device 
+would normally report upon receiving the same PGN request ed in PGN 59904 (properly formatted for TRANSFER PGN) 
+and the data set for each device it is tasked to report.  For inst ance if the “Use Transfer PGN” parameter is yes (01), the 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 25 =====
+Page 25 of 49 
+ 
+   
+response shall include all data known relative to the requested PGN.  When “Use Transfer PGN” is 00, the effect of the 
+Request2 PGN is the same as the Request PGN (59904).  T he response to the Request2 when the “Use Transfer PGN” 
+equals 00 is not sent using the “Transfer” PGN and it is s ent exactly the same as it would be had the request been made 
+using the “Request” PGN (i.e. PGN 59904).  See Figure 13 below .  Table D1 in Appendix D has the SPN assignments to 
+parameters in this message. 
+The “Request2” and “Transfer” PGNs are required in cases where a given device is tasked with reporting a PGN and data 
+about more than one device.  Examples include PGNs such  as Vehicle Identificati on, Component ID and Software 
+Identification. 
+The support of REQUEST2 is an option. 
+ 
+Parameter Group Name: Request2 
+Definition: Used to Request a PGN from network  device or devices and to specify whether 
+the response should use the Transfer PGN or not. 
+Transmission repetition rate: Per user requirements,  generally recommended that requests occur no more 
+than 2 or 3 times per second.  When a device supports Request2, a NACK is 
+required if the PG being asked for with  a destination specific address is not 
+supported (see PGN 59392). 
+Data length: 8 bytes (multipacket supported) 
+Extended Data Page: 0 
+Data Page: 0 
+PDU Format: 201 
+PDU Specific: Destination A ddress (global or specific) 
+Default priority: 6 
+Parameter Group Number: 51456 (00C900 16) 
+Bytes 1-3: Requested PGN 
+Byte 4: Special Instructions 
+ Bits 8-3: Reserved for SAE assignment 
+ Bits 2-1: Use Transfer PGN for response  
+(00 = No, 01=Yes, 10 = undefined, 11 = NA) 
+Bytes 5-8: Reserved for SAE assignment 
+FIGURE 13 - REQUEST2 PGN FORMAT 
+5.4.7 Transfer   
+The Transfer PGN provides a mechanism for reporting multiple data sets for a given PGN in response to a Request2 (see 
+Section 5.4.6).  See Figure 14 for the definit ion of a “data set.”  These multiple se ts of data for a given PGN require that 
+each data set have a length and be labeled with four bytes from the J1939-81 Name.  The four bytes of the Name identify 
+each device.  The device responding to the request shall report the same information it would with PGN 59904 as the first 
+data set in this response.  If a device only has one data se t, then it shall respond with the one data set utilizing the 
+Transfer PG. 
+The “Request2” and “Transfer” PGNs are useful in cases w here a given device is tasked with reporting a PGN and data 
+about more than one device.  Examples include PGNs such  as Vehicle Identificati on, Component ID and Software 
+Identification. 
+See Figure 14 below.  Table D1 in Appendix D has the SPN assignments to parameters in this message. 
+SAE  J1939-21  Revised DEC2010
+ 
+If a device fails to get a response (either the PGN or NACK ) to a Request within the Response timeout, then the device 
+may resend or retry the same Request. The number of retries for a specific Request should be limited to two (2) retries, 
+i.e. the Request is issued a total of three (3) times. If the dev ice fails to get a response (either the PGN or NACK) to the 
+Request after the third retry, then the device should abandon further request attempts for the same information or the 
+device may wait for an extended period of time (minutes ra ther than seconds) before attempting to request the same 
+information. 
+===== PAGE 26 =====
+Page 26 of 49 
+ 
+   
+Parameter Group Name: Transfer  
+Definition Used for transfer of data in respons e to a Request2 when the “Use Transfer PGN 
+for response” is set to “Yes” 
+Transmission repetition rate: In response to a Request2 PGN with “Use Transfer PGN” = 01 
+Data length: 9 to 1785 bytes (multipacket supported) 
+Extended Data Page: 0 
+Data Page: 0 
+PDU Format: 202 
+PDU Specific: Destination A ddress (global or specific) 
+Default priority: 6 
+Parameter Group Number: 51712 (00CA00 16) 
+Bytes 1-3: (a) PGN requested by Request2 (See Table 2 for PGN ordering) 
+Byte 4: (b) Length of data for the r eported PGN associated to the device  
+identified (e.g. Controller Application Identity in bytes 5-8). Length value is the 
+total of this byte, length of identity bytes (i.e. bytes 5-8), and the associated PGN 
+data. So the length is b + c + d. 
+Bytes 5-8: (c) Identity of dev ice associated to the PGN and data (i.e. Controller Application 
+Identity) 
+SAE J1939-81 defines the four bytes of the Name used here in bytes 5 through 
+8. 
+ Byte 5: Bits 8-4  Function Inst ance (most significant at bit 8) 
+ Bits 3-1  ECU Instance (most significant at bit 3) 
+ Byte 6: Bits 8-1  Function (most significant at bit 8) 
+ Byte 7: Bits 8-2 Vehicle System (most significant at bit 8) 
+ Bit 1  Reserved 
+ Byte 8: Bit 8  Arbitrary Address Capable 
+ Bits 7-5  Industry Group (m ost significant at bit 7) 
+ Bits 4-1  Vehicle System Instance (most significant at bit 4) 
+Bytes 9-x: (d) Data of reported PGN in bytes 1-3 
+Bytes x+1 to n Repeating information for 2 nd and following shall contain: “Controller Application 
+Identity,” Length, and “PGN requested by Request2’s data.”  See format 
+definition below. 
+Format: 
+ a,b,c,d,b,c,d,b,c,d... 
+ a: PGN requested by Request2 when “transfer mode” is set to yes 
+ b: First Data Set: Length of concatenated Contro ller Application Identity and associated PGN data 
+  The length = b + c + d  
+ c: Identity of Controller Applicaton to which field “d” is associated  
+ d: Requested PGN’s data for spec ific Controller Application  
+ b: Second Data Set: Length of concatenated Contro ller Application Identity and associated PGN data 
+ c: Identity of Controller Applicati on to which field “d” is associated  
+d: Requested PGN’s data for second specific Controller Application 
+  ... etc. 
+Example:  For a given vehicle the engine ECU knows the VIN numbers for the tractor and the trailer. Another device 
+sends the Request2 directed to the global destination, requesting the VIN with “Use Transfer PGN” set to 01.  The 
+response from the engine might be: 
+ BAM transfer of the “Transfer” PGN reporting t he VIN for the tractor and VIN for the trailer 
+If the request had the “Use Transfer PGN” set to 00, the response would be: 
+ BAM transfer of the VIN for the trac tor but not utilizing the Transfer PGN 
+FIGURE 14 - TRANSFER PGN FORMAT
+5.5 Message Priority 
+The CAN data frame priority shall be per CA N specification 2.0 Part B.  The value  within the CAN identifier field 
+determines the message priority.  A low value (the 29-bit identif ier being all zeros) has a high priority, while the largest 
+CAN identifier has the lowest priority  (the 29-bit identifier being all ones).  The assignments are identified in the 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 27 =====
+Page 27 of 49 
+ 
+   
+applications layer following the guidelines spelled out in Section 5.9 of this document and as defined in SAE J1939 top 
+level document (SAE J1939). 
+5.6 Bus Access 
+When the bus is free, any node may start to transmit a frame.  If two or more nodes start to transmit frames at the same 
+time, the bus access conflict is resolv ed by contention-based arbitration using the CAN Data Frame Identifier.  The 
+mechanism of arbitration guarantees that neither information nor time is lost.  The transmitter with the frame of the highest 
+priority gains bus access (reference CAN 2.0 Part B). 
+5.7 Contention-Based Arbitration 
+During arbitration, every transmitter compares the level of the bit transmitted with the level that is monitored on the bus.  If 
+these levels are equal, the node may continue to send.  W hen a “recessive” level is sent and a “dominant” level is 
+monitored, that node has lost arbitrat ion and must withdraw without sending one more bit.  When a “dominant” level is 
+sent and a “recessive” level is monitored, that node detects a bit error (reference CAN 2.0 Part B). 
+5.8 Error Detection 
+The following measures are taken for detecting errors:  
+a. 15-bit Cyclic Redundancy Check (CRC) 
+b. Variable Bit Stuffing with a stuff width of 5 
+c. Frame format check 
+Transmitters compare the bit levels being transmitted with the bit level detected on the bus.  
+A more detailed explanation regarding these error detection tec hniques is available in the CAN 2.0 document identified in 
+Section 2.1.1. 
+5.9 Assignment Process for Source Addresses and Parameter Group Numbers 
+The protocol data units that are avail able provide for two different formats,  PDU1 and PDU2.  Parameter Groups are 
+assigned specifically to use either PDU1 or PDU2 format.  On ce assigned to a format, the other is not available for that 
+Parameter Group.  PDU1 format must be used anytime it is  necessary to direct a Parameter Group to a specific 
+destination.  The assignment of a Parameter Group should be done while keeping in mind the following characteristics: 
+priority, update rate, importance of the data in the packet to other network devices, and length of the data associated with 
+the Parameter Group.  In order to help with this assi gnment process, a request form has been created which should be 
+used when requesting new Source Addresses or Parameter Group Number assignments (see SAE J1939 Appendix D). 
+Figure 4 provides a template for assigning Parameter Group Number s.  Note that the priority column is used to assign a 
+default priority value for each PGN.  The priority field should be programmable for each PGN value so that network tuning 
+can be performed by an OEM if necessary.  Although any PGN could be requested, requests are strongly discouraged for 
+messages that are already periodically broadcast. 
+Messages should be assigned a Parameter Group Number that requi res a destination only if it is a parameter intended to 
+directly control (command) one of seve ral specific devices.  Otherwise a Parameter Group Number should be selected 
+without a destination so that any device can have access to the parameters within the message. 
+Source Addresses are assigned in a linear fashion without concerns for message priority, update rate, or importance. 
+Parameter Group Numbers are assigned linearly to the various sections of Figure 4 based on the criteria provided on the 
+Parameter Group Number and Source Address Request form.  Note that multipacket messages are not permitted when 
+the repetition rate is greater than or equal to 10 times/second. 
+5.9.1 Address Assignment Criteria 
+The number of unassigned addresses in SAE J1939 is limited and new address assignments must be made efficiently.  
+The maximum number of addresses assigned within the system  cannot exceed 256. Additions to the address definitions 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 28 =====
+Page 28 of 49 
+ 
+   
+therefore must be limited to significant func tions within the vehicle. Examples of significant functions include the currently 
+defined addresses for engine, transmission, brakes, fuel system, etc.  Functi ons proposed for new address assignments 
+within the standard should have a scope similar to current ly defined addresses and should be useful to most SAE J1939 
+users. 
+Some devices use the available dynamic address allocation schem e.  In this case the dynamic address can be set by the 
+service tool and/or can be allocated at the time the network is powered up.  Special precautions must be taken when 
+using the dynamic address allocation scheme since not all network devices support this mode of operation. 
+5.9.2 Parameter Group Assignment Criteria 
+The number of unassigned Parameter Groups available in SAE J1939 is limited when compared to the large number that 
+might be proposed for on-highway trucks and other applications .  The need for large numbers of Parameter Groups is 
+alleviated by features built into SAE J1939.  Three primary communication methods exist within SAE J1939 and 
+appropriate use of each type allows effective use of the av ailable Parameter Group Numbers.  The three communications 
+methods are: 
+a. PDU1 Format (PS = Destination Address allowing destination specific communications) 
+b. PDU2 Format Communications (PS = Group Extension) 
+c. Proprietary Communications using two pr edefined proprietary Parameter Group Numbers 
+Each of the communications methods has an appropriate use.   Destination specific Parameter Groups are needed where 
+the same message must be directed to one or another desti nation.  SAE J1939 currently defines a torque control 
+message that may be sent to an engine.  In the case of more than one engine, this message must be sent only to the 
+desired engine and a destination specific Parameter Group is needed and has been assigned. 
+PDU2 Format communications apply in several situations, including: 
+a. Messages sent from a single or mu ltiple sources to a single destination 
+b. Messages sent from a single or mult iple sources to multiple destinations 
+PDU2 Format communications cannot be used where a mess age must be sent to one or another destination and not to 
+both. 
+The third communications method in SAE J1939, proprietary co mmunications, is provided by the use of the proprietary 
+Parameter Group Numbers.  A Parameter Group Number has been assigned for nondestination-specific proprietary 
+communications and a Parameter Group Number has been assigned for destination specific proprietary communications. 
+This allows for two functions:  (a) A specific source can send its proprietary  message in a PDU2 Format (nondestination 
+specific) with the PS field identified as desired by the user; or (b) Use PDU1 Fo rmat (destination specific) allowing for 
+situations where a service tool must direct its communication to a specific  destination out of a possible group of 
+controllers. For instance this case arises when an engine uses  more than one controller but wants to be able to perform 
+diagnostics while all of its controllers are connected to the same  network.  In this case the proprietary protocol needs to 
+be able to be destination specific. 
+Proprietary communications are useful in two situations: 
+a. Where it is unnecessary to have standardized communications 
+b. Where it is important to co mmunicate proprietary information 
+Much of the communications between nodes constructed by a single manufacturer do not require standardization.  The 
+information communicated is not generally useful to other devices on the network.  In this situation the proprietary 
+Parameter Group Numbers can be used. 
+When Parameter Group assignment is contemplated, propr ietary and then PDU2 Format communications methods 
+should be considered.  If proprietary information is being co mmunicated, the proprietary method should be used.  If the 
+information to be communicated is not of general interest, pr oprietary methods should be used.  If the information is of 
+general interest and does not require direction of the message to a particular node, a PDU2 Format assignment should be 
+sought.  Finally if the information is of general interest but requires direction to one or  another devices, then destination 
+specific addressing is needed and a PDU1 Format Parameter Group assignment should be sought. 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 29 =====
+Page 29 of 49 
+ 
+   
+5.9.3 Data Field Definition 
+Minimization of message overhead with CAN-bas ed systems requires full use of the data field (all 8 bytes).  Except in the 
+case of very time-critical messages, related parameters s hould be grouped to fill the 8-byte data field.  Following this 
+principal conserves Parameter Group Numbers for future assi gnment. Strong justification is needed to allow definition of 
+Parameter Groups that result in sparsely used data fields. 
+5.10 Transport Protocol Functions 
+Transport protocol functions are described as a part of the data link layer with the recognition that Transport protocol 
+functionality is subdivided into two major functi ons: Message Packetization and Reassembly; and Connection 
+Management.  They are described in the following sections. 
+In the following paragraphs the term originator corresponds to the ECU or device that transmits the request-to-send 
+message.  The term responder corresponds to the ECU or device that transmits the clear-to-send message. 
+5.10.1 Packetization and Reassembly 
+Messages greater than 8 bytes in length are too large to fit into a single CAN Data Frame.  They must therefore be 
+broken into several smaller packets, and those packets trans mitted in separate message frames.  At the destination end, 
+the individual message frames must be received and parsed and the original message reassembled from the received 
+packets. 
+5.10.1.1 Message Packets 
+The CAN Data Frame includes an 8-byte data field.  Bec ause the individual packets which comprise a large message 
+must be identified individually so that t hey may be reassembled correctly, the first byte of the data field is defined as the 
+sequence number of the packet. 
+Individual message packets are assigned a sequence number of 1 to 255.  This yields a maximum message size of (255 
+packets * 7 bytes/packet =) 1785 bytes. 
+5.10.1.2 Sequence Numbers 
+Sequence numbers are assigned to packets for transmission on the network during message packetization and then used 
+on reception of packets to reassemble them back into a message. 
+Sequence numbers shall be assigned to individual packets begi nning with one and continuing sequentially until the entire 
+message has been packetized and transmitted.  The packets sha ll be sent sequentially in ascending order starting with 
+packet 1. 
+5.10.1.3 Packetization 
+A large message is defined as one whose data does not fit in to the data field of a single CAN message frame (i.e. 
+messages with a data field greater than 8 bytes). 
+For the purposes of this protocol, a la rge message is considered to be a Parameter Group that has associated with it a 
+string of 9 or more bytes.  The first Data Transfer Packe t contains the sequence number one and the first 7 bytes of the 
+string.  The second 7 bytes are placed into another SAE  
+J1939/CAN data frame along with the sequence number 2, the third with sequence number 3, and so on until all the bytes 
+in the original message have been placed into SAE J1939/CAN data frames and transmitted. 
+Each Data Transfer packet (other than the last packet in a transmission sequence) shall include 7 bytes of the original 
+large message.  The final packet includes a data field of 8 bytes: those being the sequenc e number of the packet and at 
+least 1 byte of data related to the Parameter Group and then any remaining unused bytes set to “FF16.” 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 30 =====
+Page 30 of 49 
+ 
+   
+The time between packets for Multipackets Broadcast messages  shall be 50 to 200 ms (reference Section 5.12.3).  For 
+multipacket messages directed to a specific destination, the originator maintains a maximum time between packets 
+(where CTS allows more than one) of not more than 200 ms.  Responders must be aware that the packets containing the 
+data all have the same identifier. 
+5.10.1.4 Reassembly 
+Data packets are received sequentially.  Each data packet of  a multipacket message shall be assembled, in order of 
+sequence number, into a single string of bytes.   This string of bytes is passed to the application entity responsible for the 
+large message. 
+5.10.2 Connection Management 
+Connection Management is concerned with the opening, use,  and closure of virtual connections between nodes for 
+destination specific transfers.  A virtual connection in the SAE J1939 envir onment may be considered a temporary 
+association of two nodes for the purpose of transferring a si ngle large message that is described by a single Parameter 
+Group Number (reference Appendix C—Figure C1 and Figure C2).  In cases where the connection is from one to many 
+there is no flow control or closure provided (see Appendix C—Figure C3). 
+5.10.2.1 Multipacket Broadcast 
+Large messages may be nondestination specific ; that is, they may be broadcast me ssages.  To broadcast a multipacket 
+message, a node first transmits a Broadcast Announce Message (BAM).  This message, which must be transmitted to the 
+global destination address, constitutes a large message warning to the nodes on the network.  The BAM message 
+contains the Parameter Group Number of the large message to be broadcast, its size, and the number of packets into 
+which it has been packeted.  Nodes interested in the data ar e then required to allocate the resources necessary to 
+receive and reassemble the message.  The Data Transfer PGN (PGN = 60160) is then used to send the associated data. 
+5.10.2.2 Connection Initiation 
+A connection is initiated when a node trans mits a Request to Send message to a destination address.  The Request to 
+Send message contains the size of the entire message in bytes, the number of separate messages in which it will be 
+transferred, the Maximum Number of Packets that can be sent in response to one CTS, and the Parameter Group 
+Number of the message being transported.  
+Upon receipt of a Request to Send message, a node may elect to accept the connection or to reject it.  To accept the 
+connection, the responder transmits a Clear to Send message.   The Clear to Send message contains the number of 
+packets it may accept and the sequence number of the first packe t it is expecting. The responder  must ensure that it has 
+sufficient resources to handle the number of packets it is accepting delivery of.  The sequence number of the packet, in 
+the instance of a freshly opened connection, would be one.  Note that the Clear to Send message may not include 
+provision for all the component packets of the message.  To reject the connection, the responder sends a Connection 
+Abort message.  The connection may be rejected for any reason although lack of resources, memory, etc., are likely to be 
+the causes.  
+The connection is considered established for the originator (i.e. RTS device) when the originator receives a corresponding 
+CTS from the responder (i.e. CTS Device).  The connecti on is considered established for the responder when it has 
+successfully transmitted its CTS message in response to an RTS.  These definitions are used to determine when a 
+Connection Abort must be sent to close a connection. 
+A responder should send a Connection Abort if it has look ed at the RTS message and decided not to establish the 
+connection.  This allows the originator to move on to a new connection without having to wait for a timeout. 
+5.10.2.3 Data Transfer 
+Data transfer begins after the originator of the connection rece ives the Clear to Send message.   An exception is if the 
+Data Transfer was the result of the “Broadcast Announce Message. ”  In this case the Clear to Send message is not used. 
+The PGN for Data Transfer is contained in the CAN identifier field of each packet.  The first byte of the data field will 
+contain the sequence number of the packet. 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 31 =====
+Page 31 of 49 
+ 
+   
+In the case of destination specific messages, the responder is responsible fo r coordinating flow control between the 
+nodes.  If the responder wants to stop data flow momentarily while a connection is open, it must use the Clear to Send 
+message, setting the number of packets to send equal to zero .  In the case where the flow must be stopped for some 
+number of seconds, the responder must repeat the trans mission of the Clear to Send message once per 0.5 S (T h) to 
+assure the originator the connection is not broken.  All remaining bit fields are set to ones (Don’t care). 
+5.10.2.4 Connection Closure 
+Two connection closure cases exist in the absence of errors .  The first is when there is a global destination and the 
+second is when there is a specific desti nation.  In the case of the global des tination no connection closure operation is 
+performed beyond the reception of the data itself.  See Sections 5.10.3 and 5.10.3.4.  In the case of a destination specific 
+transfer and upon receipt of the last packet in the me ssage stream, the responder transmits an end-of-message 
+acknowledgment to the originator of the message.  This is the signal to the originator t hat the connection is considered 
+closed by the responder. The “end of message ACK” closure is required to free the connection for subsequent use by 
+other devices. 
+The “connection abort” message is not allowed to be used by re sponders in the case of a global destination (i.e. BAM).  
+See Sections 5.10.3 and 5.10.3.4.  In the case of a destination specific transfe r, the originator or responder can, at any 
+time, use the “connection abort” to terminate the connection.  Refer to Section 5.10.2.2 for an explanation of when a 
+connection is considered established for the originator and responder.  If the re sponder should, for example, determine 
+that there are no resources available for processing the message, it may simp ly abort the connection by issuing the 
+connection abort message with abort reason 2 (see Table 7) . Upon receipt of the connection abort message, any 
+message packets already passed will be abandoned. 
+A failure of either node may also cause closure of a connecti on.  For example:  a gap of more than (T1) seconds after 
+receipt of the last packet when more were expected (Cl ear_To_Send allowed more); a gap of more than (T2) seconds 
+after a CTS was transmitted (originator failure); a lack of CT S or ACK for more than (T3) seconds after the last packet 
+was transmitted (responder failure); a lack of a CTS for more  than (T4) seconds after a CTS (0) message to “hold the 
+connection open” will all cause a connection closure to occur.  See Figure C1 in Appendix C and Section 5.12.3 regarding 
+timeouts. When either the originator or  responder decides to close out a connecti on for any reason including a timeout, it 
+shall send a connection abort message with abort reason 3 from Table 7. 
+Tr = 200 ms 
+Th = 500 ms 
+T1 = 750 ms 
+T2 = 1250 ms 
+T3 = 1250 ms 
+T4 = 1050 ms 
+With the definitions in this section and those in all sections under Section 5.10 the following observations can be made. 
+1. Connection closure for a broadcas t announce message include the following. 
+a. A connection is considered closed when the originator: 
+i) Sends the last Data Transfer packet 
+b. A connection is consider ed closed when the responder: 
+i) Receives the last Data Transfer packet  
+ii) Has a T1 connection timeout 
+2. Connection closure for Request-to-Send / Cl ear-to-Send messages include the following. 
+a. A connection is considered closed when the originator: 
+i) Receives the TP.CM_EndOfMsgACK at the co mpletion of the data transfer for the entire PGN 
+ii) Sends a Connection Abort for any reas on (e.g. due to a T3 or T4 timeout) 
+iii) Receives a Connection Abort 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 32 =====
+Page 32 of 49 
+ 
+   
+ii) Receives a Connection Abort  
+iii) Sends a Connection Abort for any reason (e.g. including stopping the session early if desired, for a T1 or T2 
+connection timeout, etc.) 
+5.10.3 Transport Protocol—Connection Management Messages   
+This type of message is used to initiate  and close connections and also to control flow.  Transport protocol provides the 
+following five transport protocol connection management messages:  the Connection Mode Request To Send, the 
+Connection Mode Clear To Send, the End of Message Acknowledgment, the Connecti on Abort, and the Broadcast 
+Announce Message.  The formats of these messages are shown in Figure 15 below in the Parameter Group definition for 
+“Transport ProtocolConnection Management.”  Table D1 in Appendix D has the SPN assignments to parameters in this 
+message. 
+Parameter Group Name: Transport Protocol Connection Management (TP.CM) 
+Definition: Used for the transfer of Parameter Groups that have 9 bytes or more  of data.  A definition 
+of each specific message defi ned as part of the transport pr otocol is contained in the 
+Sections 5.10.3.1 through 5.10.3.5.  
+Transmission repetition rate: Per the Pa rameter Group Number to be transferred 
+Data length: 8 bytes 
+Extended Data Page: 0 
+Data Page: 0 
+PDU Format: 236 
+PDU Specific: Destination Address 
+Default priority: 7 
+Parameter Group Number: 60416 (00EC00 16) 
+Data ranges for parameters used by this Group Function: 
+Control byte: 0-15, 18, 20-31, 33- 254 are Reserved for SAE Assignment 
+Total Message Size, number of bytes: 9 to 1785 (2  bytes), zero to 8 and 1786 to 65535 not allowed 
+Total Number of Packets: 2 to 255 (1 byte), zero and 1 not allowed 
+Maximum Number of Packets: 2 to 255 ( 1byte), zero through 1 are not allowed 
+Number of Packets that can be sent: 0 to 255 (1 byte) 
+Next Packet Number to be Sent: 1 to  255 (1 byte), zero not allowed 
+Sequence Number: 1 to 255 (1 byte), zero not allowed 
+FIGURE 15 - FORMAT OF MESSAGES FOR TRANSPORT PROTOCOL
+SAE  J1939-21  Revised DEC2010
+b. A connection is consider ed closed when the responder: 
+i) Sends the TP.CM_EndOfMsgACK at the comp letion of the data transfer for the entire PGN 
+===== PAGE 33 =====
+Page 33 of 49 
+ 
+   
+ 
+Connection Mode Request to Send (TP.CM_RTS):  Destination Specific 
+ Byte: 1 Control byte = 16, Desti nation Specific Request_To_Send (RTS) 
+ 2,3 Total message size, number of bytes 
+ 4 Total number of packets 
+ 5 Maximum number of packets that c an be sent in response to one CTS. FF16 indicates that 
+no limit exists for the originator. 
+ 6-8 Parameter Group Number of the packeted message 
+ Byte 6 Parameter Group Number of requested information 
+(8 LSB of parameter group number, bit 8 most significant)  
+ Byte 7  Parameter Group Number of requested information 
+(2nd byte of parameter group number, bit 8 most significant)  
+ Byte 8  Parameter Group Number of requested information 
+(8 MSBs of parameter group number, bit 8 most significant)  
+Connection Mode Clear to Send (TP.CM_CTS):  Destination Specific 
+ Byte: 1 Control byte = 17, Dest ination Specific Clear_To_Send (CTS) 
+ 2 Number of packets that can be sent.  This value shall be no larger than the smaller of the 
+two values in byte 4 and byte 5 of the RTS message. 
+ 3 Next packet number to be sent 
+ 4-5 Reserved for assignment by SAE, these bytes should be filled with FF16 
+ 6-8 Parameter Group Number of the packeted message 
+End of Message Acknowledgment (TP.CM_EndOfMsgACK):  Destination Specific 
+ Byte: 1 Control byte = 19, End_of_Message Acknowledge 
+ 2,3 Total message size, number of bytes 
+ 4 Total number of packets 
+ 5 Reserved for assignment by SAE, this byte should be filled with FF 16 
+ 6-8 Parameter Group Number of the packeted message 
+Connection Abort (TP.Conn_Abort):  Destination Specific 
+ Byte: 1 Control byte = 255, Connection Abort 
+ 2 Connection Abort reason 
+ 3-5 Reserved for assignment by SAE, these bytes should be filled with FF16 
+ 6-8 Parameter Group Number of the packeted message 
+Broadcast Announce Message (TP.CM_BAM):  Global Destination 
+ Byte: 1 Control byte = 32, Broadcast Announce Message 
+ 2,3 Total message size, number of bytes 
+ 4 Total number of packets 
+ 5 Reserved for assignment by SAE, this byte should be filled with FF 16 
+ 6-8 Parameter Group Number of the packeted message 
+FIGURE 15 - FORMAT OF MESSAGES FOR TRANSPORT PROTOCOL (CONTINUED) 
+5.10.3.1 Connection Mode Request to Send (TP.CM_RTS) 
+The TP.CM_RTS message informs a node that another node on the network wishes to open a virtual connection with it.  
+The TP.CM_RTS is a message with the source address field se t to that of the originat ing node, the destination address 
+field set to that of the intended recipient  of a large message, and the remaining fields set appropriately for the Parameter 
+Group Number being sent. 
+Byte 5 of this message allows the originator to limit the responder’s number of packets specified in the Clear To Send 
+message.  See Figure C4 and Figure C5 in Appendix C.  When t he responder complies with this limit, it ensures that the 
+originator can always retransmit packets that the responder may have not received for whatever reason.  
+If multiple RTSs are received from the same source address for the same PGN, then the most recent RTS shall be acted 
+on and the previous RTSs will be abandoned.  No abort message shall be sent for the abandoned RTSs in this specific 
+case. 
+TP.CM_RTS is only transmitted by the originator. 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 34 =====
+Page 34 of 49 
+ 
+   
+5.10.3.2 Connection Mode Clear to Send (TP.CM_CTS)
+The TP.CM_CTS message is used to respond to the Request To Send message.  It informs the peer node that it is ready 
+for a certain amount of large message dat a.  The amount of large message data cleared to send shall be no larger than 
+the smaller of the two values in byte 4 and byte 5 of the originator’s TP.CM_RTS message.  
+If multiple CTSs are received after a connection is already  established, then the connecti on shall be aborted. When the 
+originator aborts the connection, it shall send the Connection Abort message with abort reason 4 from Table 7. 
+ 
+The responder will not send the next CTS until it has received the last data packet from the previous CTS or it has timed 
+out. In the case of time out the responder has the choice whether to send a connection abort or to send a CTS.  
+ 
+The following cases exist when data transfer happens with errors: 
+ 
+When the CTS is used to request the retransmission of data packet(s), it is recommended not to use more than 2 
+retransmit requests.  When this limit is reached, a connection abort with abort reason 5 from Table 7 shall be sent. 
+If a CTS is received while a connection is not established, it shall be ignored. 
+CTSs not only control the flow but also  confirm correct receipt of any data pa cket prior to that CTS packet’s number.  
+Therefore if information for the previous CTS was corrupted, then a CTS for the corrupted information shall be sent before 
+continuing on to the next sequential packets to be sent.  Becaus e of this requirement, the originator of a large message 
+transmission may use byte 5 of the TP.CM_RTS message as a way to ensure the possibility of retransmission of a packet 
+within the last set of packets cleared to send.  
+TP.CM_CTS is only transmitted by the responder. 
+5.10.3.3 End of Message Acknow ledgment (TP.CM_EndOfMsgACK) 
+The TP.CM_EndOfMsgACK message is passed from the recipient of a large message to its originator indicating that the 
+entire message was received and reassembled correctly.  The responder can keep the connection open after the last 
+Data Transfer of the session by not imm ediately sending the TP.CM_EndOfMsgACK.  This allows the responder to get a 
+packet resent if necessary. 
+If an End of Message Acknowledgment is rece ived by the originator prior to the fi nal Data Transfer, then the originator 
+ignores it. 
+One End of Message Acknowledgment is sent to show the originator that the large message transfer has been received 
+and assembled correctly. 
+TP.CM_EndOfMsgACK is only transmitted by the responder. 
+5.10.3.4 Connection Abort (TP.Conn_Abort) 
+The TP.Conn_Abort message is used by either node involved in  a virtual connection to close the connection without 
+completing the transfer of the message or to prevent a connection from being initialized.  
+Upon receipt of a Connection Mode Request To Send message, a node must determine if there are sufficient resources 
+available to deal with the message for which this connection is  sought.  For example if the device must acquire memory 
+from the system heap, it may not be able to claim enough to accept the entire message; or  a device may simply be too 
+occupied doing other things to expend processor cycles to handle a large message.  In these cases a Connection Abort 
+message may be sent even though the connection has not been es tablished.  This may be done in order to allow the 
+originator to attempt another virtual connection without first having to wait for a timeout to occur. 
+SAE  J1939-21  Revised DEC2010
+- A missing or errant packet(s) is detected and the last packe t is successfully received, then the responder will send a 
+CTS requesting retransmission starting from the missing packet. 
+- Missing packet(s) including the last packet will lead to ti me out T1. In this case, the responder decides on sending a 
+CTS or a connection abort with reason 4 from Table 7. See Figure C7. 
+===== PAGE 35 =====
+Page 35 of 49 
+ 
+   
+When either the originator or responder decides to close out a connection for any reason, prior to completing the data 
+transfer, including a timeout, it shall send a Connection A bort message with the appropriate  Connection Abort reason.  
+See Table 7 for the list of Connection Abort reasons. 
+TABLE 7 - CONNECTION ABORT REASON
+ 
+It is intended that the originator (i.e. the RTS node) shoul d immediately stop transmitting after the reception of the 
+Connection Abort message by the CAN protocol device.  If th is is not possible, the process to stop transmitting data 
+packets shall take no more than 32 data packets and shall not exceed 50 ms.  After sending or receiving a Connection 
+Abort message, all related data packets received should be i gnored.  TP.Conn_Abort is transmi tted by the originator or 
+the responder. 
+5.10.3.5 Broadcast Announce Message (BAM) 
+The TP.CM_BAM is used to inform all the nodes of the netwo rk that a large message is about to be broadcast.  It defines 
+the parameter group and the number of bytes to be sent.  A fter TP.CM_BAM is sent, the Data Transfer Messages are 
+sent and they contain the packetized broadcast data. 
+TP.CM_BAM is only transmitted by the originator. 
+5.10.4 Transport Protocol—Data Transfer Message (TP.DT)  
+The TP.DT message is used to communicate the data associ ated with a Parameter Group.  The TP.DT message is an 
+individual packet of a multipacket message transfer (see Fi gure 16).  For example if a large message had to be divided 
+into 5 packets in order to be communicated, then ther e would be 5 TP.DT messages.  Examples showing TP.DT 
+messages being used can be seen in Appendix C.  Table D1 in Appendix D has the SPN assignments to parameters in 
+TP.DT shown in Figure 16.  
+TP.DT is only transmitted by the originator. 
+Parameter Group Name: Transport Protocol Data Transfer (TP.DT) 
+Definition: Used for the transfer of  data associated with Parameter Groups that have more than 8 bytes 
+of data 
+Transmission repetition rate: Per the Parameter Group to be transferred 
+Data length: 8 bytes 
+Extended Data Page: 0 
+Data Page: 0 
+PDU Format: 235 
+PDU specified field: Destination address (Global (DA = 255) for TP.CM.BAM data transfers) (Global not 
+allowed for RTS/CTS data transfers) 
+Default priority: 7  (Priority used r egardless of the PGN being transported) 
+Parameter Group Number: 60160 (00EB00 16) 
+Data ranges for parameters used by this Group Function: 
+Sequence Number: 1 to 255 (1 byte) 
+ Byte: 1 Sequence Number 
+ 2-8 Packetized Data (7 bytes).  Note the la st packet of a multipacket Parameter Group may 
+require less than 8 data bytes.  The extra bytes should be filled with FF16. 
+FIGURE 16 - TRANSPORT PROTOCOL—DATA TRANSFER MESSAGE (TP.DT) 
+Value Description 
+1 Already in one or more connection managed sessions and cannot support another. 
+2 System resources were needed for another task so this connection managed session was 
+terminated. 
+3 A timeout occurred and this is the connection abort to close the session. 
+4 CTS messages received  when data transfer is in progress.  
+5 Maximum retransmit request limit reached 
+6–250 Reserved for SAE assignment. 
+251–255 Per J1939-71 definitions. 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 36 =====
+Page 36 of 49 
+ 
+   
+5.10.5 Connection Constraints
+If a node cannot handle another session, then it should reject t he connection initiations that are pursued by other nodes.  
+An RTS for a different PGN from the same source addre ss to the same destination as an existing session shall be 
+rejected as well.  In either case the newly requested session should be rejected by sending a Connection Abort with abort 
+reason 1 from Table 7.  This allows the device desiring a connection to move on to a new connection without having to 
+wait for a timeout. 
+5.10.5.1 Number and Type of Connections a Node Must Support 
+Each node on the network can originate one destination specific  connection transfer with a given destination at a time.  
+This is due to the fact that the TP.DT only contains t he source address and destination address and not the PGN of the 
+data being transferred. 
+Only one multipacket BAM (i.e. global destination) can be sent fr om an originator at a given time.  This is due to TP.DT 
+not containing the actual PGN or a connec tion identifier.  However, responders (i.e . receiving devices in this specific 
+example) must recognize that multiple multipacket me ssages can be received, interspersed with one another, from 
+different originators (i.e. source addresses). 
+A node must also be able to support one RTS/CTS session and one BAM session concurrently from the same source 
+address.  Therefore, the responder must  use the destination address of the tw o transport protocol messages to keep 
+them properly separated.  One of the transport protocol messages has a global  destination address and the other has a 
+specific destination address.  The destination address has to  be used to distinguish the two because the TP.DT does not 
+contain the actual PGN or a connection identifier. 
+Regardless of whether a node can support multiple simultaneous  transport protocol sessions (RTS/CTS and/or BAM), it 
+must assure that TP.DT messages from the same Source  Address with different De stination Addresses can be 
+differentiated.  Receivers must use the Destination and Source Address to keep the data for the messages correct. 
+5.10.5.2 Intended Transport Protocol Use 
+Transport Protocol has been developed to provide a mechanism for transferring PGNs with 9 or more data bytes (see 
+Section 5.2.7.2).  A PGN defined as mult ipacket capable, having less than 9 data byte s to transfer in specific instance, 
+shall be sent in a single CAN Data Frame with the DLC set to 8 (see Section 5.2.7.1). 
+5.10.5.3 Concurrent PGN Reception 
+It is possible that specific PGs may be sent in a nontranspor t protocol form when they are less than or equal to 8 bytes 
+and then also be sent in transport protocol form when they are greater than 8 bytes.  It is possible for these two forms of 
+the same PG to be sent concurrently. 
+Note that a nontransport protocol form of a PGN is not considered to be a session so its being sent does not close out the 
+transport protocol form of the same PGN. 
+5.11 PDU Processing Requirements 
+Processing of the PDUs requires specific procedures to be followed.  Suggested sequence for interpreting PDUs is 
+described in Appendix A.  Appendix B shows example SAE J1939 message types and PDU formats being used. 
+Devices must be able to process data link messages fast enough to prevent losing messages when the data link is at 100 
+percent utilization.  This also means that in low utilization situations, when there are back-to-back messages, each device 
+must be able to process the messages fast enough not to lose  messages due to their back-to-back nature.  Processing 
+the message fast enough does not mean that a response has to  be immediately generated but that a new message must 
+not overrun the previous messages. 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 37 =====
+Page 37 of 49 
+ 
+   
+5.12 Application Notes 
+5.12.1 High Data Rates 
+Data that is to be updated at a high rate and has tight lat ency requirements should, if possible, allow hardware-based 
+message filtering to be used. 
+5.12.2 Request Scheduling 
+The scheduling of a request should be canceled if the informat ion to be requested is received prior to the request being 
+sent.  That is, if the information is received 50 ms prior to request scheduling, the request shall not be issued.  Parameter 
+Groups should not be requested if they are recommended to be broadcast.  Excepti ons may arise when the 
+recommended broadcast time exceeds a special case need. 
+5.12.3 Device Response Time and Timeout Defaults 
+All devices, when required to provide a response, must do so within 0.20s (T r).  All devices expecting a response must 
+wait at least 1.25s (T3) before giving up or retrying.  These times assure that any latencies due to bus access or message 
+forwarding across bridges do not cause unwanted timeouts. Diffe rent time values can be us ed for specific applications 
+when required.  For instance, for high-speed control mess ages, a 20 ms response may be expected.  Reordering any 
+buffered messages may be necessary to accomplish the faster  response.  There is no restriction on minimum response 
+time. 
+Time between packets of a multipacket message directed to a s pecific destination is 0 to 200 ms.  This means that back-
+to-back messages can occur and they may contain the same identifier.  The CTS mechanism can be used to assure a 
+given time spacing between packets.  The required time inte rval between packets of a Multipacket Broadcast message is 
+50 to 200 ms.  A minimum time of 50 ms assures the responder  has time to pull the message from the CAN hardware.  
+The responder shall use a timeout of 250 ms (provides margin allowing for the maximum spacing of 200 ms).  
+Below is an example using the 1.25s (T3) timing.  
+a. Maximum forward delay time with in a bridge is 50 ms (per J1939-31) 
+Total number of bridges = 10 (i.e. 1 tractor + 5 trailers + 4 dollies = 10 bridges) 
+Total network delay is 500 ms in one direction. 
+b. Number of request retries = 2 (3 r equests total); this includes the situation where the CTS is used to request the 
+retransmission of data packet(s).  If the retransmit request limit is reached, then the connection abort shall be 
+sent with abort reason 5 from Table 7. 
+c. 50 ms margin for timeouts 
+Appendix C—Figure C1 and Figure C3 have the timing requirem ents identified.  In Figure C1 the time numbers are 
+computed assuming the worst case number of bridges, 10 bridges .  The timeout numbers for receivers are identified as a 
+time value while transmitter requirements are specified as a less than or equal to time value.  Note that an originator has 
+transmitter and receiver requirements and that a responder has transmitter and receiver requirements. 
+5.12.4 Required Responses 
+A response is required for a global request from all dev ices that have the request ed PG, even the requester. 
+Acknowledgments are not allowed for global requests. 
+A device which uses a global Destination Address (DA = 255)  for a request (e.g. “address request”) shall itself send a 
+response if it has the data requested.  This is a requirem ent because all devices are expec ted to respond.  If the device 
+issuing the request does not respond, then the other net work devices may draw the wrong conclusion about the 
+requested information. 
+5.12.5 Transmission of PGNs to S pecific or Global Destinations 
+Most of the time it is desired to send periodically broadcasted PGNs to a global destination. 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 38 =====
+Page 38 of 49 
+ 
+   
+5.12.6 CTS Number of Packet Recommendation 
+During normal vehicle operation it is recommended that the maximum number of packets that can be sent per CTS be set 
+to 16. 
+6. NOTES 
+6.1 Marginal Indicia 
+PREPARED BY THE SAE TRUCK AND BUS CONTROL AND COMMUNICATIONS NETWORK COMMITTEE OF THE 
+SAE TRUCK AND BUS ELECTRICAL AND ELECTRONICS STEERING COMMITTEE
+SAE  J1939-21  Revised DEC2010
+A change bar (l) located in the left margin is for the convenience of the user in locating areas where technical revisions, 
+not editorial changes, have been made to the previous issue of this document. An (R ) symbol to the left of the document 
+title indicates a complete revision of the document, includi ng technical revisions. Change bars and (R) are not used in 
+original publications, nor in documents that contain editorial changes only. 
+===== PAGE 39 =====
+Page 39 of 49 
+ 
+   
+APPENDIX A - SAE J1939 PDU PROCESSINGTYPICAL RECEIVE ROUTINE 
+A.1 RECEIVE INTERRUPT 
+When a message is received by the microprocessor via the CAN chip, several tests are performed in order to parse it and 
+determine if and where it should be stored.  J1939 processing of  the CAN Data Frame will not occur if the Extended Data 
+Page equals 1 and the Data Page equals 1, so the processing s hown in Figure A1 does not apply.  If the Extended Data 
+Page equals 0 then the CAN Frame can be handled as shown in Figur e A1.  The three priority bits are used only for bus 
+arbitration and therefore are not needed (used)  by the receiving device.  Note al so that a given device may have more 
+than one address if it performs multiple functions (see Figure A1). 
+IF PGN = REQUEST PGN AND THE DESTINATION IS SPECIFIC ; specific request 
+THEN 
+ IF DA = ASSIGNED ADDRESS (destination) 
+ THEN 
+ SAVE 4 BYTE ID AND 3 DATA BYTES IN REQUEST QUEUE 
+IF PGN = REQUEST PGN AND THE DESTINATION IS GLOBAL ; global request 
+THEN 
+ SAVE 4 BYTE ID AND 3 DATA BYTES IN REQUEST QUEUE 
+ 
+IF PF < 240 
+THEN 
+ IF DA = GLOBAL ; PDU1 Format (DA = global) 
+ THEN 
+ USE JUMP TABLE FOR PGN VALUES OF INTEREST AND 
+ IF SA = ID OF SPECIAL INTEREST 
+ THEN 
+ SAVE 8 BYTES OF DATA IN DEDICATED BUFFER 
+ ELSE 
+ SAVE 12 BYTE MESSAGE (ID AND DATA) IN CIRCULAR QUEUE 
+ ELSE (DA = SPECIFIC) ; PDU1 Format (DA = specific) 
+ USE JUMP TABLE FOR PGN VALUES OF INTEREST AND 
+ IF SA = ID OF SPEC IAL INTEREST VALUES 
+ THEN 
+ SAVE 8 BYTES OF DATA IN DEDICATED BUFFER 
+ ELSE 
+ SAVE 12 BYTE MESSAGE (ID AND DATA) IN CIRCULAR QUEUE 
+IF PF > OR = 240 
+THEN ; PDU2 Format 
+ USE JUMP TABLE FOR PGN VALUES OF INTEREST AND 
+ IF SA = ID OF SPECIAL INTEREST 
+ THEN 
+ SAVE 8 BYTES OF DATA IN DEDICATED BUFFER 
+  ELSE 
+  SAVE 12 BYTE MESSAGE (ID AND DATA) IN CIRCULAR QUEUE 
+FIGURE A1 - TYPICAL RECEIVE ROUTINE 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 40 =====
+Page 40 of 49 
+ 
+   
+APPENDIX B - COMMUNICATION MESSAGE TYPES 
+B.1 EXAMPLE OF COMMUNICATION MESSAGE TYPES 
+This example shows how an engine would typically perform (see Figure B1):  
+1) BROADCAST/RESPONSE/ACK  
+Send the engine serial number (Component ID Parameter Group Number = 65259 (00FEEB16)). 
+2) DESTINATION SPECIFIC  REQUEST (PGN 59904) 
+Receive a specific request for the engine serial number.  The message sent back is either a RESPONSE with the 
+data, or a NACK.  See item 4) below in the examples. 
+2A) GLOBAL REQUEST 
+Receive a global request for the engine serial number.  The message sent back is a RESPONSE from a specific 
+device that has the data.  Acknowledgments are not used on global requests. 
+3) COMMAND 
+For some commands it may be desirable to have a specific acknowledgment that the task has been completed.  
+When this is the case, a message can be sent back as either an ACK = COMMAND COMPLETE or a NACK = 
+COMMAND NOT ABLE TO BE COMPLETED.  The example in Figure B1 uses “CF” as the command that will be 
+acknowledged with an ACK or NACK. 
+4) ACK 
+Send the NACK message to indicate that the command or request could not be acted upon (invalid request).  The 
+NACK message contains the offending Parameter Group Number in the data field.  If the Parameter Group Number in 
+a COMMAND or REQUEST is not recognized by the destination (addressed device), it should still NACK.  If the 
+Parameter Group Number is recognized, but the parameter(s) are not available, a normal response is sent back but 
+with the data value(s) set to 255. 
+ 
+ PF PS(GE, DA)  SA  DATA  
+1) BROADCAST 254 235(GE) 000 236912 
+2) SPECIFIC REQUEST 234 000(DA) 003 PGN 65259 
+1) RESPONSE 254 235(GE) 000 236912 
+Or     
+4) NACK 232 255(DA) 000 01,255,255,255, 03,PGN 65259 
+2A) GLOBAL REQUEST 234 255(DA) 003 PGN 65259 
+1) RESPONSE 254 235(GE) 000 236912 
+3) COMMAND CF 000(DA) 240  
+1) ACK 232 255(DA) 000 00, 255,255,255,240,PGN for CF 
+Or     
+4) NACK 232 255(DA) 000 01, 255,255,255,240,PGN for CF 
+Or OTHER 1     
+1  COMMANDs must always have a mechanism for confirming that the action was successful or 
+not.  An ACK message is not required if another means is available.  This helps to minimize bus 
+traffic.  For example a torque command to the engine can be confirmed by looking at the torque 
+mode bits as well as the torque value coming from the engine. 
+FIGURE B1 - EXAMPLE OF COMMUNICATION MESSAGE TYPES  
+SAE  J1939-21  Revised DEC2010
+===== PAGE 41 =====
+Page 41 of 49 
+ 
+   
+APPENDIX C - TRANSPORT PROTOCOL TRANSFER SEQUENCES 
+C.1 CONNECTION MODE DATA TRANSFER 
+Under normal circumstances, the flow model for data transfer follows Figure C1.  The originator sends the TP.CM_RTS 
+indicating there are 23 bytes in the packeted message, which w ill be transferred in four packets.  The PGN for the data in 
+the transfer is 65259, component identification. 
+ 
+NOTETimeouts (T1, T2, T3, T4) are described in Section 5.10.2.4. 
+FIGURE C1 - DATA TRANSFER WITHOUT ERRORS 
+Originator
+Node
+Responder
+Node
+Timing
+Requirements
+Timing
+Requirements
+TP.CM_RTS,16,23,4,255,65259
+TP.CM_CTS,17,2,1,255,255,65259
+TP.DT,1,data 1-7
+TP.DT,2,data 8-14
+TP.CM_CTS,17,0,255,255,255,65259
+TP.CM_CTS,17,2,3,255,255,65259
+TP.DT,3,data 15-21
+TP.DT,4,data 22-23
+Connection
+Established
+TP.EndOfMsgACK,19,23,4,255,65259
+Connection
+Initiation
+T3
+1250 mS
+T3
+1250 mS
+T3
+1250 mS
+T4
+1050 mS
+T2
+1250 mS
+T1
+750 mS
+Th
+< or = 500 mS
+T2
+1250 mS
+T1
+750 mS
+Tr
+< or = 200 mS
+Tr
+< or = 200 mS
+Tr
+< or = 200 mS
+Tr
+< or = 200 mS
+Tr
+< or = 200 mS
+Tr
+< or = 200 mS
+Tr
+< or = 200 mS
+SAE  J1939-21  Revised DEC2010
+===== PAGE 42 =====
+Page 42 of 49 
+ 
+The responder replies with a TP.CM_CTS indicating that it is ready to process two packets, beginning with packet 1. 
+The originating station passes the first two packets across the network using TP.DT.  The responder station then issues a 
+TP.CM_CTS indicating that it wants to hold the connection open but cannot receive any packets right now.  A maximum 
+of 500 ms later it must send another TP.CM_CTS message to hold the connection.  In this example it sends another 
+TP.CM_CTS indicating that it can take two more packe ts, beginning with packet 3.  Once packets 3 and 4 have been 
+transferred, the responder transmits a TP.EndOfMsgACK message indicating t hat all the packets expected were 
+transmitted and that the connection is now considered closed.  Note that packet 4 contains 2 bytes of valid data, bytes 22 
+and 23, the remaining data characters in  this packet are transmitted as 255 (FF 16), data not availabl e, such that the 
+message is 8 bytes in length. 
+Message transfer in the event of an error on the link is shown in Figure C2.  The TP.CM RTS is transferred and 
+responded to properly; then data is lost during the data transfer phase. 
+TP.CM_RTS,16,23,4,255,65259
+TP.CM_CTS,17,2,1,255,255,65259
+TP.DT,1,data 1-7
+TP.DT,2,data 8-14
+TP.CM_CTS,17,1,2,255,255,65259
+TP.CM_CTS,17,2,3,255,255,65259
+TP.DT,3,data 15-21
+TP.DT,4,data 22-23,255,255,255,255,255
+TP.EndOfMsgACK,19,23,4,255,65259
+TP.DT,2,data 8-14
+Originator
+Node
+Responder
+Node
+ 
+FIGURE C2 - DATA TRANSFER WITH ERRORS 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 43 =====
+Page 43 of 49 
+ 
+   
+In the situation shown in Figure C3, a node indicates to the network that it is about to transfer a multipacket message 
+utilizing the services of the transport protocol.  In this example the PGN 65260, vehicle identification, is being broadcast to
+ 
+the network.  The originating node first transmits a TP .CM_BAM (Broadcast Announce Me ssage), followed by the data 
+packets.  No acknowledgment is performed by any of the responders (i.e. the receiving nodes in this specific example). 
+ 
+Receiver
+Timing
+Requirements
+Originator
+Node
+Responder
+Node(s)
+TP.CM_BAM,32,17,3,255,65260
+TP.DT,1,data 1-7
+TP.DT,2,data 8-14
+TP.DT,3,data 15-17,255,255,255,255
+50 to 200 mS
+T1
+750 mS
+T1
+750 mS
+T1
+750 mS
+50 to 200 mS
+50 to 200 mS
+Transmitter
+Timing
+Requirements
+ 
+FIGURE C3 - BROADCAST DATA TRANSFER 
+SAE  J1939-21  Revised DEC2010
+   
+In this situation, the request-to-send is sent in the same  manner as the earlier example.  The first two packets are 
+transferred, but packet two was considered in error by the responder.  The responder then transfers a TP.CM_CTS 
+indicating that it wants a single packet, and that packet is packet 2.  The originator complies, transferring packet 2.  The 
+responder then passes a CTS indicating it wants two packets , starting with packet 3.  This TP.CM_CTS is the 
+acknowledgment that packets 1 and 2 were received correctly.  Once the last pa cket is received correctly, the responder 
+passes a TP.EndOfMsgACK signaling that the entire message has been correctly received. 
+===== PAGE 44 =====
+Page 44 of 49 
+ 
+   
+In Figure C4 the originator uses the Maximum Number of Packets parameter to limit the number of packets the responder 
+requests to be transferred.  In this example both devices support the Maximum Number of Packets parameter.  
+Originator
+Node
+Responder
+Node
+TP.CM_RTS,16,44,7,5,65242
+TP.DT,1,data 1-7
+TP.CM_CTS,17,5,1,255,255,65242
+TP.DT,2,data 8-14
+TP. EndOfMsgACK,19,44,7,255,65242
+TP.DT,3,data 15-21TP.DT,4,data 22-28TP.DT,5,data 29-35
+TP.DT,6,data 36-42
+TP.CM_CTS,17,2,6,255,255,65259
+TP.DT,7,data 43-44,255,255,255,255,255
+ 
+FIGURE C4 - DATA TRANSFER UTILIZING RTS MAXIMUM 
+NUMBER OF PACKETS CAPABILITY   
+SAE  J1939-21  Revised DEC2010
+===== PAGE 45 =====
+Page 45 of 49 
+ 
+   
+Figure C5 illustrates the situation where the originator supports the RTS parameter , “Maximum Number of Packets,” but 
+the responder does not.  In this situation the originator must comply with the responder’s CTS limits.  In this example the 
+originator would have to send seven data transfer packets even though it preferred to only send five at a time.  
+PRECAUTION:  In this example if the responder sent a CTS for packet 1 after the dat a transfer of packet 7, the originator 
+may have to recompute the information and therefore the second transmission of packet 1 may contain different data from 
+the original packet 1 depending on the kind of data the PG N contains. For instance, PGN 65227 has dynamic data and 
+might cause packet 1 to be different while a PGN such as 65242 has static data and would not cause packet 1 to be 
+different on its second data transfer.   
+Originator
+Node
+(Supports
+Maximum
+Number of
+Packets)
+Responder
+Node
+(Does not
+support
+Maximum
+Number of
+Packets)
+TP.CM_RTS,16,46,7,5,65227
+TP.DT,1,data 1-7
+TP.CM_CTS,17,7,1,255,255,65227
+TP.DT,2,data 8-14
+TP. EndOfMsgACK,19,46,7,255,65227
+TP.DT,3,data 15-21TP.DT,4,data 22-28TP.DT,5,data 29-35TP.DT,6,data 36-42TP.DT,7,data 43-46,255,255,255
+ 
+FIGURE C5 - DATA TRANSFER NOT ABLE TO UTILIZE RTS MAXIMUM 
+NUMBER OF PACKETS CAPABILITY 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 46 =====
+Page 46 of 49 
+ 
+   
+Figure C56 shows the case where the last packet in a CTS group is missing. The responder sends a CTS in an attempt to 
+avoid aborting the session.  
+ 
+Timeout
+T1 (750ms)
+Timeout
+T3 (1250ms)
+ 
+ 
+FIGURE C6 - RESPONDER SENDING CTS AFTER A TIME OUT TO PREVENT SESSION ABORT  
+ 
+ 
+ 
+ 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 47 =====
+Page 47 of 49 
+ 
+   
+In the slow originator example (left side), the originator is sending a 12 packet ‘CTS group’, but the responder's retransmit 
+CTS arrives before the originator sends the last data packet.  The originator aborts the session with abort reason 4.  This 
+is a possible example where the retransmit CTS does not avoid the session abort. 
+TP.DT,4
+TP.DT,2
+TP.DT,3
+Timeout
+T1 (750ms)
+TP.Conn_Abort,MULTI_CTS(R),X
+TP.DT,6
+TP.DT,5
+TP.DT,8
+TP.DT,7
+TP.DT,10
+TP.DT,9
+TP.DT,12
+TP.DT,11
+TP.DT,2
+Timeout
+T1 (750ms)
+TP.DT,3 to 12
+Slow Originator (200ms per TP.DT) Faster Originator (50ms per TP.DT)
+Timeout
+T3 (1250ms)
+TP.CM_CTS,17,10,3,255,255,X
+Session 
+Continues
+TP.DT,3
+ResponderOriginatorOriginator Responder
+TP.CM_CTS,17,10,3,255,255,X
+TP.DT,1
+TP.CM_CTS,17,12,1,255,255,X
+TP.CM_RTS,16,80,12,12,X
+TP.DT,1
+TP.CM_CTS,17,12,1,255,255,X
+TP.CM_RTS,16,80,12,12,X
+ 
+ 
+FIGURE C7 - EXAMPLES OF ORIGINATOR REACTION TO A RETRANSMIT CTS  
+ 
+SAE  J1939-21  Revised DEC2010
+ 
+In the case of CTS upon Time out, consider the following example: 
+In the faster originator example (right side), the responder's retransmit CTS arrives after the originator sends the last data 
+packet and before the T3 time out. This is the example where the originator is able to receive the CTS and avoid aborting 
+the session. 
+===== PAGE 48 =====
+Page 48 of 49 
+ 
+   
+APPENDIX D - ASSIGNMENTS OF SPNS FOR J1939-21   
+D.1 ASSIGNMENT OF SPNS FOR J1939-21 
+Table D1 shows the SPN assignments for J1939-21 items. 
+TABLE D1 - J1939-21 SPN USAGE  
+Row 
+Number 
+PGN or 
+Other Reference SPN Name SPN Number SPN Bits2 
+1.  PGN 59904 Request Parameter Group Number (RQST) 2540 24 
+2.  PGN 59392 Acknowledge Control Byte (ACKM) 2541 8 
+3.   Group Function Value (ACK)  2542 8 
+4.   Address Acknowledged (ADD_ACK) 3290 8 
+5.   Parameter Group Number (ACK)  2543 24 
+6.   Group Function Value (NACK) 2544 8 
+7.   Address Negative Acknowledgement 
+(ADD_NACK) 
+3291 8 
+8.   Parameter Group Number (NACK) 2545 24 
+9.   Group Function Value (NACK_AD) 2546 8 
+10.   Address Access Denied (ADD_AD) 3292 8 
+11.   Parameter Group Number (NACK_AD) 2547 24 
+12.   Group Function Value (NACK_Busy) 2548 8 
+13.   Address Busy (ADD_BUSY)  3293 8 
+14.   Parameter Group Number 
+(NACK_Busy) 
+2549 24 
+15.  PGN 61184 
+Proprietary A 
+Manufacturer Specific Information 
+(PropA_PDU1) 
+2550 64 to 
+14280 
+16.  PGN 126720 
+Proprietary A2 
+Manufacturer Specific Information 
+(PropA2_PDU1) 
+3328 64 to 
+14280 
+17.  PGN 65280 to 65535 
+Proprietary B 
+Manufacturer Defined Usage 
+(PropB_PDU2) 
+2551 64 to 
+14280 
+18.  PGN 51456 Request2 Parameter Group Number (RQST2) 2574 24 
+19.   Use Transfer Mode 2575 2 
+20.  PGN 51712 Transfer Parameter Group Number of 
+Requested Information (XFER) 
+2552 24 
+21.   Length of data for the reported PGN 
+(XFER) 
+2553 8 
+22.   ”Controller Application Identity” of the 
+ECU for specific data subsets  
+2554 32 
+23.   Transfer Data 2555 72 to 
+14216 
+ 
+ 
+                                            
+2 The numbers in this column represent the size in bits of the data items identified by the SPN.  The unit chosen is bits 
+since some items are less than one byte in size. 
+SAE  J1939-21  Revised DEC2010
+===== PAGE 49 =====
+Page 49 of 49 
+ 
+   
+Row 
+Number 
+PGN or 
+Other Reference SPN Name SPN Number SPN Bits2 
+24.  PGN 60416 Transport 
+Protocol–Connection 
+Management 
+Control Byte (TP.CM) 2556 8 
+25.  TP.CM_RTS Total Message size (TP.CM_RTS)  2557 16 
+26.   Total Number of Packets (TP.CM_RTS) 2558 8 
+27.   Maximum Number of Packets 
+(TP.CM_RTS)  
+2559 8 
+28.   Parameter Group Number of packeted 
+message (TP.CM_RTS)  
+2560 24 
+29.  TP.CM_CTS Number of Packets that can be sent 
+(TP.CM_CTS) 
+2561 8 
+30.   Next Packet Number to be sent 
+(TP.CM_CTS) 
+2562 8 
+31.   Parameter Group Number of packeted 
+message (TP.CM_CTS) 
+2563 24 
+32.  TP.CM_EndofMsgACK Total Message size 
+(TP.CM_EndofMsgACK) 
+2564 16 
+33.   Total Number of Packets 
+(TP.CM_EndofMsgACK) 
+2565 8 
+34.   Parameter Group Number of packeted 
+message (TP.CM_EndofMsgACK) 
+2566 24 
+35.  TP.Conn_Abort Connection Abort Reason 2570 8 
+36.   Parameter Group Number of packeted 
+message (TP.Conn_Abort) 
+2571 24 
+37.  TP.CM_BAM Total Message Size (TP.CM_BAM) 2567 16 
+38.   Total Number of Packets 
+(TP.CM_BAM) 
+2568 8 
+39.   Parameter Group Number of packeted 
+message (TP.CM_BAM) 
+2569 24 
+40.  PGN 60160 Transport 
+Protocol-Data Transfer 
+Sequence Number (TP.DT) 2572 8 
+41.   Packetized Data (TP.DT) 2573 72 to 
+14272 
+ 
+SAE  J1939-21  Revised DEC2010

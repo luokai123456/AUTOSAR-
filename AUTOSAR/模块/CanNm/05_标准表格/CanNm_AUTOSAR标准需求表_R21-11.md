@@ -259,60 +259,60 @@ tags: [AUTOSAR, CanNm, 标准表格]
 
 ### SWS_CanNm_004xx
 
-| 需求号 | 章节 | 中文说明 |
-|---|---|---|
-| SWS_CanNm_00401 | 7.6 | 主动唤醒且 ActiveWakeup 使能时置 CBV Active Wakeup 位 |
-| SWS_CanNm_00402 | 7.6 | 离开 Network Mode 时清除 CBV Active Wakeup 位 |
-| SWS_CanNm_00403 | 7.11.4 | 初始化时对 `PnEnabled` 通道关闭 NM-PDU 过滤算法 |
-| SWS_CanNm_00404 | 7.11.4 | CanSM 调用 `CanNm_ConfirmPnAvailability` 后使能该通道 PN 过滤算法 |
-| SWS_CanNm_00405 | 7.10 | Car Wakeup 位位置由 `CanNmCarWakeUpBytePosition/BitPosition` 配置 |
-| SWS_CanNm_00406 | 7.10.1 | CWU 位=1、接收使能且未过滤时回调 `Nm_CarWakeUpIndication` 并走标准接收处理 |
-| SWS_CanNm_00407 | 7.10.1 | 在 CarWakeUp 回调上下文中，`CanNm_GetPduData` 返回触发该回调的帧数据 |
-| SWS_CanNm_00408 | 7.10.1 | CWU 过滤使能时，仅当源节点 ID 等于过滤节点 ID 才上报 CWU |
-| SWS_CanNm_00409 | 7.11.1 | `PnEnabled=FALSE` 时不丢弃 NM 帧，PN 扩展关闭 |
-| SWS_CanNm_00410 | 7.11.1 | PN 使能、PNI=0 且 `AllNmMessagesKeepAwake=TRUE` 时不丢弃该帧 |
-| SWS_CanNm_00411 | 7.11.1 | PN 使能、PNI=0 且 `AllNmMessagesKeepAwake=FALSE` 时忽略该帧 |
-| SWS_CanNm_00412 | 7.11.1 | `PnEnabled` 且收到 PNI=1 时按第 7.11 章处理 PNC 信息 |
-| SWS_CanNm_00413 | 7.11.2 | PN 使能时发送的 PNI 位为 1 |
-| SWS_CanNm_00414 | 7.11.2 | PN 未使能时发送的 PNI 位恒为 0 |
-| SWS_CanNm_00415 | 7.11.4 | NM-PDU 过滤算法用 `PnInfoOffset`/`PnInfoLength` 评估 PN 信息范围 |
-| SWS_CanNm_00416 | 7.11.4 | PN 信息范围每 bit 对应一个 PNC，1=请求，0=无请求 |
-| SWS_CanNm_00417 | 7.11.4 | 用 PN 过滤掩码按位与判断是否存在相关 PNC 请求 |
-| SWS_CanNm_00419 | 7.11.4 | 有相关 PNC 请求时不丢弃该帧 |
-| SWS_CanNm_00420 | 7.11.4 | 无相关 PNC 请求且 `AllNmMessagesKeepAwake=FALSE` 时丢弃该帧 |
-| SWS_CanNm_00421 | 7.11.4 | 无相关 PNC 请求且 `AllNmMessagesKeepAwake=TRUE` 时不丢弃该帧 |
-| SWS_CanNm_00424 | 7.11.5 | EIRA 计算使能时，跨通道保存内部+外部请求的 PNC 状态 |
-| SWS_CanNm_00426 | 7.11.5 | 收到帧且 PNSR=0 时更新 EIRA 中对应 PNC 为 requested |
-| SWS_CanNm_00427 | 7.11.5 | 发送帧时把 EIRA 中 requested 的 PNC 写入待发数据 |
-| SWS_CanNm_00428 | 7.11.5 | EIRA 计算时监控每个 PNC 是否仍被请求 |
-| SWS_CanNm_00429 | 7.11.5 | PNC 被收/发请求时重启监控计时 |
-| SWS_CanNm_00431 | 7.11.5 | PNC 在 `PnResetTime` 内未被再次请求则置为未请求 |
-| SWS_CanNm_00432 | 7.11.5 | EIRA 中 PNC 状态变化时通知上层 |
-| SWS_CanNm_00435 | 7.11.6 | ERA 计算时按通道保存外部请求 PNC 状态，初始化清零 |
-| SWS_CanNm_00437 | 7.11.6 | 收到帧、PNSR=0 时更新 ERA 对应 PNC |
-| SWS_CanNm_00438 | 7.11.6 | ERA 计算时监控每个 PNC 是否仍被外部请求 |
-| SWS_CanNm_00439 | 7.11.6 | PNC 被请求时重启 ERA 监控计时 |
-| SWS_CanNm_00442 | 7.11.6 | PNC 在 `PnResetTime` 内未被再次请求则置为未请求 |
-| SWS_CanNm_00443 | 7.11.6 | ERA 中 PNC 状态变化时通知上层 |
-| SWS_CanNm_00444 | 7.11.7 | `PnHandleMultipleNetworkRequests` 时，NetworkRequest 在 Network Mode 下进入/重启 Repeat Message |
-| SWS_CanNm_00445 | 7.11.6 | EIRA 与 ERA 同时启用时两者的 PN 状态需分开存储 |
-| SWS_CanNm_00446 | 7.12 | PN 发送超时到期时调用 `CanSM_TxTimeoutException` |
-| SWS_CanNm_00447 | 8.2.1 | `CanNm_ConfigType` 结构至少包含所有 post-build 可配置参数 |
-| SWS_CanNm_00450 | 7.9.2.1 | Com 用户数据 `PduR_CanNmTriggerTransmit` 失败时沿用上次发送值 |
-| SWS_CanNm_00454 | 7.7.1 | `PnHandleMultipleNetworkRequests` 时 NetworkRequest 触发进 Repeat Message 并用 `ImmediateNmCycleTime` 发送 |
-| SWS_CanNm_00460 | 7.7.1 | 同步 PNC 关闭请求待发时，周期发送推迟到下一个主函数 |
-| SWS_CanNm_00461 | 7.11.1 | 收到 PNI=1、PNSR=1 的帧时，按 ComMChannel 配置发起同步关闭流程 |
-| SWS_CanNm_00462 | 7.11.2 | `CanNm_RequestSynchronizedPncShutdown` 按通道存储待关闭 PNC |
-| SWS_CanNm_00463 | 7.11.2 | 有同步关闭请求且无未确认发送时，下一主函数发 PN shutdown 报文（PNSR=1、PNC 位置位） |
-| SWS_CanNm_00464 | 7.11.2 | 确认 E_OK 后清除对应待关闭 PNC 并取消重传计时 |
-| SWS_CanNm_00465 | 7.11.2 | 确认失败或发送被拒且配置了重传时长时，下个主函数重传 |
-| SWS_CanNm_00466 | 7.11.6 | 收到 PNSR=1 的帧时把对应通道 ERA PDU 相应位清 0 |
-| SWS_CanNm_00467 | 8.3.21 | 同步 PNC 关闭使能时须提供 `CanNm_RequestSynchronizedPncShutdown` API |
-| SWS_CanNm_00468 | 7.11.2 | 首次请求 PN shutdown 发送时按配置启动重传计时 |
-| SWS_CanNm_00469 | 8.4.4 | 有同步关闭请求时，发送的报文需包含 PNSR 位与待关闭 PNC 位 |
-| SWS_CanNm_00470 | 7.11.2 | 待关闭 PNC 若被重新请求（内部/外部），从待关闭列表移除 |
-| SWS_CanNm_00471 | 7.11.2 | 未配置重传时长且发送失败时，清除待关闭请求并上报 DET 运行时错误 |
-| SWS_CanNm_00472 | 7.11.2 | 重传计时到期时清除待关闭请求并上报 DET 运行时错误 |
+| 需求号             | 章节      | 中文说明                                                                                               |
+| --------------- | ------- | -------------------------------------------------------------------------------------------------- |
+| SWS_CanNm_00401 | 7.6     | 主动唤醒且 ActiveWakeup 使能时置 CBV Active Wakeup 位                                                        |
+| SWS_CanNm_00402 | 7.6     | 离开 Network Mode 时清除 CBV Active Wakeup 位                                                            |
+| SWS_CanNm_00403 | 7.11.4  | 初始化时对 `PnEnabled` 通道关闭 NM-PDU 过滤算法                                                                 |
+| SWS_CanNm_00404 | 7.11.4  | CanSM 调用 `CanNm_ConfirmPnAvailability` 后使能该通道 PN 过滤算法                                              |
+| SWS_CanNm_00405 | 7.10    | Car Wakeup 位位置由 `CanNmCarWakeUpBytePosition/BitPosition` 配置                                        |
+| SWS_CanNm_00406 | 7.10.1  | CWU 位=1、接收使能且未过滤时回调 `Nm_CarWakeUpIndication` 并走标准接收处理                                              |
+| SWS_CanNm_00407 | 7.10.1  | 在 CarWakeUp 回调上下文中，`CanNm_GetPduData` 返回触发该回调的帧数据                                                  |
+| SWS_CanNm_00408 | 7.10.1  | CWU 过滤使能时，仅当源节点 ID 等于过滤节点 ID 才上报 CWU                                                               |
+| SWS_CanNm_00409 | 7.11.1  | `PnEnabled=FALSE` 时不丢弃 NM 帧，PN 扩展关闭                                                                |
+| SWS_CanNm_00410 | 7.11.1  | PN 使能、PNI=0 且 `AllNmMessagesKeepAwake=TRUE` 时不丢弃该帧                                                 |
+| SWS_CanNm_00411 | 7.11.1  | PN 使能、PNI=0 且 `AllNmMessagesKeepAwake=FALSE` 时忽略该帧                                                 |
+| SWS_CanNm_00412 | 7.11.1  | `PnEnabled` 且收到 PNI=1 时按第 7.11 章处理 PNC 信息                                                          |
+| SWS_CanNm_00413 | 7.11.2  | PN 使能时发送的 PNI 位为 1                                                                                 |
+| SWS_CanNm_00414 | 7.11.2  | PN 未使能时发送的 PNI 位恒为 0                                                                               |
+| SWS_CanNm_00415 | 7.11.4  | NM-PDU 过滤算法用 `PnInfoOffset`/`PnInfoLength` 评估 PN 信息范围                                              |
+| SWS_CanNm_00416 | 7.11.4  | PN 信息范围每 bit 对应一个 PNC，1=请求，0=无请求                                                                   |
+| SWS_CanNm_00417 | 7.11.4  | 用 PN 过滤掩码按位与判断是否存在相关 PNC 请求                                                                        |
+| SWS_CanNm_00419 | 7.11.4  | 有相关 PNC 请求时不丢弃该帧                                                                                   |
+| SWS_CanNm_00420 | 7.11.4  | 无相关 PNC 请求且 `AllNmMessagesKeepAwake=FALSE` 时丢弃该帧                                                   |
+| SWS_CanNm_00421 | 7.11.4  | 无相关 PNC 请求且 `AllNmMessagesKeepAwake=TRUE` 时不丢弃该帧                                                   |
+| SWS_CanNm_00424 | 7.11.5  | EIRA 计算使能时，跨通道保存内部+外部请求的 PNC 状态                                                                    |
+| SWS_CanNm_00426 | 7.11.5  | 收到帧且 PNSR=0 时更新 EIRA 中对应 PNC 为 requested                                                           |
+| SWS_CanNm_00427 | 7.11.5  | 发送帧时把 EIRA 中 requested 的 PNC 写入待发数据                                                                |
+| SWS_CanNm_00428 | 7.11.5  | EIRA 计算时监控每个 PNC 是否仍被请求                                                                            |
+| SWS_CanNm_00429 | 7.11.5  | PNC 被收/发请求时重启监控计时                                                                                  |
+| SWS_CanNm_00431 | 7.11.5  | PNC 在 `PnResetTime` 内未被再次请求则置为未请求                                                                  |
+| SWS_CanNm_00432 | 7.11.5  | EIRA 中 PNC 状态变化时通知上层                                                                               |
+| SWS_CanNm_00435 | 7.11.6  | ERA 计算时按通道保存外部请求 PNC 状态，初始化清零                                                                      |
+| SWS_CanNm_00437 | 7.11.6  | 收到帧、PNSR=0 时更新 ERA 对应 PNC                                                                          |
+| SWS_CanNm_00438 | 7.11.6  | ERA 计算时监控每个 PNC 是否仍被外部请求                                                                           |
+| SWS_CanNm_00439 | 7.11.6  | PNC 被请求时重启 ERA 监控计时                                                                                |
+| SWS_CanNm_00442 | 7.11.6  | PNC 在 `PnResetTime` 内未被再次请求则置为未请求                                                                  |
+| SWS_CanNm_00443 | 7.11.6  | ERA 中 PNC 状态变化时通知上层                                                                                |
+| SWS_CanNm_00444 | 7.11.7  | `PnHandleMultipleNetworkRequests` 时，NetworkRequest 在 Network Mode 下进入/重启 Repeat Message            |
+| SWS_CanNm_00445 | 7.11.6  | EIRA 与 ERA 同时启用时两者的 PN 状态需分开存储                                                                     |
+| SWS_CanNm_00446 | 7.12    | PN 发送超时到期时调用 `CanSM_TxTimeoutException`                                                            |
+| SWS_CanNm_00447 | 8.2.1   | `CanNm_ConfigType` 结构至少包含所有 post-build 可配置参数                                                       |
+| SWS_CanNm_00450 | 7.9.2.1 | Com 用户数据 `PduR_CanNmTriggerTransmit` 失败时沿用上次发送值                                                    |
+| SWS_CanNm_00454 | 7.7.1   | `PnHandleMultipleNetworkRequests` 时 NetworkRequest 触发进 Repeat Message 并用 `ImmediateNmCycleTime` 发送 |
+| SWS_CanNm_00460 | 7.7.1   | 同步 PNC 关闭请求待发时，周期发送推迟到下一个主函数                                                                       |
+| SWS_CanNm_00461 | 7.11.1  | 收到 PNI=1、PNSR=1 的帧时，按 ComMChannel 配置发起同步关闭流程                                                       |
+| SWS_CanNm_00462 | 7.11.2  | `CanNm_RequestSynchronizedPncShutdown` 按通道存储待关闭 PNC                                                |
+| SWS_CanNm_00463 | 7.11.2  | 有同步关闭请求且无未确认发送时，下一主函数发 PN shutdown 报文（PNSR=1、PNC 位置位）                                              |
+| SWS_CanNm_00464 | 7.11.2  | 确认 E_OK 后清除对应待关闭 PNC 并取消重传计时                                                                       |
+| SWS_CanNm_00465 | 7.11.2  | 确认失败或发送被拒且配置了重传时长时，下个主函数重传                                                                         |
+| SWS_CanNm_00466 | 7.11.6  | 收到 PNSR=1 的帧时把对应通道 ERA PDU 相应位清 0                                                                  |
+| SWS_CanNm_00467 | 8.3.21  | 同步 PNC 关闭使能时须提供 `CanNm_RequestSynchronizedPncShutdown` API                                         |
+| SWS_CanNm_00468 | 7.11.2  | 首次请求 PN shutdown 发送时按配置启动重传计时                                                                      |
+| SWS_CanNm_00469 | 8.4.4   | 有同步关闭请求时，发送的报文需包含 PNSR 位与待关闭 PNC 位                                                                 |
+| SWS_CanNm_00470 | 7.11.2  | 待关闭 PNC 若被重新请求（内部/外部），从待关闭列表移除                                                                     |
+| SWS_CanNm_00471 | 7.11.2  | 未配置重传时长且发送失败时，清除待关闭请求并上报 DET 运行时错误                                                                 |
+| SWS_CanNm_00472 | 7.11.2  | 重传计时到期时清除待关闭请求并上报 DET 运行时错误                                                                        |
 
 ### SWS_CanNm_005xx
 
